@@ -10,3 +10,16 @@ D:\Danil_inginerka_3year\OnlineMagazine-master\WindowsFormsApplication4\WindowsF
 D:\Danil_inginerka_3year\OnlineMagazine-master\WindowsFormsApplication4\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
 D:\Danil_inginerka_3year\OnlineMagazine-master\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.exe
 D:\Danil_inginerka_3year\OnlineMagazine-master\WindowsFormsApplication4\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.pdb
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe.config
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csprojResolveAssemblyReference.cache
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication1.Добавить_картинку.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.GhostMainForm.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.AdminMainForm.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.AuthorMainForm.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Properties.Resources.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.GenerateResource.cache
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.CoreCompileInputs.cache
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.exe
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.pdb
