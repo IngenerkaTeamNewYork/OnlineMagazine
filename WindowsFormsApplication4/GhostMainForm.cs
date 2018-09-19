@@ -41,5 +41,17 @@ namespace WindowsFormsApplication4
             label6.Text = stat.kategorita_statii;
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registration form = new Registration();
+            form.ShowDialog();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            To_come_in form = new To_come_in();
+            form.ShowDialog();
+        }
     }
 }

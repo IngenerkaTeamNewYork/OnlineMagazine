@@ -16,5 +16,17 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form AddPromoForm = new Form();
+            AddPromoForm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            GhostMainForm form = new GhostMainForm();
+            form.ShowDialog();
+        }
     }
 }

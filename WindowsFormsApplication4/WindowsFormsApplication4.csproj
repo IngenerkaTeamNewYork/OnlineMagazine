@@ -50,6 +50,25 @@
     <Compile Include="AddPromoForm.Designer.cs">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Author.cs" />
+    <Compile Include="Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_come_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_come_in.Designer.cs">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +92,15 @@
     <Compile Include="Statiya.cs" />
     <EmbeddedResource Include="AddPromoForm.resx">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_come_in.resx">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
