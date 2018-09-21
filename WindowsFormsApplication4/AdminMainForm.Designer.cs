@@ -51,7 +51,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,6 +62,7 @@
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -169,6 +172,7 @@
             this.button7.TabIndex = 0;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel5
             // 
@@ -264,27 +268,46 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(209, 110);
+            this.pictureBox2.Location = new System.Drawing.Point(228, 110);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(254, 372);
+            this.pictureBox2.Size = new System.Drawing.Size(235, 372);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.button9);
+            this.panel8.Location = new System.Drawing.Point(470, 276);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(188, 100);
+            this.panel8.TabIndex = 9;
+            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(16, 491);
+            this.button9.Location = new System.Drawing.Point(16, 57);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(187, 23);
-            this.button9.TabIndex = 9;
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 0;
             this.button9.Text = "Пасть к низшим";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Категории";
             // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 526);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button8);
@@ -312,8 +335,9 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -341,6 +365,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button9;
     }
 }
