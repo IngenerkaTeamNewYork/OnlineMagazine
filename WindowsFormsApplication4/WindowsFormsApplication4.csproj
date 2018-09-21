@@ -50,6 +50,12 @@
     <Compile Include="AddPromoForm.Designer.cs">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="New_stati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_stati.Designer.cs">
+      <DependentUpon>New_stati.cs</DependentUpon>
+    </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spisok_reklamy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spisok_reklamy.Designer.cs">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Statiya.cs" />
     <Compile Include="StatiyaForm1.cs">
       <SubType>Form</SubType>
@@ -79,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="AddPromoForm.resx">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_stati.resx">
+      <DependentUpon>New_stati.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
@@ -97,7 +112,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Spisok_reklamy.resx">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatiyaForm1.resx">
       <DependentUpon>StatiyaForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +132,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f2461febd800e955cf168a126f7c8021_XL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1488399690.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1111.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
