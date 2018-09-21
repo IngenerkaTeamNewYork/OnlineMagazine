@@ -90,7 +90,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WindowsFormsApplication4.Properties.Resources._1488399690;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(94, 100);
@@ -159,7 +158,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApplication4.Properties.Resources.f2461febd800e955cf168a126f7c8021_XL;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(94, 100);

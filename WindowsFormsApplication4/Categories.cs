@@ -16,7 +16,8 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
         }
-        public static List<String> Categories = new List<string>(new string [] { });
+
+        public static List<String> CategoriesList = new List<string>(new string [] { });
         public string text;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,7 +27,7 @@ namespace WindowsFormsApplication4
             newlabel.Text = "dfgdfg";
             this.Controls.Add(newlabel);
 
-            Categories.Add(text);
+            CategoriesList.Add(text);
         }
     }
 }

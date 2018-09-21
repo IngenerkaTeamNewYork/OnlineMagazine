@@ -19,8 +19,8 @@ namespace WindowsFormsApplication4
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form AddPromoForm = new Form();
-            AddPromoForm.ShowDialog();
+            Spisok_reklamy sps = new Spisok_reklamy();
+            sps.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)

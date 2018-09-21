@@ -285,9 +285,10 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.PictureBox Image1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.RadioButton radioButton1;        
     }
 }
 
