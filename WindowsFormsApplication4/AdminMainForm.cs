@@ -25,8 +25,22 @@ namespace WindowsFormsApplication4
 
         private void button7_Click(object sender, EventArgs e)
         {
-            GhostMainForm form = new GhostMainForm();
-            form.ShowDialog();
+            //GhostMainForm form = new GhostMainForm();
+            //form.ShowDialog();
+            Spisok_reklamy d = new Spisok_reklamy();
+            d.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            GhostMainForm dd = new GhostMainForm();
+            dd.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            New_stati fgf = new New_stati();
+            fgf.ShowDialog();
         }
     }
 }

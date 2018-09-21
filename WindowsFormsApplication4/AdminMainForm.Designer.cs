@@ -85,7 +85,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(26, 48);
+            this.button1.Location = new System.Drawing.Point(13, 46);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -150,7 +150,7 @@
             // 
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.button7);
-            this.panel4.Location = new System.Drawing.Point(458, 414);
+            this.panel4.Location = new System.Drawing.Point(469, 333);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 100);
             this.panel4.TabIndex = 3;
@@ -178,7 +178,7 @@
             // 
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.button4);
-            this.panel5.Location = new System.Drawing.Point(244, 4);
+            this.panel5.Location = new System.Drawing.Point(240, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 4;
@@ -200,6 +200,7 @@
             this.button4.TabIndex = 0;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel6
             // 
@@ -233,7 +234,7 @@
             // 
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.button6);
-            this.panel7.Location = new System.Drawing.Point(469, 148);
+            this.panel7.Location = new System.Drawing.Point(469, 136);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 100);
             this.panel7.TabIndex = 6;
@@ -258,7 +259,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(16, 459);
+            this.button8.Location = new System.Drawing.Point(13, 459);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 7;
@@ -288,8 +289,9 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 0;
-            this.button9.Text = "button9";
+            this.button9.Text = "Пасть к низшим";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label8
             // 
@@ -306,6 +308,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 526);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.panel7);
@@ -335,7 +338,6 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion

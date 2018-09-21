@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -44,36 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+    
+  <ItemGroup>
     <Compile Include="AddPromoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPromoForm.Designer.cs">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Author.cs" />
-    <Compile Include="Categories.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Categories.Designer.cs">
-      <DependentUpon>Categories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="To_come_in.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="To_come_in.Designer.cs">
-      <DependentUpon>To_come_in.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GhostMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GhostMainForm.Designer.cs">
-      <DependentUpon>GhostMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminMainForm.cs">
       <SubType>Form</SubType>
@@ -81,29 +59,60 @@
     <Compile Include="AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Author.cs" />
     <Compile Include="AuthorMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AuthorMainForm.Designer.cs">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GhostMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GhostMainForm.Designer.cs">
+      <DependentUpon>GhostMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New_stati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_stati.Designer.cs">
+      <DependentUpon>New_stati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spisok_reklamy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Spisok_reklamy.Designer.cs">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statiya.cs" />
+    <Compile Include="StatiyaForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatiyaForm1.Designer.cs">
+      <DependentUpon>StatiyaForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_come_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_come_in.Designer.cs">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statiya.cs" />
     <EmbeddedResource Include="AddPromoForm.resx">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Categories.resx">
-      <DependentUpon>Categories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="To_come_in.resx">
-      <DependentUpon>To_come_in.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GhostMainForm.resx">
-      <DependentUpon>GhostMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
@@ -111,6 +120,27 @@
     <EmbeddedResource Include="AuthorMainForm.resx">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GhostMainForm.resx">
+      <DependentUpon>GhostMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_stati.resx">
+      <DependentUpon>New_stati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spisok_reklamy.resx">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatiyaForm1.resx">
+      <DependentUpon>StatiyaForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_come_in.resx">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </EmbeddedResource>    
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,6 +149,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,6 +163,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f2461febd800e955cf168a126f7c8021_XL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1488399690.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1111.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
