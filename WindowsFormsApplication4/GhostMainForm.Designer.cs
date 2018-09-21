@@ -45,7 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.Image = new System.Windows.Forms.PictureBox();
+            this.Image1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -176,7 +176,7 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.vScrollBar1);
-            this.panel3.Controls.Add(this.Image);
+            this.panel3.Controls.Add(this.Image1);
             this.panel3.Location = new System.Drawing.Point(245, 42);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(255, 534);
@@ -217,14 +217,14 @@
             this.vScrollBar1.TabIndex = 1;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
-            // Image
+            // Image1
             // 
-            this.Image.Location = new System.Drawing.Point(36, 62);
-            this.Image.Name = "Image";
-            this.Image.Size = new System.Drawing.Size(171, 208);
-            this.Image.TabIndex = 0;
-            this.Image.TabStop = false;
-            this.Image.Click += new System.EventHandler(this.image_Click);
+            this.Image1.Location = new System.Drawing.Point(36, 62);
+            this.Image1.Name = "Image1";
+            this.Image1.Size = new System.Drawing.Size(171, 208);
+            this.Image1.TabIndex = 0;
+            this.Image1.TabStop = false;
+            this.Image1.Click += new System.EventHandler(this.image_Click);
             // 
             // textBox1
             // 
@@ -256,10 +256,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Image1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -276,7 +275,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.PictureBox Image;
+        private System.Windows.Forms.PictureBox Image1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;

@@ -83,6 +83,12 @@
       <DependentUpon>Spisok_reklamy.cs</DependentUpon>
     </Compile>
     <Compile Include="Statiya.cs" />
+    <Compile Include="StatiyaForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatiyaForm1.Designer.cs">
+      <DependentUpon>StatiyaForm1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddPromoForm.resx">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Spisok_reklamy.resx">
       <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatiyaForm1.resx">
+      <DependentUpon>StatiyaForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
