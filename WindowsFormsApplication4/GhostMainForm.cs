@@ -36,12 +36,12 @@ namespace WindowsFormsApplication4
             Image1.Image = Image.FromFile("cat.jpg");
             //stat.kartinki_statii.Add(Image("cat.jpg"));
 
-            label4.Text = stat.name_statiya;
+            label_of_like.Text = stat.name_statiya;
             label5.Text = stat.text_statii;
-            label6.Text = stat.kategorita_statii;
+            label_of_name.Text = stat.kategorita_statii;
             
             
-            StatiyaForm1 OknoStatiya = new StatiyaForm1(label4.Text, label6.Text, label5.Text);
+            StatiyaForm1 OknoStatiya = new StatiyaForm1(label_of_like.Text, label_of_name.Text, label5.Text);
             OknoStatiya.ShowDialog();
         }
 

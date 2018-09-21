@@ -19,10 +19,11 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!checkBox1.Checked)
+            if(!checkBox_admin.Checked)
             {
                 GhostMainForm form = new GhostMainForm();
                 form.ShowDialog();
+               // GhostMainForm link_of_come.Visible = false;
             }
             else
             {

@@ -30,30 +30,31 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_author = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_users = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_all_users = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button_look_of_form = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_new_staty = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button_list_of_reklama = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button_list_of_mat = new System.Windows.Forms.Button();
+            this.button_statistika = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.button_return = new System.Windows.Forms.Button();
+            this.button_categories = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,7 +69,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button_return);
+            this.panel1.Controls.Add(this.button_author);
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 100);
@@ -83,19 +85,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Авторы";
             // 
-            // button1
+            // button_author
             // 
-            this.button1.Location = new System.Drawing.Point(13, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_author.Location = new System.Drawing.Point(13, 46);
+            this.button_author.Name = "button_author";
+            this.button_author.Size = new System.Drawing.Size(75, 23);
+            this.button_author.TabIndex = 0;
+            this.button_author.Text = "button_author";
+            this.button_author.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button_users);
             this.panel2.Location = new System.Drawing.Point(3, 136);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
@@ -110,19 +112,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Пользователи";
             // 
-            // button2
+            // button_users
             // 
-            this.button2.Location = new System.Drawing.Point(10, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_users.Location = new System.Drawing.Point(10, 63);
+            this.button_users.Name = "button_users";
+            this.button_users.Size = new System.Drawing.Size(75, 23);
+            this.button_users.TabIndex = 0;
+            this.button_users.Text = "button2";
+            this.button_users.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button_all_users);
             this.panel3.Location = new System.Drawing.Point(3, 333);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
@@ -137,20 +139,20 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Все пользователи";
             // 
-            // button3
+            // button_all_users
             // 
-            this.button3.Location = new System.Drawing.Point(10, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_all_users.Location = new System.Drawing.Point(10, 64);
+            this.button_all_users.Name = "button_all_users";
+            this.button_all_users.Size = new System.Drawing.Size(75, 23);
+            this.button_all_users.TabIndex = 0;
+            this.button_all_users.Text = "button3";
+            this.button_all_users.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.button7);
-            this.panel4.Location = new System.Drawing.Point(469, 333);
+            this.panel4.Controls.Add(this.button_look_of_form);
+            this.panel4.Location = new System.Drawing.Point(472, 357);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 100);
             this.panel4.TabIndex = 3;
@@ -164,20 +166,20 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Дизайн формы";
             // 
-            // button7
+            // button_look_of_form
             // 
-            this.button7.Location = new System.Drawing.Point(11, 63);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button_look_of_form.Location = new System.Drawing.Point(11, 63);
+            this.button_look_of_form.Name = "button_look_of_form";
+            this.button_look_of_form.Size = new System.Drawing.Size(75, 23);
+            this.button_look_of_form.TabIndex = 0;
+            this.button_look_of_form.Text = "button7";
+            this.button_look_of_form.UseVisualStyleBackColor = true;
+            this.button_look_of_form.Click += new System.EventHandler(this.button7_Click);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.button4);
+            this.panel5.Controls.Add(this.button_new_staty);
             this.panel5.Location = new System.Drawing.Point(240, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
@@ -192,20 +194,20 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Новые статьи";
             // 
-            // button4
+            // button_new_staty
             // 
-            this.button4.Location = new System.Drawing.Point(13, 47);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button_new_staty.Location = new System.Drawing.Point(13, 47);
+            this.button_new_staty.Name = "button_new_staty";
+            this.button_new_staty.Size = new System.Drawing.Size(75, 23);
+            this.button_new_staty.TabIndex = 0;
+            this.button_new_staty.Text = "button4";
+            this.button_new_staty.UseVisualStyleBackColor = true;
+            this.button_new_staty.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.button5);
+            this.panel6.Controls.Add(this.button_list_of_reklama);
             this.panel6.Location = new System.Drawing.Point(469, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 100);
@@ -220,20 +222,20 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Список рекламы";
             // 
-            // button5
+            // button_list_of_reklama
             // 
-            this.button5.Location = new System.Drawing.Point(14, 46);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button_list_of_reklama.Location = new System.Drawing.Point(14, 46);
+            this.button_list_of_reklama.Name = "button_list_of_reklama";
+            this.button_list_of_reklama.Size = new System.Drawing.Size(75, 23);
+            this.button_list_of_reklama.TabIndex = 0;
+            this.button_list_of_reklama.Text = "button5";
+            this.button_list_of_reklama.UseVisualStyleBackColor = true;
+            this.button_list_of_reklama.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.button6);
+            this.panel7.Controls.Add(this.button_list_of_mat);
             this.panel7.Location = new System.Drawing.Point(469, 136);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 100);
@@ -248,23 +250,23 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Список мата";
             // 
-            // button6
+            // button_list_of_mat
             // 
-            this.button6.Location = new System.Drawing.Point(14, 51);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button_list_of_mat.Location = new System.Drawing.Point(14, 51);
+            this.button_list_of_mat.Name = "button_list_of_mat";
+            this.button_list_of_mat.Size = new System.Drawing.Size(75, 23);
+            this.button_list_of_mat.TabIndex = 0;
+            this.button_list_of_mat.Text = "button6";
+            this.button_list_of_mat.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // button_statistika
             // 
-            this.button8.Location = new System.Drawing.Point(13, 459);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Статистика";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button_statistika.Location = new System.Drawing.Point(13, 459);
+            this.button_statistika.Name = "button_statistika";
+            this.button_statistika.Size = new System.Drawing.Size(75, 23);
+            this.button_statistika.TabIndex = 7;
+            this.button_statistika.Text = "Статистика";
+            this.button_statistika.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -276,22 +278,12 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.button_categories);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.button9);
-            this.panel8.Location = new System.Drawing.Point(470, 276);
+            this.panel8.Location = new System.Drawing.Point(472, 251);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(188, 100);
             this.panel8.TabIndex = 9;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(16, 57);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Пасть к низшим";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label8
             // 
@@ -302,15 +294,34 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Категории";
             // 
+            // button_return
+            // 
+            this.button_return.Location = new System.Drawing.Point(15, 74);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(114, 23);
+            this.button_return.TabIndex = 0;
+            this.button_return.Text = "Пасть к низшим";
+            this.button_return.UseVisualStyleBackColor = true;
+            this.button_return.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button_categories
+            // 
+            this.button_categories.Location = new System.Drawing.Point(16, 57);
+            this.button_categories.Name = "button_categories";
+            this.button_categories.Size = new System.Drawing.Size(75, 23);
+            this.button_categories.TabIndex = 2;
+            this.button_categories.Text = "button10";
+            this.button_categories.UseVisualStyleBackColor = true;
+            this.button_categories.Click += new System.EventHandler(this.button10_Click);
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 526);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button_statistika);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -338,35 +349,37 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_author;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_users;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_all_users;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button_look_of_form;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button_new_staty;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button_list_of_reklama;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button_list_of_mat;
+        private System.Windows.Forms.Button button_statistika;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button_return;
+        private System.Windows.Forms.Button button_categories;
     }
 }
