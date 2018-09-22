@@ -16,7 +16,7 @@ namespace WindowsFormsApplication4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminMainForm());
+            Application.Run(new GhostMainForm());
         }
     }
 }

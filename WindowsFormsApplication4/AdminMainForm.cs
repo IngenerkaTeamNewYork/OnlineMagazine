@@ -42,5 +42,11 @@ namespace WindowsFormsApplication4
             New_stati fgf = new New_stati();
             fgf.ShowDialog();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            CategoriesForm form = new CategoriesForm();
+            form.ShowDialog();
+        }
     }
 }

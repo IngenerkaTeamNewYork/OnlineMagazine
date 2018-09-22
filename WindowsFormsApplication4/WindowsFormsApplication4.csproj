@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,7 +43,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-    
   <ItemGroup>
     <Compile Include="AddPromoForm.cs">
       <SubType>Form</SubType>
@@ -64,11 +63,11 @@
     <Compile Include="AuthorMainForm.Designer.cs">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Categories.cs">
+    <Compile Include="CategoriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Categories.Designer.cs">
-      <DependentUpon>Categories.cs</DependentUpon>
+    <Compile Include="CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
@@ -118,8 +117,8 @@
     <EmbeddedResource Include="AuthorMainForm.resx">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Categories.resx">
-      <DependentUpon>Categories.cs</DependentUpon>
+    <EmbeddedResource Include="CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
@@ -138,7 +137,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="To_come_in.resx">
       <DependentUpon>To_come_in.cs</DependentUpon>
-    </EmbeddedResource>    
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

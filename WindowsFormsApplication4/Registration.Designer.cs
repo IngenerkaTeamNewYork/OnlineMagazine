@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox_login = new System.Windows.Forms.TextBox();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.textBox_about_me = new System.Windows.Forms.TextBox();
+            this.checkBox_I_author = new System.Windows.Forms.CheckBox();
+            this.checkBox_agree = new System.Windows.Forms.CheckBox();
+            this.label_login = new System.Windows.Forms.Label();
+            this.label_password = new System.Windows.Forms.Label();
+            this.label_me = new System.Windows.Forms.Label();
+            this.button_come = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,102 +51,102 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox1
+            // textBox_login
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox_login.Location = new System.Drawing.Point(172, 26);
+            this.textBox_login.Name = "textBox_login";
+            this.textBox_login.Size = new System.Drawing.Size(100, 20);
+            this.textBox_login.TabIndex = 1;
             // 
-            // textBox2
+            // textBox_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(172, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBox_password.Location = new System.Drawing.Point(172, 60);
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(100, 20);
+            this.textBox_password.TabIndex = 2;
             // 
-            // textBox3
+            // textBox_about_me
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 123);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 52);
-            this.textBox3.TabIndex = 3;
+            this.textBox_about_me.Location = new System.Drawing.Point(12, 123);
+            this.textBox_about_me.Multiline = true;
+            this.textBox_about_me.Name = "textBox_about_me";
+            this.textBox_about_me.Size = new System.Drawing.Size(248, 52);
+            this.textBox_about_me.TabIndex = 3;
             // 
-            // checkBox1
+            // checkBox_I_author
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 181);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(66, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Я автор";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox_I_author.AutoSize = true;
+            this.checkBox_I_author.Location = new System.Drawing.Point(13, 181);
+            this.checkBox_I_author.Name = "checkBox_I_author";
+            this.checkBox_I_author.Size = new System.Drawing.Size(66, 17);
+            this.checkBox_I_author.TabIndex = 4;
+            this.checkBox_I_author.Text = "Я автор";
+            this.checkBox_I_author.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBox_agree
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(109, 181);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(157, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Я соглашаюсь блаблабла";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox_agree.AutoSize = true;
+            this.checkBox_agree.Location = new System.Drawing.Point(109, 181);
+            this.checkBox_agree.Name = "checkBox_agree";
+            this.checkBox_agree.Size = new System.Drawing.Size(157, 17);
+            this.checkBox_agree.TabIndex = 5;
+            this.checkBox_agree.Text = "Я соглашаюсь блаблабла";
+            this.checkBox_agree.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label_login
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Логин";
+            this.label_login.AutoSize = true;
+            this.label_login.Location = new System.Drawing.Point(131, 33);
+            this.label_login.Name = "label_login";
+            this.label_login.Size = new System.Drawing.Size(38, 13);
+            this.label_login.TabIndex = 6;
+            this.label_login.Text = "Логин";
             // 
-            // label2
+            // label_password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Пароль";
+            this.label_password.AutoSize = true;
+            this.label_password.Location = new System.Drawing.Point(124, 63);
+            this.label_password.Name = "label_password";
+            this.label_password.Size = new System.Drawing.Size(45, 13);
+            this.label_password.TabIndex = 7;
+            this.label_password.Text = "Пароль";
             // 
-            // label3
+            // label_me
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "О себе";
+            this.label_me.AutoSize = true;
+            this.label_me.Location = new System.Drawing.Point(13, 97);
+            this.label_me.Name = "label_me";
+            this.label_me.Size = new System.Drawing.Size(42, 13);
+            this.label_me.TabIndex = 8;
+            this.label_me.Text = "О себе";
             // 
-            // button1
+            // button_come
             // 
-            this.button1.Location = new System.Drawing.Point(16, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_come.Location = new System.Drawing.Point(16, 204);
+            this.button_come.Name = "button_come";
+            this.button_come.Size = new System.Drawing.Size(244, 23);
+            this.button_come.TabIndex = 9;
+            this.button_come.Text = "Зарегистрироваться";
+            this.button_come.UseVisualStyleBackColor = true;
+            this.button_come.Click += new System.EventHandler(this.button1_Click);
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 240);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button_come);
+            this.Controls.Add(this.label_me);
+            this.Controls.Add(this.label_password);
+            this.Controls.Add(this.label_login);
+            this.Controls.Add(this.checkBox_agree);
+            this.Controls.Add(this.checkBox_I_author);
+            this.Controls.Add(this.textBox_about_me);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_login);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Registration";
-            this.Text = "Form1";
+            this.Text = "Registration";
             this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -157,14 +157,14 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox_login;
+        private System.Windows.Forms.TextBox textBox_password;
+        private System.Windows.Forms.TextBox textBox_about_me;
+        private System.Windows.Forms.CheckBox checkBox_I_author;
+        private System.Windows.Forms.CheckBox checkBox_agree;
+        private System.Windows.Forms.Label label_login;
+        private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.Label label_me;
+        private System.Windows.Forms.Button button_come;
     }
 }
