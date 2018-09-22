@@ -42,11 +42,11 @@ namespace WindowsFormsApplication4
             this.label_author = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_of_like = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label_of_name = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.Image1 = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
+            this.articleTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
@@ -175,8 +175,8 @@ namespace WindowsFormsApplication4
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.articleTextBox);
             this.panel3.Controls.Add(this.label_of_like);
-            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label_of_name);
             this.panel3.Controls.Add(this.vScrollBar1);
             this.panel3.Controls.Add(this.Image1);
@@ -193,15 +193,6 @@ namespace WindowsFormsApplication4
             this.label_of_like.Size = new System.Drawing.Size(38, 13);
             this.label_of_like.TabIndex = 2;
             this.label_of_like.Text = "Класс";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(95, 307);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "label5";
             // 
             // label_of_name
             // 
@@ -236,6 +227,18 @@ namespace WindowsFormsApplication4
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
+            // 
+            // articleTextBox
+            // 
+            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.articleTextBox.Enabled = false;
+            this.articleTextBox.Location = new System.Drawing.Point(36, 290);
+            this.articleTextBox.Multiline = true;
+            this.articleTextBox.Name = "articleTextBox";
+            this.articleTextBox.Size = new System.Drawing.Size(171, 113);
+            this.articleTextBox.TabIndex = 5;
+            this.articleTextBox.Visible = false;
+            this.articleTextBox.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
             // 
             // GhostMainForm
             // 
@@ -274,7 +277,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Label popular;
         private System.Windows.Forms.Label label_author;
         private System.Windows.Forms.Label label_of_like;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_of_name;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -286,6 +288,7 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.RadioButton radioButton1;
         public System.Windows.Forms.LinkLabel link_of_registration;
         public System.Windows.Forms.LinkLabel link_of_come;
+        protected System.Windows.Forms.TextBox articleTextBox;
     }
 }
 

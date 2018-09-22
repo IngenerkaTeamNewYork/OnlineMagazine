@@ -12,18 +12,17 @@ namespace WindowsFormsApplication4
 {
     public partial class StatiyaForm1 : Form
     {
-        public StatiyaForm1(String maintext, String kategoriatext, String stattext)
+        public StatiyaForm1(statiya stat)
         {
             InitializeComponent();
-
             
-            Maintext.Text = maintext;
+            Maintext.Text = stat.name_statiya;
            
-            Kategoriatext.Text = kategoriatext;
-           
-            Stattext.Text = stattext;
+            Kategoriatext.Text = stat.kategorita_statii;
 
+            Stattext.Text = stat.text_statii;
 
+            pictureBox1.Image = stat.kartinki_statii[0];
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
@@ -39,6 +38,16 @@ namespace WindowsFormsApplication4
         private void ImageMain_Click(object sender, EventArgs e)
         {
             
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stattext_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
