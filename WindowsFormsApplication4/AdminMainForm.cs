@@ -25,8 +25,6 @@ namespace WindowsFormsApplication4
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //GhostMainForm form = new GhostMainForm();
-            //form.ShowDialog();
             Spisok_reklamy d = new Spisok_reklamy();
             d.ShowDialog();
         }
@@ -47,6 +45,18 @@ namespace WindowsFormsApplication4
         {
             CategoriesForm form = new CategoriesForm();
             form.ShowDialog();
+        }
+
+        private void button_author_Click(object sender, EventArgs e)
+        {
+            FBIform form = new FBIform();
+            form.ShowDialog();
+        }
+
+        private void button_statistika_Click(object sender, EventArgs e)
+        {
+            StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
+            form1.ShowDialog();
         }
     }
 }

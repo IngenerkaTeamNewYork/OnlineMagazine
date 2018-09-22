@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_return = new System.Windows.Forms.Button();
             this.button_author = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,9 +53,8 @@
             this.button_statistika = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button_return = new System.Windows.Forms.Button();
             this.button_categories = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -85,6 +85,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Авторы";
             // 
+            // button_return
+            // 
+            this.button_return.Location = new System.Drawing.Point(15, 74);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(114, 23);
+            this.button_return.TabIndex = 0;
+            this.button_return.Text = "Пасть к низшим";
+            this.button_return.UseVisualStyleBackColor = true;
+            this.button_return.Click += new System.EventHandler(this.button9_Click);
+            // 
             // button_author
             // 
             this.button_author.Location = new System.Drawing.Point(13, 46);
@@ -93,6 +103,7 @@
             this.button_author.TabIndex = 0;
             this.button_author.Text = "button_author";
             this.button_author.UseVisualStyleBackColor = true;
+            this.button_author.Click += new System.EventHandler(this.button_author_Click);
             // 
             // panel2
             // 
@@ -118,7 +129,7 @@
             this.button_users.Name = "button_users";
             this.button_users.Size = new System.Drawing.Size(75, 23);
             this.button_users.TabIndex = 0;
-            this.button_users.Text = "button2";
+            this.button_users.Text = "Смотреть";
             this.button_users.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -145,7 +156,7 @@
             this.button_all_users.Name = "button_all_users";
             this.button_all_users.Size = new System.Drawing.Size(75, 23);
             this.button_all_users.TabIndex = 0;
-            this.button_all_users.Text = "button3";
+            this.button_all_users.Text = "Смотреть";
             this.button_all_users.UseVisualStyleBackColor = true;
             // 
             // panel4
@@ -172,7 +183,7 @@
             this.button_look_of_form.Name = "button_look_of_form";
             this.button_look_of_form.Size = new System.Drawing.Size(75, 23);
             this.button_look_of_form.TabIndex = 0;
-            this.button_look_of_form.Text = "button7";
+            this.button_look_of_form.Text = "Изменить";
             this.button_look_of_form.UseVisualStyleBackColor = true;
             this.button_look_of_form.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -200,7 +211,7 @@
             this.button_new_staty.Name = "button_new_staty";
             this.button_new_staty.Size = new System.Drawing.Size(75, 23);
             this.button_new_staty.TabIndex = 0;
-            this.button_new_staty.Text = "button4";
+            this.button_new_staty.Text = "смотреть";
             this.button_new_staty.UseVisualStyleBackColor = true;
             this.button_new_staty.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -228,7 +239,7 @@
             this.button_list_of_reklama.Name = "button_list_of_reklama";
             this.button_list_of_reklama.Size = new System.Drawing.Size(75, 23);
             this.button_list_of_reklama.TabIndex = 0;
-            this.button_list_of_reklama.Text = "button5";
+            this.button_list_of_reklama.Text = "Смотреть";
             this.button_list_of_reklama.UseVisualStyleBackColor = true;
             this.button_list_of_reklama.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -256,7 +267,7 @@
             this.button_list_of_mat.Name = "button_list_of_mat";
             this.button_list_of_mat.Size = new System.Drawing.Size(75, 23);
             this.button_list_of_mat.TabIndex = 0;
-            this.button_list_of_mat.Text = "button6";
+            this.button_list_of_mat.Text = "Смотреть";
             this.button_list_of_mat.UseVisualStyleBackColor = true;
             // 
             // button_statistika
@@ -267,6 +278,7 @@
             this.button_statistika.TabIndex = 7;
             this.button_statistika.Text = "Статистика";
             this.button_statistika.UseVisualStyleBackColor = true;
+            this.button_statistika.Click += new System.EventHandler(this.button_statistika_Click);
             // 
             // pictureBox2
             // 
@@ -285,6 +297,16 @@
             this.panel8.Size = new System.Drawing.Size(188, 100);
             this.panel8.TabIndex = 9;
             // 
+            // button_categories
+            // 
+            this.button_categories.Location = new System.Drawing.Point(16, 57);
+            this.button_categories.Name = "button_categories";
+            this.button_categories.Size = new System.Drawing.Size(75, 23);
+            this.button_categories.TabIndex = 2;
+            this.button_categories.Text = "Смотреть";
+            this.button_categories.UseVisualStyleBackColor = true;
+            this.button_categories.Click += new System.EventHandler(this.button10_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -293,26 +315,6 @@
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "Категории";
-            // 
-            // button_return
-            // 
-            this.button_return.Location = new System.Drawing.Point(15, 74);
-            this.button_return.Name = "button_return";
-            this.button_return.Size = new System.Drawing.Size(114, 23);
-            this.button_return.TabIndex = 0;
-            this.button_return.Text = "Пасть к низшим";
-            this.button_return.UseVisualStyleBackColor = true;
-            this.button_return.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button_categories
-            // 
-            this.button_categories.Location = new System.Drawing.Point(16, 57);
-            this.button_categories.Name = "button_categories";
-            this.button_categories.Size = new System.Drawing.Size(75, 23);
-            this.button_categories.TabIndex = 2;
-            this.button_categories.Text = "button10";
-            this.button_categories.UseVisualStyleBackColor = true;
-            this.button_categories.Click += new System.EventHandler(this.button10_Click);
             // 
             // AdminMainForm
             // 

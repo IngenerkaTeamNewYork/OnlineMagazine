@@ -12,9 +12,34 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
+        public static List<AuthorStat> stat = new List<AuthorStat>();
+
         public GhostMainForm()
         {
             InitializeComponent();
+
+
+
+            AuthorStat newAuthor = new AuthorStat();
+            newAuthor.name = "1";
+            newAuthor.Views = 58;
+            newAuthor.Likes = 15;
+            newAuthor.DisLikes = 2;
+            stat.Add(newAuthor);
+
+            AuthorStat newAuthor2 = new AuthorStat();
+            newAuthor2.name = "2";
+            newAuthor2.Views = 46;
+            newAuthor2.Likes = 95;
+            newAuthor2.DisLikes = 4;
+            stat.Add(newAuthor2);
+
+            AuthorStat newAuthor3 = new AuthorStat();
+            newAuthor3.name = "3";
+            newAuthor3.Views = 984;
+            newAuthor3.Likes = 65;
+            newAuthor3.DisLikes = 14;
+            stat.Add(newAuthor3);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -55,6 +80,18 @@ namespace WindowsFormsApplication4
         {
             To_come_in form = new To_come_in();
             form.ShowDialog();
+        }
+
+        private void label_author_Click(object sender, EventArgs e)
+        {
+            StastisticsForm form1 = new StastisticsForm(stat[0]);
+            form1.ShowDialog();
+        }
+
+        private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CategoriesForm form3 =new CategoriesForm();
+            form3.ShowDialog();
         }
     }
 }
