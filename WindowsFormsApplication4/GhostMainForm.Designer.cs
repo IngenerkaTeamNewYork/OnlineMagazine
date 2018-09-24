@@ -65,6 +65,7 @@ namespace WindowsFormsApplication4
             this.categories_linklabel.TabIndex = 4;
             this.categories_linklabel.TabStop = true;
             this.categories_linklabel.Text = "Категории";
+            this.categories_linklabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.categories_linklabel_LinkClicked);
             // 
             // butto_search
             // 
@@ -172,6 +173,7 @@ namespace WindowsFormsApplication4
             this.label_author.Size = new System.Drawing.Size(45, 13);
             this.label_author.TabIndex = 2;
             this.label_author.Text = "Авторы";
+            this.label_author.Click += new System.EventHandler(this.label_author_Click);
             // 
             // panel3
             // 
