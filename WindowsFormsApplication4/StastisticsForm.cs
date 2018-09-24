@@ -7,18 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
 {
+
     public partial class StastisticsForm : Form
     {
-        public StastisticsForm(int Views, int Likes, int DisLikes, int PageAmount=-1)
+
+        public StastisticsForm(AuthorStat stata)
         {
             InitializeComponent();
 
-            ViewsCount.Text = Views.ToString();
-            LikesCount.Text = Likes.ToString();
-            DisLikesCount.Text = DisLikes.ToString();
+
+
         }
+
+        private void StastisticsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void list_of_author_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ViewsCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].Views.ToString();
+            LikesCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].Likes.ToString();
+            DisLikesCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].DisLikes.ToString();
+            name.Text = GhostMainForm.stat[list_of_author.SelectedIndex].name.ToString();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
+
+
+
+       
     }
 }
