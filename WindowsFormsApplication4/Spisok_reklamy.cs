@@ -12,9 +12,10 @@ namespace WindowsFormsApplication4
 {
     public partial class Spisok_reklamy : Form
     {
-        public Spisok_reklamy(List<reklama> mnogo_reklamy)
+        public Spisok_reklamy(List<Reklama> mnogo_reklamy)
         {
             InitializeComponent();
+
             if (mnogo_reklamy.Count > 0)
             {
                 label2.Text = mnogo_reklamy[0].text;
@@ -28,7 +29,6 @@ namespace WindowsFormsApplication4
             {
                 button2.Visible = false;
             }
-
             if (mnogo_reklamy[1].dateFrom <= DateTime.Now)
             {
                 button3.Visible = false;

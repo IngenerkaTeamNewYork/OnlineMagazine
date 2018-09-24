@@ -211,7 +211,6 @@ namespace WindowsFormsApplication4
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(17, 524);
             this.vScrollBar1.TabIndex = 1;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // Image1
             // 
@@ -240,7 +239,6 @@ namespace WindowsFormsApplication4
             this.articleTextBox.Size = new System.Drawing.Size(171, 113);
             this.articleTextBox.TabIndex = 5;
             this.articleTextBox.Visible = false;
-            this.articleTextBox.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
             // 
             // GhostMainForm
             // 

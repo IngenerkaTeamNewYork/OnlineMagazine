@@ -69,6 +69,12 @@
     <Compile Include="CategoriesForm.Designer.cs">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBIform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBIform.Designer.cs">
+      <DependentUpon>FBIform.cs</DependentUpon>
+    </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="Spisok_reklamy.Designer.cs">
       <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StastisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StastisticsForm.Designer.cs">
+      <DependentUpon>StastisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Statiya.cs" />
     <Compile Include="StatiyaForm1.cs">
@@ -120,6 +132,9 @@
     <EmbeddedResource Include="CategoriesForm.resx">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FBIform.resx">
+      <DependentUpon>FBIform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Spisok_reklamy.resx">
       <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StastisticsForm.resx">
+      <DependentUpon>StastisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatiyaForm1.resx">
       <DependentUpon>StatiyaForm1.cs</DependentUpon>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
 {
-    public struct reklama
+    public struct Reklama
     {
         public DateTime dateFrom; 
         public string text;
@@ -18,16 +18,17 @@ namespace WindowsFormsApplication4
 
     public partial class AdminMainForm : Form
     {
-        public List<reklama> mnogo_reklamy = new List<reklama>();
+        public List<Reklama> mnogo_reklamy = new List<Reklama>();
 
         public AdminMainForm()
         {
             InitializeComponent();
-            reklama rek = new reklama();
+
+            Reklama rek = new Reklama();
             rek.text = "Все козлы. Купите деньги";
             rek.dateFrom = new DateTime(2018, 9, 6);
             mnogo_reklamy.Add(rek);
-            reklama rek2 = new reklama();
+            Reklama rek2 = new Reklama();
             rek2.text = "Не все козлы. Но деньги купите";
             rek2.dateFrom = new DateTime(2018, 9, 23);
             mnogo_reklamy.Add(rek2);

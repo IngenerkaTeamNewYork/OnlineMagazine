@@ -44,20 +44,10 @@ namespace WindowsFormsApplication4
 
         private void Form1_Load(object sender, EventArgs e)
         {
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
-        }
-        private void articleTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void image_Click(object sender, EventArgs e)
         {
-
             Image1.Image = Image.FromFile("cat.jpg");
             label_of_like.Text = "Котята и вода";
             articleTextBox.Text = "Я топлю котят(Хой!)" +

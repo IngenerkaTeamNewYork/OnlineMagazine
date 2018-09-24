@@ -8,7 +8,8 @@ using System.Windows.Forms;
 
 
 namespace WindowsFormsApplication4
-{    public struct AuthorStat
+{
+    public struct AuthorStat
     {
         public string name;
         public int Views;
