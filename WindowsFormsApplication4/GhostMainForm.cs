@@ -25,23 +25,32 @@ namespace WindowsFormsApplication4
         {
 
         }
+        private void articleTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void image_Click(object sender, EventArgs e)
         {
-            statiya stat = new statiya();
-            stat.name_statiya = "Котята и вода";
-            stat.text_statii = "Я топлю котят(Хой!)";
-            stat.kategorita_statii = "Животные";
-            stat.kartinki_statii = new List<Image>();
-            Image1.Image = Image.FromFile("cat.jpg");
-            //stat.kartinki_statii.Add(Image("cat.jpg"));
 
-            label_of_like.Text = stat.name_statiya;
-            label5.Text = stat.text_statii;
-            label_of_name.Text = stat.kategorita_statii;
+            Image1.Image = Image.FromFile("cat.jpg");
+            label_of_like.Text = "Котята и вода";
+            articleTextBox.Text = "Я топлю котят(Хой!)" +
+                Environment.NewLine + "Колхозный панк" +
+                Environment.NewLine + "Панки - хой!";
+            label_of_name.Text = "Животные";
+         
+
             
-            
-            StatiyaForm1 OknoStatiya = new StatiyaForm1(label_of_like.Text, label_of_name.Text, label5.Text);
+            statiya stat = new statiya();
+            stat.name_statiya = label_of_like.Text;
+            stat.text_statii = articleTextBox.Text;
+            stat.kategorita_statii = label_of_name.Text;
+            stat.kartinki_statii = new List<Image>();
+            stat.kartinki_statii.Add(Image1.Image);
+
+
+            StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
             OknoStatiya.ShowDialog();
         }
 
@@ -56,5 +65,7 @@ namespace WindowsFormsApplication4
             To_come_in form = new To_come_in();
             form.ShowDialog();
         }
+
+
     }
 }
