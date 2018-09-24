@@ -10,16 +10,33 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
 {
+    public struct reklama
+    {
+        public DateTime dateFrom; 
+        public string text;
+    }
+
     public partial class AdminMainForm : Form
     {
+
+        public List<reklama> mnogo_reklamy = new List<reklama>();
+
         public AdminMainForm()
         {
             InitializeComponent();
+            reklama rek = new reklama();
+            rek.text = "Все козлы. Купите деньги";
+            rek.dateFrom = new DateTime(2018, 9, 6);
+            mnogo_reklamy.Add(rek);
+            reklama rek2 = new reklama();
+            rek2.text = "Не все козлы. Но деньги купите";
+            rek2.dateFrom = new DateTime(2018, 9, 23);
+            mnogo_reklamy.Add(rek2);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Spisok_reklamy sps = new Spisok_reklamy();
+            Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
             sps.ShowDialog();
         }
 
@@ -27,8 +44,8 @@ namespace WindowsFormsApplication4
         {
             //GhostMainForm form = new GhostMainForm();
             //form.ShowDialog();
-            Spisok_reklamy d = new Spisok_reklamy();
-            d.ShowDialog();
+           // Spisok_reklamy d = new Spisok_reklamy("gryzha");
+            //d.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
