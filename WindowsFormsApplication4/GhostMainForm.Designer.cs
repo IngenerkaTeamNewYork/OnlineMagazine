@@ -41,12 +41,13 @@ namespace WindowsFormsApplication4
             this.popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.articleTextBox = new System.Windows.Forms.TextBox();
             this.label_of_like = new System.Windows.Forms.Label();
             this.label_of_name = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.Image1 = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.articleTextBox = new System.Windows.Forms.TextBox();
+            this.button_add = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
@@ -148,6 +149,7 @@ namespace WindowsFormsApplication4
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button_add);
             this.panel2.Controls.Add(this.categories_linklabel);
             this.panel2.Controls.Add(this.popular);
             this.panel2.Controls.Add(this.label_author);
@@ -186,6 +188,17 @@ namespace WindowsFormsApplication4
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(255, 534);
             this.panel3.TabIndex = 6;
+            // 
+            // articleTextBox
+            // 
+            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.articleTextBox.Enabled = false;
+            this.articleTextBox.Location = new System.Drawing.Point(36, 290);
+            this.articleTextBox.Multiline = true;
+            this.articleTextBox.Name = "articleTextBox";
+            this.articleTextBox.Size = new System.Drawing.Size(171, 113);
+            this.articleTextBox.TabIndex = 5;
+            this.articleTextBox.Visible = false;
             // 
             // label_of_like
             // 
@@ -229,16 +242,15 @@ namespace WindowsFormsApplication4
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             // 
-            // articleTextBox
+            // button_add
             // 
-            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.articleTextBox.Enabled = false;
-            this.articleTextBox.Location = new System.Drawing.Point(36, 290);
-            this.articleTextBox.Multiline = true;
-            this.articleTextBox.Name = "articleTextBox";
-            this.articleTextBox.Size = new System.Drawing.Size(171, 113);
-            this.articleTextBox.TabIndex = 5;
-            this.articleTextBox.Visible = false;
+            this.button_add.Location = new System.Drawing.Point(28, 475);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(150, 23);
+            this.button_add.TabIndex = 5;
+            this.button_add.Text = "Предложить рекламу";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // GhostMainForm
             // 
@@ -289,6 +301,7 @@ namespace WindowsFormsApplication4
         public System.Windows.Forms.LinkLabel link_of_registration;
         public System.Windows.Forms.LinkLabel link_of_come;
         protected System.Windows.Forms.TextBox articleTextBox;
+        private System.Windows.Forms.Button button_add;
     }
 }
 

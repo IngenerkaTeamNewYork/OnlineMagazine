@@ -92,5 +92,11 @@ namespace WindowsFormsApplication4
             CategoriesForm form3 =new CategoriesForm();
             form3.ShowDialog();
         }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            AdvertisingForm form = AdvertisingForm();
+            form.ShowDialog();
+        }
     }
 }
