@@ -32,10 +32,10 @@ namespace WindowsFormsApplication4
 
         private void list_of_author_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ViewsCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].Views.ToString();
-            LikesCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].Likes.ToString();
-            DisLikesCount.Text = GhostMainForm.stat[list_of_author.SelectedIndex].DisLikes.ToString();
-            name.Text = GhostMainForm.stat[list_of_author.SelectedIndex].name.ToString();
+            ViewsCount.Text = List_of_author.stat[list_of_author.SelectedIndex].Views.ToString();
+            LikesCount.Text = List_of_author.stat[list_of_author.SelectedIndex].Likes.ToString();
+            DisLikesCount.Text = List_of_author.stat[list_of_author.SelectedIndex].DisLikes.ToString();
+            name.Text = List_of_author.stat[list_of_author.SelectedIndex].name.ToString();
         }
 
         private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)

@@ -55,6 +55,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.button_categories = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_return);
             this.panel1.Controls.Add(this.button_author);
@@ -87,7 +89,7 @@
             // 
             // button_return
             // 
-            this.button_return.Location = new System.Drawing.Point(15, 74);
+            this.button_return.Location = new System.Drawing.Point(9, 77);
             this.button_return.Name = "button_return";
             this.button_return.Size = new System.Drawing.Size(114, 23);
             this.button_return.TabIndex = 0;
@@ -131,6 +133,7 @@
             this.button_users.TabIndex = 0;
             this.button_users.Text = "Смотреть";
             this.button_users.UseVisualStyleBackColor = true;
+            this.button_users.Click += new System.EventHandler(this.button_users_Click);
             // 
             // panel3
             // 
@@ -158,6 +161,7 @@
             this.button_all_users.TabIndex = 0;
             this.button_all_users.Text = "Смотреть";
             this.button_all_users.UseVisualStyleBackColor = true;
+            this.button_all_users.Click += new System.EventHandler(this.button_all_users_Click);
             // 
             // panel4
             // 
@@ -316,6 +320,15 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Категории";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,5 +396,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button_return;
         private System.Windows.Forms.Button button_categories;
+        private System.Windows.Forms.Button button1;
     }
 }

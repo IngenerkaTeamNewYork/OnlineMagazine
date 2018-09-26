@@ -72,8 +72,18 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
+            StastisticsForm form1 = new StastisticsForm(List_of_author.stat[0]);
             form1.ShowDialog();
+        }
+
+        private void button_users_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_all_users_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
