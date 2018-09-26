@@ -41,12 +41,12 @@ namespace WindowsFormsApplication4
             this.popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.articleTextBox = new System.Windows.Forms.TextBox();
             this.label_of_like = new System.Windows.Forms.Label();
             this.label_of_name = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.Image1 = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.articleTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
@@ -137,6 +137,7 @@ namespace WindowsFormsApplication4
             this.Реклама2.Size = new System.Drawing.Size(172, 174);
             this.Реклама2.TabIndex = 4;
             this.Реклама2.TabStop = false;
+            this.Реклама2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
             // Реклама
             // 
@@ -187,6 +188,18 @@ namespace WindowsFormsApplication4
             this.panel3.Size = new System.Drawing.Size(255, 534);
             this.panel3.TabIndex = 6;
             // 
+            // articleTextBox
+            // 
+            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.articleTextBox.Enabled = false;
+            this.articleTextBox.ForeColor = System.Drawing.Color.Black;
+            this.articleTextBox.Location = new System.Drawing.Point(36, 290);
+            this.articleTextBox.Multiline = true;
+            this.articleTextBox.Name = "articleTextBox";
+            this.articleTextBox.Size = new System.Drawing.Size(171, 157);
+            this.articleTextBox.TabIndex = 5;
+            this.articleTextBox.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
+            // 
             // label_of_like
             // 
             this.label_of_like.AutoSize = true;
@@ -228,17 +241,6 @@ namespace WindowsFormsApplication4
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
-            // 
-            // articleTextBox
-            // 
-            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.articleTextBox.Enabled = false;
-            this.articleTextBox.Location = new System.Drawing.Point(36, 290);
-            this.articleTextBox.Multiline = true;
-            this.articleTextBox.Name = "articleTextBox";
-            this.articleTextBox.Size = new System.Drawing.Size(171, 113);
-            this.articleTextBox.TabIndex = 5;
-            this.articleTextBox.Visible = false;
             // 
             // GhostMainForm
             // 
