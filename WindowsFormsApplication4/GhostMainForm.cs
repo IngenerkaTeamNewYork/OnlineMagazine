@@ -113,6 +113,12 @@ namespace WindowsFormsApplication4
             form3.ShowDialog();
         }
 
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            AdvertisingForm form = AdvertisingForm();
+            form.ShowDialog();
+        }
+
         private void articleTextBox_TextChanged(object sender, EventArgs e)
         {
 
