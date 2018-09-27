@@ -48,8 +48,11 @@ namespace WindowsFormsApplication4
 
         private void button9_Click(object sender, EventArgs e)
         {
-            GhostMainForm dd = new GhostMainForm();
-            dd.ShowDialog();
+            Form ifr = Application.OpenForms[0];
+            ifr.Left = this.Left;
+            ifr.Top = this.Top;
+            ifr.Show();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
