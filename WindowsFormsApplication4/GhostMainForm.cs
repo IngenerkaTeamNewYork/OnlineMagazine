@@ -12,7 +12,8 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
-       
+        public static List<AuthorStat> stat = new List<AuthorStat>();
+
         public GhostMainForm()
         {
             InitializeComponent();
@@ -76,7 +77,6 @@ namespace WindowsFormsApplication4
 
         private void label_author_Click(object sender, EventArgs e)
         {
-            List<AuthorStat> stat = new List<AuthorStat>();
             AuthorStat newAuthor = new AuthorStat();
             newAuthor.name = "1";
             newAuthor.Views = 58;
@@ -109,7 +109,7 @@ namespace WindowsFormsApplication4
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            AdvertisingForm form = AdvertisingForm();
+            AdvertisingForm form = new AdvertisingForm();
             form.ShowDialog();
         }
 

@@ -32,6 +32,10 @@ namespace WindowsFormsApplication4
             rek2.text = "Не все козлы. Но деньги купите";
             rek2.dateFrom = new DateTime(2018, 9, 23);
             mnogo_reklamy.Add(rek2);
+            Reklama rek3 = new Reklama();
+            rek3.text = "Не все козлы sdfsdf. Но деньги купите";
+            rek3.dateFrom = new DateTime(2018, 9, 23);
+            mnogo_reklamy.Add(rek3);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -84,11 +88,6 @@ namespace WindowsFormsApplication4
             form1.ShowDialog();
         }
 
-        private void button_users_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_all_users_Click(object sender, EventArgs e)
         {
         }
@@ -100,6 +99,20 @@ namespace WindowsFormsApplication4
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button_return_Click(object sender, EventArgs e)
+        {
+            AdminMainForm_FormClosed(null, null);
+        }
+
+        private void AdminMainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            Form ifr = Application.OpenForms[0];
+            ifr.Left = this.Left;
+            ifr.Top = this.Top;
+            ifr.Show();
         }
     }
 }

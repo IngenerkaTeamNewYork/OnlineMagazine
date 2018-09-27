@@ -15,23 +15,20 @@ namespace WindowsFormsApplication4
         public Spisok_reklamy(List<Reklama> mnogo_reklamy)
         {
             InitializeComponent();
+            
+            TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
+            mainTableLayoutPanel.ColumnCount = 3;
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            mainTableLayoutPanel.Dock = DockStyle.Fill;
+            mainTableLayoutPanel.RowStyles.Clear();
+
             int id = 0;
             foreach (Reklama i in mnogo_reklamy)
             {
-                TableLayoutPanel tableLayoutPanel10 = new TableLayoutPanel();
-                tableLayoutPanel10.ColumnCount = 3;
-                tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-                tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-                tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-                tableLayoutPanel10.Dock = DockStyle.Top;
-                tableLayoutPanel10.Location = new System.Drawing.Point(0, 128);
-                tableLayoutPanel10.Name = "tableLayoutPanel10";
-                tableLayoutPanel10.RowCount = 1;
-                tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-                tableLayoutPanel10.Size = new System.Drawing.Size(492, 128);
-
-                panel1.Controls.Add(tableLayoutPanel10);
-
+                mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+                
                 TableLayoutPanel tableLayoutPanel12 = new TableLayoutPanel();
                 tableLayoutPanel12.ColumnCount = 1;
                 tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -43,7 +40,7 @@ namespace WindowsFormsApplication4
                 tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
                 tableLayoutPanel12.Size = new System.Drawing.Size(144, 122);
 
-                tableLayoutPanel10.Controls.Add(tableLayoutPanel12, 2, 0);
+
 
                 Label label1 = new Label();
                 label1.Location = new Point(103, 0);
@@ -52,7 +49,6 @@ namespace WindowsFormsApplication4
                 label1.Size = new Size(250, 13);;
                 label1.Text = i.text;
 
-                tableLayoutPanel10.Controls.Add(label1, 1, 0);
 
                 PictureBox pictureBox1 = new PictureBox();
                 pictureBox1.Location = new System.Drawing.Point(3, 3);
@@ -60,7 +56,6 @@ namespace WindowsFormsApplication4
                 pictureBox1.Size = new System.Drawing.Size(94, 100);
                 pictureBox1.TabStop = false;
 
-                tableLayoutPanel10.Controls.Add(pictureBox1, 0, 0);
 
                 Button button1 = new Button();
                 button1.Location = new System.Drawing.Point(3, 3);
@@ -85,8 +80,15 @@ namespace WindowsFormsApplication4
                     tableLayoutPanel12.Controls.Add(button3, 0, 1);
                 }
 
+
+                mainTableLayoutPanel.Controls.Add(pictureBox1, 0, id);
+                mainTableLayoutPanel.Controls.Add(label1, 1, id);
+                mainTableLayoutPanel.Controls.Add(tableLayoutPanel12, 2, id);
+
                 id++;
             }
+
+            panel1.Controls.Add(mainTableLayoutPanel);
         }
 
         private void button3_Click(object sender, EventArgs e)
