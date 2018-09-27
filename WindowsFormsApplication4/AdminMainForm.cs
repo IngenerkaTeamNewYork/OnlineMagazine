@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +40,10 @@ namespace WindowsFormsApplication4
             sps.ShowDialog();
         }
 
+
+
+
+
         private void button7_Click(object sender, EventArgs e)
         {
             //Spisok_reklamy d = new Spisok_reklamy("gryzha");
@@ -54,6 +58,7 @@ namespace WindowsFormsApplication4
             ifr.Show();
             this.Close();
         }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -77,6 +82,24 @@ namespace WindowsFormsApplication4
         {
             StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
             form1.ShowDialog();
+        }
+
+        private void button_users_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_all_users_Click(object sender, EventArgs e)
+        {
+        }
+        private void button_categories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication4
 {
-    partial class Spisok_reklamy
+    partial class List_of_author
     {
         /// <summary>
         /// Required designer variable.
@@ -29,37 +29,39 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 555);
+            this.panel1.Size = new System.Drawing.Size(292, 270);
             this.panel1.TabIndex = 0;
             // 
-            // vScrollBar1
+            // button1
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(492, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(23, 555);
-            this.vScrollBar1.TabIndex = 0;
-            this.vScrollBar1.TabStop = true;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            this.button1.Location = new System.Drawing.Point(16, 235);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Статистика";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Spisok_reklamy
+            // List_of_author
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 555);
-            this.Controls.Add(this.vScrollBar1);
+            this.ClientSize = new System.Drawing.Size(292, 270);
             this.Controls.Add(this.panel1);
-            this.Name = "Spisok_reklamy";
-            this.Text = "Spisok_reklamy";
-            this.Load += new System.EventHandler(this.Spisok_reklamy_Load);
+            this.Name = "List_of_author";
+            this.Text = "Список авторов";
+            this.Load += new System.EventHandler(this.List_of_author_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -67,6 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Button button1;
     }
 }

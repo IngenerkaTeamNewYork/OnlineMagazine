@@ -75,6 +75,18 @@
     <Compile Include="FBIform.Designer.cs">
       <DependentUpon>FBIform.cs</DependentUpon>
     </Compile>
+    <Compile Include="List_of_author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List_of_author.Designer.cs">
+      <DependentUpon>List_of_author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReklamAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReklamAddForm.Designer.cs">
+      <DependentUpon>ReklamAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FBIform.resx">
       <DependentUpon>FBIform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List_of_author.resx">
+      <DependentUpon>List_of_author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReklamAddForm.resx">
+      <DependentUpon>ReklamAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
