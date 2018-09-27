@@ -75,5 +75,20 @@ namespace WindowsFormsApplication4
             StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
             form1.ShowDialog();
         }
+
+        private void button_list_of_mat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_categories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
