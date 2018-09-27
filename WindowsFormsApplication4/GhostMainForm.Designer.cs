@@ -138,6 +138,7 @@ namespace WindowsFormsApplication4
             this.Реклама2.Size = new System.Drawing.Size(172, 174);
             this.Реклама2.TabIndex = 4;
             this.Реклама2.TabStop = false;
+            this.Реклама2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
             // Реклама
             // 
@@ -193,12 +194,13 @@ namespace WindowsFormsApplication4
             // 
             this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.articleTextBox.Enabled = false;
+            this.articleTextBox.ForeColor = System.Drawing.Color.Black;
             this.articleTextBox.Location = new System.Drawing.Point(36, 290);
             this.articleTextBox.Multiline = true;
             this.articleTextBox.Name = "articleTextBox";
-            this.articleTextBox.Size = new System.Drawing.Size(171, 113);
+            this.articleTextBox.Size = new System.Drawing.Size(171, 157);
             this.articleTextBox.TabIndex = 5;
-            this.articleTextBox.Visible = false;
+            this.articleTextBox.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
             // 
             // label_of_like
             // 

@@ -40,14 +40,34 @@ namespace WindowsFormsApplication4
             newAuthor3.Likes = 65;
             newAuthor3.DisLikes = 14;
             stat.Add(newAuthor3);
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Image1.Image = Image.FromFile("cat.jpg");
+            label_of_like.Text = "Котята и вода";
+            articleTextBox.Text = "Я топлю котят(Хой!)" +
+                Environment.NewLine + "Колхозный панк" +
+                Environment.NewLine + "Панки - хой!";
+            label_of_name.Text = "Животные";
+
+
+
+            statiya stat = new statiya();
+            stat.name_statiya = label_of_like.Text;
+            stat.text_statii = articleTextBox.Text;
+            stat.kategorita_statii = label_of_name.Text;
+            stat.kartinki_statii = new List<Image>();
+            stat.kartinki_statii.Add(Image1.Image);
+
+
         }        
 
         private void image_Click(object sender, EventArgs e)
         {
+            
             Image1.Image = Image.FromFile("cat.jpg");
             label_of_like.Text = "Котята и вода";
             articleTextBox.Text = "Я топлю котят(Хой!)" +
@@ -97,6 +117,19 @@ namespace WindowsFormsApplication4
         {
             AdvertisingForm form = AdvertisingForm();
             form.ShowDialog();
+        }
+
+        private void articleTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Реклама2_Click(object sender, EventArgs e)
+        {
+            Label newLab = new Label();
+            newLab.Location = new Point(30, 500);
+            newLab.Text = "sdgdfg";
+            panel3.Controls.Add(newLab);
         }
     }
 }
