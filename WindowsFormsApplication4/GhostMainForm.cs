@@ -69,7 +69,9 @@ namespace WindowsFormsApplication4
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             To_come_in form = new To_come_in();
-            form.ShowDialog();
+            form.Left = this.Left;
+            form.Top = this.Top;
+            form.Show();
         }
 
         private void label_author_Click(object sender, EventArgs e)
