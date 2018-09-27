@@ -16,17 +16,29 @@ namespace WindowsFormsApplication4
         public GhostMainForm()
         {
             InitializeComponent();
-
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Image1.Image = Image.FromFile("cat.jpg");
+            label_of_like.Text = "Котята и вода";
+            articleTextBox.Text = "Я топлю котят(Хой!)" +
+                Environment.NewLine + "Колхозный панк" +
+                Environment.NewLine + "Панки - хой!";
+            label_of_name.Text = "Животные";
+
+
+
+            statiya stat = new statiya();
+            stat.name_statiya = label_of_like.Text;
+            stat.text_statii = articleTextBox.Text;
+            stat.kategorita_statii = label_of_name.Text;
+            stat.kartinki_statii = new List<Image>();
+            stat.kartinki_statii.Add(Image1.Image);
         }        
 
         private void image_Click(object sender, EventArgs e)
-        {
+        {            
             Image1.Image = Image.FromFile("cat.jpg");
             label_of_like.Text = "Котята и вода";
             articleTextBox.Text = "Я топлю котят(Хой!)" +
@@ -91,6 +103,25 @@ namespace WindowsFormsApplication4
         {
             CategoriesForm form3 =new CategoriesForm();
             form3.ShowDialog();
+        }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            AdvertisingForm form = AdvertisingForm();
+            form.ShowDialog();
+        }
+
+        private void articleTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Реклама2_Click(object sender, EventArgs e)
+        {
+            Label newLab = new Label();
+            newLab.Location = new Point(30, 500);
+            newLab.Text = "sdgdfg";
+            panel3.Controls.Add(newLab);
         }
     }
 }

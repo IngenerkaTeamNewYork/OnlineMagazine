@@ -83,6 +83,14 @@ namespace WindowsFormsApplication4
 
         private void button_all_users_Click(object sender, EventArgs e)
         {
+        }
+        private void button_categories_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
