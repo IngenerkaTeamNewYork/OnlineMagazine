@@ -61,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button_return);
             this.panel1.Controls.Add(this.button_author);
@@ -119,6 +120,7 @@
             this.button_users.TabIndex = 0;
             this.button_users.Text = "Пользователи";
             this.button_users.UseVisualStyleBackColor = true;
+            this.button_users.Click += new System.EventHandler(this.button_users_Click);
             // 
             // panel3
             // 
@@ -138,6 +140,7 @@
             this.button_all_users.TabIndex = 0;
             this.button_all_users.Text = "Все пользователи";
             this.button_all_users.UseVisualStyleBackColor = true;
+            this.button_all_users.Click += new System.EventHandler(this.button_all_users_Click);
             // 
             // panel4
             // 
@@ -275,6 +278,15 @@
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,8 +329,7 @@
         private System.Windows.Forms.Button button_statistika;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button_categories;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-
-
     }
 }
