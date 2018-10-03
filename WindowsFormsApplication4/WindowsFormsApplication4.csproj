@@ -70,6 +70,12 @@
     <Compile Include="AuthorMainForm.Designer.cs">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Balance_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Balance_Author.Designer.cs">
+      <DependentUpon>Balance_Author.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AuthorMainForm.resx">
       <DependentUpon>AuthorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Balance_Author.resx">
+      <DependentUpon>Balance_Author.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesForm.resx">
       <DependentUpon>CategoriesForm.cs</DependentUpon>

@@ -66,5 +66,21 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Balance_Click(object sender, EventArgs e)
+        {
+            Balance_Author OknoBalance = new Balance_Author();
+            OknoBalance.ShowDialog();
+        }
     }
 }
