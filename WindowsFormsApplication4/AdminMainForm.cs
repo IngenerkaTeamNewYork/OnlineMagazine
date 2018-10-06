@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -18,6 +17,7 @@ namespace WindowsFormsApplication4
     {
         public DateTime dateFrom; 
         public string text;
+        public Boolean n;
     }
 
     public partial class AdminMainForm : Form
@@ -26,20 +26,27 @@ namespace WindowsFormsApplication4
 
         public AdminMainForm()
         {
-            InitializeComponent();
+            String connString = "SslMode=none;" +
+                "Server=db4free.net;" +
+                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
 
-            Reklama rek = new Reklama();
-            rek.text = "Все козлы. Купите деньги";
-            rek.dateFrom = new DateTime(2018, 9, 6);
-            mnogo_reklamy.Add(rek);
-            Reklama rek2 = new Reklama();
-            rek2.text = "Не все козлы. Но деньги купите";
-            rek2.dateFrom = new DateTime(2018, 9, 23);
-            mnogo_reklamy.Add(rek2);
-            Reklama rek3 = new Reklama();
-            rek3.text = "Не все козлы sdfsdf. Но деньги купите";
-            rek3.dateFrom = new DateTime(2018, 9, 23);
-            mnogo_reklamy.Add(rek3);
+            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                Reklama rek = new Reklama();
+                rek.text = rdr[0].ToString();
+                rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
+                rek.n = Convert.ToBoolean(rdr[2].ToString());
+                mnogo_reklamy.Add(rek);
+            }
+            rdr.Close();
+            conn.Close();
+
+            InitializeComponent();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -47,9 +54,6 @@ namespace WindowsFormsApplication4
             Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
             sps.ShowDialog();
         }
-
-
-
 
 
         private void button7_Click(object sender, EventArgs e)
