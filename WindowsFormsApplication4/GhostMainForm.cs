@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
@@ -21,6 +24,30 @@ namespace WindowsFormsApplication4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            String connString = "SslMode=none;" +
+                "Server=db4free.net;" +
+                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Username, likes, dislikes FROM `Authors` WHERE `Likes` > 80 AND dislikes < 1000000 ORDER BY likes desc", conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                MessageBox.Show("Username = " + rdr[0].ToString() +
+                    " likes = " + rdr[1].ToString() +
+                    " dislikes = " + rdr[2].ToString()
+                );
+            }
+            rdr.Close();
+
+
+            conn.Close();
+
+
+
+
             Image1.Image = Image.FromFile("cat.jpg");
             label_of_like.Text = "Котята и вода";
             articleTextBox.Text = "Я топлю котят(Хой!)" +
