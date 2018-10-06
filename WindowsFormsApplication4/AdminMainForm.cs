@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 
 namespace WindowsFormsApplication4
 {
@@ -14,6 +17,8 @@ namespace WindowsFormsApplication4
     {
         public DateTime dateFrom; 
         public string text;
+        public Boolean n;
+
     }
 
     public partial class AdminMainForm : Form
@@ -22,9 +27,37 @@ namespace WindowsFormsApplication4
 
         public AdminMainForm()
         {
+
+            String connString = "SslMode=none;" +
+                "Server=db4free.net;" +
+                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                Reklama rek = new Reklama();
+                rek.text = rdr[0].ToString();
+                rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
+                rek.n = Convert.ToBoolean(rdr[2].ToString());
+                mnogo_reklamy.Add(rek);
+
+                //MessageBox.Show("Username = " + rdr[0].ToString() +
+                 //   " likes = " + rdr[1].ToString() +
+                  //  " dislikes = " + rdr[2].ToString()
+                //);
+            }
+            rdr.Close();
+
+
+            conn.Close();
+
             InitializeComponent();
 
-            Reklama rek = new Reklama();
+            /*Reklama rek = new Reklama();
             rek.text = "Все козлы. Купите деньги";
             rek.dateFrom = new DateTime(2018, 9, 6);
             mnogo_reklamy.Add(rek);
@@ -35,7 +68,7 @@ namespace WindowsFormsApplication4
             Reklama rek3 = new Reklama();
             rek3.text = "Не все козлы sdfsdf. Но деньги купите";
             rek3.dateFrom = new DateTime(2018, 9, 23);
-            mnogo_reklamy.Add(rek3);
+            mnogo_reklamy.Add(rek3);*/
         }
 
         private void button5_Click(object sender, EventArgs e)

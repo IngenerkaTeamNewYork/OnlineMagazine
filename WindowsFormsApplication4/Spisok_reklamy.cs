@@ -27,6 +27,9 @@ namespace WindowsFormsApplication4
             int id = 0;
             foreach (Reklama i in mnogo_reklamy)
             {
+
+                if (mnogo_reklamy[id].dateFrom <= DateTime.Now || mnogo_reklamy[id].n)
+                {
                 mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
                 
                 TableLayoutPanel tableLayoutPanel12 = new TableLayoutPanel();
@@ -67,8 +70,7 @@ namespace WindowsFormsApplication4
 
                 tableLayoutPanel12.Controls.Add(button1, 0, 0);
 
-                if (mnogo_reklamy[id].dateFrom <= DateTime.Now)
-                {
+
                     Button button3 = new Button();
                     button3.Location = new System.Drawing.Point(3, 64);
                     button3.Name = "button3";
@@ -78,12 +80,13 @@ namespace WindowsFormsApplication4
                     button3.UseVisualStyleBackColor = true;
 
                     tableLayoutPanel12.Controls.Add(button3, 0, 1);
-                }
+                
 
 
                 mainTableLayoutPanel.Controls.Add(pictureBox1, 0, id);
                 mainTableLayoutPanel.Controls.Add(label1, 1, id);
                 mainTableLayoutPanel.Controls.Add(tableLayoutPanel12, 2, id);
+                }
 
                 id++;
             }
