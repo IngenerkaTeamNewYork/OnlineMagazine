@@ -20,6 +20,19 @@ namespace WindowsFormsApplication4
         public GhostMainForm()
         {
             InitializeComponent();
+
+            List<AuthorStat> writers = new List<AuthorStat>();
+            int uy = 0;
+            foreach (AuthorStat write in writers)
+            {
+                LinkLabel linklabel1 = new LinkLabel();
+                linklabel1.Size = new Size (70, 20); 
+                linklabel1.Location = new Point (50, 10 + 30*uy);
+                linklabel1.Text = write.name;
+
+                panel1.Controls.Add(linklabel1);
+                uy++;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,15 +43,20 @@ namespace WindowsFormsApplication4
             MySqlConnection conn = new MySqlConnection(connString);
             conn.Open();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Username, likes, dislikes FROM `Authors` WHERE `Likes` > 80 AND dislikes < 1000000 ORDER BY likes desc", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Text FROM `Articles` ", conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
+
+            int uy = 0;
             while (rdr.Read())
             {
-                MessageBox.Show("Username = " + rdr[0].ToString() +
-                    " likes = " + rdr[1].ToString() +
-                    " dislikes = " + rdr[2].ToString()
-                );
+                Label label1 = new Label();
+                label1.Location = new Point(103, 10 + 30 * uy);
+                label1.Size = new Size(250, 13);
+                label1.Text = rdr[0].ToString();
+
+                panel2.Controls.Add(label1);
+                uy++;
             }
             rdr.Close();
 
