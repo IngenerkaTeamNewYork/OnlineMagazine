@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public struct Reklama
@@ -84,12 +88,30 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
+            StastisticsForm form1 = new StastisticsForm(/*GhostMainForm.stat[0]*/);
             form1.ShowDialog();
         }
 
         private void button_all_users_Click(object sender, EventArgs e)
         {
+            String connString = "SslMode=none;" +
+                "Server=db4free.net;" +
+                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                MessageBox.Show("Login = " + rdr[0].ToString() +
+                    " Parol = " + rdr[1].ToString() );
+            }
+            rdr.Close();
+
+
+            conn.Close();
         }
         private void button_categories_Click(object sender, EventArgs e)
         {
@@ -113,6 +135,12 @@ namespace WindowsFormsApplication4
             ifr.Left = this.Left;
             ifr.Top = this.Top;
             ifr.Show();
+        }
+
+        private void button_statistika_Click_1(object sender, EventArgs e)
+        {
+            StastisticsForm t = new StastisticsForm();
+            t.ShowDialog();
         }
     }
 }

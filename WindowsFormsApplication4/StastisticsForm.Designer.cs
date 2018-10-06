@@ -149,10 +149,6 @@
             // list_of_author
             // 
             this.list_of_author.FormattingEnabled = true;
-            this.list_of_author.Items.AddRange(new object[] {
-            "dfgdfg",
-            "dfgdfg4",
-            "dfgdfgrty"});
             this.list_of_author.Location = new System.Drawing.Point(4, 265);
             this.list_of_author.Name = "list_of_author";
             this.list_of_author.Size = new System.Drawing.Size(121, 21);
