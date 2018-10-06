@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +15,7 @@ namespace WindowsFormsApplication4
 {
     public partial class List_of_author : Form
     {
-       
+        public static List<AuthorStat> stat = new List<AuthorStat>();
 
         public List_of_author(List<AuthorStat> writers)
         {
@@ -40,15 +40,11 @@ namespace WindowsFormsApplication4
 
                 panel1.Controls.Add(linklabel1);
                 uy++;
-               /* MessageBox.Show("Login = " + rdr[0].ToString() +
-                    " Parol = " + rdr[1].ToString());*/
             }
             rdr.Close();
 
 
             conn.Close();
-            
-
         }
 
         private void List_of_author_Load(object sender, EventArgs e)
