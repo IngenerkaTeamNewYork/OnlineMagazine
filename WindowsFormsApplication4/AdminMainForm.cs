@@ -26,13 +26,7 @@ namespace WindowsFormsApplication4
 
         public AdminMainForm()
         {
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             while (rdr.Read())
@@ -44,7 +38,6 @@ namespace WindowsFormsApplication4
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();
-            conn.Close();
 
             InitializeComponent();
         }
@@ -145,6 +138,11 @@ namespace WindowsFormsApplication4
         {
             StastisticsForm t = new StastisticsForm();
             t.ShowDialog();
+        }
+
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

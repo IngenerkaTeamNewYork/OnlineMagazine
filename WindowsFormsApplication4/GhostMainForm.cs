@@ -37,15 +37,10 @@ namespace WindowsFormsApplication4
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
+            SQLClass.OpenConnection();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Text FROM `Articles` ", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Text FROM `Articles` ", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
-
 
             int uy = 0;
             while (rdr.Read())
@@ -59,13 +54,7 @@ namespace WindowsFormsApplication4
                 uy++;
             }
             rdr.Close();
-
-
-            conn.Close();
-
-
-
-
+            
             Image1.Image = Image.FromFile("cat.jpg");
             label_of_like.Text = "Котята и вода";
             articleTextBox.Text = "Я топлю котят(Хой!)" +
@@ -169,6 +158,11 @@ namespace WindowsFormsApplication4
             newLab.Location = new Point(30, 500);
             newLab.Text = "sdgdfg";
             panel3.Controls.Add(newLab);
+        }
+
+        private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SQLClass.CloseConnection();
         }
     }
 }

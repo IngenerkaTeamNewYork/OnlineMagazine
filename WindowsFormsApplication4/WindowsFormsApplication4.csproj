@@ -128,6 +128,7 @@
     <Compile Include="Spisok_reklamy.Designer.cs">
       <DependentUpon>Spisok_reklamy.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLClass.cs" />
     <Compile Include="StastisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
