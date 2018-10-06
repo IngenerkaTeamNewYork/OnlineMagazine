@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MySql.Data;
 using MySql.Data.MySqlClient;
-
 
 namespace WindowsFormsApplication4
 {
@@ -18,7 +18,6 @@ namespace WindowsFormsApplication4
         public DateTime dateFrom; 
         public string text;
         public Boolean n;
-
     }
 
     public partial class AdminMainForm : Form
@@ -27,7 +26,6 @@ namespace WindowsFormsApplication4
 
         public AdminMainForm()
         {
-
             String connString = "SslMode=none;" +
                 "Server=db4free.net;" +
                 "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
@@ -44,31 +42,11 @@ namespace WindowsFormsApplication4
                 rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
                 rek.n = Convert.ToBoolean(rdr[2].ToString());
                 mnogo_reklamy.Add(rek);
-
-                //MessageBox.Show("Username = " + rdr[0].ToString() +
-                 //   " likes = " + rdr[1].ToString() +
-                  //  " dislikes = " + rdr[2].ToString()
-                //);
             }
             rdr.Close();
-
-
             conn.Close();
 
             InitializeComponent();
-
-            /*Reklama rek = new Reklama();
-            rek.text = "Все козлы. Купите деньги";
-            rek.dateFrom = new DateTime(2018, 9, 6);
-            mnogo_reklamy.Add(rek);
-            Reklama rek2 = new Reklama();
-            rek2.text = "Не все козлы. Но деньги купите";
-            rek2.dateFrom = new DateTime(2018, 9, 23);
-            mnogo_reklamy.Add(rek2);
-            Reklama rek3 = new Reklama();
-            rek3.text = "Не все козлы sdfsdf. Но деньги купите";
-            rek3.dateFrom = new DateTime(2018, 9, 23);
-            mnogo_reklamy.Add(rek3);*/
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -76,9 +54,6 @@ namespace WindowsFormsApplication4
             Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
             sps.ShowDialog();
         }
-
-
-
 
 
         private void button7_Click(object sender, EventArgs e)
@@ -117,12 +92,30 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm(GhostMainForm.stat[0]);
+            StastisticsForm form1 = new StastisticsForm(/*GhostMainForm.stat[0]*/);
             form1.ShowDialog();
         }
 
         private void button_all_users_Click(object sender, EventArgs e)
         {
+            String connString = "SslMode=none;" +
+                "Server=db4free.net;" +
+                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
+            MySqlConnection conn = new MySqlConnection(connString);
+            conn.Open();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                MessageBox.Show("Login = " + rdr[0].ToString() +
+                    " Parol = " + rdr[1].ToString() );
+            }
+            rdr.Close();
+
+
+            conn.Close();
         }
         private void button_categories_Click(object sender, EventArgs e)
         {
@@ -146,6 +139,12 @@ namespace WindowsFormsApplication4
             ifr.Left = this.Left;
             ifr.Top = this.Top;
             ifr.Show();
+        }
+
+        private void button_statistika_Click_1(object sender, EventArgs e)
+        {
+            StastisticsForm t = new StastisticsForm();
+            t.ShowDialog();
         }
     }
 }
