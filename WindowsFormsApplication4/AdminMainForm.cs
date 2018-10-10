@@ -20,10 +20,17 @@ namespace WindowsFormsApplication4
         public Boolean n;
     }
 
+    public struct users
+    {
+        public string login;
+        public string password;
+        public Boolean ban;
+        public Button btn;
+    }
+
     public partial class AdminMainForm : Form
     {
         public List<Reklama> mnogo_reklamy = new List<Reklama>();
-
         public AdminMainForm()
         {
             MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", SQLClass.CONN);
@@ -91,24 +98,8 @@ namespace WindowsFormsApplication4
 
         private void button_all_users_Click(object sender, EventArgs e)
         {
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", conn);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                MessageBox.Show("Login = " + rdr[0].ToString() +
-                    " Parol = " + rdr[1].ToString() );
-            }
-            rdr.Close();
-
-
-            conn.Close();
+            Users form = new Users();
+            form.ShowDialog();
         }
         private void button_categories_Click(object sender, EventArgs e)
         {
