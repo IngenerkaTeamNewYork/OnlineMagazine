@@ -15,33 +15,52 @@ namespace WindowsFormsApplication4
 {
     public struct Reklama
     {
+        public int id;
         public DateTime dateFrom; 
         public string text;
         public Boolean n;
+        public Button AddOneDayButton;
     }
 
     public partial class AdminMainForm : Form
     {
         public List<Reklama> mnogo_reklamy = new List<Reklama>();
+        public DateTime data = DateTime.Now;
+       
+        
 
         public AdminMainForm()
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", SQLClass.CONN);
+            InitializeComponent();
+            label2.Text = data.ToString();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new, id FROM Advertisment", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
+            data = data.AddDays(1);
+            label2.Text = label2.Text + " " + data.ToString();
 
             while (rdr.Read())
             {
                 Reklama rek = new Reklama();
                 rek.text = rdr[0].ToString();
+                MessageBox.Show(rdr[1].ToString());
                 rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
                 rek.n = Convert.ToBoolean(rdr[2].ToString());
+                rek.id = Convert.ToInt32(rdr[3].ToString());
+
+                rek.AddOneDayButton = new Button();
+                rek.AddOneDayButton.Location = new System.Drawing.Point(3, 64);
+                rek.AddOneDayButton.Name = "button3";
+                rek.AddOneDayButton.Size = new System.Drawing.Size(115, 23);
+                rek.AddOneDayButton.TabIndex = 7;
+                rek.AddOneDayButton.Text = "Продлить : +1 день";
+                rek.AddOneDayButton.UseVisualStyleBackColor = true;
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();
-
-            InitializeComponent();
         }
 
+        
         private void button5_Click(object sender, EventArgs e)
         {
             Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
