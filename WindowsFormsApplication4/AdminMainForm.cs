@@ -26,6 +26,8 @@ namespace WindowsFormsApplication4
 
         public AdminMainForm()
         {
+            InitializeComponent();
+
             MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new FROM Advertisment", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -38,8 +40,6 @@ namespace WindowsFormsApplication4
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();
-
-            InitializeComponent();
         }
 
         private void button5_Click(object sender, EventArgs e)

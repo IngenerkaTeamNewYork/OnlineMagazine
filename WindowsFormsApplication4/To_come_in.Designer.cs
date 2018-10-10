@@ -101,6 +101,7 @@
             this.Controls.Add(this.textBox_login);
             this.Name = "To_come_in";
             this.Text = "Вход";
+            this.Load += new System.EventHandler(this.To_come_in_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
