@@ -25,20 +25,14 @@ namespace WindowsFormsApplication4
     public partial class AdminMainForm : Form
     {
         public List<Reklama> mnogo_reklamy = new List<Reklama>();
-        public DateTime data = DateTime.Now;
-       
-        
 
         public AdminMainForm()
         {
             InitializeComponent();
-            label2.Text = data.ToString();
 
             MySqlCommand cmd = new MySqlCommand("SELECT Text, data_to, new, id FROM Advertisment", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
-            data = data.AddDays(1);
-            label2.Text = label2.Text + " " + data.ToString();
-
+            
             while (rdr.Read())
             {
                 Reklama rek = new Reklama();
@@ -50,28 +44,23 @@ namespace WindowsFormsApplication4
 
                 rek.AddOneDayButton = new Button();
                 rek.AddOneDayButton.Location = new System.Drawing.Point(3, 64);
-                rek.AddOneDayButton.Name = "button3";
                 rek.AddOneDayButton.Size = new System.Drawing.Size(115, 23);
                 rek.AddOneDayButton.TabIndex = 7;
-                rek.AddOneDayButton.Text = "Продлить : +1 день";
+                rek.AddOneDayButton.Text = "РџСЂРѕРґР»РёС‚СЊ : +1 РґРµРЅСЊ";//Add 1 day
                 rek.AddOneDayButton.UseVisualStyleBackColor = true;
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();
         }
 
-        
         private void button5_Click(object sender, EventArgs e)
         {
             Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
             sps.ShowDialog();
         }
 
-
         private void button7_Click(object sender, EventArgs e)
         {
-            //Spisok_reklamy d = new Spisok_reklamy("gryzha");
-            //d.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -83,7 +72,6 @@ namespace WindowsFormsApplication4
             this.Close();
         }
 
-
         private void button4_Click(object sender, EventArgs e)
         {
             New_stati fgf = new New_stati();
@@ -94,7 +82,7 @@ namespace WindowsFormsApplication4
         {
             CategoriesForm form = new CategoriesForm();
             form.ShowDialog();
-        }
+        }        
 
         private void button_author_Click(object sender, EventArgs e)
         {
@@ -107,16 +95,11 @@ namespace WindowsFormsApplication4
             StastisticsForm form1 = new StastisticsForm(/*GhostMainForm.stat[0]*/);
             form1.ShowDialog();
         }
-
+        
+        
         private void button_all_users_Click(object sender, EventArgs e)
         {
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             while (rdr.Read())
@@ -125,18 +108,14 @@ namespace WindowsFormsApplication4
                     " Parol = " + rdr[1].ToString() );
             }
             rdr.Close();
-
-
-            conn.Close();
         }
+        
         private void button_categories_Click(object sender, EventArgs e)
         {
-
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void button_return_Click(object sender, EventArgs e)
@@ -146,7 +125,6 @@ namespace WindowsFormsApplication4
 
         private void AdminMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Form ifr = Application.OpenForms[0];
             ifr.Left = this.Left;
             ifr.Top = this.Top;
