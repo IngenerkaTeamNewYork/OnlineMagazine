@@ -30,7 +30,7 @@ namespace WindowsFormsApplication4
                 linklabel1.Location = new Point (50, 10 + 30*uy);
                 linklabel1.Text = write.name;
 
-                panel1.Controls.Add(linklabel1);
+                Left_panel.Controls.Add(linklabel1);
                 uy++;
             }
         }
@@ -45,50 +45,87 @@ namespace WindowsFormsApplication4
             int uy = 0;
             while (rdr.Read())
             {
-                Label label1 = new Label();
+                LinkLabel label1 = new LinkLabel();
                 label1.Location = new Point(103, 10 + 30 * uy);
                 label1.Size = new Size(250, 13);
                 label1.Text = rdr[0].ToString();
 
-                panel2.Controls.Add(label1);
+                Right_panel.Controls.Add(label1);
                 uy++;
             }
             rdr.Close();
+
             
-            Image1.Image = Image.FromFile("cat.jpg");
-            label_of_like.Text = "Котята и вода";
-            articleTextBox.Text = "Я топлю котят(Хой!)" +
+            Image_statii.Image = Image.FromFile("cat.jpg");
+            label_name_statya.Text = "Котята и вода";
+            articleTextBox_statii.Text = "Я топлю котят(Хой!)" +
                 Environment.NewLine + "Колхозный панк" +
                 Environment.NewLine + "Панки - хой!";
-            label_of_name.Text = "Животные";
+            label_kategoriya_statii.Text = "Животные";
 
 
 
             statiya stat = new statiya();
-            stat.name_statiya = label_of_like.Text;
-            stat.text_statii = articleTextBox.Text;
-            stat.kategorita_statii = label_of_name.Text;
+            stat.name_statiya = label_name_statya.Text;
+            stat.text_statii = articleTextBox_statii.Text;
+            stat.kategorita_statii = label_kategoriya_statii.Text;
             stat.kartinki_statii = new List<Image>();
-            stat.kartinki_statii.Add(Image1.Image);
+            stat.kartinki_statii.Add(Image_statii.Image);
         }        
 
         private void image_Click(object sender, EventArgs e)
         {            
-            Image1.Image = Image.FromFile("cat.jpg");
-            label_of_like.Text = "Котята и вода";
-            articleTextBox.Text = "Я топлю котят(Хой!)" +
+            Image_statii.Image = Image.FromFile("cat.jpg");
+            label_name_statya.Text = "Котята и вода";
+            articleTextBox_statii.Text = "Я топлю котят(Хой!)" +
                 Environment.NewLine + "Колхозный панк" +
-                Environment.NewLine + "Панки - хой!";
-            label_of_name.Text = "Животные";
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Паertertнки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Пertertанки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Паretertнки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Паsdrtetнки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                Environment.NewLine + "Панки - хой!" +
+                 Environment.NewLine + "Паsdrtetнки - хой!1488";
+            label_kategoriya_statii.Text = "Животные";
          
 
             
             statiya stat = new statiya();
-            stat.name_statiya = label_of_like.Text;
-            stat.text_statii = articleTextBox.Text;
-            stat.kategorita_statii = label_of_name.Text;
+            stat.name_statiya = label_name_statya.Text;
+            stat.text_statii = articleTextBox_statii.Text;
+            stat.kategorita_statii = label_kategoriya_statii.Text;
             stat.kartinki_statii = new List<Image>();
-            stat.kartinki_statii.Add(Image1.Image);
+            stat.kartinki_statii.Add(Image_statii.Image);
 
 
             StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
@@ -157,7 +194,7 @@ namespace WindowsFormsApplication4
             Label newLab = new Label();
             newLab.Location = new Point(30, 500);
             newLab.Text = "sdgdfg";
-            panel3.Controls.Add(newLab);
+            Centr_panel.Controls.Add(newLab);
         }
 
         private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)

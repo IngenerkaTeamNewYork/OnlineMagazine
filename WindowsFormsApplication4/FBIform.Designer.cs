@@ -28,99 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button_save = new System.Windows.Forms.Button();
+            this.button2_print = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
+            this.button_add_author = new System.Windows.Forms.Button();
+            this.button_deleteAuthor = new System.Windows.Forms.Button();
+            this.textBoxDelete_author = new System.Windows.Forms.TextBox();
+            this.checkBox1_Delete_author = new System.Windows.Forms.CheckBox();
+            this.label_spisok_of_authors = new System.Windows.Forms.Label();
             this.process1 = new System.Diagnostics.Process();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_fineAuthor = new System.Windows.Forms.TextBox();
+            this.button_fineAuthor = new System.Windows.Forms.Button();
+            this.label_Na = new System.Windows.Forms.Label();
+            this.textBox_fineAuthor_chislo = new System.Windows.Forms.TextBox();
+            this.label8_rubl = new System.Windows.Forms.Label();
+            this.checkBox2_fineAuthor = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1_Authors = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // button1
+            // button_save
             // 
-            this.button1.Location = new System.Drawing.Point(13, 151);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_save.Location = new System.Drawing.Point(13, 151);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.TabIndex = 5;
+            this.button_save.Text = "Сохранить";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // button2_print
             // 
-            this.button2.Location = new System.Drawing.Point(145, 151);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Печать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
+            this.button2_print.Location = new System.Drawing.Point(145, 151);
+            this.button2_print.Name = "button2_print";
+            this.button2_print.Size = new System.Drawing.Size(75, 23);
+            this.button2_print.TabIndex = 5;
+            this.button2_print.Text = "Печать";
+            this.button2_print.UseVisualStyleBackColor = true;
+            this.button2_print.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // button_update
             // 
-            this.button3.Location = new System.Drawing.Point(145, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Обновить";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button1_Click);
+            this.button_update.Location = new System.Drawing.Point(145, 12);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(75, 23);
+            this.button_update.TabIndex = 5;
+            this.button_update.Text = "Обновить";
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // button_add_author
             // 
-            this.button4.Location = new System.Drawing.Point(10, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 45);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Добавить автора";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button1_Click);
+            this.button_add_author.Location = new System.Drawing.Point(10, 12);
+            this.button_add_author.Name = "button_add_author";
+            this.button_add_author.Size = new System.Drawing.Size(75, 45);
+            this.button_add_author.TabIndex = 5;
+            this.button_add_author.Text = "Добавить автора";
+            this.button_add_author.UseVisualStyleBackColor = true;
+            this.button_add_author.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button5
+            // button_deleteAuthor
             // 
-            this.button5.Location = new System.Drawing.Point(10, 180);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 19);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Удалить автора";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button1_Click);
+            this.button_deleteAuthor.Location = new System.Drawing.Point(10, 180);
+            this.button_deleteAuthor.Name = "button_deleteAuthor";
+            this.button_deleteAuthor.Size = new System.Drawing.Size(101, 19);
+            this.button_deleteAuthor.TabIndex = 5;
+            this.button_deleteAuthor.Text = "Удалить автора";
+            this.button_deleteAuthor.UseVisualStyleBackColor = true;
+            this.button_deleteAuthor.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // textBoxDelete_author
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(103, 20);
-            this.textBox1.TabIndex = 6;
+            this.textBoxDelete_author.Location = new System.Drawing.Point(117, 179);
+            this.textBoxDelete_author.Name = "textBoxDelete_author";
+            this.textBoxDelete_author.Size = new System.Drawing.Size(103, 20);
+            this.textBoxDelete_author.TabIndex = 6;
             // 
-            // checkBox1
+            // checkBox1_Delete_author
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(226, 179);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(44, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "282";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1_Delete_author.AutoSize = true;
+            this.checkBox1_Delete_author.Location = new System.Drawing.Point(226, 179);
+            this.checkBox1_Delete_author.Name = "checkBox1_Delete_author";
+            this.checkBox1_Delete_author.Size = new System.Drawing.Size(44, 17);
+            this.checkBox1_Delete_author.TabIndex = 7;
+            this.checkBox1_Delete_author.Text = "282";
+            this.checkBox1_Delete_author.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label_spisok_of_authors
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(91, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Список авторов";
+            this.label_spisok_of_authors.AutoSize = true;
+            this.label_spisok_of_authors.Location = new System.Drawing.Point(91, 44);
+            this.label_spisok_of_authors.Name = "label_spisok_of_authors";
+            this.label_spisok_of_authors.Size = new System.Drawing.Size(88, 13);
+            this.label_spisok_of_authors.TabIndex = 8;
+            this.label_spisok_of_authors.Text = "Список авторов";
             // 
             // process1
             // 
@@ -132,120 +132,120 @@
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // textBox2
+            // textBox_fineAuthor
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 207);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBox_fineAuthor.Location = new System.Drawing.Point(118, 207);
+            this.textBox_fineAuthor.Name = "textBox_fineAuthor";
+            this.textBox_fineAuthor.Size = new System.Drawing.Size(100, 20);
+            this.textBox_fineAuthor.TabIndex = 9;
             // 
-            // button6
+            // button_fineAuthor
             // 
-            this.button6.Location = new System.Drawing.Point(-1, 206);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(112, 43);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Оштрафовать автора";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button1_Click);
+            this.button_fineAuthor.Location = new System.Drawing.Point(-1, 206);
+            this.button_fineAuthor.Name = "button_fineAuthor";
+            this.button_fineAuthor.Size = new System.Drawing.Size(112, 43);
+            this.button_fineAuthor.TabIndex = 5;
+            this.button_fineAuthor.Text = "Оштрафовать автора";
+            this.button_fineAuthor.UseVisualStyleBackColor = true;
+            this.button_fineAuthor.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
+            // label_Na
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(117, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(22, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "на ";
+            this.label_Na.AutoSize = true;
+            this.label_Na.Location = new System.Drawing.Point(117, 230);
+            this.label_Na.Name = "label_Na";
+            this.label_Na.Size = new System.Drawing.Size(22, 13);
+            this.label_Na.TabIndex = 10;
+            this.label_Na.Text = "на ";
             // 
-            // textBox3
+            // textBox_fineAuthor_chislo
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 230);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(42, 20);
-            this.textBox3.TabIndex = 11;
+            this.textBox_fineAuthor_chislo.Location = new System.Drawing.Point(146, 230);
+            this.textBox_fineAuthor_chislo.Name = "textBox_fineAuthor_chislo";
+            this.textBox_fineAuthor_chislo.Size = new System.Drawing.Size(42, 20);
+            this.textBox_fineAuthor_chislo.TabIndex = 11;
             // 
-            // label8
+            // label8_rubl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(195, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "рублей";
+            this.label8_rubl.AutoSize = true;
+            this.label8_rubl.Location = new System.Drawing.Point(195, 235);
+            this.label8_rubl.Name = "label8_rubl";
+            this.label8_rubl.Size = new System.Drawing.Size(42, 13);
+            this.label8_rubl.TabIndex = 12;
+            this.label8_rubl.Text = "рублей";
             // 
-            // checkBox2
+            // checkBox2_fineAuthor
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(226, 207);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 17);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "выезд";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2_fineAuthor.AutoSize = true;
+            this.checkBox2_fineAuthor.Location = new System.Drawing.Point(226, 207);
+            this.checkBox2_fineAuthor.Name = "checkBox2_fineAuthor";
+            this.checkBox2_fineAuthor.Size = new System.Drawing.Size(58, 17);
+            this.checkBox2_fineAuthor.TabIndex = 13;
+            this.checkBox2_fineAuthor.Text = "выезд";
+            this.checkBox2_fineAuthor.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel1_Authors
             // 
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(0, 500);
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 63);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 30;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(224, 82);
-            this.tableLayoutPanel1.TabIndex = 14;
+            this.tableLayoutPanel1_Authors.AutoScroll = true;
+            this.tableLayoutPanel1_Authors.AutoScrollMinSize = new System.Drawing.Size(0, 500);
+            this.tableLayoutPanel1_Authors.ColumnCount = 1;
+            this.tableLayoutPanel1_Authors.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1_Authors.Location = new System.Drawing.Point(13, 63);
+            this.tableLayoutPanel1_Authors.Name = "tableLayoutPanel1_Authors";
+            this.tableLayoutPanel1_Authors.RowCount = 30;
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1_Authors.Size = new System.Drawing.Size(224, 82);
+            this.tableLayoutPanel1_Authors.TabIndex = 14;
             // 
             // FBIform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tableLayoutPanel1_Authors);
+            this.Controls.Add(this.checkBox2_fineAuthor);
+            this.Controls.Add(this.label8_rubl);
+            this.Controls.Add(this.textBox_fineAuthor_chislo);
+            this.Controls.Add(this.label_Na);
+            this.Controls.Add(this.textBox_fineAuthor);
+            this.Controls.Add(this.label_spisok_of_authors);
+            this.Controls.Add(this.checkBox1_Delete_author);
+            this.Controls.Add(this.textBoxDelete_author);
+            this.Controls.Add(this.button_fineAuthor);
+            this.Controls.Add(this.button_deleteAuthor);
+            this.Controls.Add(this.button_add_author);
+            this.Controls.Add(this.button_update);
+            this.Controls.Add(this.button2_print);
+            this.Controls.Add(this.button_save);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FBIform";
             this.Text = "FBI";
@@ -257,21 +257,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button2_print;
+        private System.Windows.Forms.Button button_update;
+        private System.Windows.Forms.Button button_add_author;
+        private System.Windows.Forms.Button button_deleteAuthor;
+        private System.Windows.Forms.TextBox textBoxDelete_author;
+        private System.Windows.Forms.CheckBox checkBox1_Delete_author;
+        private System.Windows.Forms.Label label_spisok_of_authors;
         private System.Diagnostics.Process process1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label8_rubl;
+        private System.Windows.Forms.TextBox textBox_fineAuthor_chislo;
+        private System.Windows.Forms.Label label_Na;
+        private System.Windows.Forms.TextBox textBox_fineAuthor;
+        private System.Windows.Forms.Button button_fineAuthor;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1_Authors;
+        private System.Windows.Forms.CheckBox checkBox2_fineAuthor;
     }
 }

@@ -91,7 +91,7 @@ namespace WindowsFormsApplication4
                 id++;
             }
 
-            panel1.Controls.Add(mainTableLayoutPanel);
+            main_panel.Controls.Add(mainTableLayoutPanel);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,6 +115,11 @@ namespace WindowsFormsApplication4
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void main_panel_Paint(object sender, PaintEventArgs e)
         {
 
         }

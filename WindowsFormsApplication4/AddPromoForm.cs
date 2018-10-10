@@ -77,7 +77,7 @@ namespace WindowsFormsApplication4
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty;
+            textBox_vvod_texta.Text = string.Empty;
         }
 
         private void button4_Click(object sender, EventArgs e)

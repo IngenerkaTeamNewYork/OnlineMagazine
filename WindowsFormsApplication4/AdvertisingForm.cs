@@ -22,5 +22,15 @@ namespace WindowsFormsApplication4
             Form form = new Form();
             form.ShowDialog();
         }
+
+        private void AdvertisingForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox_agree2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

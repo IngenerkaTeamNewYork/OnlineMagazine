@@ -96,7 +96,7 @@
             this.Controls.Add(this.Summa);
             this.Controls.Add(this.list_Author);
             this.Name = "Balance_Author";
-            this.Text = "Balance_Author";
+            this.Text = "Дайте деняк";
             this.Load += new System.EventHandler(this.Balance_Author_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture_Author)).EndInit();
             this.ResumeLayout(false);

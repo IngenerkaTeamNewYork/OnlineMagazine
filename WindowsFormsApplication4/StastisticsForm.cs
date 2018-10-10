@@ -70,7 +70,7 @@ namespace WindowsFormsApplication4
                     ViewsCount.Text = rdr[1].ToString();
                     LikesCount.Text = rdr[2].ToString();
                     DisLikesCount.Text = rdr[3].ToString();
-                    name.Text = list_of_author.Text;
+                    name_stiatii.Text = list_of_author.Text;
                  }
                 rdr.Close();
 
