@@ -57,6 +57,7 @@
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(100, 20);
             this.textBox_login.TabIndex = 1;
+            this.textBox_login.TextChanged += new System.EventHandler(this.textBox_login_TextChanged);
             // 
             // textBox_password
             // 
