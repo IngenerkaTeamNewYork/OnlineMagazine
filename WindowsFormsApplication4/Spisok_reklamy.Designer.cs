@@ -39,7 +39,6 @@
             this.main_panel.Name = "main_panel";
             this.main_panel.Size = new System.Drawing.Size(515, 555);
             this.main_panel.TabIndex = 0;
-            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.main_panel_Paint);
             // 
             // vScrollBar1
             // 
@@ -49,7 +48,6 @@
             this.vScrollBar1.Size = new System.Drawing.Size(23, 555);
             this.vScrollBar1.TabIndex = 0;
             this.vScrollBar1.TabStop = true;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // Spisok_reklamy
             // 
