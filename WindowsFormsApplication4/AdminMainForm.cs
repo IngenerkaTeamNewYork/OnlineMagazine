@@ -22,10 +22,17 @@ namespace WindowsFormsApplication4
         public Button AddOneDayButton;
     }
 
+    public struct users
+    {
+        public string login;
+        public string password;
+        public Boolean ban;
+        public Button btn;
+    }
+
     public partial class AdminMainForm : Form
     {
         public List<Reklama> mnogo_reklamy = new List<Reklama>();
-
         public AdminMainForm()
         {
             InitializeComponent();
@@ -99,15 +106,8 @@ namespace WindowsFormsApplication4
         
         private void button_all_users_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Login, Parol FROM `Polzovateli`", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                MessageBox.Show("Login = " + rdr[0].ToString() +
-                    " Parol = " + rdr[1].ToString() );
-            }
-            rdr.Close();
+            Users form = new Users();
+            form.ShowDialog();
         }
         
         private void button_categories_Click(object sender, EventArgs e)

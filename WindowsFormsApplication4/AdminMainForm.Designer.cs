@@ -68,14 +68,14 @@
             this.panel1.Controls.Add(this.button_return);
             this.panel1.Controls.Add(this.button_author);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(338, 423);
+            this.panel1.Location = new System.Drawing.Point(3, 423);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(329, 100);
             this.panel1.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(95, 46);
+            this.button1.Location = new System.Drawing.Point(46, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -117,7 +117,7 @@
             // 
             this.panel2.Controls.Add(this.button_users);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 423);
+            this.panel2.Location = new System.Drawing.Point(338, 423);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 100);
             this.panel2.TabIndex = 11;
@@ -138,7 +138,7 @@
             // 
             this.panel3.Controls.Add(this.button_all_users);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(338, 318);
+            this.panel3.Location = new System.Drawing.Point(3, 318);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(329, 99);
             this.panel3.TabIndex = 12;
@@ -158,7 +158,7 @@
             // 
             this.panel4.Controls.Add(this.button_look_of_form);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 318);
+            this.panel4.Location = new System.Drawing.Point(338, 318);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(329, 99);
             this.panel4.TabIndex = 13;
@@ -217,7 +217,7 @@
             // 
             this.panel7.Controls.Add(this.button_list_of_mat);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(338, 108);
+            this.panel7.Location = new System.Drawing.Point(3, 108);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(329, 99);
             this.panel7.TabIndex = 16;
@@ -235,7 +235,7 @@
             // button_statistika
             // 
             this.button_statistika.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_statistika.Location = new System.Drawing.Point(3, 108);
+            this.button_statistika.Location = new System.Drawing.Point(338, 108);
             this.button_statistika.Name = "button_statistika";
             this.button_statistika.Size = new System.Drawing.Size(329, 99);
             this.button_statistika.TabIndex = 17;
