@@ -32,8 +32,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button3_odobreno = new System.Windows.Forms.Button();
+            this.button1_Fuckyou = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
@@ -85,8 +85,8 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.button3, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button3_odobreno, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button1_Fuckyou, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(272, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -96,23 +96,23 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(144, 59);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
-            // button3
+            // button3_odobreno
             // 
-            this.button3.Location = new System.Drawing.Point(3, 32);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "ОДОБРЕНО";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3_odobreno.Location = new System.Drawing.Point(3, 32);
+            this.button3_odobreno.Name = "button3_odobreno";
+            this.button3_odobreno.Size = new System.Drawing.Size(138, 23);
+            this.button3_odobreno.TabIndex = 7;
+            this.button3_odobreno.Text = "ОДОБРЕНО";
+            this.button3_odobreno.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button1_Fuckyou
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ПРОЩАЙ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1_Fuckyou.Location = new System.Drawing.Point(3, 3);
+            this.button1_Fuckyou.Name = "button1_Fuckyou";
+            this.button1_Fuckyou.Size = new System.Drawing.Size(138, 23);
+            this.button1_Fuckyou.TabIndex = 3;
+            this.button1_Fuckyou.Text = "ПРОЩАЙ";
+            this.button1_Fuckyou.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -178,8 +178,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3_odobreno;
+        private System.Windows.Forms.Button button1_Fuckyou;
         private System.Windows.Forms.Label label4;
     }
 }

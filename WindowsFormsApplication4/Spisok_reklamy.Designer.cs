@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.main_panel = new System.Windows.Forms.Panel();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
-            // panel1
+            // main_panel
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 555);
-            this.panel1.TabIndex = 0;
+            this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.main_panel.Location = new System.Drawing.Point(0, 0);
+            this.main_panel.Name = "main_panel";
+            this.main_panel.Size = new System.Drawing.Size(515, 555);
+            this.main_panel.TabIndex = 0;
+            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.main_panel_Paint);
             // 
             // vScrollBar1
             // 
@@ -56,7 +57,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 555);
             this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.main_panel);
             this.Name = "Spisok_reklamy";
             this.Text = "Spisok_reklamy";
             this.Load += new System.EventHandler(this.Spisok_reklamy_Load);
@@ -66,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel main_panel;
         private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_adress = new System.Windows.Forms.TextBox();
+            this.text_na_reklame = new System.Windows.Forms.TextBox();
             this.checkedListBox_categories = new System.Windows.Forms.CheckedListBox();
             this.checkBox_agree = new System.Windows.Forms.CheckBox();
             this.checkBox_agree2 = new System.Windows.Forms.CheckBox();
@@ -51,20 +51,20 @@
             this.pictureBox.TabStop = false;
             this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
-            // textBox1
+            // textBox_adress
             // 
-            this.textBox1.Location = new System.Drawing.Point(259, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox_adress.Location = new System.Drawing.Point(248, 43);
+            this.textBox_adress.Name = "textBox_adress";
+            this.textBox_adress.Size = new System.Drawing.Size(100, 20);
+            this.textBox_adress.TabIndex = 1;
             // 
-            // textBox2
+            // text_na_reklame
             // 
-            this.textBox2.Location = new System.Drawing.Point(248, 82);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 161);
-            this.textBox2.TabIndex = 2;
+            this.text_na_reklame.Location = new System.Drawing.Point(248, 82);
+            this.text_na_reklame.Multiline = true;
+            this.text_na_reklame.Name = "text_na_reklame";
+            this.text_na_reklame.Size = new System.Drawing.Size(181, 161);
+            this.text_na_reklame.TabIndex = 2;
             // 
             // checkedListBox_categories
             // 
@@ -99,6 +99,7 @@
             this.checkBox_agree2.TabIndex = 5;
             this.checkBox_agree2.Text = "аналогично, только с другим бла соглашаюсь";
             this.checkBox_agree2.UseVisualStyleBackColor = true;
+            this.checkBox_agree2.CheckedChanged += new System.EventHandler(this.checkBox_agree2_CheckedChanged);
             // 
             // button_send
             // 
@@ -138,11 +139,12 @@
             this.Controls.Add(this.checkBox_agree2);
             this.Controls.Add(this.checkBox_agree);
             this.Controls.Add(this.checkedListBox_categories);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.text_na_reklame);
+            this.Controls.Add(this.textBox_adress);
             this.Controls.Add(this.pictureBox);
             this.Name = "AdvertisingForm";
             this.Text = "Добавить рекламу";
+            this.Load += new System.EventHandler(this.AdvertisingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,8 +154,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_adress;
+        private System.Windows.Forms.TextBox text_na_reklame;
         private System.Windows.Forms.CheckedListBox checkedListBox_categories;
         private System.Windows.Forms.CheckBox checkBox_agree;
         private System.Windows.Forms.CheckBox checkBox_agree2;

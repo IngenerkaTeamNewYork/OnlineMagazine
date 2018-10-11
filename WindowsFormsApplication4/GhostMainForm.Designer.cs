@@ -31,39 +31,39 @@ namespace WindowsFormsApplication4
             this.categories_linklabel = new System.Windows.Forms.LinkLabel();
             this.butto_search = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Left_panel = new System.Windows.Forms.Panel();
             this.link_of_come = new System.Windows.Forms.LinkLabel();
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.Реклама3 = new System.Windows.Forms.PictureBox();
             this.Реклама2 = new System.Windows.Forms.PictureBox();
             this.Реклама = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button_add = new System.Windows.Forms.Button();
-            this.popular = new System.Windows.Forms.Label();
+            this.Right_panel = new System.Windows.Forms.Panel();
+            this.button_add_reklama = new System.Windows.Forms.Button();
+            this.label_popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.articleTextBox = new System.Windows.Forms.TextBox();
-            this.label_of_like = new System.Windows.Forms.Label();
-            this.label_of_name = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.Image1 = new System.Windows.Forms.PictureBox();
+            this.Centr_panel = new System.Windows.Forms.Panel();
+            this.articleTextBox_statii = new System.Windows.Forms.TextBox();
+            this.label_name_statya = new System.Windows.Forms.Label();
+            this.label_kategoriya_statii = new System.Windows.Forms.Label();
+            this.vScrollBar1_centr = new System.Windows.Forms.VScrollBar();
+            this.Image_statii = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Left_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Image1)).BeginInit();
+            this.Right_panel.SuspendLayout();
+            this.Centr_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
             this.SuspendLayout();
             // 
             // categories_linklabel
             // 
             this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(33, 149);
-            this.categories_linklabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.categories_linklabel.Location = new System.Drawing.Point(25, 121);
             this.categories_linklabel.Name = "categories_linklabel";
-            this.categories_linklabel.Size = new System.Drawing.Size(77, 17);
+            this.categories_linklabel.Size = new System.Drawing.Size(60, 13);
             this.categories_linklabel.TabIndex = 4;
             this.categories_linklabel.TabStop = true;
             this.categories_linklabel.Text = "Категории";
@@ -71,10 +71,9 @@ namespace WindowsFormsApplication4
             // 
             // butto_search
             // 
-            this.butto_search.Location = new System.Drawing.Point(616, 15);
-            this.butto_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butto_search.Location = new System.Drawing.Point(462, 12);
             this.butto_search.Name = "butto_search";
-            this.butto_search.Size = new System.Drawing.Size(72, 28);
+            this.butto_search.Size = new System.Drawing.Size(54, 23);
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
@@ -82,36 +81,34 @@ namespace WindowsFormsApplication4
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 644);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Location = new System.Drawing.Point(9, 523);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // Left_panel
             // 
-            this.panel1.Controls.Add(this.link_of_come);
-            this.panel1.Controls.Add(this.link_of_registration);
-            this.panel1.Controls.Add(this.Реклама3);
-            this.panel1.Controls.Add(this.Реклама2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.Реклама);
-            this.panel1.Location = new System.Drawing.Point(4, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 683);
-            this.panel1.TabIndex = 4;
+            this.Left_panel.Controls.Add(this.textBox1);
+            this.Left_panel.Controls.Add(this.link_of_come);
+            this.Left_panel.Controls.Add(this.link_of_registration);
+            this.Left_panel.Controls.Add(this.Реклама3);
+            this.Left_panel.Controls.Add(this.Реклама2);
+            this.Left_panel.Controls.Add(this.radioButton1);
+            this.Left_panel.Controls.Add(this.Реклама);
+            this.Left_panel.Location = new System.Drawing.Point(3, 12);
+            this.Left_panel.Name = "Left_panel";
+            this.Left_panel.Size = new System.Drawing.Size(226, 555);
+            this.Left_panel.TabIndex = 4;
             // 
             // link_of_come
             // 
             this.link_of_come.AutoSize = true;
-            this.link_of_come.Location = new System.Drawing.Point(13, 620);
-            this.link_of_come.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.link_of_come.Location = new System.Drawing.Point(10, 504);
             this.link_of_come.Name = "link_of_come";
-            this.link_of_come.Size = new System.Drawing.Size(48, 17);
+            this.link_of_come.Size = new System.Drawing.Size(37, 13);
             this.link_of_come.TabIndex = 7;
             this.link_of_come.TabStop = true;
             this.link_of_come.Text = "Войти";
@@ -120,10 +117,9 @@ namespace WindowsFormsApplication4
             // link_of_registration
             // 
             this.link_of_registration.AutoSize = true;
-            this.link_of_registration.Location = new System.Drawing.Point(13, 596);
-            this.link_of_registration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.link_of_registration.Location = new System.Drawing.Point(10, 484);
             this.link_of_registration.Name = "link_of_registration";
-            this.link_of_registration.Size = new System.Drawing.Size(92, 17);
+            this.link_of_registration.Size = new System.Drawing.Size(72, 13);
             this.link_of_registration.TabIndex = 6;
             this.link_of_registration.TabStop = true;
             this.link_of_registration.Text = "Регистрация";
@@ -131,173 +127,167 @@ namespace WindowsFormsApplication4
             // 
             // Реклама3
             // 
-            this.Реклама3.Location = new System.Drawing.Point(13, 335);
-            this.Реклама3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Реклама3.Location = new System.Drawing.Point(10, 272);
             this.Реклама3.Name = "Реклама3";
-            this.Реклама3.Size = new System.Drawing.Size(229, 252);
+            this.Реклама3.Size = new System.Drawing.Size(172, 205);
             this.Реклама3.TabIndex = 5;
             this.Реклама3.TabStop = false;
             // 
             // Реклама2
             // 
-            this.Реклама2.Location = new System.Drawing.Point(13, 113);
-            this.Реклама2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Реклама2.Location = new System.Drawing.Point(10, 92);
             this.Реклама2.Name = "Реклама2";
-            this.Реклама2.Size = new System.Drawing.Size(229, 214);
+            this.Реклама2.Size = new System.Drawing.Size(172, 174);
             this.Реклама2.TabIndex = 4;
             this.Реклама2.TabStop = false;
             this.Реклама2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
             // Реклама
             // 
-            this.Реклама.Location = new System.Drawing.Point(12, 23);
-            this.Реклама.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Реклама.Location = new System.Drawing.Point(9, 19);
             this.Реклама.Name = "Реклама";
-            this.Реклама.Size = new System.Drawing.Size(243, 82);
+            this.Реклама.Size = new System.Drawing.Size(182, 67);
             this.Реклама.TabIndex = 2;
             this.Реклама.TabStop = false;
             // 
-            // panel2
+            // Right_panel
             // 
-            this.panel2.Controls.Add(this.button_add);
-            this.panel2.Controls.Add(this.categories_linklabel);
-            this.panel2.Controls.Add(this.popular);
-            this.panel2.Controls.Add(this.label_author);
-            this.panel2.Location = new System.Drawing.Point(696, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(289, 698);
-            this.panel2.TabIndex = 5;
+            this.Right_panel.Controls.Add(this.button_add_reklama);
+            this.Right_panel.Controls.Add(this.categories_linklabel);
+            this.Right_panel.Controls.Add(this.label_popular);
+            this.Right_panel.Controls.Add(this.label_author);
+            this.Right_panel.Location = new System.Drawing.Point(522, 10);
+            this.Right_panel.Name = "Right_panel";
+            this.Right_panel.Size = new System.Drawing.Size(217, 567);
+            this.Right_panel.TabIndex = 5;
             // 
-            // button_add
+            // button_add_reklama
             // 
-            this.button_add.Location = new System.Drawing.Point(37, 585);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(200, 28);
-            this.button_add.TabIndex = 5;
-            this.button_add.Text = "Предложить рекламу";
-            this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add_reklama.Location = new System.Drawing.Point(28, 475);
+            this.button_add_reklama.Name = "button_add_reklama";
+            this.button_add_reklama.Size = new System.Drawing.Size(150, 23);
+            this.button_add_reklama.TabIndex = 5;
+            this.button_add_reklama.Text = "Предложить рекламу";
+            this.button_add_reklama.UseVisualStyleBackColor = true;
+            this.button_add_reklama.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // popular
+            // label_popular
             // 
-            this.popular.AutoSize = true;
-            this.popular.Location = new System.Drawing.Point(33, 116);
-            this.popular.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.popular.Name = "popular";
-            this.popular.Size = new System.Drawing.Size(89, 17);
-            this.popular.TabIndex = 3;
-            this.popular.Text = "Популярное";
+            this.label_popular.AutoSize = true;
+            this.label_popular.Location = new System.Drawing.Point(25, 94);
+            this.label_popular.Name = "label_popular";
+            this.label_popular.Size = new System.Drawing.Size(68, 13);
+            this.label_popular.TabIndex = 3;
+            this.label_popular.Text = "Популярное";
             // 
             // label_author
             // 
             this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(29, 181);
-            this.label_author.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_author.Location = new System.Drawing.Point(22, 147);
             this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(57, 17);
+            this.label_author.Size = new System.Drawing.Size(45, 13);
             this.label_author.TabIndex = 2;
             this.label_author.Text = "Авторы";
             this.label_author.Click += new System.EventHandler(this.label_author_Click);
             // 
-            // panel3
+            // Centr_panel
             // 
-            this.panel3.Controls.Add(this.articleTextBox);
-            this.panel3.Controls.Add(this.label_of_like);
-            this.panel3.Controls.Add(this.label_of_name);
-            this.panel3.Controls.Add(this.vScrollBar1);
-            this.panel3.Controls.Add(this.Image1);
-            this.panel3.Location = new System.Drawing.Point(327, 52);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(340, 657);
-            this.panel3.TabIndex = 6;
+            this.Centr_panel.Controls.Add(this.articleTextBox_statii);
+            this.Centr_panel.Controls.Add(this.label_name_statya);
+            this.Centr_panel.Controls.Add(this.label_kategoriya_statii);
+            this.Centr_panel.Controls.Add(this.vScrollBar1_centr);
+            this.Centr_panel.Controls.Add(this.Image_statii);
+            this.Centr_panel.Location = new System.Drawing.Point(245, 42);
+            this.Centr_panel.Name = "Centr_panel";
+            this.Centr_panel.Size = new System.Drawing.Size(255, 534);
+            this.Centr_panel.TabIndex = 6;
             // 
-            // articleTextBox
+            // articleTextBox_statii
             // 
-            this.articleTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.articleTextBox.Enabled = false;
-            this.articleTextBox.ForeColor = System.Drawing.Color.Black;
-            this.articleTextBox.Location = new System.Drawing.Point(48, 357);
-            this.articleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.articleTextBox.Multiline = true;
-            this.articleTextBox.Name = "articleTextBox";
-            this.articleTextBox.Size = new System.Drawing.Size(227, 192);
-            this.articleTextBox.TabIndex = 5;
-            this.articleTextBox.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
+            this.articleTextBox_statii.BackColor = System.Drawing.SystemColors.Control;
+            this.articleTextBox_statii.Enabled = false;
+            this.articleTextBox_statii.ForeColor = System.Drawing.Color.Black;
+            this.articleTextBox_statii.Location = new System.Drawing.Point(36, 290);
+            this.articleTextBox_statii.Multiline = true;
+            this.articleTextBox_statii.Name = "articleTextBox_statii";
+            this.articleTextBox_statii.Size = new System.Drawing.Size(171, 157);
+            this.articleTextBox_statii.TabIndex = 5;
+            this.articleTextBox_statii.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
             // 
-            // label_of_like
+            // label_name_statya
             // 
-            this.label_of_like.AutoSize = true;
-            this.label_of_like.Location = new System.Drawing.Point(123, 42);
-            this.label_of_like.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_of_like.Name = "label_of_like";
-            this.label_of_like.Size = new System.Drawing.Size(47, 17);
-            this.label_of_like.TabIndex = 2;
-            this.label_of_like.Text = "Класс";
+            this.label_name_statya.AutoSize = true;
+            this.label_name_statya.Location = new System.Drawing.Point(92, 34);
+            this.label_name_statya.Name = "label_name_statya";
+            this.label_name_statya.Size = new System.Drawing.Size(38, 13);
+            this.label_name_statya.TabIndex = 2;
+            this.label_name_statya.Text = "Класс";
             // 
-            // label_of_name
+            // label_kategoriya_statii
             // 
-            this.label_of_name.AutoSize = true;
-            this.label_of_name.Location = new System.Drawing.Point(16, 22);
-            this.label_of_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_of_name.Name = "label_of_name";
-            this.label_of_name.Size = new System.Drawing.Size(46, 17);
-            this.label_of_name.TabIndex = 4;
-            this.label_of_name.Text = "label6";
+            this.label_kategoriya_statii.AutoSize = true;
+            this.label_kategoriya_statii.Location = new System.Drawing.Point(12, 18);
+            this.label_kategoriya_statii.Name = "label_kategoriya_statii";
+            this.label_kategoriya_statii.Size = new System.Drawing.Size(35, 13);
+            this.label_kategoriya_statii.TabIndex = 4;
+            this.label_kategoriya_statii.Text = "label6";
             // 
-            // vScrollBar1
+            // vScrollBar1_centr
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(317, 5);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 645);
-            this.vScrollBar1.TabIndex = 1;
+            this.vScrollBar1_centr.Location = new System.Drawing.Point(238, 4);
+            this.vScrollBar1_centr.Name = "vScrollBar1_centr";
+            this.vScrollBar1_centr.Size = new System.Drawing.Size(17, 524);
+            this.vScrollBar1_centr.TabIndex = 1;
             // 
-            // Image1
+            // Image_statii
             // 
-            this.Image1.Location = new System.Drawing.Point(48, 76);
-            this.Image1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Image1.Name = "Image1";
-            this.Image1.Size = new System.Drawing.Size(228, 256);
-            this.Image1.TabIndex = 0;
-            this.Image1.TabStop = false;
-            this.Image1.Click += new System.EventHandler(this.image_Click);
+            this.Image_statii.Location = new System.Drawing.Point(36, 62);
+            this.Image_statii.Name = "Image_statii";
+            this.Image_statii.Size = new System.Drawing.Size(171, 208);
+            this.Image_statii.TabIndex = 0;
+            this.Image_statii.TabStop = false;
+            this.Image_statii.Click += new System.EventHandler(this.image_Click);
             // 
             // textBox_search
             // 
-            this.textBox_search.Location = new System.Drawing.Point(347, 16);
-            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_search.Location = new System.Drawing.Point(260, 13);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(272, 22);
+            this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(127, 496);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 56);
+            this.textBox1.TabIndex = 8;
+            // 
             // GhostMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 713);
+            this.ClientSize = new System.Drawing.Size(748, 579);
             this.Controls.Add(this.textBox_search);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.Left_panel);
+            this.Controls.Add(this.Right_panel);
+            this.Controls.Add(this.Centr_panel);
             this.Controls.Add(this.butto_search);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GhostMainForm";
             this.Text = "Общий вид";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Left_panel.ResumeLayout(false);
+            this.Left_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Image1)).EndInit();
+            this.Right_panel.ResumeLayout(false);
+            this.Right_panel.PerformLayout();
+            this.Centr_panel.ResumeLayout(false);
+            this.Centr_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,22 +299,23 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.PictureBox Реклама;
         private System.Windows.Forms.PictureBox Реклама2;
         private System.Windows.Forms.PictureBox Реклама3;
-        private System.Windows.Forms.Label popular;
+        private System.Windows.Forms.Label label_popular;
         private System.Windows.Forms.Label label_author;
-        private System.Windows.Forms.Label label_of_like;
-        private System.Windows.Forms.Label label_of_name;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.PictureBox Image1;
+        private System.Windows.Forms.Label label_name_statya;
+        private System.Windows.Forms.Label label_kategoriya_statii;
+        private System.Windows.Forms.Panel Left_panel;
+        private System.Windows.Forms.Panel Right_panel;
+        private System.Windows.Forms.Panel Centr_panel;
+        private System.Windows.Forms.VScrollBar vScrollBar1_centr;
+        private System.Windows.Forms.PictureBox Image_statii;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.LinkLabel categories_linklabel;
         private System.Windows.Forms.RadioButton radioButton1;
         public System.Windows.Forms.LinkLabel link_of_registration;
         public System.Windows.Forms.LinkLabel link_of_come;
-        protected System.Windows.Forms.TextBox articleTextBox;
-        private System.Windows.Forms.Button button_add;
+        protected System.Windows.Forms.TextBox articleTextBox_statii;
+        private System.Windows.Forms.Button button_add_reklama;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

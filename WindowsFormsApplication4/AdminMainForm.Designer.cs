@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication4
+namespace WindowsFormsApplication4
 {
     partial class AdminMainForm
     {
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_authors = new System.Windows.Forms.Label();
             this.button_return = new System.Windows.Forms.Button();
             this.button_author = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,7 +48,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.button_categories = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,8 +61,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label_authors);
             this.panel1.Controls.Add(this.button_return);
             this.panel1.Controls.Add(this.button_author);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -73,31 +70,22 @@
             this.panel1.Size = new System.Drawing.Size(329, 100);
             this.panel1.TabIndex = 10;
             // 
-            // button1
+            // label_authors
             // 
-            this.button1.Location = new System.Drawing.Point(46, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 54);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Авторы";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_authors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_authors.Location = new System.Drawing.Point(0, 0);
+            this.label_authors.Name = "label_authors";
+            this.label_authors.Size = new System.Drawing.Size(329, 46);
+            this.label_authors.TabIndex = 1;
+            this.label_authors.Text = "Авторы";
+            this.label_authors.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button_return
             // 
             this.button_return.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_return.Location = new System.Drawing.Point(0, 54);
+            this.button_return.Location = new System.Drawing.Point(0, 46);
             this.button_return.Name = "button_return";
-            this.button_return.Size = new System.Drawing.Size(329, 23);
+            this.button_return.Size = new System.Drawing.Size(329, 31);
             this.button_return.TabIndex = 0;
             this.button_return.Text = "Пасть к низшим";
             this.button_return.UseVisualStyleBackColor = true;
@@ -261,7 +249,6 @@
             this.button_categories.TabIndex = 2;
             this.button_categories.Text = "Категории";
             this.button_categories.UseVisualStyleBackColor = true;
-            this.button_categories.Click += new System.EventHandler(this.button_categories_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -277,7 +264,6 @@
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -291,15 +277,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 526);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "label2";
             // 
             // AdminMainForm
             // 
@@ -320,7 +297,6 @@
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -328,7 +304,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_authors;
         private System.Windows.Forms.Button button_return;
         private System.Windows.Forms.Button button_author;
         private System.Windows.Forms.Panel panel2;
@@ -346,8 +322,6 @@
         private System.Windows.Forms.Button button_statistika;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button_categories;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
     }
 }

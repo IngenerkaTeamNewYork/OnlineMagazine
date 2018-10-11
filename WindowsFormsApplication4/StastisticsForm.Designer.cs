@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.name = new System.Windows.Forms.Label();
+            this.name_stiatii = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Views = new System.Windows.Forms.Label();
+            this.DisLikes = new System.Windows.Forms.Label();
+            this.Likes = new System.Windows.Forms.Label();
             this.ViewsCount = new System.Windows.Forms.Label();
             this.LikesCount = new System.Windows.Forms.Label();
             this.DisLikesCount = new System.Windows.Forms.Label();
@@ -40,15 +40,15 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // name
+            // name_stiatii
             // 
-            this.name.AutoSize = true;
-            this.name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.name.Location = new System.Drawing.Point(145, 262);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(135, 40);
-            this.name.TabIndex = 12;
-            this.name.Text = "hjkhjkhgjk";
+            this.name_stiatii.AutoSize = true;
+            this.name_stiatii.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.name_stiatii.Location = new System.Drawing.Point(145, 262);
+            this.name_stiatii.Name = "name_stiatii";
+            this.name_stiatii.Size = new System.Drawing.Size(135, 40);
+            this.name_stiatii.TabIndex = 12;
+            this.name_stiatii.Text = "hjkhjkhgjk";
             // 
             // tableLayoutPanel1
             // 
@@ -57,14 +57,14 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Views, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DisLikes, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Likes, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.ViewsCount, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.LikesCount, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.DisLikesCount, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.list_of_author, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.name, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.name_stiatii, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,39 +79,39 @@
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // label1
+            // Views
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 86);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Просмотры";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Views.AutoSize = true;
+            this.Views.BackColor = System.Drawing.SystemColors.Control;
+            this.Views.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Views.Location = new System.Drawing.Point(4, 1);
+            this.Views.Name = "Views";
+            this.Views.Size = new System.Drawing.Size(134, 86);
+            this.Views.TabIndex = 0;
+            this.Views.Text = "Просмотры";
+            this.Views.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // DisLikes
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(4, 175);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 86);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Дизлайки";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DisLikes.AutoSize = true;
+            this.DisLikes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DisLikes.Location = new System.Drawing.Point(4, 175);
+            this.DisLikes.Name = "DisLikes";
+            this.DisLikes.Size = new System.Drawing.Size(134, 86);
+            this.DisLikes.TabIndex = 6;
+            this.DisLikes.Text = "Дизлайки";
+            this.DisLikes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // Likes
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(4, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 86);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Лайки";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Likes.AutoSize = true;
+            this.Likes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Likes.Location = new System.Drawing.Point(4, 88);
+            this.Likes.Name = "Likes";
+            this.Likes.Size = new System.Drawing.Size(134, 86);
+            this.Likes.TabIndex = 7;
+            this.Likes.Text = "Лайки";
+            this.Likes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ViewsCount
             // 
@@ -173,14 +173,14 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Views;
+        private System.Windows.Forms.Label DisLikes;
+        private System.Windows.Forms.Label Likes;
         private System.Windows.Forms.Label ViewsCount;
         private System.Windows.Forms.Label LikesCount;
         private System.Windows.Forms.Label DisLikesCount;
         private System.Windows.Forms.ComboBox list_of_author;
-        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label name_stiatii;
 
     }
 }

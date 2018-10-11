@@ -32,11 +32,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_nameReklama = new System.Windows.Forms.Label();
+            this.label_that_reklama = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_addReklama = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 28);
+            this.textBox1.Location = new System.Drawing.Point(138, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
@@ -74,28 +74,28 @@
             "4",
             "5",
             "6"});
-            this.checkedListBox1.Location = new System.Drawing.Point(13, 87);
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 88);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(100, 94);
             this.checkedListBox1.TabIndex = 3;
             // 
-            // label1
+            // label_nameReklama
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.label_nameReklama.AutoSize = true;
+            this.label_nameReklama.Location = new System.Drawing.Point(135, 9);
+            this.label_nameReklama.Name = "label_nameReklama";
+            this.label_nameReklama.Size = new System.Drawing.Size(104, 13);
+            this.label_nameReklama.TabIndex = 4;
+            this.label_nameReklama.Text = "Что рекламируем?";
             // 
-            // label2
+            // label_that_reklama
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.label_that_reklama.AutoSize = true;
+            this.label_that_reklama.Location = new System.Drawing.Point(135, 64);
+            this.label_that_reklama.Name = "label_that_reklama";
+            this.label_that_reklama.Size = new System.Drawing.Size(91, 13);
+            this.label_that_reklama.TabIndex = 5;
+            this.label_that_reklama.Text = "Что впариваем?";
             // 
             // checkBox1
             // 
@@ -117,30 +117,30 @@
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_addReklama
             // 
-            this.button1.Location = new System.Drawing.Point(125, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_addReklama.Location = new System.Drawing.Point(125, 199);
+            this.button_addReklama.Name = "button_addReklama";
+            this.button_addReklama.Size = new System.Drawing.Size(147, 50);
+            this.button_addReklama.TabIndex = 8;
+            this.button_addReklama.Text = "button1";
+            this.button_addReklama.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // ReklamAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_addReklama);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_that_reklama);
+            this.Controls.Add(this.label_nameReklama);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
+            this.Name = "ReklamAddForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -154,10 +154,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_nameReklama;
+        private System.Windows.Forms.Label label_that_reklama;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_addReklama;
     }
 }
