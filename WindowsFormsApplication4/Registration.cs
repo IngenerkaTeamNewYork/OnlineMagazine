@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public partial class Registration : Form
@@ -30,8 +33,15 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GhostMainForm gost = new GhostMainForm();
-            gost.ShowDialog();
+            MySqlCommand cmd = new MySqlCommand(
+                "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`) VALUES (\"" + textBox_login.Text +  "\",\"" + textBox_password.Text + "\",\"" + "0" +  "\",\"" + textBox_about_me.Text + "\")", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            Close();
+        }
+
+        private void textBox_login_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

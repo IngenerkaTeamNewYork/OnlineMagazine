@@ -8,49 +8,95 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public partial class Spisok_reklamy : Form
     {
+        public List<Reklama> mn_reklamy;
+        public void AddOneDay_Click(object sender, EventArgs e)
+        {
+            foreach (Reklama i in mn_reklamy)
+            {
+                if (sender.Equals(i.AddOneDayButton))
+                {
+                    //MessageBox.Show(i.text);
+                    //i.dateFrom = i.dateFrom.AddDays(1);
+                    MySqlCommand cmd = new MySqlCommand(
+                        "UPDATE Advertisment" +
+                        " SET Data_to = '" + i.dateFrom.AddDays(1).ToString("dd.MM.yyyy") + "'" +
+                        " WHERE id = " + i.id , SQLClass.CONN);
+                    MessageBox.Show(cmd.CommandText);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    //UPDATE `Advertisment` SET Data_to = '1.6.2016' WHERE id = 5
+                    //"UPDATE .. SET data = '" + textbox1.Text + "' "
+                }
+            }
+        }
+
         public Spisok_reklamy(List<Reklama> mnogo_reklamy)
         {
             InitializeComponent();
+            mn_reklamy = mnogo_reklamy;
             
             TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
             mainTableLayoutPanel.ColumnCount = 3;
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             mainTableLayoutPanel.Dock = DockStyle.Fill;
             mainTableLayoutPanel.RowStyles.Clear();
 
             int id = 0;
             foreach (Reklama i in mnogo_reklamy)
             {
+                i.AddOneDayButton.Click += new System.EventHandler(AddOneDay_Click);
 
-                if (mnogo_reklamy[id].dateFrom <= DateTime.Now || mnogo_reklamy[id].n)
+                if (i.dateFrom <= DateTime.Now || i.n)
                 {
-                mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+                    mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
                 
-                TableLayoutPanel tableLayoutPanel12 = new TableLayoutPanel();
-                tableLayoutPanel12.ColumnCount = 1;
-                tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-                tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-                tableLayoutPanel12.Location = new System.Drawing.Point(345, 3);
-                tableLayoutPanel12.Name = "tableLayoutPanel12";
-                tableLayoutPanel12.RowCount = 2;
-                tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-                tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-                tableLayoutPanel12.Size = new System.Drawing.Size(144, 122);
+                    TableLayoutPanel tableLayoutPanel12 = new TableLayoutPanel();
+                    tableLayoutPanel12.ColumnCount = 1;
+                    tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+                    tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+                    tableLayoutPanel12.Location = new System.Drawing.Point(345, 3);
+                    tableLayoutPanel12.Name = "tableLayoutPanel12";
+                    tableLayoutPanel12.RowCount = 2;
+                    tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                    tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                    tableLayoutPanel12.Size = new System.Drawing.Size(144, 122);
 
 
+                    TableLayoutPanel tableLayoutPanel13 = new TableLayoutPanel();
+                    tableLayoutPanel13.ColumnCount = 1;
+                    tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+                    tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+                    tableLayoutPanel13.Location = new System.Drawing.Point(345, 3);
+                    tableLayoutPanel13.Name = "tableLayoutPanel13";
+                    tableLayoutPanel13.RowCount = 2;
+                    tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                    tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+                    tableLayoutPanel13.Size = new System.Drawing.Size(144, 122);
 
-                Label label1 = new Label();
-                label1.Location = new Point(103, 0);
-                label1.Name = "label1";
-                label1.Dock = DockStyle.Fill;
-                label1.Size = new Size(250, 13);;
-                label1.Text = i.text;
+
+                    Label label1 = new Label();
+                    label1.Location = new Point(103, 0);
+                    label1.Name = "label1";
+                    label1.Dock = DockStyle.Fill;
+                    label1.Size = new Size(250, 13);;
+                    label1.Text = i.text;
+
+
+                    Label label2 = new Label();
+                    label2.Location = new Point(103, 0);
+                    label2.Name = "label1";
+                    label2.Dock = DockStyle.Fill;
+                    label2.Size = new Size(250, 13); ;
+                    label2.Text = i.dateFrom.ToString(); 
 
 
                 PictureBox pictureBox1 = new PictureBox();
@@ -68,30 +114,20 @@ namespace WindowsFormsApplication4
                 button1.Text = "ПРОЩАЙ";
                 button1.UseVisualStyleBackColor = true;
 
+                tableLayoutPanel12.Controls.Add(button1, 0, 1);
                 tableLayoutPanel12.Controls.Add(button1, 0, 0);
 
+                tableLayoutPanel13.Controls.Add(label2, 0, 0);
+                tableLayoutPanel13.Controls.Add(i.AddOneDayButton, 0, 1);
 
-                    Button button3 = new Button();
-                    button3.Location = new System.Drawing.Point(3, 64);
-                    button3.Name = "button3";
-                    button3.Size = new System.Drawing.Size(115, 23);
-                    button3.TabIndex = 7;
-                    button3.Text = "Продлить : +1 день";
-                    button3.UseVisualStyleBackColor = true;
-
-                    tableLayoutPanel12.Controls.Add(button3, 0, 1);
-                
-
-
-                mainTableLayoutPanel.Controls.Add(pictureBox1, 0, id);
-                mainTableLayoutPanel.Controls.Add(label1, 1, id);
+                mainTableLayoutPanel.Controls.Add(label1, 0, id);
+                mainTableLayoutPanel.Controls.Add(tableLayoutPanel13, 1, id);
                 mainTableLayoutPanel.Controls.Add(tableLayoutPanel12, 2, id);
-                }
+                panel1.Controls.Add(mainTableLayoutPanel);
 
                 id++;
+                }
             }
-
-            main_panel.Controls.Add(mainTableLayoutPanel);
         }
 
         private void button3_Click(object sender, EventArgs e)
