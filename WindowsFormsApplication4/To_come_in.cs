@@ -22,7 +22,7 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!checkBox_admin.Checked)
+            if(!checkBox_imadmin.Checked)
             {
                 //Form ifr = Application.OpenForms[0];
                 //ifr.Show();

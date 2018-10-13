@@ -32,6 +32,7 @@ namespace WindowsFormsApplication4
             this.butto_search = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.Left_panel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.link_of_come = new System.Windows.Forms.LinkLabel();
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.Реклама3 = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,14 @@ namespace WindowsFormsApplication4
             this.vScrollBar1_centr = new System.Windows.Forms.VScrollBar();
             this.Image_statii = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox_imadmin = new System.Windows.Forms.CheckBox();
+            this.label_password = new System.Windows.Forms.Label();
+            this.label_of_login = new System.Windows.Forms.Label();
+            this.button_login = new System.Windows.Forms.Button();
+            this.textBox_password = new System.Windows.Forms.TextBox();
+            this.textBox_login = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Left_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
@@ -56,6 +64,8 @@ namespace WindowsFormsApplication4
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // categories_linklabel
@@ -91,6 +101,7 @@ namespace WindowsFormsApplication4
             // 
             // Left_panel
             // 
+            this.Left_panel.Controls.Add(this.tableLayoutPanel1);
             this.Left_panel.Controls.Add(this.textBox1);
             this.Left_panel.Controls.Add(this.link_of_come);
             this.Left_panel.Controls.Add(this.link_of_registration);
@@ -102,6 +113,14 @@ namespace WindowsFormsApplication4
             this.Left_panel.Name = "Left_panel";
             this.Left_panel.Size = new System.Drawing.Size(226, 555);
             this.Left_panel.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(127, 496);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 56);
+            this.textBox1.TabIndex = 8;
             // 
             // link_of_come
             // 
@@ -127,26 +146,26 @@ namespace WindowsFormsApplication4
             // 
             // Реклама3
             // 
-            this.Реклама3.Location = new System.Drawing.Point(10, 272);
+            this.Реклама3.Location = new System.Drawing.Point(23, 363);
             this.Реклама3.Name = "Реклама3";
-            this.Реклама3.Size = new System.Drawing.Size(172, 205);
+            this.Реклама3.Size = new System.Drawing.Size(172, 114);
             this.Реклама3.TabIndex = 5;
             this.Реклама3.TabStop = false;
             // 
             // Реклама2
             // 
-            this.Реклама2.Location = new System.Drawing.Point(10, 92);
+            this.Реклама2.Location = new System.Drawing.Point(23, 239);
             this.Реклама2.Name = "Реклама2";
-            this.Реклама2.Size = new System.Drawing.Size(172, 174);
+            this.Реклама2.Size = new System.Drawing.Size(172, 102);
             this.Реклама2.TabIndex = 4;
             this.Реклама2.TabStop = false;
             this.Реклама2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
             // Реклама
             // 
-            this.Реклама.Location = new System.Drawing.Point(9, 19);
+            this.Реклама.Location = new System.Drawing.Point(13, 138);
             this.Реклама.Name = "Реклама";
-            this.Реклама.Size = new System.Drawing.Size(182, 67);
+            this.Реклама.Size = new System.Drawing.Size(199, 95);
             this.Реклама.TabIndex = 2;
             this.Реклама.TabStop = false;
             // 
@@ -256,13 +275,93 @@ namespace WindowsFormsApplication4
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             // 
-            // textBox1
+            // checkBox_imadmin
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 496);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 56);
-            this.textBox1.TabIndex = 8;
+            this.checkBox_imadmin.AutoSize = true;
+            this.checkBox_imadmin.Location = new System.Drawing.Point(3, 3);
+            this.checkBox_imadmin.Name = "checkBox_imadmin";
+            this.checkBox_imadmin.Size = new System.Drawing.Size(69, 17);
+            this.checkBox_imadmin.TabIndex = 14;
+            this.checkBox_imadmin.Text = "Я админ";
+            this.checkBox_imadmin.UseVisualStyleBackColor = true;
+            // 
+            // label_password
+            // 
+            this.label_password.AutoSize = true;
+            this.label_password.Location = new System.Drawing.Point(3, 40);
+            this.label_password.Name = "label_password";
+            this.label_password.Size = new System.Drawing.Size(45, 13);
+            this.label_password.TabIndex = 13;
+            this.label_password.Text = "Пароль";
+            // 
+            // label_of_login
+            // 
+            this.label_of_login.AutoSize = true;
+            this.label_of_login.Location = new System.Drawing.Point(3, 0);
+            this.label_of_login.Name = "label_of_login";
+            this.label_of_login.Size = new System.Drawing.Size(38, 13);
+            this.label_of_login.TabIndex = 12;
+            this.label_of_login.Text = "Логин";
+            // 
+            // button_login
+            // 
+            this.button_login.Location = new System.Drawing.Point(113, 3);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(96, 40);
+            this.button_login.TabIndex = 11;
+            this.button_login.Text = "Войти";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            // 
+            // textBox_password
+            // 
+            this.textBox_password.Location = new System.Drawing.Point(3, 63);
+            this.textBox_password.Name = "textBox_password";
+            this.textBox_password.Size = new System.Drawing.Size(100, 20);
+            this.textBox_password.TabIndex = 10;
+            // 
+            // textBox_login
+            // 
+            this.textBox_login.Location = new System.Drawing.Point(3, 23);
+            this.textBox_login.Name = "textBox_login";
+            this.textBox_login.Size = new System.Drawing.Size(100, 20);
+            this.textBox_login.TabIndex = 9;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label_of_login, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_login, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label_password, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_password, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 4);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(226, 132);
+            this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.checkBox_imadmin, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_login, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 83);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(220, 46);
+            this.tableLayoutPanel2.TabIndex = 14;
             // 
             // GhostMainForm
             // 
@@ -288,6 +387,10 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.Centr_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +419,14 @@ namespace WindowsFormsApplication4
         protected System.Windows.Forms.TextBox articleTextBox_statii;
         private System.Windows.Forms.Button button_add_reklama;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label_of_login;
+        private System.Windows.Forms.TextBox textBox_login;
+        private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.TextBox textBox_password;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.CheckBox checkBox_imadmin;
+        private System.Windows.Forms.Button button_login;
     }
 }
 
