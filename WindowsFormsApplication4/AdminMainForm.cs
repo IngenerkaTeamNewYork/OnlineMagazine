@@ -28,6 +28,7 @@ namespace WindowsFormsApplication4
         public string password;
         public Boolean ban;
         public Button btn;
+        public Button ras;
     }
 
     public partial class AdminMainForm : Form
@@ -43,11 +44,11 @@ namespace WindowsFormsApplication4
             while (rdr.Read())
             {
                 Reklama rek = new Reklama();
-                rek.text = rdr[0].ToString();
+               /* rek.text = rdr[0].ToString();
                 MessageBox.Show(rdr[1].ToString());
                 rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
                 rek.n = Convert.ToBoolean(rdr[2].ToString());
-                rek.id = Convert.ToInt32(rdr[3].ToString());
+                rek.id = Convert.ToInt32(rdr[3].ToString());*/
 
                 rek.AddOneDayButton = new Button();
                 rek.AddOneDayButton.Location = new System.Drawing.Point(3, 64);

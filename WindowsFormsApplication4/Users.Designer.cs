@@ -29,19 +29,31 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name = new System.Windows.Forms.Label();
             this.labelb = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
+            this.label_feel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label_feel);
             this.panel1.Controls.Add(this.labelb);
             this.panel1.Controls.Add(this.name);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 264);
+            this.panel1.Size = new System.Drawing.Size(365, 261);
             this.panel1.TabIndex = 0;
+            // 
+            // labelb
+            // 
+            this.labelb.AutoSize = true;
+            this.labelb.Location = new System.Drawing.Point(201, 4);
+            this.labelb.Name = "labelb";
+            this.labelb.Size = new System.Drawing.Size(54, 13);
+            this.labelb.TabIndex = 1;
+            this.labelb.Text = "действия";
             // 
             // name
             // 
@@ -52,20 +64,20 @@
             this.name.TabIndex = 0;
             this.name.Text = "Логин";
             // 
-            // labelb
+            // label_feel
             // 
-            this.labelb.AutoSize = true;
-            this.labelb.Location = new System.Drawing.Point(99, 4);
-            this.labelb.Name = "labelb";
-            this.labelb.Size = new System.Drawing.Size(54, 13);
-            this.labelb.TabIndex = 1;
-            this.labelb.Text = "действия";
+            this.label_feel.AutoSize = true;
+            this.label_feel.Location = new System.Drawing.Point(76, 4);
+            this.label_feel.Name = "label_feel";
+            this.label_feel.Size = new System.Drawing.Size(61, 13);
+            this.label_feel.TabIndex = 2;
+            this.label_feel.Text = "Состояние";
             // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(365, 261);
             this.Controls.Add(this.panel1);
             this.Name = "Users";
             this.Text = "Список пользователей";
@@ -81,6 +93,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelb;
         private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label label_feel;
 
 
     }

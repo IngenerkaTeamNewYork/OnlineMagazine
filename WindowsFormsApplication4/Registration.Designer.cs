@@ -73,6 +73,8 @@
             this.textBox_about_me.Name = "textBox_about_me";
             this.textBox_about_me.Size = new System.Drawing.Size(248, 52);
             this.textBox_about_me.TabIndex = 3;
+            this.textBox_about_me.TextChanged += new System.EventHandler(this.textBox_about_me_TextChanged);
+            this.textBox_about_me.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_about_me_KeyDown);
             // 
             // checkBox_I_author
             // 

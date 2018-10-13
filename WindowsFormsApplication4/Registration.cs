@@ -43,5 +43,18 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void textBox_about_me_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_about_me_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || checkBox_agree.Checked)
+            {
+                button1_Click(sender, null);
+            }
+        }
     }
 }
