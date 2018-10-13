@@ -26,7 +26,7 @@ namespace WindowsFormsApplication4
                 {
                     MySqlCommand cmd = new MySqlCommand(
                         "UPDATE Advertisment" +
-                        " SET Data_to = '" + rekl.dateFrom.AddDays(1).ToString("dd.MM.yyyy") + "'" +
+                        " SET Data_to = '" + rekl.date_to.AddDays(1).ToString("dd.MM.yyyy") + "'" +
                         " WHERE id = " + rekl.id , SQLClass.CONN);
 
                     MySqlDataReader rdr = cmd.ExecuteReader();
@@ -35,6 +35,43 @@ namespace WindowsFormsApplication4
             }
         }
 
+
+        public void prinit(object sender, EventArgs e)
+        {
+            foreach (Reklama rekl in mn_reklamy)
+            {
+                if (sender.Equals(rekl.prinitButton))
+                {
+                    MySqlCommand cmd = new MySqlCommand(
+                        "UPDATE Advertisment" +
+                        " SET New = '" + "0" + "'" +
+                        " WHERE id = " + rekl.id, SQLClass.CONN);
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    rdr.Close();
+                }
+            }
+        }
+
+
+        public void proshiy(object sender, EventArgs e)
+        {
+            foreach (Reklama rekl in mn_reklamy)
+            {
+                if (sender.Equals(rekl.proshiyButton))
+                {
+                    MySqlCommand cmd = new MySqlCommand(
+                        "DELETE FROM `Advertisment` " +
+                        "  WHERE `id` = " + rekl.id, SQLClass.CONN);
+
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    rdr.Close();
+                }
+            }
+        }
+
+
+
         public Spisok_reklamy(List<Reklama> mnogo_reklamy)
         {
             InitializeComponent();
@@ -42,9 +79,9 @@ namespace WindowsFormsApplication4
             
             TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
             mainTableLayoutPanel.ColumnCount = 3;
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             mainTableLayoutPanel.Dock = DockStyle.Fill;
             mainTableLayoutPanel.RowStyles.Clear();
 
@@ -52,8 +89,10 @@ namespace WindowsFormsApplication4
             foreach (Reklama rekl in mnogo_reklamy)
             {
                 rekl.AddOneDayButton.Click += new System.EventHandler(AddOneDay_Click);
+                rekl.prinitButton.Click += new System.EventHandler(prinit);
+                rekl.proshiyButton.Click += new System.EventHandler(proshiy);
 
-                if (rekl.dateFrom <= DateTime.Now || rekl.n)
+                if (rekl.date_to <= DateTime.Now || rekl.n)
                 {
                     mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
                 
@@ -91,7 +130,7 @@ namespace WindowsFormsApplication4
                     label_date_from.Location = new Point(103, 0);
                     label_date_from.Dock = DockStyle.Fill;
                     label_date_from.Size = new Size(250, 13);
-                    label_date_from.Text = rekl.dateFrom.ToString(); 
+                    label_date_from.Text = rekl.date_to.ToString(); 
 
 
                     PictureBox pictureBox1 = new PictureBox();
@@ -100,18 +139,18 @@ namespace WindowsFormsApplication4
                     pictureBox1.TabStop = false;
 
 
-                    Button button1 = new Button();
-                    button1.Location = new Point(3, 3);
-                    button1.Size = new Size(75, 23);
-                    button1.TabIndex = 3;
-                    button1.Text = "ПРОЩАЙ";
-                    button1.UseVisualStyleBackColor = true;
 
-                    tableLayoutPanel12.Controls.Add(button1, 0, 1);
-                    tableLayoutPanel12.Controls.Add(button1, 0, 0);
+
+
+
+                    tableLayoutPanel12.Controls.Add(rekl.proshiyButton, 0, 1);
+                    if(rekl.n)
+                    { tableLayoutPanel12.Controls.Add(rekl.prinitButton, 0, 0); }
+                    //tableLayoutPanel12.Controls.Add(rekl.prinitButton, 0, 0);
 
                     tableLayoutPanel13.Controls.Add(label_date_from, 0, 0);
-                    tableLayoutPanel13.Controls.Add(rekl.AddOneDayButton, 0, 1);
+                    if (rekl.date_to <= DateTime.Now)
+                    { tableLayoutPanel13.Controls.Add(rekl.AddOneDayButton, 0, 1); }
 
                     mainTableLayoutPanel.Controls.Add(label_text, 0, id);
                     mainTableLayoutPanel.Controls.Add(tableLayoutPanel13, 1, id);
