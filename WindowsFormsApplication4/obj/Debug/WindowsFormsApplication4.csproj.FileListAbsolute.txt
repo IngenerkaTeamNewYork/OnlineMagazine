@@ -58,3 +58,4 @@ C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\bin\Debug\MySql.Data.dll
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.CopyComplete
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Collections.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Users.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.NewPages.resources
