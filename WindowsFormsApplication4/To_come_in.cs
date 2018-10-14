@@ -28,23 +28,23 @@ namespace WindowsFormsApplication4
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd1 = new MySqlCommand("SELECT COUNT(*) FROM `Polzovateli` WHERE `Login`=\"" + textBox_login.Text + "\" AND `admin` = 1", SQLClass.CONN);
-                MySqlDataReader rdr1 = cmd1.ExecuteReader();
+            MySqlDataReader rdr1 = cmd1.ExecuteReader();
 
-                rdr1.Read();
-                String IsAdmin = rdr1[0].ToString();
-                rdr1.Close();
+            rdr1.Read();
+            String IsAdmin = rdr1[0].ToString();
+            rdr1.Close();
                 
-                if (IsAdmin == "0")//!checkBox_admin.Checked)
-                {
-                    //Form ifr = Application.OpenForms[0];
-                    //ifr.Show();
-                    // GhostMainForm link_of_come.Visible = false;
-                }
-                else
-                {
-                    MySqlCommand cmd = new MySqlCommand(
+            if (IsAdmin == "0")//!checkBox_admin.Checked)
+            {
+                //Form ifr = Application.OpenForms[0];
+                //ifr.Show();
+                // GhostMainForm link_of_come.Visible = false;
+            }
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand(
                     "SELECT * FROM Polzovateli WHERE `Login`=\"" + textBox_login.Text + "\" AND `Parol`=\"" + textBox_password.Text + "\"", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
+                MySqlDataReader rdr = cmd.ExecuteReader();
                         
                     bool isloginok = false;
                     while (rdr.Read())

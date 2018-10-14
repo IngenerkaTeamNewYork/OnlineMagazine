@@ -30,7 +30,7 @@
         {
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.button_come = new System.Windows.Forms.Button();
+            this.button_login = new System.Windows.Forms.Button();
             this.label_of_login = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -51,15 +51,15 @@
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
             this.textBox_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_password_KeyPress);
             // 
-            // button_come
+            // button_login
             // 
-            this.button_come.Location = new System.Drawing.Point(35, 124);
-            this.button_come.Name = "button_come";
-            this.button_come.Size = new System.Drawing.Size(75, 23);
-            this.button_come.TabIndex = 2;
-            this.button_come.Text = "Войти";
-            this.button_come.UseVisualStyleBackColor = true;
-            this.button_come.Click += new System.EventHandler(this.button1_Click);
+            this.button_login.Location = new System.Drawing.Point(35, 124);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(75, 23);
+            this.button_login.TabIndex = 2;
+            this.button_login.Text = "Войти";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_of_login
             // 
@@ -86,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(169, 159);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_of_login);
-            this.Controls.Add(this.button_come);
+            this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
             this.Name = "To_come_in";
@@ -101,7 +101,7 @@
 
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.Button button_come;
+        private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label_of_login;
         private System.Windows.Forms.Label label_password;
     }
