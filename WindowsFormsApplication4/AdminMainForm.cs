@@ -16,10 +16,12 @@ namespace WindowsFormsApplication4
     public struct Reklama
     {
         public int id;
-        public DateTime dateFrom; 
+        public DateTime date_to; 
         public string text;
         public Boolean n;
         public Button AddOneDayButton;
+        public Button prinitButton;
+        public Button proshiyButton;
     }
 
     public struct users
@@ -44,11 +46,11 @@ namespace WindowsFormsApplication4
             while (rdr.Read())
             {
                 Reklama rek = new Reklama();
-               /* rek.text = rdr[0].ToString();
-                MessageBox.Show(rdr[1].ToString());
-                rek.dateFrom = Convert.ToDateTime(rdr[1].ToString());
+                
+                rek.text = rdr[0].ToString();
+                rek.date_to = Convert.ToDateTime(rdr[1].ToString());                
                 rek.n = Convert.ToBoolean(rdr[2].ToString());
-                rek.id = Convert.ToInt32(rdr[3].ToString());*/
+                rek.id = Convert.ToInt32(rdr[3].ToString());
 
                 rek.AddOneDayButton = new Button();
                 rek.AddOneDayButton.Location = new System.Drawing.Point(3, 64);
@@ -56,6 +58,24 @@ namespace WindowsFormsApplication4
                 rek.AddOneDayButton.TabIndex = 7;
                 rek.AddOneDayButton.Text = "Продлить : +1 день";//Add 1 day
                 rek.AddOneDayButton.UseVisualStyleBackColor = true;
+
+
+                rek.prinitButton = new Button();
+                rek.prinitButton.Location = new System.Drawing.Point(3, 64);
+                rek.prinitButton.Size = new System.Drawing.Size(115, 23);
+                rek.prinitButton.TabIndex = 7;
+                rek.prinitButton.Text = "Одобрить";
+                rek.prinitButton.UseVisualStyleBackColor = true;
+
+
+                rek.proshiyButton = new Button();
+                rek.proshiyButton.Location = new System.Drawing.Point(3, 64);
+                rek.proshiyButton.Size = new System.Drawing.Size(115, 23);
+                rek.proshiyButton.TabIndex = 7;
+                rek.proshiyButton.Text = "ПРОЩАЙ";
+                rek.proshiyButton.UseVisualStyleBackColor = true;
+
+
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();

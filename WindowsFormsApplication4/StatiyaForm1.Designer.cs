@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Maintext = new System.Windows.Forms.Label();
             this.Kategoriatext = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -37,6 +36,8 @@
             this.artTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Stattext = new System.Windows.Forms.TextBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.Maintext = new System.Windows.Forms.TextBox();
+            this.Authortext = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -44,24 +45,12 @@
             this.HeaderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Maintext
-            // 
-            this.Maintext.AutoSize = true;
-            this.Maintext.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Maintext.Location = new System.Drawing.Point(147, 44);
-            this.Maintext.MaximumSize = new System.Drawing.Size(500, 150);
-            this.Maintext.MinimumSize = new System.Drawing.Size(50, 20);
-            this.Maintext.Name = "Maintext";
-            this.Maintext.Size = new System.Drawing.Size(115, 28);
-            this.Maintext.TabIndex = 0;
-            this.Maintext.Text = "Maintext";
-            this.Maintext.Click += new System.EventHandler(this.Maintext_Click);
-            // 
             // Kategoriatext
             // 
             this.Kategoriatext.AutoSize = true;
+            this.Kategoriatext.Dock = System.Windows.Forms.DockStyle.Top;
             this.Kategoriatext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Kategoriatext.Location = new System.Drawing.Point(3, 0);
+            this.Kategoriatext.Location = new System.Drawing.Point(0, 0);
             this.Kategoriatext.MaximumSize = new System.Drawing.Size(100, 30);
             this.Kategoriatext.MinimumSize = new System.Drawing.Size(70, 30);
             this.Kategoriatext.Name = "Kategoriatext";
@@ -74,7 +63,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 103);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(456, 257);
+            this.pictureBox1.Size = new System.Drawing.Size(455, 257);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -102,7 +91,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(76, 627);
+            this.panel1.Size = new System.Drawing.Size(77, 627);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -124,13 +113,13 @@
             this.artTableLayoutPanel.Controls.Add(this.pictureBox1, 0, 1);
             this.artTableLayoutPanel.Controls.Add(this.HeaderPanel, 0, 0);
             this.artTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.artTableLayoutPanel.Location = new System.Drawing.Point(85, 3);
+            this.artTableLayoutPanel.Location = new System.Drawing.Point(86, 3);
             this.artTableLayoutPanel.Name = "artTableLayoutPanel";
             this.artTableLayoutPanel.RowCount = 3;
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.artTableLayoutPanel.Size = new System.Drawing.Size(462, 627);
+            this.artTableLayoutPanel.Size = new System.Drawing.Size(461, 627);
             this.artTableLayoutPanel.TabIndex = 1;
             // 
             // Stattext
@@ -143,19 +132,45 @@
             this.Stattext.Multiline = true;
             this.Stattext.Name = "Stattext";
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Stattext.Size = new System.Drawing.Size(456, 258);
+            this.Stattext.Size = new System.Drawing.Size(455, 258);
             this.Stattext.TabIndex = 7;
             this.Stattext.TextChanged += new System.EventHandler(this.Stattext_TextChanged);
             // 
             // HeaderPanel
             // 
+            this.HeaderPanel.Controls.Add(this.Authortext);
             this.HeaderPanel.Controls.Add(this.Maintext);
             this.HeaderPanel.Controls.Add(this.Kategoriatext);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.HeaderPanel.Location = new System.Drawing.Point(3, 3);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(456, 94);
+            this.HeaderPanel.Size = new System.Drawing.Size(455, 94);
             this.HeaderPanel.TabIndex = 5;
+            // 
+            // Maintext
+            // 
+            this.Maintext.BackColor = System.Drawing.SystemColors.Control;
+            this.Maintext.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Maintext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Maintext.Enabled = false;
+            this.Maintext.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Bold);
+            this.Maintext.Location = new System.Drawing.Point(0, 30);
+            this.Maintext.Multiline = true;
+            this.Maintext.Name = "Maintext";
+            this.Maintext.Size = new System.Drawing.Size(455, 64);
+            this.Maintext.TabIndex = 2;
+            // 
+            // Authortext
+            // 
+            this.Authortext.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Authortext.AutoSize = true;
+            this.Authortext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Authortext.Location = new System.Drawing.Point(200, 0);
+            this.Authortext.Name = "Authortext";
+            this.Authortext.Size = new System.Drawing.Size(86, 19);
+            this.Authortext.TabIndex = 3;
+            this.Authortext.Text = "Authortext";
+            this.Authortext.Click += new System.EventHandler(this.label1_Click);
             // 
             // StatiyaForm1
             // 
@@ -180,7 +195,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Maintext;
         private System.Windows.Forms.Label Kategoriatext;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
@@ -189,5 +203,7 @@
         private System.Windows.Forms.TextBox Stattext;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Label labelreklama;
+        private System.Windows.Forms.TextBox Maintext;
+        private System.Windows.Forms.Label Authortext;
     }
 }

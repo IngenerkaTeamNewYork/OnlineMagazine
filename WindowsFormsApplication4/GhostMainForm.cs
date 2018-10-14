@@ -17,6 +17,8 @@ namespace WindowsFormsApplication4
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
 
+        public List<LinkLabel> arts = new List<LinkLabel>();
+
         public GhostMainForm()
         {
             InitializeComponent();
@@ -35,11 +37,41 @@ namespace WindowsFormsApplication4
             }
         }
 
+        private void ArticleClick(object sender, EventArgs e)
+        {
+            foreach (LinkLabel lab in arts)
+            {
+                if (sender.Equals(lab))
+                {
+                    MySqlCommand cmd = new MySqlCommand(
+                        "SELECT Header, Author, Category ,Text FROM `Articles`" +
+                        " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        statiya stat = new statiya();
+                        stat.name_statiya = rdr[0].ToString();
+                        stat.name_author = rdr[1].ToString();
+                        stat.kategorita_statii = rdr[2].ToString();
+                        stat.text_statii = rdr[3].ToString();
+                        stat.kartinki_statii = new List<Image>();
+                        stat.kartinki_statii.Add(Image_statii.Image);
+
+
+                        StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                        OknoStatiya.ShowDialog();
+                    }
+                    rdr.Close();
+                }
+            }
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             SQLClass.OpenConnection();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Text FROM `Articles` ", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM `Articles` ", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int uy = 0;
@@ -49,89 +81,16 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(103, 10 + 30 * uy);
                 label1.Size = new Size(250, 13);
                 label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+
+                arts.Add(label1);
 
                 Right_panel.Controls.Add(label1);
                 uy++;
             }
             rdr.Close();
-
-            
-            Image_statii.Image = Image.FromFile("cat.jpg");
-            label_name_statya.Text = "Котята и вода";
-            articleTextBox_statii.Text = "Я топлю котят(Хой!)" +
-                Environment.NewLine + "Колхозный панк" +
-                Environment.NewLine + "Панки - хой!";
-            label_kategoriya_statii.Text = "Животные";
-
-
-
-            statiya stat = new statiya();
-            stat.name_statiya = label_name_statya.Text;
-            stat.text_statii = articleTextBox_statii.Text;
-            stat.kategorita_statii = label_kategoriya_statii.Text;
-            stat.kartinki_statii = new List<Image>();
-            stat.kartinki_statii.Add(Image_statii.Image);
         }        
-
-        private void image_Click(object sender, EventArgs e)
-        {            
-            Image_statii.Image = Image.FromFile("cat.jpg");
-            label_name_statya.Text = "Котята и вода";
-            articleTextBox_statii.Text = "Я топлю котят(Хой!)" +
-                Environment.NewLine + "Колхозный панк" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Паertertнки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Пertertанки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Паretertнки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Паsdrtetнки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                Environment.NewLine + "Панки - хой!" +
-                 Environment.NewLine + "Паsdrtetнки - хой!1488";
-            label_kategoriya_statii.Text = "Животные";
-         
-
-            
-            statiya stat = new statiya();
-            stat.name_statiya = label_name_statya.Text;
-            stat.text_statii = articleTextBox_statii.Text;
-            stat.kategorita_statii = label_kategoriya_statii.Text;
-            stat.kartinki_statii = new List<Image>();
-            stat.kartinki_statii.Add(Image_statii.Image);
-
-
-            StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
-            OknoStatiya.ShowDialog();
-        }
-
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration form = new Registration();
