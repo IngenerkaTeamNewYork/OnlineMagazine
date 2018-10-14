@@ -33,7 +33,6 @@
             this.button_login = new System.Windows.Forms.Button();
             this.label_of_login = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
-            this.checkBox_imadmin = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox_login
@@ -49,6 +48,8 @@
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(100, 20);
             this.textBox_password.TabIndex = 1;
+            this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
+            this.textBox_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_password_KeyPress);
             // 
             // button_login
             // 
@@ -78,22 +79,11 @@
             this.label_password.TabIndex = 4;
             this.label_password.Text = "Пароль";
             // 
-            // checkBox_imadmin
-            // 
-            this.checkBox_imadmin.AutoSize = true;
-            this.checkBox_imadmin.Location = new System.Drawing.Point(12, 101);
-            this.checkBox_imadmin.Name = "checkBox_imadmin";
-            this.checkBox_imadmin.Size = new System.Drawing.Size(69, 17);
-            this.checkBox_imadmin.TabIndex = 5;
-            this.checkBox_imadmin.Text = "Я админ";
-            this.checkBox_imadmin.UseVisualStyleBackColor = true;
-            // 
             // To_come_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(169, 159);
-            this.Controls.Add(this.checkBox_imadmin);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_of_login);
             this.Controls.Add(this.button_login);
@@ -114,6 +104,5 @@
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label_of_login;
         private System.Windows.Forms.Label label_password;
-        private System.Windows.Forms.CheckBox checkBox_imadmin;
     }
 }

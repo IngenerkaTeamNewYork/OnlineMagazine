@@ -265,7 +265,6 @@ namespace WindowsFormsApplication4
             this.Image_statii.Size = new System.Drawing.Size(171, 208);
             this.Image_statii.TabIndex = 0;
             this.Image_statii.TabStop = false;
-            this.Image_statii.Click += new System.EventHandler(this.image_Click);
             // 
             // textBox_search
             // 

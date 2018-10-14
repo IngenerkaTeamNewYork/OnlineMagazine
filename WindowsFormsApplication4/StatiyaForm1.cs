@@ -27,6 +27,7 @@ namespace WindowsFormsApplication4
 
             pictureBox1.Image = stat.kartinki_statii[0];
 
+            Authortext.Text = stat.name_author;
 
         }
 
@@ -68,6 +69,11 @@ namespace WindowsFormsApplication4
         }
 
         private void labelreklama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
