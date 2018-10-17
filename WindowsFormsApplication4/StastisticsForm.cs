@@ -55,29 +55,19 @@ namespace WindowsFormsApplication4
 
         private void list_of_author_SelectedIndexChanged(object sender, EventArgs e)
         {   
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `Authors` WHERE UserName = '" + list_of_author.Text + "'", conn);
+            MySqlCommand cmd = 
+                new MySqlCommand("SELECT * FROM `Authors` WHERE UserName = '" + list_of_author.Text + "'", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
 
             while (rdr.Read())
-                {
-                    ViewsCount.Text = rdr[1].ToString();
-                    LikesCount.Text = rdr[2].ToString();
-                    DisLikesCount.Text = rdr[3].ToString();
-                    name_stiatii.Text = list_of_author.Text;
-                 }
-                rdr.Close();
-
-
-                conn.Close();
-
-
+            {
+                ViewsCount.Text = rdr[1].ToString();
+                LikesCount.Text = rdr[2].ToString();
+                DisLikesCount.Text = rdr[3].ToString();
+                name_stiatii.Text = list_of_author.Text;
+            }
+            rdr.Close();
         }
 
         private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
