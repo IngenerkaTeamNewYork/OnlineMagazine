@@ -35,12 +35,26 @@ namespace WindowsFormsApplication4
 
         private void button_send_Click(object sender, EventArgs e)
         {
-            if (checkBox_agree.Checked && checkBox_agree2.Checked)
+            if (checkBox_agree.Checked && checkBox_agree2.Checked)          
             {
+                MySqlCommand Dcmd =
+                new MySqlCommand("SELECT MAX(id+1) FROM Advertisment", SQLClass.CONN);
+                MySqlDataReader Drdr = Dcmd.ExecuteReader();
+                //int M = Drdr;
+                
+                String NewAdvId = "";
+                while (Drdr.Read())
+                {
+                    NewAdvId = Drdr[0].ToString();
+                }                
+                Drdr.Close();
+
                 MySqlCommand cmd = new MySqlCommand(
                     "INSERT INTO Advertisment(Text, Pic, Date_From, Data_to, id, new)" +
-                    " VALUES ('" + text_na_reklame.Text + "', '', '13.10.2018', '20.10.2018', '6', '1'", SQLClass.CONN);
-                
+                    " VALUES (" +
+                    "'" + text_na_reklame.Text + "'" +
+                    ", '" + textBox_adress.Text + "'" +
+                    ", '13.10.2018', '20.10.2018', '" + NewAdvId + "', '1')", SQLClass.CONN);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Close();
             }
