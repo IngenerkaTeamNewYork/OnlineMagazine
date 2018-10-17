@@ -160,7 +160,19 @@ namespace WindowsFormsApplication4
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
+            if (textBox_password.Text == "")
+            {
+                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
+                af.ShowDialog();
+            }
+            else
+            {
+                To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
+            }
+        }
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="AddPromoForm.Designer.cs">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Statia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Statia.Designer.cs">
+      <DependentUpon>Add_Statia.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="AddPromoForm.resx">
       <DependentUpon>AddPromoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Statia.resx">
+      <DependentUpon>Add_Statia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
