@@ -35,8 +35,6 @@ namespace WindowsFormsApplication4
 
         private void Vyuvod_Denyak_Click(object sender, EventArgs e)
         {
-            AuthorMainForm f = new AuthorMainForm();
-            f.ShowDialog();
         }
     }
 }

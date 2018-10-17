@@ -12,8 +12,10 @@ namespace WindowsFormsApplication4
 {
     public partial class AuthorMainForm : Form
     {
-        public AuthorMainForm()
+        public string login;
+        public AuthorMainForm(string log)
         {
+            login = log;
             InitializeComponent();
         }
 
@@ -29,7 +31,8 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Add_Statia f1 = new Add_Statia(login);
+            f1.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

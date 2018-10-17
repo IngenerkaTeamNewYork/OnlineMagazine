@@ -36,8 +36,8 @@
             this.artTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Stattext = new System.Windows.Forms.TextBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.Maintext = new System.Windows.Forms.TextBox();
             this.Authortext = new System.Windows.Forms.Label();
+            this.Maintext = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -147,6 +147,18 @@
             this.HeaderPanel.Size = new System.Drawing.Size(455, 94);
             this.HeaderPanel.TabIndex = 5;
             // 
+            // Authortext
+            // 
+            this.Authortext.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Authortext.AutoSize = true;
+            this.Authortext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            this.Authortext.Location = new System.Drawing.Point(200, 0);
+            this.Authortext.Name = "Authortext";
+            this.Authortext.Size = new System.Drawing.Size(86, 19);
+            this.Authortext.TabIndex = 3;
+            this.Authortext.Text = "Authortext";
+            this.Authortext.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Maintext
             // 
             this.Maintext.BackColor = System.Drawing.SystemColors.Control;
@@ -159,18 +171,6 @@
             this.Maintext.Name = "Maintext";
             this.Maintext.Size = new System.Drawing.Size(455, 64);
             this.Maintext.TabIndex = 2;
-            // 
-            // Authortext
-            // 
-            this.Authortext.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Authortext.AutoSize = true;
-            this.Authortext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Authortext.Location = new System.Drawing.Point(200, 0);
-            this.Authortext.Name = "Authortext";
-            this.Authortext.Size = new System.Drawing.Size(86, 19);
-            this.Authortext.TabIndex = 3;
-            this.Authortext.Text = "Authortext";
-            this.Authortext.Click += new System.EventHandler(this.label1_Click);
             // 
             // StatiyaForm1
             // 
