@@ -16,6 +16,7 @@ namespace WindowsFormsApplication4
     {
         public string avtor1;
         public string id;
+        public string ne_povtor = "";
         public Add_Statia(string avtor)
         {
             avtor1 = avtor;
@@ -24,31 +25,38 @@ namespace WindowsFormsApplication4
         
         private void button1_Click(object sender, EventArgs e)
         {
-            
-              
-              //INSERT INTO `Articles`(`Header`, `Text`, `Author`, `Picture`, `Artic_ID`, `Category`, `new`) 
-               // VALUES ('fdgdfgdfg', 'fdsgdfsgsdfghsh', 'fdg', 'null', 4, 'Животные', 1)
-            MySqlCommand gd = new MySqlCommand("SELECT MAX(Artic_ID + 1) FROM Articles", SQLClass.CONN);
-            MySqlDataReader g = gd.ExecuteReader();
-            while(g.Read())
+
+            if (ne_povtor == textBox2.Text)
             {
-                id = Convert.ToString(g[0]);
+                MessageBox.Show("Скоре всего вы пытаетесь опубликовать ещё раз");
             }
-            g.Close();
+            else
+            {
+                //INSERT INTO `Articles`(`Header`, `Text`, `Author`, `Picture`, `Artic_ID`, `Category`, `new`) 
+                // VALUES ('fdgdfgdfg', 'fdsgdfsgsdfghsh', 'fdg', 'null', 4, 'Животные', 1)
+                MySqlCommand gd = new MySqlCommand("SELECT MAX(Artic_ID + 1) FROM Articles", SQLClass.CONN);
+                MySqlDataReader g = gd.ExecuteReader();
+                while (g.Read())
+                {
+                    id = Convert.ToString(g[0]);
+                }
+                g.Close();
 
-            MySqlCommand cmd = new MySqlCommand(
-                       "INSERT INTO Articles" + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
-                       " VALUES ('" + textBox2.Text + "'," +
-                        "'" +  textBox1.Text + "'," +
-                        "'" + avtor1 + "'," +
-                        "' null'," +
-                        "" + id + "," +
-                        "'" + comboBox1.Text + "'," +
-                        " 1)", SQLClass.CONN);
+                MySqlCommand cmd = new MySqlCommand(
+                           "INSERT INTO Articles" + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
+                           " VALUES ('" + textBox2.Text + "'," +
+                            "'" + textBox1.Text + "'," +
+                            "'" + avtor1 + "'," +
+                            "' null'," +
+                            "" + id + "," +
+                            "'" + comboBox1.Text + "'," +
+                            " 1)", SQLClass.CONN);
 
 
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            rdr.Close();
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Close();
+                ne_povtor = textBox2.Text;
+            }
              
         }
 
