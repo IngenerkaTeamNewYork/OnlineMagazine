@@ -34,7 +34,7 @@ namespace WindowsFormsApplication4
         private void button1_Click(object sender, EventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`) VALUES (\"" + textBox_login.Text +  "\",\"" + textBox_password.Text + "\",\"" + "0" +  "\",\"" + textBox_about_me.Text + "\")", SQLClass.CONN);
+                "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`, admin) VALUES (\"" + textBox_login.Text +  "\",\"" + textBox_password.Text + "\",\"" + "0" +  "\",\"" + textBox_about_me.Text + "\", 0)", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
             Close();
         }
@@ -50,6 +50,14 @@ namespace WindowsFormsApplication4
         }
 
         private void textBox_about_me_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || checkBox_agree.Checked)
+            {
+                button1_Click(sender, null);
+            }
+        }
+
+        private void checkBox_agree_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || checkBox_agree.Checked)
             {
