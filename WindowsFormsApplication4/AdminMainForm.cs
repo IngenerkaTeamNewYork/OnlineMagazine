@@ -168,5 +168,11 @@ namespace WindowsFormsApplication4
             Collections coll = new Collections();
             coll.ShowDialog();
         }
+
+        private void button_new_staty_Click(object sender, EventArgs e)
+        {
+            NewPages np = new NewPages();
+            np.ShowDialog();
+        }
     }
 }

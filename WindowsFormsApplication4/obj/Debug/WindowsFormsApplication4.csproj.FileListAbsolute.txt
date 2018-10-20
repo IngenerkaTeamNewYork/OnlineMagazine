@@ -59,3 +59,5 @@ C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsAp
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Collections.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Users.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.NewPages.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Add_Statia.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Information_o_avtore.resources

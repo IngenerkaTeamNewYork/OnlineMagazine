@@ -25,6 +25,9 @@ namespace WindowsFormsApplication4
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Вход в систему под админом
+        /// </summary>
         public static void LogIntoAdminZone(String Login, String Password)
         {
             //Проверка на администратора
