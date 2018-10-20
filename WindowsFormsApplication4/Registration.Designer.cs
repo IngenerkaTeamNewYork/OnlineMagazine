@@ -95,6 +95,7 @@
             this.checkBox_agree.TabIndex = 5;
             this.checkBox_agree.Text = "Я соглашаюсь блаблабла";
             this.checkBox_agree.UseVisualStyleBackColor = true;
+            this.checkBox_agree.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkBox_agree_KeyDown);
             // 
             // label_login
             // 

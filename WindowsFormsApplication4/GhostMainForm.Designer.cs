@@ -141,6 +141,7 @@ namespace WindowsFormsApplication4
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            this.button_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // label_of_login
             // 
@@ -159,6 +160,7 @@ namespace WindowsFormsApplication4
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(220, 20);
             this.textBox_login.TabIndex = 9;
+            this.textBox_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // label_password
             // 
@@ -177,6 +179,7 @@ namespace WindowsFormsApplication4
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 10;
+            this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // textBox1
             // 

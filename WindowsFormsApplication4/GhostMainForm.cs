@@ -174,5 +174,14 @@ namespace WindowsFormsApplication4
         private void butto_search_Click(object sender, EventArgs e)
         {
         }
+
+        private void button_login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button_login_Click(sender, null);
+            }
+        }
+
     }
 }

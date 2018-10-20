@@ -50,8 +50,8 @@ namespace WindowsFormsApplication4
                 {
                     Form ifrm = new AdminMainForm();
                     ifrm.ShowDialog();
-                    Form prichem = Application.OpenForms[0];
-                    prichem.Hide();
+                    //Form prichem = Application.OpenForms[0];
+                    //prichem.Hide();
                 }
                 else
                 {

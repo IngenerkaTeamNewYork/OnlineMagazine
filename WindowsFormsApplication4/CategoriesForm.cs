@@ -13,49 +13,55 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
+    public struct categories
+    {
+        public string name;
+        public Button del;
+    }
     public partial class CategoriesForm : Form
     {
-        public static List<String> CategoriesList = new List<string>(new string[] { });
+        public static List<categories> CategoriesList = new List<categories>();
         public string text;
 
         public CategoriesForm()
         {
             InitializeComponent();
-            int ind = 0;
-            foreach (String cat in CategoriesList)
-            {
-                for (int i = 0; i > 0; i++)
-                {
-                    Label label = new Label();
-                    label.Size = new Size(70, 80);
-                    label.Location = new Point(50, 10 + 30 * ind);
-                    label.Text = CategoriesList[i];
-                    this.Controls.Add(label);
-                }
-            }
-            update();
+
+            update();            
         }
 
         public void update()
         {
+            this.Controls.Clear();
+            this.Controls.Add(textBox_name);
+            this.Controls.Add(button_add);
             CategoriesList.Clear();
 
             MySqlCommand cmd = new MySqlCommand(
-                "SELECT Name FROM Categories", SQLClass.CONN);
+                "SELECT Name FROM Categories ORDER BY Name", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
+            int i = 0;
             while (rdr.Read())
             {
-                CategoriesList.Add(rdr[0].ToString());
-            }
-            rdr.Close();
+                Label label = new Label();
+                label.Size = new Size(100, 30);
+                label.Location = new Point(20, 10 + 30 * i);
+                label.Text = rdr[0].ToString();
+                categories newcat = new categories();
+                newcat.name = label.Text;
 
-
-            textBox_name.Text = "";
-            foreach (String a in CategoriesList)
-            {
-                textBox_name.Text += a;
+                Button button_delete = new Button();
+                button_delete.Size = new Size(100, 30);
+                button_delete.Location = new Point(190, 10 + 30 * i);
+                button_delete.Text = "Удалить";
+                newcat.del = button_delete;
+                newcat.del.Click += new System.EventHandler(button_delete_Click);
+                this.Controls.Add(label);
+                this.Controls.Add(button_delete);
+                CategoriesList.Add(newcat);
+                i++;
             }
-            
+            rdr.Close();                
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
@@ -65,19 +71,37 @@ namespace WindowsFormsApplication4
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand(
-                "DELETE FROM `Categories` WHERE `Name`= '" + textBox_name.Text + "'", SQLClass.CONN);
-            cmd.ExecuteReader();
+            foreach (categories cat in CategoriesList)
+            {
+                if (sender.Equals(cat.del))
+                {
+                    MySqlCommand cmd = new MySqlCommand(
+                        "DELETE FROM `Categories` WHERE `Name`= '" + cat.name + "'", SQLClass.CONN);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    rdr.Close();
+                }
+            }   
 
             update();
         }
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO `Categories`(`Name`, `Picture`, `Coteg_ID`) VALUES (\"" + textBox_name.Text + "\", \"a\", 1)", SQLClass.CONN);
-            cmd.ExecuteReader();
-            update();
+            textBox_name.Visible = true;
+            
+        }
+
+        private void textBox_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                 "INSERT INTO `Categories`(`Name`, `Picture`, `Coteg_ID`) VALUES (\"" + textBox_name.Text + "\", \"a\", 0)", SQLClass.CONN);
+
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Close();
+                update();
+            }
         }
     }
 }
