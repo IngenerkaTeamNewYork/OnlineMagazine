@@ -160,6 +160,7 @@
     <Compile Include="StatiyaForm1.Designer.cs">
       <DependentUpon>StatiyaForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tables.cs" />
     <Compile Include="To_come_in.cs">
       <SubType>Form</SubType>
     </Compile>

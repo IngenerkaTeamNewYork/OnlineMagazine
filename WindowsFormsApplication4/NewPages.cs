@@ -46,7 +46,7 @@ namespace WindowsFormsApplication4
             });
 
             MySqlCommand cmd = new MySqlCommand(
-                        "SELECT header, new FROM `Articles`", SQLClass.CONN);
+                        "SELECT header, new FROM " + Tables.ARTICLES, SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int PosY = 20;
@@ -91,7 +91,7 @@ namespace WindowsFormsApplication4
                     if (a.Label_.ForeColor == System.Drawing.Color.Gray)
                     {
                         MySqlCommand cmd = new MySqlCommand(
-                            "UPDATE `Articles`" +
+                            "UPDATE " + Tables.ARTICLES +
                             " SET `new`=1 WHERE header = '" + a.Header + "'", SQLClass.CONN);
                         MySqlDataReader rdr = cmd.ExecuteReader();
                         rdr.Close();
@@ -99,7 +99,7 @@ namespace WindowsFormsApplication4
                     else
                     {
                         MySqlCommand cmd = new MySqlCommand(
-                           "UPDATE `Articles`" +
+                           "UPDATE " + Tables.ARTICLES +
                            " SET `new`=0 WHERE header = '" + a.Header + "'", SQLClass.CONN);
                         MySqlDataReader rdr = cmd.ExecuteReader();
                         rdr.Close();

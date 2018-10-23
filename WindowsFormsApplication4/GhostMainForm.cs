@@ -44,7 +44,7 @@ namespace WindowsFormsApplication4
                 if (sender.Equals(lab))
                 {
                     MySqlCommand cmd = new MySqlCommand(
-                        "SELECT Header, Author, Category ,Text FROM `Articles`" +
+                        "SELECT Header, Author, Category ,Text FROM " + Tables.ARTICLES +
                         " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
                     MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication4
         {
             SQLClass.OpenConnection();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM `Articles` ", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM " + Tables.ARTICLES, SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int uy = 0;

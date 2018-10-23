@@ -28,7 +28,7 @@ namespace WindowsFormsApplication4
         private void Collections_Load(object sender, EventArgs e)
         {
             checkedListBox1.Items.Clear();
-            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM `Articles` ", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM " + Tables.ARTICLES, SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             while (rdr.Read())
