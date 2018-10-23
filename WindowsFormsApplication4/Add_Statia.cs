@@ -32,9 +32,7 @@ namespace WindowsFormsApplication4
             }
             else
             {
-                //INSERT INTO `Articles`(`Header`, `Text`, `Author`, `Picture`, `Artic_ID`, `Category`, `new`) 
-                // VALUES ('fdgdfgdfg', 'fdsgdfsgsdfghsh', 'fdg', 'null', 4, 'Животные', 1)
-                MySqlCommand gd = new MySqlCommand("SELECT MAX(Artic_ID + 1) FROM Articles", SQLClass.CONN);
+                MySqlCommand gd = new MySqlCommand("SELECT MAX(Artic_ID + 1) FROM  " + Tables.ARTICLES, SQLClass.CONN);
                 MySqlDataReader g = gd.ExecuteReader();
                 while (g.Read())
                 {
@@ -43,7 +41,7 @@ namespace WindowsFormsApplication4
                 g.Close();
 
                 MySqlCommand cmd = new MySqlCommand(
-                           "INSERT INTO Articles" + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
+                           "INSERT INTO " + Tables.ARTICLES + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
                            " VALUES ('" + textBox2.Text + "'," +
                             "'" + textBox1.Text + "'," +
                             "'" + avtor1 + "'," +
