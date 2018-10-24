@@ -12,7 +12,7 @@ namespace WindowsFormsApplication4
     {
         public String name_statiya;
         public String name_author;
-        public List<Image> kartinki_statii;
+        public Image kartinki_statii;
         public String kategorita_statii;
         public String text_statii;
 

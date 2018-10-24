@@ -25,7 +25,7 @@ namespace WindowsFormsApplication4
 
             Stattext.Text = stat.text_statii;
 
-            pictureBox1.Image = stat.kartinki_statii[0];
+            pictureBox1.Image = stat.kartinki_statii;
 
             Authortext.Text = stat.name_author;
 
@@ -52,7 +52,6 @@ namespace WindowsFormsApplication4
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Stattext_TextChanged(object sender, EventArgs e)
