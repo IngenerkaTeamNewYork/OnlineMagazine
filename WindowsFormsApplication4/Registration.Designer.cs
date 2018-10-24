@@ -85,6 +85,7 @@
             this.checkBox_I_author.TabIndex = 4;
             this.checkBox_I_author.Text = "Я автор";
             this.checkBox_I_author.UseVisualStyleBackColor = true;
+            this.checkBox_I_author.CheckedChanged += new System.EventHandler(this.checkBox_I_author_CheckedChanged);
             // 
             // checkBox_agree
             // 
@@ -150,7 +151,7 @@
             this.Controls.Add(this.textBox_login);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Registration";
-            this.Text = "Registration";
+            this.Text = "Зарегистрироваться";
             this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

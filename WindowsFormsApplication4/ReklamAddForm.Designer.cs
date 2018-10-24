@@ -141,7 +141,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ReklamAddForm";
-            this.Text = "Form1";
+            this.Text = "Добавить рекламу";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
