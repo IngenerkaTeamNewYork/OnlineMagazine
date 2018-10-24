@@ -29,6 +29,7 @@ namespace WindowsFormsApplication4
 
             Authortext.Text = stat.name_author;
 
+            pictureBox1.Load(stat.picture);
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
