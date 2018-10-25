@@ -87,7 +87,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Name = "Add_Statia";
-            this.Text = "Add_Statia";
+            this.Text = "Добавить статью";
             this.Load += new System.EventHandler(this.Add_Statia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

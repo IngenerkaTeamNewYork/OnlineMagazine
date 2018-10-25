@@ -89,7 +89,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "Collections";
-            this.Text = "Collections";
+            this.Text = "Коллекции";
             this.Load += new System.EventHandler(this.Collections_Load);
             this.ResumeLayout(false);
 

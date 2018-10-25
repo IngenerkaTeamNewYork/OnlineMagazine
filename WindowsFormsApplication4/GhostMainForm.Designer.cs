@@ -107,7 +107,7 @@ namespace WindowsFormsApplication4
             this.Left_panel.Controls.Add(this.reclama);
             this.Left_panel.Location = new System.Drawing.Point(3, 12);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(226, 555);
+            this.Left_panel.Size = new System.Drawing.Size(226, 557);
             this.Left_panel.TabIndex = 4;
             // 
             // authorizationTableLayoutPanel
@@ -341,7 +341,7 @@ namespace WindowsFormsApplication4
             this.Controls.Add(this.Centr_panel);
             this.Controls.Add(this.butto_search);
             this.Name = "GhostMainForm";
-            this.Text = "Общий вид";
+            this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Left_panel.ResumeLayout(false);

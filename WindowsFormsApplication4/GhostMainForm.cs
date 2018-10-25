@@ -178,11 +178,26 @@ namespace WindowsFormsApplication4
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            if (textBox_password.Text == "")
+            bool author = false;
+
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM `Authors` WHERE UserName = '" + textBox_login.Text + "'", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() != "0")
+                {
+                        author = true;
+                }
+            }
+            rdr.Close();
+
+            if (author)
             {
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
             }
+               
             else
             {
                 To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);

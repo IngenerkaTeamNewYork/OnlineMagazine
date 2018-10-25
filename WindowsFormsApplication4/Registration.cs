@@ -33,10 +33,22 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`, admin) VALUES (\"" + textBox_login.Text +  "\",\"" + textBox_password.Text + "\",\"" + "0" +  "\",\"" + textBox_about_me.Text + "\", 0)", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            Close();
+
+            if (checkBox_I_author.Checked == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                "INSERT INTO `Authors` (`UserName`, `Information_about_author`, `Pic`) VALUES ('" + textBox_login.Text + "','" + textBox_about_me.Text + "', '')", SQLClass.CONN);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                Close();
+            }
+            else 
+            {
+                MySqlCommand cmd1 = new MySqlCommand(
+                "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`, admin) VALUES (\"" + textBox_login.Text + "\",\"" + textBox_password.Text + "\",\"" + "0" + "\",\"" + textBox_about_me.Text + "\", 0)", SQLClass.CONN);
+                MySqlDataReader rdr1 = cmd1.ExecuteReader();
+                Close();
+            }
+            
         }
 
         private void textBox_login_TextChanged(object sender, EventArgs e)
@@ -63,6 +75,10 @@ namespace WindowsFormsApplication4
             {
                 button1_Click(sender, null);
             }
+        }
+
+        private void checkBox_I_author_CheckedChanged(object sender, EventArgs e)
+        {
         }
     }
 }
