@@ -15,6 +15,7 @@ namespace WindowsFormsApplication4
         public List<Image> kartinki_statii;
         public String kategorita_statii;
         public String text_statii;
+        public String picture;
 
         public void ShowText()
         {
