@@ -40,9 +40,9 @@ namespace WindowsFormsApplication4
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
-            this.Реклама3 = new System.Windows.Forms.PictureBox();
-            this.Реклама2 = new System.Windows.Forms.PictureBox();
-            this.Реклама = new System.Windows.Forms.PictureBox();
+            this.reclama3 = new System.Windows.Forms.PictureBox();
+            this.reclama2 = new System.Windows.Forms.PictureBox();
+            this.reclama = new System.Windows.Forms.PictureBox();
             this.Right_panel = new System.Windows.Forms.Panel();
             this.button_add_reklama = new System.Windows.Forms.Button();
             this.label_popular = new System.Windows.Forms.Label();
@@ -56,9 +56,9 @@ namespace WindowsFormsApplication4
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
@@ -101,13 +101,13 @@ namespace WindowsFormsApplication4
             this.Left_panel.Controls.Add(this.authorizationTableLayoutPanel);
             this.Left_panel.Controls.Add(this.textBox1);
             this.Left_panel.Controls.Add(this.link_of_registration);
-            this.Left_panel.Controls.Add(this.Реклама3);
-            this.Left_panel.Controls.Add(this.Реклама2);
+            this.Left_panel.Controls.Add(this.reclama3);
+            this.Left_panel.Controls.Add(this.reclama2);
             this.Left_panel.Controls.Add(this.radioButton1);
-            this.Left_panel.Controls.Add(this.Реклама);
+            this.Left_panel.Controls.Add(this.reclama);
             this.Left_panel.Location = new System.Drawing.Point(3, 12);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(226, 555);
+            this.Left_panel.Size = new System.Drawing.Size(226, 557);
             this.Left_panel.TabIndex = 4;
             // 
             // authorizationTableLayoutPanel
@@ -200,30 +200,30 @@ namespace WindowsFormsApplication4
             this.link_of_registration.Text = "Регистрация";
             this.link_of_registration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // Реклама3
+            // reclama3
             // 
-            this.Реклама3.Location = new System.Drawing.Point(23, 363);
-            this.Реклама3.Name = "Реклама3";
-            this.Реклама3.Size = new System.Drawing.Size(172, 114);
-            this.Реклама3.TabIndex = 5;
-            this.Реклама3.TabStop = false;
+            this.reclama3.Location = new System.Drawing.Point(23, 363);
+            this.reclama3.Name = "reclama3";
+            this.reclama3.Size = new System.Drawing.Size(172, 114);
+            this.reclama3.TabIndex = 5;
+            this.reclama3.TabStop = false;
             // 
-            // Реклама2
+            // reclama2
             // 
-            this.Реклама2.Location = new System.Drawing.Point(23, 239);
-            this.Реклама2.Name = "Реклама2";
-            this.Реклама2.Size = new System.Drawing.Size(172, 102);
-            this.Реклама2.TabIndex = 4;
-            this.Реклама2.TabStop = false;
-            this.Реклама2.Click += new System.EventHandler(this.Реклама2_Click);
+            this.reclama2.Location = new System.Drawing.Point(23, 239);
+            this.reclama2.Name = "reclama2";
+            this.reclama2.Size = new System.Drawing.Size(172, 102);
+            this.reclama2.TabIndex = 4;
+            this.reclama2.TabStop = false;
+            this.reclama2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
-            // Реклама
+            // reclama
             // 
-            this.Реклама.Location = new System.Drawing.Point(13, 138);
-            this.Реклама.Name = "Реклама";
-            this.Реклама.Size = new System.Drawing.Size(199, 95);
-            this.Реклама.TabIndex = 2;
-            this.Реклама.TabStop = false;
+            this.reclama.Location = new System.Drawing.Point(13, 138);
+            this.reclama.Name = "reclama";
+            this.reclama.Size = new System.Drawing.Size(199, 95);
+            this.reclama.TabIndex = 2;
+            this.reclama.TabStop = false;
             // 
             // Right_panel
             // 
@@ -341,16 +341,16 @@ namespace WindowsFormsApplication4
             this.Controls.Add(this.Centr_panel);
             this.Controls.Add(this.butto_search);
             this.Name = "GhostMainForm";
-            this.Text = "Общий вид";
+            this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Left_panel.ResumeLayout(false);
             this.Left_panel.PerformLayout();
             this.authorizationTableLayoutPanel.ResumeLayout(false);
             this.authorizationTableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Реклама)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reclama)).EndInit();
             this.Right_panel.ResumeLayout(false);
             this.Right_panel.PerformLayout();
             this.Centr_panel.ResumeLayout(false);
@@ -364,9 +364,9 @@ namespace WindowsFormsApplication4
         #endregion
 
         private System.Windows.Forms.Button butto_search;
-        private System.Windows.Forms.PictureBox Реклама;
-        private System.Windows.Forms.PictureBox Реклама2;
-        private System.Windows.Forms.PictureBox Реклама3;
+        private System.Windows.Forms.PictureBox reclama;
+        private System.Windows.Forms.PictureBox reclama2;
+        private System.Windows.Forms.PictureBox reclama3;
         private System.Windows.Forms.Label label_popular;
         private System.Windows.Forms.Label label_author;
         private System.Windows.Forms.Label label_name_statya;

@@ -57,7 +57,7 @@
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.main_panel);
             this.Name = "Spisok_reklamy";
-            this.Text = "Spisok_reklamy";
+            this.Text = "Список рекламы";
             this.Load += new System.EventHandler(this.Spisok_reklamy_Load);
             this.ResumeLayout(false);
 

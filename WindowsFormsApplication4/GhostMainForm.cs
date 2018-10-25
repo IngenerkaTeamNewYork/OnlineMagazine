@@ -13,6 +13,9 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
+
+
+
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
@@ -36,6 +39,9 @@ namespace WindowsFormsApplication4
                 uy++;
             }
         }
+        public string[] url = new string[50];
+        int kolvo = 0;
+        public string kuda_i_kak;
 
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -44,7 +50,7 @@ namespace WindowsFormsApplication4
                 if (sender.Equals(lab))
                 {
                     MySqlCommand cmd = new MySqlCommand(
-                        "SELECT Header, Author, Category ,Text FROM " + Tables.ARTICLES +
+                        "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
                         " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
                     MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -56,7 +62,7 @@ namespace WindowsFormsApplication4
                         stat.kategorita_statii = rdr[2].ToString();
                         stat.text_statii = rdr[3].ToString();
                         stat.kartinki_statii = Image_statii.Image;
-
+                        stat.picture = rdr[4].ToString();
 
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                         OknoStatiya.ShowDialog();
@@ -88,6 +94,17 @@ namespace WindowsFormsApplication4
                 uy++;
             }
             rdr.Close();
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
+            MySqlDataReader rr = rrr.ExecuteReader();
+            while (rr.Read())
+            {
+                url[kolvo] = rr[0].ToString();
+                kolvo++;
+            }
+            Random rnd = new Random();
+            reclama.Load(url[0]);
+            reclama2.Load(url[1]);
+            reclama3.Load(url[2]);
         }        
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -159,11 +176,26 @@ namespace WindowsFormsApplication4
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            if (textBox_password.Text == "")
+            bool author = false;
+
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM `Authors` WHERE UserName = '" + textBox_login.Text + "'", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() != "0")
+                {
+                        author = true;
+                }
+            }
+            rdr.Close();
+
+            if (author)
             {
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
             }
+               
             else
             {
                 To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
