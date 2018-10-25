@@ -101,10 +101,11 @@ namespace WindowsFormsApplication4
                 url[kolvo] = rr[0].ToString();
                 kolvo++;
             }
+            rr.Close();
             Random rnd = new Random();
             reclama.Load(url[0]);
-            reclama2.Load(url[1]);
-            reclama3.Load(url[2]);
+            //reclama2.Load(url[1]);
+            //reclama3.Load(url[2]);
         }        
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -181,12 +182,10 @@ namespace WindowsFormsApplication4
             MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM `Authors` WHERE UserName = '" + textBox_login.Text + "'", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            while (rdr.Read())
+            rdr.Read();
+            if (rdr[0].ToString() != "0")
             {
-                if (rdr[0].ToString() != "0")
-                {
-                        author = true;
-                }
+                author = true;
             }
             rdr.Close();
 

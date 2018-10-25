@@ -67,7 +67,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // mainTableLayoutPanel
             // 
@@ -93,7 +92,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(77, 627);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // labelreklama
             // 
@@ -103,7 +101,6 @@
             this.labelreklama.Size = new System.Drawing.Size(146, 13);
             this.labelreklama.TabIndex = 0;
             this.labelreklama.Text = "Сдеся Будет ваша реклама";
-            this.labelreklama.Click += new System.EventHandler(this.labelreklama_Click);
             // 
             // artTableLayoutPanel
             // 
@@ -134,7 +131,6 @@
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Stattext.Size = new System.Drawing.Size(455, 258);
             this.Stattext.TabIndex = 7;
-            this.Stattext.TextChanged += new System.EventHandler(this.Stattext_TextChanged);
             // 
             // HeaderPanel
             // 
@@ -157,7 +153,6 @@
             this.Authortext.Size = new System.Drawing.Size(86, 19);
             this.Authortext.TabIndex = 3;
             this.Authortext.Text = "Authortext";
-            this.Authortext.Click += new System.EventHandler(this.label1_Click);
             // 
             // Maintext
             // 
@@ -180,7 +175,6 @@
             this.Controls.Add(this.mainTableLayoutPanel);
             this.Name = "StatiyaForm1";
             this.Text = "Статья";
-            this.Load += new System.EventHandler(this.StatiyaForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainTableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
