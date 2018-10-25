@@ -61,10 +61,8 @@ namespace WindowsFormsApplication4
                         stat.name_author = rdr[1].ToString();
                         stat.kategorita_statii = rdr[2].ToString();
                         stat.text_statii = rdr[3].ToString();
+                        stat.kartinki_statii = Image_statii.Image;
                         stat.picture = rdr[4].ToString();
-                        stat.kartinki_statii = new List<Image>();
-                        stat.kartinki_statii.Add(Image_statii.Image);
-
 
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                         OknoStatiya.ShowDialog();
