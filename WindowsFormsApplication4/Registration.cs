@@ -36,7 +36,7 @@ namespace WindowsFormsApplication4
             if (checkBox_I_author.Checked == true)
             {
                 MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO `Authors` (`UserName`, `Information_about_author`, `Pic`) VALUES ('" + textBox_login.Text + "','" + textBox_about_me.Text + "', '')", SQLClass.CONN);
+                "INSERT INTO `Authors` (`UserName`, `Information_about_author`, `Pic`) VALUES ('" + textBox_login.Text + "','" + textBox_about_me.Text + "', '" + textBox_pic +"')", SQLClass.CONN);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Close();
             }

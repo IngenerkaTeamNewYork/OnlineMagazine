@@ -120,7 +120,7 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm(/*GhostMainForm.stat[0]*/);
+            StastisticsForm form1 = new StastisticsForm("");
             form1.ShowDialog();
         }
         
@@ -154,7 +154,7 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click_1(object sender, EventArgs e)
         {
-            StastisticsForm t = new StastisticsForm();
+            StastisticsForm t = new StastisticsForm("");
             t.ShowDialog();
         }
 

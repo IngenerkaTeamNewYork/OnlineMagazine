@@ -13,9 +13,18 @@ namespace WindowsFormsApplication4
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
-            pictureBox1.Image = stat.kartinki_statii;
+            if (stat.picture != null)
+            {
+                pictureBox1.Load(stat.picture);
+            }
+            else stat.kartinki_statii = null;
+            
             Authortext.Text = stat.name_author;
-            pictureBox1.Load(stat.picture);
+        }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
+
         }        
     }
 }

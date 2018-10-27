@@ -61,8 +61,15 @@ namespace WindowsFormsApplication4
                         stat.name_author = rdr[1].ToString();
                         stat.kategorita_statii = rdr[2].ToString();
                         stat.text_statii = rdr[3].ToString();
-                        stat.kartinki_statii = Image_statii.Image;
-                        stat.picture = rdr[4].ToString();
+                        if (rdr[4].ToString() != "")
+                        {
+                            stat.picture = rdr[4].ToString();
+                        }
+                        else
+                        {
+                            stat.picture = null;
+
+                        }
 
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                         OknoStatiya.ShowDialog();
@@ -74,6 +81,14 @@ namespace WindowsFormsApplication4
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            Right_panel.Controls.Clear();
+            Right_panel.Controls.Add(label_popular);
+            Right_panel.Controls.Add(categories_linklabel);
+            Right_panel.Controls.Add(label_author);
+            Right_panel.Controls.Add(button_add_reklama);
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+
             SQLClass.OpenConnection();
 
             MySqlCommand cmd = new MySqlCommand("SELECT Header FROM " + Tables.ARTICLES, SQLClass.CONN);
@@ -193,11 +208,16 @@ namespace WindowsFormsApplication4
             {
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
+                SQLClass.CloseConnection();
+                Form1_Load(sender, e);
             }
                
             else
             {
                 To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
+
+                SQLClass.CloseConnection();
+                Form1_Load(sender, e);
             }
         }
 
@@ -211,6 +231,16 @@ namespace WindowsFormsApplication4
             {
                 button_login_Click(sender, null);
             }
+        }
+
+        private void label_password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_login_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
