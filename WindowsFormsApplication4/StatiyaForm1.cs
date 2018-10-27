@@ -16,6 +16,11 @@ namespace WindowsFormsApplication4
             pictureBox1.Image = stat.kartinki_statii;
             Authortext.Text = stat.name_author;
             pictureBox1.Load(stat.picture);
+        }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
+
         }        
     }
 }
