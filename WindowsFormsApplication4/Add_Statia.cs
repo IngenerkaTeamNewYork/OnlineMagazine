@@ -26,7 +26,7 @@ namespace WindowsFormsApplication4
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (ne_povtor == textBox_Name.Text)
+            if (ne_povtor == textBox2.Text)
             {
                 MessageBox.Show("Скоре всего вы пытаетесь опубликовать ещё раз");
             }
@@ -42,46 +42,23 @@ namespace WindowsFormsApplication4
 
                 MySqlCommand cmd = new MySqlCommand(
                            "INSERT INTO " + Tables.ARTICLES + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
-                           " VALUES ('" + textBox_Name.Text + "'," +
-                            "'" + textBox_txtStat.Text + "'," +
+                           " VALUES ('" + textBox2.Text + "'," +
+                            "'" + textBox1.Text + "'," +
                             "'" + avtor1 + "'," +
-                            "'" + textBox_ssulka.Text + "'," +
+                            "' null'," +
                             "" + id + "," +
-                            "'" + comboBox_kategorii.Text + "'," +
+                            "'" + comboBox1.Text + "'," +
                             " 1)", SQLClass.CONN);
 
 
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Close();
-                ne_povtor = textBox_Name.Text;
+                ne_povtor = textBox2.Text;
             }
              
         }
 
         private void Add_Statia_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void label_text_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_txtStat_TextChanged(object sender, EventArgs e)
         {
 
         }
