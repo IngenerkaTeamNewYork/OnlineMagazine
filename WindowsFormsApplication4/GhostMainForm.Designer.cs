@@ -67,10 +67,9 @@ namespace WindowsFormsApplication4
             // categories_linklabel
             // 
             this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(33, 149);
-            this.categories_linklabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.categories_linklabel.Location = new System.Drawing.Point(25, 121);
             this.categories_linklabel.Name = "categories_linklabel";
-            this.categories_linklabel.Size = new System.Drawing.Size(77, 17);
+            this.categories_linklabel.Size = new System.Drawing.Size(60, 13);
             this.categories_linklabel.TabIndex = 4;
             this.categories_linklabel.TabStop = true;
             this.categories_linklabel.Text = "Категории";
@@ -78,10 +77,9 @@ namespace WindowsFormsApplication4
             // 
             // butto_search
             // 
-            this.butto_search.Location = new System.Drawing.Point(616, 15);
-            this.butto_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butto_search.Location = new System.Drawing.Point(462, 12);
             this.butto_search.Name = "butto_search";
-            this.butto_search.Size = new System.Drawing.Size(72, 28);
+            this.butto_search.Size = new System.Drawing.Size(54, 23);
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
@@ -90,10 +88,9 @@ namespace WindowsFormsApplication4
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 644);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Location = new System.Drawing.Point(9, 523);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(110, 21);
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "radioButton1";
@@ -108,10 +105,9 @@ namespace WindowsFormsApplication4
             this.Left_panel.Controls.Add(this.reclama2);
             this.Left_panel.Controls.Add(this.radioButton1);
             this.Left_panel.Controls.Add(this.reclama);
-            this.Left_panel.Location = new System.Drawing.Point(4, 15);
-            this.Left_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Left_panel.Location = new System.Drawing.Point(3, 12);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(301, 686);
+            this.Left_panel.Size = new System.Drawing.Size(226, 557);
             this.Left_panel.TabIndex = 4;
             // 
             // authorizationTableLayoutPanel
@@ -125,24 +121,22 @@ namespace WindowsFormsApplication4
             this.authorizationTableLayoutPanel.Controls.Add(this.textBox_password, 0, 3);
             this.authorizationTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.authorizationTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
             this.authorizationTableLayoutPanel.RowCount = 5;
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(301, 162);
+            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(226, 132);
             this.authorizationTableLayoutPanel.TabIndex = 15;
             // 
             // button_login
             // 
             this.button_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_login.Location = new System.Drawing.Point(4, 104);
-            this.button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_login.Location = new System.Drawing.Point(3, 83);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(293, 54);
+            this.button_login.Size = new System.Drawing.Size(220, 46);
             this.button_login.TabIndex = 11;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
@@ -153,20 +147,18 @@ namespace WindowsFormsApplication4
             // 
             this.label_of_login.AutoSize = true;
             this.label_of_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_of_login.Location = new System.Drawing.Point(4, 0);
-            this.label_of_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_of_login.Location = new System.Drawing.Point(3, 0);
             this.label_of_login.Name = "label_of_login";
-            this.label_of_login.Size = new System.Drawing.Size(293, 25);
+            this.label_of_login.Size = new System.Drawing.Size(220, 20);
             this.label_of_login.TabIndex = 12;
             this.label_of_login.Text = "Логин";
             // 
             // textBox_login
             // 
             this.textBox_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_login.Location = new System.Drawing.Point(4, 29);
-            this.textBox_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_login.Location = new System.Drawing.Point(3, 23);
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(293, 22);
+            this.textBox_login.Size = new System.Drawing.Size(220, 20);
             this.textBox_login.TabIndex = 9;
             this.textBox_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
@@ -174,39 +166,35 @@ namespace WindowsFormsApplication4
             // 
             this.label_password.AutoSize = true;
             this.label_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_password.Location = new System.Drawing.Point(4, 50);
-            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_password.Location = new System.Drawing.Point(3, 40);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(293, 25);
+            this.label_password.Size = new System.Drawing.Size(220, 20);
             this.label_password.TabIndex = 13;
             this.label_password.Text = "Пароль";
             // 
             // textBox_password
             // 
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_password.Location = new System.Drawing.Point(4, 79);
-            this.textBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_password.Location = new System.Drawing.Point(3, 63);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(293, 22);
+            this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 10;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 610);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(127, 496);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 68);
+            this.textBox1.Size = new System.Drawing.Size(100, 56);
             this.textBox1.TabIndex = 8;
             // 
             // link_of_registration
             // 
             this.link_of_registration.AutoSize = true;
-            this.link_of_registration.Location = new System.Drawing.Point(13, 596);
-            this.link_of_registration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.link_of_registration.Location = new System.Drawing.Point(10, 484);
             this.link_of_registration.Name = "link_of_registration";
-            this.link_of_registration.Size = new System.Drawing.Size(92, 17);
+            this.link_of_registration.Size = new System.Drawing.Size(72, 13);
             this.link_of_registration.TabIndex = 6;
             this.link_of_registration.TabStop = true;
             this.link_of_registration.Text = "Регистрация";
@@ -214,29 +202,26 @@ namespace WindowsFormsApplication4
             // 
             // reclama3
             // 
-            this.reclama3.Location = new System.Drawing.Point(31, 447);
-            this.reclama3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reclama3.Location = new System.Drawing.Point(23, 363);
             this.reclama3.Name = "reclama3";
-            this.reclama3.Size = new System.Drawing.Size(229, 140);
+            this.reclama3.Size = new System.Drawing.Size(172, 114);
             this.reclama3.TabIndex = 5;
             this.reclama3.TabStop = false;
             // 
             // reclama2
             // 
-            this.reclama2.Location = new System.Drawing.Point(31, 294);
-            this.reclama2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reclama2.Location = new System.Drawing.Point(23, 239);
             this.reclama2.Name = "reclama2";
-            this.reclama2.Size = new System.Drawing.Size(229, 126);
+            this.reclama2.Size = new System.Drawing.Size(172, 102);
             this.reclama2.TabIndex = 4;
             this.reclama2.TabStop = false;
             this.reclama2.Click += new System.EventHandler(this.Реклама2_Click);
             // 
             // reclama
             // 
-            this.reclama.Location = new System.Drawing.Point(17, 170);
-            this.reclama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reclama.Location = new System.Drawing.Point(13, 138);
             this.reclama.Name = "reclama";
-            this.reclama.Size = new System.Drawing.Size(265, 117);
+            this.reclama.Size = new System.Drawing.Size(199, 95);
             this.reclama.TabIndex = 2;
             this.reclama.TabStop = false;
             // 
@@ -246,18 +231,16 @@ namespace WindowsFormsApplication4
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_popular);
             this.Right_panel.Controls.Add(this.label_author);
-            this.Right_panel.Location = new System.Drawing.Point(696, 12);
-            this.Right_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Right_panel.Location = new System.Drawing.Point(522, 10);
             this.Right_panel.Name = "Right_panel";
-            this.Right_panel.Size = new System.Drawing.Size(289, 698);
+            this.Right_panel.Size = new System.Drawing.Size(217, 567);
             this.Right_panel.TabIndex = 5;
             // 
             // button_add_reklama
             // 
-            this.button_add_reklama.Location = new System.Drawing.Point(37, 585);
-            this.button_add_reklama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add_reklama.Location = new System.Drawing.Point(28, 475);
             this.button_add_reklama.Name = "button_add_reklama";
-            this.button_add_reklama.Size = new System.Drawing.Size(200, 28);
+            this.button_add_reklama.Size = new System.Drawing.Size(150, 23);
             this.button_add_reklama.TabIndex = 5;
             this.button_add_reklama.Text = "Предложить рекламу";
             this.button_add_reklama.UseVisualStyleBackColor = true;
@@ -266,20 +249,18 @@ namespace WindowsFormsApplication4
             // label_popular
             // 
             this.label_popular.AutoSize = true;
-            this.label_popular.Location = new System.Drawing.Point(33, 116);
-            this.label_popular.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_popular.Location = new System.Drawing.Point(25, 94);
             this.label_popular.Name = "label_popular";
-            this.label_popular.Size = new System.Drawing.Size(89, 17);
+            this.label_popular.Size = new System.Drawing.Size(68, 13);
             this.label_popular.TabIndex = 3;
             this.label_popular.Text = "Популярное";
             // 
             // label_author
             // 
             this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(29, 181);
-            this.label_author.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_author.Location = new System.Drawing.Point(22, 147);
             this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(57, 17);
+            this.label_author.Size = new System.Drawing.Size(45, 13);
             this.label_author.TabIndex = 2;
             this.label_author.Text = "Авторы";
             this.label_author.Click += new System.EventHandler(this.label_author_Click);
@@ -291,10 +272,9 @@ namespace WindowsFormsApplication4
             this.Centr_panel.Controls.Add(this.label_kategoriya_statii);
             this.Centr_panel.Controls.Add(this.vScrollBar1_centr);
             this.Centr_panel.Controls.Add(this.Image_statii);
-            this.Centr_panel.Location = new System.Drawing.Point(327, 52);
-            this.Centr_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Centr_panel.Location = new System.Drawing.Point(245, 42);
             this.Centr_panel.Name = "Centr_panel";
-            this.Centr_panel.Size = new System.Drawing.Size(340, 657);
+            this.Centr_panel.Size = new System.Drawing.Size(255, 534);
             this.Centr_panel.TabIndex = 6;
             // 
             // articleTextBox_statii
@@ -302,70 +282,64 @@ namespace WindowsFormsApplication4
             this.articleTextBox_statii.BackColor = System.Drawing.SystemColors.Control;
             this.articleTextBox_statii.Enabled = false;
             this.articleTextBox_statii.ForeColor = System.Drawing.Color.Black;
-            this.articleTextBox_statii.Location = new System.Drawing.Point(48, 357);
-            this.articleTextBox_statii.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.articleTextBox_statii.Location = new System.Drawing.Point(36, 290);
             this.articleTextBox_statii.Multiline = true;
             this.articleTextBox_statii.Name = "articleTextBox_statii";
-            this.articleTextBox_statii.Size = new System.Drawing.Size(227, 192);
+            this.articleTextBox_statii.Size = new System.Drawing.Size(171, 157);
             this.articleTextBox_statii.TabIndex = 5;
             this.articleTextBox_statii.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
             // 
             // label_name_statya
             // 
             this.label_name_statya.AutoSize = true;
-            this.label_name_statya.Location = new System.Drawing.Point(123, 42);
-            this.label_name_statya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_name_statya.Location = new System.Drawing.Point(92, 34);
             this.label_name_statya.Name = "label_name_statya";
-            this.label_name_statya.Size = new System.Drawing.Size(47, 17);
+            this.label_name_statya.Size = new System.Drawing.Size(38, 13);
             this.label_name_statya.TabIndex = 2;
             this.label_name_statya.Text = "Класс";
             // 
             // label_kategoriya_statii
             // 
             this.label_kategoriya_statii.AutoSize = true;
-            this.label_kategoriya_statii.Location = new System.Drawing.Point(16, 22);
-            this.label_kategoriya_statii.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_kategoriya_statii.Location = new System.Drawing.Point(12, 18);
             this.label_kategoriya_statii.Name = "label_kategoriya_statii";
-            this.label_kategoriya_statii.Size = new System.Drawing.Size(46, 17);
+            this.label_kategoriya_statii.Size = new System.Drawing.Size(35, 13);
             this.label_kategoriya_statii.TabIndex = 4;
             this.label_kategoriya_statii.Text = "label6";
             // 
             // vScrollBar1_centr
             // 
-            this.vScrollBar1_centr.Location = new System.Drawing.Point(317, 5);
+            this.vScrollBar1_centr.Location = new System.Drawing.Point(238, 4);
             this.vScrollBar1_centr.Name = "vScrollBar1_centr";
-            this.vScrollBar1_centr.Size = new System.Drawing.Size(17, 645);
+            this.vScrollBar1_centr.Size = new System.Drawing.Size(17, 524);
             this.vScrollBar1_centr.TabIndex = 1;
             // 
             // Image_statii
             // 
-            this.Image_statii.Location = new System.Drawing.Point(48, 76);
-            this.Image_statii.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Image_statii.Location = new System.Drawing.Point(36, 62);
             this.Image_statii.Name = "Image_statii";
-            this.Image_statii.Size = new System.Drawing.Size(228, 256);
+            this.Image_statii.Size = new System.Drawing.Size(171, 208);
             this.Image_statii.TabIndex = 0;
             this.Image_statii.TabStop = false;
             // 
             // textBox_search
             // 
-            this.textBox_search.Location = new System.Drawing.Point(347, 16);
-            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_search.Location = new System.Drawing.Point(260, 13);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(272, 22);
+            this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             // 
             // GhostMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 713);
+            this.ClientSize = new System.Drawing.Size(748, 579);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.Right_panel);
             this.Controls.Add(this.Centr_panel);
             this.Controls.Add(this.butto_search);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GhostMainForm";
             this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
