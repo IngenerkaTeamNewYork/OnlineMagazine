@@ -94,7 +94,7 @@ namespace WindowsFormsApplication4
                 uy++;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + Tables.ADVERTISMENT, SQLClass.CONN);
             MySqlDataReader rr = rrr.ExecuteReader();
             while (rr.Read())
             {

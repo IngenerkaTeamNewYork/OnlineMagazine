@@ -15,5 +15,51 @@ namespace WindowsFormsApplication4
         /// Таблица статей
         /// </summary>
         public const String ARTICLES = "Articles1";
+
+        /// <summary>
+        /// Таблица рекламы
+        /// </summary>
+        public const String ADVERTISMENT = "Advertisment";
+
+        /// <summary>
+        /// Таблица авторов
+        /// </summary>
+        public const String AUTHORS = "Authors";
+        
+        /// <summary>
+        /// Таблица сабов
+        /// </summary>
+        public const String BALANCE = "Balance";
+
+        /// <summary>
+        /// Таблица категорий
+        /// </summary>
+        public const String CATEGORIES = "Categories";
+
+        /// <summary>
+        /// Таблица коллекций
+        /// </summary>
+        public const String COLECTION = "Colection";
+
+        /// <summary>
+        /// Таблица лайков
+        /// </summary>
+        public const String LIKES = "Likes";
+
+        /// <summary>
+        /// Таблица пользователей
+        /// </summary>
+        public const String POLZOVATELI = "Polzovateli";
+
+        /// <summary>
+        /// Таблица промо-категорий
+        /// </summary>
+        public const String PROMO_CATEGORIES_LINK = "Promo_categories_Link";
+
+        /// <summary>
+        /// Таблица прочитанных статей
+        /// </summary>
+        public const String READ_OF_ARTICLES = "read_of_articles";
+        
     }
 }
