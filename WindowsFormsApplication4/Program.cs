@@ -16,6 +16,8 @@ namespace WindowsFormsApplication4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            SQLClass.OpenConnection();
             Application.Run(new GhostMainForm());
         }
     }

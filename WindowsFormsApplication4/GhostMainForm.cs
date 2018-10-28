@@ -80,36 +80,41 @@ namespace WindowsFormsApplication4
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Right_panel.Controls.Clear();
-            Right_panel.Controls.Add(label_popular);
-            Right_panel.Controls.Add(categories_linklabel);
-            Right_panel.Controls.Add(label_author);
-            Right_panel.Controls.Add(button_add_reklama);
+            Centr_panel.Controls.Clear();
+            Centr_panel.Controls.Add(popularArticlesLabel);
+
             textBox_login.Text = "";
             textBox_password.Text = "";
 
-            /*
-            SQLClass.OpenConnection();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES, SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " LIMIT 0, 3", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            int uy = 0;
+            int articleY = 50;
             while (rdr.Read())
             {
                 LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(103, 10 + 30 * uy);
-                label1.Size = new Size(250, 13);
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(Centr_panel.Width, 20);
                 label1.Text = rdr[0].ToString();
                 label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+                if (rdr[1].ToString() != "")
+                {
+                    PictureBox image1 = new PictureBox();
+                    image1.Location = new Point(0, articleY + 25);
+                    image1.Size = new Size(Centr_panel.Width, 150);
+                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    image1.LoadAsync(rdr[1].ToString());
+                    Centr_panel.Controls.Add(image1);
+                }
 
                 arts.Add(label1);
-
-                Centr_panel.Controls.Add(label1);
-                uy++;
+                articleY += 180;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + Tables.ADVERTISMENT, SQLClass.CONN);
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
             MySqlDataReader rr = rrr.ExecuteReader();
             while (rr.Read())
             {
@@ -117,14 +122,14 @@ namespace WindowsFormsApplication4
                 kolvo++;
             }
             rr.Close();
-            
+
             Random rnd = new Random();
             reclama.Load("https://user32265.clients-cdnnow.ru/localStorage/post/27/bd/ec/c4/27bdecc4_resizedScaled_740to286.gif");
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
             if (url[1] == "") { }else{ reclama2.Load(url[1]); }
            // if (url[2] == "") { }else { reclama3.Load(url[2]); }
            // reclama3.Load(url[2]);
-        */
+        
         }    
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -171,11 +176,6 @@ namespace WindowsFormsApplication4
             form.ShowDialog();
         }
 
-        private void articleTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Реклама2_Click(object sender, EventArgs e)
         {
             Label newLab = new Label();
@@ -188,12 +188,7 @@ namespace WindowsFormsApplication4
         {
             SQLClass.CloseConnection();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+        
         private void button_login_Click(object sender, EventArgs e)
         {
             bool author = false;
@@ -212,21 +207,14 @@ namespace WindowsFormsApplication4
             {
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
-                SQLClass.CloseConnection();
                 Form1_Load(sender, e);
             }
                
             else
             {
                 To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
-
-                SQLClass.CloseConnection();
                 Form1_Load(sender, e);
             }
-        }
-
-        private void butto_search_Click(object sender, EventArgs e)
-        {
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -236,71 +224,5 @@ namespace WindowsFormsApplication4
                 button_login_Click(sender, null);
             }
         }
-
-        private void label_password_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_name_statya_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Right_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Centr_panel_Paint(object sender, PaintEventArgs e)
-        {
-            SQLClass.OpenConnection();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " LIMIT 0, 5" , SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            int articleY = 10;
-            while (rdr.Read())
-            {
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(103, articleY);
-                label1.Size = new Size(150, 13);
-                label1.Text = rdr[0].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(label1);
-
-                PictureBox image1 = new PictureBox();
-                image1.Location = new Point(103, articleY + 25);
-                image1.Size = new Size(150, 100);
-                if (rdr[1].ToString() != "")
-                {
-                    image1.Load(rdr[1].ToString());
-                    Centr_panel.Controls.Add(image1);
-                }
-
-                arts.Add(label1);
-                articleY += 130;
-            }
-            rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
-            MySqlDataReader rr = rrr.ExecuteReader();
-            while (rr.Read())
-            {
-                url[kolvo] = rr[0].ToString();
-                kolvo++;
-            }
-            rr.Close();
-        }
-
-        private void label_popular_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

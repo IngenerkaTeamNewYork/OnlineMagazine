@@ -38,13 +38,7 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
 
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT UserName FROM `Authors`", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT UserName FROM `Authors`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
            
@@ -59,10 +53,8 @@ namespace WindowsFormsApplication4
                 loginy_avtorov.Add(linklabel1);
                 uy++;
             }
+
             rdr.Close();
-
-
-            conn.Close();
         }
 
         private void List_of_author_Load(object sender, EventArgs e)
