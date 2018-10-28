@@ -48,6 +48,7 @@
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_Balance = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1_reklama.SuspendLayout();
             this.panel2_reklama.SuspendLayout();
             this.panel_Statiya.SuspendLayout();
@@ -165,12 +166,12 @@
             this.button_statistika.Name = "button_statistika";
             this.button_statistika.Size = new System.Drawing.Size(169, 39);
             this.button_statistika.TabIndex = 10;
-            this.button_statistika.Text = "Статистика";
             this.button_statistika.UseVisualStyleBackColor = true;
             this.button_statistika.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel_spisok_statey
             // 
+            this.panel_spisok_statey.Controls.Add(this.label5);
             this.panel_spisok_statey.Controls.Add(this.label4);
             this.panel_spisok_statey.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_spisok_statey.Location = new System.Drawing.Point(3, 279);
@@ -299,6 +300,15 @@
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "label5";
+            // 
             // AuthorMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,5 +360,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Button_Balance;
+        private System.Windows.Forms.Label label5;
     }
 }

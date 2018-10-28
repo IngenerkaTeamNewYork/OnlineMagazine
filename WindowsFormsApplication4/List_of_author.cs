@@ -71,7 +71,7 @@ namespace WindowsFormsApplication4
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm(/*StastisticsForm.stat[0]*/);
+            StastisticsForm form1 = new StastisticsForm("");
             form1.ShowDialog();
         }
     }

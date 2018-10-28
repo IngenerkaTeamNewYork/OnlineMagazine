@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
             this.textBox_about_me = new System.Windows.Forms.TextBox();
@@ -38,22 +37,13 @@
             this.label_password = new System.Windows.Forms.Label();
             this.label_me = new System.Windows.Forms.Label();
             this.button_come = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.textBox_pic = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // textBox_login
             // 
-            this.textBox_login.Location = new System.Drawing.Point(172, 26);
+            this.textBox_login.Location = new System.Drawing.Point(53, 6);
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(100, 20);
             this.textBox_login.TabIndex = 1;
@@ -61,7 +51,7 @@
             // 
             // textBox_password
             // 
-            this.textBox_password.Location = new System.Drawing.Point(172, 60);
+            this.textBox_password.Location = new System.Drawing.Point(53, 40);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(100, 20);
             this.textBox_password.TabIndex = 2;
@@ -101,7 +91,7 @@
             // label_login
             // 
             this.label_login.AutoSize = true;
-            this.label_login.Location = new System.Drawing.Point(131, 33);
+            this.label_login.Location = new System.Drawing.Point(9, 9);
             this.label_login.Name = "label_login";
             this.label_login.Size = new System.Drawing.Size(38, 13);
             this.label_login.TabIndex = 6;
@@ -110,7 +100,7 @@
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(124, 63);
+            this.label_password.Location = new System.Drawing.Point(2, 40);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(45, 13);
             this.label_password.TabIndex = 7;
@@ -135,11 +125,29 @@
             this.button_come.UseVisualStyleBackColor = true;
             this.button_come.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox_pic
+            // 
+            this.textBox_pic.Location = new System.Drawing.Point(121, 74);
+            this.textBox_pic.Name = "textBox_pic";
+            this.textBox_pic.Size = new System.Drawing.Size(151, 20);
+            this.textBox_pic.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Ссылка на картинку";
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 240);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_pic);
             this.Controls.Add(this.button_come);
             this.Controls.Add(this.label_me);
             this.Controls.Add(this.label_password);
@@ -149,11 +157,9 @@
             this.Controls.Add(this.textBox_about_me);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_login);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Registration";
             this.Text = "Зарегистрироваться";
             this.Load += new System.EventHandler(this.Registration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +167,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox_login;
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.TextBox textBox_about_me;
@@ -171,5 +176,7 @@
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Label label_me;
         private System.Windows.Forms.Button button_come;
+        private System.Windows.Forms.TextBox textBox_pic;
+        private System.Windows.Forms.Label label1;
     }
 }

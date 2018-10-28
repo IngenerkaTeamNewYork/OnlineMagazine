@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public partial class AuthorMainForm : Form
@@ -21,7 +25,29 @@ namespace WindowsFormsApplication4
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            MySqlCommand cmd = new MySqlCommand(
+                "SELECT `Information_about_author`, Articles, Pic FROM `Authors` WHERE `UserName` = '" + login + "'", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
+            while (rdr.Read())
+            {
+                aboutAuthorLabel.Text = rdr[0].ToString();
+                label5.Text = rdr[1].ToString();
+                        
+                if (rdr[0].ToString() != "")
+                {
+                    
+                    String str = rdr[2].ToString();
+                    Avatar_author.Load(rdr[2].ToString());
+                    Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    Avatar_author.Image = null;
+
+                }
+            }
+            rdr.Close();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -63,7 +89,8 @@ namespace WindowsFormsApplication4
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            CategoriesForm f = new CategoriesForm();
+            f.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)

@@ -22,20 +22,12 @@ namespace WindowsFormsApplication4
     public partial class StastisticsForm : Form
     {
         //public static List<AuthorStat> stat = new List<AuthorStat>();
-        public StastisticsForm() //AuthorStat stata)
+        public StastisticsForm(String login) //AuthorStat stata)
         {
-
-
             InitializeComponent();
 
 
-            String connString = "SslMode=none;" +
-                "Server=db4free.net;" +
-                "database=ingenerka;port=3306;uid=ingenerka;pwd=Beavis1989;old guids=true;";
-            MySqlConnection conn = new MySqlConnection(connString);
-            conn.Open();
-
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `Authors`", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `Authors`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
             
             while (rdr.Read())
@@ -44,8 +36,7 @@ namespace WindowsFormsApplication4
             }
             rdr.Close();
 
-            conn.Close();
-           
+            list_of_author.Text = login;           
         }
 
         private void StastisticsForm_Load(object sender, EventArgs e)
