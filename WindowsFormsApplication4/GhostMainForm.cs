@@ -102,12 +102,15 @@ namespace WindowsFormsApplication4
                 kolvo++;
             }
             rr.Close();
+            
             Random rnd = new Random();
-            reclama.Load(url[0]);
-            //reclama2.Load(url[1]);
-            //reclama3.Load(url[2]);
+            reclama.Load("https://user32265.clients-cdnnow.ru/localStorage/post/27/bd/ec/c4/27bdecc4_resizedScaled_740to286.gif");
+            reclama.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (url[1] == "") { }else{ reclama2.Load(url[1]); }
+           // if (url[2] == "") { }else { reclama3.Load(url[2]); }
+           // reclama3.Load(url[2]);
         */
-             }        
+        }    
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

@@ -58,6 +58,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
             this.SuspendLayout();
+
             // 
             // categories_linklabel
             // 
@@ -307,7 +308,6 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

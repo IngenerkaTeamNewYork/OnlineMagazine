@@ -22,7 +22,7 @@ namespace WindowsFormsApplication4
             avtor1 = avtor;
             InitializeComponent();
         }
-        
+        public string[] gg = new string[50];
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -57,10 +57,18 @@ namespace WindowsFormsApplication4
             }
              
         }
-
+        public int uy = 0;
         private void Add_Statia_Load(object sender, EventArgs e)
         {
+            comboBox_kategorii.Items.Clear();
+            MySqlCommand cmd = new MySqlCommand("SELECT name FROM Categories" , SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
 
+            while (rdr.Read())
+            {
+                comboBox_kategorii.Items.Add(rdr[0].ToString());
+            }
+            rdr.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
