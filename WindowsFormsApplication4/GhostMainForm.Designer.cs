@@ -48,11 +48,6 @@ namespace WindowsFormsApplication4
             this.label_popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.Centr_panel = new System.Windows.Forms.Panel();
-            this.articleTextBox_statii = new System.Windows.Forms.TextBox();
-            this.label_name_statya = new System.Windows.Forms.Label();
-            this.label_kategoriya_statii = new System.Windows.Forms.Label();
-            this.vScrollBar1_centr = new System.Windows.Forms.VScrollBar();
-            this.Image_statii = new System.Windows.Forms.PictureBox();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
@@ -63,6 +58,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
             this.SuspendLayout();
+
             // 
             // categories_linklabel
             // 
@@ -123,9 +119,9 @@ namespace WindowsFormsApplication4
             this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
             this.authorizationTableLayoutPanel.RowCount = 5;
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(226, 132);
@@ -134,9 +130,9 @@ namespace WindowsFormsApplication4
             // button_login
             // 
             this.button_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_login.Location = new System.Drawing.Point(3, 95);
+            this.button_login.Location = new System.Drawing.Point(3, 83);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(220, 34);
+            this.button_login.Size = new System.Drawing.Size(220, 46);
             this.button_login.TabIndex = 11;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
@@ -149,37 +145,33 @@ namespace WindowsFormsApplication4
             this.label_of_login.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_of_login.Location = new System.Drawing.Point(3, 0);
             this.label_of_login.Name = "label_of_login";
-            this.label_of_login.Size = new System.Drawing.Size(220, 26);
+            this.label_of_login.Size = new System.Drawing.Size(220, 20);
             this.label_of_login.TabIndex = 12;
             this.label_of_login.Text = "Логин";
-            this.label_of_login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_login
             // 
             this.textBox_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_login.Location = new System.Drawing.Point(3, 29);
+            this.textBox_login.Location = new System.Drawing.Point(3, 23);
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(220, 20);
             this.textBox_login.TabIndex = 9;
-            this.textBox_login.TextChanged += new System.EventHandler(this.textBox_login_TextChanged);
             this.textBox_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // label_password
             // 
             this.label_password.AutoSize = true;
             this.label_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_password.Location = new System.Drawing.Point(3, 46);
+            this.label_password.Location = new System.Drawing.Point(3, 40);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(220, 26);
+            this.label_password.Size = new System.Drawing.Size(220, 20);
             this.label_password.TabIndex = 13;
             this.label_password.Text = "Пароль";
-            this.label_password.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_password.Click += new System.EventHandler(this.label_password_Click);
             // 
             // textBox_password
             // 
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_password.Location = new System.Drawing.Point(3, 75);
+            this.textBox_password.Location = new System.Drawing.Point(3, 63);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 10;
@@ -239,6 +231,7 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(217, 567);
             this.Right_panel.TabIndex = 5;
+            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // button_add_reklama
             // 
@@ -258,6 +251,7 @@ namespace WindowsFormsApplication4
             this.label_popular.Size = new System.Drawing.Size(68, 13);
             this.label_popular.TabIndex = 3;
             this.label_popular.Text = "Популярное";
+            this.label_popular.Click += new System.EventHandler(this.label_popular_Click);
             // 
             // label_author
             // 
@@ -271,60 +265,12 @@ namespace WindowsFormsApplication4
             // 
             // Centr_panel
             // 
-            this.Centr_panel.Controls.Add(this.articleTextBox_statii);
-            this.Centr_panel.Controls.Add(this.label_name_statya);
-            this.Centr_panel.Controls.Add(this.label_kategoriya_statii);
-            this.Centr_panel.Controls.Add(this.vScrollBar1_centr);
-            this.Centr_panel.Controls.Add(this.Image_statii);
+            this.Centr_panel.AutoScroll = true;
             this.Centr_panel.Location = new System.Drawing.Point(245, 42);
             this.Centr_panel.Name = "Centr_panel";
             this.Centr_panel.Size = new System.Drawing.Size(255, 534);
             this.Centr_panel.TabIndex = 6;
-            // 
-            // articleTextBox_statii
-            // 
-            this.articleTextBox_statii.BackColor = System.Drawing.SystemColors.Control;
-            this.articleTextBox_statii.Enabled = false;
-            this.articleTextBox_statii.ForeColor = System.Drawing.Color.Black;
-            this.articleTextBox_statii.Location = new System.Drawing.Point(36, 290);
-            this.articleTextBox_statii.Multiline = true;
-            this.articleTextBox_statii.Name = "articleTextBox_statii";
-            this.articleTextBox_statii.Size = new System.Drawing.Size(171, 157);
-            this.articleTextBox_statii.TabIndex = 5;
-            this.articleTextBox_statii.TextChanged += new System.EventHandler(this.articleTextBox_TextChanged);
-            // 
-            // label_name_statya
-            // 
-            this.label_name_statya.AutoSize = true;
-            this.label_name_statya.Location = new System.Drawing.Point(92, 34);
-            this.label_name_statya.Name = "label_name_statya";
-            this.label_name_statya.Size = new System.Drawing.Size(38, 13);
-            this.label_name_statya.TabIndex = 2;
-            this.label_name_statya.Text = "Класс";
-            // 
-            // label_kategoriya_statii
-            // 
-            this.label_kategoriya_statii.AutoSize = true;
-            this.label_kategoriya_statii.Location = new System.Drawing.Point(12, 18);
-            this.label_kategoriya_statii.Name = "label_kategoriya_statii";
-            this.label_kategoriya_statii.Size = new System.Drawing.Size(35, 13);
-            this.label_kategoriya_statii.TabIndex = 4;
-            this.label_kategoriya_statii.Text = "label6";
-            // 
-            // vScrollBar1_centr
-            // 
-            this.vScrollBar1_centr.Location = new System.Drawing.Point(238, 4);
-            this.vScrollBar1_centr.Name = "vScrollBar1_centr";
-            this.vScrollBar1_centr.Size = new System.Drawing.Size(17, 524);
-            this.vScrollBar1_centr.TabIndex = 1;
-            // 
-            // Image_statii
-            // 
-            this.Image_statii.Location = new System.Drawing.Point(36, 62);
-            this.Image_statii.Name = "Image_statii";
-            this.Image_statii.Size = new System.Drawing.Size(171, 208);
-            this.Image_statii.TabIndex = 0;
-            this.Image_statii.TabStop = false;
+            this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
             // 
             // textBox_search
             // 
@@ -362,7 +308,6 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -373,18 +318,13 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.PictureBox reclama3;
         private System.Windows.Forms.Label label_popular;
         private System.Windows.Forms.Label label_author;
-        private System.Windows.Forms.Label label_name_statya;
-        private System.Windows.Forms.Label label_kategoriya_statii;
         private System.Windows.Forms.Panel Left_panel;
         private System.Windows.Forms.Panel Right_panel;
         private System.Windows.Forms.Panel Centr_panel;
-        private System.Windows.Forms.VScrollBar vScrollBar1_centr;
-        private System.Windows.Forms.PictureBox Image_statii;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.LinkLabel categories_linklabel;
         private System.Windows.Forms.RadioButton radioButton1;
         public System.Windows.Forms.LinkLabel link_of_registration;
-        protected System.Windows.Forms.TextBox articleTextBox_statii;
         private System.Windows.Forms.Button button_add_reklama;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel authorizationTableLayoutPanel;
@@ -395,4 +335,3 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Button button_login;
     }
 }
-
