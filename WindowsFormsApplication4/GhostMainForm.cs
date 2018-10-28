@@ -61,7 +61,6 @@ namespace WindowsFormsApplication4
                         stat.name_author = rdr[1].ToString();
                         stat.kategorita_statii = rdr[2].ToString();
                         stat.text_statii = rdr[3].ToString();
-                        stat.kartinki_statii = Image_statii.Image;
                         stat.picture = rdr[4].ToString();
 
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
@@ -74,9 +73,10 @@ namespace WindowsFormsApplication4
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            /*
             SQLClass.OpenConnection();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header FROM " + Tables.ARTICLES, SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES, SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int uy = 0;
@@ -90,11 +90,11 @@ namespace WindowsFormsApplication4
 
                 arts.Add(label1);
 
-                Right_panel.Controls.Add(label1);
+                Centr_panel.Controls.Add(label1);
                 uy++;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + Tables.ADVERTISMENT, SQLClass.CONN);
             MySqlDataReader rr = rrr.ExecuteReader();
             while (rr.Read())
             {
@@ -102,13 +102,15 @@ namespace WindowsFormsApplication4
                 kolvo++;
             }
             rr.Close();
+            
             Random rnd = new Random();
             reclama.Load("https://user32265.clients-cdnnow.ru/localStorage/post/27/bd/ec/c4/27bdecc4_resizedScaled_740to286.gif");
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
             if (url[1] == "") { }else{ reclama2.Load(url[1]); }
            // if (url[2] == "") { }else { reclama3.Load(url[2]); }
            // reclama3.Load(url[2]);
-        }        
+        */
+        }    
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -213,6 +215,61 @@ namespace WindowsFormsApplication4
             {
                 button_login_Click(sender, null);
             }
+        }
+
+        private void label_name_statya_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Centr_panel_Paint(object sender, PaintEventArgs e)
+        {
+            SQLClass.OpenConnection();
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " LIMIT 0, 5" , SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            int articleY = 10;
+            while (rdr.Read())
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(103, articleY);
+                label1.Size = new Size(150, 13);
+                label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(103, articleY + 25);
+                image1.Size = new Size(150, 100);
+                if (rdr[1].ToString() != "")
+                {
+                    image1.Load(rdr[1].ToString());
+                    Centr_panel.Controls.Add(image1);
+                }
+
+                arts.Add(label1);
+                articleY += 130;
+            }
+            rdr.Close();
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
+            MySqlDataReader rr = rrr.ExecuteReader();
+            while (rr.Read())
+            {
+                url[kolvo] = rr[0].ToString();
+                kolvo++;
+            }
+            rr.Close();
+        }
+
+        private void label_popular_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
