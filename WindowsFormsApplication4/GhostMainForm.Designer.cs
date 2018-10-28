@@ -55,6 +55,8 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.reclama2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
             this.Right_panel.SuspendLayout();
+            this.Centr_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).BeginInit();
             this.SuspendLayout();
             // 
             // categories_linklabel
@@ -300,6 +302,9 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.reclama)).EndInit();
             this.Right_panel.ResumeLayout(false);
             this.Right_panel.PerformLayout();
+            this.Centr_panel.ResumeLayout(false);
+            this.Centr_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Image_statii)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
