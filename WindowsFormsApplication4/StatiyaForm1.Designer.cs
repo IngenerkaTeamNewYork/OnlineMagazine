@@ -175,6 +175,7 @@
             this.Controls.Add(this.mainTableLayoutPanel);
             this.Name = "StatiyaForm1";
             this.Text = "Статья";
+            this.Load += new System.EventHandler(this.StatiyaForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainTableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
