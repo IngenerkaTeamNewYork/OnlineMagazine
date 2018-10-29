@@ -89,7 +89,7 @@ namespace WindowsFormsApplication4
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CategoriesForm f = new CategoriesForm();
+            CategoriesForm f = new CategoriesForm(false);
             f.ShowDialog();
         }
 
@@ -112,6 +112,25 @@ namespace WindowsFormsApplication4
         {
             Balance_Author OknoBalance = new Balance_Author();
             OknoBalance.ShowDialog();
+        }
+
+        private void panel_spisok_statey_Paint(object sender, PaintEventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand(
+               "SELECT `Header` FROM `Articles1` WHERE `Author` = '" + login + "'", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            int i = 0;
+            while (rdr.Read())
+            {
+                Label label = new Label();
+                label.Size = new Size(100, 30);
+                label.Location = new Point(12, 50 + 50 * i);
+                label.Text = rdr[0].ToString();
+                this.panel_spisok_statey.Controls.Add(label);
+                i++;
+            }
+
+            rdr.Close();
         }
     }
 }

@@ -40,6 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_statistika = new System.Windows.Forms.Button();
             this.panel_spisok_statey = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,7 +49,6 @@
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_Balance = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1_reklama.SuspendLayout();
             this.panel2_reklama.SuspendLayout();
             this.panel_Statiya.SuspendLayout();
@@ -178,6 +178,16 @@
             this.panel_spisok_statey.Name = "panel_spisok_statey";
             this.panel_spisok_statey.Size = new System.Drawing.Size(169, 185);
             this.panel_spisok_statey.TabIndex = 11;
+            this.panel_spisok_statey.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_spisok_statey_Paint);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "label5";
             // 
             // label4
             // 
@@ -299,15 +309,6 @@
             this.Button_Balance.Text = "Баланс";
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
             // 
             // AuthorMainForm
             // 

@@ -18,13 +18,18 @@ namespace WindowsFormsApplication4
         public string name;
         public Button del;
     }
+    
+
     public partial class CategoriesForm : Form
     {
+
+        public bool admin;
         public static List<categories> CategoriesList = new List<categories>();
         public string text;
 
-        public CategoriesForm()
+        public CategoriesForm(bool ad)
         {
+            admin = ad;
             InitializeComponent();
 
             update();            
@@ -33,8 +38,11 @@ namespace WindowsFormsApplication4
         public void update()
         {
             this.Controls.Clear();
+            if (admin == true)
+            {
+                this.Controls.Add(button_add);
+            }
             this.Controls.Add(textBox_name);
-            this.Controls.Add(button_add);
             CategoriesList.Clear();
 
             MySqlCommand cmd = new MySqlCommand(
@@ -50,15 +58,20 @@ namespace WindowsFormsApplication4
                 categories newcat = new categories();
                 newcat.name = label.Text;
 
-                Button button_delete = new Button();
-                button_delete.Size = new Size(100, 30);
-                button_delete.Location = new Point(190, 10 + 30 * i);
-                button_delete.Text = "Удалить";
-                newcat.del = button_delete;
-                newcat.del.Click += new System.EventHandler(button_delete_Click);
+                if (admin == true)
+                {
+                    Button button_delete = new Button();
+                    button_delete.Size = new Size(100, 30);
+                    button_delete.Location = new Point(190, 10 + 30 * i);
+                    button_delete.Text = "Удалить";
+                    newcat.del = button_delete;
+                    newcat.del.Click += new System.EventHandler(button_delete_Click);
+
+                    this.Controls.Add(button_delete);
+                    CategoriesList.Add(newcat);
+                }
+               
                 this.Controls.Add(label);
-                this.Controls.Add(button_delete);
-                CategoriesList.Add(newcat);
                 i++;
             }
             rdr.Close();                

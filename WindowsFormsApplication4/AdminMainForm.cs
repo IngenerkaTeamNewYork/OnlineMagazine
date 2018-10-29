@@ -36,6 +36,7 @@ namespace WindowsFormsApplication4
     public partial class AdminMainForm : Form
     {
         public List<Reklama> mnogo_reklamy = new List<Reklama>();
+        public List<AuthorStat> writer = new List<AuthorStat>();
         public AdminMainForm()
         {
             InitializeComponent();
@@ -106,12 +107,6 @@ namespace WindowsFormsApplication4
             fgf.ShowDialog();
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            CategoriesForm form = new CategoriesForm();
-            form.ShowDialog();
-        }        
-
         private void button_author_Click(object sender, EventArgs e)
         {
             FBIform form = new FBIform();
@@ -173,6 +168,18 @@ namespace WindowsFormsApplication4
         {
             NewPages np = new NewPages();
             np.ShowDialog();
+        }
+
+        private void button_categories_Click_1(object sender, EventArgs e)
+        {
+            CategoriesForm form = new CategoriesForm(true);
+            form.ShowDialog();
+        }
+
+        private void button_author_Click_1(object sender, EventArgs e)
+        {
+            List_of_author form = new List_of_author(writer);
+            form.ShowDialog();
         }
     }
 }
