@@ -22,23 +22,26 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(n))
                 {
-                    Information_o_avtore gg = new Information_o_avtore(n.Text);
+                    Information_o_avtore gg = new Information_o_avtore(n.Text, pic[s], Information[s]);
                     gg.ShowDialog();
                 }
+                s++;
             }
-
+            s = 0;
         }
 
         public static List<AuthorStat> stat = new List<AuthorStat>();
-
+        public int s = 0;
         public static List<LinkLabel> loginy_avtorov = new List<LinkLabel>();
+        public List<string> pic = new List<string>();
+        public List<string> Information = new List<string>();
 
         public int uy = 0;
         public List_of_author(List<AuthorStat> writers)
         {
             InitializeComponent();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT UserName FROM `Authors`", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT UserName, Pic, Information_about_author FROM `Authors`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
            
@@ -48,6 +51,12 @@ namespace WindowsFormsApplication4
                 linklabel1.Size = new Size(70, 20);
                 linklabel1.Location = new Point(50, 10 + 30 * uy);
                 linklabel1.Text = rdr[0].ToString();
+                string p;
+                p = rdr[1].ToString();
+                pic.Add(p);
+                string inf;
+                inf = rdr[2].ToString();
+                Information.Add(inf);
                 linklabel1.Click += new System.EventHandler(Click_na_link);
                 panel1.Controls.Add(linklabel1);
                 loginy_avtorov.Add(linklabel1);
