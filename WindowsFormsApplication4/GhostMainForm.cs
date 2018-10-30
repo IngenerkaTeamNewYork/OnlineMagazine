@@ -166,7 +166,7 @@ namespace WindowsFormsApplication4
 
         private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CategoriesForm form3 =new CategoriesForm();
+            CategoriesForm form3 =new CategoriesForm(false);
             form3.ShowDialog();
         }
 
