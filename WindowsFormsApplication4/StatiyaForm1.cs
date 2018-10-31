@@ -1,4 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
@@ -12,12 +19,21 @@ namespace WindowsFormsApplication4
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
+            try
+            {
+                pictureBox1.Load(stat.picture);
+            }
+            catch(Exception)
+            {
+                pictureBox1.Image = new Bitmap("defolt_statiy.jpg");
+            }
+            /*
             if (stat.picture != null)
             {
                 pictureBox1.Load(stat.picture);
             }
             else stat.kartinki_statii = null;
-            
+            */
             Authortext.Text = stat.name_author;
         }
 

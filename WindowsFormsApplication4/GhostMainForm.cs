@@ -106,7 +106,16 @@ namespace WindowsFormsApplication4
                     image1.Location = new Point(0, articleY + 25);
                     image1.Size = new Size(Centr_panel.Width, 150);
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    image1.LoadAsync(rdr[1].ToString());
+                    try
+                    {
+                        image1.LoadAsync(rdr[1].ToString());
+                    }
+                    catch(Exception)
+                    {
+                        image1.Image = new Bitmap("defolt_statiy.jpg");
+                    }
+                  //  image1.LoadAsync(rdr[1].ToString());
+                    
                     Centr_panel.Controls.Add(image1);
                 }
 
@@ -223,6 +232,56 @@ namespace WindowsFormsApplication4
             {
                 button_login_Click(sender, null);
             }
+        }
+
+        private void Centr_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
+            Centr_panel.Controls.Clear();
+            Centr_panel.Controls.Add(popularArticlesLabel);
+
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            
+            int articleY = 50;
+            while (rdr.Read())
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(Centr_panel.Width, 20);
+                label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+                {
+                    PictureBox image1 = new PictureBox();
+                    image1.Location = new Point(0, articleY + 25);
+                    image1.Size = new Size(Centr_panel.Width, 150);
+                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    try
+                    {
+                        image1.LoadAsync(rdr[1].ToString());
+                    }
+                    catch (Exception)
+                    {
+                        image1.Image = new Bitmap("defolt_statiy.jpg");
+                    }
+                    //  image1.LoadAsync(rdr[1].ToString());
+
+                    Centr_panel.Controls.Add(image1);
+                }
+
+                arts.Add(label1);
+                articleY += 180;
+            }
+            rdr.Close();
         }
     }
 }

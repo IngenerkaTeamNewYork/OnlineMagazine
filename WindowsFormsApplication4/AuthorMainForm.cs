@@ -22,6 +22,42 @@ namespace WindowsFormsApplication4
             login = log;
             InitializeComponent();
         }
+        public List<LinkLabel> arts = new List<LinkLabel>();
+        private void ArticleClick(object sender, EventArgs e)
+        {
+            foreach (LinkLabel lab in arts)
+            {
+                if (sender.Equals(lab))
+                {
+                    MySqlCommand cmd = new MySqlCommand(
+                        "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
+                        " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        statiya stat = new statiya();
+                        stat.name_statiya = rdr[0].ToString();
+                        stat.name_author = rdr[1].ToString();
+                        stat.kategorita_statii = rdr[2].ToString();
+                        stat.text_statii = rdr[3].ToString();
+                        if (rdr[4].ToString() != "")
+                        {
+                            stat.picture = rdr[4].ToString();
+                        }
+                        else
+                        {
+                            stat.picture = null;
+                        }
+
+                        StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                        OknoStatiya.ShowDialog();
+                    }
+                    rdr.Close();
+                }
+            }
+
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -33,11 +69,20 @@ namespace WindowsFormsApplication4
             {
                 aboutAuthorLabel.Text = rdr[0].ToString();
                 label5.Text = rdr[1].ToString();
-                        
+
+                try
+                {
+                    Avatar_author.Load(rdr[2].ToString());
+                }
+                catch(Exception)
+                {
+                    Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
+                }
+                Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
+                /*
                 if (rdr[0].ToString() != "")
                 {
                     
-                    String str = rdr[2].ToString();
                     Avatar_author.Load(rdr[2].ToString());
                     Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
@@ -46,6 +91,43 @@ namespace WindowsFormsApplication4
                     Avatar_author.Image = null;
 
                 }
+                  */
+            }
+            rdr.Close();
+
+            MySqlCommand cm = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " WHERE `Author` = '" + login + "'", SQLClass.CONN);
+            rdr = cm.ExecuteReader();
+
+            int articleY = 50;
+            while (rdr.Read())
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(panel1.Width, 20);
+                label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                panel1.Controls.Add(label1);
+
+                {
+                    PictureBox image1 = new PictureBox();
+                    image1.Location = new Point(0, articleY + 25);
+                    image1.Size = new Size(panel1.Width, 150);
+                    image1.Image = new Bitmap("defolt_statiy.jpg");
+                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    try
+                    {
+                        image1.LoadAsync(rdr[1].ToString());
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    //  image1.LoadAsync(rdr[1].ToString());
+
+                    panel1.Controls.Add(image1);
+                }
+
+                arts.Add(label1);
+                articleY += 180;
             }
             rdr.Close();
         }
