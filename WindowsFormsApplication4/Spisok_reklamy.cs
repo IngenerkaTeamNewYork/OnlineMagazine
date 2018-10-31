@@ -70,8 +70,6 @@ namespace WindowsFormsApplication4
             }
         }
 
-
-
         public Spisok_reklamy(List<Reklama> mnogo_reklamy)
         {
             InitializeComponent();

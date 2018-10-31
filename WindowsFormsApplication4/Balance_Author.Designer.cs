@@ -47,7 +47,6 @@
             this.list_Author.Name = "list_Author";
             this.list_Author.Size = new System.Drawing.Size(222, 21);
             this.list_Author.TabIndex = 12;
-            this.list_Author.SelectedIndexChanged += new System.EventHandler(this.list_Author_SelectedIndexChanged);
             // 
             // Summa
             // 
@@ -65,7 +64,6 @@
             this.Tenge.Size = new System.Drawing.Size(40, 13);
             this.Tenge.TabIndex = 14;
             this.Tenge.Text = "Тенге:";
-            this.Tenge.Click += new System.EventHandler(this.label1_Click);
             // 
             // picture_Author
             // 
@@ -83,7 +81,6 @@
             this.Vyuvod_Denyak.TabIndex = 16;
             this.Vyuvod_Denyak.Text = "Вывести мои ДЕНЬГИ!";
             this.Vyuvod_Denyak.UseVisualStyleBackColor = true;
-            this.Vyuvod_Denyak.Click += new System.EventHandler(this.Vyuvod_Denyak_Click);
             // 
             // Balance_Author
             // 
@@ -97,7 +94,6 @@
             this.Controls.Add(this.list_Author);
             this.Name = "Balance_Author";
             this.Text = "Дайте деняк";
-            this.Load += new System.EventHandler(this.Balance_Author_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture_Author)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

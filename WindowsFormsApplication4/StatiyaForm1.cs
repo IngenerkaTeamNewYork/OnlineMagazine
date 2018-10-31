@@ -1,4 +1,9 @@
 using System;
+using System.Drawing;
+using System.IO;
+using System.IO.Compression;
+using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication4
@@ -14,7 +19,7 @@ namespace WindowsFormsApplication4
             Stattext.Text = stat.text_statii;
             if (stat.picture != null)
             {
-                pictureBox1.Load(stat.picture);
+                pictureBox1.LoadAsync(stat.picture);
             }
             else stat.kartinki_statii = null;
             

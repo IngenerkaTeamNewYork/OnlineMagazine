@@ -49,7 +49,6 @@
             this.textBox_password.Size = new System.Drawing.Size(100, 20);
             this.textBox_password.TabIndex = 1;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
-            this.textBox_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_password_KeyPress);
             // 
             // button_login
             // 
@@ -91,7 +90,6 @@
             this.Controls.Add(this.textBox_login);
             this.Name = "To_come_in";
             this.Text = "Вход";
-            this.Load += new System.EventHandler(this.To_come_in_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

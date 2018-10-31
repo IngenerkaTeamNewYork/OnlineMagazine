@@ -66,10 +66,6 @@ namespace WindowsFormsApplication4
             rdr.Close();
         }
 
-        private void List_of_author_Load(object sender, EventArgs e)
-        {
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             StastisticsForm form1 = new StastisticsForm("");

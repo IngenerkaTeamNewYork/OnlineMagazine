@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using System.Windows.Forms;
-
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -18,7 +16,6 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-
     public partial class StastisticsForm : Form
     {
         //public static List<AuthorStat> stat = new List<AuthorStat>();
@@ -39,11 +36,6 @@ namespace WindowsFormsApplication4
             list_of_author.Text = login;           
         }
 
-        private void StastisticsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void list_of_author_SelectedIndexChanged(object sender, EventArgs e)
         {   
             MySqlCommand cmd = 
@@ -60,14 +52,5 @@ namespace WindowsFormsApplication4
             }
             rdr.Close();
         }
-
-        private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-
-        }
-
-
-
-       
     }
 }

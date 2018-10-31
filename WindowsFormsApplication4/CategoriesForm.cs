@@ -77,11 +77,6 @@ namespace WindowsFormsApplication4
             rdr.Close();                
         }
 
-        private void CategoriesForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button_delete_Click(object sender, EventArgs e)
         {
             foreach (categories cat in CategoriesList)

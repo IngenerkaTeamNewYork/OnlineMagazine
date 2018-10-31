@@ -114,7 +114,7 @@ namespace WindowsFormsApplication4
                 articleY += 180;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM " + "Advertisment", SQLClass.CONN);
+            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM Advertisment", SQLClass.CONN);
             MySqlDataReader rr = rrr.ExecuteReader();
             while (rr.Read())
             {
@@ -124,9 +124,12 @@ namespace WindowsFormsApplication4
             rr.Close();
 
             Random rnd = new Random();
-            reclama.Load("https://user32265.clients-cdnnow.ru/localStorage/post/27/bd/ec/c4/27bdecc4_resizedScaled_740to286.gif");
+            reclama.LoadAsync("https://i.imgur.com/eQ4wEpO.gif");
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
-            if (url[1] == "") { }else{ reclama2.Load(url[1]); }
+            if (url[1] != "")
+            { 
+                reclama2.LoadAsync(url[1]); 
+            }
            // if (url[2] == "") { }else { reclama3.Load(url[2]); }
            // reclama3.Load(url[2]);
         
@@ -191,6 +194,7 @@ namespace WindowsFormsApplication4
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            // TODO: dddd
             bool author = false;
 
             MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM `Authors` WHERE UserName = '" + textBox_login.Text + "'", SQLClass.CONN);

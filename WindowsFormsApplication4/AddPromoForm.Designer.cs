@@ -128,12 +128,10 @@
             this.kartinka.Size = new System.Drawing.Size(488, 281);
             this.kartinka.TabIndex = 3;
             this.kartinka.TabStop = false;
-            this.kartinka.Click += new System.EventHandler(this.kartinka_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // label1
             // 
@@ -145,7 +143,6 @@
             this.label1.Size = new System.Drawing.Size(371, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Размер картинки должен быть максимум (479; 296)";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabControl1
             // 
@@ -206,7 +203,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(265, 112);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // textBox_vvod_texta
             // 
@@ -217,7 +213,6 @@
             this.textBox_vvod_texta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_vvod_texta.Size = new System.Drawing.Size(388, 220);
             this.textBox_vvod_texta.TabIndex = 0;
-            this.textBox_vvod_texta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2_delete
             // 
@@ -295,7 +290,6 @@
             this.oshibka_control.TabIndex = 2;
             this.oshibka_control.Text = "Ошибка";
             this.oshibka_control.UseVisualStyleBackColor = true;
-            this.oshibka_control.Click += new System.EventHandler(this.oshibka_Click);
             // 
             // label40
             // 
@@ -344,7 +338,6 @@
             this.label36.Size = new System.Drawing.Size(49, 13);
             this.label36.TabIndex = 33;
             this.label36.Text = "ERROR:";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
             // 
             // label35
             // 
@@ -575,7 +568,6 @@
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 8;
             this.label11.Text = "ERROR:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -604,7 +596,6 @@
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 5;
             this.label8.Text = "ERROR:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -660,7 +651,6 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Добавить_картинку";
             this.Text = "Добавить картинку";
-            this.Load += new System.EventHandler(this.Добавить_картинку_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kartinka)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.izobrazhenie.ResumeLayout(false);
