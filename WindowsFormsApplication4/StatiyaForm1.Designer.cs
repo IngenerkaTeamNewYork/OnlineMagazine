@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatiyaForm1));
             this.Kategoriatext = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -38,11 +39,17 @@
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.Authortext = new System.Windows.Forms.Label();
             this.Maintext = new System.Windows.Forms.TextBox();
+            this.likesPanel = new System.Windows.Forms.Panel();
+            this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLike = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.artTableLayoutPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
+            this.likesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDislike)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLike)).BeginInit();
             this.SuspendLayout();
             // 
             // Kategoriatext
@@ -63,10 +70,11 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(3, 103);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(455, 257);
+            this.pictureBox1.Size = new System.Drawing.Size(455, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // mainTableLayoutPanel
             // 
@@ -109,15 +117,18 @@
             this.artTableLayoutPanel.Controls.Add(this.Stattext, 0, 2);
             this.artTableLayoutPanel.Controls.Add(this.pictureBox1, 0, 1);
             this.artTableLayoutPanel.Controls.Add(this.HeaderPanel, 0, 0);
+            this.artTableLayoutPanel.Controls.Add(this.likesPanel, 0, 3);
             this.artTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artTableLayoutPanel.Location = new System.Drawing.Point(86, 3);
             this.artTableLayoutPanel.Name = "artTableLayoutPanel";
-            this.artTableLayoutPanel.RowCount = 3;
+            this.artTableLayoutPanel.RowCount = 4;
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.artTableLayoutPanel.Size = new System.Drawing.Size(461, 627);
             this.artTableLayoutPanel.TabIndex = 1;
+            this.artTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.artTableLayoutPanel_Paint);
             // 
             // Stattext
             // 
@@ -125,12 +136,13 @@
             this.Stattext.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Stattext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Stattext.Enabled = false;
-            this.Stattext.Location = new System.Drawing.Point(3, 366);
+            this.Stattext.Location = new System.Drawing.Point(3, 346);
             this.Stattext.Multiline = true;
             this.Stattext.Name = "Stattext";
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Stattext.Size = new System.Drawing.Size(455, 258);
+            this.Stattext.Size = new System.Drawing.Size(455, 237);
             this.Stattext.TabIndex = 7;
+            this.Stattext.TextChanged += new System.EventHandler(this.Stattext_TextChanged);
             // 
             // HeaderPanel
             // 
@@ -167,6 +179,37 @@
             this.Maintext.Size = new System.Drawing.Size(455, 64);
             this.Maintext.TabIndex = 2;
             // 
+            // likesPanel
+            // 
+            this.likesPanel.Controls.Add(this.pictureBoxDislike);
+            this.likesPanel.Controls.Add(this.pictureBoxLike);
+            this.likesPanel.Location = new System.Drawing.Point(0, 586);
+            this.likesPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.likesPanel.Name = "likesPanel";
+            this.likesPanel.Size = new System.Drawing.Size(233, 41);
+            this.likesPanel.TabIndex = 8;
+            // 
+            // pictureBoxDislike
+            // 
+            this.pictureBoxDislike.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
+            this.pictureBoxDislike.Location = new System.Drawing.Point(24, 3);
+            this.pictureBoxDislike.Name = "pictureBoxDislike";
+            this.pictureBoxDislike.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxDislike.TabIndex = 1;
+            this.pictureBoxDislike.TabStop = false;
+            this.pictureBoxDislike.Click += new System.EventHandler(this.pictureBoxDislike_Click);
+            // 
+            // pictureBoxLike
+            // 
+            this.pictureBoxLike.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLike.Image")));
+            this.pictureBoxLike.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxLike.Name = "pictureBoxLike";
+            this.pictureBoxLike.Size = new System.Drawing.Size(233, 41);
+            this.pictureBoxLike.TabIndex = 0;
+            this.pictureBoxLike.TabStop = false;
+            this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
+            // 
             // StatiyaForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +227,9 @@
             this.artTableLayoutPanel.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
+            this.likesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDislike)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLike)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +246,8 @@
         private System.Windows.Forms.Label labelreklama;
         private System.Windows.Forms.TextBox Maintext;
         private System.Windows.Forms.Label Authortext;
+        private System.Windows.Forms.Panel likesPanel;
+        private System.Windows.Forms.PictureBox pictureBoxLike;
+        private System.Windows.Forms.PictureBox pictureBoxDislike;
     }
 }

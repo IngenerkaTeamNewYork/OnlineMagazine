@@ -218,6 +218,7 @@ namespace WindowsFormsApplication4
             this.reclama.Size = new System.Drawing.Size(199, 95);
             this.reclama.TabIndex = 2;
             this.reclama.TabStop = false;
+            this.reclama.Click += new System.EventHandler(this.reclama_Click);
             // 
             // Right_panel
             // 
@@ -268,6 +269,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.Name = "Centr_panel";
             this.Centr_panel.Size = new System.Drawing.Size(314, 534);
             this.Centr_panel.TabIndex = 6;
+            this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
             // 
             // popularArticlesLabel
             // 

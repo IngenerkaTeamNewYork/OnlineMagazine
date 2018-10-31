@@ -47,7 +47,7 @@ namespace WindowsFormsApplication4
                 {
                     NewAdvId = Drdr[0].ToString();
                 }                
-                Drdr.Close();
+                //Drdr.Close();
 
                 MySqlCommand cmd = new MySqlCommand(
                     "INSERT INTO Advertisment(Text, Pic, Date_From, Data_to, id, new)" +
