@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using IniParser.Parser;
+using System.IO;
+
 namespace WindowsFormsApplication4
 {
     static class Program
@@ -14,10 +17,11 @@ namespace WindowsFormsApplication4
         [STAThread]
         static void Main()
         {
+            IniParser.Parser.IniDataParser aa = new IniParser.Parser.IniDataParser();
+            Tables.ARTICLES = aa.Parse(File.ReadAllText("config.ini"))["db"]["ARTICLES"].ToString();
+            Tables.AUTHORS = aa.Parse(File.ReadAllText("config.ini"))["db"]["AUTHORS"].ToString();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            SQLClass.OpenConnection();
             Application.Run(new GhostMainForm());
         }
     }
