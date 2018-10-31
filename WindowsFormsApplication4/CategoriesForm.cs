@@ -19,13 +19,13 @@ namespace WindowsFormsApplication4
         public Button del;
     }
     
-
     public partial class CategoriesForm : Form
     {
 
         public bool admin;
         public static List<categories> CategoriesList = new List<categories>();
         public string text;
+        public string categoria;
 
         public CategoriesForm(bool ad)
         {
@@ -57,6 +57,9 @@ namespace WindowsFormsApplication4
                 label.Text = rdr[0].ToString();
                 categories newcat = new categories();
                 newcat.name = label.Text;
+                categoria = label.Text;
+                label.Click += new System.EventHandler(lable_cat_Click);
+
 
                 if (admin == true)
                 {
@@ -115,6 +118,12 @@ namespace WindowsFormsApplication4
                 rdr.Close();
                 update();
             }
+        }
+
+        private void lable_cat_Click (object sender, EventArgs e)
+        {
+            list_of_stat f = new list_of_stat(((Label)sender).Text);
+            f.ShowDialog();
         }
     }
 }
