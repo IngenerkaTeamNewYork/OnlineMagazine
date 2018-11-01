@@ -303,6 +303,10 @@
   <ItemGroup>
     <Content Include="IniFileParser\INIFileParser.csproj" />
     <Content Include="MySql.Data.dll" />
+    <None Include="Resources\Dislike.png" />
+    <None Include="Resources\DisLike2.png" />
+    <Content Include="Resources\like.png" />
+    <Content Include="Resources\Like2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

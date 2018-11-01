@@ -53,10 +53,10 @@ namespace WindowsFormsApplication4
                         "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
                         " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
                     MySqlDataReader rdr = cmd.ExecuteReader();
+                    statiya stat = new statiya();
 
                     while (rdr.Read())
                     {
-                        statiya stat = new statiya();
                         stat.name_statiya = rdr[0].ToString();
                         stat.name_author = rdr[1].ToString();
                         stat.kategorita_statii = rdr[2].ToString();
@@ -69,11 +69,14 @@ namespace WindowsFormsApplication4
                         {
                             stat.picture = null;
                         }
+                    }
+                    rdr.Close();
 
+                    if (stat.name_statiya != "")
+                    {    
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                         OknoStatiya.ShowDialog();
                     }
-                    rdr.Close();
                 }
             }
 
@@ -107,6 +110,7 @@ namespace WindowsFormsApplication4
                     image1.Size = new Size(Centr_panel.Width, 150);
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
                     image1.LoadAsync(rdr[1].ToString());
+                    //image1.Click += new System.EventHandler(ArticleClick);
                     Centr_panel.Controls.Add(image1);
                 }
 
@@ -223,6 +227,16 @@ namespace WindowsFormsApplication4
             {
                 button_login_Click(sender, null);
             }
+        }
+
+        private void reclama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Centr_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
