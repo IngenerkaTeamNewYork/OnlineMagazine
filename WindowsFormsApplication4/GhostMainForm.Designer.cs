@@ -219,6 +219,7 @@ namespace WindowsFormsApplication4
             this.reclama.Size = new System.Drawing.Size(199, 95);
             this.reclama.TabIndex = 2;
             this.reclama.TabStop = false;
+            this.reclama.Click += new System.EventHandler(this.reclama_Click);
             // 
             // Right_panel
             // 

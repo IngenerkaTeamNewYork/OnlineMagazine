@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,21 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-
-
-
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
 
         public List<LinkLabel> arts = new List<LinkLabel>();
-
+      
+        public string[] url = new string[50];
+        int kolvo = 0;
+        public string kuda_i_kak;
+      
         public GhostMainForm()
         {
             InitializeComponent();
 
-            List<AuthorStat> writers = new List<AuthorStat>();
+            /*List<AuthorStat> writers = new List<AuthorStat>();
             int uy = 0;
             foreach (AuthorStat write in writers)
             {
@@ -37,11 +39,8 @@ namespace WindowsFormsApplication4
 
                 Left_panel.Controls.Add(linklabel1);
                 uy++;
-            }
+            }*/
         }
-        public string[] url = new string[50];
-        int kolvo = 0;
-        public string kuda_i_kak;
 
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -53,10 +52,10 @@ namespace WindowsFormsApplication4
                         "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
                         " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
                     MySqlDataReader rdr = cmd.ExecuteReader();
+                    statiya stat = new statiya();
 
                     while (rdr.Read())
                     {
-                        statiya stat = new statiya();
                         stat.name_statiya = rdr[0].ToString();
                         stat.name_author = rdr[1].ToString();
                         stat.kategorita_statii = rdr[2].ToString();
@@ -69,15 +68,18 @@ namespace WindowsFormsApplication4
                         {
                             stat.picture = null;
                         }
+                    }
+                    rdr.Close();
 
+                    if (stat.name_statiya != "")
+                    {    
                         StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                         OknoStatiya.ShowDialog();
                     }
-                    rdr.Close();
                 }
             }
-
         }
+      
         private void Form1_Load(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
@@ -140,6 +142,54 @@ namespace WindowsFormsApplication4
            // reclama3.Load(url[2]);
         
         }    
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
+            Centr_panel.Controls.Clear();
+            Centr_panel.Controls.Add(popularArticlesLabel);
+
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+            
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            
+            int articleY = 50;
+            while (rdr.Read())
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(Centr_panel.Width, 20);
+                label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+                
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(0, articleY + 25);
+                image1.Size = new Size(Centr_panel.Width, 150);
+                image1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                try
+                {
+                    image1.LoadAsync(rdr[1].ToString());
+                }
+                catch (Exception)
+                {
+                    image1.Image = new Bitmap("defolt_statiy.jpg");
+                }
+                    
+                //image1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(image1);
+
+                arts.Add(label1);
+                articleY += 180;
+            }
+            rdr.Close();
+        }
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -198,6 +248,7 @@ namespace WindowsFormsApplication4
             SQLClass.CloseConnection();
         }
         
+        
         private void button_login_Click(object sender, EventArgs e)
         {
             bool author = false;
@@ -233,55 +284,15 @@ namespace WindowsFormsApplication4
                 button_login_Click(sender, null);
             }
         }
-
-        private void Centr_panel_Paint(object sender, PaintEventArgs e)
+        
+        private void reclama_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void butto_search_Click(object sender, EventArgs e)
+        private void Centr_panel_Paint(object sender, PaintEventArgs e)
         {
-            Centr_panel.Controls.Clear();
-            Centr_panel.Controls.Add(popularArticlesLabel);
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            
-            int articleY = 50;
-            while (rdr.Read())
-            {
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(0, articleY);
-                label1.Size = new Size(Centr_panel.Width, 20);
-                label1.Text = rdr[0].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(label1);
-
-                {
-                    PictureBox image1 = new PictureBox();
-                    image1.Location = new Point(0, articleY + 25);
-                    image1.Size = new Size(Centr_panel.Width, 150);
-                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    try
-                    {
-                        image1.LoadAsync(rdr[1].ToString());
-                    }
-                    catch (Exception)
-                    {
-                        image1.Image = new Bitmap("defolt_statiy.jpg");
-                    }
-                    //  image1.LoadAsync(rdr[1].ToString());
-
-                    Centr_panel.Controls.Add(image1);
-                }
-
-                arts.Add(label1);
-                articleY += 180;
-            }
-            rdr.Close();
         }
     }
 }
