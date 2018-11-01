@@ -49,6 +49,7 @@
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_Balance = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1_reklama.SuspendLayout();
             this.panel2_reklama.SuspendLayout();
             this.panel_Statiya.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // panel_Statiya
             // 
+            this.panel_Statiya.Controls.Add(this.panel1);
             this.panel_Statiya.Controls.Add(this.label1);
             this.panel_Statiya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Statiya.Location = new System.Drawing.Point(3, 3);
@@ -125,7 +127,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(312, 45);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Опубликовать";
+            this.button1.Text = "Опубликовать статью";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -303,6 +305,14 @@
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(7, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(302, 383);
+            this.panel1.TabIndex = 1;
+            // 
             // AuthorMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,5 +365,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Button_Balance;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

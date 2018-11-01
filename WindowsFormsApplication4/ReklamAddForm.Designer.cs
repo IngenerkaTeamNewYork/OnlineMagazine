@@ -125,6 +125,7 @@
             this.button_addReklama.TabIndex = 8;
             this.button_addReklama.Text = "button1";
             this.button_addReklama.UseVisualStyleBackColor = true;
+            this.button_addReklama.Click += new System.EventHandler(this.button_addReklama_Click);
             // 
             // ReklamAddForm
             // 

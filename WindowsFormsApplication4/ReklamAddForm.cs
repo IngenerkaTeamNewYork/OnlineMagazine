@@ -16,5 +16,10 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
         }
+
+        private void button_addReklama_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
