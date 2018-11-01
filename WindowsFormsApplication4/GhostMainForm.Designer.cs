@@ -78,6 +78,7 @@ namespace WindowsFormsApplication4
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
+            this.butto_search.Click += new System.EventHandler(this.butto_search_Click);
             // 
             // radioButton1
             // 

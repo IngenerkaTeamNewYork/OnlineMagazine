@@ -1,7 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
@@ -9,6 +14,7 @@ namespace WindowsFormsApplication4
     {
         bool isLike = false;
         bool isDisLike = false;
+        
         public StatiyaForm1(statiya stat)
         {
             InitializeComponent();
@@ -16,16 +22,18 @@ namespace WindowsFormsApplication4
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
-            if (stat.picture != null)
+            try
             {
                 pictureBox1.Load(stat.picture);
             }
-            else stat.kartinki_statii = null;
-
+            catch(Exception)
+            {
+                pictureBox1.Image = new Bitmap("defolt_statiy.jpg");
+            }
             Authortext.Text = stat.name_author;
 
-
             pictureBoxLike.Image = Properties.Resources.like;
+            pictureBoxDislike.Image = Properties.Resources.Dislike;
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
@@ -42,19 +50,11 @@ namespace WindowsFormsApplication4
         {
 
         }
-
+        
         private void pictureBoxLike_Click(object sender, EventArgs e)
         {
-            if (isLike)
-            {
-                isLike = false;
-                pictureBoxLike.Image = Properties.Resources.like;
-            }
-            else
-            {
-                isLike = true;
-                pictureBoxLike.Image = Properties.Resources.Like2;
-            }
+            pictureBoxLike.Image = (isLike) ? Properties.Resources.like : Properties.Resources.Like2;
+            isLike = !isLike;
 
             if (isLike)
             {
@@ -66,8 +66,7 @@ namespace WindowsFormsApplication4
                     ", '"+ Kategoriatext.Text + "'"+
                     ",1, 3)", SQLClass.CONN);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();
-               
+                rdr.Close();               
             }
         }
 
@@ -99,10 +98,8 @@ namespace WindowsFormsApplication4
                     ",1, 3)", SQLClass.CONN);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Close();
-                //Создать отдельный столбик дизлайков в MySQL 
+                //Г‘Г®Г§Г¤Г ГІГј Г®ГІГ¤ГҐГ«ГјГ­Г»Г© Г±ГІГ®Г«ГЎГЁГЄ Г¤ГЁГ§Г«Г Г©ГЄГ®Гў Гў MySQL 
             }
         }
      }
-
-
-    }
+}

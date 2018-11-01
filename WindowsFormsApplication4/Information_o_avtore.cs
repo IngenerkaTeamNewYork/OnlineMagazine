@@ -26,11 +26,15 @@ namespace WindowsFormsApplication4
         private void Information_o_avtore_Load(object sender, EventArgs e)
         {
             label1.Text = "Инвормация о " + name_avtor;
-            if(pic_avtor != "")
+            try
             {
                 pictureBox1.Load(pic_avtor);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            catch(Exception)
+            {
+                pictureBox1.Image = new Bitmap("defolt_avtor.jpg");
+            }
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             label2.Text = infa_ob_avtore;
         }
     }
