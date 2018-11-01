@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,34 +47,9 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(lab))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
-                        "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
-                        " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    statiya stat = new statiya();
-
-                    while (rdr.Read())
-                    {
-                        stat.name_statiya = rdr[0].ToString();
-                        stat.name_author = rdr[1].ToString();
-                        stat.kategorita_statii = rdr[2].ToString();
-                        stat.text_statii = rdr[3].ToString();
-                        if (rdr[4].ToString() != "")
-                        {
-                            stat.picture = rdr[4].ToString();
-                        }
-                        else
-                        {
-                            stat.picture = null;
-                        }
-                    }
-                    rdr.Close();
-
-                    if (stat.name_statiya != "")
-                    {    
-                        StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
-                        OknoStatiya.ShowDialog();
-                    }
+                    statiya stat = statiya.Click1(((Label)sender).Text);
+                    StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                    OknoStatiya.ShowDialog();
                 }
             }
         }
@@ -138,8 +112,6 @@ namespace WindowsFormsApplication4
             reclama.Load("https://user32265.clients-cdnnow.ru/localStorage/post/27/bd/ec/c4/27bdecc4_resizedScaled_740to286.gif");
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
             if (url[1] == "") { }else{ reclama2.Load(url[1]); }
-           // if (url[2] == "") { }else { reclama3.Load(url[2]); }
-           // reclama3.Load(url[2]);
         
         }    
 

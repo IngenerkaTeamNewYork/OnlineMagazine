@@ -98,6 +98,12 @@
     <Compile Include="FBIform.Designer.cs">
       <DependentUpon>FBIform.cs</DependentUpon>
     </Compile>
+    <Compile Include="list_of_stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="list_of_stat.Designer.cs">
+      <DependentUpon>list_of_stat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Information_o_avtore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FBIform.resx">
       <DependentUpon>FBIform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list_of_stat.resx">
+      <DependentUpon>list_of_stat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Information_o_avtore.resx">
       <DependentUpon>Information_o_avtore.cs</DependentUpon>
