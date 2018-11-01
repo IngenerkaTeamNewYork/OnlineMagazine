@@ -74,7 +74,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // mainTableLayoutPanel
             // 
@@ -128,7 +127,6 @@
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.artTableLayoutPanel.Size = new System.Drawing.Size(461, 627);
             this.artTableLayoutPanel.TabIndex = 1;
-            this.artTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.artTableLayoutPanel_Paint);
             // 
             // Stattext
             // 
@@ -142,7 +140,6 @@
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Stattext.Size = new System.Drawing.Size(455, 237);
             this.Stattext.TabIndex = 7;
-            this.Stattext.TextChanged += new System.EventHandler(this.Stattext_TextChanged);
             // 
             // HeaderPanel
             // 
@@ -218,7 +215,6 @@
             this.Controls.Add(this.mainTableLayoutPanel);
             this.Name = "StatiyaForm1";
             this.Text = "Статья";
-            this.Load += new System.EventHandler(this.StatiyaForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainTableLayoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

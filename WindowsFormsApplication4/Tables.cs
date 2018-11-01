@@ -12,54 +12,54 @@ namespace WindowsFormsApplication4
     public class Tables
     {
         /// <summary>
-        /// Таблица статей
-        /// </summary>
-        public const String ARTICLES = "Articles1";
-
-        /// <summary>
         /// Таблица рекламы
         /// </summary>
-        public const String ADVERTISMENT = "Advertisment";
+        public static String ADVERTISMENT = "Advertisment";
+
+        /// <summary>
+        /// Таблица статей
+        /// </summary>
+        public static String ARTICLES = "Articles1";
 
         /// <summary>
         /// Таблица авторов
         /// </summary>
-        public const String AUTHORS = "Authors";
+        public static String AUTHORS = "Authors";
         
         /// <summary>
         /// Таблица сабов
         /// </summary>
-        public const String BALANCE = "Balance";
+        public static String BALANCE = "Balance";
 
         /// <summary>
         /// Таблица категорий
         /// </summary>
-        public const String CATEGORIES = "Categories";
+        public static String CATEGORIES = "Categories";
 
         /// <summary>
         /// Таблица коллекций
         /// </summary>
-        public const String COLECTION = "Colection";
+        public static String COLLECTION = "Colection";
 
         /// <summary>
         /// Таблица лайков
         /// </summary>
-        public const String LIKES = "Likes";
+        public static String LIKES = "Likes";
 
         /// <summary>
         /// Таблица пользователей
         /// </summary>
-        public const String POLZOVATELI = "Polzovateli";
+        public static String POLZOVATELI = "Polzovateli";
 
         /// <summary>
         /// Таблица промо-категорий
         /// </summary>
-        public const String PROMO_CATEGORIES_LINK = "Promo_categories_Link";
+        public static String PROMO_CATEGORIES_LINK = "Promo_categories_Link";
 
         /// <summary>
         /// Таблица прочитанных статей
         /// </summary>
-        public const String READ_OF_ARTICLES = "read_of_articles";
+        public static String READ_OF_ARTICLES = "read_of_articles";
         
     }
 }

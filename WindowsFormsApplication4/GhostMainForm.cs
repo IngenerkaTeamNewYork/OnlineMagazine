@@ -27,6 +27,9 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
 
+
+            SQLClass.OpenConnection();
+
             /*List<AuthorStat> writers = new List<AuthorStat>();
             int uy = 0;
             foreach (AuthorStat write in writers)

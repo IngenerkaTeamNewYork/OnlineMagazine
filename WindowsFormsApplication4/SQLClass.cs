@@ -44,23 +44,24 @@ namespace WindowsFormsApplication4
         {
             insert(cmdText);
         }
-        public List<T> Query<T>(string query) where T : new()
+
+        /// <summary>
+        /// Select-запрос
+        /// </summary>
+        /// <param name="query">Запрос</param>
+        /// <returns>Результат в виде списка строк</returns>
+        public static List<String> Select(string query)
         {
-            List<T> res = new List<T>();
+            List<String> res = new List<String>();
             MySqlCommand q = new MySqlCommand(query, CONN);
             MySqlDataReader r = q.ExecuteReader();
+
             while (r.Read())
             {
-                T t = new T();
-
                 for (int inc = 0; inc < r.FieldCount; inc++)
                 {
-                    Type type = t.GetType();
-                    PropertyInfo prop = type.GetProperty(r.GetName(inc));
-                    prop.SetValue(t, Convert.ChangeType(r.GetValue(inc), prop.PropertyType), null);
+                    res.Add(r.GetString(inc));
                 }
-
-                res.Add(t);
             }
             r.Close();
 

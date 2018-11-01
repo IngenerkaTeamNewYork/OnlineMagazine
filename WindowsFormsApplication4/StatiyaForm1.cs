@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace WindowsFormsApplication4
 {
     public partial class StatiyaForm1 : Form
@@ -46,7 +49,14 @@ namespace WindowsFormsApplication4
 
             if (isLike)
             {
-                MySqlCommand cmd = new MySqlCommand(
+                SQLClass.insert(
+                    "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
+                    " VALUES (" +
+                    "'" + Maintext.Text + "'" +
+                    ", '" + Authortext.Text + "'" +
+                    ", '" + Kategoriatext.Text + "'" +
+                    ",1, 3)");
+                /*MySqlCommand cmd = new MySqlCommand(
                     "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
                     " VALUES (" +
                     "'" + Maintext.Text + "'" +
@@ -54,7 +64,7 @@ namespace WindowsFormsApplication4
                     ", '"+ Kategoriatext.Text + "'"+
                     ",1, 3)", SQLClass.CONN);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();               
+                rdr.Close();   */            
             }
         }
         

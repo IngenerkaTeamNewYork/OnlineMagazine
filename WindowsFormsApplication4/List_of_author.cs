@@ -41,6 +41,8 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
 
+            List<String> Auths = SQLClass.Select("SELECT UserName, Pic, Information_about_author FROM `Authors`");
+
             MySqlCommand cmd = new MySqlCommand("SELECT UserName, Pic, Information_about_author FROM `Authors`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 

@@ -18,8 +18,12 @@ namespace WindowsFormsApplication4
         static void Main()
         {
             IniParser.Parser.IniDataParser aa = new IniParser.Parser.IniDataParser();
+            Tables.ADVERTISMENT = aa.Parse(File.ReadAllText("config.ini"))["db"]["ADVERTISMENT"].ToString();
             Tables.ARTICLES = aa.Parse(File.ReadAllText("config.ini"))["db"]["ARTICLES"].ToString();
             Tables.AUTHORS = aa.Parse(File.ReadAllText("config.ini"))["db"]["AUTHORS"].ToString();
+            Tables.BALANCE = aa.Parse(File.ReadAllText("config.ini"))["db"]["BALANCE"].ToString();
+            Tables.CATEGORIES = aa.Parse(File.ReadAllText("config.ini"))["db"]["CATEGORIES"].ToString();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new GhostMainForm());
