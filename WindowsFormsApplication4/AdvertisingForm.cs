@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,10 +37,8 @@ namespace WindowsFormsApplication4
         {
             if (checkBox_agree.Checked && checkBox_agree2.Checked)          
             {
-                MySqlCommand Dcmd =
-                new MySqlCommand("SELECT MAX(id+1) FROM Advertisment", SQLClass.CONN);
+                MySqlCommand Dcmd = new MySqlCommand("SELECT MAX(id+1) FROM Advertisment", SQLClass.CONN);
                 MySqlDataReader Drdr = Dcmd.ExecuteReader();
-                //int M = Drdr;
                 
                 String NewAdvId = "";
                 while (Drdr.Read())

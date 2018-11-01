@@ -13,20 +13,21 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-
-
-
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
 
         public List<LinkLabel> arts = new List<LinkLabel>();
-
+      
+        public string[] url = new string[50];
+        int kolvo = 0;
+        public string kuda_i_kak;
+      
         public GhostMainForm()
         {
             InitializeComponent();
 
-            List<AuthorStat> writers = new List<AuthorStat>();
+            /*List<AuthorStat> writers = new List<AuthorStat>();
             int uy = 0;
             foreach (AuthorStat write in writers)
             {
@@ -37,11 +38,8 @@ namespace WindowsFormsApplication4
 
                 Left_panel.Controls.Add(linklabel1);
                 uy++;
-            }
+            }*/
         }
-        public string[] url = new string[50];
-        int kolvo = 0;
-        public string kuda_i_kak;
 
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -49,39 +47,13 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(lab))
                 {
-
-
                     statiya stat = statiya.Click1(((Label)sender).Text);
                     StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
                     OknoStatiya.ShowDialog();
-
-                    /*MySqlCommand cmd = new MySqlCommand(
-                        "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
-                        " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-
-                    while (rdr.Read())
-                    {
-                        statiya stat = new statiya();
-                        stat.name_statiya = rdr[0].ToString();
-                        stat.name_author = rdr[1].ToString();
-                        stat.kategorita_statii = rdr[2].ToString();
-                        stat.text_statii = rdr[3].ToString();
-                        if (rdr[4].ToString() != "")
-                        {
-                            stat.picture = rdr[4].ToString();
-                        }
-                        else
-                        {
-                            stat.picture = null;
-                        }
-
-                    }
-                    rdr.Close();*/
                 }
             }
-
         }
+      
         private void Form1_Load(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
@@ -110,7 +82,16 @@ namespace WindowsFormsApplication4
                     image1.Location = new Point(0, articleY + 25);
                     image1.Size = new Size(Centr_panel.Width, 150);
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    image1.LoadAsync(rdr[1].ToString());
+                    try
+                    {
+                        image1.LoadAsync(rdr[1].ToString());
+                    }
+                    catch(Exception)
+                    {
+                        image1.Image = new Bitmap("defolt_statiy.jpg");
+                    }
+                  //  image1.LoadAsync(rdr[1].ToString());
+                    
                     Centr_panel.Controls.Add(image1);
                 }
 
@@ -133,6 +114,54 @@ namespace WindowsFormsApplication4
             if (url[1] == "") { }else{ reclama2.Load(url[1]); }
         
         }    
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
+            Centr_panel.Controls.Clear();
+            Centr_panel.Controls.Add(popularArticlesLabel);
+
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+            
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3", SQLClass.CONN);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            
+            int articleY = 50;
+            while (rdr.Read())
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(Centr_panel.Width, 20);
+                label1.Text = rdr[0].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+                
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(0, articleY + 25);
+                image1.Size = new Size(Centr_panel.Width, 150);
+                image1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                try
+                {
+                    image1.LoadAsync(rdr[1].ToString());
+                }
+                catch (Exception)
+                {
+                    image1.Image = new Bitmap("defolt_statiy.jpg");
+                }
+                    
+                //image1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(image1);
+
+                arts.Add(label1);
+                articleY += 180;
+            }
+            rdr.Close();
+        }
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -191,6 +220,7 @@ namespace WindowsFormsApplication4
             SQLClass.CloseConnection();
         }
         
+        
         private void button_login_Click(object sender, EventArgs e)
         {
             bool author = false;
@@ -225,6 +255,16 @@ namespace WindowsFormsApplication4
             {
                 button_login_Click(sender, null);
             }
+        }
+        
+        private void reclama_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Centr_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
