@@ -53,19 +53,14 @@ namespace WindowsFormsApplication4
             }
         }
 
-
         public void proshiy(object sender, EventArgs e)
         {
             foreach (Reklama rekl in mn_reklamy)
             {
                 if (sender.Equals(rekl.proshiyButton))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
-                        "DELETE FROM `Advertisment` " +
-                        "  WHERE `id` = " + rekl.id, SQLClass.CONN);
-
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                    SQLClass.Delete("DELETE FROM " + Tables.ADVERTISMENT +
+                        " WHERE id = " + rekl.id);
                 }
             }
         }

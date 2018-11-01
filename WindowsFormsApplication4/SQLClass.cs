@@ -34,15 +34,24 @@ namespace WindowsFormsApplication4
             CONN.Close();
         }
 
-        public static void insert(string cmdText)
+        public static void Insert(string cmdText)
         {
             MySqlCommand cmd = new MySqlCommand(cmdText);
             MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Close();
         }
-        public static void update(string cmdText)
+
+        /// <summary>
+        /// Delete-запрос
+        /// </summary>
+        public static void Delete(string cmdText)
         {
-            insert(cmdText);
+            Insert(cmdText);
+        }
+
+        public static void Update(string cmdText)
+        {
+            Insert(cmdText);
         }
 
         /// <summary>

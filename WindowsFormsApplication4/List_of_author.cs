@@ -41,7 +41,23 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
 
-            List<String> Auths = SQLClass.Select("SELECT UserName, Pic, Information_about_author FROM `Authors`");
+            List<String> Auths = SQLClass.Select("SELECT UserName, Pic, Information_about_author FROM " + Tables.AUTHORS);
+
+            for (int index = 0; index < Auths.Count; index += 3)
+            {
+                LinkLabel linklabel1 = new LinkLabel();
+                linklabel1.Size = new Size(70, 20);
+                linklabel1.Location = new Point(50, 10 + 30 * uy);
+                linklabel1.Text = Auths[index].ToString();
+                linklabel1.Click += new System.EventHandler(Click_na_link);
+
+                pic.Add(Auths[index + 1].ToString());
+                Information.Add(Auths[index + 2].ToString());
+
+                panel1.Controls.Add(linklabel1);
+                loginy_avtorov.Add(linklabel1);
+                uy++;
+            }
 
             MySqlCommand cmd = new MySqlCommand("SELECT UserName, Pic, Information_about_author FROM `Authors`", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
@@ -49,20 +65,6 @@ namespace WindowsFormsApplication4
            
             while (rdr.Read())
             {
-                LinkLabel linklabel1 = new LinkLabel();
-                linklabel1.Size = new Size(70, 20);
-                linklabel1.Location = new Point(50, 10 + 30 * uy);
-                linklabel1.Text = rdr[0].ToString();
-                string p;
-                p = rdr[1].ToString();
-                pic.Add(p);
-                string inf;
-                inf = rdr[2].ToString();
-                Information.Add(inf);
-                linklabel1.Click += new System.EventHandler(Click_na_link);
-                panel1.Controls.Add(linklabel1);
-                loginy_avtorov.Add(linklabel1);
-                uy++;
             }
 
             rdr.Close();

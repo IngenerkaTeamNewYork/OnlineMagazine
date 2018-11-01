@@ -49,22 +49,13 @@ namespace WindowsFormsApplication4
 
             if (isLike)
             {
-                SQLClass.insert(
+                SQLClass.Insert(
                     "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
                     " VALUES (" +
                     "'" + Maintext.Text + "'" +
                     ", '" + Authortext.Text + "'" +
                     ", '" + Kategoriatext.Text + "'" +
-                    ",1, 3)");
-                /*MySqlCommand cmd = new MySqlCommand(
-                    "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
-                    " VALUES (" +
-                    "'" + Maintext.Text + "'" +
-                    ", '" + Authortext.Text + "'" +
-                    ", '"+ Kategoriatext.Text + "'"+
-                    ",1, 3)", SQLClass.CONN);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();   */            
+                    ",1, 3)");          
             }
         }
         
