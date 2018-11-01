@@ -17,24 +17,5 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
         }
-
-        private void list_Author_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Balance_Author_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Vyuvod_Denyak_Click(object sender, EventArgs e)
-        {
-        }
     }
 }

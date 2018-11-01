@@ -54,7 +54,6 @@
             this.button_save.TabIndex = 5;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2_print
             // 
@@ -64,7 +63,6 @@
             this.button2_print.TabIndex = 5;
             this.button2_print.Text = "Печать";
             this.button2_print.UseVisualStyleBackColor = true;
-            this.button2_print.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_update
             // 
@@ -74,7 +72,6 @@
             this.button_update.TabIndex = 5;
             this.button_update.Text = "Обновить";
             this.button_update.UseVisualStyleBackColor = true;
-            this.button_update.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_add_author
             // 
@@ -84,7 +81,6 @@
             this.button_add_author.TabIndex = 5;
             this.button_add_author.Text = "Добавить автора";
             this.button_add_author.UseVisualStyleBackColor = true;
-            this.button_add_author.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_deleteAuthor
             // 
@@ -94,7 +90,6 @@
             this.button_deleteAuthor.TabIndex = 5;
             this.button_deleteAuthor.Text = "Удалить автора";
             this.button_deleteAuthor.UseVisualStyleBackColor = true;
-            this.button_deleteAuthor.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxDelete_author
             // 
@@ -147,7 +142,6 @@
             this.button_fineAuthor.TabIndex = 5;
             this.button_fineAuthor.Text = "Оштрафовать автора";
             this.button_fineAuthor.UseVisualStyleBackColor = true;
-            this.button_fineAuthor.Click += new System.EventHandler(this.button1_Click);
             // 
             // label_Na
             // 
@@ -249,7 +243,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "FBIform";
             this.Text = "FBI";
-            this.Load += new System.EventHandler(this.FBIform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

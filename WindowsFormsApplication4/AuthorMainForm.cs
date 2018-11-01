@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,26 +72,13 @@ namespace WindowsFormsApplication4
 
                 try
                 {
-                    Avatar_author.Load(rdr[2].ToString());
+                    Avatar_author.LoadAsync(rdr[2].ToString());
                 }
                 catch(Exception)
                 {
                     Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
                 }
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
-                /*
-                if (rdr[0].ToString() != "")
-                {
-                    
-                    Avatar_author.Load(rdr[2].ToString());
-                    Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                else
-                {
-                    Avatar_author.Image = null;
-
-                }
-                  */
             }
             rdr.Close();
 
@@ -132,62 +119,17 @@ namespace WindowsFormsApplication4
             rdr.Close();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Add_Statia f1 = new Add_Statia(login);
             f1.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             CategoriesForm f = new CategoriesForm(false);
             f.ShowDialog();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Balance_Click(object sender, EventArgs e)

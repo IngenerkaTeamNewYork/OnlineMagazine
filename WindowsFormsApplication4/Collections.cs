@@ -20,11 +20,6 @@ namespace WindowsFormsApplication4
             InitializeComponent();
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Collections_Load(object sender, EventArgs e)
         {
             checkedListBox1.Items.Clear();

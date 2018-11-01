@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,7 +27,7 @@ namespace WindowsFormsApplication4
             Stattext.Text = stat.text_statii;
             try
             {
-                pictureBox1.Load(stat.picture);
+                pictureBox1.LoadAsync(stat.picture);
             }
             catch(Exception)
             {
@@ -34,21 +37,6 @@ namespace WindowsFormsApplication4
 
             pictureBoxLike.Image = Properties.Resources.like;
             pictureBoxDislike.Image = Properties.Resources.Dislike;
-        }
-
-        private void StatiyaForm1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Stattext_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void artTableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         
         private void pictureBoxLike_Click(object sender, EventArgs e)
@@ -69,11 +57,7 @@ namespace WindowsFormsApplication4
                 rdr.Close();               
             }
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-        }
-
+        
         private void pictureBoxDislike_Click(object sender, EventArgs e)
         {
             if(isDisLike)

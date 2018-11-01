@@ -140,7 +140,6 @@
             this.aboutAuthorLabel.Size = new System.Drawing.Size(61, 79);
             this.aboutAuthorLabel.TabIndex = 5;
             this.aboutAuthorLabel.Text = "Об авторе";
-            this.aboutAuthorLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // Avatar_author
             // 
@@ -150,7 +149,6 @@
             this.Avatar_author.Size = new System.Drawing.Size(96, 73);
             this.Avatar_author.TabIndex = 6;
             this.Avatar_author.TabStop = false;
-            this.Avatar_author.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // textBox1
             // 
@@ -159,7 +157,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(312, 20);
             this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button_statistika
             // 
@@ -201,7 +198,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Работы";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // comboBox1
             // 
@@ -228,7 +224,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 518);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // leftTableLayoutPanel
             // 
@@ -246,7 +241,6 @@
             this.leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.leftTableLayoutPanel.Size = new System.Drawing.Size(210, 512);
             this.leftTableLayoutPanel.TabIndex = 0;
-            this.leftTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel3
             // 
@@ -283,7 +277,6 @@
             this.table_right_up.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.table_right_up.Size = new System.Drawing.Size(175, 512);
             this.table_right_up.TabIndex = 2;
-            this.table_right_up.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // tableLayoutPanel5
             // 

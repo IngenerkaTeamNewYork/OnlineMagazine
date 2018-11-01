@@ -68,16 +68,6 @@ namespace WindowsFormsApplication4
             LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
         }
 
-        private void To_come_in_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_password_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void textBox_password_KeyDown(object sender, KeyEventArgs e)
         {            
             if (e.KeyCode == Keys.Enter)

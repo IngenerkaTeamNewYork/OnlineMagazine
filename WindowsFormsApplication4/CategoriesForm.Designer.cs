@@ -60,7 +60,6 @@
             this.Controls.Add(this.button_add);
             this.Name = "CategoriesForm";
             this.Text = "Категории";
-            this.Load += new System.EventHandler(this.CategoriesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

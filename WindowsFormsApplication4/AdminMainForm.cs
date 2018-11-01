@@ -88,10 +88,6 @@ namespace WindowsFormsApplication4
             sps.ShowDialog();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             Form ifr = Application.OpenForms[0];
@@ -125,14 +121,6 @@ namespace WindowsFormsApplication4
             Users form = new Users();
             form.ShowDialog();
         }
-        
-        private void button_categories_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
 
         private void button_return_Click(object sender, EventArgs e)
         {
@@ -146,16 +134,10 @@ namespace WindowsFormsApplication4
             ifr.Top = this.Top;
             ifr.Show();
         }
-
         private void button_statistika_Click_1(object sender, EventArgs e)
         {
             StastisticsForm t = new StastisticsForm("");
             t.ShowDialog();
-        }
-
-        private void AdminMainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
