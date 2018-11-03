@@ -86,5 +86,16 @@ namespace WindowsFormsApplication4
                 //Ñîçäàòü îòäåëüíûé ñòîëáèê äèçëàéêîâ â MySQL 
             }
         }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.LoadAsync(advertising_stract.random());
+        }
+
+        private void Kategoriatext_Click(object sender, EventArgs e)
+        {
+
+        }
      }
 }

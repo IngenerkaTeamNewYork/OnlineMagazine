@@ -60,6 +60,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "List_of_author";
             this.Text = "Список авторов";
+            this.Load += new System.EventHandler(this.List_of_author_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

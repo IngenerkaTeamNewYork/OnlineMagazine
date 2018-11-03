@@ -66,7 +66,7 @@ namespace WindowsFormsApplication4
             textBox_password.Text = "";
 
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " LIMIT 0, 3", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " WHERE new = 0 LIMIT 0, 3", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int articleY = 50;
@@ -102,23 +102,20 @@ namespace WindowsFormsApplication4
                 articleY += 180;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM Advertisment", SQLClass.CONN);
-            MySqlDataReader rr = rrr.ExecuteReader();
-            while (rr.Read())
-            {
-                url[kolvo] = rr[0].ToString();
-                kolvo++;
-            }
-            rr.Close();
 
-            Random rnd = new Random();
-            reclama.LoadAsync("https://i.imgur.com/eQ4wEpO.gif");
+
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama.LoadAsync(advertising_stract.random());
 
-            if (url[1] != "")
-            { 
-                reclama2.LoadAsync(url[1]); 
-            }        
+
+            reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama2.LoadAsync(advertising_stract.random());
+
+
+            reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama3.LoadAsync(advertising_stract.random());
+            
+           
         }    
 
         private void butto_search_Click(object sender, EventArgs e)
@@ -272,6 +269,19 @@ namespace WindowsFormsApplication4
         private void Centr_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butto_search_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void textBox_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                butto_search_Click(sender, null);
+            }
         }
     }
 }
