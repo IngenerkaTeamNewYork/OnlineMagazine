@@ -47,15 +47,29 @@ namespace WindowsFormsApplication4
             pictureBoxLike.Image = (isLike) ? Properties.Resources.like : Properties.Resources.Like2;
             isLike = !isLike;
 
+            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" +Maintext.Text + "'");
+            
             if (isLike)
             {
-                SQLClass.Insert(
-                    "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
-                    " VALUES (" +
-                    "'" + Maintext.Text + "'" +
-                    ", '" + Authortext.Text + "'" +
-                    ", '" + Kategoriatext.Text + "'" +
-                    ",1, 3)");          
+                if (likes.Count > 0)
+                {
+                    SQLClass.Update("UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = '" + Maintext.Text + "'");
+                }
+                else
+                {
+
+                    SQLClass.Insert(
+                        "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
+                        " VALUES (" +
+                        "'" + Maintext.Text + "'" +
+                        ", '" + Authortext.Text + "'" +
+                        ", '" + Kategoriatext.Text + "'" +
+                        ",1, 0)");
+                }        
+            }
+            else
+            {                
+                SQLClass.Update("UPDATE Likes SET LikesCount = LikesCount - 1 WHERE Article = '" + Maintext.Text + "'");                
             }
         }
         
@@ -72,19 +86,35 @@ namespace WindowsFormsApplication4
                 pictureBoxDislike.Image = Properties.Resources.DisLike2;
             }
 
+            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
+
             if (isDisLike)
             {
-                MySqlCommand cmd = new MySqlCommand(
-                    "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
-                    " VALUES (" +
-                    "'" + Maintext.Text + "'" +
-                    ", '" + Authortext.Text + "'" +
-                    ", '" + Kategoriatext.Text + "'" +
-                    ",1, 3)", SQLClass.CONN);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();
-                //Ñîçäàòü îòäåëüíûé ñòîëáèê äèçëàéêîâ â MySQL 
+                if (likes.Count > 0)
+                {
+                    SQLClass.Update("UPDATE Likes SET DisCount = DisCount + 1 WHERE Article = '" + Maintext.Text + "'");
+                }
+                else
+                {
+
+                    SQLClass.Insert(
+                        "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
+                        " VALUES (" +
+                        "'" + Maintext.Text + "'" +
+                        ", '" + Authortext.Text + "'" +
+                        ", '" + Kategoriatext.Text + "'" +
+                        ",0, 1)");
+                }
             }
+            else
+            {
+                SQLClass.Update("UPDATE Likes SET DisCount = DisCount - 1 WHERE Article = '" + Maintext.Text + "'");
+            }
+        }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
+
         }
      }
 }
