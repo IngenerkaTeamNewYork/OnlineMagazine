@@ -38,6 +38,7 @@ namespace WindowsFormsApplication4
         public void update()
         {
             this.Controls.Clear();
+            this.Controls.Add(articlesPanel);
             if (admin == true)
             {
                 this.Controls.Add(button_add);
@@ -117,8 +118,14 @@ namespace WindowsFormsApplication4
 
         private void lable_cat_Click (object sender, EventArgs e)
         {
-            list_of_stat f = new list_of_stat(((Label)sender).Text);
-            f.ShowDialog();
+            list_of_stat.GetListOfArtic(ref articlesPanel, ((Label)sender).Text);
+            // f = new list_of_stat(((Label)sender).Text);
+            //f.ShowDialog();
+        }
+
+        private void CategoriesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,6 +33,7 @@
             this.panel2_reklama = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel_Statiya = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.aboutAuthorLabel = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_Balance = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1_reklama.SuspendLayout();
             this.panel2_reklama.SuspendLayout();
             this.panel_Statiya.SuspendLayout();
@@ -107,6 +107,14 @@
             this.panel_Statiya.Name = "panel_Statiya";
             this.panel_Statiya.Size = new System.Drawing.Size(312, 429);
             this.panel_Statiya.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(7, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(302, 383);
+            this.panel1.TabIndex = 1;
             // 
             // label1
             // 
@@ -304,14 +312,6 @@
             this.Button_Balance.Text = "Баланс";
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(7, 43);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 383);
-            this.panel1.TabIndex = 1;
             // 
             // AuthorMainForm
             // 
