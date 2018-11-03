@@ -121,3 +121,4 @@ C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\Windo
 C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Users.resources
 C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.GenerateResource.Cache
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.list_of_stat.resources
+C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.list_of_stat.resources

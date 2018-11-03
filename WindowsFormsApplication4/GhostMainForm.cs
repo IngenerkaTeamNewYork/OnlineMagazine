@@ -81,21 +81,30 @@ namespace WindowsFormsApplication4
 
                 if (rdr[1].ToString() != "")
                 {
-                    PictureBox image1 = new PictureBox();
-                    image1.Location = new Point(0, articleY + 25);
-                    image1.Size = new Size(Centr_panel.Width, 150);
-                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    try
-                    {
-                        image1.LoadAsync(rdr[1].ToString());
-                    }
-                    catch(Exception)
-                    {
-                        image1.Image = new Bitmap("defolt_statiy.jpg");
-                    }
-                  //  image1.LoadAsync(rdr[1].ToString());
-                    
-                    Centr_panel.Controls.Add(image1);
+                    //PictureBox image1 = new PictureBox();
+                    //image1.Location = new Point(0, articleY + 25);
+                    //image1.Size = new Size(Centr_panel.Width, 150);
+                    //image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    //try
+                    //{
+                    //    image1.LoadAsync(rdr[1].ToString());
+                    //}
+                    //catch(Exception)
+                    //{
+                    //    image1.Image = new Bitmap("defolt_statiy.jpg");
+                    //}
+                  ////  image1.LoadAsync(rdr[1].ToString());
+                    var embed = "<html><head>" +
+                       "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                       "</head><body>" +
+                       "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
+                       "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                       "</body></html>";
+                    var url = "https://www.youtube.com/embed/L6ZgzJKfERM";
+                    var web = new WebBrowser();
+                    web.DocumentText = string.Format(embed, url);
+                    web.Location = new Point(0, articleY + 25);
+                    Centr_panel.Controls.Add(web);
                 }
 
                 arts.Add(label1);
