@@ -41,17 +41,13 @@ C:\Users\Abra\Downloads\OnlineMagazine-master\OnlineMagazine-master\WindowsForms
 C:\Users\Abra\Downloads\OnlineMagazine-master\OnlineMagazine-master\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe.config
 C:\Users\Abra\Downloads\OnlineMagazine-master\OnlineMagazine-master\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.exe
 C:\Users\Abra\Downloads\OnlineMagazine-master\OnlineMagazine-master\WindowsFormsApplication4\bin\Debug\WindowsFormsApplication4.pdb
-C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Добавить_картинку.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.CategoriesForm.resources
-C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.New_stati.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Registration.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Spisok_reklamy.resources
-C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.StatiyaForm1.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.To_come_in.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.FBIform.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.StastisticsForm.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.List_of_author.resources
-C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.ReklamAddForm.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.AdvertisingForm.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.Balance_Author.resources
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\bin\Debug\MySql.Data.dll
@@ -122,3 +118,4 @@ C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\Windo
 C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.csproj.GenerateResource.Cache
 C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.list_of_stat.resources
 C:\Users\Student\Desktop\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.list_of_stat.resources
+C:\Users\Abra\1\OnlineMagazine\WindowsFormsApplication4\obj\Debug\WindowsFormsApplication4.StatiyaForm.resources

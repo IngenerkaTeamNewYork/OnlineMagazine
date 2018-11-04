@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddPromoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddPromoForm.Designer.cs">
-      <DependentUpon>AddPromoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Add_Statia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,7 +66,7 @@
     <Compile Include="AdvertisingForm.Designer.cs">
       <DependentUpon>AdvertisingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="advertising_stract.cs" />
+    <Compile Include="Advertising.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="AuthorMainForm.cs">
       <SubType>Form</SubType>
@@ -140,23 +134,11 @@
     <Compile Include="NewPages.Designer.cs">
       <DependentUpon>NewPages.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReklamAddForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReklamAddForm.Designer.cs">
-      <DependentUpon>ReklamAddForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="GhostMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GhostMainForm.Designer.cs">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="New_stati.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New_stati.Designer.cs">
-      <DependentUpon>New_stati.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
@@ -178,11 +160,11 @@
       <DependentUpon>StastisticsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Statiya.cs" />
-    <Compile Include="StatiyaForm1.cs">
+    <Compile Include="StatiyaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StatiyaForm1.Designer.cs">
-      <DependentUpon>StatiyaForm1.cs</DependentUpon>
+    <Compile Include="StatiyaForm.Designer.cs">
+      <DependentUpon>StatiyaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tables.cs" />
     <Compile Include="To_come_in.cs">
@@ -205,9 +187,6 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddPromoForm.resx">
-      <DependentUpon>AddPromoForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Add_Statia.resx">
       <DependentUpon>Add_Statia.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,14 +220,8 @@
     <EmbeddedResource Include="NewPages.resx">
       <DependentUpon>NewPages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReklamAddForm.resx">
-      <DependentUpon>ReklamAddForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GhostMainForm.resx">
       <DependentUpon>GhostMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="New_stati.resx">
-      <DependentUpon>New_stati.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
@@ -259,8 +232,8 @@
     <EmbeddedResource Include="StastisticsForm.resx">
       <DependentUpon>StastisticsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatiyaForm1.resx">
-      <DependentUpon>StatiyaForm1.cs</DependentUpon>
+    <EmbeddedResource Include="StatiyaForm.resx">
+      <DependentUpon>StatiyaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="To_come_in.resx">
       <DependentUpon>To_come_in.cs</DependentUpon>

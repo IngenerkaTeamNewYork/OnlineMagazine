@@ -42,7 +42,6 @@ namespace WindowsFormsApplication4
             {
                 Text = "Название",
                 Location = new Point(100, 0)
-
             });
 
             MySqlCommand cmd = new MySqlCommand(
@@ -90,19 +89,13 @@ namespace WindowsFormsApplication4
                 {
                     if (a.Label_.ForeColor == System.Drawing.Color.Gray)
                     {
-                        MySqlCommand cmd = new MySqlCommand(
-                            "UPDATE " + Tables.ARTICLES +
-                            " SET `new`=1 WHERE header = '" + a.Header + "'", SQLClass.CONN);
-                        MySqlDataReader rdr = cmd.ExecuteReader();
-                        rdr.Close();
+                        SQLClass.Update("UPDATE " + Tables.ARTICLES +
+                            " SET `new`= 1 WHERE header = '" + a.Header + "'");
                     }
                     else
                     {
-                        MySqlCommand cmd = new MySqlCommand(
-                           "UPDATE " + Tables.ARTICLES +
-                           " SET `new`=0 WHERE header = '" + a.Header + "'", SQLClass.CONN);
-                        MySqlDataReader rdr = cmd.ExecuteReader();
-                        rdr.Close();
+                        SQLClass.Update("UPDATE " + Tables.ARTICLES +
+                            " SET `new`= 0 WHERE header = '" + a.Header + "'");
                     }
                 }
             }
@@ -112,7 +105,6 @@ namespace WindowsFormsApplication4
         void NewPages_Load(object sender, EventArgs e)
         {
             LoadPages();
-        }
-            
+        }            
     }
 }

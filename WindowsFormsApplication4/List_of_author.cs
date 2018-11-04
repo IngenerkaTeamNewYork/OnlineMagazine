@@ -13,7 +13,6 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-
     public partial class List_of_author : Form
     {
         public void Click_na_link(object sender, EventArgs e)
@@ -58,16 +57,6 @@ namespace WindowsFormsApplication4
                 loginy_avtorov.Add(linklabel1);
                 uy++;
             }
-
-            MySqlCommand cmd = new MySqlCommand("SELECT UserName, Pic, Information_about_author FROM `Authors`", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-           
-            while (rdr.Read())
-            {
-            }
-
-            rdr.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -55,7 +55,6 @@
             this.textBox_txtStat.Name = "textBox_txtStat";
             this.textBox_txtStat.Size = new System.Drawing.Size(569, 451);
             this.textBox_txtStat.TabIndex = 1;
-            this.textBox_txtStat.TextChanged += new System.EventHandler(this.textBox_txtStat_TextChanged);
             // 
             // textBox_Name
             // 
@@ -100,7 +99,6 @@
             this.label_image.Size = new System.Drawing.Size(136, 13);
             this.label_image.TabIndex = 7;
             this.label_image.Text = "Ссылка на иллюстрацию:";
-            this.label_image.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_text
             // 
@@ -110,7 +108,6 @@
             this.label_text.Size = new System.Drawing.Size(40, 13);
             this.label_text.TabIndex = 8;
             this.label_text.Text = "Текст:";
-            this.label_text.Click += new System.EventHandler(this.label_text_Click);
             // 
             // textBox_ssulka
             // 
@@ -118,7 +115,6 @@
             this.textBox_ssulka.Name = "textBox_ssulka";
             this.textBox_ssulka.Size = new System.Drawing.Size(416, 20);
             this.textBox_ssulka.TabIndex = 9;
-            this.textBox_ssulka.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Add_Statia
             // 

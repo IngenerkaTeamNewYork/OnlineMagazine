@@ -22,8 +22,8 @@ namespace WindowsFormsApplication4
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Добавить_картинку AddPromoForm = new Добавить_картинку();
-            AddPromoForm.ShowDialog();
+            //Добавить_картинку AddPromoForm = new Добавить_картинку();
+            //AddPromoForm.ShowDialog();
         }
 
         private void Registration_Load(object sender, EventArgs e)
@@ -35,27 +35,19 @@ namespace WindowsFormsApplication4
         {
             if (checkBox_I_author.Checked == true)
             {
-                MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO `Authors` (`UserName`, `Information_about_author`, `Pic`) VALUES ('" + textBox_login.Text + "','" + textBox_about_me.Text + "', '" + textBox_pic +"')", SQLClass.CONN);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();
+                SQLClass.Insert("INSERT INTO " + Tables.AUTHORS + 
+                    "(UserName, Information_about_author, Pic) " +
+                    "VALUES ('" + textBox_login.Text + "','" + 
+                    textBox_about_me.Text + "', '" + 
+                    textBox_pic + "')");
             }
 
-            MySqlCommand cmd1 = new MySqlCommand(
-            "INSERT INTO `Polzovateli`(`Login`, `Parol`, `ban`, `aboutme`, admin) VALUES (\"" + textBox_login.Text + "\",\"" + textBox_password.Text + "\",\"" + "0" + "\",\"" + textBox_about_me.Text + "\", 0)", SQLClass.CONN);
-            MySqlDataReader rdr1 = cmd1.ExecuteReader();
-            rdr1.Close();
+            SQLClass.Insert("INSERT INTO " + Tables.POLZOVATELI + 
+                "(`Login`, `Parol`, `ban`, `aboutme`, admin)" +
+                " VALUES ('" + textBox_login.Text + "'," +
+                "'" + textBox_password.Text + "'," +
+                "0" + ",'" + textBox_about_me.Text + "', 0)");
             Close();            
-        }
-
-        private void textBox_login_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_about_me_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox_about_me_KeyDown(object sender, KeyEventArgs e)
@@ -72,10 +64,6 @@ namespace WindowsFormsApplication4
             {
                 button1_Click(sender, null);
             }
-        }
-
-        private void checkBox_I_author_CheckedChanged(object sender, EventArgs e)
-        {
         }
     }
 }

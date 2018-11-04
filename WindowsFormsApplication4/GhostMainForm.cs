@@ -53,7 +53,7 @@ namespace WindowsFormsApplication4
                 if (sender.Equals(lab))
                 {
                     statiya stat = statiya.Click1(((Label)sender).Text);
-                    StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                    StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
                 }
             }
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication4
                 if (sender.Equals(lab))
                 {
                     statiya stat = statiya.Click1(lab.Tag.ToString());
-                    StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                    StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
                 }
             }
@@ -135,15 +135,15 @@ namespace WindowsFormsApplication4
 
 
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama.LoadAsync(advertising_stract.random());
+            reclama.LoadAsync(Advertising.GetRandom());
 
 
             reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama2.LoadAsync(advertising_stract.random());
+            reclama2.LoadAsync(Advertising.GetRandom());
 
 
             reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama3.LoadAsync(advertising_stract.random());
+            reclama3.LoadAsync(Advertising.GetRandom());
             
            
         }    

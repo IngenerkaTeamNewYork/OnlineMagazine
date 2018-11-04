@@ -16,12 +16,12 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-    public partial class StatiyaForm1 : Form
+    public partial class StatiyaForm : Form
     {
         bool isLike = false;
         bool isDisLike = false;
         
-        public StatiyaForm1(statiya stat)
+        public StatiyaForm(statiya stat)
         {
             InitializeComponent();
 
@@ -53,13 +53,15 @@ namespace WindowsFormsApplication4
             {
                 if (likes.Count > 0)
                 {
-                    SQLClass.Update("UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = '" + Maintext.Text + "'");
+                    SQLClass.Update("UPDATE " + Tables.LIKES + 
+                        " SET LikesCount = LikesCount + 1" +
+                        " WHERE Article = '" + Maintext.Text + "'");
                 }
                 else
                 {
-
                     SQLClass.Insert(
-                        "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
+                        "INSERT INTO " + Tables.LIKES + 
+                        "(Article, Author, Category, LikesCount, DisCount)" +
                         " VALUES (" +
                         "'" + Maintext.Text + "'" +
                         ", '" + Authortext.Text + "'" +
@@ -68,14 +70,16 @@ namespace WindowsFormsApplication4
                 }        
             }
             else
-            {                
-                SQLClass.Update("UPDATE Likes SET LikesCount = LikesCount - 1 WHERE Article = '" + Maintext.Text + "'");                
+            {
+                SQLClass.Update("UPDATE " + Tables.LIKES +
+                    " SET LikesCount = LikesCount - 1" +
+                    " WHERE Article = '" + Maintext.Text + "'");
             }
         }
         
         private void pictureBoxDislike_Click(object sender, EventArgs e)
         {
-            if(isDisLike)
+            if (isDisLike)
             {
                 isDisLike = false;
                 pictureBoxDislike.Image = Properties.Resources.Dislike;
@@ -92,13 +96,15 @@ namespace WindowsFormsApplication4
             {
                 if (likes.Count > 0)
                 {
-                    SQLClass.Update("UPDATE Likes SET DisCount = DisCount + 1 WHERE Article = '" + Maintext.Text + "'");
+                    SQLClass.Update("UPDATE " + Tables.LIKES +
+                        " SET DisCount = DisCount + 1" +
+                        " WHERE Article = '" + Maintext.Text + "'");
                 }
                 else
                 {
-
                     SQLClass.Insert(
-                        "INSERT INTO Likes(Article, Author, Category, LikesCount, DisCount)" +
+                        "INSERT INTO " + Tables.LIKES +
+                        "(Article, Author, Category, LikesCount, DisCount)" +
                         " VALUES (" +
                         "'" + Maintext.Text + "'" +
                         ", '" + Authortext.Text + "'" +
@@ -108,22 +114,21 @@ namespace WindowsFormsApplication4
             }
             else
             {
-                SQLClass.Update("UPDATE Likes SET DisCount = DisCount - 1 WHERE Article = '" + Maintext.Text + "'");
+                SQLClass.Update("UPDATE " + Tables.LIKES +
+                    " SET DisCount = DisCount - 1" +
+                    " WHERE Article = '" + Maintext.Text + "'");
             }
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
         {
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.LoadAsync(advertising_stract.random());
+            pictureBox2.LoadAsync(Advertising.GetRandom());
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.LoadAsync(Advertising.GetRandom());
         }
 
         private void Kategoriatext_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StatiyaForm1_Load(object sender, EventArgs e)
         {
 
         }

@@ -36,7 +36,7 @@ namespace WindowsFormsApplication4
 
         public static void Insert(string cmdText)
         {
-            MySqlCommand cmd = new MySqlCommand(cmdText);
+            MySqlCommand cmd = new MySqlCommand(cmdText, CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Close();
         }

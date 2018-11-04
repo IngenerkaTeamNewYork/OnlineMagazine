@@ -47,14 +47,12 @@ namespace WindowsFormsApplication4
                 }                
                 Drdr.Close();
 
-                MySqlCommand cmd = new MySqlCommand(
-                    "INSERT INTO Advertisment(Text, Pic, Date_From, Data_to, id, new)" +
+                SQLClass.Insert("INSERT INTO " + Tables.ADVERTISMENT + 
+                    "(Text, Pic, Date_From, Data_to, id, new)" +
                     " VALUES (" +
                     "'" + text_na_reklame.Text + "'" +
                     ", '" + textBox_adress.Text + "'" +
-                    ", '13.10.2018', '20.10.2018', '" + NewAdvId + "', '1')", SQLClass.CONN);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();
+                    ", '13.10.2018', '20.10.2018', '" + NewAdvId + "', '1')");
             }
         }
     }

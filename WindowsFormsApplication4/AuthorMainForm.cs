@@ -50,7 +50,7 @@ namespace WindowsFormsApplication4
                             stat.picture = null;
                         }
 
-                        StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                        StatiyaForm OknoStatiya = new StatiyaForm(stat);
                         OknoStatiya.ShowDialog();
                     }
                     rdr.Close();
@@ -119,10 +119,10 @@ namespace WindowsFormsApplication4
             rdr.Close();
 
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.LoadAsync(advertising_stract.random());
+            pictureBox1.LoadAsync(Advertising.GetRandom());
 
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.LoadAsync(advertising_stract.random());
+            pictureBox2.LoadAsync(Advertising.GetRandom());
         }
 
         private void button1_Click(object sender, EventArgs e)

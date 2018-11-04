@@ -97,12 +97,6 @@ namespace WindowsFormsApplication4
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            New_stati fgf = new New_stati();
-            fgf.ShowDialog();
-        }
-
         private void button_author_Click(object sender, EventArgs e)
         {
             FBIform form = new FBIform();
@@ -162,6 +156,11 @@ namespace WindowsFormsApplication4
         {
             List_of_author form = new List_of_author(writer);
             form.ShowDialog();
+        }
+
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

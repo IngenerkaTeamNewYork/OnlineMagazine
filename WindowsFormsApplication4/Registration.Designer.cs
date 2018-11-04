@@ -47,7 +47,6 @@
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(100, 20);
             this.textBox_login.TabIndex = 1;
-            this.textBox_login.TextChanged += new System.EventHandler(this.textBox_login_TextChanged);
             // 
             // textBox_password
             // 
@@ -63,7 +62,6 @@
             this.textBox_about_me.Name = "textBox_about_me";
             this.textBox_about_me.Size = new System.Drawing.Size(248, 52);
             this.textBox_about_me.TabIndex = 3;
-            this.textBox_about_me.TextChanged += new System.EventHandler(this.textBox_about_me_TextChanged);
             this.textBox_about_me.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_about_me_KeyDown);
             // 
             // checkBox_I_author
@@ -75,7 +73,6 @@
             this.checkBox_I_author.TabIndex = 4;
             this.checkBox_I_author.Text = "Я автор";
             this.checkBox_I_author.UseVisualStyleBackColor = true;
-            this.checkBox_I_author.CheckedChanged += new System.EventHandler(this.checkBox_I_author_CheckedChanged);
             // 
             // checkBox_agree
             // 
