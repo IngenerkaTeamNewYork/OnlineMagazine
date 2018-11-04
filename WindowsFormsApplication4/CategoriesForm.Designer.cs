@@ -30,6 +30,7 @@
         {
             this.button_add = new System.Windows.Forms.Button();
             this.textBox_name = new System.Windows.Forms.TextBox();
+            this.articlesPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button_add
@@ -51,15 +52,25 @@
             this.textBox_name.Visible = false;
             this.textBox_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_name_KeyDown);
             // 
+            // articlesPanel
+            // 
+            this.articlesPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.articlesPanel.Location = new System.Drawing.Point(265, 0);
+            this.articlesPanel.Name = "articlesPanel";
+            this.articlesPanel.Size = new System.Drawing.Size(336, 377);
+            this.articlesPanel.TabIndex = 7;
+            // 
             // CategoriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 377);
+            this.ClientSize = new System.Drawing.Size(601, 377);
+            this.Controls.Add(this.articlesPanel);
             this.Controls.Add(this.textBox_name);
             this.Controls.Add(this.button_add);
             this.Name = "CategoriesForm";
             this.Text = "Категории";
+            this.Load += new System.EventHandler(this.CategoriesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,5 +80,6 @@
 
         private System.Windows.Forms.Button button_add;
         public System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.Panel articlesPanel;
     }
 }
