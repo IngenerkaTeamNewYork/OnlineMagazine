@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -18,6 +19,7 @@ namespace WindowsFormsApplication4
         public static List<AuthorStat> stat = new List<AuthorStat>();
 
         public List<LinkLabel> arts = new List<LinkLabel>();
+        public List<PictureBox> piccc = new List<PictureBox>();
       
         public string[] url = new string[50];
         int kolvo = 0;
@@ -56,6 +58,19 @@ namespace WindowsFormsApplication4
                 }
             }
         }
+
+        private void clik_na_pic(object sender, EventArgs e)
+        {
+            foreach (PictureBox lab in piccc)
+            {
+                if (sender.Equals(lab))
+                {
+                    statiya stat = statiya.Click1(lab.Tag.ToString());
+                    StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                    OknoStatiya.ShowDialog();
+                }
+            }
+        }  
       
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -79,25 +94,29 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-                if (rdr[1].ToString() != "")
-                {
+
                     PictureBox image1 = new PictureBox();
                     image1.Location = new Point(0, articleY + 25);
+                    image1.Tag = label1.Text;
                     image1.Size = new Size(Centr_panel.Width, 150);
+                    image1.Click += new System.EventHandler(clik_na_pic);
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
                     try
                     {
+
                         image1.LoadAsync(rdr[1].ToString());
+                      //  image1.Image.Save("picccc.Bmp", ImageFormat.Bmp);
                     }
                     catch(Exception)
                     {
                         image1.Image = new Bitmap("defolt_statiy.jpg");
                     }
+
                   //  image1.LoadAsync(rdr[1].ToString());
                     
                     Centr_panel.Controls.Add(image1);
-                }
-
+                
+                piccc.Add(image1);
                 arts.Add(label1);
                 articleY += 180;
             }
@@ -149,6 +168,7 @@ namespace WindowsFormsApplication4
                 PictureBox image1 = new PictureBox();
                 image1.Location = new Point(0, articleY + 25);
                 image1.Size = new Size(Centr_panel.Width, 150);
+                image1.Click += new System.EventHandler(clik_na_pic);
                 image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 try
@@ -163,6 +183,7 @@ namespace WindowsFormsApplication4
                 //image1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(image1);
 
+                piccc.Add(image1);
                 arts.Add(label1);
                 articleY += 180;
             }
