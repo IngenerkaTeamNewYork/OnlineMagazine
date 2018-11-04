@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -18,6 +19,7 @@ namespace WindowsFormsApplication4
         public static List<AuthorStat> stat = new List<AuthorStat>();
 
         public List<LinkLabel> arts = new List<LinkLabel>();
+        public List<PictureBox> piccc = new List<PictureBox>();
       
         public string[] url = new string[50];
         int kolvo = 0;
@@ -56,6 +58,19 @@ namespace WindowsFormsApplication4
                 }
             }
         }
+
+        private void clik_na_pic(object sender, EventArgs e)
+        {
+            foreach (PictureBox lab in piccc)
+            {
+                if (sender.Equals(lab))
+                {
+                    statiya stat = statiya.Click1(lab.Tag.ToString());
+                    StatiyaForm1 OknoStatiya = new StatiyaForm1(stat);
+                    OknoStatiya.ShowDialog();
+                }
+            }
+        }  
       
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -66,7 +81,7 @@ namespace WindowsFormsApplication4
             textBox_password.Text = "";
 
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " LIMIT 0, 3", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " WHERE new = 0 LIMIT 0, 3", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
             int articleY = 50;
@@ -79,46 +94,47 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-                if (rdr[1].ToString() != "")
-                {
+
                     PictureBox image1 = new PictureBox();
                     image1.Location = new Point(0, articleY + 25);
+                    image1.Tag = label1.Text;
                     image1.Size = new Size(Centr_panel.Width, 150);
+                    image1.Click += new System.EventHandler(clik_na_pic);
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
                     try
                     {
+
                         image1.LoadAsync(rdr[1].ToString());
+                      //  image1.Image.Save("picccc.Bmp", ImageFormat.Bmp);
                     }
                     catch(Exception)
                     {
                         image1.Image = new Bitmap("defolt_statiy.jpg");
                     }
+
                   //  image1.LoadAsync(rdr[1].ToString());
                     
                     Centr_panel.Controls.Add(image1);
-                }
-
+                
+                piccc.Add(image1);
                 arts.Add(label1);
                 articleY += 180;
             }
             rdr.Close();
-            MySqlCommand rrr = new MySqlCommand("SELECT pic FROM Advertisment", SQLClass.CONN);
-            MySqlDataReader rr = rrr.ExecuteReader();
-            while (rr.Read())
-            {
-                url[kolvo] = rr[0].ToString();
-                kolvo++;
-            }
-            rr.Close();
 
-            Random rnd = new Random();
-            reclama.LoadAsync("https://i.imgur.com/eQ4wEpO.gif");
+
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama.LoadAsync(advertising_stract.random());
 
-            if (url[1] != "")
-            { 
-                reclama2.LoadAsync(url[1]); 
-            }        
+
+            reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama2.LoadAsync(advertising_stract.random());
+
+
+            reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama3.LoadAsync(advertising_stract.random());
+            
+           
         }    
 
         private void butto_search_Click(object sender, EventArgs e)
@@ -149,6 +165,7 @@ namespace WindowsFormsApplication4
                 PictureBox image1 = new PictureBox();
                 image1.Location = new Point(0, articleY + 25);
                 image1.Size = new Size(Centr_panel.Width, 150);
+                image1.Click += new System.EventHandler(clik_na_pic);
                 image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 try
@@ -163,6 +180,7 @@ namespace WindowsFormsApplication4
                 //image1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(image1);
 
+                piccc.Add(image1);
                 arts.Add(label1);
                 articleY += 180;
             }
@@ -272,6 +290,19 @@ namespace WindowsFormsApplication4
         private void Centr_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void butto_search_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void textBox_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                butto_search_Click(sender, null);
+            }
         }
     }
 }

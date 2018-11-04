@@ -32,13 +32,8 @@ namespace WindowsFormsApplication4
             }
             else
             {
-                MySqlCommand gd = new MySqlCommand("SELECT MAX(Artic_ID + 1) FROM  " + Tables.ARTICLES, SQLClass.CONN);
-                MySqlDataReader g = gd.ExecuteReader();
-                while (g.Read())
-                {
-                    id = Convert.ToString(g[0]);
-                }
-                g.Close();
+                List<String> ids = SQLClass.Select("SELECT MAX(Artic_ID + 1) FROM  " + Tables.ARTICLES);
+                id = ids[0];
 
                 MySqlCommand cmd = new MySqlCommand(
                            "INSERT INTO " + Tables.ARTICLES + "(Header, Text, Author, Picture, Artic_ID, Category, new)" +
