@@ -114,6 +114,17 @@ namespace WindowsFormsApplication4
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
         {
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.LoadAsync(advertising_stract.random());
+        }
+
+        private void Kategoriatext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
 
         }
      }

@@ -68,7 +68,7 @@ namespace WindowsFormsApplication4
             while (rdr.Read())
             {
                 aboutAuthorLabel.Text = rdr[0].ToString();
-                label5.Text = rdr[1].ToString();
+                //label5.Text = rdr[1].ToString();
 
                 try
                 {
@@ -117,6 +117,12 @@ namespace WindowsFormsApplication4
                 articleY += 180;
             }
             rdr.Close();
+
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.LoadAsync(advertising_stract.random());
+
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.LoadAsync(advertising_stract.random());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,7 +144,7 @@ namespace WindowsFormsApplication4
             OknoBalance.ShowDialog();
         }
 
-        private void panel_spisok_statey_Paint(object sender, PaintEventArgs e)
+    /*    private void panel_spisok_statey_Paint(object sender, PaintEventArgs e)
         {
             MySqlCommand cmd = new MySqlCommand(
                "SELECT `Header` FROM `Articles1` WHERE `Author` = '" + login + "'", SQLClass.CONN);
@@ -155,6 +161,6 @@ namespace WindowsFormsApplication4
             }
 
             rdr.Close();
-        }
+        }*/
     }
 }
