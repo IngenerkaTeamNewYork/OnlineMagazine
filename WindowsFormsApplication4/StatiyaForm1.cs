@@ -86,5 +86,10 @@ namespace WindowsFormsApplication4
                 //Ñîçäàòü îòäåëüíûé ñòîëáèê äèçëàéêîâ â MySQL 
             }
         }
+
+        private void StatiyaForm1_Load(object sender, EventArgs e)
+        {
+
+        }
      }
 }
