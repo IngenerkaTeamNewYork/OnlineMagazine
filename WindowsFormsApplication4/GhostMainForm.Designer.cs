@@ -79,6 +79,7 @@ namespace WindowsFormsApplication4
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
             this.butto_search.Click += new System.EventHandler(this.butto_search_Click);
+            this.butto_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.butto_search_KeyDown);
             // 
             // radioButton1
             // 
@@ -265,10 +266,10 @@ namespace WindowsFormsApplication4
             // 
             this.Centr_panel.AutoScroll = true;
             this.Centr_panel.Controls.Add(this.popularArticlesLabel);
-            this.Centr_panel.Location = new System.Drawing.Point(232, 42);
+            this.Centr_panel.Location = new System.Drawing.Point(232, 38);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
             this.Centr_panel.Name = "Centr_panel";
-            this.Centr_panel.Size = new System.Drawing.Size(314, 534);
+            this.Centr_panel.Size = new System.Drawing.Size(314, 538);
             this.Centr_panel.TabIndex = 6;
             this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
             // 
@@ -291,6 +292,7 @@ namespace WindowsFormsApplication4
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
+            this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
             // GhostMainForm
             // 

@@ -42,13 +42,10 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(rekl.prinitButton))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
-                        "UPDATE Advertisment" +
+                    SQLClass.Update(
+                        "UPDATE " + Tables.ADVERTISMENT +
                         " SET New = '" + "0" + "'" +
-                        " WHERE id = " + rekl.id, SQLClass.CONN);
-
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                        " WHERE id = " + rekl.id);
                 }
             }
         }

@@ -75,5 +75,10 @@ namespace WindowsFormsApplication4
             StastisticsForm form1 = new StastisticsForm("");
             form1.ShowDialog();
         }
+
+        private void List_of_author_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
