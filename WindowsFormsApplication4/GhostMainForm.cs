@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -20,7 +23,7 @@ namespace WindowsFormsApplication4
 
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
-      
+        WebClient client = new WebClient();
         public string[] url = new string[50];
         int kolvo = 0;
         public string kuda_i_kak;
@@ -179,14 +182,29 @@ namespace WindowsFormsApplication4
                 image1.Click += new System.EventHandler(clik_na_pic);
                 image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
+                Uri uri = new Uri(rdr[1].ToString());
+
+
                 try
                 {
-                    image1.LoadAsync(rdr[1].ToString());
+                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
                 }
                 catch (Exception)
                 {
-                    image1.Image = new Bitmap("defolt_statiy.jpg");
+                    try
+                    {
+                        image1.Load(rdr[1].ToString());
+                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                        //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
+                    }
+                    catch (Exception)
+                    {
+                        image1.Image = new Bitmap("defolt_statiy.jpg");
+                    }
                 }
+
+               
                     
                 //image1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(image1);
