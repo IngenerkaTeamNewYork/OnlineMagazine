@@ -26,15 +26,22 @@ namespace WindowsFormsApplication4
         {
             String reklPic = "https://i.imgur.com/eQ4wEpO.gif";
             Random rnd = new Random();
-            int v = rnd.Next(1, 3);
 
-            List<String> reklPics = SQLClass.Select("SELECT pic FROM " + Tables.ADVERTISMENT + " WHERE id =" + v);
-            if (reklPics[0] != "")
+            List<String> reklPics = SQLClass.Select(
+                "SELECT pic FROM " + Tables.ADVERTISMENT + 
+                " WHERE pic != ''" +
+                " AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now()" +
+                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now()");
+
+            int v = rnd.Next(1, reklPics.Count);
+            if (reklPics[v-1] != "")
             {
-                reklPic = reklPics[0].ToString();
+                reklPic = reklPics[v].ToString();
             }
-
+                
+          
             return reklPic;
+            
         }
     }
 }
