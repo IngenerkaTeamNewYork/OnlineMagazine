@@ -15,9 +15,14 @@ namespace WindowsFormsApplication4
 {
     public partial class list_of_stat : Form
     {
+        public static PictureBox pictureBox1 = new PictureBox();
+
         public static void GetListOfArtic(ref Panel comp, string cat)
         {
             comp.Controls.Clear();
+            comp.Controls.Add(pictureBox1);
+            pictureBox1.Location = new Point(300, 10);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             List<String> ArticlesList = SQLClass.Select("SELECT `Header` FROM " + Tables.ARTICLES + 
                 " WHERE `Category` = '" + cat + "'");
 
@@ -29,6 +34,8 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(50, artY);
                 label1.Text = Article;
                 label1.Click += new System.EventHandler(lable1_Click);
+                label1.MouseEnter += new System.EventHandler(label1_MouseEnter);
+                label1.MouseLeave += new System.EventHandler(label1_MouseLeave);
 
                 comp.Controls.Add(label1);
                 artY += 30;
@@ -60,6 +67,26 @@ namespace WindowsFormsApplication4
 
             StatiyaForm form = new StatiyaForm(stat);
             form.ShowDialog();
+        }
+        private static void label1_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox1.Location = new Point(((Label)sender).Location.X + 120, ((Label)sender).Location.Y);
+            statiya stat = statiya.Click1(((Label)sender).Text);
+
+            if (!String.IsNullOrEmpty(stat.picture) && stat.picture != null)
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.ImageLocation = stat.picture;
+                pictureBox1.Load();
+                pictureBox1.Size = new Size(90, 70);
+
+            }
+
+        }
+
+        private static void label1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
         }
     }
 }

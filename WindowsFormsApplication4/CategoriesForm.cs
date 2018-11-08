@@ -37,13 +37,13 @@ namespace WindowsFormsApplication4
 
         public void update()
         {
-            this.Controls.Clear();
-            this.Controls.Add(articlesPanel);
+            articlesPanel.Controls.Clear();
+            catsPanel.Controls.Clear();
             if (admin == true)
             {
-                this.Controls.Add(button_add);
+                catsPanel.Controls.Add(button_add);
             }
-            this.Controls.Add(textBox_name);
+            catsPanel.Controls.Add(textBox_name);
             CategoriesList.Clear();
 
             MySqlCommand cmd = new MySqlCommand(
@@ -74,8 +74,8 @@ namespace WindowsFormsApplication4
                     this.Controls.Add(button_delete);
                     CategoriesList.Add(newcat);
                 }
-               
-                this.Controls.Add(label);
+
+                catsPanel.Controls.Add(label);
                 i++;
             }
             rdr.Close();                
@@ -125,6 +125,22 @@ namespace WindowsFormsApplication4
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            statiya stat = statiya.Click1(((Label)sender).Text);
+
+            pictureBox1.Visible = true;
+            pictureBox1.Load(stat.picture);
+            pictureBox1.Size = new Size(100, 100); 
+
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
 
         }
     }
