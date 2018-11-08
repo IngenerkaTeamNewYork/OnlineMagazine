@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -17,6 +19,7 @@ namespace WindowsFormsApplication4
     public partial class AuthorMainForm : Form
     {
         public string login;
+        WebClient client = new WebClient();
         public AuthorMainForm(string log)
         {
             login = log;
@@ -69,7 +72,28 @@ namespace WindowsFormsApplication4
             {
                 aboutAuthorLabel.Text = rdr[0].ToString();
                 //label5.Text = rdr[1].ToString();
+                String[] chasti_stroki = rdr[2].ToString().Split(new char[] { ' ', '/' });
+                Uri uri = new Uri(rdr[2].ToString());
+                
+                try
+                {
+                    Avatar_author.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        Avatar_author.Load(rdr[2].ToString());
+                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
 
+                        //Avatar_author.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
+                    }
+                    catch (Exception)
+                    {
+                        Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
+                    }
+                }
+                /*
                 try
                 {
                     Avatar_author.LoadAsync(rdr[2].ToString());
@@ -78,6 +102,8 @@ namespace WindowsFormsApplication4
                 {
                     Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
                 }
+                 */
+                 
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             rdr.Close();
@@ -101,6 +127,32 @@ namespace WindowsFormsApplication4
                     image1.Size = new Size(panel1.Width, 150);
                     image1.Image = new Bitmap("defolt_statiy.jpg");
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
+                    Uri uri = new Uri(rdr[1].ToString());
+
+                    try
+                    {
+                        image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                    }
+                    catch (Exception)
+                    {
+                        try
+                        {
+                            image1.Load(rdr[1].ToString());
+
+                            client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+
+                            //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+
+
+
+                    /*
                     try
                     {
                         image1.LoadAsync(rdr[1].ToString());
@@ -108,6 +160,7 @@ namespace WindowsFormsApplication4
                     catch (Exception)
                     {
                     }
+                     */
                     //  image1.LoadAsync(rdr[1].ToString());
 
                     panel1.Controls.Add(image1);

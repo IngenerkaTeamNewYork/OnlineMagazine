@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
 
 namespace WindowsFormsApplication4
 {
@@ -26,14 +29,32 @@ namespace WindowsFormsApplication4
         private void Information_o_avtore_Load(object sender, EventArgs e)
         {
             label1.Text = "Информация о " + name_avtor;
+
+            String[] chasti_stroki = pic_avtor.Split(new char[] { ' ', '/' });
+            WebClient client = new WebClient();
+            Uri uri = new Uri(pic_avtor);
+
             try
             {
-                pictureBox1.Load(pic_avtor);
+                pictureBox1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
             }
-            catch(Exception)
+            catch (Exception)
             {
-                pictureBox1.Image = new Bitmap("defolt_avtor.jpg");
-            }
+                try
+                {
+                    pictureBox1.Load(pic_avtor);
+                 
+                    
+                    client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                   
+                    //pictureBox1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
+                }
+                catch (Exception)
+                {
+                    pictureBox1.Image = new Bitmap("defolt_avtor.jpg");
+                }
+            }            
+
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             label2.Text = infa_ob_avtore;
         }
