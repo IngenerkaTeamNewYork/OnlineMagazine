@@ -126,7 +126,16 @@ namespace WindowsFormsApplication4
             pictureBox2.LoadAsync(Advertising.GetRandom());
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.LoadAsync(Advertising.GetRandom());
+
+            SQLClass.Insert(
+                "INSERT INTO " + Tables.READ_OF_ARTICLES +
+                "(name_of_article, reader, dt)" +
+                "VALUES (" +
+                "'" + Maintext.Text + "'" +
+                ", '" + Users.CURRENT_USER + "'" +
+                ", DATE_FORMAT(NOW(), '%Y-%m-%d'))");
         }
+
 
         private void Kategoriatext_Click(object sender, EventArgs e)
         {
