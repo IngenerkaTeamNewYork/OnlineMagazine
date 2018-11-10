@@ -21,6 +21,23 @@ namespace WindowsFormsApplication4
         bool isLike = false;
         bool isDisLike = false;
         
+        public static void GetStata(Label lblLike, Label lblDisLike, String text)
+        {
+            List<String> likes = SQLClass.Select("SELECT LikesCount, DisCount FROM " + Tables.LIKES +
+                " WHERE Article = '" + text + "'");
+
+            if (likes.Count > 1)
+            {
+                lblLike.Text = likes[0];
+                lblDisLike.Text = likes[1];
+            }
+            else
+            {
+                lblLike.Text = "0";
+                lblDisLike.Text = "0";
+            }
+        }
+
         public StatiyaForm(statiya stat)
         {
             InitializeComponent();
@@ -28,6 +45,9 @@ namespace WindowsFormsApplication4
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
+
+            GetStata(labelLike, labeldis, Maintext.Text);
+
             try
             {
                 pictureBox1.LoadAsync(stat.picture);
@@ -44,14 +64,25 @@ namespace WindowsFormsApplication4
         
         private void pictureBoxLike_Click(object sender, EventArgs e)
         {
-            pictureBoxLike.Image = (isLike) ? Properties.Resources.like : Properties.Resources.Like2;
-            isLike = !isLike;
-
-            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" +Maintext.Text + "'");
-            
             if (isLike)
             {
-                if (likes.Count > 0)
+                isLike = true;               
+                pictureBoxLike.Image = Properties.Resources.like;
+
+            }
+            else
+            {
+                isLike = false;
+                pictureBoxLike.Image = Properties.Resources.Like2;
+
+            }
+
+
+            
+            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");            
+            if (isLike)
+            {
+                if (likes.Count > 0 )
                 {
                     SQLClass.Update("UPDATE " + Tables.LIKES + 
                         " SET LikesCount = LikesCount + 1" +
@@ -66,7 +97,8 @@ namespace WindowsFormsApplication4
                         "'" + Maintext.Text + "'" +
                         ", '" + Authortext.Text + "'" +
                         ", '" + Kategoriatext.Text + "'" +
-                        ",1, 0)");
+                        ",0" +
+                        ",1)");
                 }        
             }
             else
@@ -75,26 +107,32 @@ namespace WindowsFormsApplication4
                     " SET LikesCount = LikesCount - 1" +
                     " WHERE Article = '" + Maintext.Text + "'");
             }
+
+            GetStata(labelLike, labeldis, Maintext.Text);
         }
         
         private void pictureBoxDislike_Click(object sender, EventArgs e)
         {
             if (isDisLike)
             {
+                
                 isDisLike = false;
                 pictureBoxDislike.Image = Properties.Resources.Dislike;
+               
             }
             else
             {
+                
                 isDisLike = true;
                 pictureBoxDislike.Image = Properties.Resources.DisLike2;
+                
             }
 
-            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
-
+            List<String> dislikes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
+         
             if (isDisLike)
             {
-                if (likes.Count > 0)
+                if (dislikes.Count > 0 )
                 {
                     SQLClass.Update("UPDATE " + Tables.LIKES +
                         " SET DisCount = DisCount + 1" +
@@ -109,7 +147,8 @@ namespace WindowsFormsApplication4
                         "'" + Maintext.Text + "'" +
                         ", '" + Authortext.Text + "'" +
                         ", '" + Kategoriatext.Text + "'" +
-                        ",0, 1)");
+                        ",0" +
+                        ",1)");
                 }
             }
             else
@@ -118,6 +157,8 @@ namespace WindowsFormsApplication4
                     " SET DisCount = DisCount - 1" +
                     " WHERE Article = '" + Maintext.Text + "'");
             }
+
+            GetStata(labelLike, labeldis, Maintext.Text);
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
