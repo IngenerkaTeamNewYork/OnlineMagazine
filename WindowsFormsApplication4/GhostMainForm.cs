@@ -97,39 +97,62 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-                if (rdr[1].ToString() != "")
-                {
-                
-                    //PictureBox image1 = new PictureBox();
-                    //image1.Location = new Point(0, articleY + 25);
-                    //image1.Tag = label1.Text;
-                    //image1.Size = new Size(Centr_panel.Width, 150);
-                    //image1.Click += new System.EventHandler(clik_na_pic);
-                    //image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    //try
-                    //{
-                    //    image1.LoadAsync(rdr[1].ToString());
-                    //}
-                    //catch(Exception)
-                    //{
-                    //    image1.Image = new Bitmap("defolt_statiy.jpg");
-                    //}
-                    
-                    //Centr_panel.Controls.Add(image1);                
-                    //piccc.Add(image1);
-                    
-                    var embed = "<html><head>" +
+                    if (rdr[1].ToString().Contains("www.youtube.com"))
+                    {
+                        String url = rdr[1].ToString().Replace("watch?v=", "embed/");
+                        
+
+                        String embed = "<html><head>" +
                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                        "</head><body>" +
                        "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
                        "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
                        "</body></html>";
-                    var url = "https://www.youtube.com/embed/L6ZgzJKfERM";
-                    var web = new WebBrowser();
-                    web.DocumentText = string.Format(embed, url);
-                    web.Location = new Point(0, articleY + 25);
-                    Centr_panel.Controls.Add(web);
-                }
+                      //  String url = rdr[1].ToString();
+
+                  //  https://www.youtube.com/embed/6Y-WfLIlGEc
+
+                        WebBrowser web = new WebBrowser();
+
+                        web.DocumentText = string.Format(embed, url);
+                        web.Location = new Point(0, articleY + 25);
+                        Centr_panel.Controls.Add(web);
+                    }
+                    else
+                    {
+                        String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
+                        PictureBox image1 = new PictureBox();
+                        image1.Location = new Point(0, articleY + 25);
+                        image1.Tag = label1.Text;
+                        image1.Size = new Size(Centr_panel.Width, 150);
+                        image1.Click += new System.EventHandler(clik_na_pic);
+                        image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        Uri uri = new Uri(rdr[1].ToString());
+
+
+                        try
+                        {
+                            image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                        }
+                        catch (Exception)
+                        {
+                            try
+                            {
+                                image1.LoadAsync(rdr[1].ToString());
+                                client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                            }
+                            catch (Exception)
+                            {
+                                image1.Image = new Bitmap("defolt_avtor.jpg");
+                            }
+                        }
+
+
+
+                        Centr_panel.Controls.Add(image1);                
+                        piccc.Add(image1);
+                    }
+                
                 
                 arts.Add(label1);
                 articleY += 180;

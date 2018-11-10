@@ -83,7 +83,7 @@ namespace WindowsFormsApplication4
                 {
                     try
                     {
-                        Avatar_author.Load(rdr[2].ToString());
+                        Avatar_author.LoadAsync(rdr[2].ToString());
                         client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
 
                         //Avatar_author.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
@@ -118,6 +118,7 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, articleY);
                 label1.Size = new Size(panel1.Width, 20);
                 label1.Text = rdr[0].ToString();
+                label1.Dock = DockStyle.Top;
                 label1.Click += new System.EventHandler(ArticleClick);
                 panel1.Controls.Add(label1);
 
@@ -127,9 +128,9 @@ namespace WindowsFormsApplication4
                     image1.Size = new Size(panel1.Width, 150);
                     image1.Image = new Bitmap("defolt_statiy.jpg");
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    image1.Dock = DockStyle.Top;
 
                     String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                    Uri uri = new Uri(rdr[1].ToString());
 
                     try
                     {
@@ -141,6 +142,7 @@ namespace WindowsFormsApplication4
                         {
                             image1.Load(rdr[1].ToString());
 
+                            Uri uri = new Uri(rdr[1].ToString());
                             client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
 
                             //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
