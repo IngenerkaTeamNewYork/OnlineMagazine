@@ -17,12 +17,13 @@ namespace WindowsFormsApplication4
     {
         public void Click_na_link(object sender, EventArgs e)
         {
+            int s = 0;
             foreach (LinkLabel n in loginy_avtorov)
             {
                 if (sender.Equals(n))
                 {
-                    Information_o_avtore gg = new Information_o_avtore(n.Text, pic[s], Information[s]);
-                    gg.ShowDialog();
+                    Information_o_avtore.getAuthorInfo(n.Text, pic[s], Information[s], panel2);
+                    
                 }
                 s++;
             }
@@ -30,16 +31,14 @@ namespace WindowsFormsApplication4
         }
 
         public static List<AuthorStat> stat = new List<AuthorStat>();
-        public int s = 0;
         public static List<LinkLabel> loginy_avtorov = new List<LinkLabel>();
-        public List<string> pic = new List<string>();
-        public List<string> Information = new List<string>();
+        public static List<string> pic = new List<string>();
+        public static List<string> Information = new List<string>();
 
-        public int uy = 0;
-        public List_of_author(List<AuthorStat> writers)
-        {
-            InitializeComponent();
 
+        public void sdfsdf(Panel panel1)
+        {            
+            int uy = 0;
             List<String> Auths = SQLClass.Select("SELECT UserName, Pic, Information_about_author FROM " + Tables.AUTHORS);
 
             for (int index = 0; index < Auths.Count; index += 3)
@@ -57,6 +56,14 @@ namespace WindowsFormsApplication4
                 loginy_avtorov.Add(linklabel1);
                 uy++;
             }
+
+        }
+
+        public List_of_author(List<AuthorStat> writers)
+        {
+            InitializeComponent();
+            sdfsdf(panel1);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,6 +73,11 @@ namespace WindowsFormsApplication4
         }
 
         private void List_of_author_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

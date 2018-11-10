@@ -129,7 +129,6 @@ namespace WindowsFormsApplication4
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                     String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                    Uri uri = new Uri(rdr[1].ToString());
 
                     try
                     {
@@ -141,6 +140,7 @@ namespace WindowsFormsApplication4
                         {
                             image1.Load(rdr[1].ToString());
 
+                            Uri uri = new Uri(rdr[1].ToString());
                             client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
 
                             //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);

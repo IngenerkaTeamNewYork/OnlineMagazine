@@ -31,7 +31,7 @@ namespace WindowsFormsApplication4
             {
                 Label label1 = new Label();
                 label1.Size = new Size(200, 20);
-                label1.Location = new Point(50, artY);
+                label1.Location = new Point(50, artY+50);
                 label1.Text = Article;
                 label1.Click += new System.EventHandler(lable1_Click);
                 label1.MouseEnter += new System.EventHandler(label1_MouseEnter);
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication4
             {
                 Label label1 = new Label();
                 label1.Size = new Size(200, 20);
-                label1.Location = new Point(50, artY);
+                label1.Location = new Point(50, artY+50);
                 label1.Text = "Тут ничего нет";
                 comp.Controls.Add(label1);
             }
