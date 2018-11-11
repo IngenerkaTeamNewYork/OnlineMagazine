@@ -97,6 +97,24 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
+                PictureBox pb1 = new PictureBox();
+                pb1.Size = new Size(20, 20);
+                pb1.Location = new Point(200, articleY);
+                pb1.Image = Properties.Resources.like;
+                Centr_panel.Controls.Add(pb1);
+
+                LinkLabel label2 = new LinkLabel();
+                label2.Location = new Point(230, articleY);
+                label2.Size = new Size(20, 20);
+                Centr_panel.Controls.Add(label2);
+
+                LinkLabel label3 = new LinkLabel();
+                label3.Location = new Point(290, articleY);
+                label3.Size = new Size(20, 20);
+                Centr_panel.Controls.Add(label3);
+
+                StatiyaForm.GetStata(label2, label3, label1.Text);
+
                 if (rdr[1].ToString() != "")
                 {
                 
@@ -291,8 +309,8 @@ namespace WindowsFormsApplication4
 
             if (author)
             {
-                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 Users.CURRENT_USER = textBox_login.Text;
+                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
                 Form1_Load(sender, e);
             }

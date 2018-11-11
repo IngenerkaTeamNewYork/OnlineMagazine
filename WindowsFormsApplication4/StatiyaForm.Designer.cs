@@ -42,6 +42,8 @@
             this.Authortext = new System.Windows.Forms.Label();
             this.Maintext = new System.Windows.Forms.TextBox();
             this.likesPanel = new System.Windows.Forms.Panel();
+            this.labelLike = new System.Windows.Forms.Label();
+            this.labeldis = new System.Windows.Forms.Label();
             this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
             this.pictureBoxLike = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,7 +67,7 @@
             this.Kategoriatext.MaximumSize = new System.Drawing.Size(100, 30);
             this.Kategoriatext.MinimumSize = new System.Drawing.Size(70, 30);
             this.Kategoriatext.Name = "Kategoriatext";
-            this.Kategoriatext.Size = new System.Drawing.Size(99, 30);
+            this.Kategoriatext.Size = new System.Drawing.Size(70, 30);
             this.Kategoriatext.TabIndex = 1;
             this.Kategoriatext.Text = "Kategoriatext";
             this.Kategoriatext.Click += new System.EventHandler(this.Kategoriatext_Click);
@@ -204,6 +206,8 @@
             // 
             // likesPanel
             // 
+            this.likesPanel.Controls.Add(this.labelLike);
+            this.likesPanel.Controls.Add(this.labeldis);
             this.likesPanel.Controls.Add(this.pictureBoxDislike);
             this.likesPanel.Controls.Add(this.pictureBoxLike);
             this.likesPanel.Location = new System.Drawing.Point(0, 586);
@@ -212,10 +216,30 @@
             this.likesPanel.Size = new System.Drawing.Size(233, 41);
             this.likesPanel.TabIndex = 8;
             // 
+            // labelLike
+            // 
+            this.labelLike.AutoSize = true;
+            this.labelLike.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labelLike.Location = new System.Drawing.Point(28, 4);
+            this.labelLike.Name = "labelLike";
+            this.labelLike.Size = new System.Drawing.Size(72, 19);
+            this.labelLike.TabIndex = 11;
+            this.labelLike.Text = "labelLike";
+            // 
+            // labeldis
+            // 
+            this.labeldis.AutoSize = true;
+            this.labeldis.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            this.labeldis.Location = new System.Drawing.Point(147, 3);
+            this.labeldis.Name = "labeldis";
+            this.labeldis.Size = new System.Drawing.Size(62, 19);
+            this.labeldis.TabIndex = 2;
+            this.labeldis.Text = "labeldis";
+            // 
             // pictureBoxDislike
             // 
             this.pictureBoxDislike.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
-            this.pictureBoxDislike.Location = new System.Drawing.Point(24, 3);
+            this.pictureBoxDislike.Location = new System.Drawing.Point(121, 3);
             this.pictureBoxDislike.Name = "pictureBoxDislike";
             this.pictureBoxDislike.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxDislike.TabIndex = 1;
@@ -224,11 +248,10 @@
             // 
             // pictureBoxLike
             // 
-            this.pictureBoxLike.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLike.Image")));
             this.pictureBoxLike.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLike.Name = "pictureBoxLike";
-            this.pictureBoxLike.Size = new System.Drawing.Size(233, 41);
+            this.pictureBoxLike.Size = new System.Drawing.Size(22, 22);
             this.pictureBoxLike.TabIndex = 0;
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
@@ -253,6 +276,7 @@
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             this.likesPanel.ResumeLayout(false);
+            this.likesPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDislike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLike)).EndInit();
             this.ResumeLayout(false);
@@ -276,5 +300,7 @@
         private System.Windows.Forms.PictureBox pictureBoxDislike;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label labelLike;
+        private System.Windows.Forms.Label labeldis;
     }
 }
