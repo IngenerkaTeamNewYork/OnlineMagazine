@@ -30,7 +30,6 @@ namespace WindowsFormsApplication4
         {
             this.categories_linklabel = new System.Windows.Forms.LinkLabel();
             this.butto_search = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.Left_panel = new System.Windows.Forms.Panel();
             this.authorizationTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.button_login = new System.Windows.Forms.Button();
@@ -38,7 +37,6 @@ namespace WindowsFormsApplication4
             this.textBox_login = new System.Windows.Forms.TextBox();
             this.label_password = new System.Windows.Forms.Label();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.reclama3 = new System.Windows.Forms.PictureBox();
             this.reclama2 = new System.Windows.Forms.PictureBox();
@@ -81,25 +79,12 @@ namespace WindowsFormsApplication4
             this.butto_search.Click += new System.EventHandler(this.butto_search_Click);
             this.butto_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.butto_search_KeyDown);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 523);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // Left_panel
             // 
             this.Left_panel.Controls.Add(this.authorizationTableLayoutPanel);
-            this.Left_panel.Controls.Add(this.textBox1);
             this.Left_panel.Controls.Add(this.link_of_registration);
             this.Left_panel.Controls.Add(this.reclama3);
             this.Left_panel.Controls.Add(this.reclama2);
-            this.Left_panel.Controls.Add(this.radioButton1);
             this.Left_panel.Controls.Add(this.reclama);
             this.Left_panel.Location = new System.Drawing.Point(3, 12);
             this.Left_panel.Name = "Left_panel";
@@ -177,18 +162,10 @@ namespace WindowsFormsApplication4
             this.textBox_password.TabIndex = 10;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(127, 496);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 56);
-            this.textBox1.TabIndex = 8;
-            // 
             // link_of_registration
             // 
             this.link_of_registration.AutoSize = true;
-            this.link_of_registration.Location = new System.Drawing.Point(10, 484);
+            this.link_of_registration.Location = new System.Drawing.Point(10, 534);
             this.link_of_registration.Name = "link_of_registration";
             this.link_of_registration.Size = new System.Drawing.Size(72, 13);
             this.link_of_registration.TabIndex = 6;
@@ -198,7 +175,7 @@ namespace WindowsFormsApplication4
             // 
             // reclama3
             // 
-            this.reclama3.Location = new System.Drawing.Point(23, 363);
+            this.reclama3.Location = new System.Drawing.Point(23, 398);
             this.reclama3.Name = "reclama3";
             this.reclama3.Size = new System.Drawing.Size(172, 114);
             this.reclama3.TabIndex = 5;
@@ -206,9 +183,9 @@ namespace WindowsFormsApplication4
             // 
             // reclama2
             // 
-            this.reclama2.Location = new System.Drawing.Point(23, 239);
+            this.reclama2.Location = new System.Drawing.Point(13, 248);
             this.reclama2.Name = "reclama2";
-            this.reclama2.Size = new System.Drawing.Size(172, 102);
+            this.reclama2.Size = new System.Drawing.Size(182, 126);
             this.reclama2.TabIndex = 4;
             this.reclama2.TabStop = false;
             this.reclama2.Click += new System.EventHandler(this.Реклама2_Click);
@@ -336,10 +313,8 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel Centr_panel;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.LinkLabel categories_linklabel;
-        private System.Windows.Forms.RadioButton radioButton1;
         public System.Windows.Forms.LinkLabel link_of_registration;
         private System.Windows.Forms.Button button_add_reklama;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel authorizationTableLayoutPanel;
         private System.Windows.Forms.Label label_of_login;
         private System.Windows.Forms.TextBox textBox_login;

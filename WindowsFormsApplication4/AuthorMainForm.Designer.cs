@@ -42,7 +42,6 @@
             this.Avatar_author = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_statistika = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.leftTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -164,16 +163,16 @@
             this.aboutAuthorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.aboutAuthorLabel.Location = new System.Drawing.Point(3, 0);
             this.aboutAuthorLabel.Name = "aboutAuthorLabel";
-            this.aboutAuthorLabel.Size = new System.Drawing.Size(91, 300);
+            this.aboutAuthorLabel.Size = new System.Drawing.Size(163, 50);
             this.aboutAuthorLabel.TabIndex = 5;
             this.aboutAuthorLabel.Text = "Об авторе";
             // 
             // Avatar_author
             // 
-            this.Avatar_author.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Avatar_author.Location = new System.Drawing.Point(100, 3);
+            this.Avatar_author.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Avatar_author.Location = new System.Drawing.Point(3, 53);
             this.Avatar_author.Name = "Avatar_author";
-            this.Avatar_author.Size = new System.Drawing.Size(66, 73);
+            this.Avatar_author.Size = new System.Drawing.Size(163, 244);
             this.Avatar_author.TabIndex = 6;
             this.Avatar_author.TabStop = false;
             // 
@@ -195,15 +194,6 @@
             this.button_statistika.Text = "Категории";
             this.button_statistika.UseVisualStyleBackColor = true;
             this.button_statistika.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 489);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 12;
             // 
             // tableLayoutPanel1
             // 
@@ -227,7 +217,6 @@
             this.leftTableLayoutPanel.ColumnCount = 1;
             this.leftTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.leftTableLayoutPanel.Controls.Add(this.panel1_reklama, 0, 0);
-            this.leftTableLayoutPanel.Controls.Add(this.comboBox1, 0, 2);
             this.leftTableLayoutPanel.Controls.Add(this.panel2_reklama, 0, 1);
             this.leftTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.leftTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
@@ -277,15 +266,15 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.39645F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.60355F));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.aboutAuthorLabel, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.Avatar_author, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.Avatar_author, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(169, 300);
             this.tableLayoutPanel5.TabIndex = 0;
@@ -342,7 +331,6 @@
         private System.Windows.Forms.PictureBox Avatar_author;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_statistika;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel leftTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

@@ -32,7 +32,6 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
 
-
             SQLClass.OpenConnection();
 
             /*List<AuthorStat> writers = new List<AuthorStat>();
@@ -97,62 +96,72 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-                    if (rdr[1].ToString().Contains("www.youtube.com"))
+                if (rdr[1].ToString().Contains("www.youtube.com"))
+                {
+                    String url = rdr[1].ToString().Replace("watch?v=", "embed/");
+
+                    String embed = "<html><head>" +
+                   "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                   "</head><body>" +
+                   "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
+                   "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                   "</body></html>";
+
+                    WebBrowser web = new WebBrowser();
+
+                    web.DocumentText = string.Format(embed, url);
+                    web.Location = new Point(0, articleY + 25);
+                    Centr_panel.Controls.Add(web);
+                }
+                else
+                {
+                    String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
+                    PictureBox image1 = new PictureBox();
+                    image1.Location = new Point(0, articleY + 25);
+                    image1.Tag = label1.Text;
+                    image1.Size = new Size(Centr_panel.Width, 150);
+                    image1.Click += new System.EventHandler(clik_na_pic);
+                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    PictureBox pb1 = new PictureBox();
+                    pb1.Size = new Size(20, 20);
+                    pb1.Location = new Point(200, articleY);
+                    pb1.Image = Properties.Resources.like;
+                    Centr_panel.Controls.Add(pb1);
+
+                    LinkLabel label2 = new LinkLabel();
+                    label2.Location = new Point(230, articleY);
+                    label2.Size = new Size(20, 20);
+                    Centr_panel.Controls.Add(label2);
+
+                    LinkLabel label3 = new LinkLabel();
+                    label3.Location = new Point(290, articleY);
+                    label3.Size = new Size(20, 20);
+                    Centr_panel.Controls.Add(label3);
+
+                    StatiyaForm.GetStata(label2, label3, label1.Text);
+
+                    try
                     {
-                        String url = rdr[1].ToString().Replace("watch?v=", "embed/");
-                        
-
-                        String embed = "<html><head>" +
-                       "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
-                       "</head><body>" +
-                       "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
-                       "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
-                       "</body></html>";
-                      //  String url = rdr[1].ToString();
-
-                  //  https://www.youtube.com/embed/6Y-WfLIlGEc
-
-                        WebBrowser web = new WebBrowser();
-
-                        web.DocumentText = string.Format(embed, url);
-                        web.Location = new Point(0, articleY + 25);
-                        Centr_panel.Controls.Add(web);
+                        image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
                     }
-                    else
+                    catch (Exception)
                     {
-                        String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                        PictureBox image1 = new PictureBox();
-                        image1.Location = new Point(0, articleY + 25);
-                        image1.Tag = label1.Text;
-                        image1.Size = new Size(Centr_panel.Width, 150);
-                        image1.Click += new System.EventHandler(clik_na_pic);
-                        image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        Uri uri = new Uri(rdr[1].ToString());
-
-
                         try
                         {
-                            image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                            image1.LoadAsync(rdr[1].ToString());
+                            Uri uri = new Uri(rdr[1].ToString());
+                            client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
                         }
                         catch (Exception)
                         {
-                            try
-                            {
-                                image1.LoadAsync(rdr[1].ToString());
-                                client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-                            }
-                            catch (Exception)
-                            {
-                                image1.Image = new Bitmap("defolt_avtor.jpg");
-                            }
+                            image1.Image = new Bitmap("defolt_avtor.jpg");
                         }
-
-
-
-                        Centr_panel.Controls.Add(image1);                
-                        piccc.Add(image1);
                     }
-                
+
+                    Centr_panel.Controls.Add(image1);                
+                    piccc.Add(image1);
+                }                
                 
                 arts.Add(label1);
                 articleY += 180;
@@ -314,6 +323,7 @@ namespace WindowsFormsApplication4
 
             if (author)
             {
+                Users.CURRENT_USER = textBox_login.Text;
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
                 Form1_Load(sender, e);
