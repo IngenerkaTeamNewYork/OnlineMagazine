@@ -139,7 +139,6 @@ namespace WindowsFormsApplication4
                         try
                         {
                             image1.Load(rdr[1].ToString());
-
                             Uri uri = new Uri(rdr[1].ToString());
                             client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
 
@@ -149,19 +148,6 @@ namespace WindowsFormsApplication4
                         {
                         }
                     }
-
-
-
-                    /*
-                    try
-                    {
-                        image1.LoadAsync(rdr[1].ToString());
-                    }
-                    catch (Exception)
-                    {
-                    }
-                     */
-                    //  image1.LoadAsync(rdr[1].ToString());
 
                     panel1.Controls.Add(image1);
                 }
