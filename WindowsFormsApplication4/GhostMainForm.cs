@@ -97,7 +97,6 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-
                 PictureBox pb1 = new PictureBox();
                 pb1.Size = new Size(20, 20);
                 pb1.Location = new Point(200, articleY);
@@ -310,6 +309,7 @@ namespace WindowsFormsApplication4
 
             if (author)
             {
+                Users.CURRENT_USER = textBox_login.Text;
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
                 Form1_Load(sender, e);

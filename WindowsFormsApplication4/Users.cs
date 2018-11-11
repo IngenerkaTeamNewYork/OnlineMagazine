@@ -17,6 +17,9 @@ namespace WindowsFormsApplication4
     public partial class Users : Form
     {
 
+        public static string CURRENT_USER = "NONAME";
+
+
         public List<users> list_of_users = new List<users>();
 
         public Users()

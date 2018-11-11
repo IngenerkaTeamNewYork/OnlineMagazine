@@ -62,6 +62,7 @@
             // 
             this.Kategoriatext.AutoSize = true;
             this.Kategoriatext.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Kategoriatext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Kategoriatext.Location = new System.Drawing.Point(0, 0);
             this.Kategoriatext.MaximumSize = new System.Drawing.Size(100, 30);
             this.Kategoriatext.MinimumSize = new System.Drawing.Size(70, 30);
