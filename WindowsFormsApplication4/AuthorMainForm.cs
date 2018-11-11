@@ -129,7 +129,6 @@ namespace WindowsFormsApplication4
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                     String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                    //Uri uri = new Uri(rdr[1].ToString());
 
                     try
                     {
@@ -149,19 +148,6 @@ namespace WindowsFormsApplication4
                         {
                         }
                     }
-
-
-
-                    /*
-                    try
-                    {
-                        image1.LoadAsync(rdr[1].ToString());
-                    }
-                    catch (Exception)
-                    {
-                    }
-                     */
-                    //  image1.LoadAsync(rdr[1].ToString());
 
                     panel1.Controls.Add(image1);
                 }

@@ -54,7 +54,7 @@ namespace WindowsFormsApplication4
             {
                 Label label = new Label();
                 label.Size = new Size(100, 30);
-                label.Location = new Point(20, 10 + 30 * i);
+                label.Location = new Point(20, 50 + 30 * i);
                 label.Text = rdr[0].ToString();
                 categories newcat = new categories();
                 newcat.name = label.Text;
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication4
                 {
                     Button button_delete = new Button();
                     button_delete.Size = new Size(100, 30);
-                    button_delete.Location = new Point(190, 10 + 30 * i);
+                    button_delete.Location = new Point(190, 50 + 30 * i);
                     button_delete.Text = "Удалить";
                     newcat.del = button_delete;
                     newcat.del.Click += new System.EventHandler(button_delete_Click);
@@ -75,6 +75,8 @@ namespace WindowsFormsApplication4
                     CategoriesList.Add(newcat);
                 }
 
+
+                this.catsPanel.Controls.Add(label2);
                 catsPanel.Controls.Add(label);
                 i++;
             }
@@ -119,13 +121,15 @@ namespace WindowsFormsApplication4
         private void lable_cat_Click (object sender, EventArgs e)
         {
             list_of_stat.GetListOfArtic(ref articlesPanel, ((Label)sender).Text);
+
+
+            this.articlesPanel.Controls.Add(label3);
             // f = new list_of_stat(((Label)sender).Text);
             //f.ShowDialog();
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
