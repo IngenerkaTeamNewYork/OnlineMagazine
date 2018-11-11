@@ -82,105 +82,115 @@ namespace WindowsFormsApplication4
             textBox_login.Text = "";
             textBox_password.Text = "";
 
+            #region Advertising
+            reclama.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama.LoadAsync(Advertising.GetRandom());
 
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " WHERE new = 0 LIMIT 0, 3", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama2.LoadAsync(Advertising.GetRandom());
+            
+            reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
+            reclama3.LoadAsync(Advertising.GetRandom());
+            #endregion
+            
+            List<String> PopularArticles = SQLClass.Select(
+                "SELECT Header, Picture FROM " + Tables.ARTICLES + 
+                " WHERE new = 0 LIMIT 0, 3");
 
             int articleY = 50;
-            while (rdr.Read())
+            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(0, articleY);
-                label1.Size = new Size(Centr_panel.Width, 20);
-                label1.Text = rdr[0].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(label1);
+                #region Article header
+                Panel articleHeaderPanel = new Panel();
+                articleHeaderPanel.Size = new Size(Centr_panel.Width, 30);
+                articleHeaderPanel.Dock = DockStyle.Top;
+                articleHeaderPanel.TabIndex = 0;
+                Centr_panel.Controls.Add(articleHeaderPanel);
 
-                if (rdr[1].ToString().Contains("www.youtube.com"))
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, 0);
+                label1.Size = new Size(180, 20);
+                label1.Text = PopularArticles[artIndex].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                articleHeaderPanel.Controls.Add(label1);
+
+                PictureBox likesPB = new PictureBox();
+                likesPB.Size = new Size(20, 20);
+                likesPB.Location = new Point(200, 0);
+                likesPB.Image = Properties.Resources.like;
+                articleHeaderPanel.Controls.Add(likesPB);
+
+                Label likesLabel = new Label();
+                likesLabel.Location = new Point(230, 0);
+                likesLabel.Size = new Size(20, 20);
+                articleHeaderPanel.Controls.Add(likesLabel);
+
+                Label dislikesLabel = new Label();
+                dislikesLabel.Location = new Point(290, 0);
+                dislikesLabel.Size = new Size(20, 20);
+                articleHeaderPanel.Controls.Add(dislikesLabel);
+
+                StatiyaForm.GetStata(likesLabel, dislikesLabel, label1.Text);
+                #endregion
+
+                //Video
+                if (PopularArticles[artIndex + 1].ToString().Contains("www.youtube.com"))
                 {
-                    String url = rdr[1].ToString().Replace("watch?v=", "embed/");
+                    String url = PopularArticles[artIndex + 1].ToString().Replace("watch?v=", "embed/");
 
                     String embed = "<html><head>" +
-                   "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
-                   "</head><body>" +
-                   "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
-                   "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
-                   "</body></html>";
+                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                        "</head><body>" +
+                        "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
+                        "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                        "</body></html>";
 
                     WebBrowser web = new WebBrowser();
-
+                    web.TabIndex = 1;
+                    web.Dock = DockStyle.Top;
                     web.DocumentText = string.Format(embed, url);
                     web.Location = new Point(0, articleY + 25);
                     Centr_panel.Controls.Add(web);
                 }
+                //Picture
                 else
                 {
-                    String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                    PictureBox image1 = new PictureBox();
-                    image1.Location = new Point(0, articleY + 25);
-                    image1.Tag = label1.Text;
-                    image1.Size = new Size(Centr_panel.Width, 150);
-                    image1.Click += new System.EventHandler(clik_na_pic);
-                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    String[] chasti_stroki = PopularArticles[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
 
-                    PictureBox pb1 = new PictureBox();
-                    pb1.Size = new Size(20, 20);
-                    pb1.Location = new Point(200, articleY);
-                    pb1.Image = Properties.Resources.like;
-                    Centr_panel.Controls.Add(pb1);
-
-                    LinkLabel label2 = new LinkLabel();
-                    label2.Location = new Point(230, articleY);
-                    label2.Size = new Size(20, 20);
-                    Centr_panel.Controls.Add(label2);
-
-                    LinkLabel label3 = new LinkLabel();
-                    label3.Location = new Point(290, articleY);
-                    label3.Size = new Size(20, 20);
-                    Centr_panel.Controls.Add(label3);
-
-                    StatiyaForm.GetStata(label2, label3, label1.Text);
+                    PictureBox artImage = new PictureBox();
+                    artImage.Location = new Point(0, articleY + 25);
+                    artImage.Tag = label1.Text;
+                    artImage.Size = new Size(Centr_panel.Width, 150);
+                    artImage.Dock = DockStyle.Top;
+                    artImage.Click += new System.EventHandler(clik_na_pic);
+                    artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    artImage.TabIndex = 1;
 
                     try
                     {
-                        image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                        artImage.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
                     }
                     catch (Exception)
                     {
                         try
                         {
-                            image1.LoadAsync(rdr[1].ToString());
-                            Uri uri = new Uri(rdr[1].ToString());
+                            artImage.LoadAsync(PopularArticles[artIndex + 1].ToString());
+                            Uri uri = new Uri(PopularArticles[artIndex + 1].ToString());
                             client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
                         }
                         catch (Exception)
                         {
-                            image1.Image = new Bitmap("defolt_avtor.jpg");
+                            artImage.Image = new Bitmap("defolt_avtor.jpg");
                         }
                     }
 
-                    Centr_panel.Controls.Add(image1);                
-                    piccc.Add(image1);
+                    Centr_panel.Controls.Add(artImage);                
+                    piccc.Add(artImage);
                 }                
                 
                 arts.Add(label1);
                 articleY += 180;
             }
-            rdr.Close();
-
-
-            reclama.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama.LoadAsync(Advertising.GetRandom());
-
-
-            reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama2.LoadAsync(Advertising.GetRandom());
-
-
-            reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
-            reclama3.LoadAsync(Advertising.GetRandom());
-            
-           
         }    
 
         private void butto_search_Click(object sender, EventArgs e)
@@ -191,19 +201,19 @@ namespace WindowsFormsApplication4
             textBox_login.Text = "";
             textBox_password.Text = "";
             
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES +
+            List<String> artsList = SQLClass.Select
+                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE header like '%" + textBox_search.Text + "%'" +
                 " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3");
             
             int articleY = 50;
-            while (rdr.Read())
+            for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
             {
                 LinkLabel label1 = new LinkLabel();
                 label1.Location = new Point(0, articleY);
                 label1.Size = new Size(Centr_panel.Width, 20);
-                label1.Text = rdr[0].ToString();
+                label1.Text = artsList[artIndex].ToString();
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
@@ -214,9 +224,8 @@ namespace WindowsFormsApplication4
                 image1.Click += new System.EventHandler(clik_na_pic);
                 image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-                Uri uri = new Uri(rdr[1].ToString());
-
+                String[] chasti_stroki = artsList[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
+                
 
                 try
                 {
@@ -226,17 +235,15 @@ namespace WindowsFormsApplication4
                 {
                     try
                     {
-                        image1.Load(rdr[1].ToString());
+                        Uri uri = new Uri(artsList[artIndex + 1].ToString());
+                        image1.Load(artsList[artIndex + 1].ToString());
                         client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-                        //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
                     }
                     catch (Exception)
                     {
                         image1.Image = new Bitmap("defolt_statiy.jpg");
                     }
                 }
-
-               
                     
                 //image1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(image1);
@@ -245,7 +252,6 @@ namespace WindowsFormsApplication4
                 arts.Add(label1);
                 articleY += 180;
             }
-            rdr.Close();
         }
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -308,18 +314,11 @@ namespace WindowsFormsApplication4
         
         private void button_login_Click(object sender, EventArgs e)
         {
-            // TODO: dddd
-            bool author = false;
+            List<String> AuthorLoginData = SQLClass.Select
+                ("SELECT COUNT(*) FROM " +Tables.AUTHORS + 
+                " WHERE UserName = '" + textBox_login.Text + "'");
 
-            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM `Authors` WHERE UserName = '" + textBox_login.Text + "'", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            rdr.Read();
-            if (rdr[0].ToString() != "0")
-            {
-                author = true;
-            }
-            rdr.Close();
+            bool author = (AuthorLoginData.Count > 0);
 
             if (author)
             {

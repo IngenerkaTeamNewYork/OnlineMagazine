@@ -89,10 +89,8 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(cat.del))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
-                        "DELETE FROM `Categories` WHERE `Name`= '" + cat.name + "'", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                    SQLClass.Delete("DELETE FROM " + Tables.CATEGORIES +
+                        " WHERE `Name`= '" + cat.name + "'");                    
                 }
             }   
 
@@ -101,19 +99,17 @@ namespace WindowsFormsApplication4
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            textBox_name.Visible = true;
-            
+            textBox_name.Visible = true;            
         }
 
         private void textBox_name_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                MySqlCommand cmd = new MySqlCommand(
-                 "INSERT INTO `Categories`(`Name`, `Picture`, `Coteg_ID`) VALUES (\"" + textBox_name.Text + "\", \"a\", 0)", SQLClass.CONN);
+                SQLClass.Insert("INSERT INTO " + Tables.CATEGORIES +
+                    "(`Name`, `Picture`, `Coteg_ID`)" +
+                    " VALUES (\"" + textBox_name.Text + "\", \"a\", 0)");
 
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Close();
                 update();
             }
         }
@@ -121,11 +117,7 @@ namespace WindowsFormsApplication4
         private void lable_cat_Click (object sender, EventArgs e)
         {
             list_of_stat.GetListOfArtic(ref articlesPanel, ((Label)sender).Text);
-
-
             this.articlesPanel.Controls.Add(label3);
-            // f = new list_of_stat(((Label)sender).Text);
-            //f.ShowDialog();
         }
 
         private void CategoriesForm_Load(object sender, EventArgs e)
@@ -139,13 +131,11 @@ namespace WindowsFormsApplication4
             pictureBox1.Visible = true;
             pictureBox1.Load(stat.picture);
             pictureBox1.Size = new Size(100, 100); 
-
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Visible = false;
-
         }
     }
 }

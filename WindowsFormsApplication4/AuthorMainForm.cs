@@ -34,46 +34,40 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(lab))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
+                    List<String> ArticleInfo = SQLClass.Select(
                         "SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES +
-                        " WHERE header = '" + lab.Text + "'", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
+                        " WHERE header = '" + lab.Text + "'");
 
-                    while (rdr.Read())
+                    for (int artIndex = 0; artIndex < ArticleInfo.Count; artIndex += 5)
                     {
                         statiya stat = new statiya();
-                        stat.name_statiya = rdr[0].ToString();
-                        stat.name_author = rdr[1].ToString();
-                        stat.kategorita_statii = rdr[2].ToString();
-                        stat.text_statii = rdr[3].ToString();
-                        if (rdr[4].ToString() != "")
-                        {
-                            stat.picture = rdr[4].ToString();
-                        }
-                        else
-                        {
-                            stat.picture = null;
-                        }
+                        stat.name_statiya = ArticleInfo[artIndex].ToString();
+                        stat.name_author = ArticleInfo[artIndex + 1].ToString();
+                        stat.kategorita_statii = ArticleInfo[artIndex + 2].ToString();
+                        stat.text_statii = ArticleInfo[artIndex + 3].ToString();
+
+                        //FIXME!!! Show ternarny operator
+                        stat.picture = (ArticleInfo[artIndex +4].ToString() != "") ?
+                            ArticleInfo[artIndex + 4].ToString() :
+                            null;
 
                         StatiyaForm OknoStatiya = new StatiyaForm(stat);
                         OknoStatiya.ShowDialog();
                     }
-                    rdr.Close();
                 }
             }
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand(
-                "SELECT `Information_about_author`, Articles, Pic FROM `Authors` WHERE `UserName` = '" + login + "'", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            List<String> AuthorInfo = SQLClass.Select(
+                "SELECT Information_about_author, Articles, Pic FROM " + Tables.AUTHORS +
+                " WHERE `UserName` = '" + login + "'");
 
-            while (rdr.Read())
+            for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
-                aboutAuthorLabel.Text = rdr[0].ToString();
-                //label5.Text = rdr[1].ToString();
-                String[] chasti_stroki = rdr[2].ToString().Split(new char[] { ' ', '/' });
+                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString();
+                String[] chasti_stroki = AuthorInfo[infoIndex + 2].ToString().Split(new char[] { ' ', '/' });
                 
                 try
                 {
@@ -83,8 +77,8 @@ namespace WindowsFormsApplication4
                 {
                     try
                     {
-                        Avatar_author.Load(rdr[2].ToString());
-                        Uri uri = new Uri(rdr[2].ToString());
+                        Avatar_author.Load(AuthorInfo[infoIndex + 2].ToString());
+                        Uri uri = new Uri(AuthorInfo[infoIndex + 2].ToString());
                         client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
                     }
                     catch (Exception)
@@ -95,64 +89,60 @@ namespace WindowsFormsApplication4
                 
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            rdr.Close();
 
-            MySqlCommand cm = new MySqlCommand("SELECT Header, Picture FROM " + Tables.ARTICLES + " WHERE `Author` = '" + login + "'", SQLClass.CONN);
-            rdr = cm.ExecuteReader();
+            List<String> AuthorArticles = SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES + 
+                " WHERE `Author` = '" + login + "'");
 
             int articleY = 50;
-            while (rdr.Read())
+            for (int artIndex = 0; artIndex < AuthorArticles.Count; artIndex += 2)
             {
                 LinkLabel label1 = new LinkLabel();
                 label1.Location = new Point(0, articleY);
                 label1.Size = new Size(panel1.Width, 20);
-                label1.Text = rdr[0].ToString();
+                label1.Text = AuthorArticles[artIndex].ToString();
                 label1.Dock = DockStyle.Top;
                 label1.Click += new System.EventHandler(ArticleClick);
                 panel1.Controls.Add(label1);
+                
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(0, articleY + 25);
+                image1.Size = new Size(panel1.Width, 150);
+                image1.Image = new Bitmap("defolt_statiy.jpg");
+                image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                image1.Dock = DockStyle.Top;
+                panel1.Controls.Add(image1);
 
+                String[] chasti_stroki = AuthorArticles[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
+
+                try
                 {
-                    PictureBox image1 = new PictureBox();
-                    image1.Location = new Point(0, articleY + 25);
-                    image1.Size = new Size(panel1.Width, 150);
-                    image1.Image = new Bitmap("defolt_statiy.jpg");
-                    image1.SizeMode = PictureBoxSizeMode.StretchImage;
-                    image1.Dock = DockStyle.Top;
-
-                    String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
-
+                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                }
+                catch (Exception)
+                {
                     try
                     {
-                        image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                        image1.Load(AuthorArticles[artIndex + 1].ToString());
+                        Uri uri = new Uri(AuthorArticles[artIndex + 1].ToString());
+                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
                     }
                     catch (Exception)
                     {
-                        try
-                        {
-                            image1.Load(rdr[1].ToString());
-                            Uri uri = new Uri(rdr[1].ToString());
-                            client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-
-                            //image1.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
-                        }
-                        catch (Exception)
-                        {
-                        }
                     }
-
-                    panel1.Controls.Add(image1);
                 }
 
                 arts.Add(label1);
                 articleY += 180;
             }
-            rdr.Close();
 
+            //FIXME!!! Show region
+            #region Advertising
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.LoadAsync(Advertising.GetRandom());
 
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.LoadAsync(Advertising.GetRandom());
+            #endregion
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -64,21 +64,11 @@ namespace WindowsFormsApplication4
         
         private void pictureBoxLike_Click(object sender, EventArgs e)
         {
-            if (isLike)
-            {
-                isLike = true;               
-                pictureBoxLike.Image = Properties.Resources.like;
-
-            }
-            else
-            {
-                isLike = false;
-                pictureBoxLike.Image = Properties.Resources.Like2;
-
-            }
-
-
-            
+            isLike = !isLike;               
+            pictureBoxLike.Image = (isLike) ? 
+                Properties.Resources.Like2 : 
+                Properties.Resources.like;
+                        
             List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");            
             if (isLike)
             {
@@ -113,20 +103,10 @@ namespace WindowsFormsApplication4
         
         private void pictureBoxDislike_Click(object sender, EventArgs e)
         {
-            if (isDisLike)
-            {
-                
-                isDisLike = false;
-                pictureBoxDislike.Image = Properties.Resources.Dislike;
-               
-            }
-            else
-            {
-                
-                isDisLike = true;
-                pictureBoxDislike.Image = Properties.Resources.DisLike2;
-                
-            }
+            isDisLike = !isDisLike;
+            pictureBoxDislike.Image = (isDisLike) ?
+                Properties.Resources.DisLike2 :
+                Properties.Resources.Dislike;
 
             List<String> dislikes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
          

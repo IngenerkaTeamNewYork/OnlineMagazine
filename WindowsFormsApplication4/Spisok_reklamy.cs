@@ -24,13 +24,10 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(rekl.AddOneDayButton))
                 {
-                    MySqlCommand cmd = new MySqlCommand(
-                        "UPDATE Advertisment" +
+                    SQLClass.Update(
+                        "UPDATE " + Tables.ADVERTISMENT +
                         " SET Data_to = '" + rekl.date_to.AddDays(1).ToString("dd.MM.yyyy") + "'" +
-                        " WHERE id = " + rekl.id , SQLClass.CONN);
-
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                        " WHERE id = " + rekl.id);                    
                 }
             }
         }

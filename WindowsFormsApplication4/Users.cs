@@ -33,10 +33,8 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(i.btn))
                 {
-                    MySqlCommand cmd = new MySqlCommand("UPDATE Polzovateli SET ban = 1 WHERE login = '" + i.login + "'", SQLClass.CONN);
-                    MessageBox.Show(cmd.CommandText);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                    SQLClass.Update("UPDATE " + Tables.POLZOVATELI +
+                        " SET ban = 1 WHERE login = '" + i.login + "'");
                 }
             }
 
@@ -49,9 +47,8 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(i.ras))
                 {
-                    MySqlCommand cmd = new MySqlCommand("UPDATE Polzovateli SET ban = 0 WHERE login = '" + i.login + "'", SQLClass.CONN);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    rdr.Close();
+                    SQLClass.Update("UPDATE " + Tables.POLZOVATELI +
+                        " SET ban = 0 WHERE login = '" + i.login + "'");
                 }
             }
 
@@ -115,7 +112,7 @@ namespace WindowsFormsApplication4
 
         private void button_Click ()
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT Login FROM `Polzovateli` ", SQLClass.CONN);
+            //MySqlCommand cmd = new MySqlCommand("SELECT Login FROM `Polzovateli` ", SQLClass.CONN);
         }
 
         
