@@ -292,6 +292,7 @@ namespace WindowsFormsApplication4
             if (author)
             {
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
+                Users.CURRENT_USER = textBox_login.Text;
                 af.ShowDialog();
                 Form1_Load(sender, e);
             }
