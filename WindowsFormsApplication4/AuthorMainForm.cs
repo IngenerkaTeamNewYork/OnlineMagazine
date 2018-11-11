@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,7 @@ namespace WindowsFormsApplication4
             InitializeComponent();
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
+        
         private void ArticleClick(object sender, EventArgs e)
         {
             foreach (LinkLabel lab in arts)
@@ -59,7 +61,6 @@ namespace WindowsFormsApplication4
                     rdr.Close();
                 }
             }
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -73,7 +74,6 @@ namespace WindowsFormsApplication4
                 aboutAuthorLabel.Text = rdr[0].ToString();
                 //label5.Text = rdr[1].ToString();
                 String[] chasti_stroki = rdr[2].ToString().Split(new char[] { ' ', '/' });
-                Uri uri = new Uri(rdr[2].ToString());
                 
                 try
                 {
@@ -84,26 +84,15 @@ namespace WindowsFormsApplication4
                     try
                     {
                         Avatar_author.Load(rdr[2].ToString());
+                        Uri uri = new Uri(rdr[2].ToString());
                         client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-
-                        //Avatar_author.Image.Save(chasti_stroki[chasti_stroki.Length - 1]);
                     }
                     catch (Exception)
                     {
                         Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
                     }
                 }
-                /*
-                try
-                {
-                    Avatar_author.LoadAsync(rdr[2].ToString());
-                }
-                catch(Exception)
-                {
-                    Avatar_author.Image = new Bitmap("defolt_avtor.jpg");
-                }
-                 */
-                 
+                
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             rdr.Close();
@@ -118,6 +107,7 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, articleY);
                 label1.Size = new Size(panel1.Width, 20);
                 label1.Text = rdr[0].ToString();
+                label1.Dock = DockStyle.Top;
                 label1.Click += new System.EventHandler(ArticleClick);
                 panel1.Controls.Add(label1);
 
@@ -127,6 +117,7 @@ namespace WindowsFormsApplication4
                     image1.Size = new Size(panel1.Width, 150);
                     image1.Image = new Bitmap("defolt_statiy.jpg");
                     image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    image1.Dock = DockStyle.Top;
 
                     String[] chasti_stroki = rdr[1].ToString().Split(new char[] { ' ', '/' });
 
@@ -182,24 +173,5 @@ namespace WindowsFormsApplication4
             Balance_Author OknoBalance = new Balance_Author();
             OknoBalance.ShowDialog();
         }
-
-    /*    private void panel_spisok_statey_Paint(object sender, PaintEventArgs e)
-        {
-            MySqlCommand cmd = new MySqlCommand(
-               "SELECT `Header` FROM `Articles1` WHERE `Author` = '" + login + "'", SQLClass.CONN);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            int i = 0;
-            while (rdr.Read())
-            {
-                Label label = new Label();
-                label.Size = new Size(100, 30);
-                label.Location = new Point(12, 50 + 50 * i);
-                label.Text = rdr[0].ToString();
-                this.panel_spisok_statey.Controls.Add(label);
-                i++;
-            }
-
-            rdr.Close();
-        }*/
     }
 }
