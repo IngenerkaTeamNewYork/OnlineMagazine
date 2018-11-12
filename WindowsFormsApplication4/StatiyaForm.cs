@@ -87,8 +87,8 @@ namespace WindowsFormsApplication4
                         "'" + Maintext.Text + "'" +
                         ", '" + Authortext.Text + "'" +
                         ", '" + Kategoriatext.Text + "'" +
-                        ",0" +
-                        ",1)");
+                        ",1" +
+                        ",0)");
                 }        
             }
             else

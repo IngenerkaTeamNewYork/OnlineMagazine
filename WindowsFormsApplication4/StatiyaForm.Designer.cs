@@ -77,7 +77,7 @@
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(4, 127);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(534, 291);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,7 +93,7 @@
             this.mainTableLayoutPanel.Controls.Add(this.artTableLayoutPanel, 1, 0);
             this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
             this.mainTableLayoutPanel.RowCount = 1;
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -108,7 +108,7 @@
             this.panel1.Controls.Add(this.labelreklama);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(175, 771);
             this.panel1.TabIndex = 0;
@@ -117,7 +117,7 @@
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Location = new System.Drawing.Point(0, 319);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(175, 452);
             this.pictureBox3.TabIndex = 2;
@@ -127,7 +127,7 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(175, 319);
             this.pictureBox2.TabIndex = 1;
@@ -154,7 +154,7 @@
             this.artTableLayoutPanel.Controls.Add(this.likesPanel, 0, 3);
             this.artTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artTableLayoutPanel.Location = new System.Drawing.Point(187, 4);
-            this.artTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.artTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.artTableLayoutPanel.Name = "artTableLayoutPanel";
             this.artTableLayoutPanel.RowCount = 4;
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
@@ -171,7 +171,7 @@
             this.Stattext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Stattext.Enabled = false;
             this.Stattext.Location = new System.Drawing.Point(4, 426);
-            this.Stattext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Stattext.Margin = new System.Windows.Forms.Padding(4);
             this.Stattext.Multiline = true;
             this.Stattext.Name = "Stattext";
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -185,7 +185,7 @@
             this.HeaderPanel.Controls.Add(this.Kategoriatext);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.HeaderPanel.Location = new System.Drawing.Point(5, 4);
-            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(4);
             this.HeaderPanel.Name = "HeaderPanel";
             this.HeaderPanel.Size = new System.Drawing.Size(533, 115);
             this.HeaderPanel.TabIndex = 5;
@@ -210,7 +210,7 @@
             this.Maintext.Enabled = false;
             this.Maintext.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Bold);
             this.Maintext.Location = new System.Drawing.Point(0, 37);
-            this.Maintext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Maintext.Margin = new System.Windows.Forms.Padding(4);
             this.Maintext.Multiline = true;
             this.Maintext.Name = "Maintext";
             this.Maintext.Size = new System.Drawing.Size(533, 78);
@@ -254,7 +254,7 @@
             // 
             this.pictureBoxDislike.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
             this.pictureBoxDislike.Location = new System.Drawing.Point(161, 4);
-            this.pictureBoxDislike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxDislike.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxDislike.Name = "pictureBoxDislike";
             this.pictureBoxDislike.Size = new System.Drawing.Size(27, 25);
             this.pictureBoxDislike.TabIndex = 1;
@@ -265,7 +265,7 @@
             // 
             this.pictureBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLike.Image")));
             this.pictureBoxLike.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLike.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLike.Name = "pictureBoxLike";
             this.pictureBoxLike.Size = new System.Drawing.Size(29, 27);
             this.pictureBoxLike.TabIndex = 0;
@@ -278,7 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 779);
             this.Controls.Add(this.mainTableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StatiyaForm";
             this.Text = "Статья";
             this.Load += new System.EventHandler(this.StatiyaForm1_Load);

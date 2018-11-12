@@ -31,30 +31,21 @@ namespace WindowsFormsApplication4
         public static void LogIntoAdminZone(String Login, String Password)
         {
             //Проверка на администратора
-            MySqlCommand cmd1 = new MySqlCommand(
-                "SELECT COUNT(*) FROM `Polzovateli` WHERE `Login`=\"" + Login + 
-                "\" AND `admin` = 1", SQLClass.CONN);
-            MySqlDataReader rdr1 = cmd1.ExecuteReader();
-
-            rdr1.Read();
-            String IsAdmin = rdr1[0].ToString();
-            rdr1.Close();
+            List<String> isAdminData = SQLClass.Select(
+                "SELECT COUNT(*) FROM " + Tables.POLZOVATELI + " WHERE `Login`=\"" + Login + 
+                "\" AND `admin` = 1");
+            String IsAdmin = isAdminData[0].ToString();
 
             if (IsAdmin != "0")
             {
-                MySqlCommand cmd = new MySqlCommand(
-                    "SELECT * FROM Polzovateli WHERE `Login`=\"" + Login + "\" AND `Parol`=\"" + Password + "\"", SQLClass.CONN);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+                List<String> loginSuccessData = SQLClass.Select(
+                    "SELECT * FROM " + Tables.POLZOVATELI + 
+                    " WHERE `Login`=\"" + Login + "\" AND `Parol`=\"" + Password + "\"");
 
-                bool isloginok = rdr.Read();
-                rdr.Close();
-
-                if (isloginok)
+                if (loginSuccessData.Count > 0)
                 {
                     Form ifrm = new AdminMainForm();
                     ifrm.ShowDialog();
-                    //Form prichem = Application.OpenForms[0];
-                    //prichem.Hide();
                 }
                 else
                 {
