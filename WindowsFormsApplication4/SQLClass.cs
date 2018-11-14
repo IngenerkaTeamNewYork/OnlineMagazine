@@ -69,7 +69,7 @@ namespace WindowsFormsApplication4
             {
                 for (int inc = 0; inc < r.FieldCount; inc++)
                 {
-                    res.Add(r.GetString(inc));
+                    res.Add(r[inc].ToString());
                 }
             }
             r.Close();

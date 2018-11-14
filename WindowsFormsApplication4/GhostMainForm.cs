@@ -27,11 +27,13 @@ namespace WindowsFormsApplication4
         public string[] url = new string[50];
         int kolvo = 0;
         public string kuda_i_kak;
+
+        
       
         public GhostMainForm()
         {
             InitializeComponent();
-
+            //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
 
             /*List<AuthorStat> writers = new List<AuthorStat>();
@@ -76,6 +78,25 @@ namespace WindowsFormsApplication4
       
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
+            List<String> artsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 7");
+
+            int catY = 200;
+
+
+            for (int artIndex = 0; artIndex < artsList.Count; artIndex ++)
+            {
+                Label label1 = new Label();
+                label1.Location = new Point(0, catY);
+                label1.Size = new Size(100, 20);
+                label1.Text = artsList[artIndex].ToString();
+                label1.Click += new System.EventHandler(label2_Click);
+                Right_panel.Controls.Add(label1);
+                catY += 30;
+            }
+            //arts.Add(label1);
+
             Centr_panel.Controls.Clear();
             Centr_panel.Controls.Add(popularArticlesLabel);
 
@@ -95,7 +116,7 @@ namespace WindowsFormsApplication4
             
             List<String> PopularArticles = SQLClass.Select(
                 "SELECT Header, Picture FROM " + Tables.ARTICLES + 
-                " WHERE new = 0 LIMIT 0, 3");
+                " WHERE new = 0 LIMIT 0, 7");
 
             int articleY = 50;
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
@@ -193,6 +214,7 @@ namespace WindowsFormsApplication4
             }
         }    
 
+
         private void butto_search_Click(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
@@ -205,9 +227,10 @@ namespace WindowsFormsApplication4
                 ("SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE header like '%" + textBox_search.Text + "%'" +
                 " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3");
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 7");
             
             int articleY = 50;
+
             for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
             {
                 LinkLabel label1 = new LinkLabel();
@@ -216,6 +239,7 @@ namespace WindowsFormsApplication4
                 label1.Text = artsList[artIndex].ToString();
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
+
 
                 
                 PictureBox image1 = new PictureBox();
@@ -364,6 +388,17 @@ namespace WindowsFormsApplication4
             {
                 butto_search_Click(sender, null);
             }
+        }
+
+        private void label_popular_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            textBox_search.Text = ((Label)sender).Text;
+            butto_search_Click(sender, e);
         }
     }
 }
