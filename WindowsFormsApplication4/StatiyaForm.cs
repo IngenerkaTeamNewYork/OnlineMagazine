@@ -143,10 +143,15 @@ namespace WindowsFormsApplication4
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
         {
+            List<string> s = Advertising.GetRandom();
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.LoadAsync(Advertising.GetRandom());
+            pictureBox2.LoadAsync(s[0]);
+            pictureBox2.Tag = s[1];
+
+            s = Advertising.GetRandom();
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.LoadAsync(Advertising.GetRandom());
+            pictureBox3.LoadAsync(s[0]);
+            pictureBox3.Tag = s[1];
 
             SQLClass.Insert(
                 "INSERT INTO " + Tables.READ_OF_ARTICLES +
