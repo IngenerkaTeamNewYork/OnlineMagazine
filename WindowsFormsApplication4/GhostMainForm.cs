@@ -15,6 +15,11 @@ using System.Net;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
+using System.Diagnostics;
+using System.IO;
+
+
 namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
@@ -25,9 +30,8 @@ namespace WindowsFormsApplication4
         public List<PictureBox> piccc = new List<PictureBox>();
         WebClient client = new WebClient();
         public string[] url = new string[50];
-        int kolvo = 0;
         public string kuda_i_kak;
-      
+
         public GhostMainForm()
         {
             InitializeComponent();
@@ -72,12 +76,21 @@ namespace WindowsFormsApplication4
                     OknoStatiya.ShowDialog();
                 }
             }
-        }  
-      
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
             Centr_panel.Controls.Add(popularArticlesLabel);
+            lable_name_of_polzovatel.Text = Users.CURRENT_USER;
+
+            if (lable_name_of_polzovatel.Text != "NONAME")
+            {
+
+                lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
+                Right_panel.Controls.Add(lable_name_of_polzovatel);
+            }
 
             textBox_login.Text = "";
             textBox_password.Text = "";
@@ -88,13 +101,13 @@ namespace WindowsFormsApplication4
 
             reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
             reclama2.LoadAsync(Advertising.GetRandom());
-            
+
             reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
             reclama3.LoadAsync(Advertising.GetRandom());
             #endregion
-            
+
             List<String> PopularArticles = SQLClass.Select(
-                "SELECT Header, Picture FROM " + Tables.ARTICLES + 
+                "SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE new = 0 LIMIT 0, 3");
 
             int articleY = 50;
@@ -184,14 +197,14 @@ namespace WindowsFormsApplication4
                         }
                     }
 
-                    Centr_panel.Controls.Add(artImage);                
+                    Centr_panel.Controls.Add(artImage);
                     piccc.Add(artImage);
-                }                
-                
+                }
+
                 arts.Add(label1);
                 articleY += 180;
             }
-        }    
+        }
 
         private void butto_search_Click(object sender, EventArgs e)
         {
@@ -200,13 +213,13 @@ namespace WindowsFormsApplication4
 
             textBox_login.Text = "";
             textBox_password.Text = "";
-            
+
             List<String> artsList = SQLClass.Select
                 ("SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE header like '%" + textBox_search.Text + "%'" +
                 " OR category like '%" + textBox_search.Text + "%'" +
                 " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3");
-            
+
             int articleY = 50;
             for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
             {
@@ -217,7 +230,7 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(label1);
 
-                
+
                 PictureBox image1 = new PictureBox();
                 image1.Location = new Point(0, articleY + 25);
                 image1.Size = new Size(Centr_panel.Width, 150);
@@ -225,7 +238,7 @@ namespace WindowsFormsApplication4
                 image1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 String[] chasti_stroki = artsList[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
-                
+
 
                 try
                 {
@@ -244,7 +257,7 @@ namespace WindowsFormsApplication4
                         image1.Image = new Bitmap("defolt_statiy.jpg");
                     }
                 }
-                    
+
                 //image1.Click += new System.EventHandler(ArticleClick);
                 Centr_panel.Controls.Add(image1);
 
@@ -253,7 +266,7 @@ namespace WindowsFormsApplication4
                 articleY += 180;
             }
         }
-        
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration form = new Registration();
@@ -288,7 +301,7 @@ namespace WindowsFormsApplication4
 
         private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CategoriesForm form3 =new CategoriesForm(false);
+            CategoriesForm form3 = new CategoriesForm(false);
             form3.ShowDialog();
         }
 
@@ -310,29 +323,37 @@ namespace WindowsFormsApplication4
         {
             SQLClass.CloseConnection();
         }
-        
-        
+
+
         private void button_login_Click(object sender, EventArgs e)
         {
+            Users.CURRENT_USER = textBox_login.Text;
             List<String> AuthorLoginData = SQLClass.Select
-                ("SELECT COUNT(*) FROM " +Tables.AUTHORS + 
-                " WHERE UserName = '" + textBox_login.Text + "'");
+                ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
+                " WHERE UserName = '" + textBox_login.Text + "'" +
+                " AND UserName IN (SELECT Login FROM " + Tables.POLZOVATELI +
+                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "')");
 
-            bool author = (AuthorLoginData.Count > 0);
+            List<String> Polzovatel = SQLClass.Select
+                ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
+                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "'");
 
-            if (author)
+            if (AuthorLoginData[0] != "0")
             {
                 Users.CURRENT_USER = textBox_login.Text;
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
                 Form1_Load(sender, e);
             }
-               
-            else
+            else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
             {
-                To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
                 Form1_Load(sender, e);
             }
+            else if (Polzovatel[0] != "0")
+            {
+                Form1_Load(sender, e);
+            }
+            else MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -342,7 +363,7 @@ namespace WindowsFormsApplication4
                 button_login_Click(sender, null);
             }
         }
-        
+
         private void reclama_Click(object sender, EventArgs e)
         {
 
@@ -355,7 +376,7 @@ namespace WindowsFormsApplication4
 
         private void butto_search_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void textBox_search_KeyDown(object sender, KeyEventArgs e)
@@ -363,6 +384,40 @@ namespace WindowsFormsApplication4
             if (e.KeyCode == Keys.Enter)
             {
                 butto_search_Click(sender, null);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowColor = true;
+            fontDialog1.Font = popularArticlesLabel.Font;
+            fontDialog1.Color = popularArticlesLabel.ForeColor;
+
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                ColorDialog MyDialog = new ColorDialog
+                {
+                    AllowFullOpen = false,
+                    ShowHelp = true,
+                    Color = popularArticlesLabel.ForeColor
+                };
+
+                if (MyDialog.ShowDialog() == DialogResult.OK)
+                {
+                    popularArticlesLabel.ForeColor = MyDialog.Color;
+                }
+
+                popularArticlesLabel.Font = fontDialog1.Font;
+                // textBox2.Font = fontDialog1.Font;
+                button1.Font = fontDialog1.Font;
+                //button2.Font = fontDialog1.Font;
+                //button3.Font = fontDialog1.Font;
+
+                popularArticlesLabel.ForeColor = fontDialog1.Color;
+                //textBox2.ForeColor = fontDialog1.Color;
+                button1.ForeColor = fontDialog1.Color;
+                /*  button2.ForeColor = fontDialog1.Color;
+                  button3.ForeColor = fontDialog1.Color;*/
             }
         }
     }
