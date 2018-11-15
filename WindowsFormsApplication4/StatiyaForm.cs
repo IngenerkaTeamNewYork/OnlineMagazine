@@ -167,5 +167,10 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void Authortext_Click(object sender, EventArgs e)
+        {
+
+        }
      }
 }
