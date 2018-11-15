@@ -47,6 +47,7 @@ namespace WindowsFormsApplication4
             this.label_popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.Centr_panel = new System.Windows.Forms.Panel();
+            this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -183,6 +184,7 @@ namespace WindowsFormsApplication4
             this.reclama3.Size = new System.Drawing.Size(172, 114);
             this.reclama3.TabIndex = 5;
             this.reclama3.TabStop = false;
+            this.reclama3.Click += new System.EventHandler(this.reclama3_Click);
             // 
             // reclama2
             // 
@@ -256,6 +258,7 @@ namespace WindowsFormsApplication4
             // Centr_panel
             // 
             this.Centr_panel.AutoScroll = true;
+            this.Centr_panel.Controls.Add(this.dalee);
             this.Centr_panel.Controls.Add(this.popularArticlesLabel);
             this.Centr_panel.Location = new System.Drawing.Point(232, 36);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
@@ -263,6 +266,17 @@ namespace WindowsFormsApplication4
             this.Centr_panel.Size = new System.Drawing.Size(314, 540);
             this.Centr_panel.TabIndex = 6;
             this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
+            // 
+            // dalee
+            // 
+            this.dalee.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dalee.Location = new System.Drawing.Point(0, 517);
+            this.dalee.Name = "dalee";
+            this.dalee.Size = new System.Drawing.Size(314, 23);
+            this.dalee.TabIndex = 1;
+            this.dalee.Text = "+ 3 статьи";
+            this.dalee.UseVisualStyleBackColor = true;
+            this.dalee.Click += new System.EventHandler(this.dalee_Click);
             // 
             // popularArticlesLabel
             // 
@@ -349,5 +363,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Label lable_name_of_polzovatel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button dalee;
     }
 }
