@@ -59,7 +59,7 @@ namespace WindowsFormsApplication4
 
         }
 
-        public List_of_author(List<AuthorStat> writers)
+        public List_of_author()
         {
             InitializeComponent();
             sdfsdf(panel1);

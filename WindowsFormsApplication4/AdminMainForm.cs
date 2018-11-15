@@ -154,7 +154,7 @@ namespace WindowsFormsApplication4
 
         private void button_author_Click_1(object sender, EventArgs e)
         {
-            List_of_author form = new List_of_author(writer);
+            List_of_author form = new List_of_author();
             form.ShowDialog();
         }
 

@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics
-using System.Drawing;;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -79,37 +79,55 @@ namespace WindowsFormsApplication4
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-            List<String> artsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 7");
-
-            int catY = 200;
-
-
-            for (int artIndex = 0; artIndex < artsList.Count; artIndex ++)
-            {
-                Label label1 = new Label();
-                label1.Location = new Point(0, catY);
-                label1.Size = new Size(100, 20);
-                label1.Text = artsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(label2_Click);
-                Right_panel.Controls.Add(label1);
-                catY += 30;
-            }
-            //arts.Add(label1);
-
-            Centr_panel.Controls.Clear();
-            Centr_panel.Controls.Add(popularArticlesLabel);
+            Right_panel.Controls.Clear();
+            Right_panel.Controls.Add(button_add_reklama);
+            Right_panel.Controls.Add(button1);            
+                
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
-
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
                 Right_panel.Controls.Add(lable_name_of_polzovatel);
             }
 
-            textBox_login.Text = "";
-            textBox_password.Text = "";
+            #region Обновление списка категорий
+            Right_panel.Controls.Add(label_cats_header);
+            Right_panel.Controls.Add(categories_linklabel);
+
+            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 7");
+
+            int catY = 210;
+            for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
+            {
+                Label label1 = new Label();
+                label1.Location = new Point(0, catY);
+                label1.Size = new Size(100, 20);
+                label1.Text = catsList[artIndex].ToString();
+                label1.Click += new System.EventHandler(Author_Or_Category_CLick);
+                Right_panel.Controls.Add(label1);
+                catY += 28;
+            }
+            #endregion
+
+            #region Обновление списка авторов
+
+            Right_panel.Controls.Add(label_Author_header);
+            Right_panel.Controls.Add(label_author);
+
+            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, 3");
+
+            int authorsY = 75;
+            for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
+            {
+                Label label1 = new Label();
+                label1.Location = new Point(0, authorsY);
+                label1.Size = new Size(100, 20);
+                label1.Text = authorsList[artIndex].ToString();
+                label1.Click += new System.EventHandler(Author_Or_Category_CLick);
+                Right_panel.Controls.Add(label1);
+                authorsY += 25;
+            }
+            #endregion
 
             #region Advertising
 
@@ -130,11 +148,29 @@ namespace WindowsFormsApplication4
             reclama3.Tag = s[1];
             #endregion
 
-            List<String> PopularArticles = SQLClass.Select(
-                "SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 LIMIT 0, 3");
+            textBox_search.Text = "";
+            butto_search_Click(sender, e);
 
-            int articleY = 50;
+
+            textBox_search.Text = "Поиск";
+        }    
+
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
+            Centr_panel.Controls.Clear();
+
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+            
+            List<String> PopularArticles = SQLClass.Select
+                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE new = 0 AND (header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%') LIMIT 0, 3");
+            
+            int articleY = 10;
+
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
                 #region Article header
@@ -169,6 +205,7 @@ namespace WindowsFormsApplication4
 
                 StatiyaForm.GetStata(likesLabel, dislikesLabel, label1.Text);
                 #endregion
+
                 //Video
                 if (PopularArticles[artIndex + 1].ToString().Contains("www.youtube.com"))
                 {
@@ -183,6 +220,7 @@ namespace WindowsFormsApplication4
 
                     WebBrowser web = new WebBrowser();
                     web.TabIndex = 1;
+                    web.ScrollBarsEnabled = false;
                     web.Dock = DockStyle.Top;
                     web.DocumentText = string.Format(embed, url);
                     web.Location = new Point(0, articleY + 25);
@@ -220,83 +258,17 @@ namespace WindowsFormsApplication4
                         }
                     }
 
-                    Centr_panel.Controls.Add(artImage);                
+                    Centr_panel.Controls.Add(artImage);
                     piccc.Add(artImage);
-                }                
-                
+                }
+
                 arts.Add(label1);
                 articleY += 180;
             }
-            Centr_panel.Controls.Add(popularArticlesLabel);
-            Centr_panel.Controls.Add(dalee);
-        }    
 
-
-        private void butto_search_Click(object sender, EventArgs e)
-        {
-            Centr_panel.Controls.Clear();
-
-            textBox_login.Text = "";
-            textBox_password.Text = "";
-            
-            List<String> artsList = SQLClass.Select
-                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 7");
-            
-            int articleY = 50;
-
-            for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
-            {
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(0, articleY);
-                label1.Size = new Size(Centr_panel.Width, 20);
-                label1.Text = artsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(label1);
-
-
-                
-                PictureBox image1 = new PictureBox();
-                image1.Location = new Point(0, articleY + 25);
-                image1.Size = new Size(Centr_panel.Width, 150);
-                image1.Click += new System.EventHandler(clik_na_pic);
-                image1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                String[] chasti_stroki = artsList[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
-                
-
-                try
-                {
-                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        Uri uri = new Uri(artsList[artIndex + 1].ToString());
-                        image1.Load(artsList[artIndex + 1].ToString());
-                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-                    }
-                    catch (Exception)
-                    {
-                        image1.Image = new Bitmap("defolt_statiy.jpg");
-                    }
-                }
-                    
-                //image1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(image1);
-
-                piccc.Add(image1);
-                arts.Add(label1);
-                articleY += 180;
-            }
-            Centr_panel.Controls.Add(popularArticlesLabel);
-            Centr_panel.Controls.Add(popularArticlesLabel);
             Centr_panel.Controls.Add(dalee);
         }
-        
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration form = new Registration();
@@ -305,27 +277,7 @@ namespace WindowsFormsApplication4
 
         private void label_author_Click(object sender, EventArgs e)
         {
-            AuthorStat newAuthor = new AuthorStat();
-            newAuthor.name = "1";
-            newAuthor.Views = 58;
-            newAuthor.Likes = 15;
-            newAuthor.DisLikes = 2;
-            stat.Add(newAuthor);
-
-            AuthorStat newAuthor2 = new AuthorStat();
-            newAuthor2.name = "2";
-            newAuthor2.Views = 46;
-            newAuthor2.Likes = 95;
-            newAuthor2.DisLikes = 4;
-            stat.Add(newAuthor2);
-
-            AuthorStat newAuthor3 = new AuthorStat();
-            newAuthor3.name = "3";
-            newAuthor3.Views = 984;
-            newAuthor3.Likes = 65;
-            newAuthor3.DisLikes = 14;
-            stat.Add(newAuthor3);
-            List_of_author form2 = new List_of_author(stat);
+            List_of_author form2 = new List_of_author();
             form2.ShowDialog();
         }
 
@@ -346,32 +298,18 @@ namespace WindowsFormsApplication4
             SQLClass.CloseConnection();
         }
         
-        
+        /// <summary>
+        /// Функция клика на рекламу
+        /// </summary>
         private void reclama_Click(object sender, EventArgs e)
         {
             try
             {
-                System.Diagnostics.Process.Start(reclama.Tag.ToString()); 
+                Process.Start(((PictureBox)sender).Tag.ToString()); 
             }
             catch (Exception)
             { 
-                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
-            }
-        }
-        
-        private void Реклама2_Click(object sender, EventArgs e)
-        {
-            Label newLab = new Label();
-            newLab.Location = new Point(30, 500);
-            newLab.Text = "sdgdfg";
-            Centr_panel.Controls.Add(newLab);
-            try
-            {
-                System.Diagnostics.Process.Start(reclama2.Tag.ToString()); 
-            }
-            catch (Exception)
-            { 
-                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
+                Process.Start("https://www.yandex.ru"); 
             }
         }
         
@@ -435,22 +373,28 @@ namespace WindowsFormsApplication4
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// КЛик на автора / категорию
+        /// </summary>
+        private void Author_Or_Category_CLick(object sender, EventArgs e)
         {
             textBox_search.Text = ((Label)sender).Text;
             butto_search_Click(sender, e);
         }
 
 
-        
+
 
 
         private void dalee_Click(object sender, EventArgs e)
         {
             kolvo_nazatiy++;
-            List<String> PopularArticles = SQLClass.Select(
-                "SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3");
+            List<String> PopularArticles =
+                SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE new = 0 AND (header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%') "+
+                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3");
 
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
@@ -493,8 +437,7 @@ namespace WindowsFormsApplication4
                     String url = PopularArticles[artIndex + 1].ToString().Replace("watch?v=", "embed/");
 
                     String embed = "<html><head>" +
-                        "<meta http-equiv=
-                        "X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
                         "</head><body>" +
                         "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
                         "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
@@ -548,67 +491,6 @@ namespace WindowsFormsApplication4
             }
         }
 
-        private void butto_search_Click(object sender, EventArgs e)
-        {
-            Centr_panel.Controls.Clear();
-            Centr_panel.Controls.Add(popularArticlesLabel);
-
-            textBox_login.Text = "";
-            textBox_password.Text = "";
-
-            List<String> artsList = SQLClass.Select
-                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3");
-
-            int articleY = 50;
-            for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
-            {
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(0, articleY);
-                label1.Size = new Size(Centr_panel.Width, 20);
-                label1.Text = artsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(label1);
-
-
-                PictureBox image1 = new PictureBox();
-                image1.Location = new Point(0, articleY + 25);
-                image1.Size = new Size(Centr_panel.Width, 150);
-                image1.Click += new System.EventHandler(clik_na_pic);
-                image1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                String[] chasti_stroki = artsList[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
-
-
-                try
-                {
-                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        Uri uri = new Uri(artsList[artIndex + 1].ToString());
-                        image1.Load(artsList[artIndex + 1].ToString());
-                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-                    }
-                    catch (Exception)
-                    {
-                        image1.Image = new Bitmap("defolt_statiy.jpg");
-                    }
-                }
-
-                //image1.Click += new System.EventHandler(ArticleClick);
-                Centr_panel.Controls.Add(image1);
-
-                piccc.Add(image1);
-                arts.Add(label1);
-                articleY += 180;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowColor = true;
@@ -640,18 +522,6 @@ namespace WindowsFormsApplication4
                 button1.ForeColor = fontDialog1.Color;
                 /*  button2.ForeColor = fontDialog1.Color;
                   button3.ForeColor = fontDialog1.Color;*/
-            }
-        }
-
-        private void reclama3_Click(object sender, EventArgs e)
-        {
-            try
-            { 
-                System.Diagnostics.Process.Start(reclama3.Tag.ToString()); 
-            }
-            catch (Exception)
-            { 
-                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
             }
         }
     }
