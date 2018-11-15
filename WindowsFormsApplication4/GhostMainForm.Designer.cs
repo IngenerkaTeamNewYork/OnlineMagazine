@@ -1,3 +1,4 @@
+
 namespace WindowsFormsApplication4
 {
     partial class GhostMainForm
@@ -42,32 +43,37 @@ namespace WindowsFormsApplication4
             this.reclama2 = new System.Windows.Forms.PictureBox();
             this.reclama = new System.Windows.Forms.PictureBox();
             this.Right_panel = new System.Windows.Forms.Panel();
+            this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.button_add_reklama = new System.Windows.Forms.Button();
             this.label_popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.Centr_panel = new System.Windows.Forms.Panel();
+            this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Left_panel.SuspendLayout();
-            this.authorizationTableLayoutPanel.SuspendLayout();
+            this.authorizationTableLayoutPanel.SuspendLayout();          
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reclama2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             this.SuspendLayout();
+
             // 
             // categories_linklabel
             // 
             this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(11, 377);
+            this.categories_linklabel.Location = new System.Drawing.Point(25, 121);
             this.categories_linklabel.Name = "categories_linklabel";
-            this.categories_linklabel.Size = new System.Drawing.Size(80, 13);
+            this.categories_linklabel.Size = new System.Drawing.Size(60, 13);
             this.categories_linklabel.TabIndex = 4;
             this.categories_linklabel.TabStop = true;
-            this.categories_linklabel.Text = "Смотреть еще";
+            this.categories_linklabel.Text = "Категории";
             this.categories_linklabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.categories_linklabel_LinkClicked);
             // 
             // butto_search
@@ -182,6 +188,7 @@ namespace WindowsFormsApplication4
             this.reclama3.Size = new System.Drawing.Size(172, 114);
             this.reclama3.TabIndex = 5;
             this.reclama3.TabStop = false;
+            this.reclama3.Click += new System.EventHandler(this.reclama3_Click);
             // 
             // reclama2
             // 
@@ -200,19 +207,51 @@ namespace WindowsFormsApplication4
             this.reclama.TabIndex = 2;
             this.reclama.TabStop = false;
             this.reclama.Click += new System.EventHandler(this.reclama_Click);
+          
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 174);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Категории";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(117, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Животные";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.label2);
-            this.Right_panel.Controls.Add(this.label1);
+            this.Right_panel.Controls.Add(this.button1);
+            this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
             this.Right_panel.Controls.Add(this.button_add_reklama);
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_popular);
             this.Right_panel.Controls.Add(this.label_author);
+            this.Right_panel.Controls.Add(this.label1);
+            this.Right_panel.Controls.Add(this.label2);
             this.Right_panel.Location = new System.Drawing.Point(548, 10);
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 567);
             this.Right_panel.TabIndex = 5;
+            // 
+            // lable_name_of_polzovatel
+            // 
+            this.lable_name_of_polzovatel.AutoSize = true;
+            this.lable_name_of_polzovatel.Location = new System.Drawing.Point(4, 9);
+            this.lable_name_of_polzovatel.Name = "lable_name_of_polzovatel";
+            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(35, 13);
+            this.lable_name_of_polzovatel.TabIndex = 6;
+            this.lable_name_of_polzovatel.Text = "label1";
             // 
             // button_add_reklama
             // 
@@ -232,12 +271,11 @@ namespace WindowsFormsApplication4
             this.label_popular.Size = new System.Drawing.Size(68, 13);
             this.label_popular.TabIndex = 3;
             this.label_popular.Text = "Популярное";
-            this.label_popular.Click += new System.EventHandler(this.label_popular_Click);
             // 
             // label_author
             // 
             this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(1, 400);
+            this.label_author.Location = new System.Drawing.Point(22, 147);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(45, 13);
             this.label_author.TabIndex = 2;
@@ -247,6 +285,7 @@ namespace WindowsFormsApplication4
             // Centr_panel
             // 
             this.Centr_panel.AutoScroll = true;
+            this.Centr_panel.Controls.Add(this.dalee);
             this.Centr_panel.Controls.Add(this.popularArticlesLabel);
             this.Centr_panel.Location = new System.Drawing.Point(232, 36);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
@@ -254,6 +293,17 @@ namespace WindowsFormsApplication4
             this.Centr_panel.Size = new System.Drawing.Size(314, 540);
             this.Centr_panel.TabIndex = 6;
             this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
+            // 
+            // dalee
+            // 
+            this.dalee.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dalee.Location = new System.Drawing.Point(0, 517);
+            this.dalee.Name = "dalee";
+            this.dalee.Size = new System.Drawing.Size(314, 23);
+            this.dalee.TabIndex = 1;
+            this.dalee.Text = "+ 3 статьи";
+            this.dalee.UseVisualStyleBackColor = true;
+            this.dalee.Click += new System.EventHandler(this.dalee_Click);
             // 
             // popularArticlesLabel
             // 
@@ -276,24 +326,15 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 174);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Категории";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Животные";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.button1.Location = new System.Drawing.Point(103, 534);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GhostMainForm
             // 
@@ -321,9 +362,8 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
+      
         #endregion
 
         private System.Windows.Forms.Button butto_search;
@@ -346,6 +386,10 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label popularArticlesLabel;
+        private System.Windows.Forms.Label lable_name_of_polzovatel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button dalee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

@@ -22,9 +22,12 @@ namespace WindowsFormsApplication4
         /// <summary>
         /// Случайная реклама
         /// </summary>
-        public static String GetRandom()
+        public static List<String> GetRandom()
         {
+            List<String> pics = new List<String>();
+
             String reklPic = "https://i.imgur.com/eQ4wEpO.gif";
+            String ss = "https://i.imgur.com/eQ4wEpO.gif";
             Random rnd = new Random();
 
             List<String> reklPics = SQLClass.Select(
@@ -33,15 +36,23 @@ namespace WindowsFormsApplication4
                 " AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now()" +
                 " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now()");
 
+            List<String> ssData = SQLClass.Select(
+                "SELECT text FROM " + Tables.ADVERTISMENT + 
+                " WHERE pic != ''" +
+                " AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now()" +
+                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now()");
+
             int v = rnd.Next(1, reklPics.Count);
             if (reklPics[v-1] != "")
             {
+                ss = ss[v].ToString();
                 reklPic = reklPics[v].ToString();
             }
-                
-          
-            return reklPic;
-            
+
+            pics.Add(reklPic);
+            pics.Add(ss);
+
+            return pics;            
         }
     }
 }

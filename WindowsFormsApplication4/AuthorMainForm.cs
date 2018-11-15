@@ -138,10 +138,15 @@ namespace WindowsFormsApplication4
             //FIXME!!! Show region
             #region Advertising
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.LoadAsync(Advertising.GetRandom());
+            List<string> s = Advertising.GetRandom();
+            pictureBox1.LoadAsync(s[0]);
+            pictureBox1.Tag = s[1];
 
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.LoadAsync(Advertising.GetRandom());
+            s = Advertising.GetRandom();
+            pictureBox2.LoadAsync(s[0]);
+            pictureBox2.Tag = s[1];
+
             #endregion
         }
 
