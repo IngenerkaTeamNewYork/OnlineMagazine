@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Diagnostics
+using System.Drawing;;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +50,7 @@ namespace WindowsFormsApplication4
                 uy++;
             }*/
         }
-
+        
         private void ArticleClick(object sender, EventArgs e)
         {
             foreach (LinkLabel lab in arts)
@@ -73,11 +75,19 @@ namespace WindowsFormsApplication4
                     OknoStatiya.ShowDialog();
                 }
             }
-        }  
-      
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
+            Centr_panel.Controls.Add(popularArticlesLabel);
+            lable_name_of_polzovatel.Text = Users.CURRENT_USER;
+
+            if (lable_name_of_polzovatel.Text != "NONAME")
+            {
+                lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
+                Right_panel.Controls.Add(lable_name_of_polzovatel);
+            }
 
             textBox_login.Text = "";
             textBox_password.Text = "";
@@ -100,12 +110,12 @@ namespace WindowsFormsApplication4
             reclama3.LoadAsync(s[0]);
             reclama3.Tag = s[1];
             #endregion
-            
+
             List<String> PopularArticles = SQLClass.Select(
-                "SELECT Header, Picture FROM " + Tables.ARTICLES + 
+                "SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE new = 0 LIMIT 0, 3");
 
-            articleY = 50;
+            int articleY = 50;
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
                 #region Article header
@@ -140,7 +150,6 @@ namespace WindowsFormsApplication4
 
                 StatiyaForm.GetStata(likesLabel, dislikesLabel, label1.Text);
                 #endregion
-
                 //Video
                 if (PopularArticles[artIndex + 1].ToString().Contains("www.youtube.com"))
                 {
@@ -207,7 +216,6 @@ namespace WindowsFormsApplication4
         {
             Centr_panel.Controls.Clear();
 
-
             textBox_login.Text = "";
             textBox_password.Text = "";
             
@@ -263,6 +271,8 @@ namespace WindowsFormsApplication4
                 articleY += 180;
             }
             Centr_panel.Controls.Add(popularArticlesLabel);
+            Centr_panel.Controls.Add(popularArticlesLabel);
+            Centr_panel.Controls.Add(dalee);
         }
         
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -299,7 +309,7 @@ namespace WindowsFormsApplication4
 
         private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CategoriesForm form3 =new CategoriesForm(false);
+            CategoriesForm form3 = new CategoriesForm(false);
             form3.ShowDialog();
         }
 
@@ -309,6 +319,24 @@ namespace WindowsFormsApplication4
             form.ShowDialog();
         }
 
+        private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SQLClass.CloseConnection();
+        }
+        
+        
+        private void reclama_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(reclama.Tag.ToString()); 
+            }
+            catch (Exception)
+            { 
+                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
+            }
+        }
+        
         private void Реклама2_Click(object sender, EventArgs e)
         {
             Label newLab = new Label();
@@ -316,38 +344,44 @@ namespace WindowsFormsApplication4
             newLab.Text = "sdgdfg";
             Centr_panel.Controls.Add(newLab);
             try
-            { System.Diagnostics.Process.Start(reclama2.Tag.ToString()); }
+            {
+                System.Diagnostics.Process.Start(reclama2.Tag.ToString()); 
+            }
             catch (Exception)
-            { System.Diagnostics.Process.Start("https://www.yandex.ru"); }
+            { 
+                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
+            }
         }
-
-        private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            SQLClass.CloseConnection();
-        }
-        
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            Users.CURRENT_USER = textBox_login.Text;
             List<String> AuthorLoginData = SQLClass.Select
-                ("SELECT COUNT(*) FROM " +Tables.AUTHORS + 
-                " WHERE UserName = '" + textBox_login.Text + "'");
+                ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
+                " WHERE UserName = '" + textBox_login.Text + "'" +
+                " AND UserName IN (SELECT Login FROM " + Tables.POLZOVATELI +
+                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "')");
 
-            bool author = (AuthorLoginData[0] != "0");
+            List<String> Polzovatel = SQLClass.Select
+                ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
+                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "'");
 
-            if (author)
+            if (AuthorLoginData[0] != "0")
             {
                 Users.CURRENT_USER = textBox_login.Text;
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
                 Form1_Load(sender, e);
             }
-               
-            else
+            else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
             {
-                To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
                 Form1_Load(sender, e);
             }
+            else if (Polzovatel[0] != "0")
+            {
+                Form1_Load(sender, e);
+            }
+            else MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -358,14 +392,6 @@ namespace WindowsFormsApplication4
             }
         }
         
-        private void reclama_Click(object sender, EventArgs e)
-        {
-            try
-            { System.Diagnostics.Process.Start(reclama.Tag.ToString());}
-            catch (Exception)
-            { System.Diagnostics.Process.Start("https://www.yandex.ru");}
-        }
-
         private void Centr_panel_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -381,6 +407,10 @@ namespace WindowsFormsApplication4
                 butto_search_Click(sender, null);
             }
         }
+
+
+        
+
 
         private void dalee_Click(object sender, EventArgs e)
         {
@@ -430,7 +460,8 @@ namespace WindowsFormsApplication4
                     String url = PopularArticles[artIndex + 1].ToString().Replace("watch?v=", "embed/");
 
                     String embed = "<html><head>" +
-                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                        "<meta http-equiv=
+                        "X-UA-Compatible\" content=\"IE=Edge\"/>" +
                         "</head><body>" +
                         "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
                         "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
@@ -482,16 +513,113 @@ namespace WindowsFormsApplication4
                 arts.Add(label1);
                 articleY += 180;
             }
+        }
+
+        private void butto_search_Click(object sender, EventArgs e)
+        {
+            Centr_panel.Controls.Clear();
             Centr_panel.Controls.Add(popularArticlesLabel);
-            Centr_panel.Controls.Add(dalee);
+
+            textBox_login.Text = "";
+            textBox_password.Text = "";
+
+            List<String> artsList = SQLClass.Select
+                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE header like '%" + textBox_search.Text + "%'" +
+                " OR category like '%" + textBox_search.Text + "%'" +
+                " OR author like '%" + textBox_search.Text + "%' LIMIT 0, 3");
+
+            int articleY = 50;
+            for (int artIndex = 0; artIndex < artsList.Count; artIndex += 2)
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(Centr_panel.Width, 20);
+                label1.Text = artsList[artIndex].ToString();
+                label1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(label1);
+
+
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(0, articleY + 25);
+                image1.Size = new Size(Centr_panel.Width, 150);
+                image1.Click += new System.EventHandler(clik_na_pic);
+                image1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                String[] chasti_stroki = artsList[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
+
+
+                try
+                {
+                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        Uri uri = new Uri(artsList[artIndex + 1].ToString());
+                        image1.Load(artsList[artIndex + 1].ToString());
+                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                    }
+                    catch (Exception)
+                    {
+                        image1.Image = new Bitmap("defolt_statiy.jpg");
+                    }
+                }
+
+                //image1.Click += new System.EventHandler(ArticleClick);
+                Centr_panel.Controls.Add(image1);
+
+                piccc.Add(image1);
+                arts.Add(label1);
+                articleY += 180;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowColor = true;
+            fontDialog1.Font = popularArticlesLabel.Font;
+            fontDialog1.Color = popularArticlesLabel.ForeColor;
+
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                ColorDialog MyDialog = new ColorDialog
+                {
+                    AllowFullOpen = false,
+                    ShowHelp = true,
+                    Color = popularArticlesLabel.ForeColor
+                };
+
+                if (MyDialog.ShowDialog() == DialogResult.OK)
+                {
+                    popularArticlesLabel.ForeColor = MyDialog.Color;
+                }
+
+                popularArticlesLabel.Font = fontDialog1.Font;
+                // textBox2.Font = fontDialog1.Font;
+                button1.Font = fontDialog1.Font;
+                //button2.Font = fontDialog1.Font;
+                //button3.Font = fontDialog1.Font;
+
+                popularArticlesLabel.ForeColor = fontDialog1.Color;
+                //textBox2.ForeColor = fontDialog1.Color;
+                button1.ForeColor = fontDialog1.Color;
+                /*  button2.ForeColor = fontDialog1.Color;
+                  button3.ForeColor = fontDialog1.Color;*/
+            }
         }
 
         private void reclama3_Click(object sender, EventArgs e)
         {
             try
-            { System.Diagnostics.Process.Start(reclama3.Tag.ToString()); }
+            { 
+                System.Diagnostics.Process.Start(reclama3.Tag.ToString()); 
+            }
             catch (Exception)
-            { System.Diagnostics.Process.Start("https://www.yandex.ru"); }
+            { 
+                System.Diagnostics.Process.Start("https://www.yandex.ru"); 
+            }
         }
     }
 }

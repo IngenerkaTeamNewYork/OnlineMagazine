@@ -42,6 +42,7 @@ namespace WindowsFormsApplication4
             this.reclama2 = new System.Windows.Forms.PictureBox();
             this.reclama = new System.Windows.Forms.PictureBox();
             this.Right_panel = new System.Windows.Forms.Panel();
+            this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.button_add_reklama = new System.Windows.Forms.Button();
             this.label_popular = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
@@ -49,6 +50,8 @@ namespace WindowsFormsApplication4
             this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -203,6 +206,8 @@ namespace WindowsFormsApplication4
             // 
             // Right_panel
             // 
+            this.Right_panel.Controls.Add(this.button1);
+            this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
             this.Right_panel.Controls.Add(this.button_add_reklama);
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_popular);
@@ -211,6 +216,15 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 567);
             this.Right_panel.TabIndex = 5;
+            // 
+            // lable_name_of_polzovatel
+            // 
+            this.lable_name_of_polzovatel.AutoSize = true;
+            this.lable_name_of_polzovatel.Location = new System.Drawing.Point(4, 9);
+            this.lable_name_of_polzovatel.Name = "lable_name_of_polzovatel";
+            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(35, 13);
+            this.lable_name_of_polzovatel.TabIndex = 6;
+            this.lable_name_of_polzovatel.Text = "label1";
             // 
             // button_add_reklama
             // 
@@ -285,6 +299,16 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(103, 534);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +360,9 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.TextBox textBox_password;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label popularArticlesLabel;
+        private System.Windows.Forms.Label lable_name_of_polzovatel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button dalee;
     }
 }

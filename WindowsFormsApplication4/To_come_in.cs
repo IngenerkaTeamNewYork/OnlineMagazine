@@ -28,7 +28,7 @@ namespace WindowsFormsApplication4
         /// <summary>
         /// Вход в систему под админом
         /// </summary>
-        public static void LogIntoAdminZone(String Login, String Password)
+        public static bool LogIntoAdminZone(String Login, String Password)
         {
             //Проверка на администратора
             List<String> isAdminData = SQLClass.Select(
@@ -46,12 +46,16 @@ namespace WindowsFormsApplication4
                 {
                     Form ifrm = new AdminMainForm();
                     ifrm.ShowDialog();
+                    return true;
                 }
+
                 else
                 {
                     MessageBox.Show("password");
                 }
             }
+
+            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,6 +69,11 @@ namespace WindowsFormsApplication4
             {
                 button1_Click(sender, null);
             }
+        }
+
+        private void To_come_in_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
