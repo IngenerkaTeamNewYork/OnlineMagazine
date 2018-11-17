@@ -64,11 +64,10 @@
             this.Kategoriatext.Dock = System.Windows.Forms.DockStyle.Top;
             this.Kategoriatext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Kategoriatext.Location = new System.Drawing.Point(0, 0);
-            this.Kategoriatext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Kategoriatext.MaximumSize = new System.Drawing.Size(133, 37);
-            this.Kategoriatext.MinimumSize = new System.Drawing.Size(93, 37);
+            this.Kategoriatext.MaximumSize = new System.Drawing.Size(100, 30);
+            this.Kategoriatext.MinimumSize = new System.Drawing.Size(70, 30);
             this.Kategoriatext.Name = "Kategoriatext";
-            this.Kategoriatext.Size = new System.Drawing.Size(131, 37);
+            this.Kategoriatext.Size = new System.Drawing.Size(99, 30);
             this.Kategoriatext.TabIndex = 1;
             this.Kategoriatext.Text = "Kategoriatext";
             this.Kategoriatext.Click += new System.EventHandler(this.Kategoriatext_Click);
@@ -76,10 +75,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 127);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 103);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(534, 291);
+            this.pictureBox1.Size = new System.Drawing.Size(401, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -93,11 +91,10 @@
             this.mainTableLayoutPanel.Controls.Add(this.artTableLayoutPanel, 1, 0);
             this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
             this.mainTableLayoutPanel.RowCount = 1;
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.mainTableLayoutPanel.Size = new System.Drawing.Size(733, 779);
+            this.mainTableLayoutPanel.Size = new System.Drawing.Size(550, 633);
             this.mainTableLayoutPanel.TabIndex = 10;
             // 
             // panel1
@@ -107,19 +104,17 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.labelreklama);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 771);
+            this.panel1.Size = new System.Drawing.Size(131, 627);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 319);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 259);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(175, 452);
+            this.pictureBox3.Size = new System.Drawing.Size(131, 368);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
@@ -127,19 +122,17 @@
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 319);
+            this.pictureBox2.Size = new System.Drawing.Size(131, 259);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // labelreklama
             // 
             this.labelreklama.AutoSize = true;
-            this.labelreklama.Location = new System.Drawing.Point(-4, 241);
-            this.labelreklama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelreklama.Location = new System.Drawing.Point(-3, 196);
             this.labelreklama.Name = "labelreklama";
-            this.labelreklama.Size = new System.Drawing.Size(189, 17);
+            this.labelreklama.Size = new System.Drawing.Size(146, 13);
             this.labelreklama.TabIndex = 0;
             this.labelreklama.Text = "Сдеся Будет ваша реклама";
             // 
@@ -147,21 +140,20 @@
             // 
             this.artTableLayoutPanel.ColumnCount = 1;
             this.artTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.artTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.artTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.artTableLayoutPanel.Controls.Add(this.Stattext, 0, 2);
             this.artTableLayoutPanel.Controls.Add(this.pictureBox1, 0, 1);
             this.artTableLayoutPanel.Controls.Add(this.HeaderPanel, 0, 0);
             this.artTableLayoutPanel.Controls.Add(this.likesPanel, 0, 3);
             this.artTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.artTableLayoutPanel.Location = new System.Drawing.Point(187, 4);
-            this.artTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.artTableLayoutPanel.Location = new System.Drawing.Point(140, 3);
             this.artTableLayoutPanel.Name = "artTableLayoutPanel";
             this.artTableLayoutPanel.RowCount = 4;
-            this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.artTableLayoutPanel.Size = new System.Drawing.Size(542, 771);
+            this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.artTableLayoutPanel.Size = new System.Drawing.Size(407, 627);
             this.artTableLayoutPanel.TabIndex = 1;
             // 
             // Stattext
@@ -170,12 +162,11 @@
             this.Stattext.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Stattext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Stattext.Enabled = false;
-            this.Stattext.Location = new System.Drawing.Point(4, 426);
-            this.Stattext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Stattext.Location = new System.Drawing.Point(3, 346);
             this.Stattext.Multiline = true;
             this.Stattext.Name = "Stattext";
             this.Stattext.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Stattext.Size = new System.Drawing.Size(534, 291);
+            this.Stattext.Size = new System.Drawing.Size(401, 237);
             this.Stattext.TabIndex = 7;
             // 
             // HeaderPanel
@@ -184,10 +175,9 @@
             this.HeaderPanel.Controls.Add(this.Maintext);
             this.HeaderPanel.Controls.Add(this.Kategoriatext);
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.HeaderPanel.Location = new System.Drawing.Point(5, 4);
-            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeaderPanel.Location = new System.Drawing.Point(4, 3);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(533, 115);
+            this.HeaderPanel.Size = new System.Drawing.Size(400, 94);
             this.HeaderPanel.TabIndex = 5;
             // 
             // Authortext
@@ -195,10 +185,9 @@
             this.Authortext.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Authortext.AutoSize = true;
             this.Authortext.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            this.Authortext.Location = new System.Drawing.Point(267, -1);
-            this.Authortext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Authortext.Location = new System.Drawing.Point(200, 0);
             this.Authortext.Name = "Authortext";
-            this.Authortext.Size = new System.Drawing.Size(110, 25);
+            this.Authortext.Size = new System.Drawing.Size(86, 19);
             this.Authortext.TabIndex = 3;
             this.Authortext.Text = "Authortext";
             this.Authortext.Click += new System.EventHandler(this.Authortext_Click);
@@ -210,11 +199,10 @@
             this.Maintext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Maintext.Enabled = false;
             this.Maintext.Font = new System.Drawing.Font("Bauhaus 93", 18F, System.Drawing.FontStyle.Bold);
-            this.Maintext.Location = new System.Drawing.Point(0, 37);
-            this.Maintext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Maintext.Location = new System.Drawing.Point(0, 30);
             this.Maintext.Multiline = true;
             this.Maintext.Name = "Maintext";
-            this.Maintext.Size = new System.Drawing.Size(533, 78);
+            this.Maintext.Size = new System.Drawing.Size(400, 64);
             this.Maintext.TabIndex = 2;
             // 
             // likesPanel
@@ -223,20 +211,19 @@
             this.likesPanel.Controls.Add(this.labeldis);
             this.likesPanel.Controls.Add(this.pictureBoxDislike);
             this.likesPanel.Controls.Add(this.pictureBoxLike);
-            this.likesPanel.Location = new System.Drawing.Point(0, 721);
+            this.likesPanel.Location = new System.Drawing.Point(0, 586);
             this.likesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.likesPanel.Name = "likesPanel";
-            this.likesPanel.Size = new System.Drawing.Size(311, 50);
+            this.likesPanel.Size = new System.Drawing.Size(233, 41);
             this.likesPanel.TabIndex = 8;
             // 
             // labelLike
             // 
             this.labelLike.AutoSize = true;
             this.labelLike.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labelLike.Location = new System.Drawing.Point(37, 5);
-            this.labelLike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLike.Location = new System.Drawing.Point(28, 4);
             this.labelLike.Name = "labelLike";
-            this.labelLike.Size = new System.Drawing.Size(95, 25);
+            this.labelLike.Size = new System.Drawing.Size(72, 19);
             this.labelLike.TabIndex = 11;
             this.labelLike.Text = "labelLike";
             // 
@@ -244,20 +231,18 @@
             // 
             this.labeldis.AutoSize = true;
             this.labeldis.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            this.labeldis.Location = new System.Drawing.Point(196, 4);
-            this.labeldis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labeldis.Location = new System.Drawing.Point(147, 3);
             this.labeldis.Name = "labeldis";
-            this.labeldis.Size = new System.Drawing.Size(82, 25);
+            this.labeldis.Size = new System.Drawing.Size(62, 19);
             this.labeldis.TabIndex = 2;
             this.labeldis.Text = "labeldis";
             // 
             // pictureBoxDislike
             // 
             this.pictureBoxDislike.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
-            this.pictureBoxDislike.Location = new System.Drawing.Point(161, 4);
-            this.pictureBoxDislike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxDislike.Location = new System.Drawing.Point(121, 3);
             this.pictureBoxDislike.Name = "pictureBoxDislike";
-            this.pictureBoxDislike.Size = new System.Drawing.Size(27, 25);
+            this.pictureBoxDislike.Size = new System.Drawing.Size(20, 20);
             this.pictureBoxDislike.TabIndex = 1;
             this.pictureBoxDislike.TabStop = false;
             this.pictureBoxDislike.Click += new System.EventHandler(this.pictureBoxDislike_Click);
@@ -266,20 +251,18 @@
             // 
             this.pictureBoxLike.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLike.Image")));
             this.pictureBoxLike.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxLike.Name = "pictureBoxLike";
-            this.pictureBoxLike.Size = new System.Drawing.Size(29, 27);
+            this.pictureBoxLike.Size = new System.Drawing.Size(22, 22);
             this.pictureBoxLike.TabIndex = 0;
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
             // 
             // StatiyaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 779);
+            this.ClientSize = new System.Drawing.Size(550, 633);
             this.Controls.Add(this.mainTableLayoutPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StatiyaForm";
             this.Text = "Статья";
             this.Load += new System.EventHandler(this.StatiyaForm1_Load);
