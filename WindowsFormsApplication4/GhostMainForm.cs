@@ -10,15 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-using System.Collections.Generic;
-using System.Text;
 using System.Net;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
-{
+{ 
+
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
@@ -81,13 +80,15 @@ namespace WindowsFormsApplication4
         {
             Right_panel.Controls.Clear();
             Right_panel.Controls.Add(button_add_reklama);
-            Right_panel.Controls.Add(button1);            
+            Right_panel.Controls.Add(button1);
+            button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
                 Right_panel.Controls.Add(lable_name_of_polzovatel);
+                button_add_reklama.Visible = true;
             }
 
             #region Обновление списка категорий
@@ -494,8 +495,9 @@ namespace WindowsFormsApplication4
         private void button1_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowColor = true;
-            fontDialog1.Font = popularArticlesLabel.Font;
-            fontDialog1.Color = popularArticlesLabel.ForeColor;
+
+            fontDialog1.Font = this.Font;
+            fontDialog1.Color = this.ForeColor;
 
             if (fontDialog1.ShowDialog() != DialogResult.Cancel)
             {
@@ -511,18 +513,14 @@ namespace WindowsFormsApplication4
                     popularArticlesLabel.ForeColor = MyDialog.Color;
                 }
 
-                popularArticlesLabel.Font = fontDialog1.Font;
-                // textBox2.Font = fontDialog1.Font;
-                button1.Font = fontDialog1.Font;
-                //button2.Font = fontDialog1.Font;
-                //button3.Font = fontDialog1.Font;
-
-                popularArticlesLabel.ForeColor = fontDialog1.Color;
-                //textBox2.ForeColor = fontDialog1.Color;
-                button1.ForeColor = fontDialog1.Color;
-                /*  button2.ForeColor = fontDialog1.Color;
-                  button3.ForeColor = fontDialog1.Color;*/
+               this.Font = fontDialog1.Font;
+               this.ForeColor = MyDialog.Color;
             }
+        }
+
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
