@@ -46,6 +46,7 @@
             this.labeldis = new System.Windows.Forms.Label();
             this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
             this.pictureBoxLike = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,6 +156,7 @@
             this.artTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.artTableLayoutPanel.Size = new System.Drawing.Size(407, 627);
             this.artTableLayoutPanel.TabIndex = 1;
+            this.artTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.artTableLayoutPanel_Paint);
             // 
             // Stattext
             // 
@@ -207,14 +209,16 @@
             // 
             // likesPanel
             // 
+            this.likesPanel.Controls.Add(this.label1);
             this.likesPanel.Controls.Add(this.labelLike);
             this.likesPanel.Controls.Add(this.labeldis);
             this.likesPanel.Controls.Add(this.pictureBoxDislike);
             this.likesPanel.Controls.Add(this.pictureBoxLike);
+            this.likesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.likesPanel.Location = new System.Drawing.Point(0, 586);
             this.likesPanel.Margin = new System.Windows.Forms.Padding(0);
             this.likesPanel.Name = "likesPanel";
-            this.likesPanel.Size = new System.Drawing.Size(233, 41);
+            this.likesPanel.Size = new System.Drawing.Size(407, 41);
             this.likesPanel.TabIndex = 8;
             // 
             // labelLike
@@ -256,6 +260,15 @@
             this.pictureBoxLike.TabIndex = 0;
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(317, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
             // 
             // StatiyaForm
             // 
@@ -303,5 +316,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label labelLike;
         private System.Windows.Forms.Label labeldis;
+        private System.Windows.Forms.Label label1;
     }
 }

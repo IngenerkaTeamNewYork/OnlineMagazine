@@ -153,6 +153,14 @@ namespace WindowsFormsApplication4
             pictureBox3.LoadAsync(s[0]);
             pictureBox3.Tag = s[1];
 
+
+            List<String> countRecords = SQLClass.Select(
+                "SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE `name_of_article` = '" + Maintext.Text + "'");
+
+            label1.Text = "Просмотров: " + countRecords[0];
+
+
+
             SQLClass.Insert(
                 "INSERT INTO " + Tables.READ_OF_ARTICLES +
                 "(name_of_article, reader, dt)" +
@@ -193,6 +201,11 @@ namespace WindowsFormsApplication4
         }
 
         private void Authortext_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void artTableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
