@@ -34,19 +34,19 @@ namespace WindowsFormsApplication4
                 "SELECT pic FROM " + Tables.ADVERTISMENT + 
                 " WHERE pic != ''" +
                 " AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now()" +
-                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now()");
+                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0");
 
             List<String> ssData = SQLClass.Select(
                 "SELECT text FROM " + Tables.ADVERTISMENT + 
                 " WHERE pic != ''" +
                 " AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now()" +
-                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now()");
+                " AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0");
 
             int v = rnd.Next(1, reklPics.Count);
-            if (reklPics[v-1] != "")
+            if (reklPics[v - 1] != "" )
             {
-                ss = ss[v].ToString();
-                reklPic = reklPics[v].ToString();
+                ss = ss[v - 1].ToString();
+                reklPic = reklPics[v - 1].ToString();
             }
 
             pics.Add(reklPic);
