@@ -168,6 +168,30 @@ namespace WindowsFormsApplication4
                 "'" + Maintext.Text + "'" +
                 ", '" + Users.CURRENT_USER + "'" +
                 ", DATE_FORMAT(NOW(), '%Y-%m-%d'))");
+
+            int money = 2;
+
+            List<String> AuthorExist = SQLClass.Select("SELECT COUNT(*) FROM " + Tables.BALANCE + 
+                " WHERE AUTHOR = '" + Authortext.Text + "'");
+
+            if (AuthorExist[0] != "0")
+            {
+                SQLClass.Update(" UPDATE " + Tables.BALANCE +
+                    "SET Summa = Summa + " + money.ToString() +
+                    "WHERE Author = '" + Authortext.Text + "'");
+            }
+            else
+            {
+               SQLClass.Insert(
+                "INSERT INTO " + Tables.BALANCE +
+                "(Summa, Author)" +
+                "VALUES (" +
+                money.ToString() + ", " +
+                "'" + Authortext.Text + "')");
+
+            }
+            
+
         }
 
 
