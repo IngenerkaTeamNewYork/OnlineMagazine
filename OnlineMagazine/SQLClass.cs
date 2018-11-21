@@ -32,8 +32,9 @@ namespace WindowsFormsApplication4
             }
             catch (Exception e)
             {
-                SQLParamsForm f1 = new SQLParamsForm();
-                f1.ShowDialog();
+                OpenConnection();
+                //SQLParamsForm f1 = new SQLParamsForm();
+                //f1.ShowDialog();
             }
         }
 

@@ -272,7 +272,7 @@ namespace WindowsFormsApplication4
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Registration form = new Registration();
+            Registration form = new Registration("");
             form.ShowDialog();
         }
 
