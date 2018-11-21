@@ -28,80 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.list_Author = new System.Windows.Forms.ComboBox();
-            this.Summa = new System.Windows.Forms.TextBox();
-            this.Tenge = new System.Windows.Forms.Label();
-            this.picture_Author = new System.Windows.Forms.PictureBox();
             this.Vyuvod_Denyak = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picture_Author)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // list_Author
-            // 
-            this.list_Author.FormattingEnabled = true;
-            this.list_Author.Items.AddRange(new object[] {
-            "dfgdfg",
-            "dfgdfg4",
-            "dfgdfgrty"});
-            this.list_Author.Location = new System.Drawing.Point(16, 182);
-            this.list_Author.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.list_Author.Name = "list_Author";
-            this.list_Author.Size = new System.Drawing.Size(295, 24);
-            this.list_Author.TabIndex = 12;
-            // 
-            // Summa
-            // 
-            this.Summa.BackColor = System.Drawing.SystemColors.Control;
-            this.Summa.Location = new System.Drawing.Point(73, 316);
-            this.Summa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Summa.Name = "Summa";
-            this.Summa.Size = new System.Drawing.Size(249, 22);
-            this.Summa.TabIndex = 13;
-            // 
-            // Tenge
-            // 
-            this.Tenge.AutoSize = true;
-            this.Tenge.Location = new System.Drawing.Point(0, 320);
-            this.Tenge.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Tenge.Name = "Tenge";
-            this.Tenge.Size = new System.Drawing.Size(50, 17);
-            this.Tenge.TabIndex = 14;
-            this.Tenge.Text = "Тенге:";
-            // 
-            // picture_Author
-            // 
-            this.picture_Author.Location = new System.Drawing.Point(16, 15);
-            this.picture_Author.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.picture_Author.Name = "picture_Author";
-            this.picture_Author.Size = new System.Drawing.Size(296, 160);
-            this.picture_Author.TabIndex = 15;
-            this.picture_Author.TabStop = false;
             // 
             // Vyuvod_Denyak
             // 
-            this.Vyuvod_Denyak.Location = new System.Drawing.Point(320, 15);
-            this.Vyuvod_Denyak.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Vyuvod_Denyak.Location = new System.Drawing.Point(240, 12);
             this.Vyuvod_Denyak.Name = "Vyuvod_Denyak";
-            this.Vyuvod_Denyak.Size = new System.Drawing.Size(477, 326);
+            this.Vyuvod_Denyak.Size = new System.Drawing.Size(358, 265);
             this.Vyuvod_Denyak.TabIndex = 16;
             this.Vyuvod_Denyak.Text = "Вывести мои ДЕНЬГИ!";
             this.Vyuvod_Denyak.UseVisualStyleBackColor = true;
+            this.Vyuvod_Denyak.Click += new System.EventHandler(this.Vyuvod_Denyak_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(105, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Баланс";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Пользователь";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(105, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "label4";
             // 
             // Balance_Author
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 356);
+            this.ClientSize = new System.Drawing.Size(601, 289);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Vyuvod_Denyak);
-            this.Controls.Add(this.picture_Author);
-            this.Controls.Add(this.Tenge);
-            this.Controls.Add(this.Summa);
-            this.Controls.Add(this.list_Author);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Balance_Author";
             this.Text = "Дайте деняк";
             this.Load += new System.EventHandler(this.Balance_Author_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picture_Author)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,10 +101,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox list_Author;
-        private System.Windows.Forms.TextBox Summa;
-        private System.Windows.Forms.Label Tenge;
-        private System.Windows.Forms.PictureBox picture_Author;
         private System.Windows.Forms.Button Vyuvod_Denyak;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

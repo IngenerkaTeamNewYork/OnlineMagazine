@@ -25,6 +25,9 @@ namespace WindowsFormsApplication4
         public Users()
         {
             InitializeComponent();
+            name.Font = Configs.ZAGOLOVOK_FONT;
+            label_feel.Font = Configs.ZAGOLOVOK_FONT;
+            labelb.Font = Configs.ZAGOLOVOK_FONT;
         }
 
         private void Click(object sender, EventArgs e)

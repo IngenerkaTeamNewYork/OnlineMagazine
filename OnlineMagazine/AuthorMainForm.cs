@@ -25,6 +25,8 @@ namespace WindowsFormsApplication4
         {
             login = log;
             InitializeComponent();
+            label1.Font = Configs.ZAGOLOVOK_FONT;
+            Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -168,8 +170,13 @@ namespace WindowsFormsApplication4
 
         private void Balance_Click(object sender, EventArgs e)
         {
-            Balance_Author OknoBalance = new Balance_Author();
+            Balance_Author OknoBalance = new Balance_Author(login);
             OknoBalance.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

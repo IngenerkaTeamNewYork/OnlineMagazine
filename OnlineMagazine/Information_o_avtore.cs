@@ -30,8 +30,9 @@ namespace WindowsFormsApplication4
         {
             panel1.Controls.Clear();
             Label label1 = new Label();
-            label1.Size = new Size(1000, 13);
-            label1.Location = new Point(50, 30);
+            label1.Size = new Size(1000, 30);
+            label1.Location = new Point(50, 15);
+            label1.Font = Configs.ZAGOLOVOK_FONT;
             label1.Text = "Информация о " + name_avtor;
             panel1.Controls.Add(label1);
 

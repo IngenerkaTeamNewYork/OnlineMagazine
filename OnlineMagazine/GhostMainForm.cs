@@ -33,6 +33,10 @@ namespace WindowsFormsApplication4
         public GhostMainForm()
         {
             InitializeComponent();
+            Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
+            label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
+
+            label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
 
@@ -79,8 +83,10 @@ namespace WindowsFormsApplication4
         private void Form1_Load(object sender, EventArgs e)
         {
             Right_panel.Controls.Clear();
-            Right_panel.Controls.Add(button_add_reklama);
-            Right_panel.Controls.Add(button1);
+            //Right_panel.Controls.Add(button_add_reklama);
+            //Right_panel.Controls.Add(button1);
+
+            Right_panel.Controls.Add(tableLayoutPanel1);
             button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
