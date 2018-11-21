@@ -163,5 +163,11 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            LogsReadForm t = new LogsReadForm();
+            t.ShowDialog();
+        }
     }
 }
