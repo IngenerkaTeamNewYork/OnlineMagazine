@@ -317,7 +317,7 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_search
-            // 
+            //
             this.textBox_search.Location = new System.Drawing.Point(260, 13);
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
