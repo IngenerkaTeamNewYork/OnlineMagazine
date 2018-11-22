@@ -46,6 +46,10 @@ namespace WindowsFormsApplication4
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
 
+            Kategoriatext.Font = Configs.ZAGOLOVOK_FONT;
+
+            Authortext.Font = Configs.ZAGOLOVOK_FONT;
+
             GetStata(labelLike, labeldis, Maintext.Text);
 
             try

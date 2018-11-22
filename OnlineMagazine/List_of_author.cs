@@ -22,7 +22,7 @@ namespace WindowsFormsApplication4
             {
                 if (sender.Equals(n))
                 {
-                    Information_o_avtore.getAuthorInfo(n.Text, pic[s], Information[s], panel2);                    
+                    Information_o_avtore.getAuthorInfo(n.Text, pic[s], Information[s], panel2);
                 }
                 s++;
             }
@@ -62,6 +62,8 @@ namespace WindowsFormsApplication4
         {
             InitializeComponent();
             sdfsdf(panel1);
+            label1.Font = Configs.ZAGOLOVOK_FONT;
+            label2.Font = Configs.ZAGOLOVOK_FONT;
 
         }
 

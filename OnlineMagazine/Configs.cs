@@ -16,6 +16,8 @@ namespace WindowsFormsApplication4
         /// Текущий шрифт
         /// </summary>
         public static Font USER_FONT;
+
+        public static Font ZAGOLOVOK_FONT;
         /// <summary>
         /// Текущий цвет текста
         /// </summary>

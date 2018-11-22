@@ -54,6 +54,7 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -62,6 +63,27 @@ namespace WindowsFormsApplication4
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // authorizationTableLayoutPanel
+            // 
+            this.authorizationTableLayoutPanel.ColumnCount = 1;
+            this.authorizationTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.authorizationTableLayoutPanel.Controls.Add(this.button_login, 0, 4);
+            this.authorizationTableLayoutPanel.Controls.Add(this.label_of_login, 0, 0);
+            this.authorizationTableLayoutPanel.Controls.Add(this.textBox_login, 0, 1);
+            this.authorizationTableLayoutPanel.Controls.Add(this.label_password, 0, 2);
+            this.authorizationTableLayoutPanel.Controls.Add(this.textBox_password, 0, 3);
+            this.authorizationTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
+            this.authorizationTableLayoutPanel.RowCount = 5;
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(226, 132);
+            this.authorizationTableLayoutPanel.TabIndex = 15;          
             // 
             // categories_linklabel
             // 
@@ -381,5 +403,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Button dalee;
         private System.Windows.Forms.Label label_cats_header;
         private System.Windows.Forms.Label label_Author_header;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

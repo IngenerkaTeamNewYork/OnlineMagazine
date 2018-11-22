@@ -31,6 +31,8 @@ namespace WindowsFormsApplication4
         {
             admin = ad;
             InitializeComponent();
+            label2.Font = Configs.ZAGOLOVOK_FONT;
+            label3.Font = Configs.ZAGOLOVOK_FONT;
 
             update();            
         }
