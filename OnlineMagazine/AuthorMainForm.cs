@@ -171,5 +171,11 @@ namespace WindowsFormsApplication4
             Balance_Author OknoBalance = new Balance_Author();
             OknoBalance.ShowDialog();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Registration form = new Registration(login);
+            form.ShowDialog();
+        }
     }
 }
