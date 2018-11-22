@@ -45,6 +45,9 @@ namespace WindowsFormsApplication4
                     "" + id + "," +
                     "'" + comboBox_kategorii.Text + "'," +
                     " 1)");
+                SQLClass.Update("UPDATE " + Tables.AUTHORS +
+                    " SET Articles = Articles + 1 WHERE UserName = '" + avtor1 + "'");
+              
                 ne_povtor = textBox_Name.Text;
             }             
         }
