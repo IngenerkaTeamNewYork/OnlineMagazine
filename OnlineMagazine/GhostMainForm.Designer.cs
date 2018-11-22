@@ -54,7 +54,7 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -62,8 +62,28 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // authorizationTableLayoutPanel
+            // 
+            this.authorizationTableLayoutPanel.ColumnCount = 1;
+            this.authorizationTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.authorizationTableLayoutPanel.Controls.Add(this.button_login, 0, 4);
+            this.authorizationTableLayoutPanel.Controls.Add(this.label_of_login, 0, 0);
+            this.authorizationTableLayoutPanel.Controls.Add(this.textBox_login, 0, 1);
+            this.authorizationTableLayoutPanel.Controls.Add(this.label_password, 0, 2);
+            this.authorizationTableLayoutPanel.Controls.Add(this.textBox_password, 0, 3);
+            this.authorizationTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
+            this.authorizationTableLayoutPanel.RowCount = 5;
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(226, 132);
+            this.authorizationTableLayoutPanel.TabIndex = 15;          
             // 
             // categories_linklabel
             // 
@@ -211,9 +231,10 @@ namespace WindowsFormsApplication4
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.tableLayoutPanel1);
             this.Right_panel.Controls.Add(this.label_Author_header);
+            this.Right_panel.Controls.Add(this.button1);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
+            this.Right_panel.Controls.Add(this.button_add_reklama);
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_author);
             this.Right_panel.Controls.Add(this.label_cats_header);
@@ -236,9 +257,10 @@ namespace WindowsFormsApplication4
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 53);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 533);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 44);
+            this.button1.Size = new System.Drawing.Size(190, 46);
             this.button1.TabIndex = 7;
             this.button1.Text = "Шрифты";
             this.button1.UseVisualStyleBackColor = true;
@@ -255,9 +277,9 @@ namespace WindowsFormsApplication4
             // 
             // button_add_reklama
             // 
-            this.button_add_reklama.Location = new System.Drawing.Point(3, 3);
+            this.button_add_reklama.Location = new System.Drawing.Point(2, 456);
             this.button_add_reklama.Name = "button_add_reklama";
-            this.button_add_reklama.Size = new System.Drawing.Size(184, 42);
+            this.button_add_reklama.Size = new System.Drawing.Size(188, 42);
             this.button_add_reklama.TabIndex = 5;
             this.button_add_reklama.Text = "Предложить рекламу";
             this.button_add_reklama.UseVisualStyleBackColor = true;
@@ -317,29 +339,13 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_search
-            // 
+            //
             this.textBox_search.Location = new System.Drawing.Point(260, 13);
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button_add_reklama, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 479);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 100);
-            this.tableLayoutPanel1.TabIndex = 9;
             // 
             // GhostMainForm
             // 
@@ -366,10 +372,8 @@ namespace WindowsFormsApplication4
             this.Right_panel.ResumeLayout(false);
             this.Right_panel.PerformLayout();
             this.Centr_panel.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
       
         #endregion

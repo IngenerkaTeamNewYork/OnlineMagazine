@@ -63,6 +63,7 @@ namespace WindowsFormsApplication4
                     statiya stat = statiya.Click1(((Label)sender).Text);
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
+                    Form1_Load(sender, e);
                 }
             }
         }
@@ -76,12 +77,14 @@ namespace WindowsFormsApplication4
                     statiya stat = statiya.Click1(lab.Tag.ToString());
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
+                    Form1_Load(sender, e);
                 }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            arts.Clear();
             Right_panel.Controls.Clear();
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
@@ -133,6 +136,7 @@ namespace WindowsFormsApplication4
                 label1.Click += new System.EventHandler(Author_Or_Category_CLick);
                 Right_panel.Controls.Add(label1);
                 authorsY += 25;
+            
             }
             #endregion
 
@@ -278,20 +282,22 @@ namespace WindowsFormsApplication4
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Registration form = new Registration();
+            Registration form = new Registration("");
             form.ShowDialog();
         }
 
         private void label_author_Click(object sender, EventArgs e)
         {
             List_of_author form2 = new List_of_author();
-            form2.ShowDialog();
+            form2.ShowDialog(); 
+            Form1_Load(sender, e);
         }
 
         private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CategoriesForm form3 = new CategoriesForm(false);
-            form3.ShowDialog();
+            form3.ShowDialog(); 
+            Form1_Load(sender, e);
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -526,9 +532,6 @@ namespace WindowsFormsApplication4
             }
         }
 
-        private void Right_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+ 
     }
 }

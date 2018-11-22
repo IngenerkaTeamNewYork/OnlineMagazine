@@ -48,6 +48,7 @@
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_Balance = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1_reklama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2_reklama.SuspendLayout();
@@ -219,6 +220,7 @@
             this.leftTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.leftTableLayoutPanel.Controls.Add(this.panel1_reklama, 0, 0);
             this.leftTableLayoutPanel.Controls.Add(this.panel2_reklama, 0, 1);
+            this.leftTableLayoutPanel.Controls.Add(this.button2, 0, 2);
             this.leftTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.leftTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.leftTableLayoutPanel.Name = "leftTableLayoutPanel";
@@ -293,6 +295,16 @@
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 489);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 20);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Обновление";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // AuthorMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,5 +356,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button2;
     }
 }
