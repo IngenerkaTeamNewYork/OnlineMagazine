@@ -110,7 +110,7 @@ namespace WindowsFormsApplication4
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 423);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(329, 100);Пока
+            this.panel2.Size = new System.Drawing.Size(329, 100);
             this.panel2.TabIndex = 11;
             // 
             // button_users
@@ -179,7 +179,7 @@ namespace WindowsFormsApplication4
             this.button_new_staty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_new_staty.Location = new System.Drawing.Point(0, 0);
             this.button_new_staty.Name = "button_new_staty";
-            this.button_new_staty.Size = new System.Drawing.Size(329, 99);Как людей) В 21 веке
+            this.button_new_staty.Size = new System.Drawing.Size(329, 99);
             this.button_new_staty.TabIndex = 0;
             this.button_new_staty.Text = "Новые статьи";
             this.button_new_staty.UseVisualStyleBackColor = true;

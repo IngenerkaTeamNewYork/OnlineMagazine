@@ -21,11 +21,11 @@ namespace WindowsFormsApplication4
         {
             SQLClass.CONNECTION_STRING =
                 "SslMode=none;" +
-                "Server=db4free.net;" +
+                "Server=" + textBox3.Text + "" +
                 "database=ingenerka;" +
                 "port=3306;" +
                 "uid=" + textBox1.Text + ";" +
-                "pwd=Beavis1989;" +
+                "pwd=" + textBox2.Text + ";" +
                 "old guids=true;";
             Close();
         }
@@ -33,6 +33,19 @@ namespace WindowsFormsApplication4
         private void SQLParamsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SQLClass.OpenConnection();
+        }
+
+        private void SQLParamsForm_Load(object sender, EventArgs e)
+        {
+            String[] parts = SQLClass.CONNECTION_STRING.Split(new string[] { ";", "="}, StringSplitOptions.None);
+
+            for (int index = 0; index < parts.Length; index = index + 1)
+            {
+                if (parts[index] == "uid")
+                {
+                    textBox1.Text = parts[index + 1];
+                }
+            }
         }
     }
 }

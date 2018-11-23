@@ -39,19 +39,6 @@ namespace WindowsFormsApplication4
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
-
-            /*List<AuthorStat> writers = new List<AuthorStat>();
-            int uy = 0;
-            foreach (AuthorStat write in writers)
-            {
-                LinkLabel linklabel1 = new LinkLabel();
-                linklabel1.Size = new Size (70, 20); 
-                linklabel1.Location = new Point (50, 10 + 30*uy);
-                linklabel1.Text = write.name;
-
-                Left_panel.Controls.Add(linklabel1);
-                uy++;
-            }*/
         }
         
         private void ArticleClick(object sender, EventArgs e)
@@ -64,6 +51,7 @@ namespace WindowsFormsApplication4
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
                     Form1_Load(sender, e);
+                    break;
                 }
             }
         }
