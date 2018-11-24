@@ -45,7 +45,19 @@ namespace WindowsFormsApplication4
                 {
                     textBox1.Text = parts[index + 1];
                 }
+                
+                if (parts[index] == "pwd")
+                { 
+                    textBox2.Text = parts[index + 1]; 
+                }
+
+                if (parts[index] == "Server") 
+                {
+                    textBox3.Text = parts[index + 1];
+                }
             }
         }
+
+
     }
 }
