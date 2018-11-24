@@ -25,6 +25,7 @@ namespace WindowsFormsApplication4
 
         public static void OpenConnection()
         {
+            LogFile.WriteLine("SQLClass", "Соединяюсь с базой");
             CONN = new MySqlConnection(CONNECTION_STRING);
             try
             {
@@ -46,6 +47,7 @@ namespace WindowsFormsApplication4
 
         public static void Insert(string cmdText)
         {
+            LogFile.WriteLine("SQLClass", cmdText);
             MySqlCommand cmd = new MySqlCommand(cmdText, CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Close();
@@ -71,6 +73,7 @@ namespace WindowsFormsApplication4
         /// <returns>Результат в виде списка строк</returns>
         public static List<String> Select(string query)
         {
+            LogFile.WriteLine("SQLClass", query);
             List<String> res = new List<String>();
             MySqlCommand q = new MySqlCommand(query, CONN);
             MySqlDataReader r = q.ExecuteReader();
@@ -89,6 +92,7 @@ namespace WindowsFormsApplication4
 
         public static List<String> Select(string query, Dictionary<String, String> ParamsDict)
         {
+            LogFile.WriteLine("SQLClass", query);
             List<String> res = new List<String>();
             MySqlCommand q = new MySqlCommand(query, CONN);
 
