@@ -80,6 +80,8 @@ namespace WindowsFormsApplication4
                 mnogo_reklamy.Add(rek);
             }
             rdr.Close();
+
+            proverka();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -109,6 +111,16 @@ namespace WindowsFormsApplication4
             form1.ShowDialog();
         }
         
+         private void proverka()
+        {
+            List<String> stat = SQLClass.Select("SELECT `Header` FROM " + Tables.ARTICLES + " WHERE `new` = 1");
+            if (stat.Count > 0)
+             {
+                 button_new_staty.BackColor = Color.Red;
+                 MessageBox.Show("У вас есть новые статьи");
+             }
+            
+        }
         
         private void button_all_users_Click(object sender, EventArgs e)
         {
@@ -144,6 +156,7 @@ namespace WindowsFormsApplication4
         {
             NewPages np = new NewPages();
             np.ShowDialog();
+            proverka();
         }
 
         private void button_categories_Click_1(object sender, EventArgs e)
