@@ -129,6 +129,7 @@
     <Compile Include="List_of_author.Designer.cs">
       <DependentUpon>List_of_author.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogFile.cs" />
     <Compile Include="LogsReadForm.cs">
       <SubType>Form</SubType>
     </Compile>

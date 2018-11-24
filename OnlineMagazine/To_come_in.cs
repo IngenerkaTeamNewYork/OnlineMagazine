@@ -45,8 +45,6 @@ namespace WindowsFormsApplication4
 
                 if (loginSuccessData.Count > 0)
                 {
-                    Form ifrm = new AdminMainForm();
-                    ifrm.ShowDialog();
                     return true;
                 }
 

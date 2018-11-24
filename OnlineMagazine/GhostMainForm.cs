@@ -171,7 +171,8 @@ namespace WindowsFormsApplication4
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
             string kak = "";
-            switch (comboBox1.TabIndex)
+            //Жуков!!! Selected, а не tab
+            switch (comboBox1.SelectedIndex)
             {
                 case 0:
                     kak = "";
@@ -374,8 +375,6 @@ namespace WindowsFormsApplication4
             if (AuthorLoginData[0] != "0")
             {
                 Users.CURRENT_USER = textBox_login.Text;
-                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
-                af.ShowDialog();
                 aut = true;
                 Form1_Load(sender, e);
             }
@@ -571,6 +570,25 @@ namespace WindowsFormsApplication4
         private void Right_panel_Paint(object sender, PaintEventArgs e)
         {
 
-        } 
+        }
+
+        private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdmButton_Click(object sender, EventArgs e)
+        {
+            Form ifrm = new AdminMainForm();
+            ifrm.ShowDialog();
+            Form1_Load(sender, e);
+        }
+
+        private void AutButton_Click(object sender, EventArgs e)
+        {
+            AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
+            af.ShowDialog();
+            Form1_Load(sender, e);
+        }
     }
 }
