@@ -85,7 +85,7 @@ namespace WindowsFormsApplication4
                 }
 
                 SQLClass.Insert("INSERT INTO " + Tables.POLZOVATELI +
-                    "(`Login`, `Parol`, `ban`, `aboutme`, admin, zapas)" +
+                    "(`Login`, `Parol`, `ban`, `aboutme`, admin)" +
                     " VALUES ('" + textBox_login.Text + "'," +
                     "'" + textBox_password.Text + "'," +
                     "0" + ",'" + textBox_about_me.Text + "', 0)");

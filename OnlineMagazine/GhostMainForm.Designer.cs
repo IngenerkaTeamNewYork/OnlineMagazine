@@ -52,6 +52,10 @@ namespace WindowsFormsApplication4
             this.Centr_panel = new System.Windows.Forms.Panel();
             this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
+            this.AutButton = new System.Windows.Forms.Button();
+            this.AdmButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -165,6 +169,7 @@ namespace WindowsFormsApplication4
             // 
             // textBox_password
             // 
+            this.textBox_password.ContextMenuStrip = this.contextMenuStrip1;
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_password.Location = new System.Drawing.Point(3, 63);
             this.textBox_password.Name = "textBox_password";
@@ -345,6 +350,41 @@ namespace WindowsFormsApplication4
             this.comboBox1.Size = new System.Drawing.Size(134, 21);
             this.comboBox1.TabIndex = 16;
             // 
+            // AutButton
+            // 
+            this.AutButton.Location = new System.Drawing.Point(6, 553);
+            this.AutButton.Name = "AutButton";
+            this.AutButton.Size = new System.Drawing.Size(100, 23);
+            this.AutButton.TabIndex = 8;
+            this.AutButton.Text = "Кабинет автора";
+            this.AutButton.UseVisualStyleBackColor = true;
+            this.AutButton.Visible = false;
+            this.AutButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // AdmButton
+            // 
+            this.AdmButton.Location = new System.Drawing.Point(112, 553);
+            this.AdmButton.Name = "AdmButton";
+            this.AdmButton.Size = new System.Drawing.Size(114, 23);
+            this.AdmButton.TabIndex = 16;
+            this.AdmButton.Text = "Кабинет админа";
+            this.AdmButton.UseVisualStyleBackColor = true;
+            this.AdmButton.Click += new System.EventHandler(this.AdmButton_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.увеличитьПисюнToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 48);
+            // 
+            // увеличитьПисюнToolStripMenuItem
+            // 
+            this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
+            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.увеличитьПисюнToolStripMenuItem.Text = "Увеличить писюн";
+            this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +441,11 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Button dalee;
         private System.Windows.Forms.Label label_cats_header;
         private System.Windows.Forms.Label label_Author_header;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button AdmButton;
+        private System.Windows.Forms.Button AutButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem увеличитьПисюнToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;
     }

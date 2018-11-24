@@ -16,12 +16,12 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
-{ 
-
+{
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
-
+        public static bool adm;
+        public static bool aut;
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
         WebClient client = new WebClient();
@@ -39,6 +39,9 @@ namespace WindowsFormsApplication4
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
+            
+            AdmButton.Visible = false;
+            AutButton.Visible = false;
         }
         
         private void ArticleClick(object sender, EventArgs e)
@@ -81,6 +84,9 @@ namespace WindowsFormsApplication4
             button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
+            AdmButton.Visible = adm;
+            AutButton.Visible = aut;
+
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
@@ -370,10 +376,12 @@ namespace WindowsFormsApplication4
                 Users.CURRENT_USER = textBox_login.Text;
                 AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
                 af.ShowDialog();
+                aut = true;
                 Form1_Load(sender, e);
             }
             else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
             {
+                adm = true;
                 Form1_Load(sender, e);
             }
             else if (Polzovatel[0] != "0")
@@ -563,8 +571,6 @@ namespace WindowsFormsApplication4
         private void Right_panel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
- 
+        } 
     }
 }

@@ -18,7 +18,7 @@ namespace WindowsFormsApplication4
     {
 
         public static string CURRENT_USER = "NONAME";
-
+        public static string CURRENT_USERPASS;
 
         public List<users> list_of_users = new List<users>();
 

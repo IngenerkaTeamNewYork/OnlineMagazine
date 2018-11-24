@@ -36,6 +36,7 @@ namespace WindowsFormsApplication4
                 "\" AND `admin` = 1");
             String IsAdmin = isAdminData[0].ToString();
 
+
             if (IsAdmin != "0")
             {
                 List<String> loginSuccessData = SQLClass.Select(
@@ -61,6 +62,7 @@ namespace WindowsFormsApplication4
         private void button1_Click(object sender, EventArgs e)
         {
             LogIntoAdminZone(textBox_login.Text, textBox_password.Text);
+            
         }
 
         private void textBox_password_KeyDown(object sender, KeyEventArgs e)
