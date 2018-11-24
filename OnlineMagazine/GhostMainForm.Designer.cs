@@ -29,7 +29,6 @@ namespace WindowsFormsApplication4
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.categories_linklabel = new System.Windows.Forms.LinkLabel();
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
@@ -53,12 +52,13 @@ namespace WindowsFormsApplication4
             this.Centr_panel = new System.Windows.Forms.Panel();
             this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
-            this.textBox_search = new System.Windows.Forms.TextBox();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.AutButton = new System.Windows.Forms.Button();
             this.AdmButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -66,7 +66,6 @@ namespace WindowsFormsApplication4
             ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
             this.Right_panel.SuspendLayout();
             this.Centr_panel.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // categories_linklabel
@@ -93,8 +92,7 @@ namespace WindowsFormsApplication4
             // 
             // Left_panel
             // 
-            this.Left_panel.Controls.Add(this.AdmButton);
-            this.Left_panel.Controls.Add(this.AutButton);
+            this.Left_panel.Controls.Add(this.comboBox1);
             this.Left_panel.Controls.Add(this.authorizationTableLayoutPanel);
             this.Left_panel.Controls.Add(this.link_of_registration);
             this.Left_panel.Controls.Add(this.reclama3);
@@ -104,7 +102,7 @@ namespace WindowsFormsApplication4
             this.Left_panel.Location = new System.Drawing.Point(0, 0);
             this.Left_panel.Name = "Left_panel";
             this.Left_panel.Size = new System.Drawing.Size(226, 579);
-            this.Left_panel.TabIndex = 4;
+            this.Left_panel.TabIndex = 4;          
             // 
             // authorizationTableLayoutPanel
             // 
@@ -120,11 +118,6 @@ namespace WindowsFormsApplication4
             this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
             this.authorizationTableLayoutPanel.RowCount = 5;
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -153,7 +146,7 @@ namespace WindowsFormsApplication4
             this.label_of_login.Name = "label_of_login";
             this.label_of_login.Size = new System.Drawing.Size(220, 20);
             this.label_of_login.TabIndex = 12;
-            this.label_of_login.Text = "Логин";
+            this.label_of_login.Text = "Логин";     
             // 
             // textBox_login
             // 
@@ -180,8 +173,6 @@ namespace WindowsFormsApplication4
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_password.Location = new System.Drawing.Point(3, 63);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.PasswordChar = '*';
-            this.textBox_password.ReadOnly = true;
             this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 10;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
@@ -238,6 +229,7 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
+            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_Author_header
             // 
@@ -269,7 +261,6 @@ namespace WindowsFormsApplication4
             this.lable_name_of_polzovatel.Size = new System.Drawing.Size(190, 23);
             this.lable_name_of_polzovatel.TabIndex = 6;
             this.lable_name_of_polzovatel.Text = "Имя пользователя";
-            this.lable_name_of_polzovatel.Click += new System.EventHandler(this.lable_name_of_polzovatel_Click);
             // 
             // button_add_reklama
             // 
@@ -343,6 +334,22 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "нет",
+            "просмотры(по возрастанию)",
+            "просмотры(по убыванию)",
+            "рейтинг(по возрастанию)",
+            "рейтинг(по убыванию)",
+            "лайки(по возрастанию)",
+            "лайки(по убыванию)"});
+            this.comboBox1.Location = new System.Drawing.Point(89, 534);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(134, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
             // AutButton
             // 
             this.AutButton.Location = new System.Drawing.Point(6, 553);
@@ -403,10 +410,8 @@ namespace WindowsFormsApplication4
             this.Right_panel.ResumeLayout(false);
             this.Right_panel.PerformLayout();
             this.Centr_panel.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
       
         #endregion
@@ -441,5 +446,7 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Button AutButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem увеличитьПисюнToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

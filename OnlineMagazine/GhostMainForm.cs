@@ -16,11 +16,11 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
-{ 
-
+{
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
+        public static bool adm;
         public static bool aut;
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
@@ -39,7 +39,7 @@ namespace WindowsFormsApplication4
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
-
+            
             AdmButton.Visible = false;
             AutButton.Visible = false;
         }
@@ -84,9 +84,7 @@ namespace WindowsFormsApplication4
             button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
-            AdmButton.Visible = (To_come_in.LogIntoAdminZone(Users.CURRENT_USER, Users.CURRENT_USERPASS));
-            
-
+            AdmButton.Visible = adm;
             AutButton.Visible = aut;
 
             if (lable_name_of_polzovatel.Text != "NONAME")
@@ -172,16 +170,44 @@ namespace WindowsFormsApplication4
 
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
+            string kak = "";
+            switch (comboBox1.TabIndex)
+            {
+                case 0:
+                    kak = "";
+                    break;
+                case 1:
+                    kak = "ORDER BY A ASC";
+                    break;
+                case 2:
+                    kak = "ORDER BY A DESC";
+                    break;
+                case 3:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
+                    break;
+                case 4:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
+                    break;
+                case 5:
+                    kak = "ORDER BY LikesCount ASC";
+                    break;
+                case 6:
+                    kak = "ORDER BY LikesCount DESC";
+                    break;
+            }
+
 
             List <String> PopularArticles = SQLClass.Select
-                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR" +
-                " OR category like @STR" +
-                " OR author like @STR) LIMIT 0, 3", dict);
+                ("SELECT Header, Picture, likesCount, discount, "+
+                "(SELECT COUNT(*) FROM read_of_articles WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
+                " FROM " + Tables.ARTICLES + ", " + Tables.LIKES +
+                " WHERE new = 0 AND  " + Tables.ARTICLES + ".Header = " + Tables.LIKES + ".Article  AND  (header like @STR" +
+                " OR " + Tables.ARTICLES + ".category like @STR" +
+                " OR " + Tables.ARTICLES + ".author like @STR)" + kak + " LIMIT 0, 3", dict);
             
             int articleY = 10;
 
-            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
+            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 5)
             {
                 #region Article header
                 Panel articleHeaderPanel = new Panel();
@@ -327,27 +353,35 @@ namespace WindowsFormsApplication4
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", textBox_login.Text);
+            dict.Add("PASS", textBox_password.Text);
             Users.CURRENT_USER = textBox_login.Text;
-            Users.CURRENT_USERPASS = textBox_password.Text; 
 
             List<String> AuthorLoginData = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
-                " WHERE UserName = '" + textBox_login.Text + "'" +
+                " WHERE UserName = @STR " +
                 " AND UserName IN (SELECT Login FROM " + Tables.POLZOVATELI +
-                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "')");
+                " WHERE Login = @STR and Parol = @PASS)", dict);
 
             List<String> Polzovatel = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
-                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "'");
+                " WHERE Login = @STR and Parol = @PASS", dict);
+
+            
+
 
             if (AuthorLoginData[0] != "0")
             {
                 Users.CURRENT_USER = textBox_login.Text;
+                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
+                af.ShowDialog();
                 aut = true;
                 Form1_Load(sender, e);
             }
             else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
             {
+                adm = true;
                 Form1_Load(sender, e);
             }
             else if (Polzovatel[0] != "0")
@@ -396,18 +430,20 @@ namespace WindowsFormsApplication4
         }
 
 
-
+           
 
 
         private void dalee_Click(object sender, EventArgs e)
         {
             kolvo_nazatiy++;
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", "%" + textBox_search.Text + "%");
             List<String> PopularArticles =
                 SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%') "+
-                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3");
+                " WHERE new = 0 AND (header like @STR" +
+                " OR category like @STR" +
+                " OR author like @STR) " +
+                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
@@ -532,30 +568,9 @@ namespace WindowsFormsApplication4
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
-            af.ShowDialog();
-            Form1_Load(sender, e);
-        }
-
-        private void lable_name_of_polzovatel_Click(object sender, EventArgs e)
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void AdmButton_Click(object sender, EventArgs e)
-        {
-            Form ifrm = new AdminMainForm();
-            ifrm.ShowDialog();
-            Form1_Load(sender, e);
-        }
-
-        private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           //FIXME textBox_password.PasswordChar.
-        }
-
- 
+        } 
     }
 }
