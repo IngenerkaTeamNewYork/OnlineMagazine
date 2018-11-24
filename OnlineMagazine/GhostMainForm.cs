@@ -164,22 +164,44 @@ namespace WindowsFormsApplication4
 
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
+            string kak = "";
+            switch (comboBox1.TabIndex)
+            {
+                case 0:
+                    kak = "";
+                    break;
+                case 1:
+                    kak = "ORDER BY A ASC";
+                    break;
+                case 2:
+                    kak = "ORDER BY A DESC";
+                    break;
+                case 3:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
+                    break;
+                case 4:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
+                    break;
+                case 5:
+                    kak = "ORDER BY LikesCount ASC";
+                    break;
+                case 6:
+                    kak = "ORDER BY LikesCount DESC";
+                    break;
+            }
 
-            List<String> PopularArticles = SQLClass.Select
-                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR" +
-                " OR category like @STR" +
-                " OR author like @STR) LIMIT 0, 3", dict);
 
-            PopularArticles = SQLClass.Select
-                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR" +
-                " OR category like @STR" +
-                " OR author like  @STR) LIMIT 0, 3", dict);
+            List <String> PopularArticles = SQLClass.Select
+                ("SELECT Header, Picture, likesCount, discount, "+
+                "(SELECT COUNT(*) FROM read_of_articles WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
+                " FROM " + Tables.ARTICLES + ", " + Tables.LIKES +
+                " WHERE new = 0 AND  " + Tables.ARTICLES + ".Header = " + Tables.LIKES + ".Article  AND  (header like @STR" +
+                " OR " + Tables.ARTICLES + ".category like @STR" +
+                " OR " + Tables.ARTICLES + ".author like @STR)" + kak + " LIMIT 0, 3", dict);
             
             int articleY = 10;
 
-            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
+            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 5)
             {
                 #region Article header
                 Panel articleHeaderPanel = new Panel();
