@@ -165,11 +165,17 @@ namespace WindowsFormsApplication4
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
 
-            List <String> PopularArticles = SQLClass.Select
+            List<String> PopularArticles = SQLClass.Select
                 ("SELECT Header, Picture FROM " + Tables.ARTICLES +
                 " WHERE new = 0 AND (header like @STR" +
                 " OR category like @STR" +
                 " OR author like @STR) LIMIT 0, 3", dict);
+
+            PopularArticles = SQLClass.Select
+                ("SELECT Header, Picture FROM " + Tables.ARTICLES +
+                " WHERE new = 0 AND (header like @STR" +
+                " OR category like @STR" +
+                " OR author like  @STR) LIMIT 0, 3", dict);
             
             int articleY = 10;
 
@@ -319,16 +325,23 @@ namespace WindowsFormsApplication4
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", textBox_login.Text);
+            dict.Add("PASS", textBox_password.Text);
             Users.CURRENT_USER = textBox_login.Text;
+
             List<String> AuthorLoginData = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
-                " WHERE UserName = '" + textBox_login.Text + "'" +
+                " WHERE UserName = @STR " +
                 " AND UserName IN (SELECT Login FROM " + Tables.POLZOVATELI +
-                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "')");
+                " WHERE Login = @STR and Parol = @PASS)", dict);
 
             List<String> Polzovatel = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
-                " WHERE Login = '" + textBox_login.Text + "' and Parol = '" + textBox_password.Text + "'");
+                " WHERE Login = @STR and Parol = @PASS", dict);
+
+            
+
 
             if (AuthorLoginData[0] != "0")
             {
@@ -387,18 +400,20 @@ namespace WindowsFormsApplication4
         }
 
 
-
+           
 
 
         private void dalee_Click(object sender, EventArgs e)
         {
             kolvo_nazatiy++;
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", "%" + textBox_search.Text + "%");
             List<String> PopularArticles =
                 SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%') "+
-                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3");
+                " WHERE new = 0 AND (header like @STR" +
+                " OR category like @STR" +
+                " OR author like @STR) " +
+                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
             {
@@ -521,6 +536,11 @@ namespace WindowsFormsApplication4
                 Configs.USER_FONT = fontDialog1.Font;
                 Configs.USER_COLOR = MyDialog.Color;
             }
+        }
+
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
  
