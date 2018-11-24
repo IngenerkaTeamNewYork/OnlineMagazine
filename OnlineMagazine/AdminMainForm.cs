@@ -164,11 +164,6 @@ namespace WindowsFormsApplication4
             this.ForeColor = Configs.USER_COLOR;
         }
 
-        private void button_look_of_form_Click(object sender, EventArgs e)
-        {
-
-        }
-        
         private void button1_Click_1(object sender, EventArgs e)
         {
             LogsReadForm t = new LogsReadForm();

@@ -21,7 +21,7 @@ namespace WindowsFormsApplication4
     public partial class GhostMainForm : Form
     {
         public static List<AuthorStat> stat = new List<AuthorStat>();
-
+        public static bool aut;
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
         WebClient client = new WebClient();
@@ -39,6 +39,9 @@ namespace WindowsFormsApplication4
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
             SQLClass.OpenConnection();
+
+            AdmButton.Visible = false;
+            AutButton.Visible = false;
         }
         
         private void ArticleClick(object sender, EventArgs e)
@@ -81,6 +84,11 @@ namespace WindowsFormsApplication4
             button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
+            AdmButton.Visible = (To_come_in.LogIntoAdminZone(Users.CURRENT_USER, Users.CURRENT_USERPASS));
+            
+
+            AutButton.Visible = aut;
+
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
@@ -320,6 +328,8 @@ namespace WindowsFormsApplication4
         private void button_login_Click(object sender, EventArgs e)
         {
             Users.CURRENT_USER = textBox_login.Text;
+            Users.CURRENT_USERPASS = textBox_password.Text; 
+
             List<String> AuthorLoginData = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
                 " WHERE UserName = '" + textBox_login.Text + "'" +
@@ -333,8 +343,7 @@ namespace WindowsFormsApplication4
             if (AuthorLoginData[0] != "0")
             {
                 Users.CURRENT_USER = textBox_login.Text;
-                AuthorMainForm af = new AuthorMainForm(textBox_login.Text);
-                af.ShowDialog();
+                aut = true;
                 Form1_Load(sender, e);
             }
             else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
@@ -521,6 +530,30 @@ namespace WindowsFormsApplication4
                 Configs.USER_FONT = fontDialog1.Font;
                 Configs.USER_COLOR = MyDialog.Color;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
+            af.ShowDialog();
+            Form1_Load(sender, e);
+        }
+
+        private void lable_name_of_polzovatel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdmButton_Click(object sender, EventArgs e)
+        {
+            Form ifrm = new AdminMainForm();
+            ifrm.ShowDialog();
+            Form1_Load(sender, e);
+        }
+
+        private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           //FIXME textBox_password.PasswordChar.
         }
 
  

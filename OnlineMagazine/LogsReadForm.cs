@@ -16,6 +16,8 @@ namespace WindowsFormsApplication4
         public LogsReadForm()
         {
             InitializeComponent();
+            textBox1.Text = File.ReadAllText("database.sql", Encoding.Default);
+            textBox2.Text = File.ReadAllText("ingenerka.sql", Encoding.Default);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -25,8 +27,8 @@ namespace WindowsFormsApplication4
 
         private void LogsReadForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = File.ReadAllText(@"database.sql", Encoding.Default);
-            textBox1.Text = File.ReadAllText(@"ingenerka.sql", Encoding.Default);
+            textBox1.Text = File.ReadAllText("database.sql", Encoding.Default);
+            textBox2.Text = File.ReadAllText("ingenerka.sql", Encoding.Default);
         }
     }
 }
