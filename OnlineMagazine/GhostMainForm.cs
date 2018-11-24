@@ -161,12 +161,15 @@ namespace WindowsFormsApplication4
 
             textBox_login.Text = "";
             textBox_password.Text = "";
-            
-            List<String> PopularArticles = SQLClass.Select
+
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", "%" + textBox_search.Text + "%");
+
+            List <String> PopularArticles = SQLClass.Select
                 ("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like '%" + textBox_search.Text + "%'" +
-                " OR category like '%" + textBox_search.Text + "%'" +
-                " OR author like '%" + textBox_search.Text + "%') LIMIT 0, 3");
+                " WHERE new = 0 AND (header like @STR" +
+                " OR category like @STR" +
+                " OR author like @STR) LIMIT 0, 3", dict);
             
             int articleY = 10;
 

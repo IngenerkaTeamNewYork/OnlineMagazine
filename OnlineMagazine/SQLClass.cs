@@ -86,5 +86,29 @@ namespace WindowsFormsApplication4
 
             return res;
         }
+
+        public static List<String> Select(string query, Dictionary<String, String> ParamsDict)
+        {
+            List<String> res = new List<String>();
+            MySqlCommand q = new MySqlCommand(query, CONN);
+
+            q.Parameters.Clear();
+            foreach (KeyValuePair<string, string> Pair in ParamsDict)
+            {
+                q.Parameters.AddWithValue("@" + Pair.Key, Pair.Value);
+            }
+            MySqlDataReader r = q.ExecuteReader();
+
+            while (r.Read())
+            {
+                for (int inc = 0; inc < r.FieldCount; inc++)
+                {
+                    res.Add(r[inc].ToString());
+                }
+            }
+            r.Close();
+
+            return res;
+        }
     }
 }
