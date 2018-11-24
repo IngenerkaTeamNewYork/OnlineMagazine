@@ -98,7 +98,7 @@ namespace WindowsFormsApplication4
             this.Left_panel.Location = new System.Drawing.Point(0, 0);
             this.Left_panel.Name = "Left_panel";
             this.Left_panel.Size = new System.Drawing.Size(226, 579);
-            this.Left_panel.TabIndex = 4;
+            this.Left_panel.TabIndex = 4;          
             // 
             // authorizationTableLayoutPanel
             // 
@@ -114,11 +114,6 @@ namespace WindowsFormsApplication4
             this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
             this.authorizationTableLayoutPanel.RowCount = 5;
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -147,7 +142,7 @@ namespace WindowsFormsApplication4
             this.label_of_login.Name = "label_of_login";
             this.label_of_login.Size = new System.Drawing.Size(220, 20);
             this.label_of_login.TabIndex = 12;
-            this.label_of_login.Text = "Логин";
+            this.label_of_login.Text = "Логин";     
             // 
             // textBox_login
             // 
@@ -229,6 +224,7 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
+            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_Author_header
             // 
@@ -376,7 +372,6 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
       
         #endregion
