@@ -17,6 +17,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
+
     public partial class AuthorMainForm : Form
     {
         public string login;
@@ -27,6 +28,7 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
+            
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -65,9 +67,20 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
 
+
             List<String> AuthorInfo = SQLClass.Select(
                 "SELECT Information_about_author, Articles, Pic FROM " + Tables.AUTHORS +
                 " WHERE `UserName` = '" + login + "'");
+
+            List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
+                " WHERE `Author` = '" + login + "'");
+            label4.Text = "Ваш рейтинг " + mesto[0];
+            
+                List<String> balance = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author` = '" + login + "'");
+                Button_Balance.Text = "Баланс " + balance[0];
+            
+
+
 
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {

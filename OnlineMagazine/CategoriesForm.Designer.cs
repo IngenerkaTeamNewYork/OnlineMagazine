@@ -31,12 +31,12 @@
             this.button_add = new System.Windows.Forms.Button();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.articlesPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.catsPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.articlesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.catsPanel.SuspendLayout();
@@ -68,10 +68,20 @@
             this.articlesPanel.Controls.Add(this.pictureBox1);
             this.articlesPanel.Controls.Add(this.label1);
             this.articlesPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.articlesPanel.Location = new System.Drawing.Point(263, 0);
+            this.articlesPanel.Location = new System.Drawing.Point(344, 0);
             this.articlesPanel.Name = "articlesPanel";
-            this.articlesPanel.Size = new System.Drawing.Size(650, 377);
+            this.articlesPanel.Size = new System.Drawing.Size(569, 377);
             this.articlesPanel.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(4, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(234, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Статьи в этой категории";
             // 
             // pictureBox1
             // 
@@ -102,7 +112,7 @@
             this.catsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.catsPanel.Location = new System.Drawing.Point(0, 0);
             this.catsPanel.Name = "catsPanel";
-            this.catsPanel.Size = new System.Drawing.Size(257, 377);
+            this.catsPanel.Size = new System.Drawing.Size(345, 377);
             this.catsPanel.TabIndex = 8;
             // 
             // label2
@@ -114,16 +124,6 @@
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Категория";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(4, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Статьи в этой категории";
             // 
             // CategoriesForm
             // 

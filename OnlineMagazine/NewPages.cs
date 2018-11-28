@@ -23,6 +23,7 @@ namespace WindowsFormsApplication4
         }
 
         public List<newPage> ListOfPages = new List<newPage>();
+        string text;
 
         public NewPages()
         {
@@ -65,6 +66,8 @@ namespace WindowsFormsApplication4
                 Page.Label_.Location = new Point(100, PosY);
                 Page.Label_.Size = new Size(250, 30);
                 Page.Label_.Text = articlesList[artIndex];
+
+                Page.Label_.Click += new System.EventHandler(Label_Click);
                 if (articlesList[artIndex + 1] == "0")
                 {
                     Page.Label_.ForeColor = Color.Gray;
@@ -75,6 +78,7 @@ namespace WindowsFormsApplication4
                 this.Controls.Add(Page.Label_);
                 PosY += 30;
             }
+            
         }
 
         void cbnewpage(object sender, EventArgs e)
@@ -102,5 +106,18 @@ namespace WindowsFormsApplication4
         {
             LoadPages();
         }            
+        void Label_Click(object sender, EventArgs e)
+        {
+           /* foreach (newPage Label_ in ListOfPages)
+            {*/
+
+                statiya stat = statiya.Click1(((Label)sender).Text);
+                StatiyaForm form = new StatiyaForm(stat);
+                form.ShowDialog();
+                
+           // }
+            
+
+        }
     }
 }

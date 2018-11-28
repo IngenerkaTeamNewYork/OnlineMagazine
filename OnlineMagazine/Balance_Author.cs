@@ -30,8 +30,7 @@ namespace WindowsFormsApplication4
             label2.Font = Configs.ZAGOLOVOK_FONT;
 
             label1.Text = name;
-
-            label4.Text = "0";
+            
             
         }
 
