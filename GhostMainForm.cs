@@ -38,7 +38,6 @@ namespace WindowsFormsApplication4
 
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             //label_popular.Text = stat.kategorita_statii;
-            SQLClass.OpenConnection();
             
             AdmButton.Visible = false;
             AutButton.Visible = false;
@@ -335,7 +334,6 @@ namespace WindowsFormsApplication4
 
         private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SQLClass.CloseConnection();
         }
         
         /// <summary>
@@ -586,13 +584,7 @@ namespace WindowsFormsApplication4
             af.ShowDialog();
             Form1_Load(sender, e);
         }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        private void textBox_password_TextChanged(object sender, EventArgs e)
+        private void textBox_login_TextChanged(object sender, EventArgs e)
         {
 
         }

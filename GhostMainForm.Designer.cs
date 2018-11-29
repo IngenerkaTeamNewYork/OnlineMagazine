@@ -202,7 +202,6 @@ namespace WindowsFormsApplication4
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.Size = new System.Drawing.Size(220, 20);
             this.textBox_password.TabIndex = 10;
-            this.textBox_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // link_of_registration
@@ -227,7 +226,6 @@ namespace WindowsFormsApplication4
             // 
             // reclama2
             // 
-            this.reclama2.ContextMenuStrip = this.contextMenuStrip1;
             this.reclama2.Location = new System.Drawing.Point(13, 248);
             this.reclama2.Name = "reclama2";
             this.reclama2.Size = new System.Drawing.Size(182, 126);

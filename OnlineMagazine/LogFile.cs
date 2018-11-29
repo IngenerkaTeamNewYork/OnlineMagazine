@@ -12,7 +12,7 @@ namespace WindowsFormsApplication4
         public static StreamWriter file;
         public static void WriteLine(string code, string text)
         {
-            File.AppendAllText("logfile.txt", "[" +DateTime.Now + " - " + code + "] -- " + text+ Environment.NewLine);
+            File.AppendAllText("logfile.txt", "[" +DateTime.Now + " - " + code + "] -- " + text+ "\r\n");
         }
     }
 }

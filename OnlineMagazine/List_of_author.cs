@@ -88,5 +88,15 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+                StastisticsForm form = new StastisticsForm(null);
+                form.Show();
+                
+            
+            
+        }
     }
 }

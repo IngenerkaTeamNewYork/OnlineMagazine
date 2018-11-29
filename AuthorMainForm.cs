@@ -17,7 +17,6 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
-
     public partial class AuthorMainForm : Form
     {
         public string login;
@@ -28,7 +27,6 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
-            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + log + "'")[0]);
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -55,7 +53,7 @@ namespace WindowsFormsApplication4
                             ArticleInfo[artIndex + 4].ToString() :
                             null;
 
-                        StatiyaForm OknoStatiya = new StatiyaForm(stat);
+                        StatiyaForm OknoStatiya = new StatiyaForm(stat, true);
                         OknoStatiya.ShowDialog();
                     }
                 }
@@ -67,25 +65,13 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
 
-
             List<String> AuthorInfo = SQLClass.Select(
                 "SELECT Information_about_author, Articles, Pic FROM " + Tables.AUTHORS +
                 " WHERE `UserName` = '" + login + "'");
 
-            List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
-                " WHERE `Author` = '" + login + "'");
-            label4.Text = "Âàø ðåéòèíã " + mesto[0];
-            
-                List<String> balance = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author` = '" + login + "'");
-                Button_Balance.Text = "Áàëàíñ " + balance[0];
-            
-
-
-
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
-                List<String> likes = SQLClass.Select(string.Format("SELECT SUM(`LikesCount`), SUM(`DisCount`) FROM `Likes` WHERE `Author` = '{0}'", login));
-                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString() + string.Format(" Лайков: {0}, Дизлайков: {1}", likes[0], likes[1]);
+                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString();
                 String[] chasti_stroki = AuthorInfo[infoIndex + 2].ToString().Split(new char[] { ' ', '/' });
                 
                 try
@@ -147,7 +133,6 @@ namespace WindowsFormsApplication4
                     }
                     catch (Exception)
                     {
-
                     }
                 }
 
@@ -197,6 +182,10 @@ namespace WindowsFormsApplication4
         {
             Registration form = new Registration(login);
             form.ShowDialog();
+        }
+
+        private void leftTableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }
