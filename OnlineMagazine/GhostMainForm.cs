@@ -446,7 +446,6 @@ namespace WindowsFormsApplication4
 
         private void dalee_Click(object sender, EventArgs e)
         {
-            kolvo_nazatiy++;
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
             List<String> PopularArticles =
@@ -454,11 +453,11 @@ namespace WindowsFormsApplication4
                 ("SELECT Header, Picture, " + 
                 "(SELECT likesCount FROM " + Tables.LIKES + " WHERE Header = Article) likesCount, " +
                 "(SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article) discount, " +
-                "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
+                "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
                 " FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND  (header like @STR" +
-                " OR " + Tables.ARTICLES + ".category like @STR" +
-                " OR " + Tables.ARTICLES + ".author like @STR)" + getKak() + " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
+                " WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)" + 
+                getKak() + 
+                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
 
             for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 5)
@@ -466,8 +465,8 @@ namespace WindowsFormsApplication4
                 #region Article header
                 Panel articleHeaderPanel = new Panel();
                 articleHeaderPanel.Size = new Size(Centr_panel.Width, 30);
-                articleHeaderPanel.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
-                articleHeaderPanel.TabIndex = (kolvo_nazatiy > 1) ? 3 * kolvo_nazatiy : 3 * kolvo_nazatiy + 2;
+                articleHeaderPanel.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
+                articleHeaderPanel.TabIndex = (kolvo_nazatiy > 0) ? 3 * kolvo_nazatiy : 3 * kolvo_nazatiy + 2;
                 
                 LinkLabel label1 = new LinkLabel();
                 label1.Location = new Point(0, 0);
@@ -509,11 +508,11 @@ namespace WindowsFormsApplication4
 
                     WebBrowser web = new WebBrowser();
                     web.TabIndex = 3 * kolvo_nazatiy + 1;
-                    web.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
+                    web.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
                     web.DocumentText = string.Format(embed, url);
                     web.Location = new Point(0, articleY + 25);
 
-                    if (kolvo_nazatiy > 1)
+                    if (kolvo_nazatiy > 0)
                     {
                         Centr_panel.Controls.Add(web);
                         Centr_panel.Controls.Add(articleHeaderPanel);
@@ -533,7 +532,7 @@ namespace WindowsFormsApplication4
                     artImage.Location = new Point(0, articleY + 25);
                     artImage.Tag = label1.Text;
                     artImage.Size = new Size(Centr_panel.Width, 150);
-                    artImage.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
+                    artImage.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
                     artImage.Click += new System.EventHandler(clik_na_pic);
                     artImage.SizeMode = PictureBoxSizeMode.StretchImage;
                     artImage.TabIndex = 3 * kolvo_nazatiy + 1;
@@ -556,7 +555,7 @@ namespace WindowsFormsApplication4
                         }
                     }
 
-                    if (kolvo_nazatiy > 1)
+                    if (kolvo_nazatiy > 0)
                     {
                         Centr_panel.Controls.Add(artImage);
                         Centr_panel.Controls.Add(articleHeaderPanel);
@@ -574,6 +573,8 @@ namespace WindowsFormsApplication4
                 arts.Add(label1);
                 articleY += 180;
             }
+
+            kolvo_nazatiy++;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -614,7 +615,11 @@ namespace WindowsFormsApplication4
 
         private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox_password.UseSystemPasswordChar == false)
+            {
+                textBox_password.UseSystemPasswordChar = true;
+            }
+            else { textBox_password.UseSystemPasswordChar = false; }
         }
 
         private void AdmButton_Click(object sender, EventArgs e)

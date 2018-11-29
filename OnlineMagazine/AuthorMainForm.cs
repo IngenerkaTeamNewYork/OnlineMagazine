@@ -28,7 +28,6 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
-            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + log + "'")[0]);
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -55,7 +54,7 @@ namespace WindowsFormsApplication4
                             ArticleInfo[artIndex + 4].ToString() :
                             null;
 
-                        StatiyaForm OknoStatiya = new StatiyaForm(stat);
+                        StatiyaForm OknoStatiya = new StatiyaForm(stat, true);
                         OknoStatiya.ShowDialog();
                     }
                 }
@@ -74,11 +73,10 @@ namespace WindowsFormsApplication4
 
             List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
                 " WHERE `Author` = '" + login + "'");
-            label4.Text = "Âàø ðåéòèíã " + mesto[0];
+            label4.Text = "Место автора " + mesto[0];
             
-                List<String> balance = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author` = '" + login + "'");
-                Button_Balance.Text = "Áàëàíñ " + balance[0];
-            
+            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + login + "'")[0]);
+
 
 
 

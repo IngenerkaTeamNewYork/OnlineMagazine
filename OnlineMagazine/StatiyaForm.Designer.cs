@@ -47,6 +47,7 @@
             this.labeldis = new System.Windows.Forms.Label();
             this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
             this.pictureBoxLike = new System.Windows.Forms.PictureBox();
+            this.redact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,6 +172,7 @@
             // 
             // HeaderPanel
             // 
+            this.HeaderPanel.Controls.Add(this.redact);
             this.HeaderPanel.Controls.Add(this.Authortext);
             this.HeaderPanel.Controls.Add(this.Maintext);
             this.HeaderPanel.Controls.Add(this.Kategoriatext);
@@ -217,6 +219,7 @@
             this.likesPanel.Name = "likesPanel";
             this.likesPanel.Size = new System.Drawing.Size(407, 41);
             this.likesPanel.TabIndex = 8;
+            this.likesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.likesPanel_Paint);
             // 
             // label1
             // 
@@ -267,6 +270,17 @@
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
             // 
+            // redact
+            // 
+            this.redact.Location = new System.Drawing.Point(316, 0);
+            this.redact.Name = "redact";
+            this.redact.Size = new System.Drawing.Size(81, 20);
+            this.redact.TabIndex = 4;
+            this.redact.Text = "Редактировать";
+            this.redact.UseVisualStyleBackColor = true;
+            this.redact.Visible = false;
+            this.redact.Click += new System.EventHandler(this.redact_Click);
+            // 
             // StatiyaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,5 +328,6 @@
         private System.Windows.Forms.Label labelLike;
         private System.Windows.Forms.Label labeldis;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button redact;
     }
 }

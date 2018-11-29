@@ -18,6 +18,7 @@ namespace WindowsFormsApplication4
 {
     public partial class StatiyaForm : Form
     {
+        bool avtor = false;
         bool isLike = false;
         bool isDisLike = false;
         
@@ -37,11 +38,16 @@ namespace WindowsFormsApplication4
                 lblDisLike.Text = "0";
             }
         }
-
-        public StatiyaForm(statiya stat)
+        
+        public StatiyaForm(statiya stat, bool YaAvtor = false)
         {
             InitializeComponent();
 
+            avtor = YaAvtor;
+
+            Kategoriatext.Enabled = avtor;
+            Stattext.Enabled = avtor;
+            
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
@@ -64,6 +70,8 @@ namespace WindowsFormsApplication4
 
             pictureBoxLike.Image = Properties.Resources.like;
             pictureBoxDislike.Image = Properties.Resources.Dislike;
+
+           
         }
         
         private void pictureBoxLike_Click(object sender, EventArgs e)
@@ -197,6 +205,16 @@ namespace WindowsFormsApplication4
                     "'" + Authortext.Text + "')");
             }
             #endregion
+        }
+
+        private void likesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void redact_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

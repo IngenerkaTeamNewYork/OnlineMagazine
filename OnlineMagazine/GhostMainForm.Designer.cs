@@ -47,13 +47,13 @@ namespace WindowsFormsApplication4
             this.reclama = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_add_reklama = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label_Author_header = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
+            this.button_add_reklama = new System.Windows.Forms.Button();
             this.label_author = new System.Windows.Forms.Label();
             this.label_cats_header = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Centr_panel = new System.Windows.Forms.Panel();
             this.dalee = new System.Windows.Forms.Button();
             this.popularArticlesLabel = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.autButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.adminPpanel = new System.Windows.Forms.Panel();
+            this.reclamaPanel = new System.Windows.Forms.Panel();
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -70,14 +73,18 @@ namespace WindowsFormsApplication4
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.autButtonsTableLayoutPanel.SuspendLayout();
+            this.adminPpanel.SuspendLayout();
+            this.reclamaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // categories_linklabel
             // 
             this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(10, 388);
+            this.categories_linklabel.Location = new System.Drawing.Point(13, 478);
+            this.categories_linklabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.categories_linklabel.Name = "categories_linklabel";
-            this.categories_linklabel.Size = new System.Drawing.Size(81, 13);
+            this.categories_linklabel.Size = new System.Drawing.Size(103, 17);
             this.categories_linklabel.TabIndex = 4;
             this.categories_linklabel.TabStop = true;
             this.categories_linklabel.Text = "Все категории";
@@ -85,9 +92,10 @@ namespace WindowsFormsApplication4
             // 
             // butto_search
             // 
-            this.butto_search.Location = new System.Drawing.Point(443, 31);
+            this.butto_search.Location = new System.Drawing.Point(585, 4);
+            this.butto_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butto_search.Name = "butto_search";
-            this.butto_search.Size = new System.Drawing.Size(66, 31);
+            this.butto_search.Size = new System.Drawing.Size(103, 54);
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
@@ -96,25 +104,22 @@ namespace WindowsFormsApplication4
             // 
             // Left_panel
             // 
-            this.Left_panel.Controls.Add(this.AdmButton);
-            this.Left_panel.Controls.Add(this.AutButton);
+            this.Left_panel.Controls.Add(this.reclamaPanel);
+            this.Left_panel.Controls.Add(this.adminPpanel);
             this.Left_panel.Controls.Add(this.authorizationTableLayoutPanel);
-            this.Left_panel.Controls.Add(this.link_of_registration);
-            this.Left_panel.Controls.Add(this.reclama3);
-            this.Left_panel.Controls.Add(this.reclama2);
-            this.Left_panel.Controls.Add(this.reclama);
             this.Left_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Left_panel.Location = new System.Drawing.Point(0, 0);
+            this.Left_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(226, 579);
+            this.Left_panel.Size = new System.Drawing.Size(301, 713);
             this.Left_panel.TabIndex = 4;
             // 
             // AdmButton
             // 
-            this.AdmButton.Location = new System.Drawing.Point(110, 556);
-            this.AdmButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AdmButton.Location = new System.Drawing.Point(152, 5);
+            this.AdmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdmButton.Name = "AdmButton";
-            this.AdmButton.Size = new System.Drawing.Size(112, 19);
+            this.AdmButton.Size = new System.Drawing.Size(149, 23);
             this.AdmButton.TabIndex = 16;
             this.AdmButton.Text = "Кабинет админа";
             this.AdmButton.UseVisualStyleBackColor = true;
@@ -122,10 +127,10 @@ namespace WindowsFormsApplication4
             // 
             // AutButton
             // 
-            this.AutButton.Location = new System.Drawing.Point(5, 556);
-            this.AutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AutButton.Location = new System.Drawing.Point(0, 5);
+            this.AutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AutButton.Name = "AutButton";
-            this.AutButton.Size = new System.Drawing.Size(100, 19);
+            this.AutButton.Size = new System.Drawing.Size(133, 23);
             this.AutButton.TabIndex = 8;
             this.AutButton.Text = "Кабинет автора";
             this.AutButton.UseVisualStyleBackColor = true;
@@ -136,31 +141,31 @@ namespace WindowsFormsApplication4
             // 
             this.authorizationTableLayoutPanel.ColumnCount = 1;
             this.authorizationTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.authorizationTableLayoutPanel.Controls.Add(this.button_login, 0, 4);
             this.authorizationTableLayoutPanel.Controls.Add(this.label_of_login, 0, 0);
             this.authorizationTableLayoutPanel.Controls.Add(this.textBox_login, 0, 1);
             this.authorizationTableLayoutPanel.Controls.Add(this.label_password, 0, 2);
             this.authorizationTableLayoutPanel.Controls.Add(this.textBox_password, 0, 3);
-            this.authorizationTableLayoutPanel.Controls.Add(this.link_of_registration, 0, 5);
+            this.authorizationTableLayoutPanel.Controls.Add(this.autButtonsTableLayoutPanel, 0, 4);
             this.authorizationTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.authorizationTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.authorizationTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.authorizationTableLayoutPanel.Name = "authorizationTableLayoutPanel";
-            this.authorizationTableLayoutPanel.RowCount = 6;
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
-            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(226, 168);
+            this.authorizationTableLayoutPanel.RowCount = 5;
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.authorizationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.authorizationTableLayoutPanel.Size = new System.Drawing.Size(301, 140);
             this.authorizationTableLayoutPanel.TabIndex = 15;
             // 
             // button_login
             // 
-            this.button_login.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_login.Location = new System.Drawing.Point(3, 95);
+            this.button_login.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_login.Location = new System.Drawing.Point(0, 0);
+            this.button_login.Margin = new System.Windows.Forms.Padding(0);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(220, 44);
+            this.button_login.Size = new System.Drawing.Size(150, 40);
             this.button_login.TabIndex = 11;
             this.button_login.Text = "Войти";
             this.button_login.UseVisualStyleBackColor = true;
@@ -171,18 +176,21 @@ namespace WindowsFormsApplication4
             // 
             this.label_of_login.AutoSize = true;
             this.label_of_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_of_login.Location = new System.Drawing.Point(3, 0);
+            this.label_of_login.Location = new System.Drawing.Point(4, 0);
+            this.label_of_login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_of_login.Name = "label_of_login";
-            this.label_of_login.Size = new System.Drawing.Size(220, 20);
+            this.label_of_login.Size = new System.Drawing.Size(293, 25);
             this.label_of_login.TabIndex = 12;
             this.label_of_login.Text = "Логин";
+            this.label_of_login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_login
             // 
             this.textBox_login.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_login.Location = new System.Drawing.Point(3, 23);
+            this.textBox_login.Location = new System.Drawing.Point(4, 29);
+            this.textBox_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_login.Name = "textBox_login";
-            this.textBox_login.Size = new System.Drawing.Size(220, 20);
+            this.textBox_login.Size = new System.Drawing.Size(293, 22);
             this.textBox_login.TabIndex = 9;
             this.textBox_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
@@ -190,28 +198,33 @@ namespace WindowsFormsApplication4
             // 
             this.label_password.AutoSize = true;
             this.label_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_password.Location = new System.Drawing.Point(3, 40);
+            this.label_password.Location = new System.Drawing.Point(4, 50);
+            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(220, 20);
+            this.label_password.Size = new System.Drawing.Size(293, 25);
             this.label_password.TabIndex = 13;
             this.label_password.Text = "Пароль";
+            this.label_password.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox_password
             // 
+            this.textBox_password.ContextMenuStrip = this.contextMenuStrip1;
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_password.Location = new System.Drawing.Point(3, 63);
+            this.textBox_password.Location = new System.Drawing.Point(4, 79);
+            this.textBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_password.Name = "textBox_password";
-            this.textBox_password.Size = new System.Drawing.Size(220, 20);
+            this.textBox_password.Size = new System.Drawing.Size(293, 22);
             this.textBox_password.TabIndex = 10;
             this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // link_of_registration
             // 
             this.link_of_registration.AutoSize = true;
-            this.link_of_registration.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.link_of_registration.Location = new System.Drawing.Point(3, 155);
+            this.link_of_registration.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.link_of_registration.Location = new System.Drawing.Point(150, 0);
+            this.link_of_registration.Margin = new System.Windows.Forms.Padding(0);
             this.link_of_registration.Name = "link_of_registration";
-            this.link_of_registration.Size = new System.Drawing.Size(220, 13);
+            this.link_of_registration.Size = new System.Drawing.Size(151, 40);
             this.link_of_registration.TabIndex = 6;
             this.link_of_registration.TabStop = true;
             this.link_of_registration.Text = "Регистрация";
@@ -219,27 +232,33 @@ namespace WindowsFormsApplication4
             // 
             // reclama3
             // 
-            this.reclama3.Location = new System.Drawing.Point(23, 398);
+            this.reclama3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reclama3.Location = new System.Drawing.Point(0, 440);
+            this.reclama3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reclama3.Name = "reclama3";
-            this.reclama3.Size = new System.Drawing.Size(172, 114);
+            this.reclama3.Size = new System.Drawing.Size(301, 99);
             this.reclama3.TabIndex = 5;
             this.reclama3.TabStop = false;
             this.reclama3.Click += new System.EventHandler(this.reclama_Click);
             // 
             // reclama2
             // 
-            this.reclama2.Location = new System.Drawing.Point(13, 248);
+            this.reclama2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reclama2.Location = new System.Drawing.Point(0, 0);
+            this.reclama2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reclama2.Name = "reclama2";
-            this.reclama2.Size = new System.Drawing.Size(182, 126);
+            this.reclama2.Size = new System.Drawing.Size(301, 209);
             this.reclama2.TabIndex = 4;
             this.reclama2.TabStop = false;
             this.reclama2.Click += new System.EventHandler(this.reclama_Click);
             // 
             // reclama
             // 
-            this.reclama.Location = new System.Drawing.Point(13, 138);
+            this.reclama.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reclama.Location = new System.Drawing.Point(0, 209);
+            this.reclama.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reclama.Name = "reclama";
-            this.reclama.Size = new System.Drawing.Size(199, 95);
+            this.reclama.Size = new System.Drawing.Size(301, 231);
             this.reclama.TabIndex = 2;
             this.reclama.TabStop = false;
             this.reclama.Click += new System.EventHandler(this.reclama_Click);
@@ -255,26 +274,88 @@ namespace WindowsFormsApplication4
             "рейтинг(по убыванию)",
             "лайки(по возрастанию)",
             "лайки(по убыванию)"});
-            this.comboBox1.Location = new System.Drawing.Point(229, 1);
+            this.comboBox1.Location = new System.Drawing.Point(305, 34);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 21);
+            this.comboBox1.Size = new System.Drawing.Size(272, 24);
             this.comboBox1.TabIndex = 16;
             // 
             // Right_panel
             // 
             this.Right_panel.Controls.Add(this.label_Author_header);
-            this.Right_panel.Controls.Add(this.button1);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
-            this.Right_panel.Controls.Add(this.button_add_reklama);
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_author);
             this.Right_panel.Controls.Add(this.label_cats_header);
             this.Right_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Right_panel.Location = new System.Drawing.Point(558, 0);
+            this.Right_panel.Location = new System.Drawing.Point(744, 0);
+            this.Right_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Right_panel.Name = "Right_panel";
-            this.Right_panel.Size = new System.Drawing.Size(190, 579);
+            this.Right_panel.Size = new System.Drawing.Size(253, 713);
             this.Right_panel.TabIndex = 5;
             this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
+            // 
+            // label_Author_header
+            // 
+            this.label_Author_header.AutoSize = true;
+            this.label_Author_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Author_header.Location = new System.Drawing.Point(3, 47);
+            this.label_Author_header.Name = "label_Author_header";
+            this.label_Author_header.Size = new System.Drawing.Size(217, 25);
+            this.label_Author_header.TabIndex = 8;
+            this.label_Author_header.Text = "Популярные авторы";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 44);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Шрифты";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lable_name_of_polzovatel
+            // 
+            this.lable_name_of_polzovatel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lable_name_of_polzovatel.Location = new System.Drawing.Point(0, 0);
+            this.lable_name_of_polzovatel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lable_name_of_polzovatel.Name = "lable_name_of_polzovatel";
+            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(253, 28);
+            this.lable_name_of_polzovatel.TabIndex = 6;
+            this.lable_name_of_polzovatel.Text = "Имя пользователя";
+            // 
+            // button_add_reklama
+            // 
+            this.button_add_reklama.Location = new System.Drawing.Point(3, 3);
+            this.button_add_reklama.Name = "button_add_reklama";
+            this.button_add_reklama.Size = new System.Drawing.Size(184, 42);
+            this.button_add_reklama.TabIndex = 5;
+            this.button_add_reklama.Text = "Предложить рекламу";
+            this.button_add_reklama.UseVisualStyleBackColor = true;
+            this.button_add_reklama.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // label_author
+            // 
+            this.label_author.AutoSize = true;
+            this.label_author.Location = new System.Drawing.Point(4, 170);
+            this.label_author.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_author.Name = "label_author";
+            this.label_author.Size = new System.Drawing.Size(84, 17);
+            this.label_author.TabIndex = 2;
+            this.label_author.Text = "Все авторы";
+            this.label_author.Click += new System.EventHandler(this.label_author_Click);
+            // 
+            // label_cats_header
+            // 
+            this.label_cats_header.AutoSize = true;
+            this.label_cats_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_cats_header.Location = new System.Drawing.Point(11, 220);
+            this.label_cats_header.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_cats_header.Name = "label_cats_header";
+            this.label_cats_header.Size = new System.Drawing.Size(118, 25);
+            this.label_cats_header.TabIndex = 6;
+            this.label_cats_header.Text = "Категории";
             // 
             // tableLayoutPanel2
             // 
@@ -291,83 +372,24 @@ namespace WindowsFormsApplication4
             this.tableLayoutPanel2.Size = new System.Drawing.Size(190, 100);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
-            // button_add_reklama
-            // 
-            this.button_add_reklama.Location = new System.Drawing.Point(3, 3);
-            this.button_add_reklama.Name = "button_add_reklama";
-            this.button_add_reklama.Size = new System.Drawing.Size(184, 42);
-            this.button_add_reklama.TabIndex = 5;
-            this.button_add_reklama.Text = "Предложить рекламу";
-            this.button_add_reklama.UseVisualStyleBackColor = true;
-            this.button_add_reklama.Click += new System.EventHandler(this.button_add_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 44);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Шрифты";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label_Author_header
-            // 
-            this.label_Author_header.AutoSize = true;
-            this.label_Author_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Author_header.Location = new System.Drawing.Point(2, 38);
-            this.label_Author_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_Author_header.Name = "label_Author_header";
-            this.label_Author_header.Size = new System.Drawing.Size(180, 20);
-            this.label_Author_header.TabIndex = 8;
-            this.label_Author_header.Text = "Популярные авторы";
-            // 
-            // lable_name_of_polzovatel
-            // 
-            this.lable_name_of_polzovatel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lable_name_of_polzovatel.Location = new System.Drawing.Point(0, 0);
-            this.lable_name_of_polzovatel.Name = "lable_name_of_polzovatel";
-            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(190, 23);
-            this.lable_name_of_polzovatel.TabIndex = 6;
-            this.lable_name_of_polzovatel.Text = "Имя пользователя";
-            // 
-            // label_author
-            // 
-            this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(3, 138);
-            this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(66, 13);
-            this.label_author.TabIndex = 2;
-            this.label_author.Text = "Все авторы";
-            this.label_author.Click += new System.EventHandler(this.label_author_Click);
-            // 
-            // label_cats_header
-            // 
-            this.label_cats_header.AutoSize = true;
-            this.label_cats_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_cats_header.Location = new System.Drawing.Point(8, 179);
-            this.label_cats_header.Name = "label_cats_header";
-            this.label_cats_header.Size = new System.Drawing.Size(98, 20);
-            this.label_cats_header.TabIndex = 6;
-            this.label_cats_header.Text = "Категории";
-            // 
             // Centr_panel
             // 
             this.Centr_panel.AutoScroll = true;
             this.Centr_panel.Controls.Add(this.dalee);
-            this.Centr_panel.Location = new System.Drawing.Point(232, 111);
+            this.Centr_panel.Location = new System.Drawing.Point(309, 100);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
             this.Centr_panel.Name = "Centr_panel";
-            this.Centr_panel.Size = new System.Drawing.Size(323, 468);
+            this.Centr_panel.Size = new System.Drawing.Size(431, 613);
             this.Centr_panel.TabIndex = 6;
             this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
             // 
             // dalee
             // 
             this.dalee.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dalee.Location = new System.Drawing.Point(0, 445);
+            this.dalee.Location = new System.Drawing.Point(0, 585);
+            this.dalee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dalee.Name = "dalee";
-            this.dalee.Size = new System.Drawing.Size(323, 23);
+            this.dalee.Size = new System.Drawing.Size(431, 28);
             this.dalee.TabIndex = 1;
             this.dalee.Text = "+ 3 статьи";
             this.dalee.UseVisualStyleBackColor = true;
@@ -376,19 +398,19 @@ namespace WindowsFormsApplication4
             // popularArticlesLabel
             // 
             this.popularArticlesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.popularArticlesLabel.Location = new System.Drawing.Point(232, 38);
-            this.popularArticlesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.popularArticlesLabel.Location = new System.Drawing.Point(308, 62);
             this.popularArticlesLabel.Name = "popularArticlesLabel";
-            this.popularArticlesLabel.Size = new System.Drawing.Size(314, 31);
+            this.popularArticlesLabel.Size = new System.Drawing.Size(419, 38);
             this.popularArticlesLabel.TabIndex = 0;
             this.popularArticlesLabel.Text = "Популярные статьи";
             this.popularArticlesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_search
             // 
-            this.textBox_search.Location = new System.Drawing.Point(229, 3);
+            this.textBox_search.Location = new System.Drawing.Point(305, 4);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(205, 20);
+            this.textBox_search.Size = new System.Drawing.Size(272, 22);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
@@ -399,20 +421,57 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 28);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
-            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.увеличитьПисюнToolStripMenuItem.Text = "Увеличить писюн";
             this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
             // 
+            // autButtonsTableLayoutPanel
+            // 
+            this.autButtonsTableLayoutPanel.ColumnCount = 2;
+            this.autButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.autButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.autButtonsTableLayoutPanel.Controls.Add(this.button_login, 0, 0);
+            this.autButtonsTableLayoutPanel.Controls.Add(this.link_of_registration, 1, 0);
+            this.autButtonsTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.autButtonsTableLayoutPanel.Location = new System.Drawing.Point(0, 100);
+            this.autButtonsTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.autButtonsTableLayoutPanel.Name = "autButtonsTableLayoutPanel";
+            this.autButtonsTableLayoutPanel.RowCount = 1;
+            this.autButtonsTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.autButtonsTableLayoutPanel.Size = new System.Drawing.Size(301, 40);
+            this.autButtonsTableLayoutPanel.TabIndex = 14;
+            // 
+            // adminPpanel
+            // 
+            this.adminPpanel.Controls.Add(this.AutButton);
+            this.adminPpanel.Controls.Add(this.AdmButton);
+            this.adminPpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.adminPpanel.Location = new System.Drawing.Point(0, 679);
+            this.adminPpanel.Name = "adminPpanel";
+            this.adminPpanel.Size = new System.Drawing.Size(301, 34);
+            this.adminPpanel.TabIndex = 0;
+            // 
+            // reclamaPanel
+            // 
+            this.reclamaPanel.Controls.Add(this.reclama3);
+            this.reclamaPanel.Controls.Add(this.reclama);
+            this.reclamaPanel.Controls.Add(this.reclama2);
+            this.reclamaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reclamaPanel.Location = new System.Drawing.Point(0, 140);
+            this.reclamaPanel.Name = "reclamaPanel";
+            this.reclamaPanel.Size = new System.Drawing.Size(301, 539);
+            this.reclamaPanel.TabIndex = 16;
+            // 
             // GhostMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 579);
+            this.ClientSize = new System.Drawing.Size(997, 713);
             this.Controls.Add(this.popularArticlesLabel);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.butto_search);
@@ -420,12 +479,12 @@ namespace WindowsFormsApplication4
             this.Controls.Add(this.Right_panel);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.Centr_panel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GhostMainForm";
             this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Left_panel.ResumeLayout(false);
-            this.Left_panel.PerformLayout();
             this.authorizationTableLayoutPanel.ResumeLayout(false);
             this.authorizationTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).EndInit();
@@ -436,6 +495,10 @@ namespace WindowsFormsApplication4
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.autButtonsTableLayoutPanel.ResumeLayout(false);
+            this.autButtonsTableLayoutPanel.PerformLayout();
+            this.adminPpanel.ResumeLayout(false);
+            this.reclamaPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,5 +538,8 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.ToolStripMenuItem увеличитьПисюнToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel reclamaPanel;
+        private System.Windows.Forms.Panel adminPpanel;
+        private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
     }
 }
