@@ -27,6 +27,7 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
+            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + log + "'")[0]);
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -71,7 +72,8 @@ namespace WindowsFormsApplication4
 
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
-                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString();
+                List<String> likes = SQLClass.Select(string.Format("SELECT SUM(`LikesCount`), SUM(`DisCount`) FROM `Likes` WHERE `Author` = '{0}'", login));
+                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString() + string.Format(" Лайки: {0}, Дислайки: {1}", likes[0], likes[1]);
                 String[] chasti_stroki = AuthorInfo[infoIndex + 2].ToString().Split(new char[] { ' ', '/' });
                 
                 try
@@ -133,6 +135,7 @@ namespace WindowsFormsApplication4
                     }
                     catch (Exception)
                     {
+
                     }
                 }
 
