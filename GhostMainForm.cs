@@ -76,6 +76,7 @@ namespace WindowsFormsApplication4
         {
             arts.Clear();
             Right_panel.Controls.Clear();
+            textBox_password.UseSystemPasswordChar = true;
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
 
@@ -366,26 +367,17 @@ namespace WindowsFormsApplication4
             List<String> Polzovatel = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
                 " WHERE Login = @STR and Parol = @PASS", dict);
-
             
+            aut = (AuthorLoginData[0] != "0");
+            adm = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
+            Users.CURRENT_USER = textBox_login.Text;
+            
+            if (!aut && !adm && Polzovatel[0] == "0")
+            {
+                MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
+            }
 
-
-            if (AuthorLoginData[0] != "0")
-            {
-                Users.CURRENT_USER = textBox_login.Text;
-                aut = true;
-                Form1_Load(sender, e);
-            }
-            else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
-            {
-                adm = true;
-                Form1_Load(sender, e);
-            }
-            else if (Polzovatel[0] != "0")
-            {
-                Form1_Load(sender, e);
-            }
-            else MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
+            Form1_Load(sender, e);
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -572,7 +564,11 @@ namespace WindowsFormsApplication4
 
         private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox_password.UseSystemPasswordChar == false)
+            {
+                textBox_password.UseSystemPasswordChar = true;
+            }
+            else { textBox_password.UseSystemPasswordChar = false; }
         }
 
         private void AdmButton_Click(object sender, EventArgs e)
@@ -588,7 +584,6 @@ namespace WindowsFormsApplication4
             af.ShowDialog();
             Form1_Load(sender, e);
         }
-
         private void textBox_login_TextChanged(object sender, EventArgs e)
         {
 

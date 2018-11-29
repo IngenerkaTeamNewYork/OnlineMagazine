@@ -60,6 +60,7 @@ namespace WindowsFormsApplication4
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Left_panel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -181,7 +182,6 @@ namespace WindowsFormsApplication4
             this.textBox_login.Name = "textBox_login";
             this.textBox_login.Size = new System.Drawing.Size(220, 20);
             this.textBox_login.TabIndex = 9;
-            this.textBox_login.TextChanged += new System.EventHandler(this.textBox_login_TextChanged);
             this.textBox_login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button_login_KeyDown);
             // 
             // label_password
@@ -196,6 +196,7 @@ namespace WindowsFormsApplication4
             // 
             // textBox_password
             // 
+            this.textBox_password.ContextMenuStrip = this.contextMenuStrip1;
             this.textBox_password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_password.Location = new System.Drawing.Point(3, 63);
             this.textBox_password.Name = "textBox_password";
@@ -373,13 +374,14 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
-            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.увеличитьПисюнToolStripMenuItem.Text = "Увеличить писюн";
+            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.увеличитьПисюнToolStripMenuItem.Text = "Показать/Скрыть пароль";
             this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
             // 
             // textBox_search
@@ -456,5 +458,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem увеличитьПисюнToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
