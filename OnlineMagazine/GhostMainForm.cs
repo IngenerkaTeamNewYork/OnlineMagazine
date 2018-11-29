@@ -29,7 +29,8 @@ namespace WindowsFormsApplication4
         int kolvo_nazatiy = 0;
         public string kuda_i_kak;
         public int articleY = 50;
-      
+        
+
         public GhostMainForm()
         {
             InitializeComponent();
@@ -101,6 +102,7 @@ namespace WindowsFormsApplication4
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
                     Form1_Load(sender, e);
+                    break;
                 }
             }
         }
@@ -111,9 +113,8 @@ namespace WindowsFormsApplication4
             Right_panel.Controls.Clear();
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
-
-            Right_panel.Controls.Add(tableLayoutPanel1);
-            button_add_reklama.Visible = false;
+            
+           // button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             AdmButton.Visible = adm;
@@ -123,7 +124,10 @@ namespace WindowsFormsApplication4
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
                 Right_panel.Controls.Add(lable_name_of_polzovatel);
+
+                Right_panel.Controls.Add(tableLayoutPanel2);
                 button_add_reklama.Visible = true;
+                button1.Visible = true;
             }
 
             #region Обновление списка категорий
@@ -593,9 +597,12 @@ namespace WindowsFormsApplication4
                     popularArticlesLabel.ForeColor = MyDialog.Color;
                 }
 
-                this.Font = fontDialog1.Font;
+                if (fontDialog1.Font.Size > 5 && fontDialog1.Font.Size < 38)
+                {
+                    this.Font = fontDialog1.Font;
+                    Configs.USER_FONT = fontDialog1.Font;
+                }
                 this.ForeColor = MyDialog.Color;
-                Configs.USER_FONT = fontDialog1.Font;
                 Configs.USER_COLOR = MyDialog.Color;
             }
         }
@@ -619,8 +626,11 @@ namespace WindowsFormsApplication4
 
         private void AutButton_Click(object sender, EventArgs e)
         {
-            AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
-            af.ShowDialog();
+
+                AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
+                af.ShowDialog();
+           
+            
             Form1_Load(sender, e);
         }
     }

@@ -154,5 +154,6 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
         }
+
     }
 }

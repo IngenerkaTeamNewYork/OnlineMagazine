@@ -17,6 +17,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication4
 {
+
     public partial class AuthorMainForm : Form
     {
         public string login;
@@ -27,7 +28,7 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
-            Button_Balance.Text = string.Format("¡‡Î‡ÌÒ: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + log + "'")[0]);
+            Button_Balance.Text = string.Format("–ë–∞–ª–∞–Ω—Å: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + log + "'")[0]);
         }
         public List<LinkLabel> arts = new List<LinkLabel>();
         
@@ -66,14 +67,25 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
 
+
             List<String> AuthorInfo = SQLClass.Select(
                 "SELECT Information_about_author, Articles, Pic FROM " + Tables.AUTHORS +
                 " WHERE `UserName` = '" + login + "'");
 
+            List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
+                " WHERE `Author` = '" + login + "'");
+            label4.Text = "√Ç√†√∏ √∞√•√©√≤√®√≠√£ " + mesto[0];
+            
+                List<String> balance = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author` = '" + login + "'");
+                Button_Balance.Text = "√Å√†√´√†√≠√± " + balance[0];
+            
+
+
+
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
                 List<String> likes = SQLClass.Select(string.Format("SELECT SUM(`LikesCount`), SUM(`DisCount`) FROM `Likes` WHERE `Author` = '{0}'", login));
-                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString() + string.Format(" À‡ÈÍË: {0}, ƒËÒÎ‡ÈÍË: {1}", likes[0], likes[1]);
+                aboutAuthorLabel.Text = AuthorInfo[infoIndex].ToString() + string.Format(" –õ–∞–π–∫–æ–≤: {0}, –î–∏–∑–ª–∞–π–∫–æ–≤: {1}", likes[0], likes[1]);
                 String[] chasti_stroki = AuthorInfo[infoIndex + 2].ToString().Split(new char[] { ' ', '/' });
                 
                 try

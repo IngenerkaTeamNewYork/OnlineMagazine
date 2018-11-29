@@ -21,6 +21,7 @@ namespace WindowsFormsApplication4
         public static string CURRENT_USERPASS;
 
         public List<users> list_of_users = new List<users>();
+        string zapros;
 
         public Users()
         {
@@ -28,6 +29,7 @@ namespace WindowsFormsApplication4
             name.Font = Configs.ZAGOLOVOK_FONT;
             label_feel.Font = Configs.ZAGOLOVOK_FONT;
             labelb.Font = Configs.ZAGOLOVOK_FONT;
+            
         }
 
         private void Click(object sender, EventArgs e)
@@ -38,16 +40,19 @@ namespace WindowsFormsApplication4
                 {
                     SQLClass.Update("UPDATE " + Tables.POLZOVATELI +
                         " SET ban = 1 WHERE login = '" + i.login + "'");
+                    SQLClass.Update("UPDATE " + Tables.AUTHORS +
+                        " SET ban = 0 WHERE UserName = '" + i.login + "'");
                 }
             }
 
             Users_Load(null, null);
         }
+       
 
-        /// <summary>
-        /// Разблокировка пользователя
-        /// </summary>
-        private void ras_Click(object sender, EventArgs e)
+            /// <summary>
+            /// Разблокировка пользователя
+            /// </summary>
+            private void ras_Click(object sender, EventArgs e)
         {
             foreach (users i in list_of_users)
             {
@@ -55,6 +60,8 @@ namespace WindowsFormsApplication4
                 {
                     SQLClass.Update("UPDATE " + Tables.POLZOVATELI +
                         " SET ban = 0 WHERE login = '" + i.login + "'");
+                    SQLClass.Update("UPDATE " + Tables.AUTHORS +
+                        " SET ban = 0 WHERE UserName = '" + i.login + "'");
                 }
             }
 
@@ -65,21 +72,37 @@ namespace WindowsFormsApplication4
         {
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
+           
 
             list_of_users.Clear();
             panel1.Controls.Clear();
-            List<String> UsersData = SQLClass.Select("SELECT Login, ban FROM " + Tables.POLZOVATELI);
+            panel1.Controls.Add(comboBox1);
+
+
+            /*else
+            {
+                zapros = "SELECT `UserName`, 'locked' FROM " + Tables.AUTHORS;
+            }*/
+
+            //FIXED
+            zapolnenie();
+            List<String> UsersData = SQLClass.Select(zapros);
 
             int CurrentY = 20;
 
-            for (int userIndex = 0; userIndex < UsersData.Count; userIndex += 2)
+            for (int userIndex = 0; userIndex < UsersData.Count; userIndex += 3)
             {
                 LinkLabel linklabel1 = new LinkLabel();
                 linklabel1.Size = new Size(70, 20);
                 linklabel1.Location = new Point(10, CurrentY);
                 linklabel1.Text = UsersData[userIndex].ToString();
-
                 panel1.Controls.Add(linklabel1);
+
+                Label label22 = new Label();
+                label22.Size = new Size(20, 20);
+                label22.Location = new Point(80, CurrentY);
+                label22.Text = UsersData[userIndex + 2].ToString();
+                panel1.Controls.Add(label22);
 
                 Label label2 = new Label();
                 label2.Size = new Size(70, 20);
@@ -100,7 +123,7 @@ namespace WindowsFormsApplication4
 
                 users newUser = new users();
                 newUser.login = linklabel1.Text;
-                newUser.ban = Boolean.Parse(label2.Text); 
+                newUser.ban = Boolean.Parse(label2.Text);
 
                 newUser.btn = button_ban;
                 newUser.btn.Click += new System.EventHandler(Click);
@@ -113,6 +136,7 @@ namespace WindowsFormsApplication4
                 list_of_users.Add(newUser);
                 CurrentY += 20;
             }
+            
         }
 
         private void button_Click ()
@@ -120,7 +144,30 @@ namespace WindowsFormsApplication4
             //MySqlCommand cmd = new MySqlCommand("SELECT Login FROM `Polzovateli` ", SQLClass.CONN);
         }
 
-        
-     }
+        void zapolnenie()
+        {
+            zapros = "SELECT Login, ban, (SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE reader = Login) FROM " + Tables.POLZOVATELI;
+
+            if (comboBox1.SelectedIndex == 0)
+            {
+                zapros = zapros + " WHERE admin = 1";
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                zapros = zapros + " WHERE admin = 0";
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                zapros = zapros + " WHERE Login IN (SELECT UserName FROM " + Tables.AUTHORS + ")";
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            zapolnenie();
+            Users_Load(sender, e);
+        }
+
+    }
     
 }

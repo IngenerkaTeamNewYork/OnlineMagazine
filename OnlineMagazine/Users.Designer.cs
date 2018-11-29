@@ -29,22 +29,47 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label_feel = new System.Windows.Forms.Label();
             this.labelb = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.label_feel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label_feel);
             this.panel1.Controls.Add(this.labelb);
             this.panel1.Controls.Add(this.name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(365, 261);
+            this.panel1.Size = new System.Drawing.Size(365, 282);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Админы",
+            "Пользователи",
+            "Авторы"});
+            this.comboBox1.Location = new System.Drawing.Point(4, 258);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(133, 21);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "Вывести категорию";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label_feel
+            // 
+            this.label_feel.AutoSize = true;
+            this.label_feel.Location = new System.Drawing.Point(76, 4);
+            this.label_feel.Name = "label_feel";
+            this.label_feel.Size = new System.Drawing.Size(61, 13);
+            this.label_feel.TabIndex = 2;
+            this.label_feel.Text = "Состояние";
             // 
             // labelb
             // 
@@ -64,20 +89,11 @@
             this.name.TabIndex = 0;
             this.name.Text = "Логин";
             // 
-            // label_feel
-            // 
-            this.label_feel.AutoSize = true;
-            this.label_feel.Location = new System.Drawing.Point(76, 4);
-            this.label_feel.Name = "label_feel";
-            this.label_feel.Size = new System.Drawing.Size(61, 13);
-            this.label_feel.TabIndex = 2;
-            this.label_feel.Text = "Состояние";
-            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 261);
+            this.ClientSize = new System.Drawing.Size(365, 282);
             this.Controls.Add(this.panel1);
             this.Name = "Users";
             this.Text = "Список пользователей";
@@ -94,7 +110,6 @@
         private System.Windows.Forms.Label labelb;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label_feel;
-
-
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -39,27 +39,28 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.aboutAuthorLabel = new System.Windows.Forms.Label();
-            this.Avatar_author = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_statistika = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.leftTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.table_right_up = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Avatar_author = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.Button_Balance = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1_reklama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2_reklama.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_Statiya.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_author)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftTableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.table_right_up.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_author)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1_reklama
@@ -169,15 +170,6 @@
             this.aboutAuthorLabel.TabIndex = 5;
             this.aboutAuthorLabel.Text = "Об авторе";
             // 
-            // Avatar_author
-            // 
-            this.Avatar_author.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Avatar_author.Location = new System.Drawing.Point(3, 53);
-            this.Avatar_author.Name = "Avatar_author";
-            this.Avatar_author.Size = new System.Drawing.Size(163, 244);
-            this.Avatar_author.TabIndex = 6;
-            this.Avatar_author.TabStop = false;
-            // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -232,6 +224,16 @@
             this.leftTableLayoutPanel.Size = new System.Drawing.Size(210, 512);
             this.leftTableLayoutPanel.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 489);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(204, 20);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Обновление";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -272,15 +274,35 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.aboutAuthorLabel, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.Avatar_author, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.Avatar_author, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.70856F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.29144F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(169, 300);
             this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // Avatar_author
+            // 
+            this.Avatar_author.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Avatar_author.Location = new System.Drawing.Point(3, 94);
+            this.Avatar_author.Name = "Avatar_author";
+            this.Avatar_author.Size = new System.Drawing.Size(163, 203);
+            this.Avatar_author.TabIndex = 6;
+            this.Avatar_author.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "label4";
             // 
             // Button_Balance
             // 
@@ -294,16 +316,6 @@
             this.Button_Balance.Text = "Баланс";
             this.Button_Balance.UseVisualStyleBackColor = true;
             this.Button_Balance.Click += new System.EventHandler(this.Balance_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 489);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(204, 20);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Обновление";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // AuthorMainForm
             // 
@@ -322,7 +334,6 @@
             this.panel2_reklama.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_Statiya.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Avatar_author)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.leftTableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -330,6 +341,7 @@
             this.table_right_up.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Avatar_author)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,7 +353,6 @@
         private System.Windows.Forms.Panel panel_Statiya;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label aboutAuthorLabel;
-        private System.Windows.Forms.PictureBox Avatar_author;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_statistika;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -357,5 +368,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox Avatar_author;
+        private System.Windows.Forms.Label label4;
     }
 }
