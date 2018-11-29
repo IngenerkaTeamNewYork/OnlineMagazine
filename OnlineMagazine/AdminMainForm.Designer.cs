@@ -244,7 +244,6 @@ namespace WindowsFormsApplication4
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.button_collections, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -289,6 +288,7 @@ namespace WindowsFormsApplication4
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -313,5 +313,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button_collections;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

@@ -169,5 +169,10 @@ namespace WindowsFormsApplication4
             LogsReadForm t = new LogsReadForm();
             t.ShowDialog();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

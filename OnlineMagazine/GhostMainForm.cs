@@ -44,6 +44,38 @@ namespace WindowsFormsApplication4
             AdmButton.Visible = false;
             AutButton.Visible = false;
         }
+
+        String getKak()
+        {
+            string kak = "";
+            //Жуков!!! Selected, а не tab
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    kak = "";
+                    break;
+                case 1:
+                    kak = "ORDER BY A ASC";
+                    break;
+                case 2:
+                    kak = "ORDER BY A DESC";
+                    break;
+                case 3:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
+                    break;
+                case 4:
+                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
+                    break;
+                case 5:
+                    kak = "ORDER BY LikesCount ASC";
+                    break;
+                case 6:
+                    kak = "ORDER BY LikesCount DESC";
+                    break;
+            }
+
+            return kak;
+        }
         
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -172,43 +204,19 @@ namespace WindowsFormsApplication4
             textBox_login.Text = "";
             textBox_password.Text = "";
 
-            Dictionary<String, String> dict = new Dictionary<string, string>();
+            kolvo_nazatiy = 0;
+            dalee_Click(sender, e);
+
+            /*Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
-            string kak = "";
-            //Жуков!!! Selected, а не tab
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                    kak = "";
-                    break;
-                case 1:
-                    kak = "ORDER BY A ASC";
-                    break;
-                case 2:
-                    kak = "ORDER BY A DESC";
-                    break;
-                case 3:
-                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
-                    break;
-                case 4:
-                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
-                    break;
-                case 5:
-                    kak = "ORDER BY LikesCount ASC";
-                    break;
-                case 6:
-                    kak = "ORDER BY LikesCount DESC";
-                    break;
-            }
-
-
+            
             List <String> PopularArticles = SQLClass.Select
                 ("SELECT Header, Picture, likesCount, discount, "+
                 "(SELECT COUNT(*) FROM read_of_articles WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
                 " FROM " + Tables.ARTICLES + ", " + Tables.LIKES +
                 " WHERE new = 0 AND  " + Tables.ARTICLES + ".Header = " + Tables.LIKES + ".Article  AND  (header like @STR" +
                 " OR " + Tables.ARTICLES + ".category like @STR" +
-                " OR " + Tables.ARTICLES + ".author like @STR)" + kak + " LIMIT 0, 3", dict);
+                " OR " + Tables.ARTICLES + ".author like @STR)" + getKak() + " LIMIT 0, 3", dict);
             
             int articleY = 10;
 
@@ -218,7 +226,7 @@ namespace WindowsFormsApplication4
                 Panel articleHeaderPanel = new Panel();
                 articleHeaderPanel.Size = new Size(Centr_panel.Width, 30);
                 articleHeaderPanel.Dock = DockStyle.Top;
-                articleHeaderPanel.TabIndex = 0;
+                articleHeaderPanel.TabIndex = 1;
                 Centr_panel.Controls.Add(articleHeaderPanel);
 
                 LinkLabel label1 = new LinkLabel();
@@ -305,7 +313,7 @@ namespace WindowsFormsApplication4
 
                 arts.Add(label1);
                 articleY += 180;
-            }
+            }*/
 
             Centr_panel.Controls.Add(dalee);
         }
@@ -442,21 +450,25 @@ namespace WindowsFormsApplication4
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
             List<String> PopularArticles =
-                SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR" +
-                " OR category like @STR" +
-                " OR author like @STR) " +
-                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
+                SQLClass.Select
+                ("SELECT Header, Picture, " + 
+                "(SELECT likesCount FROM " + Tables.LIKES + " WHERE Header = Article) likesCount, " +
+                "(SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article) discount, " +
+                "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
+                " FROM " + Tables.ARTICLES +
+                " WHERE new = 0 AND  (header like @STR" +
+                " OR " + Tables.ARTICLES + ".category like @STR" +
+                " OR " + Tables.ARTICLES + ".author like @STR)" + getKak() + " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
-            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 2)
+
+            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 5)
             {
                 #region Article header
                 Panel articleHeaderPanel = new Panel();
                 articleHeaderPanel.Size = new Size(Centr_panel.Width, 30);
-                articleHeaderPanel.Dock = DockStyle.Top;
-                articleHeaderPanel.TabIndex = 0;
-                Centr_panel.Controls.Add(articleHeaderPanel);
-
+                articleHeaderPanel.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
+                articleHeaderPanel.TabIndex = (kolvo_nazatiy > 1) ? 3 * kolvo_nazatiy : 3 * kolvo_nazatiy + 2;
+                
                 LinkLabel label1 = new LinkLabel();
                 label1.Location = new Point(0, 0);
                 label1.Size = new Size(180, 20);
@@ -496,11 +508,21 @@ namespace WindowsFormsApplication4
                         "</body></html>";
 
                     WebBrowser web = new WebBrowser();
-                    web.TabIndex = 1;
-                    web.Dock = DockStyle.Top;
+                    web.TabIndex = 3 * kolvo_nazatiy + 1;
+                    web.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
                     web.DocumentText = string.Format(embed, url);
                     web.Location = new Point(0, articleY + 25);
-                    Centr_panel.Controls.Add(web);
+
+                    if (kolvo_nazatiy > 1)
+                    {
+                        Centr_panel.Controls.Add(web);
+                        Centr_panel.Controls.Add(articleHeaderPanel);
+                    }
+                    else
+                    {
+                        Centr_panel.Controls.Add(articleHeaderPanel);
+                        Centr_panel.Controls.Add(web);
+                    }
                 }
                 //Picture
                 else
@@ -511,10 +533,10 @@ namespace WindowsFormsApplication4
                     artImage.Location = new Point(0, articleY + 25);
                     artImage.Tag = label1.Text;
                     artImage.Size = new Size(Centr_panel.Width, 150);
-                    artImage.Dock = DockStyle.Top;
+                    artImage.Dock = (kolvo_nazatiy > 1) ? DockStyle.Bottom : DockStyle.Top;
                     artImage.Click += new System.EventHandler(clik_na_pic);
                     artImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    artImage.TabIndex = 1;
+                    artImage.TabIndex = 3 * kolvo_nazatiy + 1;
 
                     try
                     {
@@ -534,10 +556,21 @@ namespace WindowsFormsApplication4
                         }
                     }
 
-                    Centr_panel.Controls.Add(artImage);
+                    if (kolvo_nazatiy > 1)
+                    {
+                        Centr_panel.Controls.Add(artImage);
+                        Centr_panel.Controls.Add(articleHeaderPanel);
+                    }
+                    else
+                    {
+                        Centr_panel.Controls.Add(articleHeaderPanel);
+                        Centr_panel.Controls.Add(artImage);
+                    }
+
                     piccc.Add(artImage);
                 }
 
+                Centr_panel.Controls.Add(dalee);
                 arts.Add(label1);
                 articleY += 180;
             }

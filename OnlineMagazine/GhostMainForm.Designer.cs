@@ -99,6 +99,7 @@ namespace WindowsFormsApplication4
             this.Left_panel.Controls.Add(this.AdmButton);
             this.Left_panel.Controls.Add(this.AutButton);
             this.Left_panel.Controls.Add(this.authorizationTableLayoutPanel);
+            this.Left_panel.Controls.Add(this.link_of_registration);
             this.Left_panel.Controls.Add(this.reclama3);
             this.Left_panel.Controls.Add(this.reclama2);
             this.Left_panel.Controls.Add(this.reclama);
@@ -218,7 +219,7 @@ namespace WindowsFormsApplication4
             // 
             // reclama3
             // 
-            this.reclama3.Location = new System.Drawing.Point(23, 417);
+            this.reclama3.Location = new System.Drawing.Point(23, 398);
             this.reclama3.Name = "reclama3";
             this.reclama3.Size = new System.Drawing.Size(172, 114);
             this.reclama3.TabIndex = 5;
@@ -227,7 +228,7 @@ namespace WindowsFormsApplication4
             // 
             // reclama2
             // 
-            this.reclama2.Location = new System.Drawing.Point(13, 275);
+            this.reclama2.Location = new System.Drawing.Point(13, 248);
             this.reclama2.Name = "reclama2";
             this.reclama2.Size = new System.Drawing.Size(182, 126);
             this.reclama2.TabIndex = 4;
@@ -236,7 +237,7 @@ namespace WindowsFormsApplication4
             // 
             // reclama
             // 
-            this.reclama.Location = new System.Drawing.Point(13, 174);
+            this.reclama.Location = new System.Drawing.Point(13, 138);
             this.reclama.Name = "reclama";
             this.reclama.Size = new System.Drawing.Size(199, 95);
             this.reclama.TabIndex = 2;
@@ -254,17 +255,17 @@ namespace WindowsFormsApplication4
             "рейтинг(по убыванию)",
             "лайки(по возрастанию)",
             "лайки(по убыванию)"});
-            this.comboBox1.Location = new System.Drawing.Point(232, 37);
+            this.comboBox1.Location = new System.Drawing.Point(229, 1);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(205, 21);
             this.comboBox1.TabIndex = 16;
-            this.comboBox1.Text = "Отсортировать";
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.tableLayoutPanel2);
             this.Right_panel.Controls.Add(this.label_Author_header);
+            this.Right_panel.Controls.Add(this.button1);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
+            this.Right_panel.Controls.Add(this.button_add_reklama);
             this.Right_panel.Controls.Add(this.categories_linklabel);
             this.Right_panel.Controls.Add(this.label_author);
             this.Right_panel.Controls.Add(this.label_cats_header);
@@ -375,7 +376,7 @@ namespace WindowsFormsApplication4
             // popularArticlesLabel
             // 
             this.popularArticlesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.popularArticlesLabel.Location = new System.Drawing.Point(231, 80);
+            this.popularArticlesLabel.Location = new System.Drawing.Point(232, 38);
             this.popularArticlesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.popularArticlesLabel.Name = "popularArticlesLabel";
             this.popularArticlesLabel.Size = new System.Drawing.Size(314, 31);
@@ -424,6 +425,7 @@ namespace WindowsFormsApplication4
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Left_panel.ResumeLayout(false);
+            this.Left_panel.PerformLayout();
             this.authorizationTableLayoutPanel.ResumeLayout(false);
             this.authorizationTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).EndInit();
