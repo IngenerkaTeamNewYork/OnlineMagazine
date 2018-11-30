@@ -129,29 +129,35 @@ namespace WindowsFormsApplication4
 
             GetStata(label3, label4, name.Text);
         }
+        private void labelClick(object sender, EventArgs e)
+        {
+            Process.Start(((LinkLabel)sender).Text);
+        }
 
 
-        private void VipStatiy_Load(object sender, EventArgs e)
+            private void VipStatiy_Load(object sender, EventArgs e)
         {
             GetStata(label3, label4, name.Text);
             String[] d = s.Split('\n');
             for (int i = 0; i < d.Length; i++)
             {
 
-                Label label1 = new Label();
-                label1.Location = new Point(0, 0);
-                label1.Size = new Size(180, 20);
-                label1.Text = d[d.Length - 1 - i];
-                label1.Dock = DockStyle.Top;
-                panel1.Controls.Add(label1);
-
-                if (d[d.Length - 1 - i].Contains("https://"))
+                if (d[d.Length - 1 - i].Contains("http://") || d[d.Length - 1 - i].Contains("https://"))
                 {
+                    LinkLabel label1 = new LinkLabel();
+                    label1.Location = new Point(0, 0);
+                    label1.Size = new Size(180, 20);
+                    label1.Text = d[d.Length - 1 - i];
+                    label1.Click += new System.EventHandler(labelClick);
+                    label1.Dock = DockStyle.Top;
+                    panel1.Controls.Add(label1);
+
                     PictureBox artImage = new PictureBox();
                     artImage.Location = new Point(0, 25);
                     artImage.Size = new Size(panel1.Width, 150);
                     artImage.Dock = DockStyle.Top;
                     artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    panel1.Controls.Add(artImage);
 
                     String[] chasti_stroki = d[d.Length - 1 - i].Split(new char[] { ' ', '/' });
 
@@ -172,6 +178,15 @@ namespace WindowsFormsApplication4
                             artImage.Dispose();
                         }
                     }
+                }
+                else
+                {
+                    Label label1 = new Label();
+                    label1.Location = new Point(0, 0);
+                    label1.Size = new Size(180, 20);
+                    label1.Text = d[d.Length - 1 - i];
+                    label1.Dock = DockStyle.Top;
+                    panel1.Controls.Add(label1);
                 }
 
             }
