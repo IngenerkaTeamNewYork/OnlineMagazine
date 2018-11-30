@@ -99,7 +99,8 @@ namespace WindowsFormsApplication4
                 if (sender.Equals(lab))
                 {
                     statiya stat = statiya.Click1(lab.Tag.ToString());
-                    StatiyaForm OknoStatiya = new StatiyaForm(stat);
+                    //StatiyaForm OknoStatiya = new StatiyaForm(stat);
+                    VipStatiy OknoStatiya = new VipStatiy(stat);
                     OknoStatiya.ShowDialog();
                     Form1_Load(sender, e);
                     break;

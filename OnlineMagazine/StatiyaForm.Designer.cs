@@ -39,6 +39,7 @@
             this.artTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Stattext = new System.Windows.Forms.TextBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.redact = new System.Windows.Forms.Button();
             this.Authortext = new System.Windows.Forms.Label();
             this.Maintext = new System.Windows.Forms.TextBox();
             this.likesPanel = new System.Windows.Forms.Panel();
@@ -47,7 +48,6 @@
             this.labeldis = new System.Windows.Forms.Label();
             this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
             this.pictureBoxLike = new System.Windows.Forms.PictureBox();
-            this.redact = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -182,6 +182,17 @@
             this.HeaderPanel.Size = new System.Drawing.Size(400, 94);
             this.HeaderPanel.TabIndex = 5;
             // 
+            // redact
+            // 
+            this.redact.Location = new System.Drawing.Point(316, 0);
+            this.redact.Name = "redact";
+            this.redact.Size = new System.Drawing.Size(81, 20);
+            this.redact.TabIndex = 4;
+            this.redact.Text = "Редактировать";
+            this.redact.UseVisualStyleBackColor = true;
+            this.redact.Visible = false;
+            this.redact.Click += new System.EventHandler(this.redact_Click);
+            // 
             // Authortext
             // 
             this.Authortext.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -269,17 +280,6 @@
             this.pictureBoxLike.TabIndex = 0;
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
-            // 
-            // redact
-            // 
-            this.redact.Location = new System.Drawing.Point(316, 0);
-            this.redact.Name = "redact";
-            this.redact.Size = new System.Drawing.Size(81, 20);
-            this.redact.TabIndex = 4;
-            this.redact.Text = "Редактировать";
-            this.redact.UseVisualStyleBackColor = true;
-            this.redact.Visible = false;
-            this.redact.Click += new System.EventHandler(this.redact_Click);
             // 
             // StatiyaForm
             // 

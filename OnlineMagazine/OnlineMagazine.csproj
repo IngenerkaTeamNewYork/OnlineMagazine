@@ -201,6 +201,12 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <Compile Include="VipStatiy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VipStatiy.Designer.cs">
+      <DependentUpon>VipStatiy.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add_Statia.resx">
       <DependentUpon>Add_Statia.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VipStatiy.resx">
+      <DependentUpon>VipStatiy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="IniFileParser\INIFileParser.nuspec" />
     <None Include="IniFileParser\Model\IniData.cs.rej" />
