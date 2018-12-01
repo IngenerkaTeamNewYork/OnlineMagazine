@@ -21,6 +21,7 @@ namespace WindowsFormsApplication4
         bool avtor = false;
         bool isLike = false;
         bool isDisLike = false;
+        public string Head;
         
         public static void GetStata(Label lblLike, Label lblDisLike, String text)
         {
@@ -47,7 +48,9 @@ namespace WindowsFormsApplication4
 
             Kategoriatext.Enabled = avtor;
             Stattext.Enabled = avtor;
-            
+            redact.Visible = avtor;
+
+            Head = stat.name_statiya;
             Maintext.Text = stat.name_statiya;
             Kategoriatext.Text = stat.kategorita_statii;
             Stattext.Text = stat.text_statii;
@@ -55,6 +58,19 @@ namespace WindowsFormsApplication4
             Kategoriatext.Font = Configs.ZAGOLOVOK_FONT;
 
             Authortext.Font = Configs.ZAGOLOVOK_FONT;
+
+            /*List<String> ids = SQLClass.Select("SELECT MAX(Artic_ID + 1) FROM  " + Tables.ARTICLES);
+            id = ids[0];
+
+            SQLClass.Insert("INSERT INTO " + Tables.ARTICLES +
+                "(Header, Category, Author, Text)" +
+                " VALUES ('" + Maintext.Text + "'," +
+                "'" + Kategoriatext.Text + "'," +
+                "'" + Stattext.Text + "',"  +
+                " 1)");
+            SQLClass.Update("UPDATE " + Tables.AUTHORS + "'");*/
+
+            
 
             GetStata(labelLike, labeldis, Maintext.Text);
 
@@ -214,7 +230,11 @@ namespace WindowsFormsApplication4
 
         private void redact_Click(object sender, EventArgs e)
         {
-          
+            SQLClass.Update("UPDATE " + Tables.ARTICLES +
+                " SET Header = '" + Maintext.Text + "'," +
+                " Category = '" + Kategoriatext.Text + "'," +
+                " Text = '" + Stattext.Text + "'" +
+                " WHERE Header = '" + Head + "'");
         }
     }
 }
