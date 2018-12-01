@@ -30,3 +30,4 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.Co
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.exe
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.pdb
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.LogsReadForm.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.VipStatiy.resources

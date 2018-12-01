@@ -26,8 +26,7 @@ namespace WindowsFormsApplication4
 
         private void LogsReadForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = File.ReadAllText("database.sql", Encoding.UTF8);
-            textBox2.Text = File.ReadAllText("ingenerka.sql", Encoding.UTF8);
+            textBox1.Text = File.ReadAllText("logfile.txt", Encoding.UTF8);
         }
     }
 }

@@ -616,11 +616,7 @@ namespace WindowsFormsApplication4
 
         private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (textBox_password.UseSystemPasswordChar == false)
-            {
-                textBox_password.UseSystemPasswordChar = true;
-            }
-            else { textBox_password.UseSystemPasswordChar = false; }
+            textBox_password.UseSystemPasswordChar = !textBox_password.UseSystemPasswordChar;
         }
 
         private void AdmButton_Click(object sender, EventArgs e)

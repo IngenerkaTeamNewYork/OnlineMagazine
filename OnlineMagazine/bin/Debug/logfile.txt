@@ -579,3 +579,276 @@
 [29.11.2018 22:42:46 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
 [29.11.2018 22:42:46 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
 [29.11.2018 22:42:46 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 14:41:35 - main] -- читаем конфиг
+[30.11.2018 14:41:35 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:41:54 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:41:58 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:42:13 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:42:28 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:42:50 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 14:42:51 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 14:42:51 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 14:42:51 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:51 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:52 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:52 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:53 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:53 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:42:54 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[30.11.2018 14:42:54 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[30.11.2018 14:42:55 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 14:42:55 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 14:50:24 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 0, 3
+[30.11.2018 14:50:26 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Олечка Бузова'
+[30.11.2018 14:50:26 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'как мне жить'
+[30.11.2018 14:50:27 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Повышение цен на сало в Украине'
+[30.11.2018 14:50:31 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 3, 3
+[30.11.2018 14:50:32 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Поговорим о сале'
+[30.11.2018 14:50:32 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Конор - телефон, которого побил Хабиб'
+[30.11.2018 14:50:33 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Котята и вода'
+[30.11.2018 14:50:36 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 6, 3
+[30.11.2018 14:50:36 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'проверка'
+[30.11.2018 14:50:38 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Красивая картинка'
+[30.11.2018 14:50:38 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Мебель'
+[30.11.2018 14:50:41 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 9, 3
+[30.11.2018 14:50:41 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Украина'
+[30.11.2018 14:50:42 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Обычный программист из Ульяновска получает Нобелевскую премию'
+[30.11.2018 14:50:42 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Хочу родиться Украинцем?'
+[30.11.2018 14:50:45 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 12, 3
+[30.11.2018 14:50:45 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Цыгане'
+[30.11.2018 14:50:45 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 14:50:46 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:50:48 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 15, 3
+[30.11.2018 14:50:49 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Поняхи'
+[30.11.2018 14:50:49 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Программисты из Ульяновска сбежали из зоопарка'
+[30.11.2018 14:50:49 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 14:50:59 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:50:59 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:50:59 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:50:59 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:00 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:00 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:51:00 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Если твой рост мерится штангенциркулем, у тебя проблемы', 'NONAME', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[30.11.2018 14:51:00 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'Хохлов'
+[30.11.2018 14:51:00 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'Хохлов'
+[30.11.2018 14:51:10 - SQLClass] -- SELECT Article FROM Likes WHERE Article = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:51:13 - SQLClass] -- UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:51:14 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Если твой рост мерится штангенциркулем, у тебя проблемы'
+[30.11.2018 14:51:36 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 14:51:36 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 14:51:37 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:37 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:37 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:37 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:37 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:37 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 14:51:38 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)ORDER BY LikesCount ASC LIMIT 0, 3
+[30.11.2018 14:51:38 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Олечка Бузова'
+[30.11.2018 14:51:38 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'как мне жить'
+[30.11.2018 14:51:38 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Повышение цен на сало в Украине'
+[30.11.2018 21:14:37 - main] -- читаем конфиг
+[30.11.2018 21:14:38 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 21:14:43 - SQLClass] -- Соединяюсь с базой
+[30.11.2018 21:14:49 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 21:14:49 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 21:14:49 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:49 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:49 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:50 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:50 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:50 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:14:50 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[30.11.2018 21:14:50 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[30.11.2018 21:14:50 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 21:14:51 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:15:25 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[30.11.2018 21:15:25 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[30.11.2018 21:15:25 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 21:15:25 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 21:15:25 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:25 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:26 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:26 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:26 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:26 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:26 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[30.11.2018 21:15:26 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[30.11.2018 21:15:27 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 21:15:27 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:15:29 - SQLClass] -- SELECT Information_about_author, Articles, Pic FROM Authors WHERE `UserName` = 'Хохлов'
+[30.11.2018 21:15:30 - SQLClass] -- SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM Likes WHERE `Author` = 'Хохлов'
+[30.11.2018 21:15:30 - SQLClass] -- SELECT `Summa` FROM Balance WHERE `Author`= 'Хохлов'
+[30.11.2018 21:15:30 - SQLClass] -- SELECT SUM(`LikesCount`), SUM(`DisCount`) FROM `Likes` WHERE `Author` = 'Хохлов'
+[30.11.2018 21:15:30 - SQLClass] -- SELECT Header, Picture FROM Articles1 WHERE `Author` = 'Хохлов'
+[30.11.2018 21:15:31 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:31 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:32 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:15:32 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:04 - SQLClass] -- SELECT name FROM Categories
+[30.11.2018 21:23:23 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 21:23:23 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 21:23:24 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:24 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:24 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:24 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:25 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:25 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:25 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[30.11.2018 21:23:25 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[30.11.2018 21:23:25 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 21:23:25 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:23:29 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 21:23:29 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:23:29 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:11 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:28:12 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:12 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:12 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:12 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:12 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Дайте денег'
+[30.11.2018 21:28:12 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Дайте денег', 'Хохлов', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[30.11.2018 21:28:13 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'ПрПрПр'
+[30.11.2018 21:28:13 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'ПрПрПр'
+[30.11.2018 21:28:16 - SQLClass] -- SELECT Article FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:28:16 - SQLClass] -- UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = 'Дайте денег'
+[30.11.2018 21:28:17 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[30.11.2018 21:28:19 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[30.11.2018 21:28:19 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[30.11.2018 21:28:19 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:19 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:19 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:20 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:20 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:20 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[30.11.2018 21:28:20 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[30.11.2018 21:28:20 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[30.11.2018 21:28:21 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[30.11.2018 21:28:21 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 11:06:37 - main] -- читаем конфиг
+[01.12.2018 11:06:38 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 11:06:46 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 11:06:47 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 11:06:47 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[01.12.2018 11:06:47 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:47 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:48 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:48 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:49 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:49 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:06:49 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[01.12.2018 11:06:49 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 11:06:49 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[01.12.2018 11:06:50 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 11:09:44 - main] -- читаем конфиг
+[01.12.2018 11:09:45 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 11:09:49 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 11:09:58 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 11:09:58 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[01.12.2018 11:09:59 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:09:59 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:09:59 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:09:59 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:09:59 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:00 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:00 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[01.12.2018 11:10:00 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 11:10:00 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[01.12.2018 11:10:01 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 11:10:34 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[01.12.2018 11:10:34 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[01.12.2018 11:10:34 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Fktyf" AND `admin` = 1
+[01.12.2018 11:10:34 - SQLClass] -- SELECT * FROM Polzovateli WHERE `Login`="Fktyf" AND `Parol`="2552"
+[01.12.2018 11:10:34 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 11:10:34 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[01.12.2018 11:10:35 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:35 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:35 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:35 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:36 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:36 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 11:10:36 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[01.12.2018 11:10:36 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 11:10:37 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[01.12.2018 11:10:37 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 12:33:56 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 12:34:21 - main] -- читаем конфиг
+[01.12.2018 12:34:22 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 12:34:28 - SQLClass] -- Соединяюсь с базой
+[01.12.2018 12:34:29 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 12:34:30 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[01.12.2018 12:34:30 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:30 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:31 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:31 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:31 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:31 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:34:31 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[01.12.2018 12:34:32 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 12:34:32 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[01.12.2018 12:34:32 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 12:35:06 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[01.12.2018 12:35:07 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[01.12.2018 12:35:07 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Fktyf" AND `admin` = 1
+[01.12.2018 12:35:07 - SQLClass] -- SELECT * FROM Polzovateli WHERE `Login`="Fktyf" AND `Parol`="2552"
+[01.12.2018 12:35:07 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
+[01.12.2018 12:35:07 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 3
+[01.12.2018 12:35:07 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:08 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:08 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:08 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:08 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:08 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:09 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR) LIMIT 0, 3
+[01.12.2018 12:35:09 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 12:35:09 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[01.12.2018 12:35:09 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[01.12.2018 12:35:28 - SQLClass] -- SELECT `Header` FROM Articles1 WHERE `Category` = 'Хроника'
+[01.12.2018 12:35:29 - SQLClass] -- SELECT `Header` FROM Articles1 WHERE `Category` = 'Животные'
+[01.12.2018 12:35:34 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Ежи тоже люди'
+[01.12.2018 12:35:35 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:35 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:35 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:36 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:35:36 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Ежи тоже люди'
+[01.12.2018 12:35:36 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Ежи тоже люди', 'Fktyf', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[01.12.2018 12:35:37 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'Хохлов'
+[01.12.2018 12:35:37 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'Хохлов'
+[01.12.2018 12:35:44 - SQLClass] -- SELECT Article FROM Likes WHERE Article = 'Ежи тоже люди'
+[01.12.2018 12:35:44 - SQLClass] -- UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = 'Ежи тоже люди'
+[01.12.2018 12:35:44 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Ежи тоже люди'
+[01.12.2018 12:36:00 - SQLClass] -- SELECT DISTINCT `Coll_text` FROM  Colection
+[01.12.2018 12:36:00 - SQLClass] -- SELECT Header FROM Articles1
+[01.12.2018 12:40:08 - SQLClass] -- SELECT UserName FROM Authors
+[01.12.2018 12:40:11 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'afad'
+[01.12.2018 12:40:12 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Demon'
+[01.12.2018 12:40:13 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'ergug - жулик и вор  причём, и идор'
+[01.12.2018 12:40:13 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Данил'
+[01.12.2018 12:40:14 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Жуков'
+[01.12.2018 12:40:14 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Кот'
+[01.12.2018 12:40:14 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'нозавр - жулик и вор  причём, и идор'
+[01.12.2018 12:40:14 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Рибонуклеиновая кислота - жулик и вор  причём, и идор'
+[01.12.2018 12:40:15 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'УКРАIНЕЦ'
+[01.12.2018 12:40:15 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Рибонуклеиновая кислота - жулик и вор  причём, и идор'
+[01.12.2018 12:40:18 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'УКРАIНЕЦ'
+[01.12.2018 12:40:19 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Хламидомонада - жулик и вор  причём, и идор'
+[01.12.2018 12:40:20 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Хохлов'
+[01.12.2018 12:40:21 - SQLClass] -- SELECT * FROM Authors WHERE UserName = 'Я_Автор - жулик и вор  причём, и идор'
+[01.12.2018 12:40:34 - SQLClass] -- SELECT header, new FROM Articles1
+[01.12.2018 12:40:43 - SQLClass] -- SELECT Login, ban, (SELECT COUNT(*) FROM read_of_articles WHERE reader = Login) FROM Polzovateli
+[01.12.2018 12:41:39 - SQLClass] -- SELECT UserName, Pic, Information_about_author FROM Authors
+[01.12.2018 12:41:41 - SQLClass] -- SELECT DISTINCT Header FROM Articles1 WHERE Author = 'Рибонуклеиновая кислота - жулик и вор  причём, и идор'
+[01.12.2018 12:41:53 - SQLClass] -- SELECT DISTINCT Header FROM Articles1 WHERE Author = 'Хохлов'
+[01.12.2018 12:41:55 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 12:41:55 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:41:56 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:41:56 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:41:56 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[01.12.2018 12:41:56 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Война и мир'
+[01.12.2018 12:41:57 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Война и мир', 'Fktyf', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[01.12.2018 12:41:57 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'Хохлов'
+[01.12.2018 12:41:57 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'Хохлов'
+[01.12.2018 12:42:01 - SQLClass] -- SELECT Article FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 12:42:01 - SQLClass] -- UPDATE Likes SET LikesCount = LikesCount + 1 WHERE Article = 'Война и мир'
+[01.12.2018 12:42:01 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[01.12.2018 12:42:08 - SQLClass] -- SELECT UserName FROM Authors
+[01.12.2018 12:51:22 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 7
