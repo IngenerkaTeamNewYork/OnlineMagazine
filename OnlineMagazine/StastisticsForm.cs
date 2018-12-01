@@ -51,31 +51,6 @@ namespace WindowsFormsApplication4
         {
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
-
-
-            List<String> AuthorsData = SQLClass.Select("SELECT UserName, Views, Likes, Dislikes " +
-                " FROM " + Tables.AUTHORS +
-                " ORDER BY UserName");
-
-            authorsDGV.Rows.Clear();
-            for (int index = 0; index < AuthorsData.Count; index += 4)
-            {
-                authorsDGV.Rows.Add();
-                authorsDGV.Rows[index / 4].Cells[0].Value = AuthorsData[index];
-                authorsDGV.Rows[index / 4].Cells[1].Value = AuthorsData[index + 1];
-                authorsDGV.Rows[index / 4].Cells[2].Value = AuthorsData[index + 2];
-                authorsDGV.Rows[index / 4].Cells[3].Value = AuthorsData[index + 3];
-            }
-
-            this.Controls.Clear();
-            if (true == true)
-            {
-                this.Controls.Add(authorsDGV);
-            }
-            else
-            {
-                this.Controls.Add(tableLayoutPanel1);
-            }
         }
     }
 }

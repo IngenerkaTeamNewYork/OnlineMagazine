@@ -193,7 +193,7 @@ namespace WindowsFormsApplication4
             List<String> countRecords = SQLClass.Select(
             "SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES +
             " WHERE `name_of_article` = '" + name.Text + "'");
-            label1.Text = "Просмотров: " + countRecords[0];
+            label5.Text = "Просмотров: " + countRecords[0];
         }
     }
 }

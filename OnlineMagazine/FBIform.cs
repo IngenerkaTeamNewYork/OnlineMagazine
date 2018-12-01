@@ -22,5 +22,10 @@ namespace WindowsFormsApplication4
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
         }
+
+        private void FBIform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }
