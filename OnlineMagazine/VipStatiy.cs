@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +20,7 @@ namespace WindowsFormsApplication4
         bool isLike = false;
         bool isDisLike = false;
         public string s;
-        
+        public float k;
         public VipStatiy(statiya stat)
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace WindowsFormsApplication4
             kategoriy.Text = stat.kategorita_statii;
             s = stat.text_statii;
             label2.Text = stat.name_author;
+
         }
 
         public static void GetStata(Label lblLike, Label lblDisLike, String text)
@@ -129,7 +130,6 @@ namespace WindowsFormsApplication4
 
             GetStata(label3, label4, name.Text);
         }
-        
         private void labelClick(object sender, EventArgs e)
         {
             Process.Start(((LinkLabel)sender).Text);
@@ -153,32 +153,97 @@ namespace WindowsFormsApplication4
                     label1.Dock = DockStyle.Top;
                     panel1.Controls.Add(label1);
 
-                    PictureBox artImage = new PictureBox();
-                    artImage.Location = new Point(0, 25);
-                    artImage.Size = new Size(panel1.Width, 150);
-                    artImage.Dock = DockStyle.Top;
-                    artImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    panel1.Controls.Add(artImage);
-
-                    String[] chasti_stroki = d[d.Length - 1 - i].Split(new char[] { ' ', '/' });
-
-                    try
+                    if (d[d.Length - 1 - i].Contains("www.youtube.com"))
                     {
-                        artImage.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                        if(d[d.Length - 1 - i].Contains("watch?v="))
+                        {
+                            String url = d[d.Length - 1 - i].ToString().Replace("watch?v=", "embed/");
+
+                            String embed = "<html><head>" +
+                                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                                "</head><body>" +
+                                "<iframe width=\"" + panel1.Width + "\" src=\"{0}\"" +
+                                "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                                "</body></html>";
+
+                            WebBrowser web = new WebBrowser();
+                            web.TabIndex = 0;
+                            web.Dock = DockStyle.Top;
+                            web.DocumentText = string.Format(embed, url);
+                            web.Location = new Point(0, 0);
+
+                            panel1.Controls.Add(web);
+                        }
+                        else
+                        {
+                            String url = d[d.Length - 1 - i].ToString();
+
+                            String embed = "<html><head>" +
+                                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                                "</head><body>" +
+                                "<iframe width=\"" + panel1.Width + "\" src=\"{0}\"" +
+                                "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                                "</body></html>";
+
+                            WebBrowser web = new WebBrowser();
+                            web.TabIndex = 0;
+                            web.Dock = DockStyle.Top;
+                            web.DocumentText = string.Format(embed, url);
+                            web.Location = new Point(0, 0);
+
+                            panel1.Controls.Add(web);
+                        }
+
+
                     }
-                    catch (Exception)
+                    else
                     {
+
+
+                        String[] chasti_stroki = d[d.Length - 1 - i].Split(new char[] { ' ', '/', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+
+
                         try
                         {
-                            artImage.LoadAsync(d[d.Length - 1 - i]);
-                            Uri uri = new Uri(d[d.Length - 1 - i]);
-                            client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+
+                            PictureBox artImage = new PictureBox();
+
+
+                            Bitmap dd = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+
+                            artImage.Image = dd;
+
+
+                            artImage.Location = new Point(0, 25);
+                            artImage.Size = new Size(panel1.Width, Convert.ToInt32(dd.Height * panel1.Width / dd.Width));
+                            artImage.Dock = DockStyle.Top;
+                            artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                            panel1.Controls.Add(artImage);
                         }
                         catch (Exception)
                         {
-                            artImage.Dispose();
+                            try
+                            {
+                                PictureBox artImage = new PictureBox();
+                                artImage.Location = new Point(0, 25);
+                                artImage.Size = new Size(panel1.Width, 150);
+                                artImage.Dock = DockStyle.Top;
+                                artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                                panel1.Controls.Add(artImage);
+
+
+                                artImage.LoadAsync(d[d.Length - 1 - i]);
+                                Uri uri = new Uri(d[d.Length - 1 - i]);
+                                client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                            }
+                            catch (Exception)
+                            {
+
+                            }
                         }
                     }
+                     
                 }
                 else
                 {
@@ -194,8 +259,129 @@ namespace WindowsFormsApplication4
             List<String> countRecords = SQLClass.Select(
             "SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES +
             " WHERE `name_of_article` = '" + name.Text + "'");
-            //label5.Text = "Просмотров: " + countRecords[0];
-            // label1.Text = "Просмотров: " + countRecords[0];
+            label5.Text = "Просмотров: " + countRecords[0];
         }
+
+            private void button1_Click(object sender, EventArgs e)
+            {
+                String[] d = s.Split('\n');
+                panel1.Controls.Clear();
+                for (int i = 0; i < d.Length; i++)
+                {
+
+                    if (d[d.Length - 1 - i].Contains("http://") || d[d.Length - 1 - i].Contains("https://"))
+                    {
+                        LinkLabel label1 = new LinkLabel();
+                        label1.Location = new Point(0, 0);
+                        label1.Size = new Size(180, 20);
+                        label1.Text = d[d.Length - 1 - i];
+                        label1.Click += new System.EventHandler(labelClick);
+                        label1.Dock = DockStyle.Top;
+                        panel1.Controls.Add(label1);
+
+                        if (d[d.Length - 1 - i].Contains("www.youtube.com"))
+                        {
+                            if (d[d.Length - 1 - i].Contains("watch?v="))
+                            {
+                                String url = d[d.Length - 1 - i].ToString().Replace("watch?v=", "embed/");
+
+                                String embed = "<html><head>" +
+                                    "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                                    "</head><body>" +
+                                    "<iframe width=\"" + panel1.Width + "\" src=\"{0}\"" +
+                                    "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                                    "</body></html>";
+
+                                WebBrowser web = new WebBrowser();
+                                web.TabIndex = 0;
+                                web.Dock = DockStyle.Top;
+                                web.DocumentText = string.Format(embed, url);
+                                web.Location = new Point(0, 0);
+
+                                panel1.Controls.Add(web);
+                            }
+                            else
+                            {
+                                String url = d[d.Length - 1 - i].ToString();
+
+                                String embed = "<html><head>" +
+                                    "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                                    "</head><body>" +
+                                    "<iframe width=\"" + panel1.Width + "\" src=\"{0}\"" +
+                                    "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                                    "</body></html>";
+
+                                WebBrowser web = new WebBrowser();
+                                web.TabIndex = 0;
+                                web.Dock = DockStyle.Top;
+                                web.DocumentText = string.Format(embed, url);
+                                web.Location = new Point(0, 0);
+
+                                panel1.Controls.Add(web);
+                            }
+
+
+                        }
+                        else
+                        {
+
+
+                            String[] chasti_stroki = d[d.Length - 1 - i].Split(new char[] { ' ', '/', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+
+
+                            try
+                            {
+
+                                PictureBox artImage = new PictureBox();
+
+
+                                Bitmap dd = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+
+                                artImage.Image = dd;
+
+
+                                artImage.Location = new Point(0, 25);
+                                artImage.Size = new Size(panel1.Width, Convert.ToInt32(dd.Height * panel1.Width / dd.Width));
+                                artImage.Dock = DockStyle.Top;
+                                artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                                panel1.Controls.Add(artImage);
+                            }
+                            catch (Exception)
+                            {
+                                try
+                                {
+                                    PictureBox artImage = new PictureBox();
+                                    artImage.Location = new Point(0, 25);
+                                    artImage.Size = new Size(panel1.Width, 150);
+                                    artImage.Dock = DockStyle.Top;
+                                    artImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                                    panel1.Controls.Add(artImage);
+
+
+                                    artImage.LoadAsync(d[d.Length - 1 - i]);
+                                    Uri uri = new Uri(d[d.Length - 1 - i]);
+                                    client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        Label label1 = new Label();
+                        label1.Location = new Point(0, 0);
+                        label1.Size = new Size(180, 20);
+                        label1.Text = d[d.Length - 1 - i];
+                        label1.Dock = DockStyle.Top;
+                        panel1.Controls.Add(label1);
+                    }
+
+                }
+            }
     }
 }
