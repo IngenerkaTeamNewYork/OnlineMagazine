@@ -261,8 +261,8 @@ namespace WindowsFormsApplication4
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
-            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.увеличитьПисюнToolStripMenuItem.Text = "Увеличить писюн";
+            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.увеличитьПисюнToolStripMenuItem.Text = "Показать/Скрыть пароль";
             this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
             // 
             // autButtonsTableLayoutPanel
