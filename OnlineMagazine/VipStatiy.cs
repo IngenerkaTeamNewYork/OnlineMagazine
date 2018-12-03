@@ -20,6 +20,7 @@ namespace WindowsFormsApplication4
         bool isLike = false;
         bool isDisLike = false;
         public string s;
+        
         public VipStatiy(statiya stat)
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace WindowsFormsApplication4
             kategoriy.Text = stat.kategorita_statii;
             s = stat.text_statii;
             label2.Text = stat.name_author;
-
         }
 
         public static void GetStata(Label lblLike, Label lblDisLike, String text)
@@ -129,6 +129,7 @@ namespace WindowsFormsApplication4
 
             GetStata(label3, label4, name.Text);
         }
+        
         private void labelClick(object sender, EventArgs e)
         {
             Process.Start(((LinkLabel)sender).Text);
@@ -193,6 +194,7 @@ namespace WindowsFormsApplication4
             List<String> countRecords = SQLClass.Select(
             "SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES +
             " WHERE `name_of_article` = '" + name.Text + "'");
+            //label5.Text = "Просмотров: " + countRecords[0];
             // label1.Text = "Просмотров: " + countRecords[0];
         }
     }
