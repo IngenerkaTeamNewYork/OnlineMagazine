@@ -124,6 +124,7 @@ namespace WindowsFormsApplication4
             GC.WaitForPendingFinalizers();
             arts.Clear();
             Right_panel.Controls.Clear();
+            textBox_password.UseSystemPasswordChar = true;
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
             
@@ -397,27 +398,17 @@ namespace WindowsFormsApplication4
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
                 " WHERE Login = @STR and Parol = @PASS", dict);
 
-            
+            aut = (AuthorLoginData[0] != "0");
+            adm = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
+            Users.CURRENT_USER = textBox_login.Text;
+            if (!aut && !adm && Polzovatel[0] == "0")
+            {
+                MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
+            }
 
-
-            if (AuthorLoginData[0] != "0")
-            {
-                Users.CURRENT_USER = textBox_login.Text;
-                aut = true;
-                formloader(sender, e);
-            }
-            else if (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text))
-            {
-                adm = true;
-                formloader(sender, e);
-            }
-            else if (Polzovatel[0] != "0")
-            {
-                formloader(sender, e);
-            }
-            else MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
             GC.Collect();
             GC.WaitForPendingFinalizers();
+            formloader(sender, e);
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)

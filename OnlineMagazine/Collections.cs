@@ -30,14 +30,18 @@ namespace WindowsFormsApplication4
             foreach (String list in Collection_List)
             {
                 comboBox1.Items.Add(list);
+               
             }
-
+            
             List<String> ArticlesList = SQLClass.Select("SELECT Header FROM " + Tables.ARTICLES);
+          
             foreach (String article in ArticlesList)
             {
                 checkedListBox1.Items.Add(article);
             }
             New.Visible = false;
+
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,7 +49,29 @@ namespace WindowsFormsApplication4
             if (comboBox1.Text == "Новая")
             {
                 New.Visible = true;
-            }        
+            }
+            else
+            {
+                checkedListBox1.Items.Clear();
+                List<String> stat = SQLClass.Select("SELECT Header, Artic_ID FROM `Articles1` WHERE " +
+                       "Artic_ID IN (SELECT id_art FROM " + Tables.COLLECTION + " WHERE Coll_text = '" + comboBox1.Text + "')");
+
+                List<String> Collection_List = SQLClass.Select("SELECT DISTINCT `Coll_text` FROM  " + Tables.COLLECTION);
+                foreach (String list in Collection_List)
+                {
+                    comboBox1.Items.Add(list);
+
+                }
+
+                List<String> ArticlesList = SQLClass.Select("SELECT Header FROM " + Tables.ARTICLES);
+
+                foreach (String article in ArticlesList)
+                {
+                    checkedListBox1.Items.Add(article, stat.Contains(article));
+                }
+            }
+
+
         }
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -57,7 +83,7 @@ namespace WindowsFormsApplication4
                 String str = checkedListBox1.CheckedItems[index].ToString();
 
                 SQLClass.Insert("INSERT INTO " + Tables.COLLECTION + "(Coll_Text, id_art) VALUES ('" + comboBox1.Text + "'," + 
-                    "(SELECT artic_id FROM `Articles1` WHERE `Header` = '" + str + "'))");
+                    "(SELECT artic_id FROM " + Tables.ARTICLES + " WHERE `Header` = '" + str + "'))");
 
                 
             }
@@ -66,12 +92,17 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLClass.Insert("INSERT INTO `Colection` (`id_art`, `Coll_text`) VALUES ('"+textBox1.Text + "', " + "'" + New.Text + "')");
+            SQLClass.Insert("INSERT INTO " + Tables.COLLECTION + " (`id_art`, `Coll_text`) VALUES ('" + textBox1.Text + "', " + "'" + New.Text + "')");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             SQLClass.Delete("DELETE FROM " + Tables.COLLECTION + " WHERE Coll_Text = '" + comboBox1.Text + "'");
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
