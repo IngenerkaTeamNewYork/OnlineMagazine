@@ -45,6 +45,14 @@ namespace WindowsFormsApplication4
             AutButton.Visible = false;
         }
 
+        void formloader(object sender, EventArgs e)
+        {
+            piccc = new List<PictureBox>();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            Form1_Load(sender, e);
+        }
+
         String getKak()
         {
             string kak = "";
@@ -86,7 +94,7 @@ namespace WindowsFormsApplication4
                     statiya stat = statiya.Click1(((Label)sender).Text);
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
-                    Form1_Load(sender, e);
+                    formloader(sender, e);
                     break;
                 }
             }
@@ -94,6 +102,8 @@ namespace WindowsFormsApplication4
 
         private void clik_na_pic(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             foreach (PictureBox lab in piccc)
             {
                 if (sender.Equals(lab))
@@ -102,7 +112,7 @@ namespace WindowsFormsApplication4
                     //StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     VipStatiy OknoStatiya = new VipStatiy(stat);
                     OknoStatiya.ShowDialog();
-                    Form1_Load(sender, e);
+                    formloader(sender, e);
                     break;
                 }
             }
@@ -110,6 +120,8 @@ namespace WindowsFormsApplication4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             arts.Clear();
             Right_panel.Controls.Clear();
             textBox_password.UseSystemPasswordChar = true;
@@ -330,14 +342,14 @@ namespace WindowsFormsApplication4
         {
             List_of_author form2 = new List_of_author();
             form2.ShowDialog(); 
-            Form1_Load(sender, e);
+            formloader(sender, e);
         }
 
         private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CategoriesForm form3 = new CategoriesForm(false);
             form3.ShowDialog(); 
-            Form1_Load(sender, e);
+            formloader(sender, e);
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -349,6 +361,7 @@ namespace WindowsFormsApplication4
         private void GhostMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SQLClass.CloseConnection();
+            piccc = new List<PictureBox>();
         }
         
         /// <summary>
@@ -368,6 +381,8 @@ namespace WindowsFormsApplication4
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", textBox_login.Text);
             dict.Add("PASS", textBox_password.Text);
@@ -386,13 +401,14 @@ namespace WindowsFormsApplication4
             aut = (AuthorLoginData[0] != "0");
             adm = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
             Users.CURRENT_USER = textBox_login.Text;
-
             if (!aut && !adm && Polzovatel[0] == "0")
             {
                 MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
             }
 
-            Form1_Load(sender, e);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            formloader(sender, e);
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -439,6 +455,7 @@ namespace WindowsFormsApplication4
 
         private void dalee_Click(object sender, EventArgs e)
         {
+            piccc = new List<PictureBox>();
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", "%" + textBox_search.Text + "%");
             List<String> PopularArticles =
@@ -615,7 +632,7 @@ namespace WindowsFormsApplication4
         {
             Form ifrm = new AdminMainForm();
             ifrm.ShowDialog();
-            Form1_Load(sender, e);
+            formloader(sender, e);
         }
 
         private void AutButton_Click(object sender, EventArgs e)
@@ -625,7 +642,7 @@ namespace WindowsFormsApplication4
                 af.ShowDialog();
            
             
-            Form1_Load(sender, e);
+            formloader(sender, e);
         }
     }
 }

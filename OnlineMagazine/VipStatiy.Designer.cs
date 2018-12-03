@@ -84,7 +84,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "label1";
+            this.label5.Text = "label5";
             // 
             // pictureBox1
             // 
