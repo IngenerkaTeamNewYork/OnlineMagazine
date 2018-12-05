@@ -22,5 +22,7 @@ namespace WindowsFormsApplication4
         /// Текущий цвет текста
         /// </summary>
         public static Color USER_COLOR;
+
+        public static int KOL_VO_ELEMENTOV = 5;
     }
 }
