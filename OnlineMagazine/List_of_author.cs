@@ -69,7 +69,7 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm("");
+            StastisticsForm form1 = new StastisticsForm("", false);
             form1.ShowDialog();
         }
 
@@ -92,7 +92,7 @@ namespace WindowsFormsApplication4
         private void button1_Click_2(object sender, EventArgs e)
         {
             
-                StastisticsForm form = new StastisticsForm(null);
+                StastisticsForm form = new StastisticsForm(null, false);
                 form.Show();
                 
             

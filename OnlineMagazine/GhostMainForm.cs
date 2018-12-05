@@ -19,8 +19,10 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
-        public static List<AuthorStat> stat = new List<AuthorStat>();
+
         public static bool adm;
+
+        public static List<AuthorStat> stat = new List<AuthorStat>();
         public static bool aut;
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
@@ -148,7 +150,7 @@ namespace WindowsFormsApplication4
             Right_panel.Controls.Add(label_cats_header);
             Right_panel.Controls.Add(categories_linklabel);
 
-            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 7");
+            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 3");
 
             int catY = 210;
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
@@ -157,9 +159,28 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, catY);
                 label1.Size = new Size(100, 20);
                 label1.Text = catsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Author_Or_Category_CLick);
+                label1.Click += new System.EventHandler(Search_CLick);
                 Right_panel.Controls.Add(label1);
                 catY += 28;
+            }
+            #endregion
+
+            #region Обновление списка подборок
+            Right_panel.Controls.Add(label_collections);
+            Right_panel.Controls.Add(linkLabel_collections);
+
+            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM `Colection`");
+
+            int collY = 360;
+            for (int artIndex = 0; artIndex < collList.Count; artIndex++)
+            {
+                Label label1 = new Label();
+                label1.Location = new Point(0, collY);
+                label1.Size = new Size(100, 20);
+                label1.Text = collList[artIndex].ToString();
+                label1.Click += new System.EventHandler(Search_CLick);
+                Right_panel.Controls.Add(label1);
+                collY += 28;
             }
             #endregion
 
@@ -177,7 +198,7 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, authorsY);
                 label1.Size = new Size(100, 20);
                 label1.Text = authorsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Author_Or_Category_CLick);
+                label1.Click += new System.EventHandler(Search_CLick);
                 Right_panel.Controls.Add(label1);
                 authorsY += 25;
             
@@ -443,7 +464,7 @@ namespace WindowsFormsApplication4
         /// <summary>
         /// КЛик на автора / категорию
         /// </summary>
-        private void Author_Or_Category_CLick(object sender, EventArgs e)
+        private void Search_CLick(object sender, EventArgs e)
         {
             textBox_search.Text = ((Label)sender).Text;
             butto_search_Click(sender, e);
