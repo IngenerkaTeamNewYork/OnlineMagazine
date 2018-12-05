@@ -21,17 +21,23 @@ namespace WindowsFormsApplication4
     /// </summary>
     public partial class StastisticsForm : Form
     {
-        public StastisticsForm(String login)
+        public bool adm;
+        public StastisticsForm(String login, bool admin)
         {
             InitializeComponent();
-
+            adm = admin;
             List<String> AuthorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS);
             foreach (String Author in AuthorsList)
             {
                 list_of_author.Items.Add(Author);
             }
 
-            list_of_author.Text = login;           
+            list_of_author.Text = login;   
+            
+           /* if (!adm)
+            {
+                tabControl1.Visible = true;
+            }*/
         }
 
         private void list_of_author_SelectedIndexChanged(object sender, EventArgs e)

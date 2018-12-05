@@ -64,6 +64,8 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.label_collections = new System.Windows.Forms.Label();
+            this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.Left_panel.SuspendLayout();
             this.reclamaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -81,7 +83,7 @@ namespace WindowsFormsApplication4
             // categories_linklabel
             // 
             this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(10, 388);
+            this.categories_linklabel.Location = new System.Drawing.Point(3, 284);
             this.categories_linklabel.Name = "categories_linklabel";
             this.categories_linklabel.Size = new System.Drawing.Size(81, 13);
             this.categories_linklabel.TabIndex = 4;
@@ -118,7 +120,7 @@ namespace WindowsFormsApplication4
             this.reclamaPanel.Controls.Add(this.reclama2);
             this.reclamaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reclamaPanel.Location = new System.Drawing.Point(0, 114);
-            this.reclamaPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reclamaPanel.Margin = new System.Windows.Forms.Padding(2);
             this.reclamaPanel.Name = "reclamaPanel";
             this.reclamaPanel.Size = new System.Drawing.Size(226, 437);
             this.reclamaPanel.TabIndex = 16;
@@ -159,7 +161,7 @@ namespace WindowsFormsApplication4
             this.adminPpanel.Controls.Add(this.AdmButton);
             this.adminPpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.adminPpanel.Location = new System.Drawing.Point(0, 551);
-            this.adminPpanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adminPpanel.Margin = new System.Windows.Forms.Padding(2);
             this.adminPpanel.Name = "adminPpanel";
             this.adminPpanel.Size = new System.Drawing.Size(226, 28);
             this.adminPpanel.TabIndex = 0;
@@ -167,7 +169,7 @@ namespace WindowsFormsApplication4
             // AutButton
             // 
             this.AutButton.Location = new System.Drawing.Point(0, 4);
-            this.AutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AutButton.Margin = new System.Windows.Forms.Padding(2);
             this.AutButton.Name = "AutButton";
             this.AutButton.Size = new System.Drawing.Size(100, 19);
             this.AutButton.TabIndex = 8;
@@ -179,7 +181,7 @@ namespace WindowsFormsApplication4
             // AdmButton
             // 
             this.AdmButton.Location = new System.Drawing.Point(114, 4);
-            this.AdmButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdmButton.Margin = new System.Windows.Forms.Padding(2);
             this.AdmButton.Name = "AdmButton";
             this.AdmButton.Size = new System.Drawing.Size(112, 19);
             this.AdmButton.TabIndex = 16;
@@ -256,7 +258,7 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
@@ -325,6 +327,8 @@ namespace WindowsFormsApplication4
             // 
             // Right_panel
             // 
+            this.Right_panel.Controls.Add(this.linkLabel_collections);
+            this.Right_panel.Controls.Add(this.label_collections);
             this.Right_panel.Controls.Add(this.label_Author_header);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
             this.Right_panel.Controls.Add(this.categories_linklabel);
@@ -360,7 +364,7 @@ namespace WindowsFormsApplication4
             // label_author
             // 
             this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(3, 138);
+            this.label_author.Location = new System.Drawing.Point(3, 156);
             this.label_author.Name = "label_author";
             this.label_author.Size = new System.Drawing.Size(66, 13);
             this.label_author.TabIndex = 2;
@@ -454,6 +458,26 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
+            // label_collections
+            // 
+            this.label_collections.AutoSize = true;
+            this.label_collections.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_collections.Location = new System.Drawing.Point(6, 323);
+            this.label_collections.Name = "label_collections";
+            this.label_collections.Size = new System.Drawing.Size(93, 20);
+            this.label_collections.TabIndex = 9;
+            this.label_collections.Text = "Подборки";
+            // 
+            // linkLabel_collections
+            // 
+            this.linkLabel_collections.AutoSize = true;
+            this.linkLabel_collections.Location = new System.Drawing.Point(10, 420);
+            this.linkLabel_collections.Name = "linkLabel_collections";
+            this.linkLabel_collections.Size = new System.Drawing.Size(77, 13);
+            this.linkLabel_collections.TabIndex = 10;
+            this.linkLabel_collections.TabStop = true;
+            this.linkLabel_collections.Text = "Все подборки";
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,6 +511,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
       
         #endregion
@@ -526,5 +551,7 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel reclamaPanel;
         private System.Windows.Forms.Panel adminPpanel;
         private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
+        private System.Windows.Forms.LinkLabel linkLabel_collections;
+        private System.Windows.Forms.Label label_collections;
     }
 }
