@@ -30,14 +30,20 @@ namespace WindowsFormsApplication4
             label2.Font = Configs.ZAGOLOVOK_FONT;
 
             label1.Text = name;
-            
-            
         }
 
         private void Vyuvod_Denyak_Click(object sender, EventArgs e)
         {
-           // UPDATE `Balance` SET `Summa` = 10 WHERE Author = 'Еж'
-            SQLClass.Update("UPDATE `Balance` SET `Summa` = 0 WHERE Author = '" + name + "'");
+            // UPDATE `Balance` SET `Summa` = 10 WHERE Author = 'Еж'
+            List<String> AuthorBalance = SQLClass.Select("SELECT Summa FROM " + Tables.BALANCE +
+                " WHERE `Author` = '" + name + "'");
+            if (AuthorBalance.Count > 0)
+            {
+                SQLClass.Update("UPDATE " + Tables.BALANCE + " SET Summa = Summa +" + AuthorBalance[0].ToString() + " WHERE Author = 'Ма, вроде'");
+                SQLClass.Update("UPDATE " + Tables.BALANCE + " SET Summa = 0 WHERE Author = '" + name + "'");
+            }
+
+            update();
         }
 
         public void update()

@@ -10,6 +10,7 @@ namespace WindowsFormsApplication4
 {
     public class Advertising
     {
+        public static Random rnd = new Random();
         public struct Reklama
         {
             public Image kartinka;
@@ -28,7 +29,6 @@ namespace WindowsFormsApplication4
 
             String reklPic = "https://i.imgur.com/eQ4wEpO.gif";
             String ss = "https://i.imgur.com/eQ4wEpO.gif";
-            Random rnd = new Random();
 
             List<String> reklPics = SQLClass.Select(
                 "SELECT pic FROM " + Tables.ADVERTISMENT + 
