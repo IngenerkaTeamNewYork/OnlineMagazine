@@ -177,11 +177,14 @@ namespace WindowsFormsApplication4
 
         private void button_list_of_mat_Click(object sender, EventArgs e)
         {
-
             Dostalo g = new Dostalo();
             g.Show();
+        }
 
-
+        private void button_look_of_form_Click(object sender, EventArgs e)
+        {
+            Designer form = new Designer();
+            form.ShowDialog();
         }
     }
 }

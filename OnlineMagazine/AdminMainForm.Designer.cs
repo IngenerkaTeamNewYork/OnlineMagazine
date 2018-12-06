@@ -137,6 +137,7 @@ namespace WindowsFormsApplication4
             this.button_look_of_form.TabIndex = 0;
             this.button_look_of_form.Text = "Дизайн формы";
             this.button_look_of_form.UseVisualStyleBackColor = true;
+            this.button_look_of_form.Click += new System.EventHandler(this.button_look_of_form_Click);
             // 
             // panel5
             // 

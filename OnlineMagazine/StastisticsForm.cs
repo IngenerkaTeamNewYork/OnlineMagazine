@@ -74,7 +74,7 @@ namespace WindowsFormsApplication4
             }
 
             this.Controls.Clear();
-            if (true == true)
+            if (adm)
             {
                 this.Controls.Add(authorsDGV);
             }

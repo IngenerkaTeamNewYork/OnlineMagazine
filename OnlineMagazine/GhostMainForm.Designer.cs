@@ -52,6 +52,7 @@ namespace WindowsFormsApplication4
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
+            this.label_collections = new System.Windows.Forms.Label();
             this.label_Author_header = new System.Windows.Forms.Label();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
@@ -64,8 +65,6 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.label_collections = new System.Windows.Forms.Label();
-            this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.Left_panel.SuspendLayout();
             this.reclamaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
@@ -327,7 +326,6 @@ namespace WindowsFormsApplication4
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.linkLabel_collections);
             this.Right_panel.Controls.Add(this.label_collections);
             this.Right_panel.Controls.Add(this.label_Author_header);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
@@ -340,6 +338,16 @@ namespace WindowsFormsApplication4
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
             this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
+            // 
+            // label_collections
+            // 
+            this.label_collections.AutoSize = true;
+            this.label_collections.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_collections.Location = new System.Drawing.Point(6, 323);
+            this.label_collections.Name = "label_collections";
+            this.label_collections.Size = new System.Drawing.Size(93, 20);
+            this.label_collections.TabIndex = 9;
+            this.label_collections.Text = "Подборки";
             // 
             // label_Author_header
             // 
@@ -458,26 +466,6 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
-            // label_collections
-            // 
-            this.label_collections.AutoSize = true;
-            this.label_collections.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_collections.Location = new System.Drawing.Point(6, 323);
-            this.label_collections.Name = "label_collections";
-            this.label_collections.Size = new System.Drawing.Size(93, 20);
-            this.label_collections.TabIndex = 9;
-            this.label_collections.Text = "Подборки";
-            // 
-            // linkLabel_collections
-            // 
-            this.linkLabel_collections.AutoSize = true;
-            this.linkLabel_collections.Location = new System.Drawing.Point(10, 420);
-            this.linkLabel_collections.Name = "linkLabel_collections";
-            this.linkLabel_collections.Size = new System.Drawing.Size(77, 13);
-            this.linkLabel_collections.TabIndex = 10;
-            this.linkLabel_collections.TabStop = true;
-            this.linkLabel_collections.Text = "Все подборки";
-            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,7 +539,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel reclamaPanel;
         private System.Windows.Forms.Panel adminPpanel;
         private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
-        private System.Windows.Forms.LinkLabel linkLabel_collections;
         private System.Windows.Forms.Label label_collections;
     }
 }
