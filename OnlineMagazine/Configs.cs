@@ -16,13 +16,23 @@ namespace WindowsFormsApplication4
         /// Текущий шрифт
         /// </summary>
         public static Font USER_FONT;
-
+        /// <summary>
+        /// Шрифт для заголовка
+        /// </summary>
         public static Font ZAGOLOVOK_FONT;
         /// <summary>
         /// Текущий цвет текста
         /// </summary>
         public static Color USER_COLOR;
+      
+        public static int RlacationX = 0;
+        public static int RlacationY = 0;
+        public static Point Rpont = new Point(RlacationX, RlacationY);
+        public static int ChR = 5;
 
+        /// <summary>
+        /// Количество элементов в блоках категорий, авторов и подборок
+        /// </summary>
         public static int KOL_VO_ELEMENTOV = 5;
     }
 }

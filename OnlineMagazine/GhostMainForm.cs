@@ -220,13 +220,35 @@ namespace WindowsFormsApplication4
 
             #region Advertising
 
-            List<String> s = Advertising.GetRandom();
+            /*List<String> s = Advertising.GetRandom();
             reclama.SizeMode = PictureBoxSizeMode.StretchImage;
             reclama.LoadAsync(s[0]);
             reclama.Tag = s[1];
+            reclama.Location = Configs.Rpont;
+            reclama.Width=226;
+            reclama.Height = 439/Configs.ChR;
+            reclama.Location = Configs.Rpont;*/
+
+            reclamaPanel.Controls.Clear();
+            int Y = Configs.Rpont.Y;
+            for (int i = 0; i < Configs.ChR; i++)
+            {
+                PictureBox reclama1 = new PictureBox();
+                List<String> s = Advertising.GetRandom();
+                reclama1.SizeMode = PictureBoxSizeMode.StretchImage;
+                reclama1.LoadAsync(s[0]);
+                reclama1.Tag = s[1];
+                reclama1.Width = reclamaPanel.Width;
+                reclama1.Height = reclamaPanel.Height / Configs.ChR;
+                reclama1.Location = new Point(10, Y);
+                reclama1.Click += new System.EventHandler(reclama_Click);
+                Y = Y + reclama1.Height;
+                reclamaPanel.Controls.Add(reclama1);
+
+            }
 
 
-            s = Advertising.GetRandom();
+            /*    s = Advertising.GetRandom();
             reclama2.SizeMode = PictureBoxSizeMode.StretchImage;
             reclama2.LoadAsync(s[0]);
             reclama3.Tag = s[1];
@@ -234,7 +256,7 @@ namespace WindowsFormsApplication4
             s = Advertising.GetRandom();
             reclama3.SizeMode = PictureBoxSizeMode.StretchImage;
             reclama3.LoadAsync(s[0]);
-            reclama3.Tag = s[1];
+            reclama3.Tag = s[1];*/
             #endregion
 
             textBox_search.Text = "";

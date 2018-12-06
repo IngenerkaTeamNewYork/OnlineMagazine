@@ -34,9 +34,6 @@ namespace WindowsFormsApplication4
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
             this.reclamaPanel = new System.Windows.Forms.Panel();
-            this.reclama3 = new System.Windows.Forms.PictureBox();
-            this.reclama = new System.Windows.Forms.PictureBox();
-            this.reclama2 = new System.Windows.Forms.PictureBox();
             this.adminPpanel = new System.Windows.Forms.Panel();
             this.AutButton = new System.Windows.Forms.Button();
             this.AdmButton = new System.Windows.Forms.Button();
@@ -52,6 +49,7 @@ namespace WindowsFormsApplication4
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
+            this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.label_collections = new System.Windows.Forms.Label();
             this.label_Author_header = new System.Windows.Forms.Label();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
@@ -66,10 +64,6 @@ namespace WindowsFormsApplication4
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.Left_panel.SuspendLayout();
-            this.reclamaPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reclama3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reclama)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reclama2)).BeginInit();
             this.adminPpanel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -114,45 +108,12 @@ namespace WindowsFormsApplication4
             // 
             // reclamaPanel
             // 
-            this.reclamaPanel.Controls.Add(this.reclama3);
-            this.reclamaPanel.Controls.Add(this.reclama);
-            this.reclamaPanel.Controls.Add(this.reclama2);
             this.reclamaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reclamaPanel.Location = new System.Drawing.Point(0, 114);
             this.reclamaPanel.Margin = new System.Windows.Forms.Padding(2);
             this.reclamaPanel.Name = "reclamaPanel";
             this.reclamaPanel.Size = new System.Drawing.Size(226, 437);
             this.reclamaPanel.TabIndex = 16;
-            // 
-            // reclama3
-            // 
-            this.reclama3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reclama3.Location = new System.Drawing.Point(0, 358);
-            this.reclama3.Name = "reclama3";
-            this.reclama3.Size = new System.Drawing.Size(226, 79);
-            this.reclama3.TabIndex = 5;
-            this.reclama3.TabStop = false;
-            this.reclama3.Click += new System.EventHandler(this.reclama_Click);
-            // 
-            // reclama
-            // 
-            this.reclama.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reclama.Location = new System.Drawing.Point(0, 170);
-            this.reclama.Name = "reclama";
-            this.reclama.Size = new System.Drawing.Size(226, 188);
-            this.reclama.TabIndex = 2;
-            this.reclama.TabStop = false;
-            this.reclama.Click += new System.EventHandler(this.reclama_Click);
-            // 
-            // reclama2
-            // 
-            this.reclama2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reclama2.Location = new System.Drawing.Point(0, 0);
-            this.reclama2.Name = "reclama2";
-            this.reclama2.Size = new System.Drawing.Size(226, 170);
-            this.reclama2.TabIndex = 4;
-            this.reclama2.TabStop = false;
-            this.reclama2.Click += new System.EventHandler(this.reclama_Click);
             // 
             // adminPpanel
             // 
@@ -339,6 +300,16 @@ namespace WindowsFormsApplication4
             this.Right_panel.TabIndex = 5;
             this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
+            // linkLabel_collections
+            // 
+            this.linkLabel_collections.AutoSize = true;
+            this.linkLabel_collections.Location = new System.Drawing.Point(10, 420);
+            this.linkLabel_collections.Name = "linkLabel_collections";
+            this.linkLabel_collections.Size = new System.Drawing.Size(77, 13);
+            this.linkLabel_collections.TabIndex = 10;
+            this.linkLabel_collections.TabStop = true;
+            this.linkLabel_collections.Text = "Все подборки";
+            // 
             // label_collections
             // 
             this.label_collections.AutoSize = true;
@@ -483,10 +454,6 @@ namespace WindowsFormsApplication4
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Left_panel.ResumeLayout(false);
-            this.reclamaPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.reclama3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reclama)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reclama2)).EndInit();
             this.adminPpanel.ResumeLayout(false);
             this.authorizationTableLayoutPanel.ResumeLayout(false);
             this.authorizationTableLayoutPanel.PerformLayout();
@@ -505,9 +472,6 @@ namespace WindowsFormsApplication4
         #endregion
 
         private System.Windows.Forms.Button butto_search;
-        private System.Windows.Forms.PictureBox reclama;
-        private System.Windows.Forms.PictureBox reclama2;
-        private System.Windows.Forms.PictureBox reclama3;
         private System.Windows.Forms.Label label_author;
         private System.Windows.Forms.Panel Left_panel;
         private System.Windows.Forms.Panel Right_panel;
