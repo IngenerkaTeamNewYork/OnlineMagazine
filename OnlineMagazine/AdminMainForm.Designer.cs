@@ -196,8 +196,9 @@ namespace WindowsFormsApplication4
             this.button_list_of_mat.Name = "button_list_of_mat";
             this.button_list_of_mat.Size = new System.Drawing.Size(329, 99);
             this.button_list_of_mat.TabIndex = 0;
-            this.button_list_of_mat.Text = "Список мата";
+            this.button_list_of_mat.Text = "Достало ВСЁ!!!";
             this.button_list_of_mat.UseVisualStyleBackColor = true;
+            this.button_list_of_mat.Click += new System.EventHandler(this.button_list_of_mat_Click);
             // 
             // button_statistika
             // 

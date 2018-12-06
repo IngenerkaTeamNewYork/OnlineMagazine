@@ -105,7 +105,7 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm("", true);
+            StastisticsForm form1 = new StastisticsForm("");
             form1.ShowDialog();
         }
         
@@ -130,7 +130,7 @@ namespace WindowsFormsApplication4
         }
         private void button_statistika_Click_1(object sender, EventArgs e)
         {
-            StastisticsForm t = new StastisticsForm("", true);
+            StastisticsForm t = new StastisticsForm("");
             t.ShowDialog();
         }
 
@@ -173,6 +173,12 @@ namespace WindowsFormsApplication4
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void button_list_of_mat_Click(object sender, EventArgs e)
+        {
+            Dostalo g = new Dostalo();
+            g.Show();
         }
 
         private void button_look_of_form_Click(object sender, EventArgs e)
