@@ -287,7 +287,6 @@ namespace WindowsFormsApplication4
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.linkLabel_collections);
             this.Right_panel.Controls.Add(this.label_collections);
             this.Right_panel.Controls.Add(this.label_Author_header);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
@@ -504,7 +503,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel reclamaPanel;
         private System.Windows.Forms.Panel adminPpanel;
         private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
-        private System.Windows.Forms.LinkLabel linkLabel_collections;
         private System.Windows.Forms.Label label_collections;
     }
 }

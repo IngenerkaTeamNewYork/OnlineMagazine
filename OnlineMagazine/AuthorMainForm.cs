@@ -18,6 +18,7 @@ using MySql.Data.MySqlClient;
 namespace WindowsFormsApplication4
 {
 
+
     public partial class AuthorMainForm : Form
     {
         public string login;
@@ -29,6 +30,38 @@ namespace WindowsFormsApplication4
             label1.Font = Configs.ZAGOLOVOK_FONT;
             Button_Balance.Font = Configs.ZAGOLOVOK_FONT;
         }
+
+        String getKak()
+        {
+            string kak = "";
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    kak = "";
+                    break;
+                case 1:
+                    kak = "ORDER BY A ASC";
+                    break;
+                case 2:
+                    kak = "ORDER BY A DESC";
+                    break;
+                case 3:
+                    kak = "ORDER BY LikesCount - DisCount ASC";
+                    break;
+                case 4:
+                    kak = "ORDER BY LikesCount - DisCount DESC";
+                    break;
+                case 5:
+                    kak = "ORDER BY LikesCount ASC";
+                    break;
+                case 6:
+                    kak = "ORDER BY LikesCount DESC";
+                    break;
+            }
+
+            return kak;
+        }
+
         public List<LinkLabel> arts = new List<LinkLabel>();
         
         private void ArticleClick(object sender, EventArgs e)
@@ -107,8 +140,16 @@ namespace WindowsFormsApplication4
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
+
+
+
+
             List<String> AuthorArticles = SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES + 
                 " WHERE `Author` = '" + login + "'");
+            
+
+
+
 
             int articleY = 50;
             for (int artIndex = 0; artIndex < AuthorArticles.Count; artIndex += 2)
@@ -196,6 +237,85 @@ namespace WindowsFormsApplication4
         {
             Registration form = new Registration(login);
             form.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", "%" + textBox2.Text + "%");
+
+            List<String> AuthorArticles =
+               SQLClass.Select
+               ("SELECT Header, Picture, " +
+               "IFNULL((SELECT likesCount FROM " + Tables.LIKES + " WHERE Header = Article), 0) likesCount, " +
+               "IFNULL((SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article), 0) discount, " +
+               "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
+               " FROM " + Tables.ARTICLES +
+               " WHERE (header like @STR OR category like @STR) AND `Author` = '" + login + "' " +
+               getKak(), dict);
+
+
+
+
+
+            int articleY = 50;
+            for (int artIndex = 0; artIndex < AuthorArticles.Count; artIndex += 5)
+            {
+                LinkLabel label1 = new LinkLabel();
+                label1.Location = new Point(0, articleY);
+                label1.Size = new Size(panel1.Width, 20);
+                label1.Text = AuthorArticles[AuthorArticles.Count - artIndex - 5].ToString();
+                label1.Dock = DockStyle.Top;
+                label1.Click += new System.EventHandler(ArticleClick);
+                panel1.Controls.Add(label1);
+
+                PictureBox image1 = new PictureBox();
+                image1.Location = new Point(0, articleY + 25);
+                image1.Size = new Size(panel1.Width, 150);
+                image1.Image = new Bitmap("defolt_statiy.jpg");
+                image1.SizeMode = PictureBoxSizeMode.StretchImage;
+                image1.Dock = DockStyle.Top;
+                panel1.Controls.Add(image1);
+
+                String[] chasti_stroki = AuthorArticles[AuthorArticles.Count - artIndex - 4].ToString().Split(new char[] { ' ', '/' });
+
+                try
+                {
+                    image1.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        image1.Load(AuthorArticles[AuthorArticles.Count - artIndex - 4].ToString());
+                        Uri uri = new Uri(AuthorArticles[AuthorArticles.Count - artIndex - 4].ToString());
+                        client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+
+                arts.Add(label1);
+                articleY += 180;
+            }
+
+            
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            List<string> s = Advertising.GetRandom();
+            pictureBox1.LoadAsync(s[0]);
+            pictureBox1.Tag = s[1];
+
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            s = Advertising.GetRandom();
+            pictureBox2.LoadAsync(s[0]);
+            pictureBox2.Tag = s[1];
+
+
+
         }
     }
 }

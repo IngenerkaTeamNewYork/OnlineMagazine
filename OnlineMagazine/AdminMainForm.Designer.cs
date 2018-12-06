@@ -91,7 +91,7 @@ namespace WindowsFormsApplication4
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(329, 100);
             this.button1.TabIndex = 1;
@@ -137,6 +137,7 @@ namespace WindowsFormsApplication4
             this.button_look_of_form.TabIndex = 0;
             this.button_look_of_form.Text = "Дизайн формы";
             this.button_look_of_form.UseVisualStyleBackColor = true;
+            this.button_look_of_form.Click += new System.EventHandler(this.button_look_of_form_Click);
             // 
             // panel5
             // 
@@ -195,8 +196,9 @@ namespace WindowsFormsApplication4
             this.button_list_of_mat.Name = "button_list_of_mat";
             this.button_list_of_mat.Size = new System.Drawing.Size(329, 99);
             this.button_list_of_mat.TabIndex = 0;
-            this.button_list_of_mat.Text = "Список мата";
+            this.button_list_of_mat.Text = "Достало ВСЁ!!!";
             this.button_list_of_mat.UseVisualStyleBackColor = true;
+            this.button_list_of_mat.Click += new System.EventHandler(this.button_list_of_mat_Click);
             // 
             // button_statistika
             // 
@@ -260,7 +262,7 @@ namespace WindowsFormsApplication4
             // 
             this.button_collections.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_collections.Location = new System.Drawing.Point(337, 2);
-            this.button_collections.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_collections.Margin = new System.Windows.Forms.Padding(2);
             this.button_collections.Name = "button_collections";
             this.button_collections.Size = new System.Drawing.Size(331, 101);
             this.button_collections.TabIndex = 20;
@@ -288,7 +290,6 @@ namespace WindowsFormsApplication4
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
