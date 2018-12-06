@@ -174,5 +174,11 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void button_look_of_form_Click(object sender, EventArgs e)
+        {
+            Designer form = new Designer();
+            form.ShowDialog();
+        }
     }
 }

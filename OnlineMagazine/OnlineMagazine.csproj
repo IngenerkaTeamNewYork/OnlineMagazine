@@ -93,6 +93,12 @@
     <Compile Include="FBIform.Designer.cs">
       <DependentUpon>FBIform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Designer .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer .Designer.cs">
+      <DependentUpon>Designer .cs</DependentUpon>
+    </Compile>
     <Compile Include="list_of_stat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FBIform.resx">
       <DependentUpon>FBIform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer .resx">
+      <DependentUpon>Designer .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="list_of_stat.resx">
       <DependentUpon>list_of_stat.cs</DependentUpon>

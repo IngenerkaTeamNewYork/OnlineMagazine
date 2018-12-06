@@ -146,13 +146,43 @@ namespace WindowsFormsApplication4
                 button1.Visible = true;
             }
 
+            #region Обновление списка авторов
+
+            Right_panel.Controls.Add(label_Author_header);
+            Right_panel.Controls.Add(label_author);
+
+            
+
+            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+
+            int authorsY = 75;
+            for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
+            {
+                Label label1 = new Label();
+                label1.Location = new Point(0, authorsY);
+                label1.Size = new Size(100, 20);
+                label1.Text = authorsList[artIndex].ToString();
+                label1.Click += new System.EventHandler(Search_CLick);
+                Right_panel.Controls.Add(label1);
+                authorsY += 25;
+
+            }
+            label_author.Location = new Point(3, authorsY);
+            #endregion
+
             #region Обновление списка категорий
+
             Right_panel.Controls.Add(label_cats_header);
             Right_panel.Controls.Add(categories_linklabel);
 
-            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, 3");
 
-            int catY = 210;
+
+            label_cats_header.Location = new Point(0, authorsY + 25);
+            int catY = authorsY + 50;
+
+            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+
+            
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
             {
                 Label label1 = new Label();
@@ -163,15 +193,17 @@ namespace WindowsFormsApplication4
                 Right_panel.Controls.Add(label1);
                 catY += 28;
             }
+            categories_linklabel.Location = new Point(0, catY + 5);
             #endregion
 
             #region Обновление списка подборок
+            label_collections.Location = new Point(6, catY + 28);
             Right_panel.Controls.Add(label_collections);
-            Right_panel.Controls.Add(linkLabel_collections);
 
-            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM `Colection`");
 
-            int collY = 360;
+            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM " + Tables.COLLECTION + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+
+            int collY = catY + 28 + 50;
             for (int artIndex = 0; artIndex < collList.Count; artIndex++)
             {
                 Label label1 = new Label();
@@ -184,26 +216,7 @@ namespace WindowsFormsApplication4
             }
             #endregion
 
-            #region Обновление списка авторов
-
-            Right_panel.Controls.Add(label_Author_header);
-            Right_panel.Controls.Add(label_author);
-
-            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, 3");
-
-            int authorsY = 75;
-            for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
-            {
-                Label label1 = new Label();
-                label1.Location = new Point(0, authorsY);
-                label1.Size = new Size(100, 20);
-                label1.Text = authorsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Search_CLick);
-                Right_panel.Controls.Add(label1);
-                authorsY += 25;
-            
-            }
-            #endregion
+          
 
             #region Advertising
 
@@ -470,6 +483,12 @@ namespace WindowsFormsApplication4
             butto_search_Click(sender, e);
         }
 
+        private void Collections_CLick(object sender, EventArgs e)
+        {
+            textBox_search.Text = ((Label)sender).Text;
+            butto_search_Click(sender, e);
+        }
+
 
            
 
@@ -486,7 +505,7 @@ namespace WindowsFormsApplication4
                 "(SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article) discount, " +
                 "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
                 " FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR)" + 
+                " WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR OR artic_id IN (SELECT id_art FROM " + Tables.COLLECTION + " WHERE Coll_text like @STR))" + 
                 getKak() + 
                 " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
