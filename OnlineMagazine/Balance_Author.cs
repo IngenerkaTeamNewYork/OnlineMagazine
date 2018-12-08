@@ -32,6 +32,11 @@ namespace WindowsFormsApplication4
             label1.Text = name;
         }
 
+        /// <summary>
+        /// Вывод денег
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Vyuvod_Denyak_Click(object sender, EventArgs e)
         {
             // UPDATE `Balance` SET `Summa` = 10 WHERE Author = 'Еж'

@@ -49,12 +49,12 @@ namespace WindowsFormsApplication4
             this.link_of_registration = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
-            this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.label_collections = new System.Windows.Forms.Label();
             this.label_Author_header = new System.Windows.Forms.Label();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
             this.label_cats_header = new System.Windows.Forms.Label();
+            this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.button_add_reklama = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -218,14 +218,15 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 48);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
             this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.увеличитьПисюнToolStripMenuItem.Text = "Показать/Скрыть пароль";
-            this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
+            this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.showPassToolStripMenuItem_Click);
             // 
             // autButtonsTableLayoutPanel
             // 
@@ -300,16 +301,6 @@ namespace WindowsFormsApplication4
             this.Right_panel.TabIndex = 5;
             this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
-            // linkLabel_collections
-            // 
-            this.linkLabel_collections.AutoSize = true;
-            this.linkLabel_collections.Location = new System.Drawing.Point(10, 420);
-            this.linkLabel_collections.Name = "linkLabel_collections";
-            this.linkLabel_collections.Size = new System.Drawing.Size(77, 13);
-            this.linkLabel_collections.TabIndex = 10;
-            this.linkLabel_collections.TabStop = true;
-            this.linkLabel_collections.Text = "Все подборки";
-            // 
             // label_collections
             // 
             this.label_collections.AutoSize = true;
@@ -359,6 +350,16 @@ namespace WindowsFormsApplication4
             this.label_cats_header.Size = new System.Drawing.Size(98, 20);
             this.label_cats_header.TabIndex = 6;
             this.label_cats_header.Text = "Категории";
+            // 
+            // linkLabel_collections
+            // 
+            this.linkLabel_collections.AutoSize = true;
+            this.linkLabel_collections.Location = new System.Drawing.Point(10, 420);
+            this.linkLabel_collections.Name = "linkLabel_collections";
+            this.linkLabel_collections.Size = new System.Drawing.Size(77, 13);
+            this.linkLabel_collections.TabIndex = 10;
+            this.linkLabel_collections.TabStop = true;
+            this.linkLabel_collections.Text = "Все подборки";
             // 
             // button1
             // 
