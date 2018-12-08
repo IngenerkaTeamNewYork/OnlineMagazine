@@ -151,9 +151,9 @@ namespace WindowsFormsApplication4
             Right_panel.Controls.Add(label_Author_header);
             Right_panel.Controls.Add(label_author);
 
-            
 
-            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+
+            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
 
             int authorsY = 75;
             for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
@@ -180,7 +180,7 @@ namespace WindowsFormsApplication4
             label_cats_header.Location = new Point(0, authorsY + 25);
             int catY = authorsY + 50;
 
-            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Categoriya);
 
             
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
@@ -201,7 +201,7 @@ namespace WindowsFormsApplication4
             Right_panel.Controls.Add(label_collections);
 
 
-            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM " + Tables.COLLECTION + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM " + Tables.COLLECTION + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Podborka);
 
             int collY = catY + 28 + 50;
             for (int artIndex = 0; artIndex < collList.Count; artIndex++)

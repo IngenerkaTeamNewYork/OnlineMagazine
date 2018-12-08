@@ -25,6 +25,8 @@ namespace WindowsFormsApplication4
             Tables.BALANCE = aa.Parse(File.ReadAllText("config.ini"))["db"]["BALANCE"].ToString();
             Tables.CATEGORIES = aa.Parse(File.ReadAllText("config.ini"))["db"]["CATEGORIES"].ToString();
 
+            Configs.read();
+
 
 
             Application.EnableVisualStyles();
