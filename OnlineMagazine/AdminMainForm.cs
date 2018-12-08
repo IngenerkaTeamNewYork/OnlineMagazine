@@ -105,7 +105,7 @@ namespace WindowsFormsApplication4
 
         private void button_statistika_Click(object sender, EventArgs e)
         {
-            StastisticsForm form1 = new StastisticsForm("");
+            StastisticsForm form1 = new StastisticsForm("", true);
             form1.ShowDialog();
         }
         
@@ -127,11 +127,6 @@ namespace WindowsFormsApplication4
             ifr.Left = this.Left;
             ifr.Top = this.Top;
             ifr.Show();
-        }
-        private void button_statistika_Click_1(object sender, EventArgs e)
-        {
-            StastisticsForm t = new StastisticsForm("");
-            t.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

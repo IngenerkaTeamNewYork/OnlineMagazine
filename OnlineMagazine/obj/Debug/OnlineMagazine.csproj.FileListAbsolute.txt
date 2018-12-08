@@ -31,3 +31,5 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.pdb
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.LogsReadForm.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.VipStatiy.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.Dostalo.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.Designer.resources

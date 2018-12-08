@@ -490,6 +490,7 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Label lable_name_of_polzovatel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.LinkLabel linkLabel_collections;
         private System.Windows.Forms.Button dalee;
         private System.Windows.Forms.Label label_cats_header;
         private System.Windows.Forms.Label label_Author_header;
