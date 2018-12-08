@@ -16,7 +16,7 @@ namespace WindowsFormsApplication4
         public string name;
         public Balance_Author(string author)
         {
-            name = author;
+            this.name = author;
             InitializeComponent();
 
             update();
@@ -39,9 +39,18 @@ namespace WindowsFormsApplication4
                 " WHERE `Author` = '" + name + "'");
             if (AuthorBalance.Count > 0)
             {
-                SQLClass.Update("UPDATE " + Tables.BALANCE + " SET Summa = Summa +" + AuthorBalance[0].ToString() + " WHERE Author = 'Ма, вроде'");
-                SQLClass.Update("UPDATE " + Tables.BALANCE + " SET Summa = 0 WHERE Author = '" + name + "'");
+                if (this.name != SQLClass.Select("SELECT var WHERE name='mavrodi'")[0])
+                {
+                    SQLClass.Update("UPDATE " + Tables.BALANCE +
+                        " SET Summa = Summa +" + AuthorBalance[0].ToString() + " WHERE Author = '" + SQLClass.Select("SELECT var WHERE name='mavrodi'")[0] + "'");
+                    SQLClass.Update("UPDATE " + Tables.BALANCE +
+                        " SET Summa = 0 WHERE Author = '" + name + "'");
+                }
             }
+            //[X] 1 Если я ма, вроде, с меня бабло не списывать
+            //[?] 2 Этого пользователя хранить в конфиг-файле
+            //[X] 3 Этого пользователя можно вывести в настройках в админке
+            //[X] 4 Можно создать в БД таблицу СЕТТИНГС, где будет храниться вот это все
 
             update();
         }
