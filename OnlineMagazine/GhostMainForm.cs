@@ -19,7 +19,7 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
-
+        public static String LAST_SEARCH = "";
         public static bool adm;
 
         public static List<AuthorStat> stat = new List<AuthorStat>();
@@ -96,6 +96,7 @@ namespace WindowsFormsApplication4
                     statiya stat = statiya.Click1(((Label)sender).Text);
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
+                    LAST_SEARCH = textBox_search.Text;
                     formloader(sender, e);
                     break;
                 }
@@ -259,11 +260,11 @@ namespace WindowsFormsApplication4
             reclama3.Tag = s[1];*/
             #endregion
 
-            textBox_search.Text = "";
+            textBox_search.Text = LAST_SEARCH;
             butto_search_Click(sender, e);
 
 
-            textBox_search.Text = "Поиск";
+            //textBox_search.Text = "Поиск";
         }    
 
 

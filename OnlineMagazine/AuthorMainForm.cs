@@ -107,8 +107,13 @@ namespace WindowsFormsApplication4
             List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
                 " WHERE `Author` = '" + login + "'");
             label4.Text = "Место автора " + mesto[0];
-            
-            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + login + "'")[0]);
+
+            Button_Balance.Text = "Баланс: 0";
+            List<String> bal = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + login + "'");
+            if (bal.Count > 0)
+            {
+                Button_Balance.Text = "Баланс: " + bal[0];
+            }
 
 
 
