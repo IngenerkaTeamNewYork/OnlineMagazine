@@ -334,6 +334,12 @@
     <Content Include="MySql.Data.dll" />
     <None Include="Resources\Dislike.png" />
     <None Include="Resources\DisLike2.png" />
+    <None Include="Resources\images %284%29.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\2134512324.png" />
+    <None Include="Resources\54215132412.png" />
+    <None Include="Resources\098765432.png" />
     <Content Include="Resources\like.png" />
     <Content Include="Resources\Like2.png" />
   </ItemGroup>

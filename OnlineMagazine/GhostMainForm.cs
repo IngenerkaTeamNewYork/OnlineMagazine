@@ -173,20 +173,21 @@ namespace WindowsFormsApplication4
             #region Обновление списка категорий
 
             Right_panel.Controls.Add(label_cats_header);
+            categories_linklabel.Location = new Point(categories_linklabel.Location.X , 250 + 30 * Configs.KOL_VO_ELEMENTOV);
             Right_panel.Controls.Add(categories_linklabel);
 
 
 
             label_cats_header.Location = new Point(0, authorsY + 25);
-            int catY = authorsY + 50;
+
 
             List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
 
-            
+            int catY = authorsY + 250;
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
             {
                 Label label1 = new Label();
-                label1.Location = new Point(0, catY);
+                label1.Location = new Point(30, catY);
                 label1.Size = new Size(100, 20);
                 label1.Text = catsList[artIndex].ToString();
                 label1.Click += new System.EventHandler(Search_CLick);
