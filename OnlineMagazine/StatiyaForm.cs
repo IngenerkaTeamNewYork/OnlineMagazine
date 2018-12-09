@@ -92,6 +92,10 @@ namespace WindowsFormsApplication4
         
         private void pictureBoxLike_Click(object sender, EventArgs e)
         {
+            if (isDisLike)
+            {
+                pictureBoxDislike_Click(sender, e);
+            }
             isLike = !isLike;               
             pictureBoxLike.Image = (isLike) ? 
                 Properties.Resources.Like2 : 
@@ -117,7 +121,8 @@ namespace WindowsFormsApplication4
                         ", '" + Kategoriatext.Text + "'" +
                         ",1" +
                         ",0)");
-                }        
+                }
+
             }
             else
             {
@@ -131,16 +136,20 @@ namespace WindowsFormsApplication4
         
         private void pictureBoxDislike_Click(object sender, EventArgs e)
         {
+            if (isLike)
+            {
+                pictureBoxLike_Click(sender, e);
+            }
             isDisLike = !isDisLike;
             pictureBoxDislike.Image = (isDisLike) ?
-                Properties.Resources.DisLike2 :
-                Properties.Resources.Dislike;
+            Properties.Resources.DisLike2 :
+            Properties.Resources.Dislike;
 
             List<String> dislikes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
          
             if (isDisLike)
             {
-                if (dislikes.Count > 0 )
+                if (dislikes.Count > 0  )
                 {
                     SQLClass.Update("UPDATE " + Tables.LIKES +
                         " SET DisCount = DisCount + 1" +
@@ -158,6 +167,9 @@ namespace WindowsFormsApplication4
                         ",0" +
                         ",1)");
                 }
+
+
+
             }
             else
             {

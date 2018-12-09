@@ -219,13 +219,14 @@ namespace WindowsFormsApplication4
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 48);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
             this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.увеличитьПисюнToolStripMenuItem.Text = "Показать/Скрыть пароль";
-            this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.увеличитьПисюнToolStripMenuItem_Click);
+            this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.showPassToolStripMenuItem_Click);
             // 
             // autButtonsTableLayoutPanel
             // 
@@ -435,7 +436,6 @@ namespace WindowsFormsApplication4
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
-            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
             // GhostMainForm
@@ -467,7 +467,6 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
       
         #endregion
