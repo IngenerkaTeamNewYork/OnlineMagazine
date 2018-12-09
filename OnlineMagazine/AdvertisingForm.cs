@@ -42,6 +42,11 @@ namespace WindowsFormsApplication4
             pictureBox1.Tag = s[1];
         }
 
+       /// <summary>
+       ///  нопка отправки статьи на рассмотрение
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void button_send_Click(object sender, EventArgs e)
         {
             if (checkBox_agree.Checked && checkBox_agree2.Checked)          
@@ -74,6 +79,11 @@ namespace WindowsFormsApplication4
             this.Close();
         }
 
+        /// <summary>
+        ///  лик на рекламу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             try
