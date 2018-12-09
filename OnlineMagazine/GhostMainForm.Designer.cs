@@ -218,8 +218,8 @@ namespace WindowsFormsApplication4
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
             this.contextMenuStrip1.Size = new System.Drawing.Size(214, 48);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 

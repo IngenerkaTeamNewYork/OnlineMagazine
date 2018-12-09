@@ -154,31 +154,21 @@ namespace WindowsFormsApplication4
                     "' WHERE Login = '" + login + "'");
 
                     SQLClass.Update("UPDATE " + Tables.BALANCE +
-                    " SET Login = '" + textBox_login.Text +
-                    "' WHERE Login = '" + login + "'");
-
+                    " SET Author = '" + textBox_login.Text +
+                    "' WHERE Author = '" + login + "'");
 
                     SQLClass.Update("UPDATE " + Tables.LIKES +
-                    " SET Login = '" + textBox_login.Text +
-                    "' WHERE Login = '" + login + "'");
-
-
-
-
-
-
+                    " SET Author = '" + textBox_login.Text +
+                    "' WHERE Author = '" + login + "'");
                 }
-
-
+                
                 SQLClass.Update("UPDATE " + Tables.AUTHORS + 
                     " SET UserName = '" + textBox_login.Text + 
                     "', Pic = '" + textBox_pic.Text +
                     "', Information_about_author = '" + textBox_about_me.Text + 
                     "' WHERE UserName = '" + login + "'");
-
-
-
             }
+
             Close();            
         }
 
