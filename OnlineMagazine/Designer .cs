@@ -35,5 +35,15 @@ namespace WindowsFormsApplication4
                 }
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SQLClass.Update("UPDATE `Settings` SET `var`='" + textBox2.Text + "' WHERE name='mavrodi'");
+        }
     }
 }
