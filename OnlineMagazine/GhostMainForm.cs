@@ -204,6 +204,7 @@ namespace WindowsFormsApplication4
 
             }
             label_author.Location = new Point(3, authorsY);
+            
             #endregion
 
             #region Обновление списка категорий
@@ -211,13 +212,10 @@ namespace WindowsFormsApplication4
             Right_panel.Controls.Add(label_cats_header);
             Right_panel.Controls.Add(categories_linklabel);
 
-
-
             label_cats_header.Location = new Point(0, authorsY + 25);
             int catY = authorsY + 50;
 
             List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
-
             
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
             {
@@ -235,8 +233,6 @@ namespace WindowsFormsApplication4
             #region Обновление списка подборок
             label_collections.Location = new Point(6, catY + 28);
             Right_panel.Controls.Add(label_collections);
-
-
             List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM " + Tables.COLLECTION + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
 
             int collY = catY + 28 + 50;
