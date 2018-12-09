@@ -422,8 +422,30 @@ namespace WindowsFormsApplication4
         private void dalee_Click(object sender, EventArgs e)
         {
             piccc = new List<PictureBox>();
+            string[] dhfg = textBox_search.Text.Split(new char[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
+            string nahod = "";
             Dictionary<String, String> dict = new Dictionary<string, string>();
-            dict.Add("STR", "%" + textBox_search.Text + "%");
+            for (int i = 0; i < dhfg.Length; i++)
+            {
+                dict.Add("STR" + i.ToString(), "%" + dhfg[i] + "%");
+                if (i > 0)
+                {
+                    nahod += " OR ";
+                }
+                nahod += "header like @STR" + i.ToString() + 
+                    " OR category like @STR" + i.ToString() + 
+                    " OR author like @STR" + i.ToString() +
+                    " OR artic_id IN (SELECT id_art FROM " + Tables.COLLECTION + " WHERE Coll_text like @STR" + i.ToString() + " )";
+
+            }
+
+            if (nahod!= "")
+            {
+                nahod = " AND (" + nahod + ")";
+            }
+
+
+
             List<String> PopularArticles =
                 SQLClass.Select
                 ("SELECT Header, Picture, " + 
@@ -431,7 +453,7 @@ namespace WindowsFormsApplication4
                 "(SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article) discount, " +
                 "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
                 " FROM " + Tables.ARTICLES +
-                " WHERE new = 0 AND (header like @STR OR category like @STR OR author like @STR OR artic_id IN (SELECT id_art FROM " + Tables.COLLECTION + " WHERE Coll_text like @STR))" + 
+                " WHERE new = 0 " + nahod +
                 getKak() + 
                 " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
@@ -601,6 +623,11 @@ namespace WindowsFormsApplication4
             AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
             af.ShowDialog();
             formloader(sender, e);
+        }
+
+        private void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
