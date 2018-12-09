@@ -139,12 +139,13 @@ namespace WindowsFormsApplication4
             private void VipStatiy_Load(object sender, EventArgs e)
         {
             GetStata(label3, label4, name.Text);
-            String[] d = s.Split('\n');
+            String[] d = s.Split(new String[] {"\n", Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
             for (int i = 0; i < d.Length; i++)
             {
 
                 if (d[d.Length - 1 - i].Contains("http://") || d[d.Length - 1 - i].Contains("https://"))
                 {
+                    
                     LinkLabel label1 = new LinkLabel();
                     label1.Location = new Point(0, 0);
                     label1.Size = new Size(180, 20);

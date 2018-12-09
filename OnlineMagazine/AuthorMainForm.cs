@@ -93,7 +93,7 @@ namespace WindowsFormsApplication4
                 }
             }
         }
-
+        
         private void AuthorMainFormLoad(object sender, EventArgs e)
         {
             this.Font = Configs.USER_FONT;
@@ -107,11 +107,13 @@ namespace WindowsFormsApplication4
             List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
                 " WHERE `Author` = '" + login + "'");
             label4.Text = "Место автора " + mesto[0];
-            
-            Button_Balance.Text = string.Format("Баланс: {0}", SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + login + "'")[0]);
 
-
-
+            Button_Balance.Text = "Баланс: 0";
+            List<String> bal = SQLClass.Select("SELECT `Summa` FROM " + Tables.BALANCE + " WHERE `Author`= '" + login + "'");
+            if (bal.Count > 0)
+            {
+                Button_Balance.Text = "Баланс: " + bal[0];
+            }
 
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
@@ -140,16 +142,8 @@ namespace WindowsFormsApplication4
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-
-
-
-
             List<String> AuthorArticles = SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES + 
                 " WHERE `Author` = '" + login + "'");
-            
-
-
-
 
             int articleY = 50;
             for (int artIndex = 0; artIndex < AuthorArticles.Count; artIndex += 2)
