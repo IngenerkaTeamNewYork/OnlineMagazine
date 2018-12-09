@@ -82,43 +82,49 @@ namespace WindowsFormsApplication4
             rdr.Close();
         }
 
+        /// <summary>
+        /// Кнопка открытия списка рекламы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             Spisok_reklamy sps = new Spisok_reklamy(mnogo_reklamy);
             sps.ShowDialog();
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            Form ifr = Application.OpenForms[0];
-            ifr.Left = this.Left;
-            ifr.Top = this.Top;
-            ifr.Show();
-            this.Close();
-        }
 
+        /// <summary>
+        /// Переход на форму для Госструктур
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_author_Click(object sender, EventArgs e)
         {
             FBIform form = new FBIform();
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Открыть форму статистики
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_statistika_Click(object sender, EventArgs e)
         {
             StastisticsForm form1 = new StastisticsForm("", true);
             form1.ShowDialog();
         }
         
-        
+        /// <summary>
+        /// Все пользователи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_all_users_Click(object sender, EventArgs e)
         {
             Users form = new Users();
             form.ShowDialog();
-        }
-
-        private void button_return_Click(object sender, EventArgs e)
-        {
-            AdminMainForm_FormClosed(null, null);
         }
 
         private void AdminMainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -129,24 +135,44 @@ namespace WindowsFormsApplication4
             ifr.Show();
         }
 
+        /// <summary>
+        /// Подборки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Collections coll = new Collections();
             coll.ShowDialog();
         }
 
+       /// <summary>
+       /// Форма проверки новых статей
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void button_new_staty_Click(object sender, EventArgs e)
         {
             NewPages np = new NewPages();
             np.ShowDialog();
         }
 
+        /// <summary>
+        /// Категории
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_categories_Click_1(object sender, EventArgs e)
         {
             CategoriesForm form = new CategoriesForm(true);
             form.ShowDialog();
         }
 
+       /// <summary>
+       /// список авторов
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void button_author_Click_1(object sender, EventArgs e)
         {
             List_of_author form = new List_of_author();
@@ -159,23 +185,33 @@ namespace WindowsFormsApplication4
             this.ForeColor = Configs.USER_COLOR;
         }
 
+        /// <summary>
+        /// Форма чтения логов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
             LogsReadForm t = new LogsReadForm();
             t.ShowDialog();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Нервная форма
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_list_of_mat_Click(object sender, EventArgs e)
         {
             Dostalo g = new Dostalo();
             g.Show();
         }
 
+        /// <summary>
+        /// Форма дизайнера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_look_of_form_Click(object sender, EventArgs e)
         {
             Designer form = new Designer();

@@ -24,7 +24,11 @@ namespace WindowsFormsApplication4
             avtor1 = avtor;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Кнопка добавления статьи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (ne_povtor == textBox_Name.Text)

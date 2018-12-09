@@ -93,7 +93,7 @@ namespace WindowsFormsApplication4
                 }
             }
         }
-
+        
         private void AuthorMainFormLoad(object sender, EventArgs e)
         {
             this.Font = Configs.USER_FONT;
@@ -114,9 +114,6 @@ namespace WindowsFormsApplication4
             {
                 Button_Balance.Text = "Баланс: " + bal[0];
             }
-
-
-
 
             for (int infoIndex = 0; infoIndex < AuthorInfo.Count; infoIndex += 3)
             {
@@ -145,16 +142,8 @@ namespace WindowsFormsApplication4
                 Avatar_author.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-
-
-
-
             List<String> AuthorArticles = SQLClass.Select("SELECT Header, Picture FROM " + Tables.ARTICLES + 
                 " WHERE `Author` = '" + login + "'");
-            
-
-
-
 
             int articleY = 50;
             for (int artIndex = 0; artIndex < AuthorArticles.Count; artIndex += 2)
