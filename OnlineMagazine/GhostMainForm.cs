@@ -680,12 +680,7 @@ namespace WindowsFormsApplication4
             }
         }
 
-        private void Right_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void увеличитьПисюнToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showPassToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox_password.UseSystemPasswordChar = !textBox_password.UseSystemPasswordChar;
         }
@@ -699,12 +694,12 @@ namespace WindowsFormsApplication4
 
         private void AutButton_Click(object sender, EventArgs e)
         {
-
-                AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
-                af.ShowDialog();
-           
+            AuthorMainForm af = new AuthorMainForm(Users.CURRENT_USER);
+            af.ShowDialog();           
             
             formloader(sender, e);
         }
+
+      
     }
 }

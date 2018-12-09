@@ -67,7 +67,7 @@
             this.Hohlov_is_dead.Name = "Hohlov_is_dead";
             this.Hohlov_is_dead.Size = new System.Drawing.Size(128, 292);
             this.Hohlov_is_dead.TabIndex = 3;
-            this.Hohlov_is_dead.Text = "Убей Хохла";
+            this.Hohlov_is_dead.Text = "Естественный отбор";
             this.Hohlov_is_dead.UseVisualStyleBackColor = true;
             this.Hohlov_is_dead.Click += new System.EventHandler(this.Hohlov_is_dead_Click);
             // 
