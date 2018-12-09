@@ -60,6 +60,10 @@ namespace WindowsFormsApplication4
         /// Таблица прочитанных статей
         /// </summary>
         public static String READ_OF_ARTICLES = "read_of_articles";
-        
+
+        /// <summary>
+        /// Таблица настроек
+        /// </summary>
+        public static string SETTINGS = "Settings";        
     }
 }

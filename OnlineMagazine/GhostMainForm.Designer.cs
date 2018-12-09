@@ -299,7 +299,6 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
-            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_collections
             // 

@@ -24,6 +24,7 @@ namespace WindowsFormsApplication4
             Tables.AUTHORS = aa.Parse(File.ReadAllText("config.ini"))["db"]["AUTHORS"].ToString();
             Tables.BALANCE = aa.Parse(File.ReadAllText("config.ini"))["db"]["BALANCE"].ToString();
             Tables.CATEGORIES = aa.Parse(File.ReadAllText("config.ini"))["db"]["CATEGORIES"].ToString();
+            Tables.SETTINGS = aa.Parse(File.ReadAllText("config.ini"))["db"]["SETTINGS"].ToString();
 
             Configs.read();
 

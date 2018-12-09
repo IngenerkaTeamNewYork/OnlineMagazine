@@ -19,11 +19,20 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
+        /// <summary>
+        /// Последний поисковый запрос
+        /// </summary>
         public static String LAST_SEARCH = "";
+        /// <summary>
+        /// Видимость кабинета админа
+        /// </summary>
         public static bool adm;
+        /// <summary>
+        /// Видимость кабинета автора
+        /// </summary>
+        public static bool aut;
 
         public static List<AuthorStat> stat = new List<AuthorStat>();
-        public static bool aut;
         public List<LinkLabel> arts = new List<LinkLabel>();
         public List<PictureBox> piccc = new List<PictureBox>();
         WebClient client = new WebClient();
@@ -38,11 +47,8 @@ namespace WindowsFormsApplication4
             InitializeComponent();
             Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
             label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
-
             label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
-            //label_popular.Text = stat.kategorita_statii;
-            SQLClass.OpenConnection();
-            
+
             AdmButton.Visible = false;
             AutButton.Visible = false;
         }
@@ -53,43 +59,9 @@ namespace WindowsFormsApplication4
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Form1_Load(sender, e);
-        }
+        }       
 
-        public static bool adm;
-
-        public static List<AuthorStat> stat = new List<AuthorStat>();
-        public static bool aut;
-        public List<LinkLabel> arts = new List<LinkLabel>();
-        public List<PictureBox> piccc = new List<PictureBox>();
-        WebClient client = new WebClient();
-        public string[] url = new string[50];
-        int kolvo_nazatiy = 0;
-        public string kuda_i_kak;
-        public int articleY = 50;
         
-
-        public GhostMainForm()
-        {
-            InitializeComponent();
-            Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
-            label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
-
-            label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
-            //label_popular.Text = stat.kategorita_statii;
-            SQLClass.OpenConnection();
-            
-            AdmButton.Visible = false;
-            AutButton.Visible = false;
-        }
-
-        void formloader(object sender, EventArgs e)
-        {
-            piccc = new List<PictureBox>();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            Form1_Load(sender, e);
-        }
-
         String getKak()
         {
             string kak = "";
@@ -189,7 +161,7 @@ namespace WindowsFormsApplication4
 
             
 
-            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
 
             int authorsY = 75;
             for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
@@ -215,7 +187,7 @@ namespace WindowsFormsApplication4
             label_cats_header.Location = new Point(0, authorsY + 25);
             int catY = authorsY + 50;
 
-            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Categoriya);
             
             for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
             {
@@ -233,17 +205,18 @@ namespace WindowsFormsApplication4
             #region Обновление списка подборок
             label_collections.Location = new Point(6, catY + 28);
             Right_panel.Controls.Add(label_collections);
-            List<String> collList = SQLClass.Select("SELECT DISTINCT `Coll_text`  FROM " + Tables.COLLECTION + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV);
+            List<String> collList = SQLClass.Select("SELECT DISTINCT Coll_text FROM " + Tables.COLLECTION + 
+                " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Podborka);
 
             int collY = catY + 28 + 50;
-            for (int artIndex = 0; artIndex < collList.Count; artIndex++)
+            for (int colIndex = 0; colIndex < collList.Count; colIndex++)
             {
-                Label label1 = new Label();
-                label1.Location = new Point(0, collY);
-                label1.Size = new Size(100, 20);
-                label1.Text = collList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Search_CLick);
-                Right_panel.Controls.Add(label1);
+                Label collLabel = new Label();
+                collLabel.Location = new Point(0, collY);
+                collLabel.Size = new Size(100, 20);
+                collLabel.Text = collList[colIndex].ToString();
+                collLabel.Click += new EventHandler(Search_CLick);
+                Right_panel.Controls.Add(collLabel);
                 collY += 28;
             }
             #endregion          

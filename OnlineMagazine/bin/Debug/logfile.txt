@@ -915,3 +915,14 @@
 [08.12.2018 12:43:19 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
 [08.12.2018 12:43:19 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
 [08.12.2018 12:43:19 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'
+[09.12.2018 16:30:40 - main] -- читаем конфиг
+[09.12.2018 16:30:40 - SQLClass] -- Соединяюсь с базой
+[09.12.2018 16:30:44 - SQLClass] -- SELECT UserName FROM Authors LIMIT 0, 2
+[09.12.2018 16:30:44 - SQLClass] -- SELECT Name FROM Categories LIMIT 0, 5
+[09.12.2018 16:30:44 - SQLClass] -- SELECT DISTINCT `Coll_text`  FROM Colection LIMIT 0, 4
+[09.12.2018 16:30:44 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[09.12.2018 16:30:45 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[09.12.2018 16:30:45 - SQLClass] -- SELECT Header, Picture, (SELECT likesCount FROM Likes WHERE Header = Article) likesCount, (SELECT discount FROM Likes WHERE Header = Article) discount, (SELECT COUNT(*) FROM read_of_articles WHERE Header = name_of_article) A FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[09.12.2018 16:30:45 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Война и мир'
+[09.12.2018 16:30:45 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Гречка'
+[09.12.2018 16:30:46 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Дайте денег'

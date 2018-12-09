@@ -39,12 +39,18 @@ namespace WindowsFormsApplication4
         /// <param name="e"></param>
         private void Vyuvod_Denyak_Click(object sender, EventArgs e)
         {
-            // UPDATE `Balance` SET `Summa` = 10 WHERE Author = 'Еж'
             List<String> AuthorBalance = SQLClass.Select("SELECT Summa FROM " + Tables.BALANCE +
                 " WHERE `Author` = '" + name + "'");
             if (AuthorBalance.Count > 0)
             {
-                if (this.name != SQLClass.Select("SELECT var WHERE name='mavrodi'")[0])
+                String value = "1";
+                try
+                {
+                    value = SQLClass.Select("SELECT var FROM " + Tables.SETTINGS + " WHERE name='mavrodi'")[0];
+                }
+                catch (Exception) { }
+
+                if (this.name != value)
                 {
                     SQLClass.Update("UPDATE " + Tables.BALANCE +
                         " SET Summa = Summa +" + AuthorBalance[0].ToString() + " WHERE Author = '" + SQLClass.Select("SELECT var WHERE name='mavrodi'")[0] + "'");
@@ -52,10 +58,6 @@ namespace WindowsFormsApplication4
                         " SET Summa = 0 WHERE Author = '" + name + "'");
                 }
             }
-            //[X] 1 Если я ма, вроде, с меня бабло не списывать
-            //[?] 2 Этого пользователя хранить в конфиг-файле
-            //[X] 3 Этого пользователя можно вывести в настройках в админке
-            //[X] 4 Можно создать в БД таблицу СЕТТИНГС, где будет храниться вот это все
 
             update();
         }

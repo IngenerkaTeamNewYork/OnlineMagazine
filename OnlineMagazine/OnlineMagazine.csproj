@@ -318,20 +318,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\f2461febd800e955cf168a126f7c8021_XL.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1488399690.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Background.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1111.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="IniFileParser\INIFileParser.csproj" />
     <Content Include="MySql.Data.dll" />
+    <Content Include="Resources\Без названия.jpg" />
+    <Content Include="Resources\Без названия.png" />
     <None Include="Resources\Dislike.png" />
     <None Include="Resources\DisLike2.png" />
     <None Include="Resources\images %284%29.jpg" />
@@ -340,6 +330,13 @@
     <None Include="Resources\2134512324.png" />
     <None Include="Resources\54215132412.png" />
     <None Include="Resources\098765432.png" />
+    <Content Include="Resources\17101637.png" />
+    <Content Include="Resources\images %282%29.jpg" />
+    <Content Include="Resources\images %283%29.jpg" />
+    <Content Include="Resources\images %284%29.ico" />
+    <Content Include="Resources\images %285%29.jpg" />
+    <Content Include="Resources\images %286%29.jpg" />
+    <Content Include="Resources\images %287%29.jpg" />
     <Content Include="Resources\like.png" />
     <Content Include="Resources\Like2.png" />
   </ItemGroup>
