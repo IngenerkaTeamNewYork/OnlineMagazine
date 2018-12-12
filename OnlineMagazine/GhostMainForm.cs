@@ -19,6 +19,7 @@ namespace WindowsFormsApplication4
 {
     public partial class GhostMainForm : Form
     {
+        List<PictureBox> pb = new List<PictureBox>();
         /// <summary>
         /// Последний поисковый запрос
         /// </summary>
@@ -385,12 +386,14 @@ namespace WindowsFormsApplication4
         }
 
 
-           
 
 
+
+        
         private void dalee_Click(object sender, EventArgs e)
         {
             piccc = new List<PictureBox>();
+            pb = new List<PictureBox>();
             string[] dhfg = textBox_search.Text.Split(new char[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
             string nahod = "";
             Dictionary<String, String> dict = new Dictionary<string, string>();
@@ -445,7 +448,9 @@ namespace WindowsFormsApplication4
                 PictureBox likesPB = new PictureBox();
                 likesPB.Size = new Size(20, 20);
                 likesPB.Location = new Point(200, 0);
+                likesPB.Tag = label1.Text;
                 likesPB.Image = Properties.Resources.like;
+                likesPB.Click += new System.EventHandler(click);
                 articleHeaderPanel.Controls.Add(likesPB);
 
                 Label likesLabel = new Label();
@@ -457,6 +462,7 @@ namespace WindowsFormsApplication4
                 dislikesLabel.Location = new Point(290, 0);
                 dislikesLabel.Size = new Size(20, 20);
                 articleHeaderPanel.Controls.Add(dislikesLabel);
+
 
                 StatiyaForm.GetStata(likesLabel, dislikesLabel, label1.Text);
                 #endregion
@@ -538,12 +544,64 @@ namespace WindowsFormsApplication4
 
                 Centr_panel.Controls.Add(dalee);
                 arts.Add(label1);
+                pb.Add(likesPB);
                 articleY += 180;
             }
 
             kolvo_nazatiy++;
         }
 
+        void click(object sender, EventArgs e)
+        {
+            foreach (PictureBox pbn in pb)
+            {
+                if (sender.Equals(pbn))
+                {
+                    bool isLike = true;
+                    pictureBoxLike_Clicking1(pbn.Tag.ToString(), isLike);
+                    isLike = false;
+                    formloader(sender, e);
+                    break;
+                }
+            }
+        }
+
+        public static void pictureBoxLike_Clicking1(String Text, bool isLike)
+        {
+            
+
+            List<String> textesAut = SQLClass.Select("SELECT Author, Category FROM " + Tables.ARTICLES + " WHERE `Header` = '" + Text + "'");
+
+            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Text + "'");
+            if (isLike)
+            {
+                if (likes.Count > 0)
+                {
+                    SQLClass.Update("UPDATE " + Tables.LIKES +
+                        " SET LikesCount = LikesCount + 1" +
+                        " WHERE Article = '" + Text + "'");
+                }
+                else
+                {
+                    SQLClass.Insert(
+                        "INSERT INTO " + Tables.LIKES +
+                        "(Article, Author, Category, LikesCount, DisCount)" +
+                        " VALUES (" +
+                        "'" + Text + "'" +
+                        ", '" + textesAut[0] + "'" +
+                        ", '" + textesAut[1] + "'" +
+                        ",1" +
+                        ",0)");
+                }
+
+            }
+            else
+            {
+                SQLClass.Update("UPDATE " + Tables.LIKES +
+                    " SET LikesCount = LikesCount - 1" +
+                    " WHERE Article = '" + Text + "'");
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowColor = true;

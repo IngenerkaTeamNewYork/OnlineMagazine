@@ -219,7 +219,6 @@ namespace WindowsFormsApplication4
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 48);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
@@ -466,6 +465,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
       
         #endregion
