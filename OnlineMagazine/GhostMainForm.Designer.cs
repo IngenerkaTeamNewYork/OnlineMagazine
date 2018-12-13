@@ -63,6 +63,7 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
@@ -219,7 +220,6 @@ namespace WindowsFormsApplication4
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 48);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
@@ -437,11 +437,30 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "нет",
+            "просмотры(по возрастанию)",
+            "просмотры(по убыванию)",
+            "рейтинг(по возрастанию)",
+            "рейтинг(по убыванию)",
+            "лайки(по возрастанию)",
+            "лайки(по убыванию)",
+            "кол-во статей(по возрастанию)",
+            "кол-во статей(по убыванию)"});
+            this.comboBox2.Location = new System.Drawing.Point(455, 12);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.TabIndex = 10;
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.popularArticlesLabel);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.butto_search);
@@ -466,6 +485,7 @@ namespace WindowsFormsApplication4
             this.Centr_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
       
         #endregion
@@ -504,5 +524,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel adminPpanel;
         private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
         private System.Windows.Forms.Label label_collections;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
