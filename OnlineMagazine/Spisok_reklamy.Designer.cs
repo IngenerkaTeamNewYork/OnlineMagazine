@@ -29,32 +29,22 @@
         private void InitializeComponent()
         {
             this.main_panel = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // main_panel
             // 
+            this.main_panel.AutoScroll = true;
             this.main_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_panel.Location = new System.Drawing.Point(0, 0);
             this.main_panel.Name = "main_panel";
             this.main_panel.Size = new System.Drawing.Size(515, 555);
             this.main_panel.TabIndex = 0;
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(492, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(23, 555);
-            this.vScrollBar1.TabIndex = 0;
-            this.vScrollBar1.TabStop = true;
-            // 
             // Spisok_reklamy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 555);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.main_panel);
             this.Name = "Spisok_reklamy";
             this.Text = "Список рекламы";
@@ -66,6 +56,5 @@
         #endregion
 
         private System.Windows.Forms.Panel main_panel;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

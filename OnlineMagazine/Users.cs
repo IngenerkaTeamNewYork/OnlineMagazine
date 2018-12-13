@@ -77,6 +77,9 @@ namespace WindowsFormsApplication4
             list_of_users.Clear();
             panel1.Controls.Clear();
             panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(name);
+            panel1.Controls.Add(label_feel);
+            panel1.Controls.Add(labelb);
 
 
             /*else
