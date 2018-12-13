@@ -94,6 +94,45 @@ namespace WindowsFormsApplication4
 
             return kak;
         }
+
+
+        String getKak2()
+        {
+            string kak2 = "";
+            //Жуков!!! Selected, а не tab
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    kak2 = "";
+                    break;
+                case 1:
+                    kak2 = "ORDER BY prosmot ASC";
+                    break;
+                case 2:
+                    kak2 = "ORDER BY prosmot DESC";
+                    break;
+                case 3:
+                    kak2 = "ORDER BY LikesCount - DisLikesCount ASC";
+                    break;
+                case 4:
+                    kak2 = "ORDER BY LikesCount - DisLikesCount DESC";
+                    break;
+                case 5:
+                    kak2 = "ORDER BY LikesCount ASC";
+                    break;
+                case 6:
+                    kak2 = "ORDER BY LikesCount DESC";
+                    break;
+                case 7:
+                    kak2 = "ORDER BY Arts ASC";
+                    break;
+                case 8:
+                    kak2 = "ORDER BY Arts DESC";
+                    break;
+            }
+
+            return kak2;
+        }
         
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -162,10 +201,19 @@ namespace WindowsFormsApplication4
 
             
 
-            List<String> authorsList = SQLClass.Select("SELECT UserName FROM " + Tables.AUTHORS + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
+            List<String> authorsList = SQLClass.Select("SELECT UserName, " +
+
+                " IFNULL((SELECT SUM(LikesCount) FROM " + Tables.LIKES + " WHERE Author = UserName), 0) LikesCount," +
+                " IFNULL((SELECT COUNT(Header) FROM " + Tables.ARTICLES + " WHERE Author = UserName), 0) Arts," +
+                " IFNULL((SELECT SUM(DisCount) FROM " + Tables.LIKES + "  WHERE Author = UserName), 0) DisLikesCount," +
+                " IFNULL((SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE name_of_article IN (SELECT Header FROM " + Tables.ARTICLES + " WHERE Author = UserName)), 0)  prosmot" +
+
+                " FROM " + Tables.AUTHORS + " " +
+                getKak2() +
+                " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
 
             int authorsY = 75;
-            for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
+            for (int artIndex = 0; artIndex < authorsList.Count; artIndex += 5)
             {
                 Label label1 = new Label();
                 label1.Location = new Point(0, authorsY);

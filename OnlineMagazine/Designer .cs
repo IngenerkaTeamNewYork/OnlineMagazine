@@ -22,18 +22,24 @@ namespace WindowsFormsApplication4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == null && textBox2.Text == null && textBox3.Text == null && textBox4.Text == null)
+            if (categoryTextBox.Text == null && 
+                reklamatextBox.Text == null && 
+                PodborkatextBox.Text == null && 
+                authorsTextBox.Text == null && 
+                textBox5.Text == null)
             {
                 this.Close();
             }
             else 
             {
-                try 
+                try
                 {
-                    Configs.KOL_VO_ELEMENTOV_Author = Convert.ToInt32(textBox4.Text);
-                    Configs.KOL_VO_ELEMENTOV_Categoriya = Convert.ToInt32(textBox1.Text);
-                    Configs.KOL_VO_ELEMENTOV_Podborka = Convert.ToInt32(textBox3.Text);
-                    Configs.ChR = Convert.ToInt32(textBox2.Text);
+                    SQLClass.Update("UPDATE " + Tables.SETTINGS + " SET var = '" + textBox5.Text + "' WHERE name='mavrodi'");
+        
+                    Configs.KOL_VO_ELEMENTOV_Author = Convert.ToInt32(authorsTextBox.Text);
+                    Configs.KOL_VO_ELEMENTOV_Categoriya = Convert.ToInt32(categoryTextBox.Text);
+                    Configs.KOL_VO_ELEMENTOV_Podborka = Convert.ToInt32(PodborkatextBox.Text);
+                    Configs.ChR = Convert.ToInt32(reklamatextBox.Text);              
                 }
                 catch
                 {
@@ -41,20 +47,88 @@ namespace WindowsFormsApplication4
                 }
             }
 
-            File.WriteAllText("Temp.txt", Configs.KOL_VO_ELEMENTOV_Author + Environment.NewLine +
-                +Configs.KOL_VO_ELEMENTOV_Categoriya + Environment.NewLine +
-                +Configs.KOL_VO_ELEMENTOV_Podborka + Environment.NewLine +
-                +Configs.ChR + Environment.NewLine);
+            File.WriteAllText("Temp.txt", 
+                "AUTHOR = " + Configs.KOL_VO_ELEMENTOV_Author + Environment.NewLine +
+                "CATEGORIES = " + Configs.KOL_VO_ELEMENTOV_Categoriya + Environment.NewLine +
+                "COLLECTIONS = " + Configs.KOL_VO_ELEMENTOV_Podborka + Environment.NewLine +
+                "CHR = " + Configs.ChR + Environment.NewLine);
         }
 
         private void Designer_Load(object sender, EventArgs e)
         {
+            authorsTextBox.Text = Configs.KOL_VO_ELEMENTOV_Author.ToString();
+            categoryTextBox.Text = Configs.KOL_VO_ELEMENTOV_Categoriya.ToString();
+            PodborkatextBox.Text = Configs.KOL_VO_ELEMENTOV_Podborka.ToString();
+            reklamatextBox.Text = Configs.ChR.ToString();
 
+
+            textBox5.Text = "1";
+            try
+            {
+                textBox5.Text = SQLClass.Select("SELECT var FROM " + Tables.SETTINGS + " WHERE name='mavrodi'")[0];
+            }
+            catch (Exception) { }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SQLClass.Update("UPDATE `Settings` SET `var`='" + textBox2.Text + "' WHERE name='mavrodi'");
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PodborkatextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //не бейте добавляю часы на гитхаб
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssssv
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
+
+        //adssssssssssssssssssssssssssssssssss
+        //adssssssssssssssssssssssssssssssssss
+        //(Демид ЛОЛ)
     }
 }
