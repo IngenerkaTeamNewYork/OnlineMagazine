@@ -89,31 +89,32 @@ namespace WindowsFormsApplication4
 
            
         }
-        
-        private void pictureBoxLike_Click(object sender, EventArgs e)
+
+       
+        public void pictureBoxLike_Clicking(object sender, EventArgs e)
         {
             if (isDisLike)
             {
                 pictureBoxDislike_Click(sender, e);
             }
-            isLike = !isLike;               
-            pictureBoxLike.Image = (isLike) ? 
-                Properties.Resources.Like2 : 
+            isLike = !isLike;
+            pictureBoxLike.Image = (isLike) ?
+                Properties.Resources.Like2 :
                 Properties.Resources.like;
-                        
-            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");            
+
+            List<String> likes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
             if (isLike)
             {
-                if (likes.Count > 0 )
+                if (likes.Count > 0)
                 {
-                    SQLClass.Update("UPDATE " + Tables.LIKES + 
+                    SQLClass.Update("UPDATE " + Tables.LIKES +
                         " SET LikesCount = LikesCount + 1" +
                         " WHERE Article = '" + Maintext.Text + "'");
                 }
                 else
                 {
                     SQLClass.Insert(
-                        "INSERT INTO " + Tables.LIKES + 
+                        "INSERT INTO " + Tables.LIKES +
                         "(Article, Author, Category, LikesCount, DisCount)" +
                         " VALUES (" +
                         "'" + Maintext.Text + "'" +
@@ -133,8 +134,8 @@ namespace WindowsFormsApplication4
 
             GetStata(labelLike, labeldis, Maintext.Text);
         }
-        
-        private void pictureBoxDislike_Click(object sender, EventArgs e)
+
+        public void pictureBoxDislike_Clicking(object sender, EventArgs e)
         {
             if (isLike)
             {
@@ -146,10 +147,10 @@ namespace WindowsFormsApplication4
             Properties.Resources.Dislike;
 
             List<String> dislikes = SQLClass.Select("SELECT Article FROM " + Tables.LIKES + " WHERE Article = '" + Maintext.Text + "'");
-         
+
             if (isDisLike)
             {
-                if (dislikes.Count > 0  )
+                if (dislikes.Count > 0)
                 {
                     SQLClass.Update("UPDATE " + Tables.LIKES +
                         " SET DisCount = DisCount + 1" +
@@ -179,6 +180,18 @@ namespace WindowsFormsApplication4
             }
 
             GetStata(labelLike, labeldis, Maintext.Text);
+        }
+
+
+        
+        private void pictureBoxLike_Click(object sender, EventArgs e)
+        {
+            pictureBoxLike_Clicking(sender,e);
+        }
+        
+        private void pictureBoxDislike_Click(object sender, EventArgs e)
+        {
+            pictureBoxDislike_Clicking(sender, e);
         }
 
         private void StatiyaForm1_Load(object sender, EventArgs e)
