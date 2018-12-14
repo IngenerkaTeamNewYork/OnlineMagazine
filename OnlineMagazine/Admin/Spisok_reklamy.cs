@@ -85,24 +85,27 @@ namespace WindowsFormsApplication4
             zapolnenie();
 
 
-            TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
-            mainTableLayoutPanel.ColumnCount = 3;
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            mainTableLayoutPanel.Dock = DockStyle.Fill;
-            mainTableLayoutPanel.RowStyles.Clear();
+
+           // mainTableLayoutPanel.RowStyles.Clear();
 
             int id = 0;
             foreach (Reklama rekl in mn_reklamy)
             {
+                TableLayoutPanel mainTableLayoutPanel = new TableLayoutPanel();
+                mainTableLayoutPanel.ColumnCount = 3;
+                mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+                mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                mainTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+                mainTableLayoutPanel.Size = new Size(main_panel.Width, 100);
+                mainTableLayoutPanel.Dock = DockStyle.Top;
+
                 rekl.AddOneDayButton.Click += new System.EventHandler(AddOneDay_Click);
                 rekl.prinitButton.Click += new System.EventHandler(prinit);
                 rekl.proshiyButton.Click += new System.EventHandler(proshiy);
 
-                if (rekl.date_to <= DateTime.Now || rekl.n)
+                //if (rekl.date_to <= DateTime.Now || rekl.n)
                 {
-                    mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+                    //mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
 
                     TableLayoutPanel tableLayoutPanel12 = new TableLayoutPanel();
                     tableLayoutPanel12.ColumnCount = 1;
@@ -154,8 +157,7 @@ namespace WindowsFormsApplication4
                     tableLayoutPanel12.Controls.Add(rekl.proshiyButton, 0, 1);
                     if (rekl.n)
                     { tableLayoutPanel12.Controls.Add(rekl.prinitButton, 0, 0); }
-                    //tableLayoutPanel12.Controls.Add(rekl.prinitButton, 0, 0);
-
+   
                     tableLayoutPanel13.Controls.Add(label_date_from, 0, 0);
                     if (rekl.date_to <= DateTime.Now)
                     { tableLayoutPanel13.Controls.Add(rekl.AddOneDayButton, 0, 1); }
