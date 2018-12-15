@@ -39,6 +39,7 @@
             this.categoryLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +48,9 @@
             this.AuthorsLabel.AutoSize = true;
             this.AuthorsLabel.Location = new System.Drawing.Point(3, 0);
             this.AuthorsLabel.Name = "AuthorsLabel";
-            this.AuthorsLabel.Size = new System.Drawing.Size(85, 13);
+            this.AuthorsLabel.Size = new System.Drawing.Size(83, 13);
             this.AuthorsLabel.TabIndex = 0;
-            this.AuthorsLabel.Text = "Кол-во авторов";
+            this.AuthorsLabel.Text = "Число авторов";
             // 
             // categoryTextBox
             // 
@@ -80,18 +81,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 26);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Введи число рекламы на главной форме";
+            this.label2.Text = "Число рекламы ";
             // 
             // podborkaLabel
             // 
             this.podborkaLabel.AutoSize = true;
             this.podborkaLabel.Location = new System.Drawing.Point(3, 76);
             this.podborkaLabel.Name = "podborkaLabel";
-            this.podborkaLabel.Size = new System.Drawing.Size(57, 13);
+            this.podborkaLabel.Size = new System.Drawing.Size(93, 13);
             this.podborkaLabel.TabIndex = 5;
-            this.podborkaLabel.Text = "Подборка";
+            this.podborkaLabel.Text = "Число подборок ";
             // 
             // PodborkatextBox
             // 
@@ -113,9 +114,9 @@
             this.categoryLabel.AutoSize = true;
             this.categoryLabel.Location = new System.Drawing.Point(3, 38);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(60, 13);
+            this.categoryLabel.Size = new System.Drawing.Size(94, 13);
             this.categoryLabel.TabIndex = 8;
-            this.categoryLabel.Text = "Категория";
+            this.categoryLabel.Text = "Число категорий";
             // 
             // tableLayoutPanel1
             // 
@@ -132,6 +133,7 @@
             this.tableLayoutPanel1.Controls.Add(this.categoryLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.podborkaLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.categoryTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -152,6 +154,15 @@
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 9;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 26);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Имя человека, которому преводятся деньги";
             // 
             // Designer
             // 
@@ -181,5 +192,6 @@
         private System.Windows.Forms.Label categoryLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label1;
     }
 }

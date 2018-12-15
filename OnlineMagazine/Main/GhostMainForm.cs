@@ -175,6 +175,7 @@ namespace WindowsFormsApplication4
             arts.Clear();
             Right_panel.Controls.Clear();
             textBox_password.UseSystemPasswordChar = true;
+            Right_panel.Controls.Add(comboBox2);
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
             
@@ -257,7 +258,7 @@ namespace WindowsFormsApplication4
             List<String> collList = SQLClass.Select("SELECT DISTINCT Coll_text FROM " + Tables.COLLECTION + 
                 " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Podborka);
 
-            int collY = catY + 28 + 50;
+            int collY = catY + 28 + 24;
             for (int colIndex = 0; colIndex < collList.Count; colIndex++)
             {
                 Label collLabel = new Label();
@@ -378,11 +379,16 @@ namespace WindowsFormsApplication4
 
             aut = (AuthorLoginData[0] != "0");
             adm = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
-            Users.CURRENT_USER = textBox_login.Text;
+            Users.CURRENT_USER = "NONAME";
             if (!aut && !adm && Polzovatel[0] == "0")
             {
                 MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
             }
+            else
+            {
+                Users.CURRENT_USER = textBox_login.Text;
+            }
+            
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -703,6 +709,11 @@ namespace WindowsFormsApplication4
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Form1_Load(sender, e);
         }
     }
 }

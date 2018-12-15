@@ -41,7 +41,9 @@ namespace WindowsFormsApplication4
                     SQLClass.Update(
                         "UPDATE " + Tables.ADVERTISMENT +
                         " SET Data_to = '" + rekl.date_to.AddDays(1).ToString("dd.MM.yyyy") + "'" +
-                        " WHERE id = " + rekl.id);                    
+                        " WHERE id = " + rekl.id);
+                    Spisok_reklamy_Load(sender, e);
+                    break;
                 }
             }
         }
@@ -57,6 +59,9 @@ namespace WindowsFormsApplication4
                         "UPDATE " + Tables.ADVERTISMENT +
                         " SET New = '" + "0" + "'" +
                         " WHERE id = " + rekl.id);
+
+                    Spisok_reklamy_Load(sender, e);
+                    break;
                 }
             }
         }
@@ -69,6 +74,9 @@ namespace WindowsFormsApplication4
                 {
                     SQLClass.Delete("DELETE FROM " + Tables.ADVERTISMENT +
                         " WHERE id = " + rekl.id);
+
+                    Spisok_reklamy_Load(sender, e);
+                    break;
                 }
             }
         }
@@ -80,6 +88,8 @@ namespace WindowsFormsApplication4
 
         private void Spisok_reklamy_Load(object sender, EventArgs e)
         {
+
+            main_panel.Controls.Clear();
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
             zapolnenie();
@@ -196,7 +206,7 @@ namespace WindowsFormsApplication4
 
 
                 rek.prinitButton = new Button();
-                rek.prinitButton.Location = new System.Drawing.Point(3, 64);
+                rek.prinitButton.Location = new System.Drawing.Point(3, 90);
                 rek.prinitButton.Size = new System.Drawing.Size(115, 23);
                 rek.prinitButton.TabIndex = 7;
                 rek.prinitButton.Text = "Одобрить";
@@ -204,7 +214,7 @@ namespace WindowsFormsApplication4
 
 
                 rek.proshiyButton = new Button();
-                rek.proshiyButton.Location = new System.Drawing.Point(3, 64);
+                rek.proshiyButton.Location = new System.Drawing.Point(3, 110);
                 rek.proshiyButton.Size = new System.Drawing.Size(115, 23);
                 rek.proshiyButton.TabIndex = 7;
                 rek.proshiyButton.Text = "ПРОЩАЙ";

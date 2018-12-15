@@ -104,8 +104,9 @@ namespace WindowsFormsApplication4
                 "SELECT Information_about_author, Articles, Pic FROM " + Tables.AUTHORS +
                 " WHERE `UserName` = '" + login + "'");
 
-            List<String> mesto = SQLClass.Select("SELECT SUM(`LikesCount`) - SUM(`DisCount`) FROM " + Tables.LIKES +
-                " WHERE `Author` = '" + login + "'");
+            List<String> mesto = SQLClass.Select("SELECT COUNT(*) + 1 FROM (SELECT UserName, SUM(`Likes`) - Sum(DisLikes) F FROM "
+                + Tables.AUTHORS + " GROUP BY UserName HAVING F > (SELECT SUM(`Likes`) - Sum(DisLikes) FROM " + Tables.AUTHORS + 
+                " WHERE UserName = '" + login + "') ) T");
             label4.Text = "Место автора " + mesto[0];
 
             Button_Balance.Text = "Баланс: 0";
