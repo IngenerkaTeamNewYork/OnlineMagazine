@@ -83,52 +83,5 @@ namespace WindowsFormsApplication4
         {
 
         }
-        //не бейте добавляю часы на гитхаб
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssssv
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss//adssssssssssssssssssssssssssssssssss
-
-        //adssssssssssssssssssssssssssssssssss
-        //adssssssssssssssssssssssssssssssssss
-        //(Демид ЛОЛ)
     }
 }

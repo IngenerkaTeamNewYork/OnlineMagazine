@@ -73,7 +73,6 @@ namespace WindowsFormsApplication4
 
             String[] chasti_stroki = pic_avtor.Split(new char[] { ' ', '/' });
             WebClient client = new WebClient();
-            Uri uri = new Uri(pic_avtor);
 
             try
             {
@@ -86,6 +85,7 @@ namespace WindowsFormsApplication4
                 try
                 {
                     pictureBox1.Load(pic_avtor);
+                    Uri uri = new Uri(pic_avtor);
 
                     pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);

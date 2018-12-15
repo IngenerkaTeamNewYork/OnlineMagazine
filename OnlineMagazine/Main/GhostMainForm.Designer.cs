@@ -50,6 +50,7 @@ namespace WindowsFormsApplication4
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
             this.label_collections = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label_Author_header = new System.Windows.Forms.Label();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.label_author = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
@@ -285,10 +285,12 @@ namespace WindowsFormsApplication4
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(205, 21);
             this.comboBox1.TabIndex = 16;
+            this.comboBox1.Text = "Сортировка статей";
             // 
             // Right_panel
             // 
             this.Right_panel.Controls.Add(this.label_collections);
+            this.Right_panel.Controls.Add(this.comboBox2);
             this.Right_panel.Controls.Add(this.label_Author_header);
             this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
             this.Right_panel.Controls.Add(this.categories_linklabel);
@@ -310,11 +312,31 @@ namespace WindowsFormsApplication4
             this.label_collections.TabIndex = 9;
             this.label_collections.Text = "Подборки";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "нет",
+            "просмотры(по возрастанию)",
+            "просмотры(по убыванию)",
+            "рейтинг(по возрастанию)",
+            "рейтинг(по убыванию)",
+            "лайки(по возрастанию)",
+            "лайки(по убыванию)",
+            "кол-во статей(по возрастанию)",
+            "кол-во статей(по убыванию)"});
+            this.comboBox2.Location = new System.Drawing.Point(10, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(172, 21);
+            this.comboBox2.TabIndex = 10;
+            this.comboBox2.Text = "Сортировка авторов";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // label_Author_header
             // 
             this.label_Author_header.AutoSize = true;
             this.label_Author_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Author_header.Location = new System.Drawing.Point(2, 38);
+            this.label_Author_header.Location = new System.Drawing.Point(2, 55);
             this.label_Author_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Author_header.Name = "label_Author_header";
             this.label_Author_header.Size = new System.Drawing.Size(180, 20);
@@ -437,30 +459,11 @@ namespace WindowsFormsApplication4
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "нет",
-            "просмотры(по возрастанию)",
-            "просмотры(по убыванию)",
-            "рейтинг(по возрастанию)",
-            "рейтинг(по убыванию)",
-            "лайки(по возрастанию)",
-            "лайки(по убыванию)",
-            "кол-во статей(по возрастанию)",
-            "кол-во статей(по убыванию)"});
-            this.comboBox2.Location = new System.Drawing.Point(455, 12);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
-            this.comboBox2.TabIndex = 10;
-            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.popularArticlesLabel);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.butto_search);
