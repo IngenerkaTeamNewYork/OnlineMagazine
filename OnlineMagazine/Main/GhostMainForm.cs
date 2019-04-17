@@ -99,7 +99,6 @@ namespace WindowsFormsApplication4
         String getKak2()
         {
             string kak2 = "";
-            //Жуков!!! Selected, а не tab
             switch (comboBox2.SelectedIndex)
             {
                 case 0:

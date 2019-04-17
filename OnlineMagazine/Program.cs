@@ -11,6 +11,8 @@ namespace WindowsFormsApplication4
 {
     static class Program
     {
+        public static ContextMenuStrip UserControlCMS { get; internal set; }
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

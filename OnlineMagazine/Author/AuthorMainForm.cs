@@ -219,9 +219,11 @@ namespace WindowsFormsApplication4
 
         private void Balance_Click(object sender, EventArgs e)
         {
-            Balance_Author OknoBalance = new Balance_Author(login);
-            OknoBalance.ShowDialog();
-            AuthorMainFormLoad(sender, e);
+            //Balance_Author OknoBalance = new Balance_Author(login);
+            //OknoBalance.ShowDialog();
+            //AuthorMainFormLoad(sender, e);
+            AuthorWithUC abc = new AuthorWithUC("Жуков");
+            abc.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)

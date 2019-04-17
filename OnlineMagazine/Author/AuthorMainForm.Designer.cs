@@ -73,7 +73,7 @@
             this.panel1_reklama.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1_reklama.Location = new System.Drawing.Point(3, 3);
             this.panel1_reklama.Name = "panel1_reklama";
-            this.panel1_reklama.Size = new System.Drawing.Size(204, 122);
+            this.panel1_reklama.Size = new System.Drawing.Size(215, 122);
             this.panel1_reklama.TabIndex = 0;
             // 
             // pictureBox1
@@ -100,7 +100,7 @@
             this.panel2_reklama.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2_reklama.Location = new System.Drawing.Point(3, 131);
             this.panel2_reklama.Name = "panel2_reklama";
-            this.panel2_reklama.Size = new System.Drawing.Size(204, 352);
+            this.panel2_reklama.Size = new System.Drawing.Size(215, 352);
             this.panel2_reklama.TabIndex = 1;
             // 
             // pictureBox2
@@ -130,7 +130,7 @@
             this.panel_Statiya.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Statiya.Location = new System.Drawing.Point(3, 3);
             this.panel_Statiya.Name = "panel_Statiya";
-            this.panel_Statiya.Size = new System.Drawing.Size(312, 429);
+            this.panel_Statiya.Size = new System.Drawing.Size(329, 429);
             this.panel_Statiya.TabIndex = 2;
             // 
             // textBox2
@@ -181,7 +181,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 38);
+            this.label1.Size = new System.Drawing.Size(329, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Статья";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -192,7 +192,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Location = new System.Drawing.Point(3, 438);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(312, 45);
+            this.button1.Size = new System.Drawing.Size(329, 45);
             this.button1.TabIndex = 3;
             this.button1.Text = "Опубликовать статью";
             this.button1.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             this.aboutAuthorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.aboutAuthorLabel.Location = new System.Drawing.Point(3, 0);
             this.aboutAuthorLabel.Name = "aboutAuthorLabel";
-            this.aboutAuthorLabel.Size = new System.Drawing.Size(163, 50);
+            this.aboutAuthorLabel.Size = new System.Drawing.Size(172, 50);
             this.aboutAuthorLabel.TabIndex = 5;
             this.aboutAuthorLabel.Text = "Об авторе";
             // 
@@ -213,7 +213,7 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(3, 489);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(312, 20);
+            this.textBox1.Size = new System.Drawing.Size(329, 20);
             this.textBox1.TabIndex = 9;
             // 
             // button_statistika
@@ -221,7 +221,7 @@
             this.button_statistika.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_statistika.Location = new System.Drawing.Point(3, 471);
             this.button_statistika.Name = "button_statistika";
-            this.button_statistika.Size = new System.Drawing.Size(169, 38);
+            this.button_statistika.Size = new System.Drawing.Size(178, 38);
             this.button_statistika.TabIndex = 10;
             this.button_statistika.Text = "Категории";
             this.button_statistika.UseVisualStyleBackColor = true;
@@ -241,7 +241,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 518);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 518);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // leftTableLayoutPanel
@@ -259,7 +259,7 @@
             this.leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.leftTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.leftTableLayoutPanel.Size = new System.Drawing.Size(210, 512);
+            this.leftTableLayoutPanel.Size = new System.Drawing.Size(221, 512);
             this.leftTableLayoutPanel.TabIndex = 0;
             // 
             // button2
@@ -280,13 +280,13 @@
             this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(219, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(230, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(318, 512);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(335, 512);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // table_right_up
@@ -297,14 +297,14 @@
             this.table_right_up.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.table_right_up.Controls.Add(this.Button_Balance, 0, 1);
             this.table_right_up.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table_right_up.Location = new System.Drawing.Point(543, 3);
+            this.table_right_up.Location = new System.Drawing.Point(571, 3);
             this.table_right_up.Name = "table_right_up";
             this.table_right_up.RowCount = 4;
             this.table_right_up.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.76563F));
             this.table_right_up.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.07813F));
             this.table_right_up.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.5625F));
             this.table_right_up.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.table_right_up.Size = new System.Drawing.Size(175, 512);
+            this.table_right_up.Size = new System.Drawing.Size(184, 512);
             this.table_right_up.TabIndex = 2;
             // 
             // tableLayoutPanel5
@@ -321,7 +321,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.70856F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.29144F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(169, 300);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(178, 300);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // Avatar_author
@@ -329,7 +329,7 @@
             this.Avatar_author.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Avatar_author.Location = new System.Drawing.Point(3, 94);
             this.Avatar_author.Name = "Avatar_author";
-            this.Avatar_author.Size = new System.Drawing.Size(163, 203);
+            this.Avatar_author.Size = new System.Drawing.Size(172, 203);
             this.Avatar_author.TabIndex = 6;
             this.Avatar_author.TabStop = false;
             // 
@@ -349,7 +349,7 @@
             this.Button_Balance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Button_Balance.Location = new System.Drawing.Point(3, 315);
             this.Button_Balance.Name = "Button_Balance";
-            this.Button_Balance.Size = new System.Drawing.Size(169, 142);
+            this.Button_Balance.Size = new System.Drawing.Size(178, 142);
             this.Button_Balance.TabIndex = 12;
             this.Button_Balance.Text = "Баланс";
             this.Button_Balance.UseVisualStyleBackColor = true;
@@ -359,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 518);
+            this.ClientSize = new System.Drawing.Size(758, 518);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(737, 553);
             this.Name = "AuthorMainForm";
