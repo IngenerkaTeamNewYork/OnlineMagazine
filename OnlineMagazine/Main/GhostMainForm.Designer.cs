@@ -301,6 +301,7 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
+            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_collections
             // 
@@ -498,8 +499,7 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Panel Left_panel;
         private System.Windows.Forms.Panel Right_panel;
         private System.Windows.Forms.Panel Centr_panel;
-        private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.LinkLabel categories_linklabel;
+        public System.Windows.Forms.TextBox textBox_search;
         public System.Windows.Forms.LinkLabel link_of_registration;
         private System.Windows.Forms.Button button_add_reklama;
         private System.Windows.Forms.TableLayoutPanel authorizationTableLayoutPanel;
@@ -528,5 +528,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.TableLayoutPanel autButtonsTableLayoutPanel;
         private System.Windows.Forms.Label label_collections;
         private System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.LinkLabel categories_linklabel;
     }
 }

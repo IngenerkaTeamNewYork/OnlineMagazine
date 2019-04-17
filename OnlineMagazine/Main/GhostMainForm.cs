@@ -295,6 +295,20 @@ namespace WindowsFormsApplication4
 
             textBox_search.Text = LAST_SEARCH;
             butto_search_Click(sender, e);
+
+            List<string> p = new List<string>() { "5", "2" };
+            CategoriesUserControl b = new CategoriesUserControl(p);
+            b.Dock = DockStyle.Bottom;
+            Right_panel.Controls.Add(b);
+            Label l = new Label();
+            //l = CategoriesUserControl.;
+            l.Dock = DockStyle.Bottom;
+            b.Controls.Add(l);
+
+            Label newl = new Label();
+            newl = label_cats_header;
+            newl.Dock = DockStyle.Top;
+            b.Controls.Add(newl);
         }    
 
 
@@ -324,7 +338,7 @@ namespace WindowsFormsApplication4
             formloader(sender, e);
         }
 
-        private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CategoriesForm form3 = new CategoriesForm(false);
             form3.ShowDialog(); 
@@ -427,7 +441,7 @@ namespace WindowsFormsApplication4
         /// <summary>
         /// КЛик на автора / категорию
         /// </summary>
-        private void Search_CLick(object sender, EventArgs e)
+        public void Search_CLick(object sender, EventArgs e)
         {
             textBox_search.Text = ((Label)sender).Text;
             butto_search_Click(sender, e);
@@ -714,6 +728,10 @@ namespace WindowsFormsApplication4
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Form1_Load(sender, e);
+        }
+
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

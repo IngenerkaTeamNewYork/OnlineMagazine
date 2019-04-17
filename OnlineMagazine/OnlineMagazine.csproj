@@ -60,6 +60,10 @@
     <Compile Include="Admin\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoriesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CategoriesUserControl.Designer.cs" />
     <Compile Include="Main\AdvertisingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +229,7 @@
     <EmbeddedResource Include="Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CategoriesUserControl.resx" />
     <EmbeddedResource Include="Main\AdvertisingForm.resx">
       <DependentUpon>AdvertisingForm.cs</DependentUpon>
     </EmbeddedResource>
