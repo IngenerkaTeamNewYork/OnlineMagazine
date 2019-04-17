@@ -115,6 +115,8 @@ namespace WindowsFormsApplication4
             this.reclamaPanel.Name = "reclamaPanel";
             this.reclamaPanel.Size = new System.Drawing.Size(226, 437);
             this.reclamaPanel.TabIndex = 16;
+            this.reclamaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.reclamaPanel_Paint);
+            this.reclamaPanel.MouseLeave += new System.EventHandler(this.reclamaPanel_MouseLeave);
             // 
             // adminPpanel
             // 
@@ -301,6 +303,7 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
+            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_collections
             // 

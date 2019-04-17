@@ -199,6 +199,7 @@
     <Compile Include="Main\To_come_in.Designer.cs">
       <DependentUpon>To_come_in.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\Collections.cs">
@@ -219,6 +220,46 @@
     <Compile Include="Main\VipStatiy.Designer.cs">
       <DependentUpon>VipStatiy.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UCParameters.Designer.cs">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls1\AdsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\AdsUserControl.Designer.cs" />
+    <Compile Include="UserControls1\ArticleDetailsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\ArticleDetailsUserControl.Designer.cs" />
+    <Compile Include="UserControls1\ArticlePreviewUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\ArticlePreviewUserControl.Designer.cs" />
+    <Compile Include="UserControls1\AuthenticationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\AuthenticationUserControl.Designer.cs" />
+    <Compile Include="UserControls1\CategoriesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\CategoriesUserControl.Designer.cs" />
+    <Compile Include="UserControls1\DragAndDrop.cs" />
+    <Compile Include="UserControls1\UCFunctions.cs" />
+    <Compile Include="UserControls1\UserControlAutorsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\UserControlAutorsList.Designer.cs" />
+    <Compile Include="UserControls1\UserControlMainAuthor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\UserControlMainAuthor.Designer.cs" />
+    <Compile Include="UserControls1\UserControlSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls1\UserControlSearch.Designer.cs" />
     <EmbeddedResource Include="Author\Add_Statia.resx">
       <DependentUpon>Add_Statia.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +323,7 @@
     <EmbeddedResource Include="Main\To_come_in.resx">
       <DependentUpon>To_come_in.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New_stati.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -301,6 +343,17 @@
     <EmbeddedResource Include="Main\VipStatiy.resx">
       <DependentUpon>VipStatiy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCParameters.resx">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls1\AdsUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\ArticleDetailsUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\ArticlePreviewUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\AuthenticationUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\CategoriesUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlAutorsList.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlMainAuthor.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlSearch.resx" />
     <None Include="IniFileParser\INIFileParser.nuspec" />
     <None Include="IniFileParser\Model\IniData.cs.rej" />
     <None Include="IniFileParser\Properties\publickey.snk" />
