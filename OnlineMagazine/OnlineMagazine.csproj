@@ -60,22 +60,12 @@
     <Compile Include="Admin\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
-   <Compile Include="Author\AuthorWithUC.cs">
+    <Compile Include="Author\AuthorWithUC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Author\AuthorWithUC.Designer.cs">
       <DependentUpon>AuthorWithUC.cs</DependentUpon>
     </Compile>
-
-    </Compile>
-    <Compile Include="CategoriesUserControl.Designer.cs" />
-          <DependentUpon>CategoriesUserControl.cs</DependentUpon>
-    </Compile>
-
- <Compile Include="CategoriesUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-
     <Compile Include="Main\AdvertisingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,7 +288,6 @@
     <EmbeddedResource Include="Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CategoriesUserControl.resx" />
     <EmbeddedResource Include="Main\AdvertisingForm.resx">
       <DependentUpon>AdvertisingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,17 +392,6 @@
     <EmbeddedResource Include="UserControls\UserControlSearch.resx">
       <DependentUpon>UserControlSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCParameters.resx">
-      <DependentUpon>UCParameters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls1\AdsUserControl.resx" />
-    <EmbeddedResource Include="UserControls1\ArticleDetailsUserControl.resx" />
-    <EmbeddedResource Include="UserControls1\ArticlePreviewUserControl.resx" />
-    <EmbeddedResource Include="UserControls1\AuthenticationUserControl.resx" />
-    <EmbeddedResource Include="UserControls1\CategoriesUserControl.resx" />
-    <EmbeddedResource Include="UserControls1\UserControlAutorsList.resx" />
-    <EmbeddedResource Include="UserControls1\UserControlMainAuthor.resx" />
-    <EmbeddedResource Include="UserControls1\UserControlSearch.resx" />
     <None Include="IniFileParser\INIFileParser.nuspec" />
     <None Include="IniFileParser\Model\IniData.cs.rej" />
     <None Include="IniFileParser\Properties\publickey.snk" />
@@ -432,7 +410,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IniFileParser\INIFileParser.csproj" />
-    <Content Include="MySql.Data.dll" />
     <Content Include="Resources\Без названия.jpg" />
     <Content Include="Resources\Без названия.png" />
     <None Include="Resources\Dislike.png" />

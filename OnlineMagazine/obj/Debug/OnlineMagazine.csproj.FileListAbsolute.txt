@@ -37,7 +37,6 @@ C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\bin\Debug\WindowsFormsApplication4.exe
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\bin\Debug\WindowsFormsApplication4.pdb
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\bin\Debug\MySql.Data.dll
-C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csprojAssemblyReference.cache
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.Add_Statia.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.AdminMainForm.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.AdvertisingForm.resources
@@ -64,7 +63,15 @@ C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.Users.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.VipStatiy.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.GenerateResource.cache
-C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.CoreCompileInputs.cache
-C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.CopyComplete
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.exe
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.pdb
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.New_stati.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.UCParameters.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.AdsUserControl.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.ArticleDetailsUserControl.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.ArticlePreviewUserControl.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.AuthenticationUserControl.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.CategoriesUserControl.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.UserControlAutorsList.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.UserControlMainAuthor.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\WindowsFormsApplication4.UserControlSearch.resources
