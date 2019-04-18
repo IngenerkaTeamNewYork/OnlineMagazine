@@ -345,6 +345,7 @@
     <EmbeddedResource Include="Main\To_come_in.resx">
       <DependentUpon>To_come_in.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="New_stati.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -391,6 +392,17 @@
     <EmbeddedResource Include="UserControls\UserControlSearch.resx">
       <DependentUpon>UserControlSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCParameters.resx">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls1\AdsUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\ArticleDetailsUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\ArticlePreviewUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\AuthenticationUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\CategoriesUserControl.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlAutorsList.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlMainAuthor.resx" />
+    <EmbeddedResource Include="UserControls1\UserControlSearch.resx" />
     <None Include="IniFileParser\INIFileParser.nuspec" />
     <None Include="IniFileParser\Model\IniData.cs.rej" />
     <None Include="IniFileParser\Properties\publickey.snk" />

@@ -72,6 +72,7 @@
             this.articlesPanel.Name = "articlesPanel";
             this.articlesPanel.Size = new System.Drawing.Size(569, 377);
             this.articlesPanel.TabIndex = 7;
+            this.articlesPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.articlesPanel_Paint);
             // 
             // label3
             // 

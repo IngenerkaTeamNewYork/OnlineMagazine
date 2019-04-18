@@ -183,6 +183,7 @@ namespace WindowsFormsApplication4
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             AdmButton.Visible = adm;
             AutButton.Visible = aut;
+          
 
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
@@ -294,6 +295,7 @@ namespace WindowsFormsApplication4
 
             textBox_search.Text = LAST_SEARCH;
             butto_search_Click(sender, e);
+            reclamaPanel_MouseLeave(sender, e);
         }    
 
 
@@ -713,6 +715,21 @@ namespace WindowsFormsApplication4
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Form1_Load(sender, e);
+        }
+
+        private void Right_panel_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void reclamaPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reclamaPanel_MouseLeave(object sender, EventArgs e)
+        {
+            AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
+            reclamaPanel.Controls.Add(recl);
         }
     }
 }

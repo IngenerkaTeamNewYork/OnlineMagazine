@@ -141,5 +141,10 @@ namespace WindowsFormsApplication4
         {
             pictureBox1.Visible = false;
         }
+
+        private void articlesPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -225,7 +225,7 @@ namespace WindowsFormsApplication4
 
         public static void AddDeleteMenu(object sender)
         {
-            //((UserControl)sender).ContextMenuStrip = abc;
+            //((UserControl)sender).ContextMenuStrip = BlockForm.DeleteMenuStrip;
         }
 
         /// <summary>
