@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using System.IO;
 
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class Designer : Form
     {
         public Designer()
         {
             InitializeComponent();
-            Configs.read();
+            Configs.ReadTableNames();
         }
 
         private void button1_Click(object sender, EventArgs e)

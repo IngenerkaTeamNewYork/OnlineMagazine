@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class CategoriesUserControl : UserControl
     {
@@ -33,9 +33,11 @@ namespace WindowsFormsApplication4
         public CategoriesUserControl(List<string> CategoriesParams)
         {
             InitializeComponent();
+
+            label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
             Menus.AddDeleteMenu(this);
             Drag.AddDNDFunctions(this);
-            label = label1;
+            label = label_cats_header;
 
             asd = CategoriesParams;
             int result;
@@ -104,14 +106,26 @@ namespace WindowsFormsApplication4
             }
         }
 
+        /// <summary>
+        /// Клик на конкретную категорию
+        /// </summary>
         public static void lable_cat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(((Label)sender).Text);
+            Configs.SELECTED_CATEGORY = ((Label)sender).Text;
         }
 
         private void CategoriesUserControl_Load(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Открываем все категории
+        /// </summary>
+        private void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CategoriesForm form3 = new CategoriesForm(false);
+            form3.ShowDialog(); 
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class Add_Statia : Form
     {

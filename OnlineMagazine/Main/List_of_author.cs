@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class List_of_author : Form
     {

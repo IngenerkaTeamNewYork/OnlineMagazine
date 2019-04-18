@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-using System.Diagnostics;
-using System.IO;
-
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     /// <summary>
     /// Всякие глобальные переменные и константы
     /// </summary>
     public class Configs
     {
+        #region Оформление
+        /// <summary>
+        /// Текущий цвет текста
+        /// </summary>
+        public static Color USER_COLOR;
         /// <summary>
         /// Текущий шрифт
         /// </summary>
@@ -24,10 +27,7 @@ namespace WindowsFormsApplication4
         /// Шрифт для заголовка
         /// </summary>
         public static Font ZAGOLOVOK_FONT;
-        /// <summary>
-        /// Текущий цвет текста
-        /// </summary>
-        public static Color USER_COLOR;
+        #endregion
       
         public static int RlacationX = 0;
         public static int RlacationY = 0;
@@ -41,9 +41,25 @@ namespace WindowsFormsApplication4
         public static int KOL_VO_ELEMENTOV_Categoriya = 0;
         public static int KOL_VO_ELEMENTOV_Podborka = 0;
 
-        public static string zapros_na_cat = "";
+        #region Переменные для поиска
+        /// <summary>
+        /// Выбранный автор (для поиска)
+        /// </summary>
+        public static string SELECTED_AUTHOR = "";
+        /// <summary>
+        /// Выбранная категория (для поиска)
+        /// </summary>
+        public static string SELECTED_CATEGORY = "";
+        /// <summary>
+        /// Выбранный запрос (для поиска)
+        /// </summary>
+        public static string SELECTED_QUERY = "";
+        #endregion
 
-        public static void read()
+        /// <summary>
+        /// Чтение реальных адресов таблиц из файла
+        /// </summary>
+        public static void ReadTableNames()
         {
             FileStream file2 = new FileStream("Temp.txt", FileMode.Open);
             StreamReader reader = new StreamReader(file2); // создаем «потоковый читатель» и связываем его с файловым потоком
@@ -67,6 +83,7 @@ namespace WindowsFormsApplication4
                 {
                     ChR = Convert.ToInt32(stroka_iz_faila.Substring("CHR = ".Length));
                 }
+                //FIXME!!! Реклама, пользователи, блоки те же...
             }
 
             reader.Close();

@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication4
+﻿namespace OnlineMag
 {
     partial class VipStatiy
     {
@@ -88,7 +88,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApplication4.Properties.Resources.like;
+            this.pictureBox1.Image = global::OnlineMag.Properties.Resources.like;
             this.pictureBox1.Location = new System.Drawing.Point(12, 594);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 27);
@@ -116,7 +116,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
+            this.pictureBox2.Image = global::OnlineMag.Properties.Resources.Dislike;
             this.pictureBox2.Location = new System.Drawing.Point(190, 594);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(27, 27);

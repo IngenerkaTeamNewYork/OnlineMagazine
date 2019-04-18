@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.IO;
 
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class To_come_in : Form
     {

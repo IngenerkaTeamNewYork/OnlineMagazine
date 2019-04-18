@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using IniParser.Parser;
 using System.IO;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     static class Program
     {
@@ -28,7 +28,7 @@ namespace WindowsFormsApplication4
             Tables.CATEGORIES = aa.Parse(File.ReadAllText("config.ini"))["db"]["CATEGORIES"].ToString();
             Tables.SETTINGS = aa.Parse(File.ReadAllText("config.ini"))["db"]["SETTINGS"].ToString();
 
-            Configs.read();
+            Configs.ReadTableNames();
 
 
 

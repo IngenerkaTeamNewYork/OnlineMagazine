@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.Net;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class VipStatiy : Form
     {

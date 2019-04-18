@@ -8,7 +8,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Reflection;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public static class SQLClass
     {

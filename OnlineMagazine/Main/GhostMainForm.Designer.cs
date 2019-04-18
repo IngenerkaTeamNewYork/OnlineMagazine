@@ -1,5 +1,5 @@
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     partial class GhostMainForm
     {
@@ -64,6 +64,7 @@ namespace WindowsFormsApplication4
             this.popularArticlesLabel = new System.Windows.Forms.Label();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.authorizationTableLayoutPanel.SuspendLayout();
@@ -93,8 +94,7 @@ namespace WindowsFormsApplication4
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
-            this.butto_search.Click += new System.EventHandler(this.butto_search_Click);
-            this.butto_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.butto_search_KeyDown);
+            this.butto_search.Click += new System.EventHandler(this.Search_Click);
             // 
             // Left_panel
             // 
@@ -115,7 +115,6 @@ namespace WindowsFormsApplication4
             this.reclamaPanel.Name = "reclamaPanel";
             this.reclamaPanel.Size = new System.Drawing.Size(226, 437);
             this.reclamaPanel.TabIndex = 16;
-            this.reclamaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.reclamaPanel_Paint);
             this.reclamaPanel.MouseLeave += new System.EventHandler(this.reclamaPanel_MouseLeave);
             // 
             // adminPpanel
@@ -303,7 +302,6 @@ namespace WindowsFormsApplication4
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
-            this.Right_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Right_panel_Paint);
             // 
             // label_collections
             // 
@@ -333,7 +331,7 @@ namespace WindowsFormsApplication4
             this.comboBox2.Size = new System.Drawing.Size(172, 21);
             this.comboBox2.TabIndex = 10;
             this.comboBox2.Text = "Сортировка авторов";
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Search_Click);
             // 
             // label_Author_header
             // 
@@ -429,7 +427,6 @@ namespace WindowsFormsApplication4
             this.Centr_panel.Name = "Centr_panel";
             this.Centr_panel.Size = new System.Drawing.Size(323, 498);
             this.Centr_panel.TabIndex = 6;
-            this.Centr_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Centr_panel_Paint);
             // 
             // dalee
             // 
@@ -461,6 +458,11 @@ namespace WindowsFormsApplication4
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
+            // 
+            // mainTimer
+            // 
+            this.mainTimer.Enabled = true;
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
             // GhostMainForm
             // 
@@ -531,5 +533,6 @@ namespace WindowsFormsApplication4
         private System.Windows.Forms.Label label_collections;
         private System.Windows.Forms.ComboBox comboBox2;
         public System.Windows.Forms.LinkLabel categories_linklabel;
+        private System.Windows.Forms.Timer mainTimer;
     }
 }

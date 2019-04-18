@@ -12,7 +12,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class Users : Form
     {

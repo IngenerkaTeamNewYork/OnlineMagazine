@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class Information_o_avtore : Form
     {

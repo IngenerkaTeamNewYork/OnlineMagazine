@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication4
+﻿namespace OnlineMag
 {
     partial class Spisok_reklamy
     {

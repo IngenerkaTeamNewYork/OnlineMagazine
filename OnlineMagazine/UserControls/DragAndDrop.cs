@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public class DragAndDrop
     {

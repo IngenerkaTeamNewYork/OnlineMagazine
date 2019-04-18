@@ -15,7 +15,7 @@ using System.Net;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class GhostMainForm : Form
     {
@@ -60,78 +60,77 @@ namespace WindowsFormsApplication4
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Form1_Load(sender, e);
-        }       
+        }
 
-        
-        String getKak()
+        #region Порядок сортировки статей и авторов
+        String GetArticlesSortOrder()
         {
-            string kak = "";
-            //Жуков!!! Selected, а не tab
+            string sortOrder = "";
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    kak = "";
+                    sortOrder = "";
                     break;
                 case 1:
-                    kak = "ORDER BY A ASC";
+                    sortOrder = "ORDER BY A ASC";
                     break;
                 case 2:
-                    kak = "ORDER BY A DESC";
+                    sortOrder = "ORDER BY A DESC";
                     break;
                 case 3:
-                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
+                    sortOrder = "ORDER BY Likes.LikesCount - Likes.DisCount ASC";
                     break;
                 case 4:
-                    kak = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
+                    sortOrder = "ORDER BY Likes.LikesCount - Likes.DisCount DESC";
                     break;
                 case 5:
-                    kak = "ORDER BY LikesCount ASC";
+                    sortOrder = "ORDER BY LikesCount ASC";
                     break;
                 case 6:
-                    kak = "ORDER BY LikesCount DESC";
+                    sortOrder = "ORDER BY LikesCount DESC";
                     break;
             }
 
-            return kak;
+            return sortOrder;
         }
-
-
-        String getKak2()
+        
+        String GetAuthorSortOrder()
         {
-            string kak2 = "";
+            string sortOrder = "";
             switch (comboBox2.SelectedIndex)
             {
                 case 0:
-                    kak2 = "";
+                    sortOrder = "";
                     break;
                 case 1:
-                    kak2 = "ORDER BY prosmot ASC";
+                    sortOrder = "ORDER BY prosmot ASC";
                     break;
                 case 2:
-                    kak2 = "ORDER BY prosmot DESC";
+                    sortOrder = "ORDER BY prosmot DESC";
                     break;
                 case 3:
-                    kak2 = "ORDER BY LikesCount - DisLikesCount ASC";
+                    sortOrder = "ORDER BY LikesCount - DisLikesCount ASC";
                     break;
                 case 4:
-                    kak2 = "ORDER BY LikesCount - DisLikesCount DESC";
+                    sortOrder = "ORDER BY LikesCount - DisLikesCount DESC";
                     break;
                 case 5:
-                    kak2 = "ORDER BY LikesCount ASC";
+                    sortOrder = "ORDER BY LikesCount ASC";
                     break;
                 case 6:
-                    kak2 = "ORDER BY LikesCount DESC";
+                    sortOrder = "ORDER BY LikesCount DESC";
                     break;
                 case 7:
-                    kak2 = "ORDER BY Arts ASC";
+                    sortOrder = "ORDER BY Arts ASC";
                     break;
                 case 8:
-                    kak2 = "ORDER BY Arts DESC";
+                    sortOrder = "ORDER BY Arts DESC";
                     break;
             }
 
-            return kak2;
+            return sortOrder;
         }
+        #endregion
         
         private void ArticleClick(object sender, EventArgs e)
         {
@@ -210,7 +209,7 @@ namespace WindowsFormsApplication4
                 " IFNULL((SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE name_of_article IN (SELECT Header FROM " + Tables.ARTICLES + " WHERE Author = UserName)), 0)  prosmot" +
 
                 " FROM " + Tables.AUTHORS + " " +
-                getKak2() +
+                GetAuthorSortOrder() +
                 " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
 
             int authorsY = 75;
@@ -220,7 +219,7 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, authorsY);
                 label1.Size = new Size(100, 20);
                 label1.Text = authorsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Search_CLick);
+                label1.Click += new System.EventHandler(AuthorOrCategorySelect);
                 Right_panel.Controls.Add(label1);
                 authorsY += 25;
 
@@ -245,7 +244,7 @@ namespace WindowsFormsApplication4
                 label1.Location = new Point(0, catY);
                 label1.Size = new Size(100, 20);
                 label1.Text = catsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(Search_CLick);
+                label1.Click += new System.EventHandler(AuthorOrCategorySelect);
                 Right_panel.Controls.Add(label1);
                 catY += 28;
             }
@@ -265,7 +264,7 @@ namespace WindowsFormsApplication4
                 collLabel.Location = new Point(0, collY);
                 collLabel.Size = new Size(100, 20);
                 collLabel.Text = collList[colIndex].ToString();
-                collLabel.Click += new EventHandler(Search_CLick);
+                collLabel.Click += new EventHandler(AuthorOrCategorySelect);
                 Right_panel.Controls.Add(collLabel);
                 collY += 28;
             }
@@ -294,25 +293,20 @@ namespace WindowsFormsApplication4
             #endregion
 
             textBox_search.Text = LAST_SEARCH;
-            butto_search_Click(sender, e);
+            Search_Click(sender, e);
             //reclamaPanel_MouseLeave(sender, e);
+
+            //Добавление UserControl-а категорий
             List<string> p = new List<string>() { "5", "2" };
             CategoriesUserControl b = new CategoriesUserControl(p);
             b.Dock = DockStyle.Bottom;
             Right_panel.Controls.Add(b);
-            Label l = new Label();
-            //l = CategoriesUserControl.;
-            l.Dock = DockStyle.Bottom;
-            b.Controls.Add(l);
-
-            Label newl = new Label();
-            newl = label_cats_header;
-            newl.Dock = DockStyle.Top;
-            b.Controls.Add(newl);
         }    
 
-
-        private void butto_search_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Поиск
+        /// </summary>
+        private void Search_Click(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
 
@@ -331,6 +325,9 @@ namespace WindowsFormsApplication4
             form.ShowDialog();
         }
 
+        /// <summary>
+        /// Клик на всех авторов
+        /// </summary>
         private void label_author_Click(object sender, EventArgs e)
         {
             List_of_author form2 = new List_of_author();
@@ -338,11 +335,14 @@ namespace WindowsFormsApplication4
             formloader(sender, e);
         }
 
+
+        /// <summary>
+        /// Клик на все категории
+        /// </summary>
         public void categories_linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CategoriesForm form3 = new CategoriesForm(false);
             form3.ShowDialog(); 
-            formloader(sender, e);
         }
 
         private void button_add_Click(object sender, EventArgs e)
@@ -416,47 +416,23 @@ namespace WindowsFormsApplication4
                 button_login_Click(sender, null);
             }
         }
-        
-        private void Centr_panel_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void butto_search_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
 
         private void textBox_search_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                butto_search_Click(sender, null);
+                Search_Click(sender, null);
             }
-        }
-
-        private void label_popular_Click(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
         /// КЛик на автора / категорию
         /// </summary>
-        public void Search_CLick(object sender, EventArgs e)
+        public void AuthorOrCategorySelect(object sender, EventArgs e)
         {
             textBox_search.Text = ((Label)sender).Text;
-            butto_search_Click(sender, e);
+            Search_Click(sender, e);
         }
-
-        private void Collections_CLick(object sender, EventArgs e)
-        {
-            textBox_search.Text = ((Label)sender).Text;
-            butto_search_Click(sender, e);
-        }
-
-
-
-
-
         
         private void dalee_Click(object sender, EventArgs e)
         {
@@ -494,7 +470,7 @@ namespace WindowsFormsApplication4
                 "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
                 " FROM " + Tables.ARTICLES +
                 " WHERE new = 0 " + nahod +
-                getKak() + 
+                GetArticlesSortOrder() + 
                 " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
 
@@ -720,29 +696,28 @@ namespace WindowsFormsApplication4
             formloader(sender, e);
         }
 
-        private void textBox_search_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             Form1_Load(sender, e);
-        }
-
-        private void Right_panel_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void reclamaPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void reclamaPanel_MouseLeave(object sender, EventArgs e)
         {
             AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
             reclamaPanel.Controls.Add(recl);
+        }
+
+        /// <summary>
+        /// Обновление юзера, поисковых запросов в таймере
+        /// </summary>
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            //FIXME!!! Еще будет автор, просто поисковый запрос. Тут посложнее иф, друзья))
+            if (textBox_search.Text != Configs.SELECTED_CATEGORY && !String.IsNullOrEmpty(Configs.SELECTED_CATEGORY))
+            {
+                textBox_search.Text = Configs.SELECTED_CATEGORY;
+                Search_Click(sender, e);
+            }
         }
     }
 }

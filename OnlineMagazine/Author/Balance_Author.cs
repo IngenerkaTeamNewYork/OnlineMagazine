@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public partial class Balance_Author : Form
     {

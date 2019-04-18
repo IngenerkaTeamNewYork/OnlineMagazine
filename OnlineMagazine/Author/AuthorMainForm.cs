@@ -15,7 +15,7 @@ using System.Net;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     public struct AuthorStat
     {

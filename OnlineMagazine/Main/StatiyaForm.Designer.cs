@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication4
+﻿namespace OnlineMag
 {
     partial class StatiyaForm
     {
@@ -263,7 +263,7 @@
             // 
             // pictureBoxDislike
             // 
-            this.pictureBoxDislike.Image = global::WindowsFormsApplication4.Properties.Resources.Dislike;
+            this.pictureBoxDislike.Image = global::OnlineMag.Properties.Resources.Dislike;
             this.pictureBoxDislike.Location = new System.Drawing.Point(121, 3);
             this.pictureBoxDislike.Name = "pictureBoxDislike";
             this.pictureBoxDislike.Size = new System.Drawing.Size(20, 20);

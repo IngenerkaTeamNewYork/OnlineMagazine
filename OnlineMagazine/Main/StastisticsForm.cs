@@ -14,7 +14,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace WindowsFormsApplication4
+namespace OnlineMag
 {
     /// <summary>
     /// Статистика по автору (лайки, просмотры)

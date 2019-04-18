@@ -7,7 +7,7 @@
     <ProjectGuid>{C6A87C64-51AD-4757-914A-DB3E0CDA74E1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication4</RootNamespace>
+    <RootNamespace>OnlineMag</RootNamespace>
     <AssemblyName>WindowsFormsApplication4</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -345,7 +345,6 @@
     <EmbeddedResource Include="Main\To_come_in.resx">
       <DependentUpon>To_come_in.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New_stati.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
