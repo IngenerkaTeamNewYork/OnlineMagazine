@@ -27,11 +27,11 @@ namespace OnlineMag
         /// <summary>
         /// Видимость кабинета админа
         /// </summary>
-        public static bool adm;
+        public static bool IS_ADMIN;
         /// <summary>
         /// Видимость кабинета автора
         /// </summary>
-        public static bool aut;
+        public static bool IS_AUTHOR;
 
         public static List<AuthorStat> stat = new List<AuthorStat>();
         public List<LinkLabel> arts = new List<LinkLabel>();
@@ -180,8 +180,8 @@ namespace OnlineMag
            // button_add_reklama.Visible = false;
                 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
-            AdmButton.Visible = adm;
-            AutButton.Visible = aut;
+            AdmButton.Visible = IS_ADMIN;
+            AutButton.Visible = IS_AUTHOR;
           
 
             if (lable_name_of_polzovatel.Text != "NONAME")
@@ -391,10 +391,10 @@ namespace OnlineMag
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
                 " WHERE Login = @STR and Parol = @PASS", dict);
 
-            aut = (AuthorLoginData[0] != "0");
-            adm = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
+            IS_AUTHOR = (AuthorLoginData[0] != "0");
+            IS_ADMIN = (label_password.Text != "" && To_come_in.LogIntoAdminZone(textBox_login.Text, textBox_password.Text));
             Users.CURRENT_USER = "NONAME";
-            if (!aut && !adm && Polzovatel[0] == "0")
+            if (!IS_AUTHOR && !IS_ADMIN && Polzovatel[0] == "0")
             {
                 MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
             }

@@ -42,7 +42,6 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(200, 20);
             this.loginTextBox.TabIndex = 1;
-            this.loginTextBox.TextChanged += new System.EventHandler(this.loginTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
@@ -52,7 +51,6 @@
             this.passwordTextBox.Size = new System.Drawing.Size(200, 20);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // loginLabel
             // 
@@ -63,7 +61,6 @@
             this.loginLabel.Size = new System.Drawing.Size(106, 13);
             this.loginLabel.TabIndex = 0;
             this.loginLabel.Text = "Имя пользователя:";
-            this.loginLabel.Click += new System.EventHandler(this.loginLabel_Click);
             // 
             // passwordLabel
             // 

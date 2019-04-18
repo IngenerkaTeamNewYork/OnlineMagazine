@@ -42,14 +42,17 @@ namespace OnlineMag
             Menus.InsertBlockToDB(sender, a1, shsvfhksv);
         }
 
+        /// <summary>
+        /// Вход в систему
+        /// </summary>
         private void loginButton_Click(object sender, EventArgs e)
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
+
             Dictionary<String, String> dict = new Dictionary<string, string>();
             dict.Add("STR", loginTextBox.Text);
             dict.Add("PASS", passwordTextBox.Text);
-            //Users.CURRENT_USER = loginTextBox.Text;
 
             List<String> AuthorLoginData = SQLClass.Select
                 ("SELECT COUNT(*) FROM " + Tables.AUTHORS +
@@ -61,43 +64,22 @@ namespace OnlineMag
                 ("SELECT COUNT(*) FROM " + Tables.POLZOVATELI +
                 " WHERE Login = @STR and Parol = @PASS", dict);
 
-            GhostMainForm.aut = (AuthorLoginData[0] != "0");
-            GhostMainForm.adm = (loginTextBox.Text != "" && To_come_in.LogIntoAdminZone(loginTextBox.Text, passwordTextBox.Text));
+            GhostMainForm.IS_AUTHOR = (AuthorLoginData[0] != "0");
+            GhostMainForm.IS_ADMIN = (loginTextBox.Text != "" && To_come_in.LogIntoAdminZone(loginTextBox.Text, passwordTextBox.Text));
+            
             Users.CURRENT_USER = "NONAME";
-            if (!GhostMainForm.aut && !GhostMainForm.adm && Polzovatel[0] == "0")
+            if (!GhostMainForm.IS_AUTHOR && !GhostMainForm.IS_ADMIN && Polzovatel[0] == "0")
             {
                 MessageBox.Show("Вас в безе нет (Не верен пароль или логин)");
             }
             else
             {
                 Users.CURRENT_USER = loginTextBox.Text;
-                MessageBox.Show("1234");
-                //Users.CURRENT_USER = textBox_login.Text;
             }
-        }
-
-        private void loginLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AuthenticationUserControl_Load(object sender, EventArgs e)
         {
-            //if (Program.ShowColor == true)
-            //{
-            //    this.BackColor = SystemColors.ActiveBorder;
-
-            //}
-        }
-
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loginTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
