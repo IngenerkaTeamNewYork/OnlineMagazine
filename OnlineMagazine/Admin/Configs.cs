@@ -41,6 +41,8 @@ namespace WindowsFormsApplication4
         public static int KOL_VO_ELEMENTOV_Categoriya = 0;
         public static int KOL_VO_ELEMENTOV_Podborka = 0;
 
+        public static string zapros_na_cat = "";
+
         public static void read()
         {
             FileStream file2 = new FileStream("Temp.txt", FileMode.Open);
