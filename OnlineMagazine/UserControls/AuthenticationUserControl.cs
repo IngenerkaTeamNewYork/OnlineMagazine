@@ -81,5 +81,27 @@ namespace OnlineMag
         private void AuthenticationUserControl_Load(object sender, EventArgs e)
         {
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Registration form = new Registration("");
+            form.ShowDialog();
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton_Click(sender, null);
+            }
+        }
+
+        private void loginTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                passwordTextBox.Focus();
+            }
+        }
     }
 }
