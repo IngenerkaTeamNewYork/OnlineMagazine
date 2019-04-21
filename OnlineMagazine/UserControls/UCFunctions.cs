@@ -33,10 +33,14 @@ namespace OnlineMag
         /// </summary>
         /// <param name="FormName">Имя нужной формы</param>
         /// <returns>Лист контролов</returns>
-        public static List<UserControl> ReadFromDB(string FormName)
+        public static List<UserControl> ReadFromDB(string FormName,string parentName = "")
         {
+            if (parentName == "")
+            {
+                parentName = FormName;
+            }
             List<string> ListDB = SQLClass.Select(
-                "SELECT form, x, y, name, Params, id FROM WindowsFormsApplication4 WHERE form = '" + FormName + "'");
+                "SELECT form, x, y, name, Params, id FROM block WHERE form = '" + FormName + "' AND Parent = '" + parentName + "'");
 
             List<UserControl> ListOfControls = new List<UserControl>();
 
@@ -152,5 +156,23 @@ namespace OnlineMag
 
             return ListOfControls;
         }
+
+        public static void AddUC(Control cont)
+        {
+            List<UserControl> ss= ReadFromDB(cont.FindForm().Name, cont.Name);
+            foreach(UserControl qwe in ss)
+            {
+                cont.Controls.Add(qwe);
+            }
+
+            foreach (Control C in cont.Controls)
+            {
+                if (C.GetType().Name == "Panel")
+                {
+                    AddUC(C);
+                }
+            }
+        }
+
     }
 }

@@ -165,14 +165,20 @@ namespace OnlineMag
                 }
             }
         }
+        
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            UCFunctions.AddUC(this);
+            Left_panel.Controls.RemoveByKey("qq");
+            Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
             GC.Collect();
             GC.WaitForPendingFinalizers();
             arts.Clear();
             Right_panel.Controls.Clear();
-            textBox_password.UseSystemPasswordChar = true;
+            //textBox_password.UseSystemPasswordChar = true;
             Right_panel.Controls.Add(comboBox2);
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
@@ -310,8 +316,8 @@ namespace OnlineMag
         {
             Centr_panel.Controls.Clear();
 
-            textBox_login.Text = "";
-            textBox_password.Text = "";
+            //textBox_login.Text = "";
+            //textBox_password.Text = "";
 
             kolvo_nazatiy = 0;
             dalee_Click(sender, e);
@@ -374,6 +380,7 @@ namespace OnlineMag
         
         private void button_login_Click(object sender, EventArgs e)
         {
+            /*
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Dictionary<String, String> dict = new Dictionary<string, string>();
@@ -407,6 +414,7 @@ namespace OnlineMag
             GC.Collect();
             GC.WaitForPendingFinalizers();
             formloader(sender, e);
+            */
         }
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
@@ -679,7 +687,7 @@ namespace OnlineMag
 
         private void showPassToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox_password.UseSystemPasswordChar = !textBox_password.UseSystemPasswordChar;
+            //textBox_password.UseSystemPasswordChar = !textBox_password.UseSystemPasswordChar;
         }
 
         private void AdmButton_Click(object sender, EventArgs e)
@@ -717,6 +725,12 @@ namespace OnlineMag
             {
                 textBox_search.Text = Configs.SELECTED_CATEGORY;
                 Search_Click(sender, e);
+            }
+
+            if (Users.CURRENT_USER != Users.OLD_CURRENT_USER)
+            {
+                Users.OLD_CURRENT_USER = Users.CURRENT_USER;
+                formloader(sender, null);
             }
         }
     }

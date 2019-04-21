@@ -105,14 +105,14 @@ namespace OnlineMag
                             break;
                     }
 
-                    SQLClass.Update("UPDATE WindowsFormsApplication4 SET" +
+                    SQLClass.Update("UPDATE block SET" +
                         " x = " + ((UserControl) sender).Location.X.ToString() + "," +
                         " y = " + ((UserControl) sender).Location.Y.ToString() +
                     " WHERE id = '" + uc.Tag + "'");
 
                     if (paramsAsString.Length > 0)
                     {
-                        SQLClass.Update("UPDATE WindowsFormsApplication4 SET" +
+                        SQLClass.Update("UPDATE block SET" +
                             " Params = '" + paramsAsString +
                             "' WHERE id = '" + uc.Tag + "'");
                     }
