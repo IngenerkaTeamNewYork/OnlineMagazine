@@ -74,3 +74,4 @@ C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlAutorsList.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlMainAuthor.resources
 C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlSearch.resources
+C:\Users\student.ATIAM\Downloads\Вебинары\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csprojResolveAssemblyReference.cache

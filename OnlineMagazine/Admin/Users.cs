@@ -16,9 +16,20 @@ namespace OnlineMag
 {
     public partial class Users : Form
     {
-
+        #region Текущий пользователь
+        /// <summary>
+        /// Текущий пользователь
+        /// </summary>
         public static string CURRENT_USER = "NONAME";
+        /// <summary>
+        /// Последний пользователь, для которого обновлялась форма
+        /// </summary>
+        public static string OLD_CURRENT_USER = "NONAME";
+        /// <summary>
+        /// Пароль пользователя
+        /// </summary>
         public static string CURRENT_USERPASS;
+        #endregion
 
         public List<users> list_of_users = new List<users>();
         string zapros;
