@@ -470,134 +470,21 @@ namespace OnlineMag
 
 
 
-            List<String> PopularArticles =
-                SQLClass.Select
-                ("SELECT Header, Picture, " + 
-                "(SELECT likesCount FROM " + Tables.LIKES + " WHERE Header = Article) likesCount, " +
-                "(SELECT discount FROM " + Tables.LIKES + " WHERE Header = Article) discount, " +
-                "(SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE Header = name_of_article) A" +
+            List<string> PopularArticles =
+                SQLClass.Select("SELECT Header " + 
                 " FROM " + Tables.ARTICLES +
                 " WHERE new = 0 " + nahod +
                 GetArticlesSortOrder() + 
                 " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
 
-
-            for (int artIndex = 0; artIndex < PopularArticles.Count; artIndex += 5)
+            int ii = 0;
+            foreach (string ArticleName in PopularArticles)
             {
-                #region Article header
-                Panel articleHeaderPanel = new Panel();
-                articleHeaderPanel.Size = new Size(Centr_panel.Width, 30);
-                articleHeaderPanel.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
-                articleHeaderPanel.TabIndex = (kolvo_nazatiy > 0) ? 3 * kolvo_nazatiy : 3 * kolvo_nazatiy + 2;
-                
-                LinkLabel label1 = new LinkLabel();
-                label1.Location = new Point(0, 0);
-                label1.Size = new Size(180, 20);
-                label1.Text = PopularArticles[artIndex].ToString();
-                label1.Click += new System.EventHandler(ArticleClick);
-                articleHeaderPanel.Controls.Add(label1);
-
-                PictureBox likesPB = new PictureBox();
-                likesPB.Size = new Size(20, 20);
-                likesPB.Location = new Point(200, 0);
-                likesPB.Tag = label1.Text;
-                likesPB.Image = Properties.Resources.like;
-                likesPB.Click += new System.EventHandler(click);
-                articleHeaderPanel.Controls.Add(likesPB);
-
-                Label likesLabel = new Label();
-                likesLabel.Location = new Point(230, 0);
-                likesLabel.Size = new Size(20, 20);
-                articleHeaderPanel.Controls.Add(likesLabel);
-
-                Label dislikesLabel = new Label();
-                dislikesLabel.Location = new Point(290, 0);
-                dislikesLabel.Size = new Size(20, 20);
-                articleHeaderPanel.Controls.Add(dislikesLabel);
-
-
-                StatiyaForm.GetStata(likesLabel, dislikesLabel, label1.Text);
-                #endregion
-
-                //Video
-                if (PopularArticles[artIndex + 1].ToString().Contains("www.youtube.com"))
+                Centr_panel.Controls.Add(new ArticlePreviewUserControl(new List<string>() { ArticleName })
                 {
-                    String url = PopularArticles[artIndex + 1].ToString().Replace("watch?v=", "embed/");
-
-                    String embed = "<html><head>" +
-                        "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
-                        "</head><body>" +
-                        "<iframe width=\"" + Centr_panel.Width + "\" src=\"{0}\"" +
-                        "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
-                        "</body></html>";
-
-                    WebBrowser web = new WebBrowser();
-                    web.TabIndex = 3 * kolvo_nazatiy + 1;
-                    web.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
-                    web.DocumentText = string.Format(embed, url);
-                    web.Location = new Point(0, articleY + 25);
-
-                    if (kolvo_nazatiy > 0)
-                    {
-                        Centr_panel.Controls.Add(web);
-                        Centr_panel.Controls.Add(articleHeaderPanel);
-                    }
-                    else
-                    {
-                        Centr_panel.Controls.Add(articleHeaderPanel);
-                        Centr_panel.Controls.Add(web);
-                    }
-                }
-                //Picture
-                else
-                {
-                    String[] chasti_stroki = PopularArticles[artIndex + 1].ToString().Split(new char[] { ' ', '/' });
-
-                    PictureBox artImage = new PictureBox();
-                    artImage.Location = new Point(0, articleY + 25);
-                    artImage.Tag = label1.Text;
-                    artImage.Size = new Size(Centr_panel.Width, 150);
-                    artImage.Dock = (kolvo_nazatiy > 0) ? DockStyle.Bottom : DockStyle.Top;
-                    artImage.Click += new System.EventHandler(clik_na_pic);
-                    artImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    artImage.TabIndex = 3 * kolvo_nazatiy + 1;
-
-                    try
-                    {
-                        artImage.Image = new Bitmap(chasti_stroki[chasti_stroki.Length - 1]);
-                    }
-                    catch (Exception)
-                    {
-                        try
-                        {
-                            artImage.LoadAsync(PopularArticles[artIndex + 1].ToString());
-                            Uri uri = new Uri(PopularArticles[artIndex + 1].ToString());
-                            client.DownloadFileAsync(uri, chasti_stroki[chasti_stroki.Length - 1]);
-                        }
-                        catch (Exception)
-                        {
-                            artImage.Image = new Bitmap("defolt_statiy.jpg");
-                        }
-                    }
-
-                    if (kolvo_nazatiy > 0)
-                    {
-                        Centr_panel.Controls.Add(artImage);
-                        Centr_panel.Controls.Add(articleHeaderPanel);
-                    }
-                    else
-                    {
-                        Centr_panel.Controls.Add(articleHeaderPanel);
-                        Centr_panel.Controls.Add(artImage);
-                    }
-
-                    piccc.Add(artImage);
-                }
-
-                Centr_panel.Controls.Add(dalee);
-                arts.Add(label1);
-                pb.Add(likesPB);
-                articleY += 180;
+                    Location = new Point(0, ii)
+                });
+                ii += 180;
             }
 
             kolvo_nazatiy++;

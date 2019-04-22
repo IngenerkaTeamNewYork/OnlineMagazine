@@ -46,11 +46,12 @@ namespace OnlineMag
 
             foreach (List<string> Row in Split(ListDB, 6))
             {
+
+
+                #region Вспомогательные переменные для того чтобы не писать Row[...]
                 int x = Convert.ToInt32(Row[1]);
                 int y = Convert.ToInt32(Row[2]);
                 string id = Row[5];
-
-                #region Вспомогательные переменные для того чтобы не писать Row[...]
                 string form = "";
                 try
                 {

@@ -189,6 +189,21 @@ namespace OnlineMag
 
         private void ArticlePreviewUserControl_Load(object sender, EventArgs e)
         {
+            /*String url = "https://www.youtube.com/embed/2KR1dqxpBog";
+
+            String embed = "<html><head>" +
+                "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
+                "</head><body>" +
+                "<iframe width=\"" + 500 + "\" src=\"{0}\"" +
+                "frameborder = \"0\" allow = \"autoplay; encrypted-media\" allowfullscreen></iframe>" +
+                "</body></html>";
+            WebBrowser web = new WebBrowser();
+            web.Dock = DockStyle.Bottom;
+            web.DocumentText = string.Format(embed, url);
+            web.Location = new Point(0, 0);
+            web.*/
+
+
             /*if (Program.ShowColor == true)
             {
                 this.BackColor = SystemColors.ActiveBorder;
