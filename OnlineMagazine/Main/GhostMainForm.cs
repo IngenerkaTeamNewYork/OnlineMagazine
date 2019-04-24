@@ -282,17 +282,7 @@ namespace OnlineMag
             int Y = Configs.Rpont.Y;
             for (int i = 0; i < Configs.ChR; i++)
             {
-                PictureBox reclama1 = new PictureBox();
-                List<String> s = Advertising.GetRandom();
-                reclama1.SizeMode = PictureBoxSizeMode.StretchImage;
-                reclama1.LoadAsync(s[0]);
-                reclama1.Tag = s[1];
-                reclama1.Width = reclamaPanel.Width;
-                reclama1.Height = reclamaPanel.Height / Configs.ChR;
-                reclama1.Location = new Point(10, Y);
-                reclama1.Click += new System.EventHandler(reclama_Click);
-                Y = Y + reclama1.Height;
-                reclamaPanel.Controls.Add(reclama1);
+               
 
             }
 
@@ -598,8 +588,7 @@ namespace OnlineMag
 
         private void reclamaPanel_MouseLeave(object sender, EventArgs e)
         {
-            AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
-            reclamaPanel.Controls.Add(recl);
+            
         }
 
         /// <summary>
@@ -619,6 +608,12 @@ namespace OnlineMag
                 Users.OLD_CURRENT_USER = Users.CURRENT_USER;
                 formloader(sender, null);
             }
+        }
+
+        private void reclamaPanel_Paint(object sender, PaintEventArgs e)
+        {
+            AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
+            reclamaPanel.Controls.Add(recl);
         }
     }
 }

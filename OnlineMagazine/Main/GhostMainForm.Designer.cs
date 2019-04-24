@@ -104,6 +104,7 @@ namespace OnlineMag
             this.reclamaPanel.Name = "reclamaPanel";
             this.reclamaPanel.Size = new System.Drawing.Size(226, 551);
             this.reclamaPanel.TabIndex = 16;
+            this.reclamaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.reclamaPanel_Paint);
             this.reclamaPanel.MouseLeave += new System.EventHandler(this.reclamaPanel_MouseLeave);
             // 
             // adminPpanel
