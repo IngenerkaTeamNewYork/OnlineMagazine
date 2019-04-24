@@ -46,7 +46,7 @@
             // 
             this.categories_linklabel.AutoSize = true;
             this.categories_linklabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.categories_linklabel.Location = new System.Drawing.Point(0, 232);
+            this.categories_linklabel.Location = new System.Drawing.Point(0, 192);
             this.categories_linklabel.Name = "categories_linklabel";
             this.categories_linklabel.Size = new System.Drawing.Size(81, 13);
             this.categories_linklabel.TabIndex = 5;
@@ -62,7 +62,7 @@
             this.Controls.Add(this.categories_linklabel);
             this.Controls.Add(this.label_cats_header);
             this.Name = "CategoriesUserControl";
-            this.Size = new System.Drawing.Size(282, 245);
+            this.Size = new System.Drawing.Size(266, 205);
             this.Load += new System.EventHandler(this.CategoriesUserControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

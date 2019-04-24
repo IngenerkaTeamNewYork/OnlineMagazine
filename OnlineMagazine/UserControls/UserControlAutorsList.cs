@@ -57,7 +57,7 @@ namespace OnlineMag
             {
                 this.BackColor = SystemColors.ActiveBorder;
             }*/
-            int authorsY = 50;
+            int authorsY = 20;
             for (int artIndex = 0; artIndex < authorsList.Count; artIndex++)
             {
                 Label label1 = new Label();
@@ -79,7 +79,7 @@ namespace OnlineMag
 
         public void Search_CLick(object sender, EventArgs e)
         {
-            MessageBox.Show(((Label)sender).Text);
+           PodborkiUserControl.search = (((Label)sender).Text);
 
         }
 
@@ -90,7 +90,8 @@ namespace OnlineMag
 
         private void labelAll_Click(object sender, EventArgs e)
         {
-
+            List_of_author l = new List_of_author();
+            l.ShowDialog();
         }
     }
 

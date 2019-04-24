@@ -30,7 +30,6 @@ namespace OnlineMag
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.categories_linklabel = new System.Windows.Forms.LinkLabel();
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
             this.reclamaPanel = new System.Windows.Forms.Panel();
@@ -41,12 +40,8 @@ namespace OnlineMag
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
-            this.label_collections = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label_Author_header = new System.Windows.Forms.Label();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
-            this.label_author = new System.Windows.Forms.Label();
-            this.label_cats_header = new System.Windows.Forms.Label();
             this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.button_add_reklama = new System.Windows.Forms.Button();
@@ -57,24 +52,16 @@ namespace OnlineMag
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.RightTopPanel = new System.Windows.Forms.Panel();
+            this.RightSubPanel = new System.Windows.Forms.Panel();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.Right_panel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
+            this.RightTopPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // categories_linklabel
-            // 
-            this.categories_linklabel.AutoSize = true;
-            this.categories_linklabel.Location = new System.Drawing.Point(3, 284);
-            this.categories_linklabel.Name = "categories_linklabel";
-            this.categories_linklabel.Size = new System.Drawing.Size(81, 13);
-            this.categories_linklabel.TabIndex = 4;
-            this.categories_linklabel.TabStop = true;
-            this.categories_linklabel.Text = "Все категории";
-            this.categories_linklabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.categories_linklabel_LinkClicked);
             // 
             // butto_search
             // 
@@ -174,31 +161,17 @@ namespace OnlineMag
             // 
             // Right_panel
             // 
-            this.Right_panel.Controls.Add(this.label_collections);
-            this.Right_panel.Controls.Add(this.comboBox2);
-            this.Right_panel.Controls.Add(this.label_Author_header);
-            this.Right_panel.Controls.Add(this.lable_name_of_polzovatel);
-            this.Right_panel.Controls.Add(this.categories_linklabel);
-            this.Right_panel.Controls.Add(this.label_author);
-            this.Right_panel.Controls.Add(this.label_cats_header);
+            this.Right_panel.Controls.Add(this.RightSubPanel);
+            this.Right_panel.Controls.Add(this.RightTopPanel);
             this.Right_panel.Dock = System.Windows.Forms.DockStyle.Right;
             this.Right_panel.Location = new System.Drawing.Point(558, 0);
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
             // 
-            // label_collections
-            // 
-            this.label_collections.AutoSize = true;
-            this.label_collections.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_collections.Location = new System.Drawing.Point(6, 323);
-            this.label_collections.Name = "label_collections";
-            this.label_collections.Size = new System.Drawing.Size(93, 20);
-            this.label_collections.TabIndex = 9;
-            this.label_collections.Text = "Подборки";
-            // 
             // comboBox2
             // 
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "нет",
@@ -210,23 +183,12 @@ namespace OnlineMag
             "лайки(по убыванию)",
             "кол-во статей(по возрастанию)",
             "кол-во статей(по убыванию)"});
-            this.comboBox2.Location = new System.Drawing.Point(10, 23);
+            this.comboBox2.Location = new System.Drawing.Point(0, 23);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 21);
-            this.comboBox2.TabIndex = 10;
+            this.comboBox2.Size = new System.Drawing.Size(190, 21);
+            this.comboBox2.TabIndex = 1000;
             this.comboBox2.Text = "Сортировка авторов";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Search_Click);
-            // 
-            // label_Author_header
-            // 
-            this.label_Author_header.AutoSize = true;
-            this.label_Author_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Author_header.Location = new System.Drawing.Point(2, 55);
-            this.label_Author_header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label_Author_header.Name = "label_Author_header";
-            this.label_Author_header.Size = new System.Drawing.Size(180, 20);
-            this.label_Author_header.TabIndex = 8;
-            this.label_Author_header.Text = "Популярные авторы";
             // 
             // lable_name_of_polzovatel
             // 
@@ -236,26 +198,6 @@ namespace OnlineMag
             this.lable_name_of_polzovatel.Size = new System.Drawing.Size(190, 23);
             this.lable_name_of_polzovatel.TabIndex = 6;
             this.lable_name_of_polzovatel.Text = "Имя пользователя";
-            // 
-            // label_author
-            // 
-            this.label_author.AutoSize = true;
-            this.label_author.Location = new System.Drawing.Point(3, 156);
-            this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(66, 13);
-            this.label_author.TabIndex = 2;
-            this.label_author.Text = "Все авторы";
-            this.label_author.Click += new System.EventHandler(this.label_author_Click);
-            // 
-            // label_cats_header
-            // 
-            this.label_cats_header.AutoSize = true;
-            this.label_cats_header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_cats_header.Location = new System.Drawing.Point(8, 179);
-            this.label_cats_header.Name = "label_cats_header";
-            this.label_cats_header.Size = new System.Drawing.Size(98, 20);
-            this.label_cats_header.TabIndex = 6;
-            this.label_cats_header.Text = "Категории";
             // 
             // linkLabel_collections
             // 
@@ -305,6 +247,7 @@ namespace OnlineMag
             // Centr_panel
             // 
             this.Centr_panel.AutoScroll = true;
+            this.Centr_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Centr_panel.Controls.Add(this.dalee);
             this.Centr_panel.Location = new System.Drawing.Point(232, 81);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
@@ -348,6 +291,24 @@ namespace OnlineMag
             this.mainTimer.Enabled = true;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
+            // RightTopPanel
+            // 
+            this.RightTopPanel.Controls.Add(this.comboBox2);
+            this.RightTopPanel.Controls.Add(this.lable_name_of_polzovatel);
+            this.RightTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RightTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightTopPanel.Name = "RightTopPanel";
+            this.RightTopPanel.Size = new System.Drawing.Size(190, 49);
+            this.RightTopPanel.TabIndex = 1001;
+            // 
+            // RightSubPanel
+            // 
+            this.RightSubPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightSubPanel.Location = new System.Drawing.Point(0, 49);
+            this.RightSubPanel.Name = "RightSubPanel";
+            this.RightSubPanel.Size = new System.Drawing.Size(190, 530);
+            this.RightSubPanel.TabIndex = 1002;
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,17 +321,19 @@ namespace OnlineMag
             this.Controls.Add(this.Right_panel);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.Centr_panel);
+            this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "GhostMainForm";
             this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.GhostMainForm_Resize);
             this.Left_panel.ResumeLayout(false);
             this.adminPpanel.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.Right_panel.ResumeLayout(false);
-            this.Right_panel.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
+            this.RightTopPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +342,6 @@ namespace OnlineMag
         #endregion
 
         private System.Windows.Forms.Button butto_search;
-        private System.Windows.Forms.Label label_author;
         private System.Windows.Forms.Panel Left_panel;
         private System.Windows.Forms.Panel Right_panel;
         private System.Windows.Forms.Panel Centr_panel;
@@ -391,8 +353,6 @@ namespace OnlineMag
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.LinkLabel linkLabel_collections;
         private System.Windows.Forms.Button dalee;
-        private System.Windows.Forms.Label label_cats_header;
-        private System.Windows.Forms.Label label_Author_header;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button AdmButton;
         private System.Windows.Forms.Button AutButton;
@@ -402,9 +362,9 @@ namespace OnlineMag
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel reclamaPanel;
         private System.Windows.Forms.Panel adminPpanel;
-        private System.Windows.Forms.Label label_collections;
         private System.Windows.Forms.ComboBox comboBox2;
-        public System.Windows.Forms.LinkLabel categories_linklabel;
         private System.Windows.Forms.Timer mainTimer;
+        private System.Windows.Forms.Panel RightSubPanel;
+        private System.Windows.Forms.Panel RightTopPanel;
     }
 }

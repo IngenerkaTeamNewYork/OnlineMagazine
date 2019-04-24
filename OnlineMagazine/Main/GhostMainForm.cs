@@ -47,9 +47,8 @@ namespace OnlineMag
         {
             InitializeComponent();
             Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
-            label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
-            label_cats_header.Font = Configs.ZAGOLOVOK_FONT;
-
+            //label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
+          
             AdmButton.Visible = false;
             AutButton.Visible = false;
         }
@@ -177,103 +176,89 @@ namespace OnlineMag
             GC.Collect();
             GC.WaitForPendingFinalizers();
             arts.Clear();
-            Right_panel.Controls.Clear();
             //textBox_password.UseSystemPasswordChar = true;
-            Right_panel.Controls.Add(comboBox2);
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
-            
-           // button_add_reklama.Visible = false;
-                
+
+            // button_add_reklama.Visible = false;
+
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             AdmButton.Visible = IS_ADMIN;
             AutButton.Visible = IS_AUTHOR;
-          
 
+
+            RightSubPanel.Controls.Clear();
+            RightTopPanel.Controls.Clear();
+            RightTopPanel.Controls.Add(comboBox2);
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
                 lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
-                Right_panel.Controls.Add(lable_name_of_polzovatel);
+                RightTopPanel.Controls.Add(lable_name_of_polzovatel);
 
-                Right_panel.Controls.Add(tableLayoutPanel2);
+                tableLayoutPanel2.Dock = DockStyle.Bottom;
+                RightSubPanel.Controls.Add(tableLayoutPanel2);
                 button_add_reklama.Visible = true;
                 button1.Visible = true;
+                tableLayoutPanel2.Controls.Add(button_add_reklama);
+                tableLayoutPanel2.Controls.Add(button1);
             }
-
             #region Обновление списка авторов
-
-            Right_panel.Controls.Add(label_Author_header);
-            Right_panel.Controls.Add(label_author);
-
-            
-
-            List<String> authorsList = SQLClass.Select("SELECT UserName, " +
-
-                " IFNULL((SELECT SUM(LikesCount) FROM " + Tables.LIKES + " WHERE Author = UserName), 0) LikesCount," +
-                " IFNULL((SELECT COUNT(Header) FROM " + Tables.ARTICLES + " WHERE Author = UserName), 0) Arts," +
-                " IFNULL((SELECT SUM(DisCount) FROM " + Tables.LIKES + "  WHERE Author = UserName), 0) DisLikesCount," +
-                " IFNULL((SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE name_of_article IN (SELECT Header FROM " + Tables.ARTICLES + " WHERE Author = UserName)), 0)  prosmot" +
-
-                " FROM " + Tables.AUTHORS + " " +
-                GetAuthorSortOrder() +
-                " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
-
             int authorsY = 75;
-            for (int artIndex = 0; artIndex < authorsList.Count; artIndex += 5)
-            {
-                Label label1 = new Label();
-                label1.Location = new Point(0, authorsY);
-                label1.Size = new Size(100, 20);
-                label1.Text = authorsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(AuthorOrCategorySelect);
-                Right_panel.Controls.Add(label1);
-                authorsY += 25;
-
-            }
-            label_author.Location = new Point(3, authorsY);
             
+            List<string> p1= new List<string>() { "5" };
+            UserControlAutorsList c = new UserControlAutorsList(p1);
+            c.Location = new Point(2, 0);
+            c.Dock = DockStyle.Top;
+            RightSubPanel.Controls.Add(c);
+
+
+            /* Right_panel.Controls.Add(label_Author_header);
+             Right_panel.Controls.Add(label_author);
+
+
+
+             List<String> authorsList = SQLClass.Select("SELECT UserName, " +
+
+                 " IFNULL((SELECT SUM(LikesCount) FROM " + Tables.LIKES + " WHERE Author = UserName), 0) LikesCount," +
+                 " IFNULL((SELECT COUNT(Header) FROM " + Tables.ARTICLES + " WHERE Author = UserName), 0) Arts," +
+                 " IFNULL((SELECT SUM(DisCount) FROM " + Tables.LIKES + "  WHERE Author = UserName), 0) DisLikesCount," +
+                 " IFNULL((SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE name_of_article IN (SELECT Header FROM " + Tables.ARTICLES + " WHERE Author = UserName)), 0)  prosmot" +
+
+                 " FROM " + Tables.AUTHORS + " " +
+                 GetAuthorSortOrder() +
+                 " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
+
+
+             for (int artIndex = 0; artIndex < authorsList.Count; artIndex += 5)
+             {
+                 Label label1 = new Label();
+                 label1.Location = new Point(0, authorsY);
+                 label1.Size = new Size(100, 20);
+                 label1.Text = authorsList[artIndex].ToString();
+                 label1.Click += new System.EventHandler(AuthorOrCategorySelect);
+                 Right_panel.Controls.Add(label1);
+                 authorsY += 25;
+
+             }
+             label_author.Location = new Point(3, authorsY);*/
+
             #endregion
 
             #region Обновление списка категорий
-
-            Right_panel.Controls.Add(label_cats_header);
-            Right_panel.Controls.Add(categories_linklabel);
-
-            label_cats_header.Location = new Point(0, authorsY + 25);
-            int catY = authorsY + 50;
-
-            List<String> catsList = SQLClass.Select("SELECT Name FROM " + Tables.CATEGORIES + " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Categoriya);
-            
-            for (int artIndex = 0; artIndex < catsList.Count; artIndex++)
-            {
-                Label label1 = new Label();
-                label1.Location = new Point(0, catY);
-                label1.Size = new Size(100, 20);
-                label1.Text = catsList[artIndex].ToString();
-                label1.Click += new System.EventHandler(AuthorOrCategorySelect);
-                Right_panel.Controls.Add(label1);
-                catY += 28;
-            }
-            categories_linklabel.Location = new Point(0, catY + 5);
+            List<string> p = new List<string>() { "5", "2" };
+            CategoriesUserControl b = new CategoriesUserControl(p);
+            //b.Dock = DockStyle.Bottom;
+            b.Location = new Point(0, 269);
+            b.Dock = DockStyle.Top;
+            RightSubPanel.Controls.Add(b);
             #endregion
 
             #region Обновление списка подборок
-            label_collections.Location = new Point(6, catY + 28);
-            Right_panel.Controls.Add(label_collections);
-            List<String> collList = SQLClass.Select("SELECT DISTINCT Coll_text FROM " + Tables.COLLECTION + 
-                " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Podborka);
-
-            int collY = catY + 28 + 24;
-            for (int colIndex = 0; colIndex < collList.Count; colIndex++)
-            {
-                Label collLabel = new Label();
-                collLabel.Location = new Point(0, collY);
-                collLabel.Size = new Size(100, 20);
-                collLabel.Text = collList[colIndex].ToString();
-                collLabel.Click += new EventHandler(AuthorOrCategorySelect);
-                Right_panel.Controls.Add(collLabel);
-                collY += 28;
-            }
+            PodborkiUserControl control = new PodborkiUserControl();
+            control.Location = new Point(0, 175);
+            control.TabIndex = 100;
+            control.Dock = DockStyle.Top;
+            RightSubPanel.Controls.Add(control);
             #endregion          
 
             #region Advertising
@@ -302,17 +287,12 @@ namespace OnlineMag
             Search_Click(sender, e);
             //reclamaPanel_MouseLeave(sender, e);
 
-            //Добавление UserControl-а категорий
-            List<string> p = new List<string>() { "5", "2" };
-            CategoriesUserControl b = new CategoriesUserControl(p);
-            b.Dock = DockStyle.Bottom;
-            Right_panel.Controls.Add(b);
         }    
 
         /// <summary>
         /// Поиск
         /// </summary>
-        private void Search_Click(object sender, EventArgs e)
+        public void Search_Click(object sender, EventArgs e)
         {
             Centr_panel.Controls.Clear();
 
@@ -439,7 +419,7 @@ namespace OnlineMag
         public void AuthorOrCategorySelect(object sender, EventArgs e)
         {
             textBox_search.Text = ((Label)sender).Text;
-            Search_Click(sender, e);
+            
         }
         
         private void dalee_Click(object sender, EventArgs e)
@@ -605,12 +585,20 @@ namespace OnlineMag
         /// <summary>
         /// Обновление юзера, поисковых запросов в таймере
         /// </summary>
-        private void mainTimer_Tick(object sender, EventArgs e)
+        public void mainTimer_Tick(object sender, EventArgs e)
         {
             //FIXME!!! Еще будет автор, просто поисковый запрос. Тут посложнее иф, друзья))
             if (textBox_search.Text != Configs.SELECTED_CATEGORY && !String.IsNullOrEmpty(Configs.SELECTED_CATEGORY))
             {
                 textBox_search.Text = Configs.SELECTED_CATEGORY;
+                PodborkiUserControl.search = "";
+                Search_Click(sender, e);
+            }
+
+            if (textBox_search.Text != PodborkiUserControl.search && !String.IsNullOrEmpty(PodborkiUserControl.search))
+            {
+                textBox_search.Text = PodborkiUserControl.search;
+                Configs.SELECTED_CATEGORY = "";
                 Search_Click(sender, e);
             }
 
@@ -618,6 +606,36 @@ namespace OnlineMag
             {
                 Users.OLD_CURRENT_USER = Users.CURRENT_USER;
                 formloader(sender, null);
+            }
+        }
+
+        private void GhostMainForm_Resize(object sender, EventArgs e)
+        {
+            Centr_panel.Width = this.Width - Right_panel.Width - Left_panel.Width - 40;
+            Centr_panel.Height = this.Height - Centr_panel.Location.Y;
+            foreach (Control ctrl in Centr_panel.Controls)
+            {
+                if (ctrl.GetType().ToString() == "OnlineMag.ArticlePreviewUserControl")
+                {
+                    int oldWidth = ctrl.Width;
+                    if (oldWidth > 0)
+                    {
+                        ctrl.Width = this.Width - Right_panel.Width - Left_panel.Width - 40;
+                        ctrl.Height = ctrl.Height * ctrl.Width / oldWidth;
+                    }
+                    /*foreach (Control ct in ctrl.Controls)
+                    {
+                        if (ct.GetType().ToString() == "System.Windows.Forms.PictureBox")
+                        {
+                            int oldW = ct.Width;
+                            if (oldW > 0)
+                            {
+                                ct.Width = this.Width - Right_panel.Width - Left_panel.Width;
+                                ct.Height = ct.Height * ct.Width / oldW;
+                            }
+                        }
+                    }*/
+                }
             }
         }
     }
