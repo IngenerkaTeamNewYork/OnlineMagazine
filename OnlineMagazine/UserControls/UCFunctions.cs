@@ -40,17 +40,18 @@ namespace OnlineMag
                 parentName = FormName;
             }
             List<string> ListDB = SQLClass.Select(
-                "SELECT form, x, y, name, Params, id FROM block WHERE form = '" + FormName + "' AND Parent = '" + parentName + "'");
+                "SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = '" + FormName + "' AND Parent = '" + parentName + "'");
 
             List<UserControl> ListOfControls = new List<UserControl>();
 
-            foreach (List<string> Row in Split(ListDB, 6))
+            foreach (List<string> Row in Split(ListDB, 7))
             {
 
 
                 #region Вспомогательные переменные для того чтобы не писать Row[...]
                 int x = Convert.ToInt32(Row[1]);
                 int y = Convert.ToInt32(Row[2]);
+                DockStyle d = DockStyle.None;
                 string id = Row[5];
                 string form = "";
                 try
@@ -81,6 +82,32 @@ namespace OnlineMag
                 {
                     throw new NullReferenceException("Params = null");
                 }
+                try
+                {
+                    switch (Row[6])
+                    {
+                        case "Top":
+                            d = DockStyle.Top;
+                            break;
+                        case "Right":
+                            d = DockStyle.Right;
+                            break;
+                        case "Left":
+                            d = DockStyle.Left;
+                            break;
+                        case "Fill":
+                            d = DockStyle.Fill;
+                            break;
+                        case "Bottom":
+                            d = DockStyle.Bottom;
+                            break;
+                    }
+                }
+                catch (Exception)
+                {
+                    d = DockStyle.None;
+                    //throw new NullReferenceException("name = null");
+                }
                 #endregion
 
 
@@ -90,7 +117,9 @@ namespace OnlineMag
                         AdsUserControl NewAds = new AdsUserControl(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewAds);
                         break;
@@ -98,7 +127,9 @@ namespace OnlineMag
                         ArticleDetailsUserControl NewDetails = new ArticleDetailsUserControl(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewDetails);
                         break;
@@ -106,7 +137,9 @@ namespace OnlineMag
                         ArticlePreviewUserControl NewPreview = new ArticlePreviewUserControl(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewPreview);
                         break;
@@ -114,7 +147,9 @@ namespace OnlineMag
                         AuthenticationUserControl NewAuth = new AuthenticationUserControl(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewAuth);
                         break;
@@ -122,7 +157,9 @@ namespace OnlineMag
                         CategoriesUserControl NewCateg = new CategoriesUserControl(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewCateg);
                         break;
@@ -130,7 +167,9 @@ namespace OnlineMag
                         UserControlAutorsList NewAuthorList = new UserControlAutorsList(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewAuthorList);
                         break;
@@ -138,7 +177,9 @@ namespace OnlineMag
                         UserControlMainAuthor NewMainAuthor = new UserControlMainAuthor(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewMainAuthor);
                         break;
@@ -146,7 +187,9 @@ namespace OnlineMag
                         UserControlSearch NewSearch = new UserControlSearch(Params)
                         {
                             Location = new Point(x, y),
-                            Tag = id
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
                         };
                         ListOfControls.Add(NewSearch);
                         break;

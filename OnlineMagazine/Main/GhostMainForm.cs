@@ -45,6 +45,7 @@ namespace OnlineMag
 
         public GhostMainForm()
         {
+            UCFunctions.AddUC(this);
             InitializeComponent();
             Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
             //label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
@@ -170,13 +171,16 @@ namespace OnlineMag
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Left_panel.Controls.RemoveByKey("UCref");
+            Right_panel.Controls.Clear();
             UCFunctions.AddUC(this);
-            Left_panel.Controls.RemoveByKey("qq");
-            Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
+            //Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
             GC.Collect();
             GC.WaitForPendingFinalizers();
             arts.Clear();
+            Right_panel.Controls.Clear();
             //textBox_password.UseSystemPasswordChar = true;
+            Right_panel.Controls.Add(comboBox2);
             //Right_panel.Controls.Add(button_add_reklama);
             //Right_panel.Controls.Add(button1);
 
@@ -277,6 +281,8 @@ namespace OnlineMag
             Search_Click(sender, e);
             //reclamaPanel_MouseLeave(sender, e);
 
+            /*
+            */
         }    
 
         /// <summary>

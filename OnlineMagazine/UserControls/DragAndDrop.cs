@@ -35,24 +35,15 @@ namespace OnlineMag
         public void FormTest_MouseUp(object sender, MouseEventArgs e)
         {
             IsDragging = false;
-            foreach (Control uc in /*Program.CONTROLY*/ ((Control)sender).FindForm().Controls)
-            {
-                UserControl ActualUC;
 
-                try
-                {
-                    ActualUC = (UserControl)uc;
-                } 
-                catch (Exception)
-                {
-                    continue;
-                }
+            UserControl ActualUC = (UserControl)sender;
 
-                if (sender.Equals(ActualUC))
-                {
+
+                //if (sender.Equals(ActualUC))
+                //{
                     string paramsAsString = "";
 
-                    switch (ActualUC.Name)
+                    switch (ActualUC.GetType().Name)
                     {
                         case "AdsUserControl":
                             AdsUserControl NewPreview = (AdsUserControl)sender;
@@ -108,16 +99,16 @@ namespace OnlineMag
                     SQLClass.Update("UPDATE block SET" +
                         " x = " + ((UserControl) sender).Location.X.ToString() + "," +
                         " y = " + ((UserControl) sender).Location.Y.ToString() +
-                    " WHERE id = '" + uc.Tag + "'");
+                    " WHERE id = '" + ActualUC.Tag + "'");
 
                     if (paramsAsString.Length > 0)
                     {
                         SQLClass.Update("UPDATE block SET" +
                             " Params = '" + paramsAsString +
-                            "' WHERE id = '" + uc.Tag + "'");
+                            "' WHERE id = '" + ActualUC.Tag + "'");
                     }
-                }
-            }
+                //}
+            
         }
 
         /// <summary>
