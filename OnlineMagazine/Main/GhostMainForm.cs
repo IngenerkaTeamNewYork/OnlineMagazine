@@ -172,18 +172,12 @@ namespace OnlineMag
         private void Form1_Load(object sender, EventArgs e)
         {
             Left_panel.Controls.RemoveByKey("UCref");
-            Right_panel.Controls.Clear();
             UCFunctions.AddUC(this);
             //Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
             GC.Collect();
             GC.WaitForPendingFinalizers();
             arts.Clear();
-            Right_panel.Controls.Clear();
             //textBox_password.UseSystemPasswordChar = true;
-            Right_panel.Controls.Add(comboBox2);
-            //Right_panel.Controls.Add(button_add_reklama);
-            //Right_panel.Controls.Add(button1);
-
             // button_add_reklama.Visible = false;
 
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
@@ -206,45 +200,14 @@ namespace OnlineMag
                 tableLayoutPanel2.Controls.Add(button_add_reklama);
                 tableLayoutPanel2.Controls.Add(button1);
             }
+
             #region Обновление списка авторов
-            int authorsY = 75;
             
             List<string> p1= new List<string>() { "5" };
             UserControlAutorsList c = new UserControlAutorsList(p1);
             c.Location = new Point(2, 0);
             c.Dock = DockStyle.Top;
             RightSubPanel.Controls.Add(c);
-
-
-            /* Right_panel.Controls.Add(label_Author_header);
-             Right_panel.Controls.Add(label_author);
-
-
-
-             List<String> authorsList = SQLClass.Select("SELECT UserName, " +
-
-                 " IFNULL((SELECT SUM(LikesCount) FROM " + Tables.LIKES + " WHERE Author = UserName), 0) LikesCount," +
-                 " IFNULL((SELECT COUNT(Header) FROM " + Tables.ARTICLES + " WHERE Author = UserName), 0) Arts," +
-                 " IFNULL((SELECT SUM(DisCount) FROM " + Tables.LIKES + "  WHERE Author = UserName), 0) DisLikesCount," +
-                 " IFNULL((SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + " WHERE name_of_article IN (SELECT Header FROM " + Tables.ARTICLES + " WHERE Author = UserName)), 0)  prosmot" +
-
-                 " FROM " + Tables.AUTHORS + " " +
-                 GetAuthorSortOrder() +
-                 " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Author);
-
-
-             for (int artIndex = 0; artIndex < authorsList.Count; artIndex += 5)
-             {
-                 Label label1 = new Label();
-                 label1.Location = new Point(0, authorsY);
-                 label1.Size = new Size(100, 20);
-                 label1.Text = authorsList[artIndex].ToString();
-                 label1.Click += new System.EventHandler(AuthorOrCategorySelect);
-                 Right_panel.Controls.Add(label1);
-                 authorsY += 25;
-
-             }
-             label_author.Location = new Point(3, authorsY);*/
 
             #endregion
 
@@ -268,21 +231,13 @@ namespace OnlineMag
             #region Advertising
 
             reclamaPanel.Controls.Clear();
-            int Y = Configs.Rpont.Y;
-            for (int i = 0; i < Configs.ChR; i++)
-            {
-               
-
-            }
+            AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
+            reclamaPanel.Controls.Add(recl);
 
             #endregion
 
             textBox_search.Text = LAST_SEARCH;
             Search_Click(sender, e);
-            //reclamaPanel_MouseLeave(sender, e);
-
-            /*
-            */
         }    
 
         /// <summary>
@@ -606,8 +561,6 @@ namespace OnlineMag
 
         private void reclamaPanel_Paint(object sender, PaintEventArgs e)
         {
-            AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
-            reclamaPanel.Controls.Add(recl);
         }
            
         private void GhostMainForm_Resize(object sender, EventArgs e)

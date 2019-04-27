@@ -263,6 +263,12 @@
       <DependentUpon>CategoriesUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DragAndDrop.cs" />
+    <Compile Include="UserControls\PodborkiUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PodborkiUserControl.Designer.cs">
+      <DependentUpon>PodborkiUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCFunctions.cs" />
     <Compile Include="UserControls\UserControlAutorsList.cs">
       <SubType>UserControl</SubType>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CategoriesUserControl.resx">
       <DependentUpon>CategoriesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PodborkiUserControl.resx">
+      <DependentUpon>PodborkiUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlAutorsList.resx">
       <DependentUpon>UserControlAutorsList.cs</DependentUpon>

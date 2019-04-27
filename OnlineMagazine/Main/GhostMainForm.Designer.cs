@@ -40,6 +40,8 @@ namespace OnlineMag
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Right_panel = new System.Windows.Forms.Panel();
+            this.RightSubPanel = new System.Windows.Forms.Panel();
+            this.RightTopPanel = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lable_name_of_polzovatel = new System.Windows.Forms.Label();
             this.linkLabel_collections = new System.Windows.Forms.LinkLabel();
@@ -52,15 +54,13 @@ namespace OnlineMag
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
-            this.RightTopPanel = new System.Windows.Forms.Panel();
-            this.RightSubPanel = new System.Windows.Forms.Panel();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.Right_panel.SuspendLayout();
+            this.RightTopPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
-            this.RightTopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // butto_search
@@ -169,6 +169,24 @@ namespace OnlineMag
             this.Right_panel.Name = "Right_panel";
             this.Right_panel.Size = new System.Drawing.Size(190, 579);
             this.Right_panel.TabIndex = 5;
+            // 
+            // RightSubPanel
+            // 
+            this.RightSubPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RightSubPanel.Location = new System.Drawing.Point(0, 49);
+            this.RightSubPanel.Name = "RightSubPanel";
+            this.RightSubPanel.Size = new System.Drawing.Size(190, 530);
+            this.RightSubPanel.TabIndex = 1002;
+            // 
+            // RightTopPanel
+            // 
+            this.RightTopPanel.Controls.Add(this.comboBox2);
+            this.RightTopPanel.Controls.Add(this.lable_name_of_polzovatel);
+            this.RightTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RightTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightTopPanel.Name = "RightTopPanel";
+            this.RightTopPanel.Size = new System.Drawing.Size(190, 49);
+            this.RightTopPanel.TabIndex = 1001;
             // 
             // comboBox2
             // 
@@ -292,24 +310,6 @@ namespace OnlineMag
             this.mainTimer.Enabled = true;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
-            // RightTopPanel
-            // 
-            this.RightTopPanel.Controls.Add(this.comboBox2);
-            this.RightTopPanel.Controls.Add(this.lable_name_of_polzovatel);
-            this.RightTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RightTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.RightTopPanel.Name = "RightTopPanel";
-            this.RightTopPanel.Size = new System.Drawing.Size(190, 49);
-            this.RightTopPanel.TabIndex = 1001;
-            // 
-            // RightSubPanel
-            // 
-            this.RightSubPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightSubPanel.Location = new System.Drawing.Point(0, 49);
-            this.RightSubPanel.Name = "RightSubPanel";
-            this.RightSubPanel.Size = new System.Drawing.Size(190, 530);
-            this.RightSubPanel.TabIndex = 1002;
-            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,9 +332,9 @@ namespace OnlineMag
             this.adminPpanel.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.Right_panel.ResumeLayout(false);
+            this.RightTopPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
-            this.RightTopPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
