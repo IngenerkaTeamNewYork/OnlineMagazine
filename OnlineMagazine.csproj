@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6A87C64-51AD-4757-914A-DB3E0CDA74E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineMag</RootNamespace>
+    <AssemblyName>WindowsFormsApplication4</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Author\Add_Statia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\Add_Statia.Designer.cs">
+      <DependentUpon>Add_Statia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\AuthorWithUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorWithUC.Designer.cs">
+      <DependentUpon>AuthorWithUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\AdvertisingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\AdvertisingForm.Designer.cs">
+      <DependentUpon>AdvertisingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Advertising.cs" />
+    <Compile Include="Main\Author.cs" />
+    <Compile Include="Author\AuthorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\AuthorMainForm.Designer.cs">
+      <DependentUpon>AuthorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Author\Balance_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Author\Balance_Author.Designer.cs">
+      <DependentUpon>Balance_Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Configs.cs" />
+    <Compile Include="Admin\FBIform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\FBIform.Designer.cs">
+      <DependentUpon>FBIform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IHateEverythingAboutYouForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\IHateEverythingAboutYouForm.Designer.cs">
+      <DependentUpon>IHateEverythingAboutYouForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Designer .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Designer .Designer.cs">
+      <DependentUpon>Designer .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\CategoryArticlesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\CategoryArticlesList.Designer.cs">
+      <DependentUpon>CategoryArticlesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Information_o_avtore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Information_o_avtore.Designer.cs">
+      <DependentUpon>Information_o_avtore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniFileParser\Exceptions\ParsingException.cs" />
+    <Compile Include="IniFileParser\FileIniParser.cs" />
+    <Compile Include="IniFileParser\Helpers\Assert.cs" />
+    <Compile Include="IniFileParser\Model\Configuration\ConcatenateDuplicatedKeysIniParserConfiguration.cs" />
+    <Compile Include="IniFileParser\Model\Configuration\IniParserConfiguration.cs" />
+    <Compile Include="IniFileParser\Model\Formatting\DefaultIniDataFormatter.cs" />
+    <Compile Include="IniFileParser\Model\Formatting\IIniDataFormatter.cs" />
+    <Compile Include="IniFileParser\Model\IniData.cs" />
+    <Compile Include="IniFileParser\Model\IniDataCaseInsensitive.cs" />
+    <Compile Include="IniFileParser\Model\KeyData.cs" />
+    <Compile Include="IniFileParser\Model\KeyDataCollection.cs" />
+    <Compile Include="IniFileParser\Model\SectionData.cs" />
+    <Compile Include="IniFileParser\Model\SectionDataCollection.cs" />
+    <Compile Include="IniFileParser\Parser\ConcatenateDuplicatedKeysIniDataParser.cs" />
+    <Compile Include="IniFileParser\Parser\IniDataParser.cs" />
+    <Compile Include="IniFileParser\Properties\AssemblyInfo.cs" />
+    <Compile Include="IniFileParser\StreamIniDataParser.cs" />
+    <Compile Include="IniFileParser\StringIniParser.cs" />
+    <Compile Include="Main\List_of_author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\List_of_author.Designer.cs">
+      <DependentUpon>List_of_author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LogFile.cs" />
+    <Compile Include="Admin\LogsReadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\LogsReadForm.Designer.cs">
+      <DependentUpon>LogsReadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewPages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\NewPages.Designer.cs">
+      <DependentUpon>NewPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\GhostMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\GhostMainForm.Designer.cs">
+      <DependentUpon>GhostMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Spisok_reklamy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Spisok_reklamy.Designer.cs">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SQLClass.cs" />
+    <Compile Include="Main\SQLParamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\SQLParamsForm.Designer.cs">
+      <DependentUpon>SQLParamsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\StastisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\StastisticsForm.Designer.cs">
+      <DependentUpon>StastisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Statiya.cs" />
+    <Compile Include="Main\StatiyaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\StatiyaForm.Designer.cs">
+      <DependentUpon>StatiyaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Tables.cs" />
+    <Compile Include="Main\To_come_in.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\To_come_in.Designer.cs">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Admin\Collections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Collections.Designer.cs">
+      <DependentUpon>Collections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\VipStatiy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\VipStatiy.Designer.cs">
+      <DependentUpon>VipStatiy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UCParameters.designer.cs">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AdsUserControl.Designer.cs">
+      <DependentUpon>AdsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ArticleDetailsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ArticleDetailsUserControl.Designer.cs">
+      <DependentUpon>ArticleDetailsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ArticlePreviewUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ArticlePreviewUserControl.Designer.cs">
+      <DependentUpon>ArticlePreviewUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AuthenticationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AuthenticationUserControl.Designer.cs">
+      <DependentUpon>AuthenticationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CategoriesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\CategoriesUserControl.Designer.cs">
+      <DependentUpon>CategoriesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DragAndDrop.cs" />
+    <Compile Include="UserControls\PodborkiUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PodborkiUserControl.Designer.cs">
+      <DependentUpon>PodborkiUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCFunctions.cs" />
+    <Compile Include="UserControls\UserControlAutorsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAutorsList.Designer.cs">
+      <DependentUpon>UserControlAutorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlMainAuthor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlMainAuthor.Designer.cs">
+      <DependentUpon>UserControlMainAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSearch.Designer.cs">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Author\Add_Statia.resx">
+      <DependentUpon>Add_Statia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\AdvertisingForm.resx">
+      <DependentUpon>AdvertisingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\AuthorMainForm.resx">
+      <DependentUpon>AuthorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Author\Balance_Author.resx">
+      <DependentUpon>Balance_Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\FBIform.resx">
+      <DependentUpon>FBIform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\IHateEverythingAboutYouForm.resx">
+      <DependentUpon>IHateEverythingAboutYouForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Designer .resx">
+      <DependentUpon>Designer .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\CategoryArticlesList.resx">
+      <DependentUpon>CategoryArticlesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Information_o_avtore.resx">
+      <DependentUpon>Information_o_avtore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\List_of_author.resx">
+      <DependentUpon>List_of_author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\LogsReadForm.resx">
+      <DependentUpon>LogsReadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\NewPages.resx">
+      <DependentUpon>NewPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\GhostMainForm.resx">
+      <DependentUpon>GhostMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Spisok_reklamy.resx">
+      <DependentUpon>Spisok_reklamy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\SQLParamsForm.resx">
+      <DependentUpon>SQLParamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\StastisticsForm.resx">
+      <DependentUpon>StastisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\StatiyaForm.resx">
+      <DependentUpon>StatiyaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\To_come_in.resx">
+      <DependentUpon>To_come_in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Admin\Collections.resx">
+      <DependentUpon>Collections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\VipStatiy.resx">
+      <DependentUpon>VipStatiy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCParameters.resx">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AdsUserControl.resx">
+      <DependentUpon>AdsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ArticleDetailsUserControl.resx">
+      <DependentUpon>ArticleDetailsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ArticlePreviewUserControl.resx">
+      <DependentUpon>ArticlePreviewUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AuthenticationUserControl.resx">
+      <DependentUpon>AuthenticationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CategoriesUserControl.resx">
+      <DependentUpon>CategoriesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PodborkiUserControl.resx">
+      <DependentUpon>PodborkiUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlAutorsList.resx">
+      <DependentUpon>UserControlAutorsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlMainAuthor.resx">
+      <DependentUpon>UserControlMainAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSearch.resx">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="IniFileParser\INIFileParser.nuspec" />
+    <None Include="IniFileParser\Model\IniData.cs.rej" />
+    <None Include="IniFileParser\Properties\publickey.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IniFileParser\INIFileParser.csproj" />
+    <Content Include="Resources\Без названия.jpg" />
+    <Content Include="Resources\Без названия.png" />
+    <None Include="Resources\Dislike.png" />
+    <None Include="Resources\DisLike2.png" />
+    <None Include="Resources\images %284%29.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\2134512324.png" />
+    <None Include="Resources\54215132412.png" />
+    <None Include="Resources\098765432.png" />
+    <Content Include="Resources\17101637.png" />
+    <Content Include="Resources\images %282%29.jpg" />
+    <Content Include="Resources\images %283%29.jpg" />
+    <Content Include="Resources\images %284%29.ico" />
+    <Content Include="Resources\images %285%29.jpg" />
+    <Content Include="Resources\images %286%29.jpg" />
+    <Content Include="Resources\images %287%29.jpg" />
+    <Content Include="Resources\like.png" />
+    <Content Include="Resources\Like2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
