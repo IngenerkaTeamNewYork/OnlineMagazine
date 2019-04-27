@@ -85,8 +85,8 @@ namespace OnlineMag
                     
 
                     break;
-                default:
-                    throw new Exception("Неправильный UCName " + UCName);
+                //default:
+               //     throw new Exception("Неправильный UCName " + UCName);
             }
 
 

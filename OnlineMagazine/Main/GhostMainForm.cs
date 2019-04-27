@@ -41,7 +41,9 @@ namespace OnlineMag
         int kolvo_nazatiy = 0;
         public string kuda_i_kak;
         public int articleY = 50;
-        
+
+        public static ContextMenuStrip DeleteMenuStrip;
+
 
         public GhostMainForm()
         {
@@ -171,6 +173,7 @@ namespace OnlineMag
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Menus.InitAddUserControls(ref ArticlecontextMenuStrip1);
             Left_panel.Controls.RemoveByKey("UCref");
             UCFunctions.AddUC(this);
             //Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
@@ -537,6 +540,19 @@ namespace OnlineMag
         /// </summary>
         public void mainTimer_Tick(object sender, EventArgs e)
         {
+            if (IS_ADMIN)
+            {
+                this.ContextMenuStrip = Program.AddNewUserControlCMS;
+                Program.UserControlCMS = UCContextMenuStrip;
+                Program.AddNewUserControlCMS = ArticlecontextMenuStrip1;
+            }
+            else
+            {
+                Program.UserControlCMS = null;
+                Program.AddNewUserControlCMS = null;
+            }
+
+
             //FIXME!!! Еще будет автор, просто поисковый запрос. Тут посложнее иф, друзья))
             if (textBox_search.Text != Configs.SELECTED_CATEGORY && !String.IsNullOrEmpty(Configs.SELECTED_CATEGORY))
             {
@@ -592,6 +608,26 @@ namespace OnlineMag
                     }*/
                 }
             }
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Menus.DeleteUserControl(sender, e);
+        }
+
+        private void настроитьПараметрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Menus.SetUCParametersToCurrent(sender, e);
+        }
+
+        private void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -102,6 +102,7 @@
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "linkLabel1";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // panel1
             // 
@@ -115,6 +116,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 34);
             this.panel1.TabIndex = 7;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // ArticlePreviewUserControl
             // 

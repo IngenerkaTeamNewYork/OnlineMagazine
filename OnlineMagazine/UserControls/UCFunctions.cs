@@ -193,8 +193,8 @@ namespace OnlineMag
                         };
                         ListOfControls.Add(NewSearch);
                         break;
-                    default:
-                        throw new Exception(string.Format("'{0}' это неправильное название блока", name));
+                    //default:
+                       // throw new Exception(string.Format("'{0}' это неправильное название блока", name));
                 }
             }
 

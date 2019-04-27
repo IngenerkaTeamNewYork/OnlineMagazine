@@ -54,6 +54,10 @@ namespace OnlineMag
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.UCContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настроитьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArticlecontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -61,6 +65,7 @@ namespace OnlineMag
             this.RightTopPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
+            this.UCContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // butto_search
@@ -303,12 +308,42 @@ namespace OnlineMag
             this.textBox_search.Size = new System.Drawing.Size(205, 20);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
+            this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
             this.textBox_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_search_KeyDown);
             // 
             // mainTimer
             // 
             this.mainTimer.Enabled = true;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
+            // 
+            // UCContextMenuStrip
+            // 
+            this.UCContextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.UCContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem,
+            this.настроитьПараметрыToolStripMenuItem});
+            this.UCContextMenuStrip.Name = "DeletecontextMenuStrip1";
+            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 48);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // настроитьПараметрыToolStripMenuItem
+            // 
+            this.настроитьПараметрыToolStripMenuItem.Name = "настроитьПараметрыToolStripMenuItem";
+            this.настроитьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.настроитьПараметрыToolStripMenuItem.Text = "Настроить параметры";
+            this.настроитьПараметрыToolStripMenuItem.Click += new System.EventHandler(this.настроитьПараметрыToolStripMenuItem_Click);
+            // 
+            // ArticlecontextMenuStrip1
+            // 
+            this.ArticlecontextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ArticlecontextMenuStrip1.Name = "ArticlecontextMenuStrip1";
+            this.ArticlecontextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // GhostMainForm
             // 
@@ -335,11 +370,14 @@ namespace OnlineMag
             this.RightTopPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
+            this.UCContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-      
+
+        
+
         #endregion
 
         private System.Windows.Forms.Button butto_search;
@@ -367,5 +405,9 @@ namespace OnlineMag
         private System.Windows.Forms.Timer mainTimer;
         private System.Windows.Forms.Panel RightSubPanel;
         private System.Windows.Forms.Panel RightTopPanel;
+        private System.Windows.Forms.ContextMenuStrip UCContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настроитьПараметрыToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip ArticlecontextMenuStrip1;
     }
 }

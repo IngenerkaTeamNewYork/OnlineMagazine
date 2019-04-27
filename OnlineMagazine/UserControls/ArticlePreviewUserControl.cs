@@ -52,7 +52,7 @@ namespace OnlineMag
             Menus.AddDeleteMenu(this);
 
             GC.Collect(2);
-            
+
             if (Articles.Count == 0)
             {
                 return;
@@ -73,7 +73,7 @@ namespace OnlineMag
                     pictureBox1.Image = null;
                 }
             }
-            
+
 
             List<string> likes_dislikes = SQLClass.Select(string.Format("SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='{0}'", Article));
             if (likes_dislikes.Count == 2)
@@ -107,20 +107,7 @@ namespace OnlineMag
             Menus.InsertBlockToDB(sender, a1, shsvfhksv);
         }
 
-        /// <summary>
-        /// Показывает детали статьи
-        /// </summary>
-        /*private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                new DetailsForm(new ArticleDetailsUserControl(new List<string> { Article })).ShowDialog();
-            }
-           catch
-            {
-                MessageBox.Show("Такой статьи нет!");
-            }
-        }*/
+
 
         /*#region Логика лайков (не работает пока)
         private void LikePB_Click(object sender, EventArgs e)
@@ -217,6 +204,28 @@ namespace OnlineMag
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                new DetailsForm(new ArticleDetailsUserControl(new List<string> { Article })).ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Такой статьи нет!");
+            }
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
