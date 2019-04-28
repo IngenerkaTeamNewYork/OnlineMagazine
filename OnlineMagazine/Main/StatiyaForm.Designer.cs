@@ -32,10 +32,6 @@
             this.Kategoriatext = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelreklama = new System.Windows.Forms.Label();
             this.artTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Stattext = new System.Windows.Forms.TextBox();
             this.HeaderPanel = new System.Windows.Forms.Panel();
@@ -48,11 +44,9 @@
             this.labeldis = new System.Windows.Forms.Label();
             this.pictureBoxDislike = new System.Windows.Forms.PictureBox();
             this.pictureBoxLike = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.artTableLayoutPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
             this.likesPanel.SuspendLayout();
@@ -88,8 +82,8 @@
             this.mainTableLayoutPanel.ColumnCount = 2;
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.mainTableLayoutPanel.Controls.Add(this.panel1, 0, 0);
             this.mainTableLayoutPanel.Controls.Add(this.artTableLayoutPanel, 1, 0);
+            this.mainTableLayoutPanel.Controls.Add(this.panel1, 0, 0);
             this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
@@ -97,45 +91,6 @@
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(550, 633);
             this.mainTableLayoutPanel.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.labelreklama);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(131, 627);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 259);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(131, 368);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 259);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // labelreklama
-            // 
-            this.labelreklama.AutoSize = true;
-            this.labelreklama.Location = new System.Drawing.Point(-3, 196);
-            this.labelreklama.Name = "labelreklama";
-            this.labelreklama.Size = new System.Drawing.Size(146, 13);
-            this.labelreklama.TabIndex = 0;
-            this.labelreklama.Text = "Сдеся Будет ваша реклама";
             // 
             // artTableLayoutPanel
             // 
@@ -281,6 +236,14 @@
             this.pictureBoxLike.TabStop = false;
             this.pictureBoxLike.Click += new System.EventHandler(this.pictureBoxLike_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 627);
+            this.panel1.TabIndex = 2;
+            // 
             // StatiyaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,10 +255,6 @@
             this.Load += new System.EventHandler(this.StatiyaForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mainTableLayoutPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.artTableLayoutPanel.ResumeLayout(false);
             this.artTableLayoutPanel.PerformLayout();
             this.HeaderPanel.ResumeLayout(false);
@@ -313,21 +272,18 @@
         private System.Windows.Forms.Label Kategoriatext;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel artTableLayoutPanel;
         private System.Windows.Forms.TextBox Stattext;
         private System.Windows.Forms.Panel HeaderPanel;
-        private System.Windows.Forms.Label labelreklama;
         private System.Windows.Forms.TextBox Maintext;
         private System.Windows.Forms.Label Authortext;
         private System.Windows.Forms.Panel likesPanel;
         private System.Windows.Forms.PictureBox pictureBoxLike;
         private System.Windows.Forms.PictureBox pictureBoxDislike;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label labelLike;
         private System.Windows.Forms.Label labeldis;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button redact;
+        private System.Windows.Forms.Panel panel1;
     }
 }
