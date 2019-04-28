@@ -172,6 +172,7 @@ namespace OnlineMag
         private void Form1_Load(object sender, EventArgs e)
         {
             Left_panel.Controls.RemoveByKey("UCref");
+            RightSubPanel.Controls.RemoveByKey("UCref");
             UCFunctions.AddUC(this);
             //Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
             GC.Collect();
@@ -184,9 +185,9 @@ namespace OnlineMag
             AdmButton.Visible = IS_ADMIN;
             AutButton.Visible = IS_AUTHOR;
 
+            /*
 
             RightSubPanel.Controls.Clear();
-            RightTopPanel.Controls.Clear();
             RightTopPanel.Controls.Add(comboBox2);
             if (lable_name_of_polzovatel.Text != "NONAME")
             {
@@ -208,9 +209,13 @@ namespace OnlineMag
             c.Location = new Point(2, 0);
             c.Dock = DockStyle.Top;
             RightSubPanel.Controls.Add(c);
+            
 
             #endregion
 
+            */
+
+            /*
             #region Обновление списка категорий
             List<string> p = new List<string>() { "5", "2" };
             CategoriesUserControl b = new CategoriesUserControl(p);
@@ -219,6 +224,7 @@ namespace OnlineMag
             b.Dock = DockStyle.Top;
             RightSubPanel.Controls.Add(b);
             #endregion
+            /////////////////////////
 
             #region Обновление списка подборок
             PodborkiUserControl control = new PodborkiUserControl();
@@ -227,6 +233,7 @@ namespace OnlineMag
             control.Dock = DockStyle.Top;
             RightSubPanel.Controls.Add(control);
             #endregion          
+            */
 
             #region Advertising
 

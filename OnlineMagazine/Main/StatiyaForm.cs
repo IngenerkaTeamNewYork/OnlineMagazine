@@ -43,6 +43,8 @@ namespace OnlineMag
         public StatiyaForm(statiya stat, bool YaAvtor = false)
         {
             InitializeComponent();
+            mainTableLayoutPanel.Controls.RemoveByKey("UCref");
+            UCFunctions.AddUC(this);
 
             avtor = YaAvtor;
 
@@ -198,7 +200,7 @@ namespace OnlineMag
         {
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
-
+            /*
             List<string> s = Advertising.GetRandom();
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.LoadAsync(s[0]);
@@ -208,7 +210,7 @@ namespace OnlineMag
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.LoadAsync(s[0]);
             pictureBox3.Tag = s[1];
-
+            */
 
             List<String> countRecords = SQLClass.Select(
                 "SELECT COUNT(*) FROM " + Tables.READ_OF_ARTICLES + 

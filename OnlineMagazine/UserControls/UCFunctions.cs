@@ -76,7 +76,7 @@ namespace OnlineMag
                 List<string> Params = new List<string>();
                 try
                 {
-                    Params = Row[4].Split(',').ToList();
+                    Params = Row[4].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
                 }
                 catch (Exception)
                 {
@@ -193,6 +193,16 @@ namespace OnlineMag
                         };
                         ListOfControls.Add(NewSearch);
                         break;
+                    case "PodborkiUserControl":
+                        PodborkiUserControl NewCateg12 = new PodborkiUserControl()
+                        {
+                            Location = new Point(x, y),
+                            Tag = id,
+                            Dock = d,
+                            Name = "UCref"
+                        };
+                        ListOfControls.Add(NewCateg12);
+                        break;
                     default:
                         throw new Exception(string.Format("'{0}' это неправильное название блока", name));
                 }
@@ -211,7 +221,7 @@ namespace OnlineMag
 
             foreach (Control C in cont.Controls)
             {
-                if (C.GetType().Name == "Panel")
+                if (C.GetType().Name == "Panel" || C.GetType().Name == "TableLayoutPanel")
                 {
                     AddUC(C);
                 }
