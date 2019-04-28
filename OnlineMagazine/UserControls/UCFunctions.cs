@@ -227,6 +227,5 @@ namespace OnlineMag
                 }
             }
         }
-
     }
 }

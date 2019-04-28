@@ -10,6 +10,7 @@ namespace OnlineMag
     {
         public static void InitAddUserControls(ref ContextMenuStrip menu)
         {
+            menu.Items.Clear();
             //Список типов UserControl-ов
             List<Type> forms = new List<Type>();
             foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
@@ -236,7 +237,7 @@ namespace OnlineMag
             UserControl pb = (UserControl)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
             string FormName = pb.FindForm().Name;
             MessageBox.Show(pb.Location.X.ToString());
-            SQLClass.Insert("INSERT INTO `block`(`form`,`Parent`, `x`, `y`, `name`) VALUES ('" + FormName + "','" + pb.Parent.Name + "'," + pb.Location.X + ", " + pb.Location.Y + ",'" + pb.Name + "')");
+            SQLClass.Insert("INSERT INTO `block`(`form`,`Parent`, `x`, `y`, `name`, Dock) VALUES ('" + FormName + "','" + pb.Parent.Name + "'," + pb.Location.X + ", " + pb.Location.Y + ",'" + pb.Name + "','" + pb.Dock + "')");
         }
 
 
@@ -248,8 +249,8 @@ namespace OnlineMag
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
             c.Controls.Add(a1);
             //Program.CONTROLY.Add(a1);
-            SQLClass.Insert("INSERT INTO block(form,Parent,x,y,name,Params) VALUES ('" +
-                c.FindForm().Name + "', '" + c.Name + "', '" + a1.Location.X + "','" + a1.Location.Y + "','" + a1.Name + "','" + par + "')");
+            SQLClass.Insert("INSERT INTO block(form,Parent,x,y,name,Params, Dock) VALUES ('" +
+                c.FindForm().Name + "', '" + c.Name + "', '" + a1.Location.X + "','" + a1.Location.Y + "','" + a1.Name + "','" + par + "', '" + c.Dock + "')");
 
             List<String> str = SQLClass.Select("SELECT MAX(id) FROM block");
             a1.Tag = str[0];

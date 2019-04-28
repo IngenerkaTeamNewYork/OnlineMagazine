@@ -15,9 +15,13 @@ namespace OnlineMag
 
         public void FormTest_MouseDown(object sender, MouseEventArgs e)
         {
-            IsDragging = true;
-            DragCursorPosition = Cursor.Position;
-            DragUCPosition = ((UserControl) sender).Location;
+            if(GhostMainForm.IS_ADMIN)
+            {
+                IsDragging = true;
+                DragCursorPosition = Cursor.Position;
+                DragUCPosition = ((UserControl)sender).Location;
+            }
+            
         }
 
         public void FormTest_MouseMove(object sender, MouseEventArgs e)
@@ -94,7 +98,8 @@ namespace OnlineMag
                                 param7 += pr + ",";
                             }*/
                             break;
-                    }
+                        
+                     }
 
                     SQLClass.Update("UPDATE block SET" +
                         " x = " + ((UserControl) sender).Location.X.ToString() + "," +

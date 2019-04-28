@@ -11,7 +11,8 @@ namespace OnlineMag
 {
     static class Program
     {
-        public static ContextMenuStrip UserControlCMS { get; internal set; }
+        public static ContextMenuStrip UserControlCMS;// { get; internal set; }
+        public static ContextMenuStrip AddNewUserControlCMS;
 
         /// <summary>
         /// Главная точка входа для приложения.
