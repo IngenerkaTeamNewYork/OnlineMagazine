@@ -220,11 +220,6 @@ namespace OnlineMag
             }
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

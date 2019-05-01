@@ -17,6 +17,8 @@ namespace OnlineMag
         public DragAndDrop Drag = new DragAndDrop();
         public List<string> ParamsAds;
 
+        public static Random rnd = new Random();
+
         public static List<string> URLs = new List<string>()
         {
             "http://rustrade.org.uk/rus/wp-content/uploads/dodo-pizza.jpg",
@@ -43,6 +45,28 @@ namespace OnlineMag
             refreshADS();
         }
 
+      /*  public static List<String> GetRandom()
+        {
+            List<String> pics = new List<String>();
+
+            String reklPic = "https://i.imgur.com/eQ4wEpO.gif";
+            String ss = "https://i.imgur.com/eQ4wEpO.gif";
+
+            List<String> reklPics = SQLClass.Select(
+                "SELECT pic FROM " + Tables.ADVERTISMENT +
+                " WHERE pic != ''");
+
+            int v = rnd.Next(1, reklPics.Count);
+            if (reklPics[v - 1] != "")
+            {
+                ss = ss[v - 1].ToString();
+                reklPic = reklPics[v - 1].ToString();
+            }
+
+            pics.Add(reklPic);
+
+            return pics;
+        }*/
 
         public void refreshADS()
         {
@@ -51,6 +75,9 @@ namespace OnlineMag
             int y = 0;
             Random rnd = new Random();
 
+            List<String> reklPics = SQLClass.Select(
+               "SELECT pic FROM " + Tables.ADVERTISMENT +
+               " WHERE pic != ''");
 
             for (int i = 0; i < amount; i++)
             {
@@ -61,10 +88,12 @@ namespace OnlineMag
                         Location = new Point(x, y),
                         SizeMode = PictureBoxSizeMode.StretchImage
                     };
+                    pic.Click += new System.EventHandler(GhostMainForm.reclama_Click);
+
                     try
                     {
-                        pic.Load(URLs[rnd.Next(0, Convert.ToInt32(Math.Min(
-                            amount, URLs.Count
+                        pic.Load(reklPics[rnd.Next(0, Convert.ToInt32(Math.Min(
+                            amount, reklPics.Count
                             )))]);
                     }
                     catch (Exception)
@@ -85,8 +114,7 @@ namespace OnlineMag
         public static void AddNewBlock(object sender, EventArgs e)
         {
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-
-
+            
 
             List<string> paramsArt = new List<string>();
             paramsArt.Add("5");

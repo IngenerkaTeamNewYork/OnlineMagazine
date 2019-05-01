@@ -221,7 +221,7 @@ namespace OnlineMag
 
             foreach (Control C in cont.Controls)
             {
-                if (C.GetType().Name == "Panel" || C.GetType().Name == "TableLayoutPanel")
+                if (C.GetType().Name.Contains("Panel") || C.GetType().Name.Contains("TableLayoutPanel"))
                 {
                     AddUC(C);
                 }

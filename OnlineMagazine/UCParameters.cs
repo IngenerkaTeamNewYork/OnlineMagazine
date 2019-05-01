@@ -93,7 +93,9 @@ namespace OnlineMag
             List<string> ParamsStr = SQLClass.Select("SELECT params FROM block_blocks WHERE name ='" + UCName + "'");
             if (ParamsStr.Count == 0)
             {
-                throw new Exception("Нету парамов");
+                // throw new Exception("Нету парамов");
+                MessageBox.Show("No params");
+                return;
             }
 
             int Y = 50;

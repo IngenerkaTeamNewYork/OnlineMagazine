@@ -263,7 +263,7 @@ namespace OnlineMag
         {
             UserControl pb = (UserControl)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
             pb.Visible = false;
-            SQLClass.Delete("DELETE FROM `block` WHERE `name` = '" + pb.Name + "' AND form = '" + pb.FindForm().Name + "'");
+            SQLClass.Delete("DELETE FROM `block` WHERE id = " + pb.Tag);
         }
     }
 }
