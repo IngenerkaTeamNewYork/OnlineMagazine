@@ -22,7 +22,7 @@ namespace OnlineMag
         bool isLike = false;
         bool isDisLike = false;
         public string Head;
-        
+
         public static void GetStata(Label lblLike, Label lblDisLike, String text)
         {
             List<String> likes = SQLClass.Select("SELECT LikesCount, DisCount FROM " + Tables.LIKES +
@@ -39,8 +39,10 @@ namespace OnlineMag
                 lblDisLike.Text = "0";
             }
         }
-        
-        public StatiyaForm(statiya stat, bool YaAvtor = false)
+
+       
+
+            public StatiyaForm(statiya stat, bool YaAvtor = false)
         {
             InitializeComponent();
             mainTableLayoutPanel.Controls.RemoveByKey("UCref");

@@ -164,6 +164,7 @@ namespace OnlineMag
             this.comboBox1.Size = new System.Drawing.Size(205, 21);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Text = "Сортировка статей";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Right_panel
             // 

@@ -173,9 +173,28 @@ namespace OnlineMag
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ContextMenuStrip = Program.AddNewUserControlCMS;
+
+            foreach (Control Ctrl in this.Controls)
+            {
+                if (Ctrl.GetType().ToString() == "System.Windows.Forms.Panel")
+                {
+                    Ctrl.ContextMenuStrip = Program.AddNewUserControlCMS;
+                    foreach (Control Ct in Ctrl.Controls)
+                    {
+                        if (Ct.GetType().ToString() == "System.Windows.Forms.Panel")
+                        {
+                            Ct.ContextMenuStrip = Program.AddNewUserControlCMS;
+                        }
+                    }
+                }
+            }
+
             Menus.InitAddUserControls(ref ArticlecontextMenuStrip1);
             Left_panel.Controls.RemoveByKey("UCref");
             RightSubPanel.Controls.RemoveByKey("UCref");
+            RightSubPanel.Controls.Clear();
+            reclamaPanel.Controls.Clear();
             UCFunctions.AddUC(this);
             //Left_panel.Controls.Add(new AuthenticationUserControl(new List<string>()) { Location = new Point(0,0), Dock = DockStyle.Top , Name = "qq"});
             GC.Collect();
@@ -187,64 +206,15 @@ namespace OnlineMag
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             AdmButton.Visible = IS_ADMIN;
             AutButton.Visible = IS_AUTHOR;
+         
 
-            /*
-
-            RightSubPanel.Controls.Clear();
-            RightTopPanel.Controls.Add(comboBox2);
-            if (lable_name_of_polzovatel.Text != "NONAME")
-            {
-                lable_name_of_polzovatel.Text = "Вы вошли как " + Users.CURRENT_USER;
-                RightTopPanel.Controls.Add(lable_name_of_polzovatel);
-
-                tableLayoutPanel2.Dock = DockStyle.Bottom;
-                RightSubPanel.Controls.Add(tableLayoutPanel2);
-                button_add_reklama.Visible = true;
-                button1.Visible = true;
-                tableLayoutPanel2.Controls.Add(button_add_reklama);
-                tableLayoutPanel2.Controls.Add(button1);
-            }
-
-            #region Обновление списка авторов
-            
-            List<string> p1= new List<string>() { "5" };
-            UserControlAutorsList c = new UserControlAutorsList(p1);
-            c.Location = new Point(2, 0);
-            c.Dock = DockStyle.Top;
-            RightSubPanel.Controls.Add(c);
-            
-
-            #endregion
-
-            */
-
-            /*
-            #region Обновление списка категорий
-            List<string> p = new List<string>() { "5", "2" };
-            CategoriesUserControl b = new CategoriesUserControl(p);
-            //b.Dock = DockStyle.Bottom;
-            b.Location = new Point(0, 269);
-            b.Dock = DockStyle.Top;
-            RightSubPanel.Controls.Add(b);
-            #endregion
-            /////////////////////////
-
-            #region Обновление списка подборок
-            PodborkiUserControl control = new PodborkiUserControl();
-            control.Location = new Point(0, 175);
-            control.TabIndex = 100;
-            control.Dock = DockStyle.Top;
-            RightSubPanel.Controls.Add(control);
-            #endregion          
-            */
-
-            #region Advertising
+          /*  #region Advertising
 
             reclamaPanel.Controls.Clear();
             AdsUserControl recl = new AdsUserControl(new List<string>() { "5", "20" });
             reclamaPanel.Controls.Add(recl);
 
-            #endregion
+            #endregion*/
 
             textBox_search.Text = LAST_SEARCH;
             Search_Click(sender, e);
@@ -307,7 +277,7 @@ namespace OnlineMag
         /// <summary>
         /// Функция клика на рекламу
         /// </summary>
-        private void reclama_Click(object sender, EventArgs e)
+        public static void reclama_Click(object sender, EventArgs e)
         {
             try
             {
@@ -633,6 +603,11 @@ namespace OnlineMag
         }
 
         private void textBox_search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
