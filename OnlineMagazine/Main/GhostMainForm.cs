@@ -173,6 +173,7 @@ namespace OnlineMag
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.ContextMenuStrip = Program.AddNewUserControlCMS;
 
             foreach (Control Ctrl in this.Controls)
@@ -608,6 +609,11 @@ namespace OnlineMag
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UCContextMenuStrip_Opening(object sender, CancelEventArgs e)
         {
 
         }

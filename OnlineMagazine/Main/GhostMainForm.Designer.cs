@@ -324,7 +324,8 @@ namespace OnlineMag
             this.deleteToolStripMenuItem,
             this.настроитьПараметрыToolStripMenuItem});
             this.UCContextMenuStrip.Name = "DeletecontextMenuStrip1";
-            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 48);
+            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 70);
+            this.UCContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.UCContextMenuStrip_Opening);
             // 
             // deleteToolStripMenuItem
             // 
