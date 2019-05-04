@@ -121,7 +121,7 @@ namespace OnlineMag
             paramsArt.Add("5");
             paramsArt.AddRange(URLs);
 
-            UCParameters p = new UCParameters("block.AdsUserControl", paramsArt);
+            UCParameters p = new UCParameters("AdsUserControl", paramsArt);
             p.ShowDialog();
 
             if (p.ParamsList != new List<string>())
