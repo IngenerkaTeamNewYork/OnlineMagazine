@@ -27,6 +27,7 @@ namespace OnlineMag
         public string SerachQuery;
         public string UserName;
         public string SortOrder;
+        public DockStyle dock;
 
         public List<string> ParamsList = new List<string>();
 
@@ -50,23 +51,23 @@ namespace OnlineMag
         {
             switch (UCName)
             {
-                case "block.AdsUserControl":
+                case "AdsUserControl":
                     Amount = Convert.ToInt32(ParamsList[0]);
                     DistanceBetween = Convert.ToInt32(ParamsList[1]);
                     break;
-                case "block.ArticleDetailsUserControl":
+                case "ArticleDetailsUserControl":
                     Header = ParamsList[0];
                     Header = ParamsList[0];
                     break;
-                case "block.ArticlePreviewUserControl":
+                case "ArticlePreviewUserControl":
                     SerachQuery = ParamsList[0];
                     Amount = Convert.ToInt32(ParamsList[1]);
                     break;
-                case "block.CategoriesUserControl":
+                case "CategoriesUserControl":
                     Amount = Convert.ToInt32(ParamsList[0]);
                     SortOrder = ParamsList[1];
                     break;
-                case "block.UserControlAutorsList":
+                case "UserControlAutorsList":
                     if (ParamsList.Count < 3)
                     {
                         break;
@@ -75,13 +76,13 @@ namespace OnlineMag
                     SortOrder = ParamsList[1];
                     DistanceBetween = Convert.ToInt32(ParamsList[2]);
                     break;
-                case "block.UserControlMainAuthor":
+                case "UserControlMainAuthor":
                     UserName = ParamsList[0];
                     break;
-                case "block.UserControlSearch":
+                case "UserControlSearch":
                     SerachQuery = ParamsList[0];
                     break;
-                case "block.AuthenticationUserControl":
+                case "AuthenticationUserControl":
                     
 
                     break;
@@ -150,6 +151,9 @@ namespace OnlineMag
                     case "Порядок сортировки":
                         ParamInput.Text = SortOrder;
                         break;
+                    case "Dock":
+                        ParamInput.Text = this.Dock.ToString();
+                        break;
                 }
                 ParamInput.Size = new Size(144, 20);
                 ParamInput.TabIndex = 1;
@@ -204,6 +208,9 @@ namespace OnlineMag
                         UserName = contr.Text;
                         break;
                     case "Порядок сортировки":
+                        SortOrder = contr.Text;
+                        break;
+                    case "Dock":
                         SortOrder = contr.Text;
                         break;
                 }
