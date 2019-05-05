@@ -94,7 +94,7 @@ namespace OnlineMag
         public static void AddNewBlock(object sender, EventArgs e)
         {
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-            UCParameters p = new UCParameters("block.ArticlePreviewUserControl", new List<string>());
+            UCParameters p = new UCParameters("ArticlePreviewUserControl", new List<string>());
             p.ParamsList.Add("Война и мир");
             p.ParamsList.Add("5");
             p.ShowDialog();

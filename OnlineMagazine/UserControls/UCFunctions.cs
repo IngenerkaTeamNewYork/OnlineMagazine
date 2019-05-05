@@ -76,7 +76,7 @@ namespace OnlineMag
                 List<string> Params = new List<string>();
                 try
                 {
-                    Params = Row[4].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                    Params = Row[4].Split(new char[] { ',' }).ToList();
                 }
                 catch (Exception)
                 {
@@ -171,6 +171,7 @@ namespace OnlineMag
                             Dock = d,
                             Name = "UCref"
                         };
+
                         ListOfControls.Add(NewAuthorList);
                         break;
                     case "UserControlMainAuthor":

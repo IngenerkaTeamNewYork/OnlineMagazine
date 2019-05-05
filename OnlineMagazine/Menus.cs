@@ -61,7 +61,7 @@ namespace OnlineMag
             UserControl pb = (UserControl)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
             List<string> dnonil = new List<string>();
 
-            switch (pb.Name)
+            switch (pb.GetType().ToString().Replace("OnlineMag.", ""))
             {
                 case "AdsUserControl":
                     AdsUserControl pb1 = (AdsUserControl)pb;
@@ -79,7 +79,7 @@ namespace OnlineMag
                     break;
                 case "CategoriesUserControl":
                     CategoriesUserControl pb4 = (CategoriesUserControl)pb;
-                    if (pb4.asd.Count>2)
+                    if (pb4.asd.Count>=2)
                     {
                         dnonil.Add(pb4.asd[0]);
                         dnonil.Add(pb4.asd[1]);
@@ -87,9 +87,12 @@ namespace OnlineMag
                     break;
                 case "UserControlAutorsList":
                     UserControlAutorsList pb5 = (UserControlAutorsList)pb;
-                    dnonil.Add(pb5.asd[0]);
-                    dnonil.Add(pb5.asd[1]);
-                    dnonil.Add(pb5.asd[2]);
+                    if (pb5.asd.Count >= 3)
+                    {
+                        dnonil.Add(pb5.asd[0]);
+                        dnonil.Add(pb5.asd[1]);
+                        dnonil.Add(pb5.asd[2]);
+                    }
                     break;
                 case "UserControlMainAuthor":
                     UserControlMainAuthor pb6 = (UserControlMainAuthor)pb;
@@ -105,7 +108,7 @@ namespace OnlineMag
                     break;
             }
 
-            UCParameters p = new UCParameters(pb.GetType().ToString(), dnonil);
+            UCParameters p = new UCParameters(pb.GetType().ToString().Replace("OnlineMag.", ""), dnonil);
             p.UCSize = pb.Size;
             p.UCLocation = pb.Location;
 
