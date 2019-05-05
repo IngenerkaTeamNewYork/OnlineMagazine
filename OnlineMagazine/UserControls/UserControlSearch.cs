@@ -28,7 +28,7 @@ namespace OnlineMag
         public static void AddNewBlock(object sender, EventArgs e)
         {
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-            UCParameters p = new UCParameters("block.UserControlSearch", new List<string>() { "1"});
+            UCParameters p = new UCParameters("UserControlSearch", new List<string>() { "1"});
             p.ShowDialog();
             UserControlSearch a1 = new UserControlSearch(p.ParamsList);
             string shsvfhksv = "";

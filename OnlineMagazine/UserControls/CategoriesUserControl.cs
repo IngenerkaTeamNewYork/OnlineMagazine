@@ -92,7 +92,7 @@ namespace OnlineMag
         public static void AddNewBlock(object sender, EventArgs e)
         {
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-            UCParameters p = new UCParameters("block.CategoriesUserControl", new List<string>() {"2", "2" });
+            UCParameters p = new UCParameters("CategoriesUserControl", new List<string>() {"2", "2" });
             p.ShowDialog();
             if(p.ParamsList != new List<string>())
             {
@@ -112,6 +112,7 @@ namespace OnlineMag
         public static void lable_cat_Click(object sender, EventArgs e)
         {
             Configs.SELECTED_CATEGORY = ((Label)sender).Text;
+            GhostMainForm.dddd = true;
         }
 
         private void CategoriesUserControl_Load(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace OnlineMag
     public partial class PodborkiUserControl : UserControl
     {
         public static string search;
+        public DragAndDrop Drag = new DragAndDrop();
         public PodborkiUserControl()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace OnlineMag
 
         private void PodborkiUserControl_Load(object sender, EventArgs e)
         {
+            Drag.AddDNDFunctions(this);
             List<String> collList = SQLClass.Select("SELECT DISTINCT Coll_text FROM " + Tables.COLLECTION +
                 " LIMIT 0, " + Configs.KOL_VO_ELEMENTOV_Podborka);
             int collY = 25;
@@ -38,6 +40,7 @@ namespace OnlineMag
         public void podClick(object sender, EventArgs e)
         {
             search = ((Label)sender).Text;
+            GhostMainForm.dddd = true;
             //GhostMainForm.Search_Click(sender, e);
         }
     }

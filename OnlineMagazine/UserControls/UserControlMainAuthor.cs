@@ -69,7 +69,7 @@ namespace OnlineMag
         {
 
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-            UCParameters p = new UCParameters("block.UserControlMainAuthor", new List<string>() { "ПрПрПр" });
+            UCParameters p = new UCParameters("UserControlMainAuthor", new List<string>() { "ПрПрПр" });
             p.ShowDialog();
             p.ParamsList.Add("Жуков");
             UserControlMainAuthor a1 = new UserControlMainAuthor(p.ParamsList);

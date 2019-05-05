@@ -37,7 +37,7 @@ namespace OnlineMag
         public static void AddNewBlock(object sender, EventArgs e)
         {
             Control c = ((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
-            UCParameters p = new UCParameters("block.UserControlAutorsList", new List<string>() { });
+            UCParameters p = new UCParameters("UserControlAutorsList", new List<string>() { });
             p.ShowDialog();
             UserControlAutorsList a1 = new UserControlAutorsList(new List<string> {p.Amount.ToString(), p.SortOrder, p.DistanceBetween.ToString() });
             string shsvfhksv = "";
@@ -80,7 +80,7 @@ namespace OnlineMag
         public void Search_CLick(object sender, EventArgs e)
         {
            PodborkiUserControl.search = (((Label)sender).Text);
-
+            GhostMainForm.dddd = true;
         }
 
         private void labelPopular_Click(object sender, EventArgs e)
