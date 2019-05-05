@@ -269,6 +269,12 @@
       <DependentUpon>CategoriesUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DragAndDrop.cs" />
+    <Compile Include="Main\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PodborkiUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\CategoriesUserControl.resx">
       <DependentUpon>CategoriesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PodborkiUserControl.resx">
       <DependentUpon>PodborkiUserControl.cs</DependentUpon>

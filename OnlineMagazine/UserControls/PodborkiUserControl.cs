@@ -12,6 +12,7 @@ namespace OnlineMag
 {
     public partial class PodborkiUserControl : UserControl
     {
+        //public DragAndDrop Drag = new DragAndDrop();
         public static string search;
         public DragAndDrop Drag = new DragAndDrop();
         public PodborkiUserControl()

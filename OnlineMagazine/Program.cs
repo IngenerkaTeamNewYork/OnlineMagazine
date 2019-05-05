@@ -13,14 +13,18 @@ namespace OnlineMag
     {
         public static ContextMenuStrip UserControlCMS;// { get; internal set; }
         public static ContextMenuStrip AddNewUserControlCMS;
-
+        public static string proces = "Точка входа";
+        
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            
             LogFile.WriteLine("main", "читаем конфиг");
+            proces = "читаем конфиг";
+            
             IniParser.Parser.IniDataParser aa = new IniParser.Parser.IniDataParser();
             Tables.ADVERTISMENT = aa.Parse(File.ReadAllText("config.ini"))["db"]["ADVERTISMENT"].ToString();
             Tables.ARTICLES = aa.Parse(File.ReadAllText("config.ini"))["db"]["ARTICLES"].ToString();
@@ -30,14 +34,16 @@ namespace OnlineMag
             Tables.SETTINGS = aa.Parse(File.ReadAllText("config.ini"))["db"]["SETTINGS"].ToString();
 
             Configs.ReadTableNames();
-
+            
 
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Form1 s = new Form1();
+            s.Show();
             SQLClass.OpenConnection();
-
             Application.Run(new GhostMainForm());
+
             SQLClass.CloseConnection();
         }
     }
