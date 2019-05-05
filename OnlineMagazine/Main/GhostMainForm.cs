@@ -44,7 +44,6 @@ namespace OnlineMag
 
         public static ContextMenuStrip DeleteMenuStrip;
 
-
         public GhostMainForm()
         {
             UCFunctions.AddUC(this);
@@ -330,6 +329,7 @@ namespace OnlineMag
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
         {
+            dddd = true;
             if (e.KeyCode == Keys.Enter)
             {
                 button_login_Click(sender, null);
@@ -338,6 +338,7 @@ namespace OnlineMag
 
         private void textBox_search_KeyDown(object sender, KeyEventArgs e)
         {
+            dddd = true;
             if (e.KeyCode == Keys.Enter)
             {
                 Search_Click(sender, null);
@@ -512,6 +513,8 @@ namespace OnlineMag
             
         }
 
+        public static bool dddd = false;
+
         /// <summary>
         /// Обновление юзера, поисковых запросов в таймере
         /// </summary>
@@ -528,9 +531,13 @@ namespace OnlineMag
                 Program.UserControlCMS = null;
                 Program.AddNewUserControlCMS = null;
             }
-
+            //IT DOESN'T WORK! 
 
             //FIXME!!! Еще будет автор, просто поисковый запрос. Тут посложнее иф, друзья))
+            if (dddd)
+            {
+                return;
+            }
             if (textBox_search.Text != Configs.SELECTED_CATEGORY && !String.IsNullOrEmpty(Configs.SELECTED_CATEGORY))
             {
                 textBox_search.Text = Configs.SELECTED_CATEGORY;
@@ -604,12 +611,45 @@ namespace OnlineMag
 
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
-
+            dddd = false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+       
+        public void dockClick(object sender, EventArgs e)
+        {
+           String srt = ((ToolStripMenuItem)sender).Text.Replace("Dock.", "");
+            UserControl uc = (UserControl)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+            SQLClass.Update("UPDATE block SET" +
+               " Dock = '"+ srt + "' WHERE id = '" + uc.Tag + "'");
+            switch(srt)
+            {
+                case "Top":
+                    uc.Dock = DockStyle.Top;
+                    break;
+                case "Right":
+                    uc.Dock = DockStyle.Right;
+                    break;
+                case "Left":
+                    uc.Dock = DockStyle.Left;
+                    break;
+                case "Fill":
+                    uc.Dock = DockStyle.Fill;
+                    break;
+                case "Bottom":
+                    uc.Dock = DockStyle.Bottom;
+                    break;
+                case "None":
+                    uc.Dock = DockStyle.None;
+                    break;
+            }
+            
         }
     }
 }

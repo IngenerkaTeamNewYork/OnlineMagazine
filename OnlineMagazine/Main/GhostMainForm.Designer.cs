@@ -57,6 +57,12 @@ namespace OnlineMag
             this.UCContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настроитьПараметрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.докТопToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockFillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockBottomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dockNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArticlecontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
@@ -322,9 +328,15 @@ namespace OnlineMag
             this.UCContextMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.UCContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem,
-            this.настроитьПараметрыToolStripMenuItem});
+            this.настроитьПараметрыToolStripMenuItem,
+            this.докТопToolStripMenuItem,
+            this.dockRightToolStripMenuItem,
+            this.dockLeftToolStripMenuItem,
+            this.dockFillToolStripMenuItem,
+            this.dockBottomToolStripMenuItem,
+            this.dockNoneToolStripMenuItem});
             this.UCContextMenuStrip.Name = "DeletecontextMenuStrip1";
-            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 48);
+            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 180);
             // 
             // deleteToolStripMenuItem
             // 
@@ -339,6 +351,48 @@ namespace OnlineMag
             this.настроитьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.настроитьПараметрыToolStripMenuItem.Text = "Настроить параметры";
             this.настроитьПараметрыToolStripMenuItem.Click += new System.EventHandler(this.настроитьПараметрыToolStripMenuItem_Click);
+            // 
+            // докТопToolStripMenuItem
+            // 
+            this.докТопToolStripMenuItem.Name = "докТопToolStripMenuItem";
+            this.докТопToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.докТопToolStripMenuItem.Text = "Dock.Top";
+            this.докТопToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
+            // 
+            // dockRightToolStripMenuItem
+            // 
+            this.dockRightToolStripMenuItem.Name = "dockRightToolStripMenuItem";
+            this.dockRightToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockRightToolStripMenuItem.Text = "Dock.Right";
+            this.dockRightToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
+            // 
+            // dockLeftToolStripMenuItem
+            // 
+            this.dockLeftToolStripMenuItem.Name = "dockLeftToolStripMenuItem";
+            this.dockLeftToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockLeftToolStripMenuItem.Text = "Dock.Left";
+            this.dockLeftToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
+            // 
+            // dockFillToolStripMenuItem
+            // 
+            this.dockFillToolStripMenuItem.Name = "dockFillToolStripMenuItem";
+            this.dockFillToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockFillToolStripMenuItem.Text = "Dock.Fill";
+            this.dockFillToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
+            // 
+            // dockBottomToolStripMenuItem
+            // 
+            this.dockBottomToolStripMenuItem.Name = "dockBottomToolStripMenuItem";
+            this.dockBottomToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockBottomToolStripMenuItem.Text = "Dock.Bottom";
+            this.dockBottomToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
+            // 
+            // dockNoneToolStripMenuItem
+            // 
+            this.dockNoneToolStripMenuItem.Name = "dockNoneToolStripMenuItem";
+            this.dockNoneToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockNoneToolStripMenuItem.Text = "Dock.None";
+            this.dockNoneToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // ArticlecontextMenuStrip1
             // 
@@ -410,5 +464,11 @@ namespace OnlineMag
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem настроитьПараметрыToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip ArticlecontextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem докТопToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockRightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockLeftToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockFillToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockBottomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dockNoneToolStripMenuItem;
     }
 }
