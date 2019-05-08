@@ -41,7 +41,7 @@ namespace OnlineMag
         public void podClick(object sender, EventArgs e)
         {
             search = ((Label)sender).Text;
-            GhostMainForm.dddd = true;
+            GhostMainForm.MozhnoVvoditBukvyVPoisk = false;
             //GhostMainForm.Search_Click(sender, e);
         }
     }
