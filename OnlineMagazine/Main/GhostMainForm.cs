@@ -361,7 +361,7 @@ namespace OnlineMag
             pb = new List<PictureBox>();
             string[] dhfg = textBox_search.Text.Split(new char[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
             string nahod = "";
-            Dictionary<String, String> dict = new Dictionary<string, string>();
+            /*Dictionary<String, String> dict = new Dictionary<string, string>();
             for (int i = 0; i < dhfg.Length; i++)
             {
                 dict.Add("STR" + i.ToString(), "%" + dhfg[i] + "%");
@@ -379,16 +379,18 @@ namespace OnlineMag
             if (nahod!= "")
             {
                 nahod = " AND (" + nahod + ")";
-            }
+            }*/
 
+            Dictionary<String, String> dict = new Dictionary<string, string>();
+            dict.Add("STR", "%" + textBox_search.Text + "%");
 
-
-            List<string> PopularArticles =
-                SQLClass.Select("SELECT Header " + 
-                " FROM " + Tables.ARTICLES +
-                " WHERE new = 0 " + nahod +
-                GetArticlesSortOrder() + 
-                " LIMIT " + Convert.ToString(kolvo_nazatiy * 3) + ", 3", dict);
+            List<String> PopularArticles = SQLClass.Select
+                ("SELECT Header, " +
+                "(SELECT COUNT(*) FROM read_of_articles WHERE Articles1.Header = read_of_articles.name_of_article ) A" +
+                " FROM " + Tables.ARTICLES + ", " + Tables.LIKES +
+                " WHERE new = 0 AND  " + Tables.ARTICLES + ".Header = " + Tables.LIKES + ".Article  AND  (header like @STR" +
+                " OR " + Tables.ARTICLES + ".category like @STR" +
+                " OR " + Tables.ARTICLES + ".author like @STR)" + GetAuthorSortOrder() + " LIMIT 0, 3", dict);
 
             int ii = 0;
             foreach (string ArticleName in PopularArticles)

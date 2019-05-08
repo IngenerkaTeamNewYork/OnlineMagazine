@@ -47,14 +47,22 @@ namespace OnlineMag
 
         public static void Insert(string cmdText)
         {
-            LogFile.WriteLine("SQLClass", cmdText);
-            MySqlCommand cmd = new MySqlCommand(cmdText, CONN);
-            if (CONN.State != ConnectionState.Open)
+            try
             {
-                CONN.Open();
+                MySqlCommand cmd = new MySqlCommand(cmdText, CONN);
+                if (CONN.State != ConnectionState.Open)
+                {
+                    CONN.Open();
+                }
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Close();
             }
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            rdr.Close();
+            catch (Exception err)
+            {
+                LogFile.WriteLine("SQLClass", string.Format("Запрос '{0}' вылетел с ошибкой '{1}': \r\n" +
+                    "Где все полетело:\r\n{2}", cmdText, err.Message, err.StackTrace));
+                System.Windows.Forms.MessageBox.Show("SQL полетел. Чекай логи.");
+            }
         }
 
         /// <summary>
@@ -77,54 +85,72 @@ namespace OnlineMag
         /// <returns>Результат в виде списка строк</returns>
         public static List<String> Select(string query)
         {
-            LogFile.WriteLine("SQLClass", query);
-            List<String> res = new List<String>();
-            MySqlCommand q = new MySqlCommand(query, CONN);
-            if (CONN.State != ConnectionState.Open)
+            try
             {
-                CONN.Open();
-            }
-            MySqlDataReader r = q.ExecuteReader();
-
-            while (r.Read())
-            {
-                for (int inc = 0; inc < r.FieldCount; inc++)
+                List<String> res = new List<String>();
+                MySqlCommand q = new MySqlCommand(query, CONN);
+                if (CONN.State != ConnectionState.Open)
                 {
-                    res.Add(r[inc].ToString());
+                    CONN.Open();
                 }
-            }
-            r.Close();
+                MySqlDataReader r = q.ExecuteReader();
 
-            return res;
+                while (r.Read())
+                {
+                    for (int inc = 0; inc < r.FieldCount; inc++)
+                    {
+                        res.Add(r[inc].ToString());
+                    }
+                }
+                r.Close();
+
+                return res;
+            }
+            catch (Exception err)
+            {
+                LogFile.WriteLine("SQLClass", string.Format("Запрос '{0}' вылетел с ошибкой '{1}': \r\n" +
+                    "Где все полетело:\r\n{2}", query, err.Message, err.StackTrace));
+                System.Windows.Forms.MessageBox.Show("SQL полетел. Чекай логи.");
+
+                return new List<String>();
+            }
         }
 
         public static List<String> Select(string query, Dictionary<String, String> ParamsDict)
         {
-            LogFile.WriteLine("SQLClass", query);
-            List<String> res = new List<String>();
-            MySqlCommand q = new MySqlCommand(query, CONN);
-            if (CONN.State != ConnectionState.Open)
+            try
             {
-                CONN.Open();
-            }
-
-            q.Parameters.Clear();
-            foreach (KeyValuePair<string, string> Pair in ParamsDict)
-            {
-                q.Parameters.AddWithValue("@" + Pair.Key, Pair.Value);
-            }
-            MySqlDataReader r = q.ExecuteReader();
-
-            while (r.Read())
-            {
-                for (int inc = 0; inc < r.FieldCount; inc++)
+                List<String> res = new List<String>();
+                MySqlCommand q = new MySqlCommand(query, CONN);
+                if (CONN.State != ConnectionState.Open)
                 {
-                    res.Add(r[inc].ToString());
+                    CONN.Open();
                 }
-            }
-            r.Close();
 
-            return res;
+                q.Parameters.Clear();
+                foreach (KeyValuePair<string, string> Pair in ParamsDict)
+                {
+                    q.Parameters.AddWithValue("@" + Pair.Key, Pair.Value);
+                }
+                MySqlDataReader r = q.ExecuteReader();
+
+                while (r.Read())
+                {
+                    for (int inc = 0; inc < r.FieldCount; inc++)
+                    {
+                        res.Add(r[inc].ToString());
+                    }
+                }
+                r.Close();
+
+                return res;
+            } catch (Exception err) {
+                LogFile.WriteLine("SQLClass", string.Format("Запрос '{0}' вылетел с ошибкой '{1}': \r\n" +
+                    "Где все полетело:\r\n{2}", query, err.Message, err.StackTrace));
+                System.Windows.Forms.MessageBox.Show("SQL полетел. Чекай логи.");
+
+                return new List<String>();
+            }
         }
     }
 }

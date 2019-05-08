@@ -46,30 +46,17 @@ namespace OnlineMag
                 return;
             }
             //Сюда бы значение по умолчанию
-            List<string> Categories = SQLClass.Select("SELECT Name FROM Categories ORDER BY Name LIMIT 0," + Convert.ToInt32(CategoriesParams[0]));
-            
-            for (int i = 0; i < Categories.Count; i++)
-            {
-                Label label2 = new Label
-                {
-                    Size = new Size(100, 30),
-                    Location = new Point(0, i * 30 + 30),
-                    Text = Categories[i].ToString()
-                };
-                label2.Click += new EventHandler(lable_cat_Click);
-                
-                this.Controls.Add(label2);
-            }
+            InitCategoriesLabels(this.Controls, Convert.ToInt32(CategoriesParams[0]));
         }
 
-        public static void RefreshUC(Control th, int Kolich)
+        /// <summary>
+        /// Добавляет лейблы из базы
+        /// </summary>
+        /// <param name="ctr">Списпок контролов куда все вставлять</param>
+        /// <param name="limit">Количество категорий</param>
+        public static void InitCategoriesLabels(ControlCollection ctr, int limit)
         {
-            th.Controls.Clear();
-           
-            th.Controls.Add(CategoriesUserControl.label);
-            //Сюда бы значение по умолчанию
-            List<string> Categories = SQLClass.Select("SELECT Name FROM Categories ORDER BY Name LIMIT 0," +
-                Kolich);
+            List<string> Categories = SQLClass.Select("SELECT Name FROM Categories ORDER BY Name LIMIT 0," + limit);
 
             for (int i = 0; i < Categories.Count; i++)
             {
@@ -81,9 +68,17 @@ namespace OnlineMag
                 };
                 label.Click += new EventHandler(lable_cat_Click);
 
-                th.Controls.Add(label);
+                ctr.Add(label);
             }
+        }
 
+        public static void RefreshUC(Control th, int Kolich)
+        {
+            th.Controls.Clear();
+           
+            th.Controls.Add(CategoriesUserControl.label);
+            //Сюда бы значение по умолчанию
+            InitCategoriesLabels(th.Controls, Kolich);
         }
 
         /// <summary>
