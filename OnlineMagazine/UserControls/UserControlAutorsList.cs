@@ -79,7 +79,7 @@ namespace OnlineMag
 
         public void Search_CLick(object sender, EventArgs e)
         {
-           PodborkiUserControl.search = (((Label)sender).Text);
+            PodborkiUserControl.search = (((Label)sender).Text);
             GhostMainForm.dddd = true;
         }
 

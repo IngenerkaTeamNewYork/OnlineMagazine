@@ -86,3 +86,4 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.PodborkiUserCo
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlAutorsList.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlMainAuthor.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlSearch.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.Form1.resources

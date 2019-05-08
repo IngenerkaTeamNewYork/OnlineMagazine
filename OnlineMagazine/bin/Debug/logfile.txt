@@ -1392,3 +1392,522 @@
 [01.05.2019 14:35:55 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
 [01.05.2019 14:35:55 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
 [01.05.2019 14:35:56 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 12:58:58 - main] -- читаем конфиг
+[08.05.2019 12:59:00 - SQLClass] -- Соединяюсь с базой
+[08.05.2019 12:59:03 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = '' AND Parent = ''
+[08.05.2019 12:59:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 12:59:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 12:59:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 12:59:04 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 12:59:06 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 12:59:06 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 12:59:06 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 12:59:07 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 12:59:07 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 12:59:07 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 12:59:07 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 12:59:07 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 12:59:07 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 12:59:07 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 12:59:08 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 12:59:08 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 12:59:09 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 12:59:09 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 12:59:11 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 12:59:20 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 12:59:20 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,' WHERE id = '132'
+[08.05.2019 12:59:30 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 12:59:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 12:59:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Fktyf" AND `admin` = 1
+[08.05.2019 12:59:30 - SQLClass] -- SELECT * FROM Polzovateli WHERE `Login`="Fktyf" AND `Parol`="2552"
+[08.05.2019 12:59:30 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 12:59:30 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 12:59:30 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 12:59:30 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 12:59:32 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 12:59:32 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 12:59:32 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 12:59:32 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 12:59:32 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 12:59:32 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 12:59:32 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 12:59:32 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 12:59:32 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 12:59:33 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 12:59:33 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 12:59:33 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 12:59:34 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 12:59:34 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 12:59:35 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 12:59:38 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 12:59:38 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 12:59:39 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 12:59:39 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 12:59:39 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 12:59:39 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:15 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:00:15 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:17 - SQLClass] -- UPDATE block SET Dock = 'None' WHERE id = '132'
+[08.05.2019 13:00:19 - SQLClass] -- UPDATE block SET x = 37, y = 34 WHERE id = '132'
+[08.05.2019 13:00:19 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:33 - SQLClass] -- UPDATE block SET x = 15, y = 96 WHERE id = '132'
+[08.05.2019 13:00:33 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:33 - SQLClass] -- UPDATE block SET x = 15, y = 96 WHERE id = '132'
+[08.05.2019 13:00:33 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:34 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='AdsUserControl'
+[08.05.2019 13:00:37 - SQLClass] -- UPDATE block SET Params = '5,5,558,192,15,96,' WHERE id = '132'
+[08.05.2019 13:00:37 - SQLClass] -- UPDATE block SET x = 15, y = 96 WHERE id = '132'
+[08.05.2019 13:00:39 - SQLClass] -- UPDATE block SET x = 21, y = 54 WHERE id = '132'
+[08.05.2019 13:00:39 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:39 - SQLClass] -- UPDATE block SET x = 21, y = 54 WHERE id = '132'
+[08.05.2019 13:00:39 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:00:41 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='AdsUserControl'
+[08.05.2019 13:00:46 - SQLClass] -- UPDATE block SET Params = '6,5,558,192,21,54,' WHERE id = '132'
+[08.05.2019 13:00:46 - SQLClass] -- UPDATE block SET x = 21, y = 54 WHERE id = '132'
+[08.05.2019 13:00:47 - SQLClass] -- UPDATE block SET x = 18, y = 118 WHERE id = '132'
+[08.05.2019 13:00:48 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,' WHERE id = '132'
+[08.05.2019 13:01:08 - SQLClass] -- UPDATE block SET x = 0, y = 205 WHERE id = '8'
+[08.05.2019 13:01:08 - SQLClass] -- UPDATE block SET Params = '4,0,0,,,' WHERE id = '8'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,' WHERE id = '139'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,' WHERE id = '139'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:01:15 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,' WHERE id = '139'
+[08.05.2019 13:01:23 - SQLClass] -- SELECT Author, Category, Text, Picture FROM Articles1 WHERE `Header` = 'Война и мир'
+[08.05.2019 13:01:24 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'DetailsForm' AND Parent = 'DetailsForm'
+[08.05.2019 13:01:32 - SQLClass] -- SELECT UserName, Pic, Information_about_author FROM Authors
+[08.05.2019 13:05:22 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:22 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:22 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:24 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:24 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:25 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:26 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:26 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:27 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:27 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:27 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:27 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:28 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:28 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:29 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:29 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:29 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:29 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:29 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:29 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:30 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:30 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:30 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:30 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:31 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:31 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:31 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:31 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:31 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:32 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:32 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:32 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:32 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:36 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:36 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Красивая картинка'
+[08.05.2019 13:05:36 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Красивая картинка'
+[08.05.2019 13:05:45 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:45 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:05:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:05:47 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:05:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:05:47 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:05:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:05:48 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:05:48 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:05:50 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:05:50 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:05:50 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:05:50 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:05:50 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:05:53 - SQLClass] -- SELECT Author, Category, Text, Picture FROM Articles1 WHERE `Header` = 'Ежи тоже люди'
+[08.05.2019 13:05:55 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'DetailsForm' AND Parent = 'DetailsForm'
+[08.05.2019 13:05:58 - SQLClass] -- UPDATE block SET x = 152, y = 72 WHERE id = ''
+[08.05.2019 13:05:59 - SQLClass] -- UPDATE block SET Params = 'Ежи тоже люди,' WHERE id = ''
+[08.05.2019 13:06:11 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:11 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:11 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:13 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:13 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:13 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:20 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:20 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:20 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:29 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:29 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:29 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:30 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:31 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:32 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:32 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:32 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:32 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:32 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:41 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:41 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:41 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:44 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:06:44 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:06:44 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Жуков" AND `admin` = 1
+[08.05.2019 13:06:52 - SQLClass] -- SELECT Login, ban, (SELECT COUNT(*) FROM read_of_articles WHERE reader = Login) FROM Polzovateli
+[08.05.2019 13:07:01 - SQLClass] -- UPDATE Polzovateli SET ban = 0 WHERE login = 'Жуков'
+[08.05.2019 13:07:01 - SQLClass] -- UPDATE Authors SET ban = 0 WHERE UserName = 'Жуков'
+[08.05.2019 13:07:02 - SQLClass] -- SELECT Login, ban, (SELECT COUNT(*) FROM read_of_articles WHERE reader = Login) FROM Polzovateli
+[08.05.2019 13:07:05 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:07:06 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:07:06 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:07:06 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:07:08 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:07:08 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:07:08 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:07:08 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:07:08 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:07:08 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:07:08 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:07:08 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:07:09 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:07:09 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:07:10 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:07:10 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:07:11 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:07:11 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:07:12 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:07:12 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:07:12 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:07:13 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:07:14 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:07:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:07:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:07:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:07:15 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:07:15 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:07:16 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:07:16 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:07:16 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:07:16 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:07:16 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:07:17 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:07:18 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:07:18 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:07:19 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:07:20 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:07:20 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:07:20 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:07:21 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:07:21 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:07:22 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:07:22 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:07:22 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:07:47 - SQLClass] -- SELECT Author, Category, Text, Picture FROM Articles1 WHERE `Header` = 'Ежи тоже люди'
+[08.05.2019 13:07:49 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'DetailsForm' AND Parent = 'DetailsForm'
+[08.05.2019 13:07:52 - SQLClass] -- SELECT Information_about_author, Articles, Pic FROM Authors WHERE `UserName` = 'Жуков'
+[08.05.2019 13:07:52 - SQLClass] -- SELECT COUNT(*) + 1 FROM (SELECT UserName, SUM(`Likes`) - Sum(DisLikes) F FROM Authors GROUP BY UserName HAVING F > (SELECT SUM(`Likes`) - Sum(DisLikes) FROM Authors WHERE UserName = 'Жуков') ) T
+[08.05.2019 13:07:53 - SQLClass] -- SELECT `Summa` FROM Balance WHERE `Author`= 'Жуков'
+[08.05.2019 13:07:53 - SQLClass] -- SELECT SUM(`LikesCount`), SUM(`DisCount`) FROM `Likes` WHERE `Author` = 'Жуков'
+[08.05.2019 13:07:53 - SQLClass] -- SELECT Header, Picture FROM Articles1 WHERE `Author` = 'Жуков'
+[08.05.2019 13:07:55 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[08.05.2019 13:07:55 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[08.05.2019 13:07:55 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[08.05.2019 13:07:55 - SQLClass] -- SELECT text FROM Advertisment WHERE pic != '' AND STR_TO_DATE(Date_From, '%d.%m.%Y') <= now() AND STR_TO_DATE(Data_to, '%d.%m.%Y')>= now() AND 'new' = 0
+[08.05.2019 13:08:00 - SQLClass] -- SELECT UserName, `Likes`, `Dislikes`, `Information_about_author`, `Pic` FROM `Authors` WHERE UserName = 'Жуков'
+[08.05.2019 13:08:04 - SQLClass] -- SELECT Header FROM Articles1 WHERE Author = 'Жуков' LIMIT 5
+[08.05.2019 13:08:11 - SQLClass] -- SELECT Header, Author, Category, Text, Picture FROM Articles1 WHERE header = 'Украина'
+[08.05.2019 13:08:11 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'StatiyaForm'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'mainTableLayoutPanel'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'artTableLayoutPanel'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'HeaderPanel'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'likesPanel'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'panel1'
+[08.05.2019 13:08:12 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:08:13 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Украина'
+[08.05.2019 13:08:14 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Украина'
+[08.05.2019 13:08:14 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Украина', 'Жуков', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[08.05.2019 13:08:14 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'жуков'
+[08.05.2019 13:08:14 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'жуков'
+[08.05.2019 13:08:36 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '10'
+[08.05.2019 13:08:36 - SQLClass] -- UPDATE block SET Params = '5, 20,,' WHERE id = '10'
+[08.05.2019 13:08:44 - SQLClass] -- UPDATE Articles1 SET Header = 'Украина', Category = 'Полiтiка', Text = 'салосалосалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсаломсалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсаломсалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсаломмммммммсалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалоотцасалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсаломмсалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосалосалосалосаломсалосалосалосалосалосалосалосалосалосалосалосаломсало111111111' WHERE Header = 'Украина'
+[08.05.2019 13:08:49 - SQLClass] -- SELECT Header, Author, Category, Text, Picture FROM Articles1 WHERE header = 'Украина'
+[08.05.2019 13:08:49 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'StatiyaForm'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'mainTableLayoutPanel'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'artTableLayoutPanel'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'HeaderPanel'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'likesPanel'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'StatiyaForm' AND Parent = 'panel1'
+[08.05.2019 13:08:50 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:08:51 - SQLClass] -- SELECT LikesCount, DisCount FROM Likes WHERE Article = 'Украина'
+[08.05.2019 13:08:51 - SQLClass] -- SELECT COUNT(*) FROM read_of_articles WHERE `name_of_article` = 'Украина'
+[08.05.2019 13:08:51 - SQLClass] -- INSERT INTO read_of_articles(name_of_article, reader, dt)VALUES ('Украина', 'Жуков', DATE_FORMAT(NOW(), '%Y-%m-%d'))
+[08.05.2019 13:08:51 - SQLClass] -- SELECT COUNT(*) FROM Balance WHERE AUTHOR = 'жуков'
+[08.05.2019 13:08:51 - SQLClass] --  UPDATE Balance SET Summa = Summa + 2 WHERE Author = 'жуков'
+[08.05.2019 13:09:23 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:09:23 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:09:23 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:09:23 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:09:24 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:09:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:09:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:09:25 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:09:25 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:09:25 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:09:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:09:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:09:25 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:09:25 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:09:26 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:09:27 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:09:27 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:09:27 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:09:29 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:09:29 - SQLClass] -- UPDATE block SET x = 18, y = 118 WHERE id = '132'
+[08.05.2019 13:09:29 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:09:29 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:09:29 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:09:31 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:09:31 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:09:31 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:09:31 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:09:31 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:09:31 - SQLClass] -- UPDATE block SET x = 18, y = 118 WHERE id = '132'
+[08.05.2019 13:09:31 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:09:33 - SQLClass] -- UPDATE block SET x = 18, y = 118 WHERE id = '132'
+[08.05.2019 13:09:33 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:09:39 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:09:39 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:09:39 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Fktyf" AND `admin` = 1
+[08.05.2019 13:09:39 - SQLClass] -- SELECT * FROM Polzovateli WHERE `Login`="Fktyf" AND `Parol`="2552"
+[08.05.2019 13:09:39 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:09:39 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:09:39 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:09:40 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:09:41 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:09:41 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:09:41 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:09:41 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:09:42 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:09:42 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:09:42 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:09:42 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:09:42 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:09:42 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:09:44 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:09:44 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:09:44 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:09:44 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:09:46 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:09:46 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  AND (header like @STR0 OR category like @STR0 OR author like @STR0 OR artic_id IN (SELECT id_art FROM Colection WHERE Coll_text like @STR0 )) LIMIT 0, 3
+[08.05.2019 13:09:46 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:09:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:09:47 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Котята и вода'
+[08.05.2019 13:09:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Котята и вода'
+[08.05.2019 13:09:47 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Олечка Бузова'
+[08.05.2019 13:09:47 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Олечка Бузова'
+[08.05.2019 13:09:49 - SQLClass] -- UPDATE block SET x = 19, y = 12 WHERE id = '132'
+[08.05.2019 13:09:49 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:09:50 - SQLClass] -- UPDATE block SET x = 19, y = 12 WHERE id = '132'
+[08.05.2019 13:09:50 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:09:52 - SQLClass] -- UPDATE block SET Dock = 'Top' WHERE id = '132'
+[08.05.2019 13:10:03 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:10:03 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:10:03 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:10:03 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:10:07 - SQLClass] -- UPDATE block SET Dock = 'None' WHERE id = '132'
+[08.05.2019 13:10:09 - SQLClass] -- UPDATE block SET x = 90, y = 55 WHERE id = '132'
+[08.05.2019 13:10:09 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:10:12 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='CategoriesUserControl'
+[08.05.2019 13:10:16 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:10:16 - SQLClass] -- INSERT INTO block(form,Parent,x,y,name,Params, Dock) VALUES ('GhostMainForm', 'reclamaPanel', '0','0','CategoriesUserControl','2,2,', 'Fill')
+[08.05.2019 13:10:16 - SQLClass] -- SELECT MAX(id) FROM block
+[08.05.2019 13:10:18 - SQLClass] -- UPDATE block SET x = -6, y = 118 WHERE id = '140'
+[08.05.2019 13:10:18 - SQLClass] -- UPDATE block SET Params = '2,2,' WHERE id = '140'
+[08.05.2019 13:10:19 - SQLClass] -- UPDATE block SET x = 1, y = 75 WHERE id = '140'
+[08.05.2019 13:10:20 - SQLClass] -- UPDATE block SET Params = '2,2,' WHERE id = '140'
+[08.05.2019 13:10:20 - SQLClass] -- UPDATE block SET x = 1, y = 75 WHERE id = '140'
+[08.05.2019 13:10:20 - SQLClass] -- UPDATE block SET Params = '2,2,' WHERE id = '140'
+[08.05.2019 13:10:21 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='CategoriesUserControl'
+[08.05.2019 13:10:26 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,5
+[08.05.2019 13:10:26 - SQLClass] -- UPDATE block SET Params = '5,2,1,75,' WHERE id = '140'
+[08.05.2019 13:10:26 - SQLClass] -- UPDATE block SET x = 1, y = 75 WHERE id = '140'
+[08.05.2019 13:10:32 - SQLClass] -- UPDATE block SET Dock = 'Bottom' WHERE id = '140'
+[08.05.2019 13:10:33 - SQLClass] -- UPDATE block SET x = 90, y = 55 WHERE id = '132'
+[08.05.2019 13:10:33 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:10:34 - SQLClass] -- UPDATE block SET x = 90, y = 55 WHERE id = '132'
+[08.05.2019 13:10:34 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:10:35 - SQLClass] -- UPDATE block SET Dock = 'Fill' WHERE id = '132'
+[08.05.2019 13:10:53 - main] -- читаем конфиг
+[08.05.2019 13:10:54 - SQLClass] -- Соединяюсь с базой
+[08.05.2019 13:10:57 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = '' AND Parent = ''
+[08.05.2019 13:10:57 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:10:57 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:10:57 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:10:57 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:10:58 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,5
+[08.05.2019 13:10:58 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:10:58 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:10:58 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:10:58 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:10:59 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:10:59 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:10:59 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:10:59 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:10:59 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:10:59 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:11:00 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:11:00 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:11:01 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:11:01 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:11:03 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:11:08 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:11:08 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:11:12 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:11:12 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:11:15 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:11:15 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:11:24 - SQLClass] -- SELECT COUNT(*) FROM Authors WHERE UserName = @STR  AND UserName IN (SELECT Login FROM Polzovateli WHERE Login = @STR and Parol = @PASS)
+[08.05.2019 13:11:24 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE Login = @STR and Parol = @PASS
+[08.05.2019 13:11:24 - SQLClass] -- SELECT COUNT(*) FROM Polzovateli WHERE `Login`="Fktyf" AND `admin` = 1
+[08.05.2019 13:11:24 - SQLClass] -- SELECT * FROM Polzovateli WHERE `Login`="Fktyf" AND `Parol`="2552"
+[08.05.2019 13:11:24 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:11:24 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:11:24 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:11:24 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:11:25 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,5
+[08.05.2019 13:11:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:11:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:11:25 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:11:26 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:11:26 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,2
+[08.05.2019 13:11:26 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:11:26 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:11:26 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:11:26 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:11:26 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:11:27 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:11:27 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:11:28 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:11:28 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:11:29 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:11:31 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:11:31 - SQLClass] -- UPDATE block SET Params = '5,5,80,120,0,0,,,,,,,,,,,' WHERE id = '132'
+[08.05.2019 13:11:33 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='AdsUserControl'
+[08.05.2019 13:11:39 - SQLClass] -- UPDATE block SET Params = '6,5,471,226,0,0,' WHERE id = '132'
+[08.05.2019 13:11:39 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '132'
+[08.05.2019 13:16:21 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='UserControlMainAuthor'
+[08.05.2019 13:16:25 - SQLClass] -- SELECT UserName, `Likes`, `Dislikes`, `Information_about_author`, `Pic` FROM `Authors` WHERE UserName = 'ПрПрПр'
+[08.05.2019 13:16:26 - SQLClass] -- SELECT Header FROM Articles1 WHERE Author = 'ПрПрПр' LIMIT 5
+[08.05.2019 13:16:26 - SQLClass] -- INSERT INTO block(form,Parent,x,y,name,Params, Dock) VALUES ('GhostMainForm', 'RightSubPanel', '0','0','UserControlMainAuthor','ПрПрПр,0,0,Жуков,', 'Fill')
+[08.05.2019 13:16:26 - SQLClass] -- SELECT MAX(id) FROM block
+[08.05.2019 13:16:33 - SQLClass] -- UPDATE block SET x = 0, y = 373 WHERE id = '6'
+[08.05.2019 13:16:36 - SQLClass] -- UPDATE block SET Dock = 'None' WHERE id = '6'
+[08.05.2019 13:16:38 - SQLClass] -- UPDATE block SET x = -20, y = 519 WHERE id = '6'
+[08.05.2019 13:16:41 - SQLClass] -- UPDATE block SET Dock = 'None' WHERE id = '8'
+[08.05.2019 13:16:46 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:16:46 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,,' WHERE id = '139'
+[08.05.2019 13:16:47 - SQLClass] -- UPDATE block SET Dock = 'Bottom' WHERE id = '139'
+[08.05.2019 13:16:50 - SQLClass] -- UPDATE block SET x = 11, y = 409 WHERE id = '6'
+[08.05.2019 13:16:52 - SQLClass] -- UPDATE block SET x = 26, y = 276 WHERE id = '8'
+[08.05.2019 13:16:52 - SQLClass] -- UPDATE block SET Params = '4,0,0,,,,' WHERE id = '8'
+[08.05.2019 13:16:57 - SQLClass] -- UPDATE block SET x = -15, y = 23 WHERE id = '141'
+[08.05.2019 13:16:57 - SQLClass] -- UPDATE block SET Params = 'ПрПрПр,0,0,Жуков,' WHERE id = '141'
+[08.05.2019 13:17:02 - SQLClass] -- UPDATE block SET Dock = 'Top' WHERE id = '141'
+[08.05.2019 13:17:06 - SQLClass] -- UPDATE block SET x = 26, y = 276 WHERE id = '8'
+[08.05.2019 13:17:06 - SQLClass] -- UPDATE block SET Params = '4,0,0,,,,' WHERE id = '8'
+[08.05.2019 13:17:07 - SQLClass] -- UPDATE block SET Dock = 'Top' WHERE id = '8'
+[08.05.2019 13:17:09 - SQLClass] -- UPDATE block SET x = 11, y = 409 WHERE id = '6'
+[08.05.2019 13:17:10 - SQLClass] -- UPDATE block SET Dock = 'Top' WHERE id = '6'
+[08.05.2019 13:17:13 - SQLClass] -- UPDATE block SET Dock = 'Fill' WHERE id = '139'
+[08.05.2019 13:17:22 - SQLClass] -- UPDATE block SET x = 0, y = 289 WHERE id = '139'
+[08.05.2019 13:17:22 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,,' WHERE id = '139'
+[08.05.2019 13:17:23 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='CategoriesUserControl'
+[08.05.2019 13:17:34 - SQLClass] -- UPDATE block SET Params = '6,2,0,289,' WHERE id = '139'
+[08.05.2019 13:17:34 - SQLClass] -- UPDATE block SET x = 0, y = 289 WHERE id = '139'
+[08.05.2019 13:17:38 - SQLClass] -- UPDATE block SET x = 0, y = 289 WHERE id = '139'
+[08.05.2019 13:17:38 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,,' WHERE id = '139'
+[08.05.2019 13:17:41 - SQLClass] -- DELETE FROM `block` WHERE id = 141
+[08.05.2019 13:17:49 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:17:50 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:17:50 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:17:51 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:17:52 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:17:52 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:17:53 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:18:19 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:18:19 - SQLClass] -- UPDATE block SET Params = '2,2,0,0,,,' WHERE id = '139'
+[08.05.2019 13:18:21 - SQLClass] -- SELECT params FROM block_blocks WHERE name ='CategoriesUserControl'
+[08.05.2019 13:18:26 - SQLClass] -- UPDATE block SET Params = '4,2,0,0,' WHERE id = '139'
+[08.05.2019 13:18:26 - SQLClass] -- UPDATE block SET x = 0, y = 0 WHERE id = '139'
+[08.05.2019 13:19:01 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:19:01 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:19:01 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:19:01 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:19:04 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,5
+[08.05.2019 13:19:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:19:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:19:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:19:04 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:19:04 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,4
+[08.05.2019 13:19:04 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:19:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:19:04 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:19:05 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:19:05 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:19:06 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:19:07 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:19:07 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:19:07 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:19:09 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
+[08.05.2019 13:19:40 - main] -- читаем конфиг
+[08.05.2019 13:19:40 - SQLClass] -- Соединяюсь с базой
+[08.05.2019 13:19:56 - SQLClass] -- Соединяюсь с базой
+[08.05.2019 13:20:11 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = '' AND Parent = ''
+[08.05.2019 13:20:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'GhostMainForm'
+[08.05.2019 13:20:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Left_panel'
+[08.05.2019 13:20:12 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'reclamaPanel'
+[08.05.2019 13:20:12 - SQLClass] -- SELECT pic FROM Advertisment WHERE pic != ''
+[08.05.2019 13:20:15 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,5
+[08.05.2019 13:20:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'adminPpanel'
+[08.05.2019 13:20:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Right_panel'
+[08.05.2019 13:20:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightSubPanel'
+[08.05.2019 13:20:15 - SQLClass] -- SELECT `UserName` FROM `Authors` LIMIT 0,4
+[08.05.2019 13:20:15 - SQLClass] -- SELECT Name FROM Categories ORDER BY Name LIMIT 0,4
+[08.05.2019 13:20:15 - SQLClass] -- SELECT DISTINCT Coll_text FROM Colection LIMIT 0, 4
+[08.05.2019 13:20:15 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'RightTopPanel'
+[08.05.2019 13:20:16 - SQLClass] -- SELECT form, x, y, name, Params, id, Dock FROM block WHERE form = 'GhostMainForm' AND Parent = 'Centr_panel'
+[08.05.2019 13:20:16 - SQLClass] -- SELECT Header  FROM Articles1 WHERE new = 0  LIMIT 0, 3
+[08.05.2019 13:20:16 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Война и мир'
+[08.05.2019 13:20:17 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Война и мир'
+[08.05.2019 13:20:17 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Гречка'
+[08.05.2019 13:20:18 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Гречка'
+[08.05.2019 13:20:18 - SQLClass] -- SELECT `Picture` FROM `Articles1` WHERE `Header`='Ежи тоже люди'
+[08.05.2019 13:20:20 - SQLClass] -- SELECT `LikesCount`, `DisCount` FROM `Likes` WHERE `Article`='Ежи тоже люди'
