@@ -1,4 +1,4 @@
-ï»¿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -65,6 +65,19 @@
     </Compile>
     <Compile Include="Author\AuthorWithUC.Designer.cs">
       <DependentUpon>AuthorWithUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\DesignClass.cs" />
+    <Compile Include="Design\DesignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\DesignForm.Designer.cs">
+      <DependentUpon>DesignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\LabelUniqueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\LabelUniqueForm.Designer.cs">
+      <DependentUpon>LabelUniqueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DetailsForm.cs">
       <SubType>Form</SubType>
@@ -306,6 +319,12 @@
     <EmbeddedResource Include="Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\DesignForm.resx">
+      <DependentUpon>DesignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\LabelUniqueForm.resx">
+      <DependentUpon>LabelUniqueForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailsForm.resx">
       <DependentUpon>DetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,8 +455,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="IniFileParser\INIFileParser.csproj" />
-    <Content Include="Resources\Ð‘ÐµÐ· Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ.jpg" />
-    <Content Include="Resources\Ð‘ÐµÐ· Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ.png" />
+    <Content Include="Resources\Áåç íàçâàíèÿ.jpg" />
+    <Content Include="Resources\Áåç íàçâàíèÿ.png" />
     <None Include="Resources\Dislike.png" />
     <None Include="Resources\DisLike2.png" />
     <None Include="Resources\images %284%29.jpg" />
