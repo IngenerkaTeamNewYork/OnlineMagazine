@@ -115,14 +115,14 @@ namespace OnlineMag
             p.ShowDialog();
             pb.Size = p.UCSize;
             pb.Location = p.UCLocation;
-            if (pb.Name == "UserControlMainAuthor")
+            if (pb.GetType().ToString().Replace("OnlineMag.", "") == "UserControlMainAuthor")
             {
                 UserControlMainAuthor pb33 = (UserControlMainAuthor)pb;
                 pb33.par = new List<string>() { p.UserName };
                 dnonil = pb33.par;
                 pb33.Init(pb33.par);
             }
-            else if (pb.Name == "CategoriesUserControl")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "CategoriesUserControl")
             {
                 CategoriesUserControl pb2 = (CategoriesUserControl)pb;
                 pb2.asd = p.ParamsList;
@@ -130,7 +130,7 @@ namespace OnlineMag
                 CategoriesUserControl.RefreshUC(pb2, Convert.ToInt32(pb2.asd[0]));
             }
 
-            else if (pb.Name == "UserControlAutorsList")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "UserControlAutorsList")
             {
                 UserControlAutorsList pb2 = (UserControlAutorsList)pb;
                 pb2.asd.Clear();
@@ -144,7 +144,7 @@ namespace OnlineMag
                 dnonil = pb2.asd;
             }
 
-            else if (pb.Name == "ArticlePreviewUserControl")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "ArticlePreviewUserControl")
             {
                 ArticlePreviewUserControl pb2 = (ArticlePreviewUserControl)pb;
 
@@ -169,7 +169,7 @@ namespace OnlineMag
                     pb2.pictureBox1.Image = null;
                 }
             }
-            else if (pb.Name == "ArticleDetailsUserControl")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "ArticleDetailsUserControl")
             {
                 ArticleDetailsUserControl pb2 = (ArticleDetailsUserControl)pb;
                 pb2.ListOfArticles.Clear();
@@ -194,7 +194,7 @@ namespace OnlineMag
 
                 dnonil = pb2.ListOfArticles;
             } 
-            else if (pb.Name == "AdsUserControl")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "AdsUserControl")
             {
                 AdsUserControl pb2 = (AdsUserControl)pb;
                 pb2.ParamsAds = p.ParamsList;
@@ -203,7 +203,7 @@ namespace OnlineMag
                 pb2.refreshADS();
                 dnonil = pb2.ParamsAds;
             }
-            else if (pb.Name == "UserControlAutorsList")
+            else if (pb.GetType().ToString().Replace("OnlineMag.", "") == "UserControlAutorsList")
             {
                 UserControlAutorsList pb2 = (UserControlAutorsList)pb;
                 pb2.asd = p.ParamsList;

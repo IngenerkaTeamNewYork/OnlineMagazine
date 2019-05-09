@@ -80,7 +80,7 @@ namespace OnlineMag
         public void Search_CLick(object sender, EventArgs e)
         {
             PodborkiUserControl.search = (((Label)sender).Text);
-            GhostMainForm.dddd = true;
+            GhostMainForm.MozhnoVvoditBukvyVPoisk = false;
         }
 
         private void labelPopular_Click(object sender, EventArgs e)

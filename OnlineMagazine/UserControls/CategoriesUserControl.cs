@@ -20,6 +20,8 @@ namespace OnlineMag
         public DragAndDrop Drag = new DragAndDrop();
         public static Label label = new Label();
 
+        public static LinkLabel l1 = new LinkLabel();
+
         /// <summary>
         /// Конструктор который заполняет <see cref="tableLayoutPanel1"/> 
         /// </summary>
@@ -38,6 +40,7 @@ namespace OnlineMag
             Menus.AddDeleteMenu(this);
             Drag.AddDNDFunctions(this);
             label = label_cats_header;
+            l1 = categories_linklabel;
 
             asd = CategoriesParams;
             int result;
@@ -102,6 +105,7 @@ namespace OnlineMag
                 {
                     shsvfhksv += asd + ',';
                 }
+                a1.Controls.Add(CategoriesUserControl.l1);
                 Menus.InsertBlockToDB(sender, a1, shsvfhksv);
             }
         }
@@ -112,7 +116,7 @@ namespace OnlineMag
         public static void lable_cat_Click(object sender, EventArgs e)
         {
             Configs.SELECTED_CATEGORY = ((Label)sender).Text;
-            GhostMainForm.dddd = true;
+            GhostMainForm.MozhnoVvoditBukvyVPoisk = false;
         }
 
         private void CategoriesUserControl_Load(object sender, EventArgs e)

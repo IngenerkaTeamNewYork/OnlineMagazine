@@ -331,16 +331,16 @@ namespace OnlineMag
 
         private void button_login_KeyDown(object sender, KeyEventArgs e)
         {
-            dddd = true;
+            /*MozhnoVvoditBukvyVPoisk = true;
             if (e.KeyCode == Keys.Enter)
             {
                 button_login_Click(sender, null);
-            }
+            }*/
         }
 
         private void textBox_search_KeyDown(object sender, KeyEventArgs e)
         {
-            dddd = true;
+            MozhnoVvoditBukvyVPoisk = true;
             if (e.KeyCode == Keys.Enter)
             {
                 Search_Click(sender, null);
@@ -457,7 +457,7 @@ namespace OnlineMag
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            fontDialog1.ShowColor = true;
+          /*  fontDialog1.ShowColor = true;
 
             fontDialog1.Font = this.Font;
             fontDialog1.Color = this.ForeColor;
@@ -483,7 +483,7 @@ namespace OnlineMag
                 }
                 this.ForeColor = MyDialog.Color;
                 Configs.USER_COLOR = MyDialog.Color;
-            }
+            }*/
         }
 
         private void showPassToolStripMenuItem_Click(object sender, EventArgs e)
@@ -515,7 +515,7 @@ namespace OnlineMag
             
         }
 
-        public static bool dddd = false;
+        public static bool MozhnoVvoditBukvyVPoisk = true;
 
         /// <summary>
         /// Обновление юзера, поисковых запросов в таймере
@@ -536,7 +536,7 @@ namespace OnlineMag
             //IT DOESN'T WORK! 
 
             //FIXME!!! Еще будет автор, просто поисковый запрос. Тут посложнее иф, друзья))
-            if (dddd)
+            if (MozhnoVvoditBukvyVPoisk)
             {
                 return;
             }
@@ -559,6 +559,8 @@ namespace OnlineMag
                 Users.OLD_CURRENT_USER = Users.CURRENT_USER;
                 formloader(sender, null);
             }
+
+            MozhnoVvoditBukvyVPoisk = true;
         }
 
         private void reclamaPanel_Paint(object sender, PaintEventArgs e)
@@ -613,7 +615,7 @@ namespace OnlineMag
 
         private void textBox_search_TextChanged(object sender, EventArgs e)
         {
-            dddd = false;
+            MozhnoVvoditBukvyVPoisk = true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
