@@ -73,7 +73,7 @@ namespace OnlineMag
             this.Controls.Clear();
             int x = 0;
             int y = 0;
-            Random rnd = new Random();
+            //Random rnd = new Random();
 
             List<String> reklPics = SQLClass.Select(
                "SELECT pic FROM " + Tables.ADVERTISMENT +
@@ -87,8 +87,11 @@ namespace OnlineMag
                     {
                         Location = new Point(x, y),
                         SizeMode = PictureBoxSizeMode.StretchImage
+                        
                     };
                     pic.Click += new System.EventHandler(GhostMainForm.reclama_Click);
+                    pic.Width = this.Width;
+                    pic.Height = this.Height / amount;
 
                     try
                     {
