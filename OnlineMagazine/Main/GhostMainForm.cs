@@ -47,6 +47,7 @@ namespace OnlineMag
         public GhostMainForm()
         {
             UCFunctions.AddUC(this);
+            DesignClass.AddContextMenuStrip(this);
             InitializeComponent();
             Configs.ZAGOLOVOK_FONT = popularArticlesLabel.Font;
             //label_Author_header.Font = Configs.ZAGOLOVOK_FONT;
@@ -172,7 +173,6 @@ namespace OnlineMag
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             this.ContextMenuStrip = Program.AddNewUserControlCMS;
 
             foreach (Control Ctrl in this.Controls)
@@ -218,6 +218,7 @@ namespace OnlineMag
 
             textBox_search.Text = LAST_SEARCH;
             Search_Click(sender, e);
+            popularArticlesLabel.ContextMenuStrip = DesignForm.LabelContextMenuStrip1;
         }    
 
         /// <summary>
@@ -650,6 +651,12 @@ namespace OnlineMag
                     uc.Dock = DockStyle.None;
                     break;
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            LabelUniqueForm d = new LabelUniqueForm(popularArticlesLabel);
+            d.ShowDialog();
         }
     }
 }
