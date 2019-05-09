@@ -64,6 +64,7 @@ namespace OnlineMag
             this.dockBottomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArticlecontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -401,11 +402,22 @@ namespace OnlineMag
             this.ArticlecontextMenuStrip1.Name = "ArticlecontextMenuStrip1";
             this.ArticlecontextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(477, 53);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // GhostMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 579);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.popularArticlesLabel);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.butto_search);
@@ -429,7 +441,6 @@ namespace OnlineMag
             this.UCContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         
@@ -471,5 +482,6 @@ namespace OnlineMag
         private System.Windows.Forms.ToolStripMenuItem dockFillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dockBottomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dockNoneToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }
