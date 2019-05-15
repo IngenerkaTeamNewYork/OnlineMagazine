@@ -76,14 +76,14 @@ namespace OnlineMag
 
                     for (int artIndex = 0; artIndex < ArticleInfo.Count; artIndex += 5)
                     {
-                        statiya stat = new statiya();
-                        stat.name_statiya = ArticleInfo[artIndex].ToString();
-                        stat.name_author = ArticleInfo[artIndex + 1].ToString();
-                        stat.kategorita_statii = ArticleInfo[artIndex + 2].ToString();
-                        stat.text_statii = ArticleInfo[artIndex + 3].ToString();
+                        Statiya stat = new Statiya();
+                        stat.ArticleName = ArticleInfo[artIndex].ToString();
+                        stat.AuthorName = ArticleInfo[artIndex + 1].ToString();
+                        stat.Category = ArticleInfo[artIndex + 2].ToString();
+                        stat.Text = ArticleInfo[artIndex + 3].ToString();
 
                         //FIXME!!! Show ternarny operator
-                        stat.picture = (ArticleInfo[artIndex +4].ToString() != "") ?
+                        stat.PictureURL = (ArticleInfo[artIndex +4].ToString() != "") ?
                             ArticleInfo[artIndex + 4].ToString() :
                             null;
 

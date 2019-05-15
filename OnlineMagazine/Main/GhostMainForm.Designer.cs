@@ -441,6 +441,7 @@ namespace OnlineMag
             this.UCContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         

@@ -111,7 +111,7 @@ namespace OnlineMag
            /* foreach (newPage Label_ in ListOfPages)
             {*/
 
-                statiya stat = statiya.Click1(((Label)sender).Text);
+                Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
                 StatiyaForm form = new StatiyaForm(stat);
                 form.ShowDialog();
                 

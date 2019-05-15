@@ -21,14 +21,14 @@ namespace OnlineMag
         bool isDisLike = false;
         public string s;
         public float k;
-        public VipStatiy(statiya stat)
+        public VipStatiy(Statiya stat)
         {
             InitializeComponent();
 
-            name.Text = stat.name_statiya;
-            kategoriy.Text = stat.kategorita_statii;
-            s = stat.text_statii;
-            label2.Text = stat.name_author;
+            name.Text = stat.ArticleName;
+            kategoriy.Text = stat.Category;
+            s = stat.Text;
+            label2.Text = stat.AuthorName;
 
         }
 

@@ -130,10 +130,10 @@ namespace OnlineMag
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            statiya stat = statiya.Click1(((Label)sender).Text);
+            Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
 
             pictureBox1.Visible = true;
-            pictureBox1.Load(stat.picture);
+            pictureBox1.Load(stat.PictureURL);
             pictureBox1.Size = new Size(100, 100); 
         }
 

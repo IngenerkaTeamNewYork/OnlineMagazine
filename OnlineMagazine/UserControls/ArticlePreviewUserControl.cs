@@ -212,7 +212,7 @@ namespace OnlineMag
         {
             try
             {
-                new StatiyaForm(statiya.Click1(Article)).ShowDialog();
+                new StatiyaForm(Statiya.GetStatiyaFromArticleName(Article)).ShowDialog();
             }
             catch
             {

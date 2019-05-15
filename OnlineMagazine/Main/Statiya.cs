@@ -1,56 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using System.ComponentModel;
-using System.Data;
-
-
-using MySql.Data;
-using MySql.Data.MySqlClient;
 
 namespace OnlineMag
 {
-    public struct statiya
+    public struct Statiya
     {
-        public String name_statiya;
-        public String name_author;
-        public Image kartinki_statii;
-        public String kategorita_statii;
-        public String text_statii;
-        public String picture;
+        public string ArticleName;
+        public string AuthorName;
+        public string Category;
+        public string Text;
+        public string PictureURL;
 
-        public void ShowText()
+        /// <summary>
+        /// Запрашивает статью из DB и возвращает <see cref="Statiya"/>
+        /// </summary>
+        /// <param name="ArticleName">Точное название статьи</param>
+        /// <returns><see cref="Statiya"/> полученная из DB</returns>
+        public static Statiya GetStatiyaFromArticleName(string ArticleName)
         {
-            MessageBox.Show("1");
-        }
-
-        public static statiya Click1 (String Text)
-        {        
-            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES + " WHERE `Header` = '" + Text + "'", SQLClass.CONN);
+            MySqlCommand cmd = new MySqlCommand("SELECT Header, Author, Category, Text, Picture FROM " + Tables.ARTICLES + " WHERE `Header` = '" + ArticleName + "'", SQLClass.CONN);
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            rdr.Read();            
-            statiya stat = new statiya();
-            stat.name_statiya = rdr[0].ToString();
-            stat.name_author = rdr[1].ToString();
-            stat.kategorita_statii = rdr[2].ToString();
-            stat.text_statii = rdr[3].ToString();
+            rdr.Read();
+            Statiya Stat = new Statiya
+            {
+                ArticleName = rdr[0].ToString(),
+                AuthorName = rdr[1].ToString(),
+                Category = rdr[2].ToString(),
+                Text = rdr[3].ToString()
+            };
             if (rdr[4].ToString() != "")
             {
-                stat.picture = rdr[4].ToString();
+                Stat.PictureURL = rdr[4].ToString();
             }
             else
             {
-                stat.picture = null;
+                Stat.PictureURL = null;
             }
             rdr.Close();
 
-            return stat;
+            return Stat;
         }
 
     }
