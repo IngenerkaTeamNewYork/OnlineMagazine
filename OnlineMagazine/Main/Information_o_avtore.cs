@@ -27,7 +27,7 @@ namespace OnlineMag
         }
         public static void Label3_Click(object sender, EventArgs e)
         {
-            statiya stat = statiya.Click1(((Label)sender).Text);
+            Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
             StatiyaForm form = new StatiyaForm(stat);
             form.ShowDialog();
         }

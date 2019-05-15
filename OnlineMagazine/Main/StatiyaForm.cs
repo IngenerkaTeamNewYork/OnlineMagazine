@@ -42,7 +42,7 @@ namespace OnlineMag
 
        
 
-            public StatiyaForm(statiya stat, bool YaAvtor = false)
+            public StatiyaForm(Statiya stat, bool YaAvtor = false)
         {
             InitializeComponent();
             mainTableLayoutPanel.Controls.RemoveByKey("UCref");
@@ -54,10 +54,10 @@ namespace OnlineMag
             Stattext.Enabled = avtor;
             redact.Visible = avtor;
 
-            Head = stat.name_statiya;
-            Maintext.Text = stat.name_statiya;
-            Kategoriatext.Text = stat.kategorita_statii;
-            Stattext.Text = stat.text_statii;
+            Head = stat.ArticleName;
+            Maintext.Text = stat.ArticleName;
+            Kategoriatext.Text = stat.Category;
+            Stattext.Text = stat.Text;
 
             Kategoriatext.Font = Configs.ZAGOLOVOK_FONT;
 
@@ -80,13 +80,13 @@ namespace OnlineMag
 
             try
             {
-                pictureBox1.LoadAsync(stat.picture);
+                pictureBox1.LoadAsync(stat.PictureURL);
             }
             catch(Exception)
             {
                 pictureBox1.Image = new Bitmap("defolt_statiy.jpg");
             }
-            Authortext.Text = stat.name_author;
+            Authortext.Text = stat.AuthorName;
 
             pictureBoxLike.Image = Properties.Resources.like;
             pictureBoxDislike.Image = Properties.Resources.Dislike;

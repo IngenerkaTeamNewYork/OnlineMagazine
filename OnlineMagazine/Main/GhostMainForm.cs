@@ -142,7 +142,7 @@ namespace OnlineMag
             {
                 if (sender.Equals(lab))
                 {
-                    statiya stat = statiya.Click1(((Label)sender).Text);
+                    Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
                     StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     OknoStatiya.ShowDialog();
                     LAST_SEARCH = textBox_search.Text;
@@ -160,7 +160,7 @@ namespace OnlineMag
             {
                 if (sender.Equals(lab))
                 {
-                    statiya stat = statiya.Click1(lab.Tag.ToString());
+                    Statiya stat = Statiya.GetStatiyaFromArticleName(lab.Tag.ToString());
                     //StatiyaForm OknoStatiya = new StatiyaForm(stat);
                     VipStatiy OknoStatiya = new VipStatiy(stat);
                     OknoStatiya.ShowDialog();

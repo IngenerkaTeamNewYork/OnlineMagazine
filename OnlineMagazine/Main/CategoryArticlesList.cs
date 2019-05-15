@@ -63,7 +63,7 @@ namespace OnlineMag
 
         private static void lable1_Click (object sender, EventArgs e)
         {
-            statiya stat = statiya.Click1(((Label)sender).Text);
+            Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
 
             StatiyaForm form = new StatiyaForm(stat);
             form.ShowDialog();
@@ -71,12 +71,12 @@ namespace OnlineMag
         private static void label1_MouseEnter(object sender, EventArgs e)
         {
             pictureBox1.Location = new Point(((Label)sender).Location.X + 120, ((Label)sender).Location.Y);
-            statiya stat = statiya.Click1(((Label)sender).Text);
+            Statiya stat = Statiya.GetStatiyaFromArticleName(((Label)sender).Text);
 
-            if (!String.IsNullOrEmpty(stat.picture) && stat.picture != null)
+            if (!String.IsNullOrEmpty(stat.PictureURL) && stat.PictureURL != null)
             {
                 pictureBox1.Visible = true;
-                pictureBox1.ImageLocation = stat.picture;
+                pictureBox1.ImageLocation = stat.PictureURL;
                 pictureBox1.Load();
                 pictureBox1.Size = new Size(90, 70);
 

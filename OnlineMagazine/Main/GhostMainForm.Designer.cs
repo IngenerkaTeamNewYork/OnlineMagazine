@@ -32,6 +32,8 @@ namespace OnlineMag
             this.components = new System.ComponentModel.Container();
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamaPanel = new System.Windows.Forms.Panel();
             this.adminPpanel = new System.Windows.Forms.Panel();
             this.AutButton = new System.Windows.Forms.Button();
@@ -65,8 +67,6 @@ namespace OnlineMag
             this.dockNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArticlecontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button2 = new System.Windows.Forms.Button();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -75,8 +75,8 @@ namespace OnlineMag
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             this.UCContextMenuStrip.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             // 
             // butto_search
             // 
@@ -458,7 +458,6 @@ namespace OnlineMag
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         
