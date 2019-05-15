@@ -32,6 +32,8 @@ namespace OnlineMag
             this.components = new System.ComponentModel.Container();
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamaPanel = new System.Windows.Forms.Panel();
             this.adminPpanel = new System.Windows.Forms.Panel();
             this.AutButton = new System.Windows.Forms.Button();
@@ -74,6 +76,7 @@ namespace OnlineMag
             this.Centr_panel.SuspendLayout();
             this.UCContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             // 
             // butto_search
             // 
@@ -404,13 +407,26 @@ namespace OnlineMag
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(477, 53);
+            this.button2.Location = new System.Drawing.Point(472, 55);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(101, 23);
             this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
+            this.button2.Text = "Изменить стиль";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
+            // 
+            // changeToolStripMenuItem
+            // 
+            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
+            this.changeToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.changeToolStripMenuItem.Text = "Change";
             // 
             // GhostMainForm
             // 
@@ -439,9 +455,9 @@ namespace OnlineMag
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
             this.UCContextMenuStrip.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         
@@ -484,5 +500,7 @@ namespace OnlineMag
         private System.Windows.Forms.ToolStripMenuItem dockBottomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dockNoneToolStripMenuItem;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
     }
 }

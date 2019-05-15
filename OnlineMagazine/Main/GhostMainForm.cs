@@ -44,6 +44,8 @@ namespace OnlineMag
 
         public static ContextMenuStrip DeleteMenuStrip;
 
+        public static ContextMenuStrip LabelMenu;
+
         public GhostMainForm()
         {
             UCFunctions.AddUC(this);
@@ -174,8 +176,8 @@ namespace OnlineMag
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ContextMenuStrip = Program.AddNewUserControlCMS;
-
-            foreach (Control Ctrl in this.Controls)
+            
+                foreach (Control Ctrl in this.Controls)
             {
                 if (Ctrl.GetType().ToString() == "System.Windows.Forms.Panel")
                 {
@@ -188,6 +190,8 @@ namespace OnlineMag
                         }
                     }
                 }
+                
+               
             }
 
             Menus.InitAddUserControls(ref ArticlecontextMenuStrip1);
@@ -206,8 +210,12 @@ namespace OnlineMag
             lable_name_of_polzovatel.Text = Users.CURRENT_USER;
             AdmButton.Visible = IS_ADMIN;
             AutButton.Visible = IS_AUTHOR;
-         
+            button2.Visible = false;
 
+            if (IS_ADMIN)
+            {
+                button2.Visible = true;
+            }
           /*  #region Advertising
 
             reclamaPanel.Controls.Clear();

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+п»ї<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -36,6 +36,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Design\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +69,12 @@
     </Compile>
     <Compile Include="Author\AuthorWithUC.Designer.cs">
       <DependentUpon>AuthorWithUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\ButtonUniqueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ButtonUniqueForm.Designer.cs">
+      <DependentUpon>ButtonUniqueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\DesignClass.cs" />
     <Compile Include="Design\DesignForm.cs">
@@ -319,6 +329,9 @@
     <EmbeddedResource Include="Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Design\ButtonUniqueForm.resx">
+      <DependentUpon>ButtonUniqueForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Design\DesignForm.resx">
       <DependentUpon>DesignForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -454,9 +467,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Design\Newtonsoft.Json.dll" />
     <Content Include="IniFileParser\INIFileParser.csproj" />
-    <Content Include="Resources\Без названия.jpg" />
-    <Content Include="Resources\Без названия.png" />
+    <Content Include="Resources\            .jpg" />
+    <Content Include="Resources\            .png" />
     <None Include="Resources\Dislike.png" />
     <None Include="Resources\DisLike2.png" />
     <None Include="Resources\images %284%29.jpg" />
