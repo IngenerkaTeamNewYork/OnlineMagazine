@@ -87,3 +87,5 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlAut
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlMainAuthor.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlSearch.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.Form1.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.DesignForm.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.LabelUniqueForm.resources
