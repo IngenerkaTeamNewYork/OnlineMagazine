@@ -31,13 +31,12 @@ namespace OnlineMag
         }
 
         public static void UpdateLabelDesignInDb(Control pb)
-        {
-            /*
-            SQLClass.Delete("DELETE FROM " + Tables.Unique +
+        {            
+            SQLClass.Delete("DELETE FROM " + Tables.UNIQUE +
                 " WHERE type = 'Label'" +
                 " AND name = '" + pb.Name +
                 "' AND FormFrom = '" + pb.FindForm().Name + "'");
-            SQLClass.Insert("INSERT INTO " + Tables.Unique +
+            SQLClass.Insert("INSERT INTO " + Tables.UNIQUE +
                 " (type, design, author, name, FormFrom) VALUES " +
                 "('Label', " +
                 "'ForeColor = " + ButtonUniqueForm.ColorToJSON(pb.ForeColor) +
@@ -45,7 +44,7 @@ namespace OnlineMag
                     ", FontSize = " + pb.Font.Size + 
                     ", Text = " + pb.Text +
                 "', 'admin', '" + pb.Name + "', '" + pb.FindForm().Name + "')");
-            */
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +66,7 @@ namespace OnlineMag
 
         private void button3_Click(object sender, EventArgs e)
         {
+            UpdateLabelDesignInDb(newLabel);
             Close();
         }
 

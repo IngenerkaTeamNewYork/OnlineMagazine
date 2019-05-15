@@ -31,8 +31,14 @@ namespace OnlineMag
             Tables.AUTHORS = aa.Parse(File.ReadAllText("config.ini"))["db"]["AUTHORS"].ToString();
             Tables.BALANCE = aa.Parse(File.ReadAllText("config.ini"))["db"]["BALANCE"].ToString();
             Tables.CATEGORIES = aa.Parse(File.ReadAllText("config.ini"))["db"]["CATEGORIES"].ToString();
+            Tables.COLLECTION = aa.Parse(File.ReadAllText("config.ini"))["db"]["COLLECTION"].ToString();
+            Tables.LIKES = aa.Parse(File.ReadAllText("config.ini"))["db"]["LIKES"].ToString();
+            Tables.POLZOVATELI = aa.Parse(File.ReadAllText("config.ini"))["db"]["POLZOVATELI"].ToString();
+            Tables.PROMO_CATEGORIES_LINK = aa.Parse(File.ReadAllText("config.ini"))["db"]["PROMO_CATEGORIES_LINK"].ToString();
+            Tables.READ_OF_ARTICLES = aa.Parse(File.ReadAllText("config.ini"))["db"]["READ_OF_ARTICLES"].ToString();
             Tables.SETTINGS = aa.Parse(File.ReadAllText("config.ini"))["db"]["SETTINGS"].ToString();
-
+            Tables.UNIQUE = aa.Parse(File.ReadAllText("config.ini"))["db"]["UNIQUE"].ToString();
+            Tables.DEFAULT = aa.Parse(File.ReadAllText("config.ini"))["db"]["DEFAULT"].ToString();
             Configs.ReadTableNames();
             
 

@@ -65,5 +65,9 @@ namespace OnlineMag
         /// Таблица настроек
         /// </summary>
         public static string SETTINGS = "Settings";        
+
+        public static string DEFAULT = "design1";
+
+        public static string UNIQUE = "designDiffirent";
     }
 }
