@@ -74,6 +74,8 @@ namespace OnlineMag
             }
             else
             {
+                GhostMainForm.MozhnoVvoditBukvyVPoisk = false;
+                Users.OLD_CURRENT_USER = loginTextBox.Text + "1";
                 Users.CURRENT_USER = loginTextBox.Text;
             }
         }
