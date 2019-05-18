@@ -32,12 +32,12 @@ namespace OnlineMag
             this.components = new System.ComponentModel.Container();
             this.butto_search = new System.Windows.Forms.Button();
             this.Left_panel = new System.Windows.Forms.Panel();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamaPanel = new System.Windows.Forms.Panel();
             this.adminPpanel = new System.Windows.Forms.Panel();
             this.AutButton = new System.Windows.Forms.Button();
             this.AdmButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.увеличитьПисюнToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -67,16 +67,19 @@ namespace OnlineMag
             this.dockNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ArticlecontextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.LabelContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Left_panel.SuspendLayout();
             this.adminPpanel.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.Right_panel.SuspendLayout();
             this.RightTopPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Centr_panel.SuspendLayout();
             this.UCContextMenuStrip.SuspendLayout();
+            this.LabelContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
             // 
             // butto_search
             // 
@@ -142,6 +145,19 @@ namespace OnlineMag
             this.AdmButton.Text = "Кабинет админа";
             this.AdmButton.UseVisualStyleBackColor = true;
             this.AdmButton.Click += new System.EventHandler(this.AdmButton_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
+            // 
+            // changeToolStripMenuItem
+            // 
+            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
+            this.changeToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.changeToolStripMenuItem.Text = "Change";
             // 
             // contextMenuStrip1
             // 
@@ -415,18 +431,19 @@ namespace OnlineMag
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // contextMenuStrip2
+            // LabelContextMenuStrip1
             // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
+            this.LabelContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.изменитьToolStripMenuItem});
+            this.LabelContextMenuStrip1.Name = "LabelContextMenuStrip1";
+            this.LabelContextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
-            // changeToolStripMenuItem
+            // изменитьToolStripMenuItem
             // 
-            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            this.changeToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.changeToolStripMenuItem.Text = "Change";
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.ИзменитьToolStripMenuItem_Click);
             // 
             // GhostMainForm
             // 
@@ -449,15 +466,17 @@ namespace OnlineMag
             this.Resize += new System.EventHandler(this.GhostMainForm_Resize);
             this.Left_panel.ResumeLayout(false);
             this.adminPpanel.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.Right_panel.ResumeLayout(false);
             this.RightTopPanel.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.Centr_panel.ResumeLayout(false);
             this.UCContextMenuStrip.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.LabelContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         
@@ -502,5 +521,7 @@ namespace OnlineMag
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
+        public System.Windows.Forms.ContextMenuStrip LabelContextMenuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
     }
 }

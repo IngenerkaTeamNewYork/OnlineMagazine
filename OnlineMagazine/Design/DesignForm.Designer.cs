@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            LabelContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.LabelContextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            LabelContextMenuStrip1.SuspendLayout();
+            this.LabelContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelContextMenuStrip1
             // 
-            LabelContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LabelContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изменитьToolStripMenuItem});
-            LabelContextMenuStrip1.Name = "LabelContextMenuStrip1";
-            LabelContextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.LabelContextMenuStrip1.Name = "LabelContextMenuStrip1";
+            this.LabelContextMenuStrip1.Size = new System.Drawing.Size(129, 26);
+            this.LabelContextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.LabelContextMenuStrip1_Opening);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.ИзменитьToolStripMenuItem_Click);
             // 
@@ -55,14 +56,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "DesignForm";
             this.Text = "DesignForm";
-            LabelContextMenuStrip1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.DesignForm_Load);
+            this.LabelContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public static System.Windows.Forms.ContextMenuStrip LabelContextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        public System.Windows.Forms.ContextMenuStrip LabelContextMenuStrip1;
     }
 }

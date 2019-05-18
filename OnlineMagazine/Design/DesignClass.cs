@@ -117,7 +117,7 @@ namespace OnlineMag
                         AddContextMenuStrip(cont);
                         break;
                     case "Label":
-                        cont.ContextMenuStrip = DesignForm.LabelContextMenuStrip1;
+                        cont.ContextMenuStrip = Program.LabelControlCMS;
                         break;
                     case "TableLayoutPanel":
                         AddContextMenuStrip(cont);

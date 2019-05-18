@@ -13,6 +13,7 @@ namespace OnlineMag
     {
         public static ContextMenuStrip UserControlCMS;// { get; internal set; }
         public static ContextMenuStrip AddNewUserControlCMS;
+        public static ContextMenuStrip LabelControlCMS;
         public static string proces = "Точка входа";
         
         /// <summary>

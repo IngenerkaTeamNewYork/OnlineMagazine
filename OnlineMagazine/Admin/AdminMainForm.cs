@@ -32,7 +32,17 @@ namespace OnlineMag
         public AdminMainForm()
         {
             InitializeComponent();
+            if (Program.LabelControlCMS == null)
+            {
+                DesignForm df = new DesignForm();
+                {
+                    Visible = false;
+                }
+                df.Show();
+                df.Close();
+            }
 
+            button_author.ContextMenuStrip = Program.LabelControlCMS;
         }
 
         /// <summary>
@@ -208,6 +218,11 @@ namespace OnlineMag
             ButtonDefaultForm form = new ButtonDefaultForm();
             form.ShowDialog();
             pic(this);
+        }
+
+        private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }
