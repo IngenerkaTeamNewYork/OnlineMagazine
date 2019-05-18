@@ -176,8 +176,9 @@ namespace OnlineMag
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ContextMenuStrip = Program.AddNewUserControlCMS;
-            
-                foreach (Control Ctrl in this.Controls)
+            Program.LabelControlCMS = LabelContextMenuStrip1;
+
+            foreach (Control Ctrl in this.Controls)
             {
                 if (Ctrl.GetType().ToString() == "System.Windows.Forms.Panel")
                 {
@@ -226,7 +227,7 @@ namespace OnlineMag
 
             textBox_search.Text = LAST_SEARCH;
             Search_Click(sender, e);
-            popularArticlesLabel.ContextMenuStrip = DesignForm.LabelContextMenuStrip1;
+            popularArticlesLabel.ContextMenuStrip = Program.LabelControlCMS;
         }    
 
         /// <summary>
@@ -669,6 +670,27 @@ namespace OnlineMag
         {
             LabelUniqueForm d = new LabelUniqueForm(popularArticlesLabel);
             d.ShowDialog();
+        }
+
+        private void ИзменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl.GetType().Name)
+            {
+                case "label":
+                    Label pb = (Label)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+                    LabelUniqueForm f = new LabelUniqueForm(pb);
+                    f.ShowDialog();
+                    pb = f.newLabel;
+                    LabelUniqueForm.UpdateLabelDesignInDb(pb);
+                    break;
+                case "Button":
+                    Button pb1 = (Button)((ContextMenuStrip)((ToolStripMenuItem)sender).Owner).SourceControl;
+                    ButtonUniqueForm f1 = new ButtonUniqueForm(pb1);
+                    f1.ShowDialog();
+                    pb1 = f1.newButton;
+                    LabelUniqueForm.UpdateLabelDesignInDb(pb1);
+                    break;
+            }
         }
     }
 }
