@@ -32,16 +32,6 @@ namespace OnlineMag
         public AdminMainForm()
         {
             InitializeComponent();
-            if (Program.LabelControlCMS == null)
-            {
-                DesignForm df = new DesignForm();
-                {
-                    Visible = false;
-                }
-                df.Show();
-                df.Close();
-            }
-
             button_author.ContextMenuStrip = Program.LabelControlCMS;
         }
 
@@ -63,7 +53,7 @@ namespace OnlineMag
                 c.BackgroundImage = DesignClass.FORM_BACKGROUND_IMG;
                 c.Cursor = DesignClass.FORM_CURSOR;
                 c.BackColor = DesignClass.FORM_COLOR;
-                c.ContextMenuStrip = DesignClass.FORM_MENU;
+                //c.ContextMenuStrip = DesignClass.FORM_MENU;
             }
 
                 foreach (Control ctr in c.Controls)
@@ -80,7 +70,7 @@ namespace OnlineMag
                         ((Button)ctr).Font = DesignClass.BUTTON_FONT;
                         ((Button)ctr).BackColor = DesignClass.BUTTON_COLOR;
                         ((Button)ctr).BackgroundImage = DesignClass.BUTTON_BACKGROUND_IMG;
-                        ctr.ContextMenuStrip = DesignClass.BUTTON_MENU;
+                        //ctr.ContextMenuStrip = DesignClass.BUTTON_MENU;
                     }
                     #endregion
                     /*var temp = ButtonUniqueForm.GetUniqueDesignFromDB(ctr.Name);

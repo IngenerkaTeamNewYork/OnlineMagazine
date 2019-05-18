@@ -83,9 +83,10 @@ namespace OnlineMag
             // 
             // butto_search
             // 
-            this.butto_search.Location = new System.Drawing.Point(439, 3);
+            this.butto_search.Location = new System.Drawing.Point(585, 4);
+            this.butto_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butto_search.Name = "butto_search";
-            this.butto_search.Size = new System.Drawing.Size(77, 44);
+            this.butto_search.Size = new System.Drawing.Size(103, 54);
             this.butto_search.TabIndex = 0;
             this.butto_search.Text = "Найти";
             this.butto_search.UseVisualStyleBackColor = true;
@@ -97,17 +98,18 @@ namespace OnlineMag
             this.Left_panel.Controls.Add(this.adminPpanel);
             this.Left_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Left_panel.Location = new System.Drawing.Point(0, 0);
+            this.Left_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(226, 579);
+            this.Left_panel.Size = new System.Drawing.Size(301, 713);
             this.Left_panel.TabIndex = 4;
             // 
             // reclamaPanel
             // 
             this.reclamaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reclamaPanel.Location = new System.Drawing.Point(0, 0);
-            this.reclamaPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.reclamaPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.reclamaPanel.Name = "reclamaPanel";
-            this.reclamaPanel.Size = new System.Drawing.Size(226, 551);
+            this.reclamaPanel.Size = new System.Drawing.Size(301, 679);
             this.reclamaPanel.TabIndex = 16;
             this.reclamaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.reclamaPanel_Paint);
             this.reclamaPanel.MouseLeave += new System.EventHandler(this.reclamaPanel_MouseLeave);
@@ -117,18 +119,18 @@ namespace OnlineMag
             this.adminPpanel.Controls.Add(this.AutButton);
             this.adminPpanel.Controls.Add(this.AdmButton);
             this.adminPpanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.adminPpanel.Location = new System.Drawing.Point(0, 551);
-            this.adminPpanel.Margin = new System.Windows.Forms.Padding(2);
+            this.adminPpanel.Location = new System.Drawing.Point(0, 679);
+            this.adminPpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adminPpanel.Name = "adminPpanel";
-            this.adminPpanel.Size = new System.Drawing.Size(226, 28);
+            this.adminPpanel.Size = new System.Drawing.Size(301, 34);
             this.adminPpanel.TabIndex = 0;
             // 
             // AutButton
             // 
-            this.AutButton.Location = new System.Drawing.Point(0, 4);
-            this.AutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AutButton.Location = new System.Drawing.Point(0, 5);
+            this.AutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AutButton.Name = "AutButton";
-            this.AutButton.Size = new System.Drawing.Size(100, 19);
+            this.AutButton.Size = new System.Drawing.Size(133, 23);
             this.AutButton.TabIndex = 8;
             this.AutButton.Text = "Кабинет автора";
             this.AutButton.UseVisualStyleBackColor = true;
@@ -137,10 +139,10 @@ namespace OnlineMag
             // 
             // AdmButton
             // 
-            this.AdmButton.Location = new System.Drawing.Point(114, 4);
-            this.AdmButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AdmButton.Location = new System.Drawing.Point(152, 5);
+            this.AdmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdmButton.Name = "AdmButton";
-            this.AdmButton.Size = new System.Drawing.Size(112, 19);
+            this.AdmButton.Size = new System.Drawing.Size(149, 23);
             this.AdmButton.TabIndex = 16;
             this.AdmButton.Text = "Кабинет админа";
             this.AdmButton.UseVisualStyleBackColor = true;
@@ -148,15 +150,16 @@ namespace OnlineMag
             // 
             // contextMenuStrip2
             // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(129, 28);
             // 
             // changeToolStripMenuItem
             // 
             this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            this.changeToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.changeToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.changeToolStripMenuItem.Text = "Change";
             // 
             // contextMenuStrip1
@@ -165,12 +168,12 @@ namespace OnlineMag
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.увеличитьПисюнToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(254, 28);
             // 
             // увеличитьПисюнToolStripMenuItem
             // 
             this.увеличитьПисюнToolStripMenuItem.Name = "увеличитьПисюнToolStripMenuItem";
-            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.увеличитьПисюнToolStripMenuItem.Size = new System.Drawing.Size(253, 24);
             this.увеличитьПисюнToolStripMenuItem.Text = "Показать/Скрыть пароль";
             this.увеличитьПисюнToolStripMenuItem.Click += new System.EventHandler(this.showPassToolStripMenuItem_Click);
             // 
@@ -185,9 +188,10 @@ namespace OnlineMag
             "рейтинг(по убыванию)",
             "лайки(по возрастанию)",
             "лайки(по убыванию)"});
-            this.comboBox1.Location = new System.Drawing.Point(229, 28);
+            this.comboBox1.Location = new System.Drawing.Point(305, 34);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 21);
+            this.comboBox1.Size = new System.Drawing.Size(272, 24);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Text = "Сортировка статей";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -197,17 +201,19 @@ namespace OnlineMag
             this.Right_panel.Controls.Add(this.RightSubPanel);
             this.Right_panel.Controls.Add(this.RightTopPanel);
             this.Right_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Right_panel.Location = new System.Drawing.Point(558, 0);
+            this.Right_panel.Location = new System.Drawing.Point(744, 0);
+            this.Right_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Right_panel.Name = "Right_panel";
-            this.Right_panel.Size = new System.Drawing.Size(190, 579);
+            this.Right_panel.Size = new System.Drawing.Size(253, 713);
             this.Right_panel.TabIndex = 5;
             // 
             // RightSubPanel
             // 
             this.RightSubPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RightSubPanel.Location = new System.Drawing.Point(0, 49);
+            this.RightSubPanel.Location = new System.Drawing.Point(0, 60);
+            this.RightSubPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RightSubPanel.Name = "RightSubPanel";
-            this.RightSubPanel.Size = new System.Drawing.Size(190, 530);
+            this.RightSubPanel.Size = new System.Drawing.Size(253, 653);
             this.RightSubPanel.TabIndex = 1002;
             // 
             // RightTopPanel
@@ -216,8 +222,9 @@ namespace OnlineMag
             this.RightTopPanel.Controls.Add(this.lable_name_of_polzovatel);
             this.RightTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.RightTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.RightTopPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RightTopPanel.Name = "RightTopPanel";
-            this.RightTopPanel.Size = new System.Drawing.Size(190, 49);
+            this.RightTopPanel.Size = new System.Drawing.Size(253, 60);
             this.RightTopPanel.TabIndex = 1001;
             // 
             // comboBox2
@@ -234,9 +241,10 @@ namespace OnlineMag
             "лайки(по убыванию)",
             "кол-во статей(по возрастанию)",
             "кол-во статей(по убыванию)"});
-            this.comboBox2.Location = new System.Drawing.Point(0, 23);
+            this.comboBox2.Location = new System.Drawing.Point(0, 28);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(190, 21);
+            this.comboBox2.Size = new System.Drawing.Size(253, 24);
             this.comboBox2.TabIndex = 1000;
             this.comboBox2.Text = "Сортировка авторов";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Search_Click);
@@ -245,8 +253,9 @@ namespace OnlineMag
             // 
             this.lable_name_of_polzovatel.Dock = System.Windows.Forms.DockStyle.Top;
             this.lable_name_of_polzovatel.Location = new System.Drawing.Point(0, 0);
+            this.lable_name_of_polzovatel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lable_name_of_polzovatel.Name = "lable_name_of_polzovatel";
-            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(190, 23);
+            this.lable_name_of_polzovatel.Size = new System.Drawing.Size(253, 28);
             this.lable_name_of_polzovatel.TabIndex = 6;
             this.lable_name_of_polzovatel.Text = "Имя пользователя";
             // 
@@ -300,18 +309,19 @@ namespace OnlineMag
             this.Centr_panel.AutoScroll = true;
             this.Centr_panel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Centr_panel.Controls.Add(this.dalee);
-            this.Centr_panel.Location = new System.Drawing.Point(232, 81);
+            this.Centr_panel.Location = new System.Drawing.Point(309, 100);
             this.Centr_panel.Margin = new System.Windows.Forms.Padding(0);
             this.Centr_panel.Name = "Centr_panel";
-            this.Centr_panel.Size = new System.Drawing.Size(323, 498);
+            this.Centr_panel.Size = new System.Drawing.Size(431, 613);
             this.Centr_panel.TabIndex = 6;
             // 
             // dalee
             // 
             this.dalee.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dalee.Location = new System.Drawing.Point(0, 475);
+            this.dalee.Location = new System.Drawing.Point(0, 585);
+            this.dalee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dalee.Name = "dalee";
-            this.dalee.Size = new System.Drawing.Size(323, 23);
+            this.dalee.Size = new System.Drawing.Size(431, 28);
             this.dalee.TabIndex = 1;
             this.dalee.Text = "+ 3 статьи";
             this.dalee.UseVisualStyleBackColor = true;
@@ -320,19 +330,19 @@ namespace OnlineMag
             // popularArticlesLabel
             // 
             this.popularArticlesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.popularArticlesLabel.Location = new System.Drawing.Point(231, 50);
-            this.popularArticlesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.popularArticlesLabel.Location = new System.Drawing.Point(308, 62);
             this.popularArticlesLabel.Name = "popularArticlesLabel";
-            this.popularArticlesLabel.Size = new System.Drawing.Size(314, 31);
+            this.popularArticlesLabel.Size = new System.Drawing.Size(419, 38);
             this.popularArticlesLabel.TabIndex = 0;
             this.popularArticlesLabel.Text = "Популярные статьи";
             this.popularArticlesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_search
             // 
-            this.textBox_search.Location = new System.Drawing.Point(229, 3);
+            this.textBox_search.Location = new System.Drawing.Point(305, 4);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_search.Name = "textBox_search";
-            this.textBox_search.Size = new System.Drawing.Size(205, 20);
+            this.textBox_search.Size = new System.Drawing.Size(272, 22);
             this.textBox_search.TabIndex = 7;
             this.textBox_search.Text = "Поиск";
             this.textBox_search.TextChanged += new System.EventHandler(this.textBox_search_TextChanged);
@@ -356,62 +366,62 @@ namespace OnlineMag
             this.dockBottomToolStripMenuItem,
             this.dockNoneToolStripMenuItem});
             this.UCContextMenuStrip.Name = "DeletecontextMenuStrip1";
-            this.UCContextMenuStrip.Size = new System.Drawing.Size(198, 180);
+            this.UCContextMenuStrip.Size = new System.Drawing.Size(235, 196);
             this.UCContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.UCContextMenuStrip_Opening);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // настроитьПараметрыToolStripMenuItem
             // 
             this.настроитьПараметрыToolStripMenuItem.Name = "настроитьПараметрыToolStripMenuItem";
-            this.настроитьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.настроитьПараметрыToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.настроитьПараметрыToolStripMenuItem.Text = "Настроить параметры";
             this.настроитьПараметрыToolStripMenuItem.Click += new System.EventHandler(this.настроитьПараметрыToolStripMenuItem_Click);
             // 
             // докТопToolStripMenuItem
             // 
             this.докТопToolStripMenuItem.Name = "докТопToolStripMenuItem";
-            this.докТопToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.докТопToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.докТопToolStripMenuItem.Text = "Dock.Top";
             this.докТопToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // dockRightToolStripMenuItem
             // 
             this.dockRightToolStripMenuItem.Name = "dockRightToolStripMenuItem";
-            this.dockRightToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockRightToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.dockRightToolStripMenuItem.Text = "Dock.Right";
             this.dockRightToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // dockLeftToolStripMenuItem
             // 
             this.dockLeftToolStripMenuItem.Name = "dockLeftToolStripMenuItem";
-            this.dockLeftToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockLeftToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.dockLeftToolStripMenuItem.Text = "Dock.Left";
             this.dockLeftToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // dockFillToolStripMenuItem
             // 
             this.dockFillToolStripMenuItem.Name = "dockFillToolStripMenuItem";
-            this.dockFillToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockFillToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.dockFillToolStripMenuItem.Text = "Dock.Fill";
             this.dockFillToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // dockBottomToolStripMenuItem
             // 
             this.dockBottomToolStripMenuItem.Name = "dockBottomToolStripMenuItem";
-            this.dockBottomToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockBottomToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.dockBottomToolStripMenuItem.Text = "Dock.Bottom";
             this.dockBottomToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
             // dockNoneToolStripMenuItem
             // 
             this.dockNoneToolStripMenuItem.Name = "dockNoneToolStripMenuItem";
-            this.dockNoneToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.dockNoneToolStripMenuItem.Size = new System.Drawing.Size(234, 24);
             this.dockNoneToolStripMenuItem.Text = "Dock.None";
             this.dockNoneToolStripMenuItem.Click += new System.EventHandler(this.dockClick);
             // 
@@ -423,9 +433,10 @@ namespace OnlineMag
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(472, 55);
+            this.button2.Location = new System.Drawing.Point(629, 68);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
+            this.button2.Size = new System.Drawing.Size(135, 28);
             this.button2.TabIndex = 17;
             this.button2.Text = "Изменить стиль";
             this.button2.UseVisualStyleBackColor = true;
@@ -433,23 +444,24 @@ namespace OnlineMag
             // 
             // LabelContextMenuStrip1
             // 
+            this.LabelContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.LabelContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изменитьToolStripMenuItem});
             this.LabelContextMenuStrip1.Name = "LabelContextMenuStrip1";
-            this.LabelContextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.LabelContextMenuStrip1.Size = new System.Drawing.Size(211, 56);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.ИзменитьToolStripMenuItem_Click);
             // 
             // GhostMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 579);
+            this.ClientSize = new System.Drawing.Size(997, 713);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.popularArticlesLabel);
             this.Controls.Add(this.Left_panel);
@@ -458,7 +470,8 @@ namespace OnlineMag
             this.Controls.Add(this.Right_panel);
             this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.Centr_panel);
-            this.MinimumSize = new System.Drawing.Size(600, 600);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(794, 728);
             this.Name = "GhostMainForm";
             this.Text = "Онлайн-газета";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GhostMainForm_FormClosing);

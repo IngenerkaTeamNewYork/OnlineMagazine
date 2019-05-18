@@ -70,6 +70,12 @@
     <Compile Include="Author\AuthorWithUC.Designer.cs">
       <DependentUpon>AuthorWithUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\ButtonDefaultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\ButtonDefaultForm.Designer.cs">
+      <DependentUpon>ButtonDefaultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\ButtonUniqueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\ButtonDefaultForm.resx">
+      <DependentUpon>ButtonDefaultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\ButtonUniqueForm.resx">
       <DependentUpon>ButtonUniqueForm.cs</DependentUpon>

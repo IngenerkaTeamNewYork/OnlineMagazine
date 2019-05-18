@@ -2,7 +2,6 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\bin\Debug\WindowsFormsApplication4
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\bin\Debug\WindowsFormsApplication4.exe
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\bin\Debug\WindowsFormsApplication4.pdb
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\bin\Debug\MySql.Data.dll
-C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csprojResolveAssemblyReference.cache
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.GenerateResource.cache
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.CoreCompileInputs.cache
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csproj.CopyComplete
@@ -89,3 +88,7 @@ C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.UserControlSea
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.Form1.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.DesignForm.resources
 C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.LabelUniqueForm.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMagazine.csprojAssemblyReference.cache
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.ButtonDefaultForm.resources
+C:\Users\Abra\1\OnlineMagazine\OnlineMagazine\obj\Debug\OnlineMag.ButtonUniqueForm.resources
