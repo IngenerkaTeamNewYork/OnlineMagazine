@@ -46,13 +46,50 @@ namespace OnlineMag
             sps.ShowDialog();
         }
 
+        public static void pic(Control c)
+        {
+            if (c.GetType().ToString().Contains("OnlineMag"))
+            {
+                c.BackgroundImage = DesignClass.FORM_BACKGROUND_IMG;
+                c.Cursor = DesignClass.FORM_CURSOR;
+                c.BackColor = DesignClass.FORM_COLOR;
+                c.ContextMenuStrip = DesignClass.FORM_MENU;
+            }
 
-        /// <summary>
-        /// Переход на форму для Госструктур
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void button_author_Click(object sender, EventArgs e)
+                foreach (Control ctr in c.Controls)
+                {
+                    #region DesignClass дефалт
+                    string ctr_type = ctr.GetType().ToString();
+                    if (ctr_type == "System.Windows.Forms.Button")
+                    {
+                        ((Button)ctr).FlatStyle = DesignClass.FLAT_OF_BUTTON;
+                        ((Button)ctr).BackgroundImage = DesignClass.BUTTON_BACKGROUND_IMG;
+                        ((Button)ctr).BackgroundImageLayout = ImageLayout.Stretch;
+                        ((Button)ctr).ForeColor = DesignClass.BUTTON_TEXT_COLOR;
+                        ((Button)ctr).TextAlign = DesignClass.BUTTONIMAGE_ALLINE;
+                        ((Button)ctr).Font = DesignClass.BUTTON_FONT;
+                        ((Button)ctr).BackColor = DesignClass.BUTTON_COLOR;
+                        ((Button)ctr).BackgroundImage = DesignClass.BUTTON_BACKGROUND_IMG;
+                        ctr.ContextMenuStrip = DesignClass.BUTTON_MENU;
+                    }
+                    #endregion
+                    /*var temp = ButtonUniqueForm.GetUniqueDesignFromDB(ctr.Name);
+
+                    ctr.BackColor = temp.BackColor;
+                    ctr.ForeColor = temp.ForeColor;
+                    ctr.Font = temp.Font;
+                    ctr.Visible = temp.Visible;*/
+
+                    pic(ctr);
+                }
+            
+        }
+            /// <summary>
+            /// Переход на форму для Госструктур
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void button_author_Click(object sender, EventArgs e)
         {
             FBIform form = new FBIform();
             form.ShowDialog();
@@ -136,6 +173,7 @@ namespace OnlineMag
         {
             this.Font = Configs.USER_FONT;
             this.ForeColor = Configs.USER_COLOR;
+            pic(this);
         }
 
         /// <summary>
@@ -167,8 +205,9 @@ namespace OnlineMag
         /// <param name="e"></param>
         private void button_look_of_form_Click(object sender, EventArgs e)
         {
-            Designer form = new Designer();
+            ButtonDefaultForm form = new ButtonDefaultForm();
             form.ShowDialog();
+            pic(this);
         }
     }
 }
